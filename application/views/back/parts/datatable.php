@@ -302,10 +302,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			"order": [[ <?= $order_by ?>, '<?= $order ?>' ]],
 			"drawCallback": function( settings )
 			{
-				console.log(settings)
 				<?= $js ?>
-				
-				
 			},
 			
 			'dom': 'Rlfrtip',
@@ -330,7 +327,32 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			$('#overlay').slideDown();
 		})
 
+	
 
+		
+		function sendEmail(href){
+		
+		
+			let email = prompt("<?= lang('email') ?>");
+			var re = /\S+@\S+\.\S+/;
+						
+			$('[data-email-loader="'+href+'"]').removeClass('hidden')    
+			if(  re.test(email) )
+			{
+				let request	= $.post(href, {email: email});
+				request.then(x=>
+					{
+					
+						if(x.trim() == "")
+						$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
+				
+						$('[data-email-block="'+href+'"]').addClass('in');
+						$('[data-email-loader="'+href+'"]').addClass('hidden')    
+					})
+			}
+
+			
+		}
 
 </script>
 <style>

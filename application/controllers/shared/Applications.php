@@ -506,7 +506,9 @@ class Applications extends Shared_Controller{
 			$title ,
 			
 			/*$table_row['aid'],*/
-			'<input class="table-checkbox"  type="checkbox" id="'.$table_row['aid'].'" />',
+			'<input class="table-checkbox" 
+			data-user-name = "'.$table_row['last_name'].'"
+			data-email-id="'.$email.'"   type="checkbox" id="'.$table_row['aid'].'" />',
 			time_stamp_to_date($table_row['add_date']),
 
 			
@@ -574,9 +576,12 @@ class Applications extends Shared_Controller{
 				['id'=>$table_row['aid'], 'url'=>base_url().User_Controller::$map.'zipapp/'.$table_row['aid']],true),
 			$this->load->view("buttons/print",
 				['id'=>$table_row['aid'], 'url'=>$print],true),
+			
+			$this->load->view("buttons/email",
+				['email'=>$email],true),
 
 
-			anchor($email,'<i class="fas fa-envelope"></i>',['class'=>'email']),
+			//anchor($email,'<i class="fas fa-envelope"></i>',['class'=>'email']),
 			anchor(base_url().Shared_Controller::$map."/apphistory/".$table_row['aid'],'<i class="fas fa-edit" aria-hidden="true"></i>')
 
 

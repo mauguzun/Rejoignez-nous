@@ -59,24 +59,11 @@
 	$('.email').click(function()
 		{
 
+	let href = $(this).attr('href');
 
-			let email_url = $(this);
-			let email = prompt("<?= lang('email') ?>");
-			var re = /\S+@\S+\.\S+/;
-			let href = $(this).attr('href');
-
-			if(  re.test(email) )
-			{
-				let request	= $.post(href, {email: email});
-
-				request.then(x=>
-					{
-						if(x.trim() == "")
-						email_url.append(", " +  email);
-					})
-			}
-
-
+	        
+			sendEmail(href);
+	    
 
 			return false;
 		})
