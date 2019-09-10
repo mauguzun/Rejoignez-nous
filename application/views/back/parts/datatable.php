@@ -187,8 +187,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
     			
 				var form = $('#form').serializeArray();
     			
-    		  	
-    			
+
 				let post = $.post($(this).attr('data-form-url'),
 					form
 				);
@@ -209,11 +208,14 @@ $order = ( isset($order)) ? $order : 'desc' ;
 									console.log($('[data-error="'+prop+'"]').length);
 									console.log(result.error[prop]);
 								}
-
 							}
-						}else
+						}
+						else
 						{
-							location.reload(true);
+							$('#footerModal').modal('hide')
+							x.ajax.reload( null, false )
+							//alert(123)
+						   //location.reload(true);
 						}
 					})
 				return false;
@@ -276,6 +278,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 	}
 	
+//	x.page();
 	
 
 	let x =  $('#example').DataTable(
@@ -295,20 +298,23 @@ $order = ( isset($order)) ? $order : 'desc' ;
 				}
 			},
 			
-		
+		    
 			"order": [[ <?= $order_by ?>, '<?= $order ?>' ]],
 			"drawCallback": function( settings )
 			{
+				console.log(settings)
 				<?= $js ?>
 				
 				
 			},
+			
 			'dom': 'Rlfrtip',
 			"columnDefs": [ {"visible": false, "targets": 0}],
 			"lengthMenu": [ 10, 20 , 50,  100 ],
 			"scrollX": true,
 			processing: true,
 			select: true,
+			//displayStart : 10,
 			language:
 			{
 				 
@@ -316,6 +322,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 				processing: "asdf"
 				//search: "" , lengthMenu:"_MENU_  ",
 			},
+			
 
 		} );
 		
