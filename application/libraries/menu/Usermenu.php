@@ -47,11 +47,16 @@ class Usermenu{
 		$menu['#'] = [
 			'user/appliedoffers' => 'applied_offers',	
 			'user/profile' => 'edit_user',
-			'user/resetpassword' => 'email_forgot_password_link',
+			
 		];
 	         
 			
-		
+		if($logedIn){
+			$menu['#']['user/resetpassword'] =   'email_forgot_password_link';
+		}else{
+			$menu['#']['auth/forgot_password'] = 'email_forgot_password_link';
+
+		}
 		
 		return $menu;
 	}

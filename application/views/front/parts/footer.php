@@ -56,7 +56,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
 </script>
 
-
+<!--
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 <script>
 	$('.your-class').slick(
@@ -70,13 +70,13 @@
 			mobileFirst: true,
 			autoplaySpeed: 2000,
 		});
-</script>
+</script>-->
 <? $this->view('popup/modal.php') ;?>
 <script src="<?= base_url().'static/js/site.js'?>"></script>
 
   
 <?
-if ( null ==! $this->session->flashdata('message')  ) :?>
+if ( null ==! $this->session->flashdata('message')) :?>
 <div class="alert alert-danger" style=" position: fixed;z-index: 10000;width: 100%;top:0;left:0">
    
     <div style="text-align: center;">
