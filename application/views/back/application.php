@@ -5,7 +5,7 @@
 
         <!-- Marketing campaigns -->
         <b>
-            With selected
+            <?= lang('with_selected')?>
         </b>
         <button class="btn btn-primary square" id="download">
             <i class="far fa-file-archive">
@@ -46,7 +46,7 @@
                         }
                     })
             }else{
-                alert("pls select some row");
+                alert( "<?= lang('pls_select_some_row') ?>");
             }
         })
 
@@ -66,7 +66,7 @@
                     })
                 $('[data-print]').removeAttr('download');
             }else{
-                alert("pls select some row");
+                 alert( "<?= lang('pls_select_some_row') ?>");
             }
         })
 	

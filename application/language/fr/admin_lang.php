@@ -170,3 +170,5 @@ $lang['PNC'] = 'PNC';
 $lang['HR'] = 'RH';
 $lang['all'] = 'Tous';
 $lang['Select and Begin Typing'] = 'Sélectionner une offre';
+$lang['pls_select_some_row'] = 'Please choose one row';
+$lang['with_selected'] = 'With selected';
