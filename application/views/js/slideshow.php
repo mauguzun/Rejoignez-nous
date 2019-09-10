@@ -1,0 +1,4 @@
+<script>
+
+$('#add').off();
+</script>  

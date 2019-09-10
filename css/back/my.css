@@ -1,0 +1,182 @@
+
+	
+
+/* Important part */
+.modal-dialog
+{
+	overflow-y: initial !important
+}
+.modal-body
+{
+	height: 100vh;
+	overflow-y: auto;
+}
+#example a 
+{
+/*	color: white !important;
+*/	text-decoration: underline;
+color: #444444 !important;
+}
+.text-muted ,label ,.panel{
+  
+	color: #444444 !important;
+}
+.toogle
+{
+	width: 90px !important;
+	border-radius: 4px;
+	text-align: center;
+	cursor: pointer;
+	padding: 5px;
+}
+.textarea
+{
+	height: 200px !important;
+}
+.uploader
+{
+	border: 1px dotted silver;
+	width: 100%;
+	color: #92AAB0;
+	text-align: center;
+	vertical-align: middle;
+	padding: 30px 0px;
+	margin-bottom: 10px;
+
+	cursor: default;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.uploader div.or
+{
+	font-size: 50%;
+	font-weight: bold;
+	color: #C0C0C0;
+	padding: 10px;
+}
+
+.uploader div.browser label
+{
+	background-color: #f0f0f0;
+	padding: 5px 15px;
+	color: #676;
+	padding: 6px 0px;
+	font-size: 40%;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 2px;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: 300px;
+	margin: 20px auto 0px auto;
+
+	box-shadow: 3px 3px 3px #f0f0f0;
+}
+
+.uploader div.browser span
+{
+	cursor: pointer;
+}
+
+
+.uploader div.browser input
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border: solid transparent;
+	border-width: 0 0 100px 200px;
+	opacity: .0;
+	filter: alpha(opacity= 0);
+	-o-transform: translate(250px,-50px) scale(1);
+	-moz-transform: translate(-300px,0) scale(4);
+	direction: ltr;
+	cursor: pointer;
+}
+
+
+#loglist,#filelist
+{
+	list-style: none  !important;
+	text-align: center;
+}
+#loglist progress
+{
+	display: block;
+	width: 90%;
+	margin-left: 5%;
+	color: white;
+	height: 10px;
+}
+#error
+{
+	color: red;
+	height: 50px;
+	text-align: center;;
+}
+
+i[data-circle]
+{
+	cursor: pointer;
+}
+
+#filelist
+{
+	padding: 15px;
+}
+#filelist div
+{
+	width: 100px;
+	display: inline-block;
+	height: 100px;
+
+
+}
+#filelist div img
+{
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	padding: 5px !important;
+}
+#filelist div i
+{
+	cursor: pointer;
+	padding-left: 5px;
+}
+
+
+
+i[data-circle]
+{
+	cursor: pointer;
+}
+
+
+.menu-icon
+{
+	display: block;
+	width: 10px;
+}
+.my-toogle
+{
+	cursor: pointer;
+	padding: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.my-toogle:hover
+{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+#example_info{
+	padding:15px;
+}

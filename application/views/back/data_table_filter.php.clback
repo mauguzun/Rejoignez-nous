@@ -1,0 +1,42 @@
+
+<table>
+
+	<tr>
+		<td></td>		<td></td>		<td></td>
+	</tr>
+	
+
+</table>
+
+
+
+<select id="data_filter"   class="">
+	<option value="0"><?= lang('all')?></option>
+	<option value="5"><?= lang('unsolicited_application')?></option>
+	<option value="7"><?= lang('manualay_applications')?></option>
+	<option value="4"><?= lang('Mecanicien')?></option>
+	<option value="3"><?= lang('PNT')?></option>	
+	<option value="2"><?= lang('PNC')?></option>
+	<option value="1"><?= lang('HR')?></option>
+</select>
+
+
+<select id="data_filter" class="">
+	<option value="0"><?= lang('all')?></option>
+	<option value="5"><?= lang('unsolicited_application')?></option>
+	<option value="7"><?= lang('manualay_applications')?></option>
+	<option value="4"><?= lang('Mecanicien')?></option>
+	<option value="3"><?= lang('PNT')?></option>	
+	<option value="2"><?= lang('PNC')?></option>
+	<option value="1"><?= lang('HR')?></option>
+</select>
+
+<br />
+
+<script>
+	$('#data_filter').change(function(){
+		
+		x.ajax.url( "<?= $url ?>/"+ $(this).val() ).load();
+	})
+	
+</script>

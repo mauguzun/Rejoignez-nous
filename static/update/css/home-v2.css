@@ -1,0 +1,747 @@
+@import url("fonts/fonts.css");
+/*********************************************
+            HOME CONTENT
+*********************************************/
+#home-content {
+  width: 723px;
+}
+.home #home-sidebar {
+  margin-right: 15px;
+}
+/*********************************************
+            HOME CARROUSEL
+*********************************************/
+#carrousel-container {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  width: 100%;
+  min-height: 330px;
+  height: 580px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width:2000px) {
+  #carrousel-container::after,
+  #carrousel-container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    -webkit-box-shadow: 0 5px 55px 60px white;
+    -moz-box-shadow: 0 5px 55px 60px white;
+    box-shadow: 0 5px 55px 60px white;
+    background: red;
+    z-index: 1000;
+    width: 0;
+  }
+  #carrousel-container::after {
+    left: auto;
+    right: -30px;
+  }
+}
+
+#carrousel-container.show {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+}
+#carrousel-container .carrousel-nav {
+  position: relative;
+  z-index: 1;
+  width: 722px;
+  margin: 0 auto;
+  bottom: 70px;
+  left: 0;
+  text-align: center;
+}
+#carrousel-container .carrousel-nav.pointer-nav {
+  left: 34px;
+  top: -0%;
+  text-align: left;
+  display: none;
+}
+
+#carrousel-container .carrousel-nav ul {
+  height: 26px;
+  margin-left: -0.8em;
+  vertical-align: middle;
+}
+#carrousel-container .carrousel-nav ul li {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+#carrousel-container .carrousel-nav ul .carrousel-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  margin: 0 1px;
+}
+#carrousel-container .carrousel-nav ul .carrousel-bullet:hover {
+  background-color: #005395;
+  opacity: .5;
+}
+#carrousel-container .carrousel-nav ul .carrousel-bullet.active {
+  background-color: #005395;
+}
+#carrousel-container .carrousel-nav ul .carrousel-bullet.slide-title {
+  display: block;
+  color: black;
+}
+#carrousel-container .carrousel-nav ul .carrousel-arrow {
+  position: relative;
+  transition: 0.15s;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  -ms-transition: 0.15s;
+  width: 40px;
+  height: 578px;
+  z-index: 2;
+  top: 0;
+  background: url(../images/slide_arrow.png) center no-repeat;
+}
+#carrousel-container .carrousel-nav ul .carrousel-arrow:hover {
+  opacity: .5;
+}
+#carrousel-container .carrousel-nav ul .carrousel-arrow.next {
+  position: absolute;
+  right: 0;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+#carrousel-container .carrousel-nav ul .carrousel-arrow.prev {
+}
+#carrousel-container .carrousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+#carrousel-container .carrousel-slide img,
+#carrousel-container .carrousel-slide img[style] {
+  width: 100% !important;
+  height: auto !important;
+}
+#carrousel-container .carrousel-slide.active {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  z-index: 1;
+}
+.pushes-container {
+  *zoom: 1;
+  width: 720px;
+  border: 1px solid #cdcdcd;
+}
+.pushes-container:before,
+.pushes-container:after {
+  content: "";
+  display: table;
+}
+.pushes-container:after {
+  clear: both;
+}
+.pushes-container + .pushes-container {
+  margin-top: 35px;
+  border: 0;
+}
+.pushes-container + .pushes-container .push:before,
+.pushes-container + .pushes-container .push:after {
+  display: none;
+}
+.push {
+  width: 240px;
+  float: left;
+  position: relative;
+  border: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.push:after,
+.push:before {
+  content: "";
+  display: block;
+  background-color: #cdcdcd;
+  position: absolute;
+}
+.push:after {
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+}
+.push:before {
+  width: 1px;
+  height: 100%;
+  left: -1px;
+  top: 0;
+}
+.push .push-title {
+  font-family: "hnbd";
+  font-size: 17px;
+  color: #003063;
+  height: 2.2em;
+  line-height: 1.1em;
+  margin: 0 0 1em 0;
+}
+.push .push-thumb {
+  height: 106px;
+}
+.push .push-thumb img,
+.push .push-thumb img[style] {
+  height: 106px;
+  width: 100%;
+}
+.push .push-content,
+.push .push-content p {
+  font-family: "hnmd";
+  font-size: 12px;
+  color: #777777;
+}
+.push .push-content a,
+.push .push-content p a {
+  display: block;
+  margin-top: 2em;
+  color: #873e71;
+  font-family: "hnhv";
+  text-decoration: none;
+}
+.push .push-content {
+  padding: 30px 20px;
+  border-top-width: 8px;
+  border-top-style: solid;
+}
+.push .push-content .push-text {
+  line-height: 1.4em;
+  height: 4.2em;
+  overflow: hidden;
+}
+.push.big .push-content,
+.push.big .push-content[style] {
+  background-color: transparent !important;
+}
+.push.big .push-content a:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 8px;
+  margin-left: 0.5em;
+  background: url(../images/chevron-purple.png) no-repeat center;
+}
+.push.small .push-content {
+  border: 0;
+}
+.push.small .push-title,
+.push.small .push-text {
+  display: none;
+}
+.push.small .push-content {
+  padding: 10px 17px;
+}
+.push.small .push-content a {
+  margin-top: 0;
+  font-size: 16px;
+  color: white;
+}
+.push.small .push-content a:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 8px;
+  margin-left: 0.5em;
+  background: url(../images/chevron-white.png) no-repeat center;
+}
+.chevron-white:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 8px;
+  margin-left: 0.5em;
+  background: url(../images/chevron-white.png) no-repeat center;
+}
+.chevron-purple:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 8px;
+  margin-left: 0.5em;
+  background: url(../images/chevron-purple.png) no-repeat center;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+#homeresa {
+  position: relative;
+  z-index: 200;
+  margin-top: 30px;
+  left: 0;
+  text-align: left;
+}
+
+body.home #homeresa {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#homeresa .resa-wrap {
+  z-index: 2;
+  /*background-color: #86d0f4;*/
+  float: left;
+  width: 49%;
+  margin-bottom: 35px;
+}
+#homeresa .resa-wrap form {
+  padding: 15px 30px 0;
+}
+
+.page-template-nos-destinations  .resa-wrap, .page-template-promo .resa-wrap {
+  border:1px solid #cdcdcd !important;
+}
+
+#homeresa .slogan {
+  font-size: 24pt;
+  font-weight: 100;
+  color: #004b93;
+  position: initial;
+  text-transform: uppercase;
+  text-align: center;
+  top: 0;
+  left: 0;
+  float: right;
+  width: 50%;
+}
+
+#homeresa .slogan::after {
+  background-image: url('../images/plane.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 58px;
+  height: 56px;
+  content: "";
+  top: 16px;
+  margin-left: 50px;
+  display: inline-block;
+  position: relative;
+}
+
+#homeresa h2 {
+  color: #005395;
+  font-weight: 600;
+  font-size: 15pt;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#homeresa .field-list {
+  color: #004b93;
+}
+
+#homeresa .field-list li {
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 12pt;
+}
+#homeresa .field-list li label {
+  float: left;
+  position: relative;
+  top: 10px;
+}
+#homeresa .field-list li.fields-type-select label {
+  position: initial;
+}
+
+#homeresa .field-list .form-left { float: left; }
+#homeresa .field-list .form-right { float: right; }
+#homeresa .field-list .mm { margin-bottom: 15px; }
+#homeresa .field-list .mmm { margin-bottom: 25px; }
+#homeresa .field-list li input[type="text"] {
+  width: 38%;
+}
+
+#homeresa .date-pick.dp-applied {
+  margin-right: 10px;
+}
+
+
+#homeresa .field-list input[type="submit"] {
+  margin-top: 25px;
+  text-transform: uppercase;
+  background-color: #004b93;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12pt;
+
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  -o-border-radius: none;
+  border-radius: none;
+}
+
+.select-style {
+  padding: 0;
+  margin: 0;
+  max-width: 90%;
+  height: 28px;
+  overflow: hidden;
+  background-color: #fff;
+  display: inline-block;
+  background-image: url("../images/dropdownselect.png");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  padding-right: 35px;
+  position: relative;
+  top: 5px;
+}
+
+.select-style select {
+    padding: 7px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+.select-style.select-small {
+  width: 25%;
+
+}
+.select-style.select-medium {
+  width: 38%;
+  
+}
+.select-style.select-big {
+  width: 50%;
+}
+
+.carroussel-img-bg { display: none; }
+
+.multi-city-expand h3 a .indicator { display: none !important; }
+.multi-city-expand h3 a.active { text-decoration: none; color: #004b93 !important; }
+.multi-city-expand h3 a {
+  color: ##004b93;
+
+}
+
+.multi-city-expand h3 {
+  font-size: 0.8em;
+}
+#homeresa .field-list li.fields-type-select {
+  font-size: 12pt;
+}
+
+#homeresa .field-list li.multi-city-expand h3 {
+  float: left;
+  width: 50%;
+  clear: none;
+}
+
+#homeresa .field-list li.multi-city-expand h3.expander-left { text-align: left; }
+
+#homeresa .field-list li.multi-city-expand h3 a.active {
+  text-decoration: none;
+  color: #004b93 !important;
+  background: #fff;
+  padding: 4px 6px;
+}
+
+#homeresa .field-list li.error label { color: red; }
+#homeresa .field-list li.error input { color: #fff; background-color: red; }
+
+#home-sidebar #homeresa .resa-wrap {
+  width: 335px;
+  float: none;
+  margin: 0 auto;
+}
+@media screen and (max-width:490px) {
+  #home-sidebar #homeresa .resa-wrap {
+    width: 100%;
+  }
+}
+
+#home-sidebar #homeresa .resa-wrap {}
+
+@media screen and (max-width:1389px) {
+  #homeresa .field-list {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  body.home #homeresa. .field-list li {
+    width: 50%;
+    float: left;
+  }
+
+  body.home #homeresa .field-list .med-w100 {
+    width: 100%;
+    float: none;
+    clear: both;
+  }
+
+  #homeresa .slogan {
+    display: none !important;
+  }
+  
+  #homeresa .resa-wrap {
+    width: 100%;
+  }
+
+  body.home #homeresa .field-list .form-left,
+  body.home #homeresa .field-list .form-right {
+    float: left;
+    width: 33%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  body.home #homeresa .field-list li.multi-city-expand {
+    width: 100%;
+  }
+
+}
+
+
+
+@media screen and (min-width:1389px) {
+  #carrousel-container {
+    margin-bottom: 36px;
+  }
+
+  #carrousel-container .carrousel-nav.pointer-nav {
+    bottom: 0;
+}
+
+  #carrousel-container .carrousel-nav {
+    bottom: -80%;
+  }
+
+  body.home #homeresa {
+    height: 50px;
+      width: 780px;
+  margin: -36px auto 60px;
+  }
+
+  body.home #homeresa .resa-wrap {
+    position: absolute;
+    height: 580px;
+    top: -540px;
+    left: -304px;
+    float: none;
+    width: 435px;
+    margin: 0;
+  }
+
+  #homeresa .slogan {
+  width: 100%;
+    top: 38px;
+    left: 35px;
+    float: none;
+    text-indent: 50px;
+  }
+}
+
+@media screen and (max-width:1630px) {
+  #homeresa .resa-wrap {
+    top: auto;
+    bottom: -50px;
+  }
+}
+
+
+/**
+ * Datepicker CSS
+ */
+
+
+
+table.jCalendar {
+  background: #aaa;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+table.jCalendar th {
+  background: #004b93;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px 5px 3px 7px;
+}
+
+table.jCalendar td {
+  background: #fff;
+  color: #000;
+  padding: 3px 5px;
+  text-align: center;
+}
+table.jCalendar td:not(.disabled) {
+  background-color: green;
+  color: #fff;
+}
+table.jCalendar td.other-month {
+  background: green;
+  color: #fff;
+}
+table.jCalendar td.today {
+  background: #666;
+  color: #fff;
+}
+table.jCalendar td.selected {
+  background: #f66;
+  color: #fff;
+}
+table.jCalendar td.selected.dp-hover {
+  background: #ebebeb;
+  color: #fff;
+}
+table.jCalendar td.dp-hover,
+table.jCalendar tr.activeWeekHover td {
+  background: #fff;
+  color: #000;
+}
+table.jCalendar tr.selectedWeek td {
+  background: #f66;
+  color: #fff;
+}
+table.jCalendar td.disabled, table.jCalendar td.disabled.dp-hover {
+  background: #eee;
+  color: #888;
+}
+table.jCalendar td.unselectable,
+table.jCalendar td.unselectable:hover,
+table.jCalendar td.unselectable.dp-hover {
+  background: #bbb;
+  color: #888;
+}
+
+/* For the popup */
+
+/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+
+div.dp-popup {
+  position: relative;
+  background: #fff;
+  font-size: 10px;
+  font-family: arial, sans-serif;
+  padding: 2px;
+  width: 171px;
+  line-height: 1.2em;
+  border: 1px solid;
+}
+div#dp-popup {
+  position: absolute;
+  z-index: 200;
+}
+div.dp-popup h2 {
+  font-size: 12px;
+  text-align: center;
+  margin: 2px 0;
+  padding: 0;
+  font-family: 'Work Sans';
+}
+a#dp-close {
+  font-size: 11px;
+  padding: 4px 0;
+  text-align: center;
+  display: block;
+}
+a#dp-close:hover {
+  text-decoration: underline;
+}
+div.dp-popup a {
+  color: #000;
+  text-decoration: none;
+  padding: 3px 2px 0;
+}
+div.dp-popup div.dp-nav-prev {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 100px;
+}
+div.dp-popup div.dp-nav-prev a {
+  float: left;
+}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+  cursor: pointer;
+}
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled {
+  cursor: default;
+}
+div.dp-popup div.dp-nav-next {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  width: 100px;
+}
+div.dp-popup div.dp-nav-next a {
+  float: right;
+}
+div.dp-popup a.disabled {
+  cursor: default;
+  color: #aaa;
+}
+div.dp-popup td {
+  cursor: pointer;
+}
+div.dp-popup td.disabled {
+  cursor: default;
+}
+
+a.dp-choose-date {
+  background-image: url('../images/calendar.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 27px;
+  height: 27px;
+  text-indent: 1000px;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none !important;
+  white-space: nowrap;
+  position: relative;
+  top: 7px;
+}
