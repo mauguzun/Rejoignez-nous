@@ -65,9 +65,11 @@ class Applications extends Shared_Controller{
 					'create_offer_pub_date', 
 					'index_fname_th','index_lname_th','function',
 					
-					'#','<input  type="checkbox" id="main" />', 'create_offer_pub_date',
-					'category' ,
-					'activity',
+			/*		'#',*/
+					'<input  type="checkbox" id="main" />',
+					'create_offer_pub_date',
+		/*			'category' ,
+					'activity',*/
 					'education','languages','managment','availability','car','<i class="fas fa-wheelchair"></i>',
 					/*'history',*/
 					'call','folder','interview','test','decision','status','zip','print',
@@ -490,14 +492,14 @@ class Applications extends Shared_Controller{
 			
 			$title ,
 			
-			$table_row['aid'],
+			/*$table_row['aid'],*/
 			'<input class="table-checkbox"  type="checkbox" id="'.$table_row['aid'].'" />',
 			time_stamp_to_date($table_row['add_date']),
 
 			
 			//	$funciton,
-			$table_row['cat'],
-			$table_row['activities'].$table_row['un_activities'],
+		/*	$table_row['cat'],
+			$table_row['activities'].$table_row['un_activities'],*/
 				
 			$table_row['university']." ".  $educaton,
 			$lang_level_row,
