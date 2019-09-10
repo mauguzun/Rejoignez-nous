@@ -65,14 +65,17 @@ class Applications extends Shared_Controller{
 					'create_offer_pub_date', 
 					'index_fname_th','index_lname_th','function',
 					
-			/*		'#',*/
+					/*		'#',*/
 					'<input  type="checkbox" id="main" />',
 					'create_offer_pub_date',
-		/*			'category' ,
+					/*			'category' ,
 					'activity',*/
 					'education','languages','managment','availability','car','<i class="fas fa-wheelchair"></i>',
 					/*'history',*/
-					'call','folder','interview','test','decision','status','zip','print',
+					'call','folder','interview','test','decision','status',
+					'<i class="fa fa-eye" ></i>',	
+					'<i class="far fa-file-archive"></i>',
+					'<i class="fa fa-print"></i>',
 					'<i class="fa fa-envelope"></i>',
 					'<i class="fa fa-edit" ></i>'
 				],
@@ -390,7 +393,10 @@ class Applications extends Shared_Controller{
 				'offers_activities'=>"offers.id=offers_activities.offer_id",
 				'activities'=>"offers_activities.activiti_id=activities.id",
 				'function_activity'=>"activities.id=function_activity.activity_id",
-				'functions'=>"functions.id=function_activity.function_id"
+				'functions'=>"functions.id=function_activity.function_id",
+				'application_files'=>"$this->_table.id  =  application_files.application_id 
+				and application_files.deleted  = 0  and  application_files.type = 'cv'
+				"
 			],
 			"$this->_table.* ,$this->_table.id as aid,   ,application.user_id as uid ,offers.*,applicaiton_misc.*,
 			application_status.status as status,
@@ -398,23 +404,30 @@ class Applications extends Shared_Controller{
 			GROUP_CONCAT(DISTINCT activities.activity ) as activities,
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
-			GROUP_CONCAT(DISTINCT functions.function ) as functions,
+			GROUP_CONCAT(DISTINCT functions.function ) as functions,		
+			GROUP_CONCAT(DISTINCT application_files.file ) as files,
 			last_level_education.university as university,
 			last_level_education.education_level_id as education_level,
 			mechanic_offer_aeronautical_experience.managerial_duties as m_managerial,
 			offers.category as offer_cat,
 			offers.id as oid,offers.title as title,
 			offers_category.category  as cat,
+
 			
 			application_english_frechn_level.* ,$this->_table.*,candidates.*"
 
 			,NULL , ["application.id"],$allowed);
+			
+			
+			
+
 
 		$data['data'] = [];
 		foreach($query as $table_row){
 			array_push($data['data'],$this->_row($table_row));
 		}
-
+/*var_dump($data['data']);
+			die();*/
 		echo json_encode($data);
 	}
 	
@@ -498,7 +511,7 @@ class Applications extends Shared_Controller{
 
 			
 			//	$funciton,
-		/*	$table_row['cat'],
+			/*	$table_row['cat'],
 			$table_row['activities'].$table_row['un_activities'],*/
 				
 			$table_row['university']." ".  $educaton,
@@ -552,6 +565,10 @@ class Applications extends Shared_Controller{
 
 				],true),
 			//$table_row['status'],
+			$this->load->view("buttons/files",
+				[
+					'files'=>$table_row['files']
+				],true),
 
 			$this->load->view("buttons/zip",
 				['id'=>$table_row['aid'], 'url'=>base_url().User_Controller::$map.'zipapp/'.$table_row['aid']],true),
@@ -642,7 +659,7 @@ class Applications extends Shared_Controller{
 
 
 		// any case
-		$allowed['deleted'] = 0;
+		$allowed['application.deleted'] = 0;
 		$allowed['filled'] = 1;
 		if(isset($_GET)){
 
