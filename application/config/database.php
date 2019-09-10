@@ -75,16 +75,16 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	/*'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'halloall_lifa',
+	'dbdriver' => 'mysqli',*/
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'halloall_lifa',
 	'dbdriver' => 'mysqli',
-/*	'hostname' => 'localhost',
-	'username' => 'halloall_user',
-	'password' => 'Trance12!',
-	'database' => 'halloall_lifa',
-	'dbdriver' => 'mysqli',*/
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
