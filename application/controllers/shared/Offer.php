@@ -268,6 +268,7 @@ class Offer extends Shared_Controller{
 
 
 		$activity = ($user)? $user['title'] : $this->form_validation->set_value('title');
+			$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('title'));
 		$this->data['control']['title'] =
 		form_input( $this->inputarray->getArray('title','text',lang('create_offer_title'),$activity,TRUE));
 
@@ -287,7 +288,7 @@ class Offer extends Shared_Controller{
 				$activity = $user[$oneDate];
 			}
 
-			$this->data['control']["{$oneDate}_l"] = form_label(lang("create_offer_{$oneDate}"));
+			$this->data['control']["{$oneDate}_l"] = form_label( '<b>*</b>'.lang("create_offer_{$oneDate}"));
 			$date_picker = $this->inputarray->getArray($oneDate,'search',
 				lang("create_offer_{$oneDate}"),$activity,TRUE,['data-calendar'=>true]);
 			$this->data['control'][$oneDate] = form_input( $date_picker);
@@ -335,7 +336,7 @@ class Offer extends Shared_Controller{
 			$selected = ($user) ? $user['category']: NULL;
 
 
-			$this->data['control']["category_l"] = form_label(lang("create_offer_category"));
+			$this->data['control']["category_l"] = form_label('<b>*</b>'.lang("create_offer_category"));
 			$this->data['control']['category'] = form_dropdown('category', $options,$selected,['class'=>'form-control']);
 
 		}
@@ -362,7 +363,7 @@ class Offer extends Shared_Controller{
 			}
 			
 			
-			$this->data['control']["{$column}_l"] = form_label(lang("create_offer_{$column}"));
+			$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang("create_offer_{$column}"));
 
 			$this->data['control'][$column] = $this->load->view('js/ajax_select_url',
 				[
@@ -383,7 +384,7 @@ class Offer extends Shared_Controller{
 			$options[$value['id']] = $value['type'];
 		}
 		$selected = ($user) ? $user["type"]: NULL;
-		$this->data['control']["type_l"] = form_label(lang("type"));
+		$this->data['control']["type_l"] = form_label('<b>*</b>'.lang("type"));
 
 		$this->data['control']["type"] = form_dropdown("type", $options,$selected,['class'=>'form-control']);
 
@@ -404,7 +405,7 @@ class Offer extends Shared_Controller{
 
 		}
 
-		$this->data['control']["offers_activities[]_l"] = form_label(lang("offers_activities"));
+		$this->data['control']["offers_activities[]_l"] = form_label('<b>*</b>'.lang("offers_activities"));
 		$this->data['control']['offers_activities[]'] = $this->load->view('js/fastsearch',[
 				'data'=>json_encode(array_values($data)),
 				'selected'=>$selected,
@@ -418,7 +419,7 @@ class Offer extends Shared_Controller{
 
 		foreach(['mission','profile'] as $column){
 
-			$this->data['control']["{$column}_l"] = form_label(lang("create_offer_{$column}"));
+			$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang("create_offer_{$column}"));
 
 			$selected = ($user) ? $user[$column]: NULL;
 			$this->data['control'][$column] = form_textarea(

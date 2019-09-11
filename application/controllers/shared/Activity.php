@@ -167,7 +167,8 @@ class Activity extends Shared_Controller{
 			/*}*/
 			//todo if user super Admin
           
-		
+			$this->session->set_flashdata('message', lang('deleted'));
+			$this->session->set_flashdata('info', true);
            
 		}
      
@@ -205,7 +206,7 @@ class Activity extends Shared_Controller{
 
 		$activity = ($user)? $user['activity'] : $this->form_validation->set_value('activity');
 
-
+		$this->data['control']["_l"] = form_label('<b>*</b>'.lang('activity'));
 		$this->data['control']['activity'] =
 		form_input( $this->inputarray->getArray('activity','text',
 				lang('activity'),$activity,TRUE,

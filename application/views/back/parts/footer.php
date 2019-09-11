@@ -33,7 +33,10 @@
 </div>
 
 <?
-if( null ==! $this->session->flashdata('message')  ) :?>
+
+
+
+if( null ==! $this->session->flashdata('message')) :?>
 <div class="alert 
 <?= null ==! $this->session->flashdata('info')? 'alert-info'  : 'alert-danger'?>" 
 
@@ -42,9 +45,17 @@ if( null ==! $this->session->flashdata('message')  ) :?>
 		<i class="fa fa-times" aria-hidden="true"></i>
 	</a>
 	<div style="text-align: center;">
-		<?php echo $this->session->flashdata('message');?>
+		<?php 
+		if(!is_array($this->session->flashdata('message'))){
+			echo $this->session->flashdata('message');
+		}else{
+			$v =  $this->session->flashdata('message');
+			echo array_values($v)[0];
+		}
+		
+		?>
 	</div>
-
+  
 </div>
 <? endif ;?>
 
@@ -285,10 +296,17 @@ if( null ==! $this->session->flashdata('message')  ) :?>
 		z-index: 10;
 		border-top: 1px solid #D7D7D7
 	}
+	
+	label b{
+		font-weight: bold !important;
+		color: red !important;;
+		padding-right: 5px !important;;
+	}
+
 </style>
 <script>
 	
-$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip()
 
 </script>
 </body>

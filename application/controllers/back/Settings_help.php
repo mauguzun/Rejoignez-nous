@@ -92,7 +92,7 @@ class Settings_help extends Admin_Controller
 
 
 
-			$this->data['control']["{$name}_l"] = form_label(lang($name));
+			$this->data['control']["{$name}_l"] = form_label('<b>*</b>'.lang($name));
 			$this->data['control'][$name] = form_input(
 				$this->inputarray->getArray($name, $name == 'email' ? 'email' : 'text',lang($name),$value
 					,FALSE));

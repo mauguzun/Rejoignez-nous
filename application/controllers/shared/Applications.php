@@ -272,12 +272,12 @@ class Applications extends Shared_Controller{
 
 		$this->load->library("html/InputArray");
 		foreach(['first_name','last_name'] as $value){
-			$this->data['control']["{$value}_l"] = form_label(lang($value));
+			$this->data['control']["{$value}_l"] = form_label('<b>*</b>'.lang($value));
 			$this->data['control'][$value] = form_input(
 				$this->inputarray->getArray($value,'text',lang($value),NULL,TRUE));
 		}
 
-		$this->data['control']["offer_id_l"] = form_label(lang("pick_offer_id"));
+		$this->data['control']["offer_id_l"] = form_label('<b>*</b>'.lang("pick_offer_id"));
 		$this->data['control']['offer_id'] =
 		form_dropdown('offer_id', [],$value,['class'=>'form-control selectpicker with-ajax',
 				'data-live-search'=>true,
@@ -300,7 +300,7 @@ class Applications extends Shared_Controller{
 
 		foreach(['handicaped'] as  $column){
 			$value = isset($user[$column]) ? $user[$column]  : 0;
-			$this->data['control']["{$column}_l"] = form_label(lang($column));
+			$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang($column));
 			$this->data['control'][$column] =
 			form_dropdown($column, [0=>lang('no'),1=>lang('yes')],$value,['class'=>'form-control']);
 		}
@@ -311,7 +311,7 @@ class Applications extends Shared_Controller{
 			$options[$coutry['id']] = $coutry['opinion'];
 		}
 		foreach(['opinion_folder','opinion_interview','opinion_test','opinion_decision']as $column){
-			$this->data['control']["{$column}_"] = form_label(lang(str_replace("opinion_","",$column)));
+			$this->data['control']["{$column}_"] = form_label('<b>*</b>'.lang(str_replace("opinion_","",$column)));
 			$this->data['control'][$column] =
 			form_dropdown($column, $options,NULL,['class'=>'form-control']);
 

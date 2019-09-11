@@ -197,6 +197,7 @@ class Functions extends Shared_Controller{
 		$activity = ($user)? $user['function'] : $this->form_validation->set_value('activity');
 
 
+		$this->data['control']["_l"] = form_label('<b>*</b>'.lang('function'));
 		$this->data['control']['function'] =
 		form_input( $this->inputarray->getArray('function','text',
 				lang('function'),$activity,TRUE,
@@ -235,7 +236,7 @@ class Functions extends Shared_Controller{
 
 		/*$this->data['control']['activites_types[]'] =
 		form_multiselect('activity_id[]', $options,$selected,['class'=>'form-control']);*/
-
+	$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('activity'));
 		$this->data['control']['omega'] = $this->load->view('js/fastsearch',[
 				'data'=>json_encode(array_values($data)),
 				'selected'=>$selected,
