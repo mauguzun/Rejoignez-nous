@@ -7,16 +7,16 @@
 		<b>
 			<?= lang('with_selected')?>
 		</b>
-		<button class="btn btn-primary square" id="download">
+		<button data-toggle="tooltip" data-placement="top" title="<?= lang('zip')?>"  class="btn btn-primary square" id="download">
 			<i class="far fa-file-archive">
 			</i>
 		</button>
-		<button class="btn btn-primary square" id="print">
+		<button  data-toggle="tooltip" data-placement="top" title="<?= lang('print') ?>"  class="btn btn-primary square" id="print">
 			<i class="fa fa-print">
 			</i>
 		</button> 
         
-		<button class="btn btn-primary square" id="email">
+		<button  data-toggle="tooltip" data-placement="top" title="<?= lang('email') ?>" class="btn btn-primary square" id="email">
 			<i class="fa fa-envelope">
 			</i>
 		</button>
@@ -34,7 +34,7 @@
 <script>
 
 
-   
+
 
 
 	$('#download').click(function(){

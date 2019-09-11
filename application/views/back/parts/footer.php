@@ -286,5 +286,10 @@ if( null ==! $this->session->flashdata('message')  ) :?>
 		border-top: 1px solid #D7D7D7
 	}
 </style>
+<script>
+	
+$('[data-toggle="tooltip"]').tooltip()
+
+</script>
 </body>
 </html>
