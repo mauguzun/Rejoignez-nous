@@ -84,7 +84,7 @@
 
 <script>
 
-
+	
 
 	$('.change').change(function()
 		{
@@ -99,7 +99,7 @@
 		let mode = $("#mode").val()
 		let status = $("#status").val();
 		let offer =     $("#offer").val() ;
-
+		window.history.replaceState(null,null,  `?mode=${mode}&status=${status}&offer=${offer}`);
 
 		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  ).load();
 	}
@@ -142,4 +142,17 @@
 					})
 			}
 		});
+	
+	// change url 
+	
+	let searchParams = new URLSearchParams(window.location.search);
+	if(searchParams.has('mode') | searchParams.has('status')){
+				  
+		
+		
+		
+		$("#mode").val(searchParams.get('mode'))
+		$("#status").val(searchParams.get('status'));
+		request();
+	}
 </script>

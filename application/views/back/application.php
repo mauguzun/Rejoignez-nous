@@ -31,14 +31,12 @@
 
 
 
-
-
-
-
-
-
-
 <script>
+
+
+   
+
+
 	$('#download').click(function(){
 			let print = [];
 			$('input[type="checkbox"]:checked').each(function(){

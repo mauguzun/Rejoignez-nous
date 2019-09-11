@@ -167,7 +167,7 @@ class Applications extends Shared_Controller{
 		$where = $this->get_filter_array();
 
 		if(is_array($where)){
-			unset($where['deleted']);
+			unset($where['application.deleted']);
 			unset($where['filled']);
 		}
 		else{
