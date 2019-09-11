@@ -34,8 +34,11 @@
 
 <?
 if( null ==! $this->session->flashdata('message')  ) :?>
-<div class="alert alert-info" style="background-color:#74f28b ; position: fixed;z-index: 10000;width: 100%;top:0;">
-	<a href="#" style="color: black !important" class="close" data-dismiss="alert" aria-label="close" title="close">
+<div class="alert 
+<?= null ==! $this->session->flashdata('info')? 'alert-info'  : 'alert-danger'?>" 
+
+ style="position: fixed;z-index: 10000;width: 100%;top:0;">
+	<a href="#"  class="close" data-dismiss="alert" aria-label="close" title="close">
 		<i class="fa fa-times" aria-hidden="true"></i>
 	</a>
 	<div style="text-align: center;">
@@ -47,7 +50,7 @@ if( null ==! $this->session->flashdata('message')  ) :?>
 
 
 <style>
-.fstElement
+	.fstElement
 	{
 		display: inline-block;
 		position: relative;

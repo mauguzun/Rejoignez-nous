@@ -2,8 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // back / activity
-class Functions extends Shared_Controller
-{
+class Functions extends Shared_Controller{
 	private $data = [];
 	private $_redirect ;
 
@@ -11,16 +10,14 @@ class Functions extends Shared_Controller
 	private $_allowed = [1,2];
 	private $_ajax;
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct($this->_allowed);
 		$this->_redirect = base_url().Shared_Controller::$map.'/functions';
 		$this->_ajax = base_url().'access/Hr_Admin';
 	}
 
 
-	public function index()
-	{
+	public function index(){
 		// $this->load->view('back / index');
 		$this->show_header();
 
@@ -50,8 +47,7 @@ class Functions extends Shared_Controller
 
 	}
 
-	public function add()
-	{
+	public function add(){
 		// $this->load->view('back / parts / jquery');
 		$this->_set_form_validation($this->_redirect.'/insert');
 		$this->_set_data();
@@ -85,24 +81,20 @@ class Functions extends Shared_Controller
 	}
 
 
-	public function insert()
-	{
+	public function insert(){
 
 		$this->_set_form_validation($this->_redirect.'/insert');
 
-		if($this->form_validation->run() === TRUE)
-		{
+		if($this->form_validation->run() === TRUE){
 
 			$function_id = $this->Crud->add(['function'=>trim($_POST['function'])],$this->_table);
 
 			// anyway if isset id we put other shit
 
 
-			if($function_id)
-			{
+			if($function_id){
 				$bath = [];
-				foreach(explode(",", $_POST['activity_id'][0]) as $activity_id)
-				{
+				foreach(explode(",", $_POST['activity_id'][0]) as $activity_id){
 					array_push($bath,['activity_id'=>$activity_id,'function_id'=>$function_id]);
 				}
 				//	$this->Crud->delete(['activity_id'=>$_POST['id']],'function_activity');
@@ -119,8 +111,7 @@ class Functions extends Shared_Controller
 	}
 
 
-	public function edit($user_id = NULL)
-	{
+	public function edit($user_id = NULL){
 
 		$this->_set_form_validation($this->_redirect.'/update');
 		$user_id = isset($_POST['id']) ? $_POST['id'] :  $user_id ;
@@ -136,8 +127,7 @@ class Functions extends Shared_Controller
 
 	}
 
-	public function update()
-	{
+	public function update(){
 		$this->_set_form_validation($this->_redirect.'/update');
 		if($this->form_validation->run() === TRUE){
 
@@ -148,8 +138,7 @@ class Functions extends Shared_Controller
 
 
 			$bath = [];
-			foreach(explode(",", $_POST['activity_id'][0]) as $activity_id)
-			{
+			foreach(explode(",", $_POST['activity_id'][0]) as $activity_id){
 				array_push($bath,['activity_id'=>$activity_id,'function_id'=>$_POST['id']]);
 			}
 			$this->Crud->delete(['function_id'=>$_POST['id']],'function_activity');
@@ -163,8 +152,7 @@ class Functions extends Shared_Controller
 	}
 
 
-	public function trash($user_id = NULL)
-	{
+	public function trash($user_id = NULL){
 		if($user_id && $user_id > 0){
 
 			//todo if user super Admin
@@ -172,13 +160,13 @@ class Functions extends Shared_Controller
 			//$this->Crud->delete(['activity_id'=>$user_id],'function_activity');
 
 			$this->session->set_flashdata('message', lang('deleted'));
+			$this->session->set_flashdata('info', true);
 		}
 		redirect($this->_redirect);
 	}
 
 
-	private function _set_form_validation($url)
-	{
+	private function _set_form_validation($url){
 		$this->data['title'] = lang('create_activity_url');
 
 		$this->data['url'] = $url;
@@ -196,8 +184,7 @@ class Functions extends Shared_Controller
 
 
 
-	private function _set_data($user = NULL)
-	{
+	private function _set_data($user = NULL){
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 
@@ -260,8 +247,7 @@ class Functions extends Shared_Controller
 		$this->data['control']['z'] = '<div style="margin-bottom:400px"></div>';
 	}
 
-	public function ajaxdata()
-	{
+	public function ajaxdata(){
 		$_GET['q'] = isset($_GET['q']) ? $_GET['q'] : "";
 		header('Content-Type: application/json');
 
@@ -281,8 +267,7 @@ class Functions extends Shared_Controller
 		]';*/
 	}
 
-	public function ajax($id = NULL )
-	{
+	public function ajax($id = NULL ){
 
 		$allow = ($id != NULL ) ? ['functions.id'=>$id] :  NULL ;
 

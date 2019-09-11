@@ -171,3 +171,4 @@ $lang['HR'] = 'HR';
 $lang['all'] = 'All';
 $lang['pls_select_some_row'] = 'Please choose one row';
 $lang['with_selected'] = 'With selected ';
+$lang['saved'] = 'Saved and update';

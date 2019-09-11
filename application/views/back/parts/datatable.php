@@ -131,8 +131,10 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 ?>
 
-
+<script src="<?= base_url().'static/js/notify.js'?> "></script>
 <script>
+
+
 
 	$('#add').click(function()
 		{
@@ -214,8 +216,18 @@ $order = ( isset($order)) ? $order : 'desc' ;
 						{
 							$('#footerModal').modal('hide')
 							x.ajax.reload( null, false )
+							
+							$.notify({
+									// options
+									
+									message: '<?= lang("saved")?>' 
+								},{
+									// settings
+									type: 'info'
+								});
+							// alert???
 							//alert(123)
-						   //location.reload(true);
+							//location.reload(true);
 						}
 					})
 				return false;
@@ -278,7 +290,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 	}
 	
-//	x.page();
+	//	x.page();
 	
 
 	let x =  $('#example').DataTable(
@@ -323,36 +335,36 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 		} );
 		
-		$('#mode').change(function(){
+	$('#mode').change(function(){
 			$('#overlay').slideDown();
 		})
 
 	
 
 		
-		function sendEmail(href,user){
+	function sendEmail(href,user){
 		
 		
-			let email = prompt("<?= lang('email') ?>  " + user );
-			var re = /\S+@\S+\.\S+/;
+		let email = prompt("<?= lang('email') ?>  " + user );
+		var re = /\S+@\S+\.\S+/;
 						
-			$('[data-email-loader="'+href+'"]').removeClass('hidden')    
-			if(  re.test(email) )
-			{
-				let request	= $.post(href, {email: email});
-				request.then(x=>
-					{
+		$('[data-email-loader="'+href+'"]').removeClass('hidden')    
+		if(  re.test(email) )
+		{
+			let request	= $.post(href, {email: email});
+			request.then(x=>
+				{
 					
-						if(x.trim() == "")
-						$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
+					if(x.trim() == "")
+					$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
 				
-						$('[data-email-block="'+href+'"]').addClass('in');
-						$('[data-email-loader="'+href+'"]').addClass('hidden')    
-					})
-			}
+					$('[data-email-block="'+href+'"]').addClass('in');
+					$('[data-email-loader="'+href+'"]').addClass('hidden')    
+				})
+		}
 
 			
-		}
+	}
 
 </script>
 <style>

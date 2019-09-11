@@ -2,8 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // back / activity
-class News extends Shared_Controller
-{
+class News extends Shared_Controller{
 	private $data = [];
 	private $_redirect ;
 
@@ -11,16 +10,14 @@ class News extends Shared_Controller
 	private $_allowed = [1,2];
 	private $_ajax;
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct($this->_allowed);
 		$this->_redirect = base_url().Shared_Controller::$map.'/news';
 		$this->_ajax = base_url().'access/Hr_Admin';
 	}
 
 
-	public function index()
-	{
+	public function index(){
 		// $this->load->view('back / index');
 		$this->show_header();
 
@@ -53,8 +50,7 @@ class News extends Shared_Controller
 
 	}
 
-	public function add()
-	{
+	public function add(){
 		// $this->load->view('back / parts / jquery');
 		$this->_set_form_validation($this->_redirect.'/insert');
 		$this->_set_data();
@@ -66,12 +62,10 @@ class News extends Shared_Controller
 	}
 
 
-	public function insert()
-	{
+	public function insert(){
 
 		$this->_set_form_validation($this->_redirect.'/insert');
-		if($this->form_validation->run() === TRUE)
-		{
+		if($this->form_validation->run() === TRUE){
 			$this->Crud->add($_POST,$this->_table);
 			echo json_encode(['done'=>true]);
 			return;
@@ -82,30 +76,25 @@ class News extends Shared_Controller
 	}
 
 
-	public function edit($user_id = NULL)
-	{
+	public function edit($user_id = NULL){
 
 		$this->_set_form_validation($this->_redirect.'/update/'.$user_id);
 		$user_id = isset($_POST['id']) ? $_POST['id'] :  $user_id ;
 
-		if($user_id && $user_id > 0)
-		{
+		if($user_id && $user_id > 0){
 			$user = $this->Crud->get_row(['id'=>$user_id], $this->_table);
-			if($user)
-			{
+			if($user){
 				$this->_set_data($user);
-				   $this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
+				$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
 
 			}
 		}
 
 	}
 
-	public function update($id)
-	{
+	public function update($id){
 		$this->_set_form_validation($this->_redirect.'/update');
-		if($this->form_validation->run() === TRUE)
-		{
+		if($this->form_validation->run() === TRUE){
 
 			$this->Crud->update(
 				['id'=>$id],
@@ -130,23 +119,21 @@ class News extends Shared_Controller
 	}
 
 
-	public function trash($user_id = NULL)
-	{
-		if($user_id && $user_id > 0)
-		{
+	public function trash($user_id = NULL){
+		if($user_id && $user_id > 0){
 
 			//todo if user super Admin
 			$this->Crud->delete(['id'=>$user_id],$this->_table);
 	
-
+			$this->Crud->delete(['id'=>$user_id],'activities');
+			$this->Crud->delete(['activity_id'=>$user_id],'function_activity');
 			
 		}
 		redirect($this->_redirect);
 	}
 
 
-	private function _set_form_validation($url)
-	{
+	private function _set_form_validation($url){
 		$this->data['title'] = lang('news');
 
 		$this->data['url'] = $url;
@@ -166,16 +153,14 @@ class News extends Shared_Controller
 
 
 
-	private function _set_data($user = NULL)
-	{
+	private function _set_data($user = NULL){
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 
 		$this->load->library("html/InputArray");
 
 
-		foreach(['title','description'] as $value)
-		{
+		foreach(['title','description'] as $value){
 			$activity = ($user)? $user[$value] : $this->form_validation->set_value($value);
 			$this->data['control'][$value."_"] = form_label( lang($value));
 			$this->data['control'][$value] =
@@ -192,8 +177,7 @@ class News extends Shared_Controller
 		form_dropdown('published', [0=>'unpublished',1=>'published'],$is_active,['class'=>'form-control']);
 
 
-		foreach(['news'] as $value)
-		{
+		foreach(['news'] as $value){
 			$activity = ($user)? $user[$value] : $this->form_validation->set_value($value);
 			$this->data['control'][$value."_"] = form_label( lang($value));
 			$this->data['control'][$value] =
@@ -203,8 +187,7 @@ class News extends Shared_Controller
 
 	}
 
-	public function ajax()
-	{
+	public function ajax(){
 
 		$query = $this->Crud->get_all($this->_table,NULL,'id','asc');
 
@@ -214,8 +197,7 @@ class News extends Shared_Controller
 
 		$toog = $this->toogle->init(0,'published','news',$this->_table)->set_text(lang('pub_toogle'));
 
-		foreach($query as $table_row)
-		{
+		foreach($query as $table_row){
 			$row = [];
 
 			array_push(

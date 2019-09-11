@@ -232,6 +232,8 @@
 
 <!-- Page header -->
 <div class="page-header page-header-default">
+
+
     <div class="page-header-content">
         <div class="page-title">
             <h4>
@@ -240,7 +242,8 @@
                 </span>Dashboard
             </h4>
         </div>
-    </div>
+        
+
 
     <div class="breadcrumb-line">
         <ul class="breadcrumb">
