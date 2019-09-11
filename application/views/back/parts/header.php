@@ -28,6 +28,7 @@
 	<link href="<?= base_url()?>css/back/assets/css/colors.css" rel="stylesheet" type="text/css">
 	<link href="<?= base_url()?>css/back/my.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
+<link href="<?= base_url()?>static/update/css/admin-style.css" rel="stylesheet" type="text/css">
 
 	<!-- Core JS files -->
 	<script type="text/javascript" src="<?= base_url()?>css/back/assets/js/plugins/loaders/pace.min.js">

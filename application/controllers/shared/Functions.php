@@ -34,12 +34,12 @@ class Functions extends Shared_Controller{
 				'add_button' => $this->_redirect.'/add',
 				'js'=>$js
 			]);
-
+/*
 		$this->load->view('js/autocomplete',[
 				'url'=>$this->_ajax.'/typehead',
 				'table'=>$this->_table,
 				'name'=>'activity'
-			]);
+			]);*/
 
 		$this->load->view('back/parts/footer');
 

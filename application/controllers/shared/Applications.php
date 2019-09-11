@@ -140,7 +140,10 @@ class Applications extends Shared_Controller{
 		$app_id = time();
 		$this->load->view('js/ajaxupload');
 
-		foreach(['cv','covver_letter'] as $value){
+
+		$this->data['control']["asdf"] = form_label('<b>*</b>'.lang("cv"));
+		/*		foreach(['cv','covver_letter'] as $value){
+		*/		foreach(['cv'] as $value){
 
 			$this->data['control']["X{$value}"] = $this->load->view('front/apply/part/ajaxuploader',
 				[
@@ -157,6 +160,8 @@ class Applications extends Shared_Controller{
 
 		$this->load->view(Admin_Controller::$map .'/parts/manualay_create_application',$this->data);
 		$this->load->view('js/ajax_select',['url'=>$this->_redirect.'/select/'.$mode]);
+		
+		$this->load->view('js/manual_application'); 
 		$this->load->view('back/parts/footer');
 	}
 
@@ -219,7 +224,7 @@ class Applications extends Shared_Controller{
 						'admin_id'=>$this->ion_auth->user()->row()->id,
 						'first_name'=>$_POST['first_name'],
 						'last_name'=>$_POST['last_name'],
-						'handicaped'=>$_POST['handicaped']],'candidates'
+						],'candidates'
 				);
 
 
@@ -231,10 +236,12 @@ class Applications extends Shared_Controller{
 						'id'=>$_POST['id'],
 						'user_id'=>$_POST['id'],
 						'offer_id'=>$_POST['offer_id'],
-						'opinion_folder '=>$_POST['opinion_folder'],
+						'unsolicated_function'=>$_POST['unsolicated_function'],
+						
+						/*'opinion_folder '=>$_POST['opinion_folder'],
 						'opinion_interview '=>$_POST['opinion_interview'],
 						'opinion_test '=>$_POST['opinion_test'],
-						'opinion_decision '=>$_POST['opinion_decision'],
+						'opinion_decision '=>$_POST['opinion_decision'],*/
 					],$this->_table);
 
 				// add Cv
@@ -285,7 +292,23 @@ class Applications extends Shared_Controller{
 			]);
 
 
+		if($user){
+			$this->data['control']['id'] = form_input( $this->inputarray->getArray('id','hidden',null,$user['id'],TRUE));
+		}
 
+		$activity = ($user)? $user['function'] : $this->form_validation->set_value('activity');
+
+
+		$this->data['control']["_l"] = form_label('<b>*</b>'.lang('function'));
+		$this->data['control']['unsolicated_function'] =
+		form_input( $this->inputarray->getArray('unsolicated_function','text',
+				lang('function'),$activity,TRUE,
+				[
+					'data-typehead'=>true,
+					'data-typehead-column'=>'function',
+					'data-typehead-url'=>$this->_ajax.'/typehead',
+					'data-typehead-table'=>'functions'
+				]));
 
 		/* //
 		$countries = $this->Crud->get_all('offers_users_contract',NULL,'type','asc');
@@ -298,24 +321,24 @@ class Applications extends Shared_Controller{
 		form_dropdown('contract_id', $options,NULL,['class'=>'form-control']);*/
 
 
-		foreach(['handicaped'] as  $column){
-			$value = isset($user[$column]) ? $user[$column]  : 0;
-			$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang($column));
-			$this->data['control'][$column] =
-			form_dropdown($column, [0=>lang('no'),1=>lang('yes')],$value,['class'=>'form-control']);
+		/*foreach(['handicaped'] as  $column){
+		$value = isset($user[$column]) ? $user[$column]  : 0;
+		$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang($column));
+		$this->data['control'][$column] =
+		form_dropdown($column, [0=>lang('no'),1=>lang('yes')],$value,['class'=>'form-control']);
 		}
 
 		$countries = $this->Crud->get_all('applicaiton_opinion',NULL,'opinion','asc');
 		$options = [];
 		foreach($countries as $coutry){
-			$options[$coutry['id']] = $coutry['opinion'];
+		$options[$coutry['id']] = $coutry['opinion'];
 		}
 		foreach(['opinion_folder','opinion_interview','opinion_test','opinion_decision']as $column){
-			$this->data['control']["{$column}_"] = form_label('<b>*</b>'.lang(str_replace("opinion_","",$column)));
-			$this->data['control'][$column] =
-			form_dropdown($column, $options,NULL,['class'=>'form-control']);
+		$this->data['control']["{$column}_"] = form_label('<b>*</b>'.lang(str_replace("opinion_","",$column)));
+		$this->data['control'][$column] =
+		form_dropdown($column, $options,NULL,['class'=>'form-control']);
 
-		}
+		}*/
 
 
 		foreach(['comment'] as $column){
@@ -426,8 +449,8 @@ class Applications extends Shared_Controller{
 		foreach($query as $table_row){
 			array_push($data['data'],$this->_row($table_row));
 		}
-/*var_dump($data['data']);
-			die();*/
+		/*var_dump($data['data']);
+		die();*/
 		echo json_encode($data);
 	}
 	
@@ -567,8 +590,8 @@ class Applications extends Shared_Controller{
 				],true),
 			//$table_row['status'],
 			
-				$this->load->view("buttons/history",
-			['url'=>base_url().Shared_Controller::$map.'/history/'.$table_row['uid']],true),
+			$this->load->view("buttons/history",
+				['url'=>base_url().Shared_Controller::$map.'/history/'.$table_row['uid']],true),
 			$this->load->view("buttons/files",
 				[
 					'files'=>$table_row['files']
@@ -581,8 +604,8 @@ class Applications extends Shared_Controller{
 			
 			$this->load->view("buttons/email",
 				[
-				'email'=>$email,
-				'name'=>$table_row['first_name'].' '.$table_row['last_name']
+					'email'=>$email,
+					'name'=>$table_row['first_name'].' '.$table_row['last_name']
 				
 				],true),
 
