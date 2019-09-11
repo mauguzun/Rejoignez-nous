@@ -1,4 +1,6 @@
-<a href="<?= $email ?>"
+<a 
+data-person="<?= $name ?>"
+href="<?= $email ?>"
  class="email"><i class="fas fa-envelope"></i>
 	<div data-email-loader="<?= $email ?>"  class="lds-dual-ring hidden"></div>
 </a>

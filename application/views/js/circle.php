@@ -57,7 +57,7 @@
 	//
 
 	$('.email').click(function()
-		{
+	{
 
 	let href = $(this).attr('href');
 

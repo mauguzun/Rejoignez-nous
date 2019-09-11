@@ -507,7 +507,7 @@ class Applications extends Shared_Controller{
 			
 			/*$table_row['aid'],*/
 			'<input class="table-checkbox" 
-			data-user-name = "'.$table_row['last_name'].'"
+			data-person = "'.$table_row['first_name'].' '.$table_row['last_name'].'"
 			data-email-id="'.$email.'"   type="checkbox" id="'.$table_row['aid'].'" />',
 			time_stamp_to_date($table_row['add_date']),
 
@@ -578,7 +578,11 @@ class Applications extends Shared_Controller{
 				['id'=>$table_row['aid'], 'url'=>$print],true),
 			
 			$this->load->view("buttons/email",
-				['email'=>$email],true),
+				[
+				'email'=>$email,
+				'name'=>$table_row['first_name'].' '.$table_row['last_name']
+				
+				],true),
 
 
 			//anchor($email,'<i class="fas fa-envelope"></i>',['class'=>'email']),

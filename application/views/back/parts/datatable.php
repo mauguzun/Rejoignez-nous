@@ -330,10 +330,10 @@ $order = ( isset($order)) ? $order : 'desc' ;
 	
 
 		
-		function sendEmail(href){
+		function sendEmail(href,user){
 		
 		
-			let email = prompt("<?= lang('email') ?>");
+			let email = prompt("<?= lang('email') ?>  " + user );
 			var re = /\S+@\S+\.\S+/;
 						
 			$('[data-email-loader="'+href+'"]').removeClass('hidden')    
