@@ -73,6 +73,7 @@ class Applications extends Shared_Controller{
 					'education','languages','managment','availability','car','<i class="fas fa-wheelchair"></i>',
 					/*'history',*/
 					'call','folder','interview','test','decision','status',
+					'<i class="fas fa-exclamation-triangle"></i>',	
 					'<i class="fa fa-eye" ></i>',	
 					'<i class="far fa-file-archive"></i>',
 					'<i class="fa fa-print"></i>',
@@ -412,7 +413,6 @@ class Applications extends Shared_Controller{
 			offers.category as offer_cat,
 			offers.id as oid,offers.title as title,
 			offers_category.category  as cat,
-
 			
 			application_english_frechn_level.* ,$this->_table.*,candidates.*"
 
@@ -522,8 +522,7 @@ class Applications extends Shared_Controller{
 			date_to_input($table_row['aviability']),
 			$this->_have($table_row['car']) ,
 			$this->_have($table_row['handicaped']),
-			/*$this->load->view("buttons/history",
-			['url'=>base_url().Shared_Controller::$map.'/history/'.$table_row['uid']],true),*/
+			/*,*/
 			$this->load->view("buttons/circle",
 				[
 
@@ -567,6 +566,9 @@ class Applications extends Shared_Controller{
 
 				],true),
 			//$table_row['status'],
+			
+				$this->load->view("buttons/history",
+			['url'=>base_url().Shared_Controller::$map.'/history/'.$table_row['uid']],true),
 			$this->load->view("buttons/files",
 				[
 					'files'=>$table_row['files']

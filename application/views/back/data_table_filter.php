@@ -146,13 +146,17 @@
 	// change url 
 	
 	let searchParams = new URLSearchParams(window.location.search);
-	if(searchParams.has('mode') | searchParams.has('status')){
+	
+	
+			if(searchParams.has('mode') | searchParams.has('status')){
 				  
 		
 		
 		
-		$("#mode").val(searchParams.get('mode'))
-		$("#status").val(searchParams.get('status'));
-		request();
-	}
+				$("#mode").val(searchParams.get('mode'))
+				$("#status").val(searchParams.get('status'));
+				request();
+			}
+		
+	
 </script>
