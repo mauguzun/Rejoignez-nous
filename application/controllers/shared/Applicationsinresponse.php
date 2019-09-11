@@ -39,7 +39,7 @@ class Applicationsinresponse extends Shared_Controller{
 			'unsuccessful_applications','undecided_applications','interesting_for_another_position'];*/
 			$header = [
 				'create_offer_pub_date' ,'create_offer_pub_date' ,'status' ,'title'  ,'type' ,
-				'period','total','not_consulted','successful_applications',
+				/*'period',*/'total','not_consulted','successful_applications',
 				'unsuccessful_applications','undecided_applications','interesting_for_another_position'];
 		}
 		else{
@@ -171,7 +171,7 @@ class Applicationsinresponse extends Shared_Controller{
 					//$table_row['functions'],
 					//	$table_row['activities'],
 					isset($table_row['contract_title']) ? $table_row['contract_title'] :  ''  ,
-					$table_row['period'],
+					/*$table_row['period'],*/
 					anchor(base_url().Shared_Controller::$map."/applications?offer=".urldecode($table_row['of_title']),
 						$table_row['total_application'],['target'=>'_blank'])   ,
 					
