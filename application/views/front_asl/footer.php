@@ -4,7 +4,7 @@
 	
 	
 
-	<h1><?=$this->session->flashdata('info') ?></h1>
+<h1><?=$this->session->flashdata('info') ?></h1>
 	
 <script src="<?= base_url().'static/js/site.js'?>"></script>
 <?

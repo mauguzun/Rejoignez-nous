@@ -130,6 +130,7 @@
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/my_custom_css.css">
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/bootstrap.css">
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/home-v2.css" >
+	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/update.css" >
 </head>
 <div class="modal fade bs-example-modal-lg" id="footerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg"   style="z-index: 999999999" role="document">

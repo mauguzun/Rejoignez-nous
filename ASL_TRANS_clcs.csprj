@@ -496,26 +496,26 @@
 <treenode node="start;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\phenx\php-svg-lib\src\Svg\Tag\AbstractTag.php;f14;78;5;80;;;;vpos;;v;;a;;r;;d4,79;;b2,0;;m0;;eattributes;;p">
 </treenode>
 </treenode>
-<treenode node="Activity;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f0;4;1;277;;;;vpos;;v;;aShared_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;13;5;18;;;;vpos;;v;;a;;r;;d4,14;;b1,0;;m0;;e">
+<treenode node="Activity;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f0;4;1;272;;;;vpos;;v;;aShared_Controller;;c;;r;;d40,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;12;2;18;;;;vpos;;v;;a;;r;;d30,12;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f12;199;5;235;;;;vpos;;v;;a;;r;;d4,200;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f9;196;2;231;;;;vpos;;v;;a;;r;;d41,196;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f12;180;5;195;;;;vpos;;v;;a;;r;;d4,181;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f9;178;2;192;;;;vpos;;v;;a;;r;;d44,178;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;55;5;87;;;;vpos;;v;;a;;r;;d4,56;;b1,0;;m0;;e">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;55;2;88;;;;vpos;;v;;a;;r;;d22,55;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;237;5;276;;;;vpos;;v;;a;;r;;d4,238;;b1,0;;m0;;e">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;233;2;271;;;;vpos;;v;;a;;r;;d23,233;;b1,0;;m0;;e">
 </treenode>
-<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;114;5;129;;;;vpos;;v;;a;;r;;d4,115;;b1,0;;m0;;euser_id;;p">
+<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;114;2;128;;;;vpos;;v;;a;;r;;d38,114;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;21;5;53;;;;vpos;;v;;a;;r;;d4,22;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;21;2;53;;;;vpos;;v;;a;;r;;d24,21;;b1,0;;m0;;e">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;90;5;111;;;;vpos;;v;;a;;r;;d4,91;;b1,0;;m0;;e">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;91;2;111;;;;vpos;;v;;a;;r;;d25,91;;b1,0;;m0;;e">
 </treenode>
-<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;152;5;177;;;;vpos;;v;;a;;r;;d4,153;;b1,0;;m0;;euser_id;;p">
+<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;150;2;175;;;;vpos;;v;;a;;r;;d39,150;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f11;131;5;149;;;;vpos;;v;;a;;r;;d4,132;;b1,0;;m0;;e">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php;f8;130;2;147;;;;vpos;;v;;a;;r;;d25,130;;b1,0;;m0;;e">
 </treenode>
 </treenode>
 <treenode node="Address;PHP:Class Name;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\zh_TW\Address.php;f0;4;1;418;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\zh_CN\Address.php;f0;4;1;148;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\vi_VN\Address.php;f0;4;1;169;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\uk_UA\Address.php;f0;4;1;361;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\tr_TR\Address.php;f0;4;1;92;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\th_TH\Address.php;f0;4;1;100;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\sv_SE\Address.php;f0;4;1;149;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\sr_RS\Address.php;f0;4;1;57;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\sr_Latn_RS\Address.php;f0;4;1;57;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\sr_Cyrl_RS\Address.php;f0;4;1;57;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\sl_SI\Address.php;f0;4;1;106;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\sk_SK\Address.php;f0;4;1;343;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ru_RU\Address.php;f0;4;1;138;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ro_RO\Address.php;f0;3;1;175;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ro_MD\Address.php;f0;3;1;147;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\pt_PT\Address.php;f0;4;1;123;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\pt_BR\Address.php;f0;4;1;153;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\pl_PL\Address.php;f0;4;1;209;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\nl_NL\Address.php;f0;4;1;152;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\nl_BE\Address.php;f0;4;1;123;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ne_NP\Address.php;f0;4;1;128;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\nb_NO\Address.php;f0;4;1;194;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ms_MY\Address.php;f0;6;1;707;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\me_ME\Address.php;f0;4;1;118;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\lv_LV\Address.php;f0;4;1;116;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\lt_LT\Address.php;f0;4;1;130;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ko_KR\Address.php;f0;4;1;95;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\kk_KZ\Address.php;f0;4;1;104;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ka_GE\Address.php;f0;4;1;139;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ja_JP\Address.php;f0;4;1;136;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\it_IT\Address.php;f0;4;1;96;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\it_CH\Address.php;f0;4;1;138;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\is_IS\Address.php;f0;7;1;177;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\id_ID\Address.php;f0;4;1;315;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\hy_AM\Address.php;f0;4;1;131;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\hu_HU\Address.php;f0;4;1;148;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\hr_HR\Address.php;f0;4;1;68;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\he_IL\Address.php;f0;4;1;121;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\fr_FR\Address.php;f0;4;1;146;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\fr_CH\Address.php;f0;4;1;139;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\fr_CA\Address.php;f0;4;1;124;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\fr_BE\Address.php;f0;4;1;71;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\fi_FI\Address.php;f0;4;1;84;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\fa_IR\Address.php;f0;4;1;99;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\es_VE\Address.php;f0;4;1;71;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\es_PE\Address.php;f0;4;1;64;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\es_ES\Address.php;f0;4;1;100;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\es_AR\Address.php;f0;4;1;67;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_ZA\Address.php;f0;4;1;69;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_US\Address.php;f0;4;1;96;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_UG\Address.php;f0;4;1;100;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_SG\Address.php;f0;4;1;125;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_PH\Address.php;f0;4;1;416;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_NZ\Address.php;f0;4;1;77;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_NG\Address.php;f0;4;1;97;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_IN\Address.php;f0;4;1;181;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_HK\Address.php;f0;4;1;239;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_GB\Address.php;f0;4;1;142;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_CA\Address.php;f0;8;1;63;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\en_AU\Address.php;f0;9;1;109;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\el_GR\Address.php;f0;4;1;60;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\el_CY\Address.php;f0;4;1;54;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\de_DE\Address.php;f0;4;1;124;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\de_CH\Address.php;f0;4;1;184;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\de_AT\Address.php;f0;4;1;115;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\da_DK\Address.php;f0;7;1;286;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\cs_CZ\Address.php;f0;4;1;148;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\bn_BD\Address.php;f0;4;1;309;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ar_SA\Address.php;f0;4;1;145;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\ar_JO\Address.php;f0;4;1;151;;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\Provider\Address.php;f0;4;1;138;;C:\OSPanel\domains\localhost\reg\application\controllers\user\Address.php;f0;3;1;170;;;;vpos;;v;;aAddress;;c;;r;;d0,5;;b0,0;;m0;;e">
@@ -938,38 +938,38 @@
 <treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Apphistory.php;f8;20;2;44;;;;vpos;;v;;a;;r;;d1,21;;b1,0;;m0;;eapp_id;;p">
 </treenode>
 </treenode>
-<treenode node="Applications;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f0;6;1;734;;;;vpos;;v;;aShared_Controller;;c;;r&#10;Definition&#10;    class Applications extends Shared_Controller&#10;&#10;Description&#10;     can use admin ,and hr;;d44,6;;b0,0;;m0;;e">
+<treenode node="Applications;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f0;6;1;763;;;;vpos;;v;;aShared_Controller;;c;;r&#10;Definition&#10;    class Applications extends Shared_Controller&#10;&#10;Description&#10;     can use admin ,and hr;;d44,6;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;21;2;46;;;;vpos;;v;;a;;r;;d30,21;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_have;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;639;2;649;;;;vpos;;v;;a;;r;;d29,639;;b3,0;;m0;;earg;;p">
+<treenode node="_have;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;668;2;678;;;;vpos;;v;;a;;r;;d29,668;;b3,0;;m0;;earg;;p">
 </treenode>
-<treenode node="_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;433;2;590;;;;vpos;;v;;a;;r;;d34,433;;b3,0;;m0;;etable_row;;p">
+<treenode node="_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;456;2;619;;;;vpos;;v;;a;;r;;d34,456;;b3,0;;m0;;etable_row;;p">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;268;2;330;;;;vpos;;v;;a;;r;;d41,268;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;276;2;354;;;;vpos;;v;;a;;r;;d41,276;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;250;2;266;;;;vpos;;v;;a;;r;;d44,250;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;258;2;274;;;;vpos;;v;;a;;r;;d44,258;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="_show_lang_in_table_column;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;609;2;623;;;;vpos;;v;;a;;r;;d56,609;;b3,0;;m0;;etable_row;;p">
+<treenode node="_show_lang_in_table_column;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;638;2;652;;;;vpos;;v;;a;;r;;d56,638;;b3,0;;m0;;etable_row;;p">
 </treenode>
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;120;2;159;;;;vpos;;v;;a;;r;;d31,120;;b1,0;;m0;;emode;;p">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;121;2;165;;;;vpos;;v;;a;;r;;d31,121;;b1,0;;m0;;emode;;p">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;371;2;431;;;;vpos;;v;;a;;r;;d32,371;;b1,0;;m0;;emode;;p">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;395;2;454;;;;vpos;;v;;a;;r;;d32,395;;b1,0;;m0;;emode;;p">
 </treenode>
-<treenode node="ajaxcolor;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;597;2;607;;;;vpos;;v;;a;;r&#10;Definition&#10;    ajaxcolor($column,$applicaiton_id,$value)&#10;&#10;Description&#10;      ajax function , pls check if admin;;d58,597;;b1,0;;m0;;ecolumn;;papplicaiton_id;;pvalue;;p">
+<treenode node="ajaxcolor;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;626;2;636;;;;vpos;;v;;a;;r&#10;Definition&#10;    ajaxcolor($column,$applicaiton_id,$value)&#10;&#10;Description&#10;      ajax function , pls check if admin;;d58,626;;b1,0;;m0;;ecolumn;;papplicaiton_id;;pvalue;;p">
 </treenode>
-<treenode node="ajaxstatus;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;624;2;637;;;;vpos;;v;;a;;r;;d55,624;;b1,0;;m0;;eapplication_id;;pstatus_id;;p">
+<treenode node="ajaxstatus;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;653;2;666;;;;vpos;;v;;a;;r;;d55,653;;b1,0;;m0;;eapplication_id;;pstatus_id;;p">
 </treenode>
-<treenode node="email;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;104;2;117;;;;vpos;;v;;a;;r&#10;Definition&#10;    email($application_id)&#10;&#10;Description&#10;     ajax method to send application;;d39,104;;b1,0;;m0;;eapplication_id;;p">
+<treenode node="email;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;105;2;118;;;;vpos;;v;;a;;r&#10;Definition&#10;    email($application_id)&#10;&#10;Description&#10;     ajax method to send application;;d39,105;;b1,0;;m0;;eapplication_id;;p">
 </treenode>
-<treenode node="get_filter_array;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;651;2;731;;;;vpos;;v;;a;;r;;d36,651;;b3,0;;m0;;e">
+<treenode node="get_filter_array;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f9;680;2;760;;;;vpos;;v;;a;;r;;d36,680;;b3,0;;m0;;e">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;49;2;97;;;;vpos;;v;;a;;r;;d33,49;;b1,0;;m0;;emode;;p">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;49;2;98;;;;vpos;;v;;a;;r;;d33,49;;b1,0;;m0;;emode;;p">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;195;2;247;;;;vpos;;v;;a;;r;;d34,195;;b1,0;;m0;;emode;;p">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;201;2;255;;;;vpos;;v;;a;;r;;d34,201;;b1,0;;m0;;emode;;p">
 </treenode>
-<treenode node="offer_titles;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;333;2;368;;;;vpos;;v;;a;;r;;d31,333;;b1,0;;m0;;e">
+<treenode node="offer_titles;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;357;2;392;;;;vpos;;v;;a;;r;;d31,357;;b1,0;;m0;;e">
 </treenode>
-<treenode node="select;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;161;2;192;;;;vpos;;v;;a;;r;;d42,161;;b1,0;;m0;;enevermind;;p">
+<treenode node="select;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php;f8;167;2;198;;;;vpos;;v;;a;;r;;d42,167;;b1,0;;m0;;enevermind;;p">
 </treenode>
 </treenode>
 <treenode node="Applicationsinresponse;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applicationsinresponse.php;f0;4;1;220;;;;vpos;;v;;aShared_Controller;;c;;r;;d54,4;;b0,0;;m0;;e">
@@ -1851,7 +1851,7 @@
 <treenode node="CI_Cache;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\libraries\Cache\Cache.php;f0;48;1;267;;;;vpos;;v;;aCI_Driver_Library;;c;;r&#10;Definition&#10;    class CI_Cache extends CI_Driver_Library&#10;&#10;Description&#10;     CodeIgniter Caching Class;;d41,48;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Cache\Cache.php;f8;101;2;123;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct($config = array())&#10;&#10;Description&#10;     Constructor&#10;&#10;Parameters:&#10;    array $config - = array();;d1,102;;b1,0;;m0;;earray $config;;p">
 </treenode>
-<treenode node="cache_info;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Cache\Cache.php;f8;218;2;221;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    cache_info($type = &apos;user&apos;)&#10;&#10;Description&#10;     Cache Info&#10;&#10;Parameters:&#10;    string $type - = &apos;user&apos;	user/filehits&#10;&#10;Return:&#10;   array containing cache info on success OR FALSE on failure;;d1,219;;b1,0;;m0;;estring $type;;p">
+<treenode node="cache_info;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Cache\Cache.php;f8;218;2;221;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    cache_info($type = &apos;user&apos;)&#10;&#10;Description&#10;     Cache Info&#10;&#10;Parameters:&#10;    string $type - = &apos;user&apos; user/filehits&#10;&#10;Return:&#10;   array containing cache info on success OR FALSE on failure;;d1,219;;b1,0;;m0;;estring $type;;p">
 </treenode>
 <treenode node="clean;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Cache\Cache.php;f8;205;2;208;;;;vpos;;v;;abool;;r&#10;Definition&#10;    clean()&#10;&#10;Description&#10;     Clean the cache&#10;&#10;Return:&#10;   TRUE on success, FALSE on failure;;d1,206;;b1,0;;m0;;e">
 </treenode>
@@ -2057,7 +2057,7 @@
 </treenode>
 <treenode node="base_url;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;304;2;322;;;;vpos;;v;;astring;;r&#10;Definition&#10;    base_url($uri = &apos;&apos;, $protocol = NULL)&#10;&#10;Description&#10;     Base URL&#10;&#10;Parameters:&#10;    string|string[] $uri - URI string or an array of segments&#10;    string $protocol;;d1,305;;b1,0;;m0;;estring|string[] $uri;;pstring $protocol;;p">
 </treenode>
-<treenode node="item;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;196;2;204;;;;vpos;;v;;astring;;r&#10;Definition&#10;    item($item, $index = &apos;&apos;)&#10;&#10;Description&#10;     Fetch a config file item&#10;&#10;Parameters:&#10;    string $item - Config item name&#10;    string $index - Index name&#10;&#10;Return:&#10;   |null	The configuration item or NULL if the item doesn&apos;t exist;;d1,197;;b1,0;;m0;;estring $item;;pstring $index;;p">
+<treenode node="item;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;196;2;204;;;;vpos;;v;;astring;;r&#10;Definition&#10;    item($item, $index = &apos;&apos;)&#10;&#10;Description&#10;     Fetch a config file item&#10;&#10;Parameters:&#10;    string $item - Config item name&#10;    string $index - Index name&#10;&#10;Return:&#10;   |null The configuration item or NULL if the item doesn&apos;t exist;;d1,197;;b1,0;;m0;;estring $item;;pstring $index;;p">
 </treenode>
 <treenode node="load;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;125;2;185;;;;vpos;;v;;abool;;r&#10;Definition&#10;    load($file = &apos;&apos;, $use_sections = FALSE, $fail_gracefully = FALSE)&#10;&#10;Description&#10;     Load Config File&#10;&#10;Parameters:&#10;    string $file - Configuration file name&#10;    bool $use_sections - Whether configuration values should be loaded into their own section&#10;    bool $fail_gracefully - Whether to just return FALSE or display an error message&#10;&#10;Return:&#10;   TRUE if the file was loaded correctly or FALSE on failure;;d1,126;;b1,0;;m0;;estring $file;;pbool $use_sections;;pbool $fail_gracefully;;p">
 </treenode>
@@ -2065,7 +2065,7 @@
 </treenode>
 <treenode node="site_url;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;241;2;289;;;;vpos;;v;;astring;;r&#10;Definition&#10;    site_url($uri = &apos;&apos;, $protocol = NULL)&#10;&#10;Description&#10;     Site URL&#10;&#10;Parameters:&#10;    string|string[] $uri - URI string or an array of segments&#10;    string $protocol;;d1,242;;b1,0;;m0;;estring|string[] $uri;;pstring $protocol;;p">
 </treenode>
-<treenode node="slash_item;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;214;2;226;;;;vpos;;v;;astring;;r&#10;Definition&#10;    slash_item($item)&#10;&#10;Description&#10;     Fetch a config file item with slash appended (if not empty)&#10;&#10;Parameters:&#10;    string $item - Config item name&#10;&#10;Return:&#10;   |null	The configuration item or NULL if the item doesn&apos;t exist;;d1,215;;b1,0;;m0;;estring $item;;p">
+<treenode node="slash_item;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;214;2;226;;;;vpos;;v;;astring;;r&#10;Definition&#10;    slash_item($item)&#10;&#10;Description&#10;     Fetch a config file item with slash appended (if not empty)&#10;&#10;Parameters:&#10;    string $item - Config item name&#10;&#10;Return:&#10;   |null The configuration item or NULL if the item doesn&apos;t exist;;d1,215;;b1,0;;m0;;estring $item;;p">
 </treenode>
 </treenode>
 <treenode node="CI_Controller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f0;67;1;334;;;;vpos;;v;;a;;r;;d0,68;;b0,0;;m0;;e">
@@ -2257,7 +2257,7 @@
 </treenode>
 <treenode node="protect_identifiers;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php;f8;1754;2;1917;;;;vpos;;v;;astring;;r&#10;Definition&#10;    protect_identifiers($item, $prefix_single = FALSE, $protect_identifiers = NULL, $field_exists = TRUE)&#10;&#10;Description&#10;     Protect Identifiers&#10;&#10;Parameters:&#10;    string&#10;    bool&#10;    mixed&#10;    bool;;d1,1755;;b1,0;;m0;;estring;;pbool;;pmixed;;pbool;;p">
 </treenode>
-<treenode node="query;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php;f8;573;2;712;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    query($sql, $binds = FALSE, $return_object = NULL)&#10;&#10;Description&#10;     Execute the query&#10;&#10;Parameters:&#10;    string $sql&#10;    array $binds - = FALSE		An array of binding data&#10;    bool $return_object - = NULL;;d1,574;;b1,0;;m0;;estring $sql;;parray $binds;;pbool $return_object;;p">
+<treenode node="query;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php;f8;573;2;712;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    query($sql, $binds = FALSE, $return_object = NULL)&#10;&#10;Description&#10;     Execute the query&#10;&#10;Parameters:&#10;    string $sql&#10;    array $binds - = FALSE  An array of binding data&#10;    bool $return_object - = NULL;;d1,574;;b1,0;;m0;;estring $sql;;parray $binds;;pbool $return_object;;p">
 </treenode>
 <treenode node="reconnect;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php;f8;476;2;478;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    reconnect()&#10;&#10;Description&#10;     Reconnect;;d1,477;;b1,0;;m0;;e">
 </treenode>
@@ -2289,7 +2289,7 @@
 </treenode>
 </treenode>
 <treenode node="CI_DB_forge;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\DB_forge.php;f9;46;1;1041;;;;vpos;;v;;a;;r&#10;Definition&#10;    class CI_DB_forge&#10;&#10;Description&#10;     Database Forge Class;;d27,46;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_forge.php;f8;166;2;170;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db	Database object;;d1,167;;b1,0;;m0;;eobject;;p">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_forge.php;f8;166;2;170;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db Database object;;d1,167;;b1,0;;m0;;eobject;;p">
 </treenode>
 <treenode node="_alter_table;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_forge.php;f11;667;2;689;;;;vpos;;v;;astring;;r&#10;Definition&#10;    _alter_table($alter_type, $table, $field)&#10;&#10;Description&#10;     ALTER TABLE&#10;&#10;Parameters:&#10;    string $alter_type - ALTER type&#10;    string $table - Table name&#10;    mixed $field - Column definition&#10;&#10;Return:&#10;   |string[];;d1,668;;b2,0;;m0;;estring $alter_type;;pstring $table;;pmixed $field;;p">
 </treenode>
@@ -3065,7 +3065,7 @@
 </treenode>
 </treenode>
 <treenode node="CI_DB_pdo_pgsql_forge;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_pgsql_forge.php;f0;46;1;209;;;;vpos;;v;;aCI_DB_pdo_forge;;c;;r&#10;Definition&#10;    class CI_DB_pdo_pgsql_forge extends CI_DB_pdo_forge&#10;&#10;Description&#10;     PDO PostgreSQL Forge Class;;d52,46;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_pgsql_forge.php;f8;87;2;95;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db	Database object;;d1,88;;b1,0;;m0;;eobject;;p">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_pgsql_forge.php;f8;87;2;95;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db Database object;;d1,88;;b1,0;;m0;;eobject;;p">
 </treenode>
 <treenode node="_alter_table;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_pgsql_forge.php;f11;107;3;156;;;;vpos;;v;;astring;;r&#10;Definition&#10;    _alter_table($alter_type, $table, $field)&#10;&#10;Description&#10;     ALTER TABLE&#10;&#10;Parameters:&#10;    string $alter_type - ALTER type&#10;    string $table - Table name&#10;    mixed $field - Column definition&#10;&#10;Return:&#10;   |string[];;d2,108;;b2,0;;m0;;estring $alter_type;;pstring $table;;pmixed $field;;p">
 </treenode>
@@ -3105,7 +3105,7 @@
 </treenode>
 </treenode>
 <treenode node="CI_DB_pdo_sqlite_forge;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_sqlite_forge.php;f0;46;1;237;;;;vpos;;v;;aCI_DB_pdo_forge;;c;;r&#10;Definition&#10;    class CI_DB_pdo_sqlite_forge extends CI_DB_pdo_forge&#10;&#10;Description&#10;     PDO SQLite Forge Class;;d53,46;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_sqlite_forge.php;f8;84;2;93;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db	Database object;;d1,85;;b1,0;;m0;;eobject;;p">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_sqlite_forge.php;f8;84;2;93;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db Database object;;d1,85;;b1,0;;m0;;eobject;;p">
 </treenode>
 <treenode node="_alter_table;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\pdo\subdrivers\pdo_sqlite_forge.php;f11;154;2;172;;;;vpos;;v;;astring;;r&#10;Definition&#10;    _alter_table($alter_type, $table, $field)&#10;&#10;Description&#10;     ALTER TABLE&#10;&#10;Parameters:&#10;    string $alter_type - ALTER type&#10;    string $table - Table name&#10;    mixed $field - Column definition&#10;&#10;Return:&#10;   |string[];;d1,155;;b2,0;;m0;;estring $alter_type;;pstring $table;;pmixed $field;;p">
 </treenode>
@@ -3201,7 +3201,7 @@
 </treenode>
 </treenode>
 <treenode node="CI_DB_postgre_forge;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\postgre\postgre_forge.php;f0;48;1;204;;;;vpos;;v;;aCI_DB_forge;;c;;r&#10;Definition&#10;    class CI_DB_postgre_forge extends CI_DB_forge&#10;&#10;Description&#10;     Postgre Forge Class;;d46,48;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\postgre\postgre_forge.php;f8;82;2;90;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db	Database object;;d1,83;;b1,0;;m0;;eobject;;p">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\postgre\postgre_forge.php;f8;82;2;90;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db Database object;;d1,83;;b1,0;;m0;;eobject;;p">
 </treenode>
 <treenode node="_alter_table;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\postgre\postgre_forge.php;f11;102;3;151;;;;vpos;;v;;astring;;r&#10;Definition&#10;    _alter_table($alter_type, $table, $field)&#10;&#10;Description&#10;     ALTER TABLE&#10;&#10;Parameters:&#10;    string $alter_type - ALTER type&#10;    string $table - Table name&#10;    mixed $field - Column definition&#10;&#10;Return:&#10;   |string[];;d2,103;;b2,0;;m0;;estring $alter_type;;pstring $table;;pmixed $field;;p">
 </treenode>
@@ -3485,7 +3485,7 @@
 </treenode>
 </treenode>
 <treenode node="CI_DB_sqlite3_forge;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\sqlite3\sqlite3_forge.php;f0;46;1;224;;;;vpos;;v;;aCI_DB_forge;;c;;r&#10;Definition&#10;    class CI_DB_sqlite3_forge extends CI_DB_forge&#10;&#10;Description&#10;     SQLite3 Forge Class;;d46,46;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\sqlite3\sqlite3_forge.php;f8;70;2;79;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db	Database object;;d1,71;;b1,0;;m0;;eobject;;p">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\sqlite3\sqlite3_forge.php;f8;70;2;79;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db Database object;;d1,71;;b1,0;;m0;;eobject;;p">
 </treenode>
 <treenode node="_alter_table;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\drivers\sqlite3\sqlite3_forge.php;f11;141;2;159;;;;vpos;;v;;astring;;r&#10;Definition&#10;    _alter_table($alter_type, $table, $field)&#10;&#10;Description&#10;     ALTER TABLE&#10;&#10;Parameters:&#10;    string $alter_type - ALTER type&#10;    string $table - Table name&#10;    mixed $field - Column definition&#10;&#10;Return:&#10;   |string[];;d1,142;;b2,0;;m0;;estring $alter_type;;pstring $table;;pmixed $field;;p">
 </treenode>
@@ -3593,7 +3593,7 @@
 </treenode>
 </treenode>
 <treenode node="CI_DB_utility;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\DB_utility.php;f9;46;1;413;;;;vpos;;v;;a;;r&#10;Definition&#10;    class CI_DB_utility&#10;&#10;Description&#10;     Database Utility Class;;d29,46;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_utility.php;f8;86;2;90;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db	Database object;;d1,87;;b1,0;;m0;;eobject;;p">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_utility.php;f8;86;2;90;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct(&amp;$db)&#10;&#10;Description&#10;     Class constructor&#10;&#10;Parameters:&#10;    object - &amp;$db Database object;;d1,87;;b1,0;;m0;;eobject;;p">
 </treenode>
 <treenode node="backup;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\database\DB_utility.php;f8;311;2;411;;;;vpos;;v;;astring;;r&#10;Definition&#10;    backup($params = array())&#10;&#10;Description&#10;     Database Backup&#10;&#10;Parameters:&#10;    array $params;;d1,312;;b1,0;;m0;;earray $params;;p">
 </treenode>
@@ -3709,7 +3709,7 @@
 </treenode>
 <treenode node="clear;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Email.php;f8;439;2;460;;;;vpos;;v;;aCI_Email;;r&#10;Definition&#10;    clear($clear_attachments = FALSE)&#10;&#10;Description&#10;     Initialize the Email Data&#10;&#10;Parameters:&#10;    bool;;d1,440;;b1,0;;m0;;ebool;;p">
 </treenode>
-<treenode node="from;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Email.php;f8;472;2;509;;;;vpos;;v;;aCI_Email;;r&#10;Definition&#10;    from($from, $name = &apos;&apos;, $return_path = NULL)&#10;&#10;Description&#10;     Set FROM&#10;&#10;Parameters:&#10;    string $from&#10;    string $name&#10;    string $return_path - = NULL	Return-Path;;d1,473;;b1,0;;m0;;estring $from;;pstring $name;;pstring $return_path;;p">
+<treenode node="from;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Email.php;f8;472;2;509;;;;vpos;;v;;aCI_Email;;r&#10;Definition&#10;    from($from, $name = &apos;&apos;, $return_path = NULL)&#10;&#10;Description&#10;     Set FROM&#10;&#10;Parameters:&#10;    string $from&#10;    string $name&#10;    string $return_path - = NULL Return-Path;;d1,473;;b1,0;;m0;;estring $from;;pstring $name;;pstring $return_path;;p">
 </treenode>
 <treenode node="initialize;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Email.php;f8;404;2;429;;;;vpos;;v;;aCI_Email;;r&#10;Definition&#10;    initialize(array $config = array())&#10;&#10;Description&#10;     Initialize preferences&#10;&#10;Parameters:&#10;    array $config;;d1,405;;b1,0;;m0;;earray $config;;p">
 </treenode>
@@ -4063,7 +4063,7 @@
 </treenode>
 <treenode node="__get;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;650;2;661;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    __get($name)&#10;&#10;Description&#10;     Magic __get()&#10;&#10;Parameters:&#10;    string $name;;d1,651;;b1,0;;m0;;estring $name;;p">
 </treenode>
-<treenode node="_fetch_from_array;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f11;123;2;173;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    _fetch_from_array(&amp;$array, $index = NULL, $xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch from array&#10;&#10;Parameters:&#10;    array - &amp;$array		$_GET, $_POST, $_COOKIE, $_SERVER, etc&#10;    mixed $index - Index for item to be fetched from $array&#10;    bool $xss_clean - Whether to apply XSS filtering;;d1,124;;b2,0;;m0;;earray;;pmixed $index;;pbool $xss_clean;;p">
+<treenode node="_fetch_from_array;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f11;123;2;173;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    _fetch_from_array(&amp;$array, $index = NULL, $xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch from array&#10;&#10;Parameters:&#10;    array - &amp;$array  $_GET, $_POST, $_COOKIE, $_SERVER, etc&#10;    mixed $index - Index for item to be fetched from $array&#10;    bool $xss_clean - Whether to apply XSS filtering;;d1,124;;b2,0;;m0;;earray;;pmixed $index;;pbool $xss_clean;;p">
 </treenode>
 <treenode node="cookie;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;244;2;247;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    cookie($index = NULL, $xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch an item from the COOKIE array&#10;&#10;Parameters:&#10;    mixed $index - Index for item to be fetched from $_COOKIE&#10;    bool $xss_clean - Whether to apply XSS filtering;;d1,245;;b1,0;;m0;;emixed $index;;pbool $xss_clean;;p">
 </treenode>
@@ -4071,7 +4071,7 @@
 </treenode>
 <treenode node="get_post;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;228;2;233;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    get_post($index, $xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch an item from GET data with fallback to POST&#10;&#10;Parameters:&#10;    string $index - Index for item to be fetched from $_GET or $_POST&#10;    bool $xss_clean - Whether to apply XSS filtering;;d1,229;;b1,0;;m0;;estring $index;;pbool $xss_clean;;p">
 </treenode>
-<treenode node="get_request_header;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;583;2;606;;;;vpos;;v;;astring;;r&#10;Definition&#10;    get_request_header($index, $xss_clean = FALSE)&#10;&#10;Description&#10;     Get Request Header&#10;&#10;Parameters:&#10;    string $index - Header name&#10;    bool $xss_clean - Whether to apply XSS filtering&#10;&#10;Return:&#10;   |null	The requested header on success or NULL on failure;;d1,584;;b1,0;;m0;;estring $index;;pbool $xss_clean;;p">
+<treenode node="get_request_header;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;583;2;606;;;;vpos;;v;;astring;;r&#10;Definition&#10;    get_request_header($index, $xss_clean = FALSE)&#10;&#10;Description&#10;     Get Request Header&#10;&#10;Parameters:&#10;    string $index - Header name&#10;    bool $xss_clean - Whether to apply XSS filtering&#10;&#10;Return:&#10;   |null The requested header on success or NULL on failure;;d1,584;;b1,0;;m0;;estring $index;;pbool $xss_clean;;p">
 </treenode>
 <treenode node="input_stream;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;274;2;286;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    input_stream($index = NULL, $xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch an item from the php://input stream&#10;&#10;Parameters:&#10;    string $index - Index for item to be fetched&#10;    bool $xss_clean - Whether to apply XSS filtering;;d1,275;;b1,0;;m0;;estring $index;;pbool $xss_clean;;p">
 </treenode>
@@ -4091,7 +4091,7 @@
 </treenode>
 <treenode node="set_cookie;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;306;2;353;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    set_cookie($name, $value = &apos;&apos;, $expire = 0, $domain = &apos;&apos;, $path = &apos;/&apos;, $prefix = &apos;&apos;, $secure = NULL, $httponly = NULL)&#10;&#10;Description&#10;     Set cookie&#10;&#10;Parameters:&#10;    string|mixed[] $name - Cookie name or an array containing parameters&#10;    string $value - Cookie value&#10;    int $expire - Cookie expiration time in seconds&#10;    string $domain - Cookie domain (e&#10;    string $path - Cookie path (default: &apos;/&apos;)&#10;    string $prefix - Cookie name prefix&#10;    bool $secure - Whether to only transfer cookies via SSL&#10;    bool $httponly - Whether to only makes the cookie accessible via HTTP (no javascript);;d1,307;;b1,0;;m0;;estring|mixed[] $name;;pstring $value;;pint $expire;;pstring $domain;;pstring $path;;pstring $prefix;;pbool $secure;;pbool $httponly;;p">
 </treenode>
-<treenode node="user_agent;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;526;2;529;;;;vpos;;v;;astring;;r&#10;Definition&#10;    user_agent($xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch User Agent string&#10;&#10;Return:&#10;   |null	User Agent string or NULL if it doesn&apos;t exist;;d1,527;;b1,0;;m0;;exss_clean;;p">
+<treenode node="user_agent;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;526;2;529;;;;vpos;;v;;astring;;r&#10;Definition&#10;    user_agent($xss_clean = FALSE)&#10;&#10;Description&#10;     Fetch User Agent string&#10;&#10;Return:&#10;   |null User Agent string or NULL if it doesn&apos;t exist;;d1,527;;b1,0;;m0;;exss_clean;;p">
 </treenode>
 <treenode node="valid_ip;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Input.php;f8;501;2;517;;;;vpos;;v;;abool;;r&#10;Definition&#10;    valid_ip($ip, $which = &apos;&apos;)&#10;&#10;Description&#10;     Validate IP Address&#10;&#10;Parameters:&#10;    string $ip - IP address&#10;    string $which - IP protocol: &apos;ipv4&apos; or &apos;ipv6&apos;;;d1,502;;b1,0;;m0;;estring $ip;;pstring $which;;p">
 </treenode>
@@ -4101,7 +4101,7 @@
 </treenode>
 <treenode node="line;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Lang.php;f8;189;2;200;;;;vpos;;v;;astring;;r&#10;Definition&#10;    line($line, $log_errors = TRUE)&#10;&#10;Description&#10;     Language line&#10;&#10;Parameters:&#10;    string $line - Language line key&#10;    bool $log_errors - Whether to log an error message if the line is not found&#10;&#10;Return:&#10;   Translation;;d1,190;;b1,0;;m0;;estring $line;;pbool $log_errors;;p">
 </treenode>
-<treenode node="load;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Lang.php;f8;87;2;176;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    load($langfile, $idiom = &apos;&apos;, $return = FALSE, $add_suffix = TRUE, $alt_path = &apos;&apos;)&#10;&#10;Description&#10;     Load a language file&#10;&#10;Parameters:&#10;    mixed $langfile - Language file name&#10;    string $idiom - Language name (english, etc&#10;    bool $return - Whether to return the loaded array of translations&#10;    bool $add_suffix - Whether to add suffix to $langfile&#10;    string $alt_path - Alternative path to look for the language file&#10;&#10;Return:&#10;   |string[]	Array containing translations, if $return is set to TRUE;;d1,88;;b1,0;;m0;;emixed $langfile;;pstring $idiom;;pbool $return;;pbool $add_suffix;;pstring $alt_path;;p">
+<treenode node="load;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Lang.php;f8;87;2;176;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    load($langfile, $idiom = &apos;&apos;, $return = FALSE, $add_suffix = TRUE, $alt_path = &apos;&apos;)&#10;&#10;Description&#10;     Load a language file&#10;&#10;Parameters:&#10;    mixed $langfile - Language file name&#10;    string $idiom - Language name (english, etc&#10;    bool $return - Whether to return the loaded array of translations&#10;    bool $add_suffix - Whether to add suffix to $langfile&#10;    string $alt_path - Alternative path to look for the language file&#10;&#10;Return:&#10;   |string[] Array containing translations, if $return is set to TRUE;;d1,88;;b1,0;;m0;;emixed $langfile;;pstring $idiom;;pbool $return;;pbool $add_suffix;;pstring $alt_path;;p">
 </treenode>
 </treenode>
 <treenode node="CI_Loader;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f0;50;1;1404;;;;vpos;;v;;a;;r&#10;Definition&#10;    class CI_Loader&#10;&#10;Description&#10;     Loader Class;;d16,50;;b0,0;;m0;;e">
@@ -4127,13 +4127,13 @@
 </treenode>
 <treenode node="config;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;704;2;707;;;;vpos;;v;;abool;;r&#10;Definition&#10;    config($file, $use_sections = FALSE, $fail_gracefully = FALSE)&#10;&#10;Description&#10;     Config Loader&#10;&#10;Parameters:&#10;    string $file - Configuration file name&#10;    bool $use_sections - Whether configuration values should be loaded into their own section&#10;    bool $fail_gracefully - Whether to just return FALSE or display an error message&#10;&#10;Return:&#10;   TRUE if the file was loaded correctly or FALSE on failure;;d1,705;;b1,0;;m0;;estring $file;;pbool $use_sections;;pbool $fail_gracefully;;p">
 </treenode>
-<treenode node="database;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;376;2;401;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    database($params = &apos;&apos;, $return = FALSE, $query_builder = NULL)&#10;&#10;Description&#10;     Database Loader&#10;&#10;Parameters:&#10;    mixed $params - Database configuration options&#10;    bool $return - Whether to return the database object&#10;    bool $query_builder - Whether to enable Query Builder&#10;&#10;Return:&#10;   |bool	Database object if $return is set to TRUE,;;d1,377;;b1,0;;m0;;emixed $params;;pbool $return;;pbool $query_builder;;p">
+<treenode node="database;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;376;2;401;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    database($params = &apos;&apos;, $return = FALSE, $query_builder = NULL)&#10;&#10;Description&#10;     Database Loader&#10;&#10;Parameters:&#10;    mixed $params - Database configuration options&#10;    bool $return - Whether to return the database object&#10;    bool $query_builder - Whether to enable Query Builder&#10;&#10;Return:&#10;   |bool Database object if $return is set to TRUE,;;d1,377;;b1,0;;m0;;emixed $params;;pbool $return;;pbool $query_builder;;p">
 </treenode>
 <treenode node="dbforge;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;444;2;477;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    dbforge($db = NULL, $return = FALSE)&#10;&#10;Description&#10;     Load the Database Forge Class&#10;&#10;Parameters:&#10;    object $db - Database object&#10;    bool $return - Whether to return the DB Forge class object or not;;d1,445;;b1,0;;m0;;eobject $db;;pbool $return;;p">
 </treenode>
 <treenode node="dbutil;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;412;2;433;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    dbutil($db = NULL, $return = FALSE)&#10;&#10;Description&#10;     Load the Database Utilities Class&#10;&#10;Parameters:&#10;    object $db - Database object&#10;    bool $return - Whether to return the DB Utilities class object or not;;d1,413;;b1,0;;m0;;eobject $db;;pbool $return;;p">
 </treenode>
-<treenode node="driver;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;723;2;760;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    driver($library, $params = NULL, $object_name = NULL)&#10;&#10;Description&#10;     Driver Loader&#10;&#10;Parameters:&#10;    string|string[] $library - Driver name(s)&#10;    array $params - Optional parameters to pass to the driver&#10;    string $object_name - An optional object name to assign to&#10;&#10;Return:&#10;   |bool	Object or FALSE on failure if $library is a string;;d1,724;;b1,0;;m0;;estring|string[] $library;;parray $params;;pstring $object_name;;p">
+<treenode node="driver;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;723;2;760;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    driver($library, $params = NULL, $object_name = NULL)&#10;&#10;Description&#10;     Driver Loader&#10;&#10;Parameters:&#10;    string|string[] $library - Driver name(s)&#10;    array $params - Optional parameters to pass to the driver&#10;    string $object_name - An optional object name to assign to&#10;&#10;Return:&#10;   |bool Object or FALSE on failure if $library is a string;;d1,724;;b1,0;;m0;;estring|string[] $library;;parray $params;;pstring $object_name;;p">
 </treenode>
 <treenode node="file;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;507;2;510;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    file($path, $return = FALSE)&#10;&#10;Description&#10;     Generic File Loader&#10;&#10;Parameters:&#10;    string $path - File path&#10;    bool $return - Whether to return the file output&#10;&#10;Return:&#10;   |string;;d1,508;;b1,0;;m0;;estring $path;;pbool $return;;p">
 </treenode>
@@ -4149,7 +4149,7 @@
 </treenode>
 <treenode node="initialize;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;154;2;157;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    initialize()&#10;&#10;Description&#10;     Initializer;;d1,155;;b1,0;;m0;;e">
 </treenode>
-<treenode node="is_loaded;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;171;2;174;;;;vpos;;v;;astring;;r&#10;Definition&#10;    is_loaded($class)&#10;&#10;Description&#10;     Is Loaded&#10;&#10;Parameters:&#10;    string $class - Class name to check for&#10;&#10;Return:&#10;   |bool	Class object name if loaded or FALSE;;d1,172;;b1,0;;m0;;estring $class;;p">
+<treenode node="is_loaded;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;171;2;174;;;;vpos;;v;;astring;;r&#10;Definition&#10;    is_loaded($class)&#10;&#10;Description&#10;     Is Loaded&#10;&#10;Parameters:&#10;    string $class - Class name to check for&#10;&#10;Return:&#10;   |bool Class object name if loaded or FALSE;;d1,172;;b1,0;;m0;;estring $class;;p">
 </treenode>
 <treenode node="language;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Loader.php;f8;685;2;689;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    language($files, $lang = &apos;&apos;)&#10;&#10;Description&#10;     Language Loader&#10;&#10;Parameters:&#10;    string|string[] $files - List of language file names to load&#10;    string - Language name;;d1,686;;b1,0;;m0;;estring|string[] $files;;pstring;;p">
 </treenode>
@@ -4209,7 +4209,7 @@
 </treenode>
 <treenode node="_display;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Output.php;f8;414;2;542;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    _display($output = NULL)&#10;&#10;Description&#10;     Display Output&#10;&#10;Parameters:&#10;    string $output - Output data override;;d1,415;;b1,0;;m0;;estring $output;;p">
 </treenode>
-<treenode node="_display_cache;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Output.php;f8;655;2;721;;;;vpos;;v;;abool;;r&#10;Definition&#10;    _display_cache(&amp;$CFG, &amp;$URI)&#10;&#10;Description&#10;     Update/serve cached output&#10;&#10;Parameters:&#10;    object - &amp;$CFG	CI_Config class instance&#10;    object - &amp;$URI	CI_URI class instance&#10;&#10;Return:&#10;   TRUE on success or FALSE on failure;;d1,656;;b1,0;;m0;;eobject;;pobject;;p">
+<treenode node="_display_cache;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Output.php;f8;655;2;721;;;;vpos;;v;;abool;;r&#10;Definition&#10;    _display_cache(&amp;$CFG, &amp;$URI)&#10;&#10;Description&#10;     Update/serve cached output&#10;&#10;Parameters:&#10;    object - &amp;$CFG CI_Config class instance&#10;    object - &amp;$URI CI_URI class instance&#10;&#10;Return:&#10;   TRUE on success or FALSE on failure;;d1,656;;b1,0;;m0;;eobject;;pobject;;p">
 </treenode>
 <treenode node="_write_cache;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Output.php;f8;552;2;641;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    _write_cache($output)&#10;&#10;Description&#10;     Write Cache&#10;&#10;Parameters:&#10;    string $output - Output data to cache;;d1,553;;b1,0;;m0;;estring $output;;p">
 </treenode>
@@ -4379,7 +4379,7 @@
 </treenode>
 <treenode node="_ci_load_classes;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Session\Session.php;f11;174;2;229;;;;vpos;;v;;astring;;r&#10;Definition&#10;    _ci_load_classes($driver)&#10;&#10;Description&#10;     CI Load Classes&#10;&#10;Parameters:&#10;    string $driver - Driver name&#10;&#10;Return:&#10;   Driver class name;;d1,175;;b2,0;;m0;;estring $driver;;p">
 </treenode>
-<treenode node="_configure;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Session\Session.php;f11;241;2;300;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    _configure(&amp;$params)&#10;&#10;Description&#10;     Configuration&#10;&#10;Parameters:&#10;    array - &amp;$params	Input parameters;;d1,242;;b2,0;;m0;;earray;;p">
+<treenode node="_configure;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Session\Session.php;f11;241;2;300;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    _configure(&amp;$params)&#10;&#10;Description&#10;     Configuration&#10;&#10;Parameters:&#10;    array - &amp;$params Input parameters;;d1,242;;b2,0;;m0;;earray;;p">
 </treenode>
 <treenode node="_configure_sid_length;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\libraries\Session\Session.php;f11;319;2;374;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    _configure_sid_length()&#10;&#10;Description&#10;     Configure session ID length;;d1,320;;b2,0;;m0;;e">
 </treenode>
@@ -6832,28 +6832,28 @@
 <treenode node="getIterator;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\dompdf\dompdf\src\Frame\FrameTreeList.php;f11;30;5;33;;;;vpos;;v;;aFrameTreeIterator;;r&#10;Definition&#10;    getIterator()&#10;&#10;Description&#10;     ;;d4,31;;b1,0;;m0;;e">
 </treenode>
 </treenode>
-<treenode node="Functions;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f0;4;1;323;;;;vpos;;v;;aShared_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;13;2;18;;;;vpos;;v;;a;;r;;d1,14;;b1,0;;m0;;e">
+<treenode node="Functions;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f0;4;1;309;;;;vpos;;v;;aShared_Controller;;c;;r;;d41,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;12;2;16;;;;vpos;;v;;a;;r;;d30,12;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f9;198;2;260;;;;vpos;;v;;a;;r;;d1,199;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f9;186;2;248;;;;vpos;;v;;a;;r;;d41,186;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f9;179;2;194;;;;vpos;;v;;a;;r;;d1,180;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f9;168;2;182;;;;vpos;;v;;a;;r;;d44,168;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;52;2;84;;;;vpos;;v;;a;;r;;d1,53;;b1,0;;m0;;e">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;49;2;80;;;;vpos;;v;;a;;r;;d22,49;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;283;2;322;;;;vpos;;v;;a;;r;;d1,284;;b1,0;;m0;;eid;;p">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;270;2;308;;;;vpos;;v;;a;;r;;d34,270;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="ajaxdata;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;262;2;281;;;;vpos;;v;;a;;r;;d1,263;;b1,0;;m0;;e">
+<treenode node="ajaxdata;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;250;2;268;;;;vpos;;v;;a;;r;;d27,250;;b1,0;;m0;;e">
 </treenode>
-<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;121;2;136;;;;vpos;;v;;a;;r;;d1,122;;b1,0;;m0;;euser_id;;p">
+<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;113;2;127;;;;vpos;;v;;a;;r;;d38,113;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;21;2;50;;;;vpos;;v;;a;;r;;d1,22;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;19;2;47;;;;vpos;;v;;a;;r;;d24,19;;b1,0;;m0;;e">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;87;2;118;;;;vpos;;v;;a;;r;;d1,88;;b1,0;;m0;;e">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;83;2;110;;;;vpos;;v;;a;;r;;d25,83;;b1,0;;m0;;e">
 </treenode>
-<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;165;2;176;;;;vpos;;v;;a;;r;;d1,166;;b1,0;;m0;;euser_id;;p">
+<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;154;2;165;;;;vpos;;v;;a;;r;;d39,154;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;138;2;162;;;;vpos;;v;;a;;r;;d1,139;;b1,0;;m0;;e">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php;f8;129;2;151;;;;vpos;;v;;a;;r;;d25,129;;b1,0;;m0;;e">
 </treenode>
 </treenode>
 <treenode node="GD;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\dompdf\dompdf\src\Adapter\GD.php;f0;23;1;1086;;;;vpos;;v;;aCanvas;;c;;r&#10;Definition&#10;    class GD implements Canvas&#10;&#10;Description&#10;     Image rendering interface;;d0,24;;b0,0;;m0;;e">
@@ -8238,26 +8238,26 @@
 <treenode node="map;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\phenx\php-font-lib\src\FontLib\Table\Type\nameRecord.php;f9;35;3;39;;;;vpos;;v;;a;;r;;d29,35;;b1,0;;m0;;edata;;p">
 </treenode>
 </treenode>
-<treenode node="News;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f0;4;1;239;;C:\OSPanel\domains\localhost\reg\application\controllers\News.php;f0;3;1;38;;;;vpos;;v;;aShared_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;13;2;18;;C:\OSPanel\domains\localhost\reg\application\controllers\News.php;f11;7;5;11;;;;vpos;;v;;a;;r;;d1,14;;b1,0;;m0;;e">
+<treenode node="News;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\News.php;f0;3;1;38;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f0;4;1;221;;;;vpos;;v;;aShared_Controller;;c;;r;;d36,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\News.php;f11;7;5;11;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;12;2;16;;;;vpos;;v;;a;;r;;d30,12;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f9;168;2;203;;;;vpos;;v;;a;;r;;d1,169;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f9;155;2;187;;;;vpos;;v;;a;;r;;d41,155;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f9;147;2;164;;;;vpos;;v;;a;;r;;d1,148;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f9;135;2;151;;;;vpos;;v;;a;;r;;d44,135;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;55;2;65;;;;vpos;;v;;a;;r;;d1,56;;b1,0;;m0;;e">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;52;2;61;;;;vpos;;v;;a;;r;;d22,52;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;205;2;238;;;;vpos;;v;;a;;r;;d1,206;;b1,0;;m0;;e">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;189;2;220;;;;vpos;;v;;a;;r;;d23,189;;b1,0;;m0;;e">
 </treenode>
-<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;84;2;101;;;;vpos;;v;;a;;r;;d1,85;;b1,0;;m0;;euser_id;;p">
+<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;78;2;92;;;;vpos;;v;;a;;r;;d38,78;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;21;2;53;;C:\OSPanel\domains\localhost\reg\application\controllers\News.php;f11;13;5;34;;;;vpos;;v;;a;;r;;d1,22;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\News.php;f11;13;5;34;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;19;2;50;;;;vpos;;v;;a;;r;;d24,19;;b1,0;;m0;;e">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;68;2;81;;;;vpos;;v;;a;;r;;d1,69;;b1,0;;m0;;e">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;64;2;75;;;;vpos;;v;;a;;r;;d25,64;;b1,0;;m0;;e">
 </treenode>
-<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;132;2;144;;;;vpos;;v;;a;;r;;d1,133;;b1,0;;m0;;euser_id;;p">
+<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;121;2;132;;;;vpos;;v;;a;;r;;d39,121;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;103;2;129;;;;vpos;;v;;a;;r;;d1,104;;b1,0;;m0;;eid;;p">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\News.php;f8;94;2;118;;;;vpos;;v;;a;;r;;d28,94;;b1,0;;m0;;eid;;p">
 </treenode>
 </treenode>
 <treenode node="Not;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\Not.php;f0;3;1;19;;;;vpos;;v;;aCI_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
@@ -8280,34 +8280,34 @@
 <treenode node="position;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\dompdf\dompdf\src\Positioner\NullPositioner.php;f4;23;5;26;;;;vpos;;v;;a;;r&#10;Definition&#10;    position(AbstractFrameDecorator $frame)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    AbstractFrameDecorator $frame;;d4,24;;b0,0;;m0;;eAbstractFrameDecorator $frame;;p">
 </treenode>
 </treenode>
-<treenode node="Offer;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php;f0;3;1;56;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f0;4;1;577;;C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php;f0;3;1;71;;;;vpos;;v;;aUsermeta_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php;f11;10;5;16;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;14;2;23;;C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php;f8;10;2;16;;;;vpos;;v;;a;;r;;d4,11;;b1,0;;m0;;e">
+<treenode node="Offer;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php;f0;3;1;56;;C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php;f0;3;1;71;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f0;4;1;558;;;;vpos;;v;;aShared_Controller;;c;;r;;d37,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php;f11;10;5;16;;C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php;f8;10;2;16;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;13;2;21;;;;vpos;;v;;a;;r;;d30,13;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_extraCheck;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;568;2;576;;;;vpos;;v;;a;;r;;d1,569;;b3,0;;m0;;e">
+<treenode node="_extraCheck;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;550;2;557;;;;vpos;;v;;a;;r;;d31,550;;b3,0;;m0;;e">
 </treenode>
-<treenode node="_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;538;2;566;;;;vpos;;v;;a;;r;;d1,539;;b3,0;;m0;;etable_row;;p">
+<treenode node="_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;521;2;548;;;;vpos;;v;;a;;r;;d34,521;;b3,0;;m0;;etable_row;;p">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;261;2;441;;;;vpos;;v;;a;;r;;d1,262;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;253;2;429;;;;vpos;;v;;a;;r;;d41,253;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;229;2;257;;;;vpos;;v;;a;;r;;d1,230;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f9;222;2;249;;;;vpos;;v;;a;;r;;d44,222;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;59;2;69;;;;vpos;;v;;a;;r;;d1,60;;b1,0;;m0;;estatus;;p">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;56;2;65;;;;vpos;;v;;a;;r;;d33,56;;b1,0;;m0;;estatus;;p">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;460;2;509;;;;vpos;;v;;a;;r;;d1,461;;b1,0;;m0;;e">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;446;2;493;;;;vpos;;v;;a;;r;;d23,446;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax_location;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;443;2;458;;;;vpos;;v;;a;;r;;d1,444;;b1,0;;m0;;e">
+<treenode node="ajax_location;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;431;2;444;;;;vpos;;v;;a;;r;;d32,431;;b1,0;;m0;;e">
 </treenode>
-<treenode node="copy_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;511;2;536;;;;vpos;;v;;a;;r;;d1,512;;b1,0;;m0;;eid;;p">
+<treenode node="copy_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;495;2;519;;;;vpos;;v;;a;;r;;d30,495;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;118;2;155;;;;vpos;;v;;a;;r;;d1,119;;b1,0;;m0;;eid;;p">
+<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;113;2;149;;;;vpos;;v;;a;;r;;d33,113;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php;f11;18;5;52;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;26;2;57;;C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php;f8;18;2;67;;;;vpos;;v;;a;;r;;d4,19;;b1,0;;m0;;eid;;p">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php;f11;18;5;52;;C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php;f8;18;2;67;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;24;2;54;;;;vpos;;v;;a;;r;;d24,24;;b1,0;;m0;;e">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;70;2;116;;;;vpos;;v;;a;;r;;d1,71;;b1,0;;m0;;estatus;;p">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;66;2;111;;;;vpos;;v;;a;;r;;d37,66;;b1,0;;m0;;estatus;;p">
 </treenode>
-<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;210;2;226;;;;vpos;;v;;a;;r;;d1,211;;b1,0;;m0;;eid;;p">
+<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;203;2;219;;;;vpos;;v;;a;;r;;d34,203;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;157;2;208;;;;vpos;;v;;a;;r;;d1,158;;b1,0;;m0;;estatus;;p">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Offer.php;f8;151;2;201;;;;vpos;;v;;a;;r;;d36,151;;b1,0;;m0;;estatus;;p">
 </treenode>
 </treenode>
 <treenode node="Offers;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\user\Offers.php;f0;3;1;36;;C:\OSPanel\domains\localhost\reg\application\controllers\Offers.php;f0;3;1;192;;;;vpos;;v;;aUser_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
@@ -9861,9 +9861,9 @@
 </treenode>
 </treenode>
 <treenode node="Selector;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Property\Selector.php;f0;7;1;73;;;;vpos;;v;;a;;r&#10;Definition&#10;    class Selector&#10;&#10;Description&#10;     Class representing a single CSS selector. Selectors have to be split by the comma prior to being passed into this class.;;d15,7;;b0,0;;m0;;e">
-<treenode node="ELEMENTS_AND_PSEUDO_ELEMENTS_RX;PHP:PHP Word;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Property\Selector.php;f6;29;38;29;;;;vpos;;v;;a;;r&apos;/&#10;	((^|[\s\+\&gt;\~]+)[\w]+   # elements&#10;	|&#10;	\:{1,2}(                # pseudo-elements&#10;		after|before|first-letter|first-line|selection&#10;	))&#10;	/ix&apos;;;d-1,-1;;b0,0;;m0;;e">
+<treenode node="ELEMENTS_AND_PSEUDO_ELEMENTS_RX;PHP:PHP Word;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Property\Selector.php;f6;29;38;29;;;;vpos;;v;;a;;r&apos;/&#10; ((^|[\s\+\&gt;\~]+)[\w]+   # elements&#10; |&#10; \:{1,2}(                # pseudo-elements&#10;  after|before|first-letter|first-line|selection&#10; ))&#10; /ix&apos;;;d-1,-1;;b0,0;;m0;;e">
 </treenode>
-<treenode node="NON_ID_ATTRIBUTES_AND_PSEUDO_CLASSES_RX;PHP:PHP Word;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Property\Selector.php;f6;10;46;10;;;;vpos;;v;;a;;r&apos;/&#10;	(\.[\w]+)                   # classes&#10;	|&#10;	\[(\w+)                     # attributes&#10;	|&#10;	(\:(                        # pseudo classes&#10;		link|visited|active&#10;		|hover|focus&#10;		|lang&#10;		|target&#10;		|enabled|disabled|checked|indeterminate&#10;		|root&#10;		|nth-child|nth-last-child|nth-of-type|nth-last-of-type&#10;		|first-child|last-child|first-of-type|last-of-type&#10;		|only-child|only-of-type&#10;		|empty|contains&#10;	))&#10;	/ix&apos;;;d-1,-1;;b0,0;;m0;;e">
+<treenode node="NON_ID_ATTRIBUTES_AND_PSEUDO_CLASSES_RX;PHP:PHP Word;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Property\Selector.php;f6;10;46;10;;;;vpos;;v;;a;;r&apos;/&#10; (\.[\w]+)                   # classes&#10; |&#10; \[(\w+)                     # attributes&#10; |&#10; (\:(                        # pseudo classes&#10;  link|visited|active&#10;  |hover|focus&#10;  |lang&#10;  |target&#10;  |enabled|disabled|checked|indeterminate&#10;  |root&#10;  |nth-child|nth-last-child|nth-of-type|nth-last-of-type&#10;  |first-child|last-child|first-of-type|last-of-type&#10;  |only-child|only-of-type&#10;  |empty|contains&#10; ))&#10; /ix&apos;;;d-1,-1;;b0,0;;m0;;e">
 </treenode>
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Property\Selector.php;f8;40;2;45;;;;vpos;;v;;a;;r;;d73,40;;b1,0;;m0;;esSelector;;pbCalculateSpecificity;;p">
 </treenode>
@@ -9918,14 +9918,14 @@
 <treenode node="withMultibyteSupport;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Settings.php;f8;35;2;38;;;;vpos;;v;;a;;r;;d65,35;;b1,0;;m0;;ebMultibyteSupport;;p">
 </treenode>
 </treenode>
-<treenode node="Settings_email;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f0;4;1;94;;;;vpos;;v;;aAdmin_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f11;9;5;17;;;;vpos;;v;;a;;r;;d4,10;;b1,0;;m0;;e">
+<treenode node="Settings_email;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f0;4;1;89;;;;vpos;;v;;aAdmin_Controller;;c;;r;;d45,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f8;8;2;15;;;;vpos;;v;;a;;r;;d30,8;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f12;66;5;89;;;;vpos;;v;;a;;r;;d4,67;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f9;64;2;84;;;;vpos;;v;;a;;r;;d41,64;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f12;49;5;62;;;;vpos;;v;;a;;r;;d4,50;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f9;48;2;60;;;;vpos;;v;;a;;r;;d46,48;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f11;19;5;37;;;;vpos;;v;;a;;r;;d4,20;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_email.php;f8;17;2;36;;;;vpos;;v;;a;;r;;d24,17;;b1,0;;m0;;e">
 </treenode>
 </treenode>
 <treenode node="Settings_generic;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_generic.php;f0;4;1;169;;;;vpos;;v;;aAdmin_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
@@ -10984,12 +10984,12 @@
 <treenode node="setURL;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Value\URL.php;f8;14;2;16;;;;vpos;;v;;a;;r;;d41,14;;b1,0;;m0;;eoURL;;p">
 </treenode>
 </treenode>
-<treenode node="User;PHP:Class Name;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\user.php;f0;3;1;52;;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\NewFile.php;f0;3;1;52;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f0;4;1;159;;C:\OSPanel\domains\localhost\reg\application\controllers\faker\User.php;f0;3;1;52;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f0;4;1;313;;;;vpos;;v;;aCI_Controller;;c;;r;;d32,3;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\user.php;f8;7;2;9;;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\NewFile.php;f8;7;2;9;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;15;2;22;;C:\OSPanel\domains\localhost\reg\application\controllers\faker\User.php;f8;7;2;9;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;10;5;15;;;;vpos;;v;;a;;r;;d30,7;;b1,0;;m0;;e">
+<treenode node="User;PHP:Class Name;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\user.php;f0;3;1;52;;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\NewFile.php;f0;3;1;52;;C:\OSPanel\domains\localhost\reg\application\controllers\faker\User.php;f0;3;1;52;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f0;4;1;313;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f0;4;1;153;;;;vpos;;v;;aShared_Controller;;c;;r;;d36,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\user.php;f8;7;2;9;;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\NewFile.php;f8;7;2;9;;C:\OSPanel\domains\localhost\reg\application\controllers\faker\User.php;f8;7;2;9;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;10;5;15;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;14;2;20;;;;vpos;;v;;a;;r;;d30,14;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;104;1;158;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f12;222;5;272;;;;vpos;;v;;a;;r;;d0,105;;b3,0;;m0;;ecandidates;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f12;222;5;272;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f9;102;2;152;;;;vpos;;v;;a;;r;;d40,102;;b3,0;;m0;;ecandidates;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;82;1;101;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f12;188;5;213;;;;vpos;;v;;a;;r;;d0,83;;b3,0;;m0;;e">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f12;188;5;213;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f9;81;2;99;;;;vpos;;v;;a;;r;;d40,81;;b3,0;;m0;;e">
 </treenode>
 <treenode node="_set_form_validation_password;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f12;215;5;220;;;;vpos;;v;;a;;r;;d4,216;;b3,0;;m0;;e">
 </treenode>
@@ -10999,13 +10999,15 @@
 </treenode>
 <treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;90;5;132;;;;vpos;;v;;a;;r;;d4,91;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\user.php;f8;11;2;50;;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\NewFile.php;f8;11;2;50;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;25;2;37;;C:\OSPanel\domains\localhost\reg\application\controllers\faker\User.php;f8;11;2;50;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;17;5;41;;;;vpos;;v;;a;;r;;d24,11;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\user.php;f8;11;2;50;;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\faker\NewFile.php;f8;11;2;50;;C:\OSPanel\domains\localhost\reg\application\controllers\faker\User.php;f8;11;2;50;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;17;5;41;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;23;2;34;;;;vpos;;v;;a;;r;;d24,23;;b1,0;;m0;;e">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;39;1;81;;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;54;5;87;;;;vpos;;v;;a;;r;;d1,40;;b1,0;;m0;;e">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;54;5;87;;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;36;2;76;;;;vpos;;v;;a;;r;;d25,36;;b1,0;;m0;;e">
 </treenode>
 <treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;173;5;185;;;;vpos;;v;;a;;r;;d4,174;;b1,0;;m0;;euser_id;;p">
 </treenode>
 <treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php;f11;133;5;171;;;;vpos;;v;;a;;r;;d4,134;;b1,0;;m0;;e">
+</treenode>
+<treenode node="user_history;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php;f8;78;2;80;;;;vpos;;v;;a;;r;;d34,78;;b1,0;;m0;;eid;;p">
 </treenode>
 </treenode>
 <treenode node="User_Controller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\User_Controller.php;f0;2;1;68;;;;vpos;;v;;aCI_Controller;;c;;r;;d0,3;;b0,0;;m0;;e">
@@ -11264,7 +11266,7 @@
 </treenode>
 <treenode node="auto_link;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\url_helper.php;f1;392;2;428;;;;vpos;;v;;astring;;r&#10;Definition&#10;    auto_link($str, $type = &apos;both&apos;, $popup = FALSE)&#10;&#10;Description&#10;     Auto-linker&#10;&#10;Parameters:&#10;    string - the string&#10;    string - the type: email, url, or both&#10;    bool - whether to create pop-up links;;d1,393;;b0,0;;m0;;estring;;pstring;;pbool;;p">
 </treenode>
-<treenode node="auto_typography;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\typography_helper.php;f1;78;2;83;;;;vpos;;v;;astring;;r&#10;Definition&#10;    auto_typography($str, $reduce_linebreaks = FALSE)&#10;&#10;Description&#10;     Auto Typography Wrapper Function&#10;&#10;Parameters:&#10;    string $str&#10;    bool $reduce_linebreaks - = FALSE	whether to reduce multiple instances of double newlines to two;;d1,79;;b0,0;;m0;;estring $str;;pbool $reduce_linebreaks;;p">
+<treenode node="auto_typography;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\typography_helper.php;f1;78;2;83;;;;vpos;;v;;astring;;r&#10;Definition&#10;    auto_typography($str, $reduce_linebreaks = FALSE)&#10;&#10;Description&#10;     Auto Typography Wrapper Function&#10;&#10;Parameters:&#10;    string $str&#10;    bool $reduce_linebreaks - = FALSE whether to reduce multiple instances of double newlines to two;;d1,79;;b0,0;;m0;;estring $str;;pbool $reduce_linebreaks;;p">
 </treenode>
 <treenode node="base_url;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\url_helper.php;f1;84;2;87;;;;vpos;;v;;astring;;r&#10;Definition&#10;    base_url($uri = &apos;&apos;, $protocol = NULL)&#10;&#10;Description&#10;     Base URL&#10;&#10;Parameters:&#10;    string $uri&#10;    string $protocol;;d1,85;;b0,0;;m0;;estring $uri;;pstring $protocol;;p">
 </treenode>
@@ -11284,7 +11286,7 @@
 </treenode>
 <treenode node="current_url;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\url_helper.php;f1;102;2;106;;;;vpos;;v;;astring;;r&#10;Definition&#10;    current_url()&#10;&#10;Description&#10;     Current URL;;d1,103;;b0,0;;m0;;e">
 </treenode>
-<treenode node="date_range;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\date_helper.php;f1;646;2;700;;;;vpos;;v;;aarray;;r&#10;Definition&#10;    date_range($unix_start = &apos;&apos;, $mixed = &apos;&apos;, $is_unix = TRUE, $format = &apos;Y-m-d&apos;)&#10;&#10;Description&#10;     Date range&#10;&#10;Parameters:&#10;    int - unix_start	UNIX timestamp of period start date&#10;    int - unix_end|days	UNIX timestamp of period end date&#10;    mixed - is_unix		Specifies whether the second parameter&#10;    string - date_format	Output date format, same as in date();;d1,647;;b0,0;;m0;;eint;;pint;;pmixed;;pstring;;p">
+<treenode node="date_range;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\date_helper.php;f1;646;2;700;;;;vpos;;v;;aarray;;r&#10;Definition&#10;    date_range($unix_start = &apos;&apos;, $mixed = &apos;&apos;, $is_unix = TRUE, $format = &apos;Y-m-d&apos;)&#10;&#10;Description&#10;     Date range&#10;&#10;Parameters:&#10;    int - unix_start UNIX timestamp of period start date&#10;    int - unix_end|days UNIX timestamp of period end date&#10;    mixed - is_unix  Specifies whether the second parameter&#10;    string - date_format Output date format, same as in date();;d1,647;;b0,0;;m0;;eint;;pint;;pmixed;;pstring;;p">
 </treenode>
 <treenode node="date_to_db;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\helpers\date_helper.php;f4;4;5;16;;;;vpos;;v;;a;;r;;d4,5;;b0,0;;m0;;edate;;p">
 </treenode>
@@ -11300,7 +11302,7 @@
 </treenode>
 <treenode node="directory_map;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\directory_helper.php;f1;66;2;99;;;;vpos;;v;;aarray;;r&#10;Definition&#10;    directory_map($source_dir, $directory_depth = 0, $hidden = FALSE)&#10;&#10;Description&#10;     Create a Directory Map&#10;&#10;Parameters:&#10;    string $source_dir - Path to source&#10;    int $directory_depth - Depth of directories to traverse&#10;    bool $hidden - Whether to show hidden files;;d1,67;;b0,0;;m0;;estring $source_dir;;pint $directory_depth;;pbool $hidden;;p">
 </treenode>
-<treenode node="doctype;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\html_helper.php;f1;231;2;257;;;;vpos;;v;;astring;;r&#10;Definition&#10;    doctype($type = &apos;html5&apos;)&#10;&#10;Description&#10;     Doctype&#10;&#10;Parameters:&#10;    string - type	The doctype to be generated;;d1,232;;b0,0;;m0;;estring;;p">
+<treenode node="doctype;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\html_helper.php;f1;231;2;257;;;;vpos;;v;;astring;;r&#10;Definition&#10;    doctype($type = &apos;html5&apos;)&#10;&#10;Description&#10;     Doctype&#10;&#10;Parameters:&#10;    string - type The doctype to be generated;;d1,232;;b0,0;;m0;;estring;;p">
 </treenode>
 <treenode node="element;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\array_helper.php;f1;64;2;67;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    element($item, array $array, $default = NULL)&#10;&#10;Description&#10;     Element&#10;&#10;Parameters:&#10;    string&#10;    array&#10;    mixed&#10;&#10;Return:&#10;   depends on what the array contains;;d1,65;;b0,0;;m0;;estring;;parray;;pmixed;;p">
 </treenode>
@@ -11546,7 +11548,7 @@
 </treenode>
 <treenode node="word_limiter;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\text_helper.php;f1;63;2;78;;;;vpos;;v;;astring;;r&#10;Definition&#10;    word_limiter($str, $limit = 100, $end_char = &apos;&amp;#8230;s&apos;)&#10;&#10;Description&#10;     Word Limiter&#10;&#10;Parameters:&#10;    string&#10;    int&#10;    string - the end character;;d1,64;;b0,0;;m0;;estring;;pint;;pstring;;p">
 </treenode>
-<treenode node="word_wrap;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\text_helper.php;f1;444;2;523;;;;vpos;;v;;astring;;r&#10;Definition&#10;    word_wrap($str, $charlim = 76)&#10;&#10;Description&#10;     Word Wrap&#10;&#10;Parameters:&#10;    string $str - the text string&#10;    int $charlim - = 76	the number of characters to wrap at;;d1,445;;b0,0;;m0;;estring $str;;pint $charlim;;p">
+<treenode node="word_wrap;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\text_helper.php;f1;444;2;523;;;;vpos;;v;;astring;;r&#10;Definition&#10;    word_wrap($str, $charlim = 76)&#10;&#10;Description&#10;     Word Wrap&#10;&#10;Parameters:&#10;    string $str - the text string&#10;    int $charlim - = 76 the number of characters to wrap at;;d1,445;;b0,0;;m0;;estring $str;;pint $charlim;;p">
 </treenode>
 <treenode node="write_file;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\helpers\file_helper.php;f1;64;2;85;;;;vpos;;v;;abool;;r&#10;Definition&#10;    write_file($path, $data, $mode = &apos;wb&apos;)&#10;&#10;Description&#10;     Write File&#10;&#10;Parameters:&#10;    string $path - File path&#10;    string $data - Data to write&#10;    string $mode - fopen() mode (default: &apos;wb&apos;);;d1,65;;b0,0;;m0;;estring $path;;pstring $data;;pstring $mode;;p">
 </treenode>

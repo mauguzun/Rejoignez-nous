@@ -18,7 +18,7 @@
 				</div>
 			</div>
 
-
+<script src="<?= base_url().'static/js/update.js'?>" ></script>
 			<div class="site-info">
 				<span>© 2015 ASL Airlines</span>
 				<span class="separateur-footer">-</span>

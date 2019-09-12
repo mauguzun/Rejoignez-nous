@@ -482,8 +482,8 @@ class Auth extends CI_Controller
 			redirect('auth/login');
 		}
 		
-		if(isset($_GET) &&  isset($_GET['create_first']))
-			$this->session->set_flashdata('message', lang('Create account first'));
+		/*if(isset($_GET) &&  isset($_GET['create_first']))
+			$this->session->set_flashdata('message', lang('Create account first'));*/
 
 		$tables          = $this->config->item('tables', 'ion_auth');
 		$identity_column = $this->config->item('identity', 'ion_auth');

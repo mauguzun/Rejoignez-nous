@@ -3,63 +3,137 @@
 	<div class="breadcrumbs eap-breadcrumbs">
 		<a href="<?= base_url()?>" ><span><?= lang('Careers') ?></span> </a>  &gt; 
 		<a href="#" ><span class="current-page">
-				<?php echo lang('create_user_heading');?></span></a></div>
+				<?php echo lang('create_user_heading');?></span></a>
+	</div>
 
-	<h1 class="post-title"><?php echo lang('create_user_heading');?></h1><br>
+	<!--UPDATE-->    
+	<div class="view_column_row row_mb3">
+		<div class="view_first_column view_rightside_title">
+		</div>
+		<div class="view_two_column">
+			<h1 class="post-title mb_form_title">
+				<?php echo lang('create_user_heading');?>   </h1>
+		</div>
+	</div>
+	<div class="view_column_row row_mb3">
+		<div class="view_first_column view_rightside_title">
+		</div>
+		<div class="view_two_column">
+		
+			<?
+			if(isset($message)) :?>
+			<div class="alert alert-warning" role="alert">
+				<i class="fas fa-info-circle"></i> 
+				<?= $message ?>
+			</div>
+			<? else :?>
 	
-<!--	<?
-	if(isset($message)) :?>
-	<div class="alert alert-danger" role="alert"><i class="fas fa-info-circle"></i>
-		<?php echo $message;?>
-	</div>
-	<?
-	else :?>-->
-
-	<div class="alert alert-primary" role="alert"><i class="fas fa-info-circle"></i>
-		<? echo lang('create_user_subheading');?>
-	</div>
-
-<!--	<? endif ; ?>-->
-
-	<?php echo form_open("auth/create_user",[ "style"=>"margin-bottom: 270px"]);?>
-	<div class="form-group">
-
-
-		<?php echo form_input($email);?>
-
-	</div>
-
-
-	<div class="form-group">
-
-		<?php echo form_input($password);?>		</div>
-
-	<div class="form-group">
-		<?php echo form_input($password_confirm);?>
-	</div>
-	<div class="form-group">
-
-		<div class="custom-control custom-checkbox mr-sm-2">
-			<input required='require' type="checkbox" class="custom-control-input" id="customControlAutosizing">
-			<label  class="custom-control-label" for="customControlAutosizing">
-				<a  target="_blank" href="<?=  $privacy_pdf 	?>"><?= lang('register_page_link')?></a>
-			</label>
+			<div class="alert alert-primary" role="alert">
+				<i class="fas fa-info-circle"></i> 
+				<?= lang('Please follow')?>
+				<a href="<?= base_url()?>/auth/login"><?= lang('click here to login')?></a>
+			</div>
+	
+			<? endif ;?>
+			
+			
+			
+			
 		</div>
 	</div>
 
 
+	<form action="<?= base_url()?>/auth/create_user" style="margin-bottom: 270px" method="post" accept-charset="utf-8">
+	
+	
+		<div class="view_column_row row_mb3">
+			<div class="view_first_column view_rightside_title">
+				<?php echo lang('login_identity_label', 'identity');?>
+			</div>
+			<div class="view_two_column v_centered_input">
+				<input type="email" class="form-control edit_form_input err_availble" name="email" value="" id="identity" required="require" value="">
+				<div class="invalid-feedback" id="email_error">
+					<?= lang('Incorrect email')?>  
+				</div>
+				<div class="valid-feedback" id="email_success">
+					<?= lang('Email accepted')?>
+				</div>
+			</div>
+		</div>
+
+		<div class="view_column_row row_mb3">
+			<div class="view_first_column view_rightside_title">
+				<?php echo lang('login_password_label', 'password');?>
+			</div>
+			<div class="view_two_column v_centered_input">
+				<input type="password" class="form-control edit_form_input err_availble" name="password" value="" id="password" required="require">
+				<div class="invalid-feedback" id="pwd_error">
+					<?= lang('Invalid Password')?>
+				</div>
+				<div class="valid-feedback" id="pwd_success">
+					<?= lang('Password accepted')?>
+				</div>
+			</div>
+		</div>
+
+		<div class="view_column_row row_mb3">
+			<div class="view_first_column view_rightside_title">
+				<?php echo lang('create_user_password_confirm_label', 'password');?>
+			</div>
+			<div class="view_two_column v_centered_input">
+				<input type="password" class="form-control edit_form_input err_availble" name="password_confirm" value="" id="password_confirm" required="require">
+				<div class="invalid-feedback" id="pwd_error_conf">
+					<?= lang("Password don't match")?>
+				</div>
+				<div class="valid-feedback" id="pwd_success_conf">
+					<?= lang("Password matches")?>
+				</div>
+			</div>
+		</div>
+	
+		<div class="view_column_row row_mb">
+			<div class="view_first_column view_rightside_title">
+			</div>
+			<div class="view_two_column">
+				<div class="custom-control custom-checkbox mr-sm-2">
+					<input required='require' type="checkbox" class="custom-control-input" id="customControlAutosizing">
+					<label  class="custom-control-label" for="customControlAutosizing">
+						<a  target="_blank" href="<?=  $privacy_pdf 	?>"><?= lang('register_page_link')?></a>
+
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="view_column_row row_mb3">
+			<div class="view_first_column view_rightside_title">
+
+			</div>
+			<div class="view_two_column">
+				<button class="blue_btn" type="submit" id="register_form">
+					<?= lang('create_user_submit_btn')?>
+				</button>
+
+            
+			</div>
+		</div>
+    
+		<div class="view_column_row row_mb3">
+			<div class="view_first_column view_rightside_title">
+			</div>
+			<div class="view_two_column">
+				<div class="alert alert-danger" role="alert">
+					<?= $message ?><br>
+					<?= sprintf(lang('change_password_new_password_label'),3)?> <br>
+				
+				</div>
+			</div>
+		</div>
 
 
-	<div class="form-group">
-		<button class="btn btn-primary"
-		type="submit" style="padding-left:20px; padding-right:20px;"><?= lang('create_user_submit_btn')?></button>
+	</form>
 
-	</div>
-
-
-	<?php echo form_close();?>
-
-
+	<!--loader-->
 
 
 

@@ -257,3 +257,17 @@ $lang['Sort by locaiton'] = 'Trier par lieu';
 $lang['Sort by activity'] = 'Trier par domaine d\'activité';
 $lang['Sort by category'] = 'Trier par catégorie';
 
+$lang['Incorrect email'] = 'Incorrect email';
+$lang['Email accepted'] = 'Email accepted';
+$lang['Invalid Password'] = 'Invalid Password';
+$lang['Password accepted'] = 'Password accepted';
+$lang['Please use'] = 'Please use the form below to login. If you do not have an account yet, please';
+$lang['click here to create one'] = 'click here to create one';
+
+$lang['Please follow'] = 'Please follow the following steps to create your account.Already have an account? Please ';
+$lang['click here to login'] = 'click here to login ';
+
+$lang['Please follow'] = 'Please follow the following steps to create your account.Already have an account? Please ';
+$lang['click here to login'] = 'click here to login ';
+$lang["Password don't match"] = "Password don't match";
+$lang['Password match'] = 'Password match ';
