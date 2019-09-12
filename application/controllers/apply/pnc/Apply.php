@@ -32,6 +32,8 @@ class Apply extends Apply_Pnc_Controller
 			}
 		}
 	
+	
+//	var_dump($tables);
 		
 		
 		foreach($tables as $tab=>$table)
@@ -47,10 +49,10 @@ class Apply extends Apply_Pnc_Controller
 			}
 			else if ($table == 'applicaiton_misc'){
 				$query = $this->Crud->get_row( ['application_id'=>$app['id']],$table);
-				if ($query['salary'] == null){
+				/*if ($query['salary'] == null){
 					$url = $this->get_page($offer_id,'other');
 					 redirect($url.FILL_FORM);
-				}
+				}*/
 				
 			}
 		}
@@ -77,7 +79,10 @@ class Apply extends Apply_Pnc_Controller
 		}
 		
 		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		redirect($this->get_page($offer_id,'main'));
+		
+		
+		
+	//	redirect($this->get_page($offer_id,'main'));
 
 	/*	if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){
 			$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));

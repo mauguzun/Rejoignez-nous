@@ -129,7 +129,13 @@ class Apply_Un_Controller extends Apply_Controller
 		foreach($query as $value)
 		{
 
-			$show_me[$value['id']] = base_url().$this->uploadconfig->get("/".$value['type'])['upload_path'].'/'.$value['file'];
+			$show_me[$value['id']] = 
+			[
+				'img'=>base_url().$this->uploadconfig->get("/".$value['type'])['upload_path'].'/'.$value['file'],
+				'name'=>$value['file']
+			];
+			
+			
 		}
 		$this->load->view('front/apply/part/ajaxuploader',
 			[

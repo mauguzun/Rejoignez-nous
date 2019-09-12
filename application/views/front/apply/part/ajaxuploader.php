@@ -43,7 +43,7 @@
 		<?
 		foreach($show_me as $id=>$oneimg) :?>
 
-		<?= img_div_new($oneimg,$id) ?>
+		<?= img_div_new($oneimg['img'],$id,$oneimg['name']) ?>
 		<? endforeach ;?>
 
 		<? endif;?>

@@ -45,23 +45,9 @@ if ( ! function_exists('time_stamp_to_date')) {
         return date_format(date_create_from_format('Y-m-d H:i:s', $date), 'd/m/Y');
     }
 }
-if ( ! function_exists('img_div')) {
-    function img_div($file)
-    {
 
-        $img = $file;
-        if (@!is_array(getimagesize($file))) {
-            $img = file_cover();
-        }
-
-        return  "<div data-img-url='".$file."' class='edit'>".
-        "<img src='".$img."' />".
-        "<a href='#' class='trash'><i  class='fas fa-trash'></i></a><a download  href='".base_url().'user/getfile?url='.$file."'><i  class='fas fa-download'></i></a></div>";
-
-    }
-}
 if ( ! function_exists('img_div_new')) {
-    function img_div_new($file,$file_id)
+    function img_div_new($file,$file_id,$name = '')
     {
 
         $img = $file;
@@ -70,6 +56,7 @@ if ( ! function_exists('img_div_new')) {
         }
 
         return  "<div data-img-url='".$file."' class='edit'>".
+        '<div class="title">'.$name.'</div>'.
         "<img src='".$img."' />".
         "<a href='#'  id='".$file_id."' class='trash'><i  class='fas fa-trash'></i></a>
         <a download  href='".base_url().'user/getfile?url='.$file."'><i  class='fas fa-download'></i></a></div>";

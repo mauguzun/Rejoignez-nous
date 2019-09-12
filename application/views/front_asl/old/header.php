@@ -16,7 +16,6 @@
 	<link rel="alternate" hreflang="en-us" href="<?= base_url()?>?lang=en">
 	<link rel="alternate" hreflang="fr-fr" href="<?= base_url()?>?lang=fr">
 
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:300,700,300italic">
 
 	<script>

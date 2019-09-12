@@ -18,7 +18,6 @@ class Apply_Pnc_Controller extends Apply_Controller
 		'medical_aptitudes',
 		'aviability',
 		'other',
-
 		'cv',
 		'covver_letter',
 

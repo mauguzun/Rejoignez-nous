@@ -40,6 +40,12 @@ class Apply_Hr_Controller extends Apply_Controller
 	public function get_page($offer_id,$page)
 	{
 		$pages = $this->pages;
+		
+/*		var_dump($pages);
+		var_dump($offer_id);
+		var_dump($page);
+		*/
+		
 		foreach($pages as $key=>&$value){
 			if($page == $value)
 			return  base_url().Apply_Hr_Controller::$map.'/'.$value.'/index/'.$offer_id;

@@ -25,7 +25,6 @@ class Ajaxupload extends Apply_Controller
 		else
 		{
 			$data = $this->upload->data();
-			$data['result'] = img_div(base_url().'/'.$this->uploadconfig->get("/".$file)['upload_path'].'/'.$data['file_name']);
 
 			$id   = $this->Crud->add(
 				[
@@ -37,7 +36,8 @@ class Ajaxupload extends Apply_Controller
 				,$this->table);
 
 			$data = $this->upload->data();
-			$data['result'] = img_div_new(base_url().'/'.$this->uploadconfig->get("/".$file)['upload_path'].'/'.$data['file_name'],$id);
+			$data['result'] = img_div_new(
+			base_url().'/'.$this->uploadconfig->get("/".$file)['upload_path'].'/'.$data['file_name'],$id,$data['file_name']);
 
 
 

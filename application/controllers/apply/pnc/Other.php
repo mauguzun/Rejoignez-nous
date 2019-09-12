@@ -28,10 +28,12 @@ class Other extends Apply_Pnc_Controller
 			redirect($this->get_page($offer_id,'main').FILL_FORM);
 		}
 
-		$this->form_validation->set_rules('employ_center', lang('employ_center'), 'trim|numeric');
+		$this->form_validation->set_rules('employ_center', lang('employ_center'), 'trim');
 
 		if($this->form_validation->run() === TRUE )
 		{
+			
+		
 				$employ = [
 					'application_id' => $app['id'],
 					'employ_center'=>$_POST['employ_center']
@@ -55,6 +57,9 @@ class Other extends Apply_Pnc_Controller
 					$this->savehistory($app['id'],$row,$car,'application_id',$app['id'],'applicaiton_misc',['applicaiton_id']);
 				}
 				$this->Crud->update_or_insert($car,'applicaiton_misc');
+				
+				
+		//	echo $this->apply.'/'.$offer_id;
 				redirect($this->apply.'/'.$offer_id);
 						
 		}
