@@ -152,12 +152,17 @@ class Apply_Controller extends Usermeta_Controller
 		$month_two = new DateTime('now');
 		$month_two->add(new DateInterval('P2M'));
 		$month_two = $month_two->format('d/m/Y');
+		
+		$month_tree = new DateTime('now');
+		$month_tree->add(new DateInterval('P3M'));
+		$month_tree = $month_tree->format('d/m/Y');
 
 		////  append current date )
 		$list      = [
 			date('d/m/Y') => lang('Immédiate'),
 			$month=>lang('Préavis 1 mois'),
-			$month_two => lang('Préavis 2mois'),
+			$month_two => lang('Préavis 2mois'),			
+			$month_tree => lang('Préavis 3mois'),
 			0=>lang('calendar'),
 		];
 		$date      = date("d/m/Y") ;
@@ -590,9 +595,7 @@ class Apply_Controller extends Usermeta_Controller
 		else
 		{
 
-			$message = (validation_errors() ? validation_errors() :
-				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-
+			$message = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 			$this->session->set_flashdata('message',$message);
 

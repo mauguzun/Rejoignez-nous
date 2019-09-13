@@ -60,6 +60,7 @@ $lang['have_car'] = 'Je suis véhiculé';
 $lang['Immédiate'] = 'Immédiate';
 $lang['Préavis 1 mois'] = 'Préavis 1 mois';
 $lang['Préavis 2mois'] = 'Préavis 2 mois';
+$lang['Préavis 3mois'] = '3 month notice';
 $lang['calendar'] = 'Selectionner une date';
 $lang['aviability'] = 'Disponibilité';
 $lang['handicaped'] = 'Avez-vous une reconnaissance de travailleur handicapé ?';
