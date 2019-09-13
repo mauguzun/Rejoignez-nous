@@ -40,6 +40,10 @@ class Apply extends Apply_Hr_Controller{
 		foreach($tables as $tab=>$table){
 		
 		
+			if($tab == 'foreignlang'){
+				$url = $this->get_page($offer_id,'other');
+				redirect($url.FILL_FORM);
+			}
 		
 			if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
 				$url = $this->get_page($offer_id,$tab);

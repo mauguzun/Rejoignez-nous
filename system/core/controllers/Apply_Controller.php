@@ -897,8 +897,6 @@ class Apply_Controller extends Usermeta_Controller
 			return ;
 		}
 
-
-
 		$app = $this->application_id($offer_id);
 		if(!$app)
 		{
@@ -908,7 +906,7 @@ class Apply_Controller extends Usermeta_Controller
 		$can_redirect = FALSE;
 
 
-		if(  isset($_POST['english_level'])  ){
+		if(isset($_POST['english_level'])  ){
 
 			$main_row = $this->Crud->get_row(['application_id'=>$app['id']],'application_english_frechn_level');
 
@@ -945,6 +943,7 @@ class Apply_Controller extends Usermeta_Controller
 
 		if( isset($_POST['language']) && $this->form_validation->run() === TRUE)
 		{
+			
 			if($row)
 			{
 
@@ -995,7 +994,7 @@ class Apply_Controller extends Usermeta_Controller
 
 				$this->Crud->add_many($langs,$this->get_table_name($this->step));
 			}
-			$row          = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
+			$row  = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
 
 			$can_redirect = TRUE;
 		}
@@ -1004,6 +1003,8 @@ class Apply_Controller extends Usermeta_Controller
 		{
 			redirect($map);
 		}
+		echo $can_redirect;
+		
 
 		$this->show_header([$offer['title'],$offer['title'],$offer['title']]);
 		$this->open_form($offer_id,$offer);
