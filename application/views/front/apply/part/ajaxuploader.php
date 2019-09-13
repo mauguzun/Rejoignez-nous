@@ -72,7 +72,9 @@
 				<center>
 
 
-					<a href="<?= $apply ?>"  class="btn btn-primary" title=" <?= lang('press_save_to_progres')?>" id="save" type="submit">
+					<a href="<?= $apply ?>" 
+					 class="btn btn-primary" title=" 
+					 <?= lang('press_save_to_progres')?>" id="save" type="submit">
 						<?= lang('save')?>		<i class="fas fa-arrow-right"></i>
 
 					</a>
@@ -136,10 +138,10 @@
 			},
 			onNewFile: function(id,file)
 			{
-				console.log('start upload')
+				
 				$('#<?=$upload_id?> #error').html('');
 				//$("#<?=$upload_id?> #loglist").empty();
-				$('#<?=$upload_id?> #loglist').html("<progress id='"+id+"_file' value='1' max='100'></progress> " );
+				$('#<?=$upload_id?> #loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
 			},
 
 
@@ -153,7 +155,9 @@
 			onUploadSuccess: function(id, data)
 			{
 				let result = JSON.parse(data);
-				console.log(result)
+				console.log(result)		
+				$('#' + id).fadeOut()	;
+					
 				if(result.error !== undefined)
 				{
 					$('#<?=$upload_id?> #error').append(result.error)
@@ -161,6 +165,7 @@
 				else
 				{
 					$('#<?=$upload_id?> #filelist').append(result.upload_data.result);
+				
 					setAction();
 				}
 			},
