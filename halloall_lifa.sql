@@ -11,7 +11,7 @@
  Target Server Version : 100313
  File Encoding         : 65001
 
- Date: 13/09/2019 11:36:06
+ Date: 13/09/2019 11:46:33
 */
 
 SET NAMES utf8mb4;
@@ -243,71 +243,12 @@ CREATE TABLE `application`  (
   `manualy` tinyint(1) NULL DEFAULT 0,
   `unsolicated_function` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1568226273 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1568226274 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application
 -- ----------------------------
-INSERT INTO `application` VALUES (1543492581, 63, 194, 0, '2018-11-30 12:21:11', 'WY', 'WDRYW', 'SRTSD', 74, '0123456789', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492584, 64, NULL, 0, '2019-05-09 12:20:42', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 74, '672617276', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492585, 57, 179, 1, '2019-09-12 20:00:28', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492586, 65, 191, 0, '2019-02-05 11:52:08', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 74, '0123456789', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492587, 61, NULL, 1, '2019-09-06 19:10:36', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '0123456789', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492588, 67, 193, 1, '2019-04-17 10:48:27', '6 rue du haut de laval', '95000', 'Treamblay-en-France', 74, '0148000000', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492589, 67, 193, 0, '2019-04-17 11:15:43', '6 rue du haut de laval', '95000', 'Treamblay-en-France', 74, '0148000000', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492590, 67, NULL, 0, '2019-04-17 11:12:34', '6 rue du haut de laval', '95000', 'Treamblay-en-France', 74, '03717211398', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1543492591, 67, 194, 0, '2019-05-06 11:35:29', '6 rue du haut de laval', '95000', 'Treamblay-en-France', 74, '0148000000', '', 1, 0, 1, 1, 1, 1, 2, 3, 0, NULL);
-INSERT INTO `application` VALUES (1555493249, 1555493249, 125, 0, '2019-04-17 12:37:25', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 2, 1, 3, 2, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1555493897, 1555493897, 145, 0, '2019-04-17 12:39:06', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 2, 2, 3, 2, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1555493898, 61, 192, 0, '2019-04-23 12:18:07', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '0123456789', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1555493899, 61, 190, 0, '2019-04-23 15:01:52', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '0123456789', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1555493900, 39, 192, 0, '2019-04-24 11:39:49', 'riga', 'riga', 'riga', 2, '123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1555493901, 39, NULL, 0, '2019-04-24 13:56:21', 'adsf', 'asdf', 'asdf', 2, '123', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1555493902, 39, 190, 0, '2019-07-22 12:14:23', 'adsf', 'asdf', 'asdf', 10, '123', '', 1, 0, 1, 2, 3, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1555493903, 57, 193, 1, '2019-09-12 17:12:01', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1556108990, 1556108990, 180, 0, '2019-04-24 15:30:10', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1, 1, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1556109184, 1556109184, 179, 0, '2019-04-24 15:33:34', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1, 1, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1556109185, 61, 191, 0, '2019-09-11 14:46:27', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '0123456789', '', 1, 0, 1, 1, 1, 1, 3, 1, 0, NULL);
-INSERT INTO `application` VALUES (1556109186, 61, 179, 0, '2019-05-03 18:11:03', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 74, '0123456789', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1556109187, 61, 195, 0, '2019-05-06 11:40:01', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '+33123456789', '', 1, 0, 2, 2, 2, 2, 2, 2, 0, NULL);
-INSERT INTO `application` VALUES (1557234985, 1557234985, 192, 0, '2019-05-07 16:17:26', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 2, 2, 3, 1, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1557234986, 61, 194, 0, '2019-07-22 12:41:10', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '+33 12 34 56 78 90', '', 1, 0, 2, 4, 1, 4, 2, 2, 0, NULL);
-INSERT INTO `application` VALUES (1557234987, 61, 193, 0, '2019-07-19 16:02:30', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '0123456789', '', 1, 0, 1, 2, 2, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1557234988, 61, 189, 0, '2019-07-22 11:24:15', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 59, '+33 12 34 56 78 90', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1557234989, 72, NULL, 0, '2019-08-21 16:29:56', '15 rue du Haut de Laval - CS 14454', '95708', 'ROISSY', 234, '148172565', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541438, 1563541438, 194, 0, '2019-09-06 19:53:33', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 2, 3, 1, 2, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1563541439, 76, 194, 0, '2019-07-22 12:45:40', 'test', '95000', 'Tremblay', 74, '0123456789', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541440, 71, 180, 0, '2019-08-21 13:00:55', '1 rue a', '59300', 'Valenciennes', 74, '06', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541441, 72, 190, 1, '2019-08-21 16:13:50', '15 rue du Haut de Laval - CS 14454', '95708', 'ROISSY', 234, '148172565', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541442, 72, 190, 1, '2019-08-21 16:26:25', '15 rue du Haut de Laval - CS 14454', '95708', 'ROISSY', 234, '148172565', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541443, 61, NULL, 1, '2019-09-06 19:12:35', '15 rue du haut de Laval', '93290', 'Tremblay-en-France', 45, '0123456789', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541444, 57, 223, 0, '2019-09-10 15:23:20', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1563541445, 57, NULL, 1, '2019-09-12 16:05:18', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568196724, 1568196724, 196, 0, '2019-09-11 13:13:05', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 3, 3, 1, 1, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1568196873, 1568196873, 193, 0, '2019-09-11 13:15:29', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1, 1, 2, 1, 1, NULL);
-INSERT INTO `application` VALUES (1568226250, 1568226250, 119, 0, '2019-09-11 21:24:25', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1, 1, 2, 1, 1, 'Agent de saisie');
-INSERT INTO `application` VALUES (1568226251, 57, NULL, 1, '2019-09-12 21:42:15', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226252, 57, 190, 1, '2019-09-12 17:32:56', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226253, 57, 190, 1, '2019-09-13 00:29:39', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226254, 57, 189, 1, '2019-09-12 17:38:15', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226255, 57, 189, 1, '2019-09-12 17:58:11', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226256, 57, 189, 1, '2019-09-12 18:15:59', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226257, 57, 189, 1, '2019-09-12 19:09:38', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226258, 57, 189, 1, '2019-09-12 19:11:32', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226259, 57, 189, 1, '2019-09-12 19:12:51', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226260, 57, 189, 1, '2019-09-12 19:28:00', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226261, 57, 189, 1, '2019-09-12 19:33:23', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226262, 57, 189, 1, '2019-09-12 19:40:54', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226263, 57, 189, 1, '2019-09-13 11:30:26', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226264, 57, 195, 0, '2019-09-12 19:51:51', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226265, 57, 179, 0, '2019-09-12 20:01:29', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226266, 57, 196, 0, '2019-09-12 20:11:50', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226267, 57, NULL, 1, '2019-09-12 21:57:42', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226268, 57, NULL, 1, '2019-09-13 10:59:56', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226269, 57, 190, 0, '2019-09-13 00:30:32', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226270, 57, NULL, 1, '2019-09-13 11:18:00', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226271, 57, NULL, 0, '2019-09-13 11:20:43', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226272, 57, 189, 0, '2019-09-13 11:33:17', 'Lielvardes 139/15', 'LV-1082', 'Riga', 121, '27597292', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
+INSERT INTO `application` VALUES (1568226273, 57, NULL, 0, '2019-09-13 11:45:42', '1212', '12122', 'Riga', 7, '123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
 
 -- ----------------------------
 -- Table structure for application_call_list
@@ -449,6 +390,7 @@ INSERT INTO `application_english_frechn_level` VALUES (1568226268, 1, 1);
 INSERT INTO `application_english_frechn_level` VALUES (1568226269, 3, 4);
 INSERT INTO `application_english_frechn_level` VALUES (1568226270, 3, 4);
 INSERT INTO `application_english_frechn_level` VALUES (1568226271, 3, 4);
+INSERT INTO `application_english_frechn_level` VALUES (1568226273, 3, 5);
 
 -- ----------------------------
 -- Table structure for application_eu_area
@@ -1207,6 +1149,7 @@ INSERT INTO `application_hr_expirience` VALUES (1568226268, '12', 1, 1);
 INSERT INTO `application_hr_expirience` VALUES (1568226269, '123', 1, 1);
 INSERT INTO `application_hr_expirience` VALUES (1568226270, '123', 1, 1);
 INSERT INTO `application_hr_expirience` VALUES (1568226271, '123', 1, 1);
+INSERT INTO `application_hr_expirience` VALUES (1568226273, 'po', 3, 4);
 
 -- ----------------------------
 -- Table structure for application_languages_level
@@ -1227,6 +1170,7 @@ INSERT INTO `application_languages_level` VALUES (1555493901, '', 1);
 INSERT INTO `application_languages_level` VALUES (1557234989, '', 1);
 INSERT INTO `application_languages_level` VALUES (1568226267, '', 1);
 INSERT INTO `application_languages_level` VALUES (1568226268, '', 1);
+INSERT INTO `application_languages_level` VALUES (1568226273, '', 1);
 INSERT INTO `application_languages_level` VALUES (1543492586, 'Allemand', 1);
 INSERT INTO `application_languages_level` VALUES (1543492588, 'Allemand', 1);
 INSERT INTO `application_languages_level` VALUES (1543492589, 'Allemand', 1);
@@ -1512,6 +1456,7 @@ INSERT INTO `application_un` VALUES (1568226267, 1, 'Administration des ventes')
 INSERT INTO `application_un` VALUES (1568226268, 1, 'sasdf');
 INSERT INTO `application_un` VALUES (1568226270, 1, '12');
 INSERT INTO `application_un` VALUES (1568226271, 1, '123');
+INSERT INTO `application_un` VALUES (1568226273, 4, 'Régulation des vols');
 
 -- ----------------------------
 -- Table structure for application_un_activity
@@ -11632,16 +11577,17 @@ CREATE TABLE `language_level`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `level` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of language_level
 -- ----------------------------
-INSERT INTO `language_level` VALUES (1, 'Notions');
-INSERT INTO `language_level` VALUES (2, 'Moyen');
-INSERT INTO `language_level` VALUES (3, 'Courant');
-INSERT INTO `language_level` VALUES (4, 'Bilingue');
-INSERT INTO `language_level` VALUES (5, 'Maternelle');
+INSERT INTO `language_level` VALUES (1, 'a1');
+INSERT INTO `language_level` VALUES (2, 'a2');
+INSERT INTO `language_level` VALUES (3, 'b1');
+INSERT INTO `language_level` VALUES (4, 'b2');
+INSERT INTO `language_level` VALUES (5, 'c1');
+INSERT INTO `language_level` VALUES (6, 'c2');
 
 -- ----------------------------
 -- Table structure for language_list
@@ -11733,6 +11679,7 @@ INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568226269);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568226270);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568226271);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568226272);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568226273);
 
 -- ----------------------------
 -- Table structure for login_attempts
