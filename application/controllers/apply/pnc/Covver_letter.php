@@ -18,7 +18,7 @@ class Covver_letter extends Apply_Pnc_Controller
 
 	public function index($offer_id)
 	{
-		parent::show_upload($offer_id,$this->apply.'/'.$offer_id);
+		parent::show_upload($offer_id,$this->apply.'/'.$offer_id,'?step=cv');
 	}
 
 

@@ -16,8 +16,8 @@ class Apply_Mechanic_Controller extends Apply_Controller
 		'aeronautical_experience',
 		'aviability',
 		'other',	
-		'cv',
-		'covver_letter',
+	
+		'covver_letter',	'cv',
 		'complementary_documents'
 
 	];

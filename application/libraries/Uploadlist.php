@@ -54,9 +54,9 @@ class Uploadlist
 		public function get_unsolocated()
 	{
 		return  [
-	        'cv',
+	        
 	        'covver_letter',
-	       
+	       'cv',
         ];
 		
 	}

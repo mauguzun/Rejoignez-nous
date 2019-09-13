@@ -4,19 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Apply extends Apply_Pnc_Controller
-{
+class Apply extends Apply_Pnc_Controller{
 
 	protected $step = 'apply';
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct('user/offers');
 
 	}
 
-	public function index($offer_id)
-	{
+	public function index($offer_id,$myStep = null){
 
 		$app = $this->application_id($offer_id);
 
@@ -32,46 +29,55 @@ class Apply extends Apply_Pnc_Controller
 			}
 		}
 	
-	
-//	var_dump($tables);
 		
 		
-		foreach($tables as $tab=>$table)
-		{
-			if(!$this->Crud->get_row(['application_id'=>$app['id']],$table))
-			{
+		foreach($tables as $tab=>$table){
+			if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
 				$url = $this->get_page($offer_id,$tab);
-				if($url)
-				{
+				if($url){
 					redirect($url.FILL_FORM);
 				}
 
 			}
-			else if ($table == 'applicaiton_misc'){
+			else if($table == 'applicaiton_misc'){
 				$query = $this->Crud->get_row( ['application_id'=>$app['id']],$table);
-				/*if ($query['salary'] == null){
-					$url = $this->get_page($offer_id,'other');
-					 redirect($url.FILL_FORM);
+				/*	if ($query['salary'] == null){
+				$url = $this->get_page($offer_id,'other');
+				redirect($url.FILL_FORM);
 				}*/
 				
 			}
 		}
 		
-		foreach(['cv','covver_letter',
-	        'medical_aptitude',
-	        'photo_in_feet',
-	        'passport',
-	        'vaccine_against_yellow_fever',
-	        'id_photo'] as $type){
+		if($myStep != null){
+			foreach(['covver_letter'] as $type){
+				if(count($this->Crud->get_all('application_files',
+							['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
+
+
+
+					$url = $this->get_page($offer_id,$type);
+					if($url){
+						redirect($url.FILL_FORM);
+					}
+
+				}
+			}
+		}
+		
+		foreach(['cv',
+				'medical_aptitude',
+				'photo_in_feet',
+				'passport',
+				'vaccine_against_yellow_fever',
+				'id_photo'] as $type){
 			if(count($this->Crud->get_all('application_files',
-						['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0)
-			{
+						['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
 
 
 
 				$url = $this->get_page($offer_id,$type);
-				if($url)
-				{
+				if($url){
 					redirect($url.FILL_FORM);
 				}
 
@@ -79,24 +85,22 @@ class Apply extends Apply_Pnc_Controller
 		}
 		
 		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		
-		
-		
-	//	redirect($this->get_page($offer_id,'main'));
+		$this->application_done_email();
+		redirect($this->get_page($offer_id,'main'));
 
-	/*	if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){
-			$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
+		/*	if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){
+		$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
 		
 		}else{
-			$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-			$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
+		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
+		$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
 		
 		}
 		
 		$this->show_header();
 		$this->load->view('front/parts/messages',['messages'=>$this->_errors]);
 		$this->show_footer();
-*/
+		*/
 	}
 
 

@@ -15,7 +15,7 @@ class Apply extends Apply_Mechanic_Controller
 
 	}
 
-	public function index($offer_id)
+	public function index($offer_id,$myStep =null)
 	{
 
 		$app    = $this->application_id($offer_id);
@@ -55,8 +55,22 @@ class Apply extends Apply_Mechanic_Controller
 
 			}
 		}
+if($myStep != null){
+			foreach(['covver_letter'] as $type){
+				if(count($this->Crud->get_all('application_files',
+							['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
 
-		foreach(['cv','covver_letter','complementary_documents'] as $type)
+
+
+					$url = $this->get_page($offer_id,$type);
+					if($url){
+						redirect($url.FILL_FORM);
+					}
+
+				}
+			}
+		}
+		foreach(['cv','complementary_documents'] as $type)
 		{
 			if(count($this->Crud->get_all('application_files',
 						['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
@@ -73,6 +87,7 @@ class Apply extends Apply_Mechanic_Controller
 
 
 		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
+		$this->application_done_email();
 		redirect($this->get_page($offer_id,'main'));
 		/*
 		if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){

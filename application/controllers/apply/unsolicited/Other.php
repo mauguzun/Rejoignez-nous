@@ -50,7 +50,7 @@ class Other extends Apply_Un_Controller
 				$_POST['application_id'] = $app['id'];
 				$this->Crud->add($_POST,$this->get_table_name($this->step));
 			}
-			redirect($this->apply.'/'.$app['id']);
+			redirect($this->apply.'/'.$app['id'].'/true');
 
 		}
 		else

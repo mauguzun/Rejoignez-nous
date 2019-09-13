@@ -60,7 +60,7 @@ class Other extends Apply_Pnc_Controller
 				
 				
 		//	echo $this->apply.'/'.$offer_id;
-				redirect($this->apply.'/'.$offer_id);
+				redirect($this->apply.'/'.$offer_id.'/asdf');
 						
 		}
 

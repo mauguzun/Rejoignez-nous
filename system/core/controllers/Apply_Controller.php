@@ -15,6 +15,8 @@ class Apply_Controller extends Usermeta_Controller
 
 		$this->user_id = (string)$this->ion_auth->user()->row()->id;
 		$this->load->library("InputArray");
+		
+		
 
 	}
 	public function open_form($offer_id,$offer)
@@ -296,6 +298,7 @@ class Apply_Controller extends Usermeta_Controller
 
 	public function show_upload($offer_id,$map)
 	{
+
 		$this->load->library("Uploadconfig");
 		$offer = $this->errors($offer_id);
 		if(!$offer)
@@ -1032,6 +1035,48 @@ class Apply_Controller extends Usermeta_Controller
 			return NULL;
 		}
 		return $offer_row;
+	}
+	
+	/**
+	* 
+	* @param string $email
+	* 
+	* @return true|false
+	*/
+	protected function application_done_email($email = null ){
+		$candidate = $this->Crud->get_row(['user_id'=>$this->user_id],'candidates');
+		$email = $this->ion_auth->user()->row()->email;
+		$query = $this->Crud->get_row([
+		'template_id'=>1,'lang'=>$this->getCurrentLang('lang')		],'email_template_translate');
+		
+		
+		
+		$text =  $query['text'];
+		$text = str_replace('#NOM',$candidate['first_name'],$text);
+		$text = str_replace('#PRENOM',$candidate['last_name'],$text);
+		
+		
+		$this->load->library('email',[
+		  'protocol'=>$this->email_settings['transport']
+		]);
+
+		$this->email->from($this->email_settings['email'],$this->email_settings['sender']);
+		$this->load->library("json_model");
+
+
+		$this->email->reply_to($this->email_settings['email'],$this->email_settings['sender']);
+		$this->email->subject($query['subject']);
+		$this->email->message($text);
+		$this->email->to($email);
+		if(!$this->email->send())
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+		
 	}
 
 

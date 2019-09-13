@@ -22,10 +22,10 @@ class Apply_Pnt_Controller extends Apply_Controller
 		'experience_in_instructor',
 		'successive_employer',
 		'complementary_informations',
-		
-		'cv',
 		'covver_letter',
-
+		'cv',
+	
+ 
 	];
 	public function __construct($page = NULL,$meta = NULL )
 	{
@@ -81,10 +81,10 @@ class Apply_Pnt_Controller extends Apply_Controller
 			'experience_in_instructor'=>'application_pnt_flight_expirience_instructor',
 			'successive_employer'=>'application_pnt_successive_employers',
 			'complementary_informations'=>'application_pnt_completary',
-			
+						'covver_letter'=>'application_files',
+
 			
 			'cv'=>'application_files',
-			'covver_letter'=>'application_files',
 			'employ_center'=>'application_empoy_center',
 
 			

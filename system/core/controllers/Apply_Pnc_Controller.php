@@ -18,8 +18,8 @@ class Apply_Pnc_Controller extends Apply_Controller
 		'medical_aptitudes',
 		'aviability',
 		'other',
-		'cv',
 		'covver_letter',
+		'cv',
 
 	];
 
@@ -74,9 +74,9 @@ class Apply_Pnc_Controller extends Apply_Controller
 			'aviability'=>'applicaiton_misc',
 			
 			'other'=>'application_empoy_center',
-			'cv'=>'application_files',
+			
 			'covver_letter'=>'application_files',
-
+			'cv'=>'application_files',
 			'employ_center'=>'application_empoy_center'
 
 

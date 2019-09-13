@@ -66,9 +66,9 @@ class Apply_Un_Controller extends Apply_Controller
 			'other'=>'applicaiton_misc',
 			'mainlang'=>'application_languages_level',
 			
-			
-			'cv'=>'application_files',
 			'covver_letter'=>'application_files',
+			'cv'=>'application_files',
+			
 		];
 
 	

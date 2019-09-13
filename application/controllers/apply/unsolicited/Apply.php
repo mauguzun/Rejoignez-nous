@@ -4,70 +4,89 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Apply extends Apply_Un_Controller
-{
+class Apply extends Apply_Un_Controller{
 
 	protected $step = 'apply';
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct('user/offers');
 
 	}
 
-	public function index()
-	{
-
-		$app = $this->get_application();
-		if(!$app)
+	public function index($offer_id,$myStep = null){
 		{
-			redirect($this->get_page($offer_id,'main').FILL_FORM);
-		}
 
-
-
-
-
-
-		$tables = $this->get_table_name();
-
-		unset($tables['cv']);
-		unset($tables['covver_letter']);
-		unset($tables['main']);
-
-		foreach($tables as $tab=>$table){
-			if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
-				$url = $this->get_page($tab);
-				if($url){
-					redirect($url.FILL_FORM);
-				}
-
+			$app = $this->get_application();
+			if(!$app){
+				redirect($this->get_page($offer_id,'main').FILL_FORM);
 			}
-		}
-		foreach(['cv','covver_letter'] as $type)
-		{
-			if(count($this->Crud->get_all('application_files',
-						['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
 
 
 
-				$url = $this->get_page($type);
-				if($url){
-					redirect($url.FILL_FORM);
+
+
+
+			$tables = $this->get_table_name();
+
+			unset($tables['cv']);
+			unset($tables['covver_letter']);
+			unset($tables['main']);
+
+			foreach($tables as $tab=>$table){
+				if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
+					$url = $this->get_page($tab);
+					if($url){
+						redirect($url.FILL_FORM);
+					}
+
 				}
-
 			}
+			
+			if($myStep != null){
+				
+				
+				foreach(['covver_letter'] as $type){
+					if(count($this->Crud->get_all('application_files',
+								['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
+
+
+
+						$url =
+						 base_url().Apply_Un_Controller::$map.'/'.$type.'/index/'. $offer_id;
+						
+					
+					
+						if($url){
+							redirect($url.FILL_FORM);
+						}
+
+					}
+				}
+			}
+			foreach(['cv'] as $type){
+				if(count($this->Crud->get_all('application_files',
+							['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
+
+
+
+					$url = $this->get_page($type);
+					if($url){
+						redirect($url.FILL_FORM);
+					}
+
+				}
+			}
+
+			$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
+			$this->application_done_email();
+			redirect($this->get_page('main'));
+
+
 		}
 
-		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		redirect($this->get_page('main'));
 
 
 	}
-
-
-
-
 
 }
 

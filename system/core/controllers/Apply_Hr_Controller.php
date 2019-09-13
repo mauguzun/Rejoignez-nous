@@ -15,8 +15,8 @@ class Apply_Hr_Controller extends Apply_Controller
 		'expirience',
 		'aviability',
 		'other',
-		'cv',
-		'covver_letter',
+		
+		'covver_letter','cv',
 	];
 
 

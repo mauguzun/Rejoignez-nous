@@ -19,7 +19,7 @@ class Other extends Apply_Mechanic_Controller
 	public function index($offer_id )
 	{
 
-		parent::other_index($offer_id,$this->apply.'/'.$offer_id);
+		parent::other_index($offer_id,$this->apply.'/'.$offer_id.'/'.true);
 	}
 
 
