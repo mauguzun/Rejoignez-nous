@@ -11,7 +11,7 @@
  Target Server Version : 100313
  File Encoding         : 65001
 
- Date: 13/09/2019 20:12:09
+ Date: 17/09/2019 11:52:06
 */
 
 SET NAMES utf8mb4;
@@ -244,21 +244,23 @@ CREATE TABLE `application`  (
   `call_id` smallint(1) NULL DEFAULT 1,
   `manualy` tinyint(1) NULL DEFAULT 0,
   `unsolicated_function` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1568226282 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1568226283 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application
 -- ----------------------------
-INSERT INTO `application` VALUES (1568226273, 57, NULL, 1, '2019-09-13 16:39:07', '1212', '12122', 'Riga', 7, '123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226274, 57, NULL, 1, '2019-09-13 17:49:16', '123', '12', 'riga', 2, '123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226275, 57, 195, 0, '2019-09-13 17:32:20', '1212', '12122', 'Riga', 230, '13', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226276, 57, NULL, 1, '2019-09-13 18:04:58', '123', '123', '123', 2, '132', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226277, 57, 223, 0, '2019-09-13 17:50:16', '123', '123', '123', 2, '123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226278, 57, 179, 1, '2019-09-13 18:04:08', '123', '123', '123', 2, '123', '123', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226279, 57, 179, 1, '2019-09-13 18:04:24', '1234', '1234', '123', 2, '1234', '1324', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226280, 57, NULL, 0, '2019-09-13 18:05:10', '1212', '12122', 'Riga', 2, '123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL);
-INSERT INTO `application` VALUES (1568226281, 57, 192, 0, '2019-09-13 18:31:15', '123', '123', 'rig', 2, '132', '123', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL);
+INSERT INTO `application` VALUES (1568226273, 57, NULL, 1, '2019-09-13 16:39:07', '1212', '12122', 'Riga', 7, '123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226274, 57, NULL, 1, '2019-09-13 17:49:16', '123', '12', 'riga', 2, '123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226275, 57, 195, 0, '2019-09-13 17:32:20', '1212', '12122', 'Riga', 230, '13', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226276, 57, NULL, 1, '2019-09-13 18:04:58', '123', '123', '123', 2, '132', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226277, 57, 223, 0, '2019-09-13 17:50:16', '123', '123', '123', 2, '123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226278, 57, 179, 1, '2019-09-13 18:04:08', '123', '123', '123', 2, '123', '123', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226279, 57, 179, 1, '2019-09-13 18:04:24', '1234', '1234', '123', 2, '1234', '1324', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `application` VALUES (1568226281, 57, 192, 0, '2019-09-13 18:31:15', '123', '123', 'rig', 2, '132', '123', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for application_call_list
@@ -748,7 +750,7 @@ CREATE TABLE `application_history`  (
   `action` smallint(1) NULL DEFAULT 1,
   `row` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 427 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 433 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application_history
@@ -1179,6 +1181,12 @@ INSERT INTO `application_history` VALUES (423, '2019-09-13 19:02:30', 1568226280
 INSERT INTO `application_history` VALUES (424, '2019-09-13 19:02:31', 1568226280, 'application_files', 'id', '507', 'deleted', '1', 1, '1568390551703');
 INSERT INTO `application_history` VALUES (425, '2019-09-13 19:02:33', 1568226280, 'application_files', 'id', '511', 'deleted', '1', 1, '1568390553499');
 INSERT INTO `application_history` VALUES (426, '2019-09-13 19:02:34', 1568226280, 'application_files', 'id', '512', 'deleted', '1', 1, '1568390554977');
+INSERT INTO `application_history` VALUES (427, '2019-09-17 10:49:15', 1568226280, 'application', 'id', '1568226280', 'offer_id', NULL, 0, '1568706555794');
+INSERT INTO `application_history` VALUES (428, '2019-09-17 10:49:15', 1568226280, 'application', 'id', '1568226280', 'phone_2', '', 1, '1568706555794');
+INSERT INTO `application_history` VALUES (429, '2019-09-17 10:49:15', 1568226280, 'application', 'id', '1568226280', 'unsolicated_function', NULL, 0, '1568706555794');
+INSERT INTO `application_history` VALUES (430, '2019-09-17 10:49:15', 1568226280, 'application', 'id', '1568226280', 'first_name', NULL, 1, '1568706555794');
+INSERT INTO `application_history` VALUES (431, '2019-09-17 10:49:15', 1568226280, 'application', 'id', '1568226280', 'last_name', NULL, 1, '1568706555794');
+INSERT INTO `application_history` VALUES (432, '2019-09-17 10:49:15', 1568226280, 'application', 'id', '1568226280', 'email', NULL, 1, '1568706555794');
 
 -- ----------------------------
 -- Table structure for application_hr_expirience
@@ -11793,7 +11801,13 @@ CREATE TABLE `login_attempts`  (
   `login` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `time` int(11) UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of login_attempts
+-- ----------------------------
+INSERT INTO `login_attempts` VALUES (44, '127.0.0.1', 'mauguzun+denis@gmail.com', 1568707871);
+INSERT INTO `login_attempts` VALUES (45, '127.0.0.1', 'mauguzun+candidate@gmail.com', 1568707903);
 
 -- ----------------------------
 -- Table structure for mechanic_baccalaureate
@@ -12166,36 +12180,43 @@ CREATE TABLE `users`  (
   `created_on` int(11) UNSIGNED NOT NULL,
   `last_login` int(11) UNSIGNED NULL DEFAULT NULL,
   `active` tinyint(1) UNSIGNED NULL DEFAULT NULL,
+  `civility` enum('mr','mrs') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `birthday` date NULL DEFAULT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `handicaped` smallint(1) NULL DEFAULT NULL,
+  `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `admin_id` int(11) NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (17, '127.0.0.1', 'mauguzun+pntmanager@gmail.com', '$2y$08$NxC2rJedP46m6JCIlkBGMeyXcjnLtWVBGfoHJxx7S9B3GKIYHpIGm', NULL, 'mauguzun+pntmanager@gmail.com', '7d2a4b3a974f873edd66f0822b362eabd4d19da6', NULL, NULL, '.k19ss593nOTv2.NLmYrt.', 1527590457, 1533054436, 1);
-INSERT INTO `users` VALUES (18, '127.0.0.1', 'mauguzun+pncmanager@gmail.com', '$2y$08$WCQ4kIpIgRAJD7VRY70t7.wYIGo5zqj9c4.8jdccq2MfGfArfRdKu', NULL, 'mauguzun+pncmanager@gmail.com', '5b3b2cd56c20305079b415017b1f839d6d7b1956', NULL, NULL, 'V2YEH11Y4ew5otH.E703fu', 1527590509, 1531319960, 1);
-INSERT INTO `users` VALUES (20, '127.0.0.1', 'mauguzun+hrmanager@gmail.com', '$2y$08$tb3y.XM/V3w5cr9w9GFEZORf4Zj1FL8r1Us1z.3fv00EVneWExQrm', NULL, 'mauguzun+hrmanager@gmail.com', 'd6f70f9d4b62b7cbe83c86d9dbec4a830b0db842', NULL, NULL, 'VgFpO/EKjf1NXztA9U7SYu', 1527621789, 1555416358, 1);
-INSERT INTO `users` VALUES (39, '', NULL, '$2y$08$xQETcv.TuhWXxS24ICipFu8dqY7/V2Zv8qVJUbhHwo8UF8ZKbbIaO', NULL, 'mauguzun+admin@gmail.com', NULL, '27vU6oKaO1r5Fyh.7dZYOu89c98477bc34b23092', 1568288314, 'xKEtoSZVfMkl9IwwLtZivu', 0, 1568321891, 1);
-INSERT INTO `users` VALUES (48, '127.0.0.1', 'mauguzun+hrview@gmail.com', '$2y$08$VNFbsmmFDqjZchbzh0TAG.OaN82XH0uG71N1s9B6V13FycOFAiD6m', NULL, 'mauguzun+hrview@gmail.com', '6f0277797a083afec5c4ce384a750ed482842da0', NULL, NULL, 'hhQ7N2DBL.dAUH0oFfH2te', 1528796859, 1532335630, 1);
-INSERT INTO `users` VALUES (49, '127.0.0.1', 'mauguzun+pncview@gmail.com', '$2y$08$TUvPV0Qyk/WvA72k6EhIaOmuF/JsKSuX2R0XkjTup5PJWi76wx8iW', NULL, 'mauguzun+pncview@gmail.com', '5a128ce4eb6db30d76222c43929beebf534933b9', NULL, NULL, 'UabnD/S4rWbaXnvTUYuoVO', 1528800427, 1531307690, 1);
-INSERT INTO `users` VALUES (50, '127.0.0.1', 'mauguzun+pntview@gmail.com', '$2y$08$ttuYsXIJHV8A5/YAYGELx.kjiB1I/BlaWva./PXFEU7br1Jls2aRG', NULL, 'mauguzun+pntview@gmail.com', 'c66d612db08e4810ead2aba2be0016d9bc797571', NULL, NULL, 'tKj97tIZj94N0XJLzXthLO', 1528800450, 1531316992, 1);
-INSERT INTO `users` VALUES (56, '127.0.0.1', 'mauguzun+candidate3@gmail.com', '$2y$08$xXew21SN/kT3sVKn.art5.ZFUESFsRJFT5l2NIG7XJCorFVE7EHGi', NULL, 'mauguzun+candidate3@gmail.com', NULL, NULL, NULL, 'n4KOXd9opeeawRRDezmnhO', 1531724863, 1531725557, 1);
-INSERT INTO `users` VALUES (57, '127.0.0.1', 'mauguzun+cand@gmail.com', '$2y$08$fU8uP.umG2i50XNRPEzAZOWVMiy2w.bGSKBHg97HzAoWTzhI/PDeu', NULL, 'mauguzun+cand@gmail.com', NULL, NULL, NULL, 'nNCINxCwPJjGeKdjinAajO', 1534516868, 1568381859, 1);
-INSERT INTO `users` VALUES (61, '46.18.128.203', 'yaouadi@aslairlines.com', '$2y$08$9vH5FJaF15LpabXKIgXsUuXXWzVt6izbLizO/ilNu7XlUBU66hvzq', NULL, 'yaouadi@aslairlines.com', 'e628d65f2530e0b0f3054b7a1b4e0fdab747513c', NULL, NULL, 'toikj/xQRoFemyNkYS96Yu', 1542029529, 1568019319, 1);
-INSERT INTO `users` VALUES (62, '46.18.128.203', 'fgaillar@aslairlines.com', '$2y$08$lku3XFR4CI9fphANkxUPzOTLolZT6kYr1Q/CVYj46hv6NIIHN7M0a', NULL, 'fgaillar@aslairlines.com', 'afb405b5c1f32dbdf61bef57c696dae684af4dd4', NULL, NULL, 'QChgnSN/jU1w0HR4c5C50O', 1542108069, 1542190527, 1);
-INSERT INTO `users` VALUES (63, '46.18.128.203', 'knedellec@aslairlines.com', '$2y$08$j6PumavknnqoobCS7joXZubyd3PEcabNtFTE68/au2Bn1zmQD1Z1O', NULL, 'knedellec@aslairlines.com', NULL, NULL, NULL, 'Ir8gvPNOJtj0XsYzU9TcaO', 1543572709, 1543572979, 1);
-INSERT INTO `users` VALUES (66, '46.18.128.203', 'illarion.medvedev@lifa.lv', '$2y$08$jFVVAN5Tc3FHKOwaQI8h5uUpO3PUuHLVf76SRhdpAVh.KcYKSblj.', NULL, 'illarion.medvedev@lifa.lv', '24937720270d235d7dc2271239d7595b65706341', NULL, NULL, '6yKIenKxmo6mK0stvbs/we', 1551867527, 1568040044, 1);
-INSERT INTO `users` VALUES (67, '46.18.128.203', 'yaouadi.test@gmail.com', '$2y$08$3zki/pHo8..nKbO0O.VLheJNVaCyjon5UyMd/jLTKD1TRXdRyeIu2', NULL, 'yaouadi.test@gmail.com', NULL, NULL, NULL, 'vV3TelIZJ7/wihe/ZftY9.', 1555422686, 1555487017, 1);
-INSERT INTO `users` VALUES (68, '46.18.128.203', 'bampwera@aslaviationholdings.com', '$2y$08$GHwMTI10yD4QU73UYRR9w.uWMKRjuj0KvDXzgFVU01yDSiKjTCfdS', NULL, 'bampwera@aslaviationholdings.com', 'e9fbfbaeeebc8f88f2bdb064333cf88312d2f4f2', NULL, NULL, NULL, 1557501525, NULL, 1);
-INSERT INTO `users` VALUES (69, '46.18.128.203', 'fbrisedoux@aslairlines.com', '$2y$08$WK6Z0KTw3RcBXSgwdK03MOw3O82/LMvTAuQosh4hRVTQz6aI/F0g.', NULL, 'fbrisedoux@aslairlines.com', 'bdc3f6ede1803f4c90e41f76febc68961aca441d', NULL, NULL, NULL, 1557501575, NULL, 1);
-INSERT INTO `users` VALUES (70, '46.18.128.203', 'fdebiasio@aslaviationholdings.com', '$2y$08$giKxaYu/Fec2o5lO77bFt.hoYJbuHZMBXqcbe4FsvRfT0Cm7wIIky', NULL, 'fdebiasio@aslaviationholdings.com', 'f24bb355707f87ef0d0921d7526e8d7596b9af6e', NULL, NULL, 'QMSbqcYUCWq4AHQUz/G82O', 1557501657, 1557686964, 1);
-INSERT INTO `users` VALUES (71, '46.18.128.203', 'svaira@aslairlines.com', '$2y$08$AAL0UansciYkmdcjLPlWr.vcyKmZMBoDjdzGsKZEXSg1/88ub00mi', NULL, 'svaira@aslairlines.com', NULL, NULL, NULL, 'ZR.fjU5YibQl6ujlT6RLqO', 1557501710, 1567591376, 1);
-INSERT INTO `users` VALUES (72, '46.18.128.203', 'mtobie@aslairlines.com', '$2y$08$4rWkUIzLttk8hor8kBIbReDnX9NuaR7lZLzNDm3hf4W3jLh7w0XUG', NULL, 'mtobie@aslairlines.com', NULL, NULL, NULL, 'wvzsFEwuoNF1UIkJ8DEhP.', 1560245418, 1566391597, 1);
-INSERT INTO `users` VALUES (73, '46.18.128.203', 'asaulnier@aslairlines.com', '$2y$08$ftvPrhRKbp0zYCE/f4pA.ulFQXfODKUkuHVBwk7MShoc1iYavGrCO', NULL, 'asaulnier@aslairlines.com', '59dd5033be3ab938c4d872f572523acf2038eaa7', NULL, NULL, NULL, 1563357821, NULL, 1);
-INSERT INTO `users` VALUES (74, '46.18.128.203', 'dbukva@aslairlines.com', '$2y$08$ZbPNkrPPGVQk66niR2V9JevgWqWJSLupJI4TYpdVheNYLSsrtx9ZO', NULL, 'dbukva@aslairlines.com', '1d3df71231efc0d8a05f20b09caa0325bc4d2ef6', NULL, NULL, 'jiyJBc4WYSaYIigxdPZ9E.', 1563357882, 1563368650, 1);
-INSERT INTO `users` VALUES (80, '127.0.0.1', 'maugun+admin@gmail.com', '$2y$08$aYRBnPY7EnFbG1fHeI73L.jW/3baG88QZX.MQI9QJGPvNoEoI9xnu', NULL, 'maugun+admin@gmail.com', 'a567d09f8a3ce4f8eb701ef645f7301ef6bddd99', NULL, NULL, NULL, 1568290155, NULL, 0);
-INSERT INTO `users` VALUES (81, '127.0.0.1', 'mauguzun@gmail.com', '$2y$08$8j2RRzgurJPBqitejA0hx.e/R/VZ.V8oF6EHbeBHGSw5nblAYP3hi', NULL, 'mauguzun@gmail.com', 'dae07301e636bc7906d83390c0a6d695fb29930a', NULL, NULL, NULL, 1568290252, NULL, 0);
-INSERT INTO `users` VALUES (82, '127.0.0.1', 'maugun+sometest@gmail.com', '$2y$08$1Vlko86A7U7Bk7hbpnl48.3x8hBVp3xSfTodvoqj8WPjGJfdJ1Ig.', NULL, 'maugun+sometest@gmail.com', 'cd3438078b5641dcd93212e13ca0426dd5dc7f46', NULL, NULL, NULL, 1568290405, NULL, 0);
+INSERT INTO `users` VALUES (17, '127.0.0.1', 'mauguzun+pntmanager@gmail.com', '$2y$08$NxC2rJedP46m6JCIlkBGMeyXcjnLtWVBGfoHJxx7S9B3GKIYHpIGm', NULL, 'mauguzun+pntmanager@gmail.com', '7d2a4b3a974f873edd66f0822b362eabd4d19da6', NULL, NULL, '.k19ss593nOTv2.NLmYrt.', 1527590457, 1533054436, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (18, '127.0.0.1', 'mauguzun+pncmanager@gmail.com', '$2y$08$WCQ4kIpIgRAJD7VRY70t7.wYIGo5zqj9c4.8jdccq2MfGfArfRdKu', NULL, 'mauguzun+pncmanager@gmail.com', '5b3b2cd56c20305079b415017b1f839d6d7b1956', NULL, NULL, 'V2YEH11Y4ew5otH.E703fu', 1527590509, 1531319960, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (20, '127.0.0.1', 'mauguzun+hrmanager@gmail.com', '$2y$08$tb3y.XM/V3w5cr9w9GFEZORf4Zj1FL8r1Us1z.3fv00EVneWExQrm', NULL, 'mauguzun+hrmanager@gmail.com', 'd6f70f9d4b62b7cbe83c86d9dbec4a830b0db842', NULL, NULL, 'VgFpO/EKjf1NXztA9U7SYu', 1527621789, 1555416358, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (39, '', NULL, '$2y$08$xQETcv.TuhWXxS24ICipFu8dqY7/V2Zv8qVJUbhHwo8UF8ZKbbIaO', NULL, 'mauguzun+admin@gmail.com', NULL, '27vU6oKaO1r5Fyh.7dZYOu89c98477bc34b23092', 1568288314, 'fhS31Qp3Gzf.HxMYvuR7i.', 0, 1568703655, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (48, '127.0.0.1', 'mauguzun+hrview@gmail.com', '$2y$08$VNFbsmmFDqjZchbzh0TAG.OaN82XH0uG71N1s9B6V13FycOFAiD6m', NULL, 'mauguzun+hrview@gmail.com', '6f0277797a083afec5c4ce384a750ed482842da0', NULL, NULL, 'hhQ7N2DBL.dAUH0oFfH2te', 1528796859, 1532335630, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (49, '127.0.0.1', 'mauguzun+pncview@gmail.com', '$2y$08$TUvPV0Qyk/WvA72k6EhIaOmuF/JsKSuX2R0XkjTup5PJWi76wx8iW', NULL, 'mauguzun+pncview@gmail.com', '5a128ce4eb6db30d76222c43929beebf534933b9', NULL, NULL, 'UabnD/S4rWbaXnvTUYuoVO', 1528800427, 1531307690, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (50, '127.0.0.1', 'mauguzun+pntview@gmail.com', '$2y$08$ttuYsXIJHV8A5/YAYGELx.kjiB1I/BlaWva./PXFEU7br1Jls2aRG', NULL, 'mauguzun+pntview@gmail.com', 'c66d612db08e4810ead2aba2be0016d9bc797571', NULL, NULL, 'tKj97tIZj94N0XJLzXthLO', 1528800450, 1531316992, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (56, '127.0.0.1', 'mauguzun+candidate3@gmail.com', '$2y$08$xXew21SN/kT3sVKn.art5.ZFUESFsRJFT5l2NIG7XJCorFVE7EHGi', NULL, 'mauguzun+candidate3@gmail.com', NULL, NULL, NULL, 'n4KOXd9opeeawRRDezmnhO', 1531724863, 1531725557, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (57, '127.0.0.1', 'mauguzun+cand@gmail.com', '$2y$08$fU8uP.umG2i50XNRPEzAZOWVMiy2w.bGSKBHg97HzAoWTzhI/PDeu', NULL, 'mauguzun+cand@gmail.com', NULL, NULL, NULL, 'LwpTCPHzq.7DJ.iLYwFB1e', 1534516868, 1568707938, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (61, '46.18.128.203', 'yaouadi@aslairlines.com', '$2y$08$9vH5FJaF15LpabXKIgXsUuXXWzVt6izbLizO/ilNu7XlUBU66hvzq', NULL, 'yaouadi@aslairlines.com', 'e628d65f2530e0b0f3054b7a1b4e0fdab747513c', NULL, NULL, 'toikj/xQRoFemyNkYS96Yu', 1542029529, 1568019319, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (62, '46.18.128.203', 'fgaillar@aslairlines.com', '$2y$08$lku3XFR4CI9fphANkxUPzOTLolZT6kYr1Q/CVYj46hv6NIIHN7M0a', NULL, 'fgaillar@aslairlines.com', 'afb405b5c1f32dbdf61bef57c696dae684af4dd4', NULL, NULL, 'QChgnSN/jU1w0HR4c5C50O', 1542108069, 1542190527, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (63, '46.18.128.203', 'knedellec@aslairlines.com', '$2y$08$j6PumavknnqoobCS7joXZubyd3PEcabNtFTE68/au2Bn1zmQD1Z1O', NULL, 'knedellec@aslairlines.com', NULL, NULL, NULL, 'Ir8gvPNOJtj0XsYzU9TcaO', 1543572709, 1543572979, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (66, '46.18.128.203', 'illarion.medvedev@lifa.lv', '$2y$08$jFVVAN5Tc3FHKOwaQI8h5uUpO3PUuHLVf76SRhdpAVh.KcYKSblj.', NULL, 'illarion.medvedev@lifa.lv', '24937720270d235d7dc2271239d7595b65706341', NULL, NULL, '6yKIenKxmo6mK0stvbs/we', 1551867527, 1568040044, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (67, '46.18.128.203', 'yaouadi.test@gmail.com', '$2y$08$3zki/pHo8..nKbO0O.VLheJNVaCyjon5UyMd/jLTKD1TRXdRyeIu2', NULL, 'yaouadi.test@gmail.com', NULL, NULL, NULL, 'vV3TelIZJ7/wihe/ZftY9.', 1555422686, 1555487017, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (68, '46.18.128.203', 'bampwera@aslaviationholdings.com', '$2y$08$GHwMTI10yD4QU73UYRR9w.uWMKRjuj0KvDXzgFVU01yDSiKjTCfdS', NULL, 'bampwera@aslaviationholdings.com', 'e9fbfbaeeebc8f88f2bdb064333cf88312d2f4f2', NULL, NULL, NULL, 1557501525, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (69, '46.18.128.203', 'fbrisedoux@aslairlines.com', '$2y$08$WK6Z0KTw3RcBXSgwdK03MOw3O82/LMvTAuQosh4hRVTQz6aI/F0g.', NULL, 'fbrisedoux@aslairlines.com', 'bdc3f6ede1803f4c90e41f76febc68961aca441d', NULL, NULL, NULL, 1557501575, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (70, '46.18.128.203', 'fdebiasio@aslaviationholdings.com', '$2y$08$giKxaYu/Fec2o5lO77bFt.hoYJbuHZMBXqcbe4FsvRfT0Cm7wIIky', NULL, 'fdebiasio@aslaviationholdings.com', 'f24bb355707f87ef0d0921d7526e8d7596b9af6e', NULL, NULL, 'QMSbqcYUCWq4AHQUz/G82O', 1557501657, 1557686964, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (71, '46.18.128.203', 'svaira@aslairlines.com', '$2y$08$AAL0UansciYkmdcjLPlWr.vcyKmZMBoDjdzGsKZEXSg1/88ub00mi', NULL, 'svaira@aslairlines.com', NULL, NULL, NULL, 'ZR.fjU5YibQl6ujlT6RLqO', 1557501710, 1567591376, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (72, '46.18.128.203', 'mtobie@aslairlines.com', '$2y$08$4rWkUIzLttk8hor8kBIbReDnX9NuaR7lZLzNDm3hf4W3jLh7w0XUG', NULL, 'mtobie@aslairlines.com', NULL, NULL, NULL, 'wvzsFEwuoNF1UIkJ8DEhP.', 1560245418, 1566391597, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (73, '46.18.128.203', 'asaulnier@aslairlines.com', '$2y$08$ftvPrhRKbp0zYCE/f4pA.ulFQXfODKUkuHVBwk7MShoc1iYavGrCO', NULL, 'asaulnier@aslairlines.com', '59dd5033be3ab938c4d872f572523acf2038eaa7', NULL, NULL, NULL, 1563357821, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (74, '46.18.128.203', 'dbukva@aslairlines.com', '$2y$08$ZbPNkrPPGVQk66niR2V9JevgWqWJSLupJI4TYpdVheNYLSsrtx9ZO', NULL, 'dbukva@aslairlines.com', '1d3df71231efc0d8a05f20b09caa0325bc4d2ef6', NULL, NULL, 'jiyJBc4WYSaYIigxdPZ9E.', 1563357882, 1563368650, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (80, '127.0.0.1', 'maugun+admin@gmail.com', '$2y$08$aYRBnPY7EnFbG1fHeI73L.jW/3baG88QZX.MQI9QJGPvNoEoI9xnu', NULL, 'maugun+admin@gmail.com', 'a567d09f8a3ce4f8eb701ef645f7301ef6bddd99', NULL, NULL, NULL, 1568290155, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (81, '127.0.0.1', 'mauguzun@gmail.com', '$2y$08$8j2RRzgurJPBqitejA0hx.e/R/VZ.V8oF6EHbeBHGSw5nblAYP3hi', NULL, 'mauguzun@gmail.com', 'dae07301e636bc7906d83390c0a6d695fb29930a', NULL, NULL, NULL, 1568290252, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `users` VALUES (82, '127.0.0.1', 'maugun+sometest@gmail.com', '$2y$08$1Vlko86A7U7Bk7hbpnl48.3x8hBVp3xSfTodvoqj8WPjGJfdJ1Ig.', NULL, 'maugun+sometest@gmail.com', 'cd3438078b5641dcd93212e13ca0426dd5dc7f46', NULL, NULL, NULL, 1568290405, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0);
 
 -- ----------------------------
 -- Table structure for users_groups
