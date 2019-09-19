@@ -2,7 +2,7 @@
 
 class Apply_Un_Controller extends Apply_Controller
 {
-	protected $user_id;
+
 	static public $map = "apply/unsolicited";
 	protected $apply  ;
 	protected $delete;
@@ -49,7 +49,7 @@ class Apply_Un_Controller extends Apply_Controller
 		foreach($pages as $key=>&$value)
 		{
 			if($page == $value)
-			return  base_url().Apply_Un_Controller::$map.'/'.$value.'/index/';
+			return Apply_Un_Controller::$map.'/'.$value.'/index/';
 		}
 		return NULL;
 

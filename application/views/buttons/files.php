@@ -5,7 +5,7 @@ $id = uniqid();
 
 $files = explode (',',$files);
 
- ?>
+?>
 
 
 <span class="btn-group dropright">
@@ -17,7 +17,7 @@ $files = explode (',',$files);
                  class="text-muted"
                  >
 		<span  data-title="<?= $id ?>" >  
-		  <i class="fa fa-eye"></i> <small title="count">( <?= count($files) ?> )</small>
+			<i class="fa fa-eye"></i> <small title="count">( <?= count($files) ?> )</small>
 		  
 		
 		</span>
@@ -28,20 +28,32 @@ $files = explode (',',$files);
 		<div  data-url=""  class="card card-body" >
 
 
-			<ul>
-				<?
-				foreach($files as $file) :?>
+	
+			<?
+			$type = null;
+			foreach($files as $file) :?>
 
-				<li> <a 
+			<? 
+			
+			$pathFile = explode("/",$file);
+			if($type != $pathFile[0]){
+				echo "</ol><b>".lang($pathFile[0])."</b><ol>";
+				
+				$type= $pathFile[0];
+			}
+		
+
+			?>
+			<li> <a 
 			
 				 target="_blank"
-				 href="<?=  base_url().'user_uploads/cv/'.$file ?>"> 
-				 <?= $file ?></a></li>
+				 href="<?=  base_url().'user_uploads/'.$file ?>"> 
+					<?= $pathFile[1] ?></a></li>
 
 
 
-				<? endforeach ;?>
-			</ul>
+			<? endforeach ;?>
+			
 		</div>
 	</div>
 

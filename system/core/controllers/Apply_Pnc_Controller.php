@@ -12,7 +12,7 @@ class Apply_Pnc_Controller extends Apply_Controller
 		'main',
 		'eu',
 		'education',
-		'cfs',
+/*		'cfs',*/
 		'foreignlang',
 		'aeronautical_experience',
 		'medical_aptitudes',
@@ -55,7 +55,7 @@ class Apply_Pnc_Controller extends Apply_Controller
 		$pages          = array_merge($pages,$list_to_uplaod);
 		foreach($pages as $key=>&$value){
 			if($page == $value)
-			return  base_url().Apply_Pnc_Controller::$map.'/'.$value.'/index/'.$offer_id;
+			return Apply_Pnc_Controller::$map.'/'.$value.'/index/'.$offer_id;
 		}
 		return NULL;
 
@@ -68,7 +68,7 @@ class Apply_Pnc_Controller extends Apply_Controller
 			'eu'=>'application_eu_area',
 			'education'=>'last_level_education',
 			'cfs'=>'application_cfs',
-			'foreignlang'=>'application_languages_level',
+			'foreignlang'=>'application_english_frechn_level',
 			'aeronautical_experience'=>'aeronautical_experience',
 			'medical_aptitudes'=>'application_medical_aptitude',
 			'aviability'=>'applicaiton_misc',

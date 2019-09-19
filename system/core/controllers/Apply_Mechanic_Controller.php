@@ -49,7 +49,7 @@ class Apply_Mechanic_Controller extends Apply_Controller
 		foreach($pages as $key=>&$value)
 		{
 			if($page == $value)
-			return  base_url().Apply_Mechanic_Controller::$map.'/'.$value.'/index/'.$offer_id;
+			return  Apply_Mechanic_Controller::$map.'/'.$value.'/index/'.$offer_id;
 		}
 		return NULL;
 
@@ -61,7 +61,8 @@ class Apply_Mechanic_Controller extends Apply_Controller
 			'main'=>'application',
 /*			'education'=>'last_level_education',*/
 			'aeronautical_baccalaureate'=>'mechanic_baccalaureate',
-			'foreignlang'=>'application_languages_level',
+				'mainlang'=>'application_english_frechn_level',
+			'foreignlang'=>'application_english_frechn_level',
 			'aeronautical_experience'=>'mechanic_offer_aeronautical_experience',		
 			'aviability'=>'applicaiton_misc',
 			

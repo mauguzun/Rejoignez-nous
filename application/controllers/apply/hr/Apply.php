@@ -15,7 +15,9 @@ class Apply extends Apply_Hr_Controller{
 
 	public function index($offer_id,$myStep =null){
 
-
+		
+		
+	
 	
 		$app = $this->application_id($offer_id);
 		
@@ -30,21 +32,22 @@ class Apply extends Apply_Hr_Controller{
 
 		$tables = $this->get_table_name();
 		
+		
+		
 	
 
 		unset($tables['cv']);
 		unset($tables['covver_letter']);
 		unset($tables['main']);
+		unset($tables['application_languages_level']);
+		
 		
 
 		foreach($tables as $tab=>$table){
 		
 		
-			if($tab == 'foreignlang'){
-				$url = $this->get_page($offer_id,'other');
-				redirect($url.FILL_FORM);
-			}
-		
+			
+			
 			if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
 				$url = $this->get_page($offer_id,$tab);
 				if($url){
@@ -62,6 +65,8 @@ class Apply extends Apply_Hr_Controller{
 			}
 		}
 		if($myStep != null){
+				
+			
 			foreach(['covver_letter'] as $type){
 				if(count($this->Crud->get_all('application_files',
 							['application_id'=>$app['id'] ,'deleted'=>0  ,'type'=>$type])) == 0){
@@ -89,19 +94,16 @@ class Apply extends Apply_Hr_Controller{
 
 		if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){
 			$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
-			//todo send email 
-			$this->application_done_email();
+			
 		}else{
 			$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
 			$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
-			$this->application_done_email();
+			$this->application_done_email($app['id']);
 		}
-		redirect($this->get_page($offer_id,'main'));
-		/*
 		
-		/*$this->show_header();
-		$this->load->view('front/parts/messages',['messages'=>$this->_errors]);
-		$this->show_footer();*/
+		
+		redirect($this->get_page($offer_id,'main'));
+		
 
 	}
 

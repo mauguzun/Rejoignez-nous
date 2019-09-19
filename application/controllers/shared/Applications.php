@@ -142,8 +142,7 @@ class Applications extends Shared_Controller{
 
 
 		$this->data['control']["asdf"] = form_label('<b>*</b>'.lang("cv"));
-		/*		foreach(['cv','covver_letter'] as $value){
-		*/		foreach(['cv'] as $value){
+		foreach(['cv','covver_letter'] as $value){
 
 			$this->data['control']["X{$value}"] = $this->load->view('front/apply/part/ajaxuploader',
 				[
@@ -218,13 +217,12 @@ class Applications extends Shared_Controller{
 			else{
 
 				// create user
-				$this->Crud->add([
+				$user = $this->Crud->add([
 						'comment'=>$_POST['comment'],
-						'user_id'=>$_POST['id'],
 						'admin_id'=>$this->ion_auth->user()->row()->id,
 						'first_name'=>$_POST['first_name'],
 						'last_name'=>$_POST['last_name'],
-						],'candidates'
+					],'users'
 				);
 
 
@@ -234,10 +232,11 @@ class Applications extends Shared_Controller{
 						'manualy'=>1,
 						'filled'=>1,
 						'id'=>$_POST['id'],
-						'user_id'=>$_POST['id'],
+						'user_id'=>$user['id'],
 						'offer_id'=>$_POST['offer_id'],
 						'unsolicated_function'=>$_POST['unsolicated_function'],
-						
+						'first_name'=>$_POST['first_name'],
+						'last_name'=>$_POST['last_name'],
 						/*'opinion_folder '=>$_POST['opinion_folder'],
 						'opinion_interview '=>$_POST['opinion_interview'],
 						'opinion_test '=>$_POST['opinion_test'],
@@ -401,9 +400,9 @@ class Applications extends Shared_Controller{
 			$this->_table,
 			[
 				'offers'=>"$this->_table.offer_id = offers.id",
+				'users'=>"$this->_table.user_id = users.id",
 				'applicaiton_misc'=>"$this->_table.id = applicaiton_misc.application_id",
 				'application_status'=>"$this->_table.application_statuts = application_status.id",
-				'candidates'=>"$this->_table.user_id = candidates.user_id",
 				'application_english_frechn_level'=>"$this->_table.id = application_english_frechn_level.application_id",
 				'application_languages_level'=>"$this->_table.id = application_languages_level.application_id",
 				'offers_activities'=>"offers.id = offers_activities.offer_id",
@@ -419,7 +418,7 @@ class Applications extends Shared_Controller{
 				'function_activity'=>"activities.id=function_activity.activity_id",
 				'functions'=>"functions.id=function_activity.function_id",
 				'application_files'=>"$this->_table.id  =  application_files.application_id 
-				and application_files.deleted  = 0  and  application_files.type = 'cv'
+				and application_files.deleted  = 0 
 				"
 			],
 			"$this->_table.* ,$this->_table.id as aid,   ,application.user_id as uid ,offers.*,applicaiton_misc.*,
@@ -429,21 +428,22 @@ class Applications extends Shared_Controller{
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
 			GROUP_CONCAT(DISTINCT functions.function ) as functions,		
-			GROUP_CONCAT(DISTINCT application_files.file ) as files,
+			GROUP_CONCAT(DISTINCT CONCAT(application_files.type,'/',application_files.file)   ) as files,		
+			
 			last_level_education.university as university,
 			last_level_education.education_level_id as education_level,
 			mechanic_offer_aeronautical_experience.managerial_duties as m_managerial,
 			offers.category as offer_cat,
 			offers.id as oid,offers.title as title,
 			offers_category.category  as cat,
-			
-			application_english_frechn_level.* ,$this->_table.*,candidates.*"
+			users.handicaped as handicaped,		
+			application_english_frechn_level.* ,$this->_table.*,application.*"
 
 			,NULL , ["application.id"],$allowed);
 			
 			
 			
-
+	
 
 		$data['data'] = [];
 		foreach($query as $table_row){
@@ -456,7 +456,8 @@ class Applications extends Shared_Controller{
 	
 	private function _row($table_row){
 		
-
+		
+	
 		$data['data'] = [];
 		
 		$row      = [];
@@ -526,7 +527,7 @@ class Applications extends Shared_Controller{
 			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['first_name']) ,
 			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['last_name']) ,
 			
-			$title ,
+			$title/*. $table_row['functions']*/ ,
 			
 			/*$table_row['aid'],*/
 			'<input class="table-checkbox" 

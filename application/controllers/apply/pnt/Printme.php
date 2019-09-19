@@ -30,7 +30,6 @@ class Printme extends Apply_Pnt_Controller
 			$this->table,
 			[
 				"users"=>"users.id = $this->table.user_id",
-				"candidates"=>"users.id = candidates.user_id",
 			
 				"applicaiton_misc"=>"$this->table.id = applicaiton_misc.application_id",
 				'countries'=>"$this->table.country_id = countries.id",
@@ -45,14 +44,15 @@ class Printme extends Apply_Pnt_Controller
 			$this->table.* ,
 			$this->table.id as aid,
 			applicaiton_misc.*,
-			users.email as email,
+						users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+
 			countries.name as country,
 			last_level_education.*,
 			application_medical_aptitude.date as medical_date,
 			application_eu_area.*,
 			application_english_frechn_level.*,
 			hr_offer_education_level.level as education_level,
-			application_languages_level.* ,candidates.*",
+			application_languages_level.* ",
 			NULL,
 			null,
 			["{$this->table}.id" => $app['id']]);

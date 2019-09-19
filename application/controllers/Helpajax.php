@@ -17,7 +17,7 @@ class Helpajax extends CI_Controller
 		$user = $this->ion_auth->user()->row();
 
 		
-		$candidate  = isset($user) ? $this->Crud->get_row(['user_id'=>$user->id],'candidates') : NULL ;
+		$candidate  = isset($user) ? array($user) : NULL ;
 		
 		$this->load->view('front/helpform',
 			[

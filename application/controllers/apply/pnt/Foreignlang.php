@@ -4,20 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Foreignlang extends Apply_Pnt_Controller
-{
+class Foreignlang extends Apply_Pnt_Controller{
 
 	protected $step = 'foreignlang';
 
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct('user/offers');
 
 	}
 
-	public function index($offer_id )
-	{
+	public function index($offer_id ){
 		$map   = $this->apply.'/'.$offer_id;
 
 
@@ -29,8 +26,7 @@ class Foreignlang extends Apply_Pnt_Controller
 
 
 		$app = $this->application_id($offer_id);
-		if(!$app)
-		{
+		if(!$app){
 			redirect($this->get_page($offer_id,'main').FILL_FORM);
 		}
 		$this->form_validation->set_rules('english_level', lang('english_level'), 'trim|required|max_length[255]');
@@ -45,67 +41,34 @@ class Foreignlang extends Apply_Pnt_Controller
 		if(  isset($_POST['english_level'])   ){
 
 
-			if($_POST['fcl'] == 0)
-			{
+			if($_POST['fcl'] == '0'){
 				$this->session->set_flashdata('message',
 					lang('you_must_have_obtained_a_level_higher_than_or_equal'));
+					
+					
 			}
 
-			else
-			{
-				$fcl = [
-					'application_id'=>$app['id'],
-					'fcl'=>$_POST['fcl']
-				];
-
-				$row = $this->Crud->get_row(['application_id'=>$app['id']],'application_fcl');
-				if($row)
-				$this->savehistory($app['id'],$row,$fcl,'application_id',$app['id'],$this->get_table_name($this->step),['applicaiton_id']);
-
-				$this->Crud->update_or_insert($fcl,'application_fcl');
-
-
-				// other
-				$main_row = $this->Crud->get_row(['application_id'=>$app['id']],'application_english_frechn_level');
-
-				// we have app lets continute
-				if($main_row){
-					$new = [
-						'french_level'=> $_POST['french_level'] ,
-						'english_level'=> $_POST['english_level'],
-						'application_id'=>$app['id']
-					];
-					//$application_id,$before,$new,$select_id,$select_value,$table,$scip = NULL
-					$this->savehistory($app['id'],$main_row,$new,'application_id',$main_row['application_id'],
-						'application_english_frechn_level',['application_id']);
-
-					$this->Crud->update_or_insert($new, 'application_english_frechn_level');
-
+			else{
+				if(isset($_POST['english_level'])  ){
+					$this->Crud->update_or_insert([
+							'application_id'=>(int)$app['id'],
+							'english_level'=>$_POST['english_level'],			
+							'french_level'=>$_POST['french_level']],'application_english_frechn_level');
+					
+					$can_redirect = TRUE;
 				}
-				else
-				{
-
-					$this->Crud->add(
-						[
-							'french_level'=> $_POST['french_level'],
-							'english_level'=> $_POST['english_level'],
-							'application_id'=>$app['id']
-						],'application_english_frechn_level');
-				}
-				$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
 			}
 
 
 			$redirect = TRUE;
 		}
-		// end oiof shit :)
+		
+		
+		$row = $this->Crud->get_all('application_languages_level',['application_id'=>$app['id']]);
 
-		$row = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
-
-		if( isset($_POST['language']) && $this->form_validation->run() === TRUE && $_POST['fcl'] == 1 )
-		{
-			if($row)
-			{
+		if( isset($_POST['language']) && $this->form_validation->run() === TRUE){
+			
+			if($row){
 
 				$langs = [];
 				for($i = 0 ; $i < count($_POST['language']) ; $i++){
@@ -116,32 +79,27 @@ class Foreignlang extends Apply_Pnt_Controller
 					];
 					array_push($langs,$lang);
 				}
-				foreach($row as $value)
-				{
-					if(!in_array($value,$langs))
-					{
+				foreach($row as $value){
+					if(!in_array($value,$langs)){
 
 						// oe ? we find you bich
 						$this->savehistory($app['id'],$value,[],'application_id',
-							$app['id'],$this->get_table_name($this->step),['application_id']);
-						$this->Crud->delete($value,$this->get_table_name($this->step));
+							$app['id'],'application_languages_level',['application_id']);
+						$this->Crud->delete($value,'application_languages_level');
 					}
 				}
 
-				foreach($langs as $new_value)
-				{
+				foreach($langs as $new_value){
 					if(!empty($new_value['language'])){
-						$this->Crud->update_or_insert($new_value,$this->get_table_name($this->step));
+						$this->Crud->update_or_insert($new_value,'application_languages_level');
 					}
 
 
 				}
 			}
-			else
-			{
+			else{
 				$langs = [];
 				for($i = 0 ; $i < count($_POST['language']) ; $i++){
-				
 					if(!empty($_POST['language'][$i])){
 						$langs[] = [
 							'language' => $_POST['language'][$i],
@@ -149,26 +107,32 @@ class Foreignlang extends Apply_Pnt_Controller
 							'application_id'=> $app['id']
 						];
 					}
+
+
 				}
 
-				$this->Crud->add_many($langs,$this->get_table_name($this->step));
+				$this->Crud->add_many($langs,'application_languages_level');
 			}
-			$row = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
+			$row  = $this->Crud->get_all('application_languages_level',['application_id'=>$app['id']]);
 
 			
 		}
-		
+		$this->session->set_flashdata('message',
+			lang('you_must_have_obtained_a_level_higher_than_or_equal'));
+					
+					
+					
 		if($redirect){
 			redirect($map);
 		}
 			
-
+		/*
 		$message = (validation_errors() ? validation_errors() :
-			($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+		($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 
 		$this->session->set_flashdata('message',$message);
-
+		*/
 
 
 		$this->show_header([$offer['title'],$offer['title'],$offer['title']]);

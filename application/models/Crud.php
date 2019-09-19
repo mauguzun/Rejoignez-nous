@@ -127,6 +127,7 @@ class Crud extends CI_Model
     */
     function update_or_insert($data,$table)
     {
+    	
         $this->db->replace($table, $data);
     }
 

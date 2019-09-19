@@ -59,7 +59,7 @@ class Apply_Pnt_Controller extends Apply_Controller
 		foreach($pages as $key=>&$value)
 		{
 			if($page == $value)
-			return  base_url().Apply_Pnt_Controller::$map.'/'.$value.'/index/'.$offer_id;
+			return  Apply_Pnt_Controller::$map.'/'.$value.'/index/'.$offer_id;
 		}
 		return NULL;
 
@@ -70,7 +70,8 @@ class Apply_Pnt_Controller extends Apply_Controller
 		$tables      = [
 			'main'=>'application',
 			'eu'=>'application_eu_area',
-			'foreignlang'=>'application_languages_level',
+
+			'foreignlang'=>'application_english_frechn_level',
 			//'fcl'=>'application_fcl',
 			'licenses'=>'application_licenses',
 			'medical_aptitudes'=>'application_medical_aptitude',

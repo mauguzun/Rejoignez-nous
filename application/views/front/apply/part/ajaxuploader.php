@@ -37,17 +37,6 @@
 	</div>
 
 
-	<div id="filelist">
-		<?
-		if(isset($show_me)) :?>
-		<?
-		foreach($show_me as $id=>$oneimg) :?>
-
-		<?= img_div_new($oneimg['img'],$id,$oneimg['name']) ?>
-		<? endforeach ;?>
-
-		<? endif;?>
-	</div>
 
 
 	<?
@@ -90,6 +79,17 @@
 
 </div>
 
+<div class="filelist" id="filelist_<?= $upload_id?>">
+	<?
+	if(isset($show_me)) :?>
+	<?
+	foreach($show_me as $id=>$oneimg) :?>
+
+	<?= img_div_new($oneimg['img'],$id,$oneimg['name']) ?>
+	<? endforeach ;?>
+
+	<? endif;?>
+</div>
 
 
 <script>
@@ -164,7 +164,7 @@
 				}
 				else
 				{
-					$('#<?=$upload_id?> #filelist').append(result.upload_data.result);
+					$("#filelist_<?= $upload_id ?>").append(result.upload_data.result);
 				
 					setAction();
 				}

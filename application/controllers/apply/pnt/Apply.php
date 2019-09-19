@@ -27,7 +27,7 @@ class Apply extends Apply_Pnt_Controller{
 			$tables = $this->get_table_name();
 
 			foreach($tables as $key=>$value){
-				if($value == 'application_files' | $value == 'application' | $value == 'application_languages_level'  ){
+				if($value == 'application_files' | $value == 'application' /*| $value == 'application_languages_level'*/  ){
 					unset($tables[$key]);
 				}
 			}
@@ -83,7 +83,7 @@ class Apply extends Apply_Pnt_Controller{
 			}
 
 			$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-			$this->application_done_email();
+			$this->application_done_email($app['id']);
 			redirect($this->get_page($offer_id,'main'));
 
 			/*if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){

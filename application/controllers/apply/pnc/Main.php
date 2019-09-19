@@ -23,11 +23,6 @@ class Main extends Apply_Pnc_Controller
 	}
 
 
-	private function _set_validation()
-	{
-		
-	}
-
 
 
 

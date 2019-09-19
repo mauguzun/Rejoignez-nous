@@ -4,20 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Education extends Apply_Pnc_Controller
-{
+class Education extends Apply_Pnc_Controller{
 
 	protected $step = 'education';
 
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct('user/offers');
 
 	}
 
-	public function index($offer_id)
-	{
+	public function index($offer_id){
 		$offer_row = $this->errors($offer_id);
 		$offer     = $this->errors($offer_id);
 		if(!$offer){
@@ -30,6 +27,8 @@ class Education extends Apply_Pnc_Controller
 
 		$can_update = FALSE;
 		$this->form_validation->set_rules('education_level_id', lang('education'), 'trim|required|numeric');
+		$this->form_validation->set_rules('safety_training_certificate_organization', lang('safety_training_certificate_organization'), 'trim|required');	
+		$this->form_validation->set_rules('safety_training_certificate_date', lang('safety_training_certificate_date'), 'trim|required');
 
 		$app = $this->application_id($offer_id);
 
@@ -44,8 +43,7 @@ class Education extends Apply_Pnc_Controller
 					$can_update = TRUE;
 				}
 			}
-			else
-			{
+			else{
 				$can_update = TRUE;
 			}
 		}
@@ -65,26 +63,23 @@ class Education extends Apply_Pnc_Controller
 
 			$_POST['application_id'] = $app['id'];
 			$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
-			if($row)
-			{
+			if($row){
 				$this->savehistory($app['id'],$row,$_POST,'application_id',$app['id'],$this->get_table_name($this->step),
 					['application_id'],0);
 			}
 
 			$this->Crud->update_or_insert($_POST,$this->get_table_name($this->step));
-		/*	redirect($map);*/
+			/*	redirect($map);*/
 
 
 			$row = $this->Crud->get_row(['application_id'=>$app['id']],'application_cfs');
-			if($row)
-			{
+			if($row){
 				$this->savehistory($app['id'],$row,$sfc,'application_id',$app['id'],'application_cfs');
 			}
 			$this->Crud->update_or_insert($sfc,'application_cfs');
 			redirect($this->apply.'/'.$offer_id);
 		}
-		else
-		{
+		else{
 			$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
@@ -121,7 +116,8 @@ class Education extends Apply_Pnc_Controller
 					$column,null,
 					lang($column),
 					($date) ? $date[$column]: NULL,
-					$column == 'motivation' ? TRUE : FALSE
+					/*					$column == 'motivation' ? TRUE : FALSE
+					*/					true
 				));
 		}
 

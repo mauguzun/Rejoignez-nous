@@ -4,20 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Printme extends Apply_Pnc_Controller
-{
+class Printme extends Apply_Pnc_Controller{
 
 	protected $step = 'printme';
 	protected $table = 'application';
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct('user/offers');
 
 	}
 
-	public function index($offer_id,$app_id = NULL)
-	{
+	public function index($offer_id,$app_id = NULL){
 
 		
 		$app = $this->get_print_application($offer_id,$app_id);
@@ -29,7 +26,6 @@ class Printme extends Apply_Pnc_Controller
 			$this->table,
 			[
 				"users"=>"users.id = $this->table.user_id",
-				"candidates"=>"users.id = candidates.user_id",
 
 				"applicaiton_misc"=>"$this->table.id = applicaiton_misc.application_id",
 				'countries'=>"$this->table.country_id = countries.id",
@@ -44,14 +40,15 @@ class Printme extends Apply_Pnc_Controller
 			$this->table.* ,
 			applicaiton_misc.*,
 			$this->table.id as aid,
-			users.email as email,
+			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+
 			countries.name as country,
 			last_level_education.*,
 			application_medical_aptitude.date as medical_date,
 			application_eu_area.*,
 			application_english_frechn_level.*,
 			hr_offer_education_level.level as education_level,
-			application_languages_level.* ,candidates.*",
+			application_languages_level.*",
 			NULL,
 			null,
 			["{$this->table}.id" => $app['id']]);
@@ -121,13 +118,11 @@ class Printme extends Apply_Pnc_Controller
 
 	}
 
-	private function _have($arg)
-	{
+	private function _have($arg){
 
 		$have = lang('yes_toogle');
 
-		if(strpos($arg, ','))
-		{
+		if(strpos($arg, ',')){
 			$arr = explode(',',$arg);
 			return max($arr) > 0  ? $have[1] : $have[0];
 		}

@@ -68,7 +68,7 @@ class Complementary_informations extends Apply_Pnt_Controller
 			
 			
 			
-			redirect($this->apply.'/'.$offer_id);
+			redirect($this->apply.'/'.$offer_id.'/'.true);
 		}else{
 				$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));

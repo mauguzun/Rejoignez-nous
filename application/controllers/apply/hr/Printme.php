@@ -29,7 +29,7 @@ class Printme extends Apply_Hr_Controller
 			$this->table,
 			[
 				"users"=>"users.id = $this->table.user_id",
-				"candidates"=>"users.id = candidates.user_id",
+				
 
 				"applicaiton_misc"=>"$this->table.id = applicaiton_misc.application_id",
 				'countries'=>"$this->table.country_id = countries.id",
@@ -46,10 +46,12 @@ class Printme extends Apply_Hr_Controller
 			users.email as email,
 			countries.name as country,
 			$this->table.id as aid,
+						users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+
 			last_level_education.*,
 			application_english_frechn_level.*,
 			hr_offer_education_level.level as education_level,
-			application_languages_level.* ,candidates.*",
+			application_languages_level.* ",
 			NULL,
 			null,
 			["{$this->table}.id" => $app['id']]);

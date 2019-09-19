@@ -1,26 +1,24 @@
 <?
 
-class Apply_Controller extends Usermeta_Controller
-{
+class Apply_Controller extends Usermeta_Controller{
+	protected $user ;
 	protected $user_id;
-
 	protected $_errors = NULL;
 
-
-	public function __construct($page = 'user/index',$meta = NULL )
-	{
+	public function __construct($page = 'user/index',$meta = NULL ){
 		$this->_page = $page;
 		parent::__construct(NULL,$meta = NULL,TRUE);
 
-
+		
+		$this->user = $this->ion_auth->user()->row();
+		
 		$this->user_id = (string)$this->ion_auth->user()->row()->id;
 		$this->load->library("InputArray");
 		
 		
 
 	}
-	public function open_form($offer_id,$offer)
-	{
+	public function open_form($offer_id,$offer){
 		//  move me lat
 		$app = $this->application_id($offer_id);
 
@@ -38,20 +36,17 @@ class Apply_Controller extends Usermeta_Controller
 		;
 	}
 
-	protected function get_print_application($offer,$app_id = NULL)
-	{
+	protected function get_print_application($offer,$app_id = NULL){
 		if(!$app_id){
 			return  $this->application_id($offer);
 		}
-		else
-		{
+		else{
 			return  $this->Crud->get_row(['id'=>$app_id],'application');
 		}
 
 	}
 
-	public function make_form_link($pages,$offer_id,$folder)
-	{
+	public function make_form_link($pages,$offer_id,$folder){
 		foreach($pages as $key=>&$value){
 
 			$class = ($value == $this->step)? 'is-active':'';
@@ -73,19 +68,16 @@ class Apply_Controller extends Usermeta_Controller
 	*
 	* @return
 	*/
-	public function savehistory($application_id,$before,$new,$select_id,$select_value,$table,$scip = NULL)
-	{
+	public function savehistory($application_id,$before,$new,$select_id,$select_value,$table,$scip = NULL){
 
 		$bath = [];
 		$row  = round(microtime(true) * 1000);
 
-		if(!is_array($before))
-		{
+		if(!is_array($before)){
 			return;
 		}
 
-		foreach($before as $key=>$value)
-		{
+		foreach($before as $key=>$value){
 
 			if($key == 'application_id')
 			continue;
@@ -93,8 +85,7 @@ class Apply_Controller extends Usermeta_Controller
 			if(is_array($scip) && in_array($key,$scip))
 			continue;
 
-			if(!array_key_exists($key,$new))
-			{
+			if(!array_key_exists($key,$new)){
 				array_push($bath,[
 						'application_id'=>$application_id,
 						'table'=>$table,
@@ -108,8 +99,7 @@ class Apply_Controller extends Usermeta_Controller
 			}
 
 			else
-			if($before[$key] != $new[$key] )
-			{
+			if($before[$key] != $new[$key] ){
 				array_push($bath,[
 						'application_id'=>$application_id,
 						'table'=>$table,
@@ -127,22 +117,19 @@ class Apply_Controller extends Usermeta_Controller
 
 		// if not exist deleted
 	}
-	public function application_id($offer_id)
-	{
+	public function application_id($offer_id){
 		$app_id = $this->Crud->get_row(['offer_id'=>$offer_id,'user_id'=>$this->user_id,'deleted'=>0],'application');
 		if($app_id){
 			return $app_id;
 
 		}
-		else
-		{
+		else{
 			return NULL;
 		}
 	}
 
 
-	public function show_aviability($app)
-	{
+	public function show_aviability($app){
 
 
 		$month     = new DateTime('now');
@@ -167,8 +154,7 @@ class Apply_Controller extends Usermeta_Controller
 		];
 		$date      = date("d/m/Y") ;
 
-		if(isset($app['aviability']))
-		{
+		if(isset($app['aviability'])){
 
 
 			$date = date_to_input($app['aviability']);
@@ -214,10 +200,8 @@ class Apply_Controller extends Usermeta_Controller
 		$this->load->view('front/apply/part/form',$this->data);
 	}
 
-	public function show_other($app)
-	{
-		foreach(['salary'] as $value)
-		{
+	public function show_other($app){
+		foreach(['salary'] as $value){
 			$activity = ($app)?$app[$value] : $this->form_validation->set_value($value);
 			$this->data['control']["{$value}_l"] = form_label(lang($value));
 
@@ -247,8 +231,7 @@ class Apply_Controller extends Usermeta_Controller
 
 		$this->load->view('front/apply/part/form',$this->data);
 	}
-	protected function show_education($user = NULL )
-	{
+	protected function show_education($user = NULL ){
 
 
 		if($user == null){
@@ -264,8 +247,7 @@ class Apply_Controller extends Usermeta_Controller
 		// levels
 		$levels = $this->Crud->get_all('hr_offer_education_level',NULL,'level','asc');
 		$options = [];
-		foreach($levels as $coutry)
-		{
+		foreach($levels as $coutry){
 			$options[$coutry['id']] = $coutry['level'];
 		}
 		$selected = isset($user['education_level_id'])? $user['education_level_id']:1;
@@ -281,8 +263,7 @@ class Apply_Controller extends Usermeta_Controller
 		$this->data['hidden_select_selected'] = $selected;
 		//set unviersity
 		$this->data['hidden'] = "";
-		foreach(['studies','university'] as $value)
-		{
+		foreach(['studies','university'] as $value){
 
 			$required = ($value == 'studies')? TRUE:FALSE;
 
@@ -301,13 +282,11 @@ class Apply_Controller extends Usermeta_Controller
 	}
 
 
-	public function show_upload($offer_id,$map)
-	{
+	public function show_upload($offer_id,$map){
 
 		$this->load->library("Uploadconfig");
 		$offer = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 
@@ -323,10 +302,9 @@ class Apply_Controller extends Usermeta_Controller
 		$this->load->view('js/ajaxupload');
 		$query   = $this->Crud->get_all( 'application_files' ,['deleted'=>0, 'application_id'=>$app['id'],'type'=>$this->step]);
 		$show_me = [] ;
-		foreach($query as $value)
-		{
+		foreach($query as $value){
 
-				$show_me[$value['id']] = 
+			$show_me[$value['id']] = 
 			[
 				'img'=>base_url().$this->uploadconfig->get("/".$value['type'])['upload_path'].'/'.$value['file'],
 				'name'=>$value['file']
@@ -352,11 +330,9 @@ class Apply_Controller extends Usermeta_Controller
 	* @return
 	*/
 
-	public function show_upload_header($offer_id)
-	{
+	public function show_upload_header($offer_id){
 		$offer = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 
@@ -369,18 +345,15 @@ class Apply_Controller extends Usermeta_Controller
 		$this->open_form($offer_id,$offer);
 	}
 
-	public function show_upload_footer()
-	{
+	public function show_upload_footer(){
 		$this->load->view('front/apply/close_upload');
 		$this->show_footer();
 	}
 
-	public function show_upload_with_type($type,$offer_id,$map,$last = FALSE)
-	{
+	public function show_upload_with_type($type,$offer_id,$map,$last = FALSE){
 		$this->load->library("Uploadconfig");
 		$offer = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 
@@ -395,8 +368,7 @@ class Apply_Controller extends Usermeta_Controller
 		$this->load->view('js/ajaxupload');
 		$query   = $this->Crud->get_all( 'application_files' ,['deleted'=>0, 'application_id'=>$app['id'],'type'=>$type]);
 		$show_me = [] ;
-		foreach($query as $value)
-		{
+		foreach($query as $value){
 
 			$show_me[$value['id']] = base_url().$this->uploadconfig->get("/".$value['type'])['upload_path'].'/'.$value['file'];
 		}
@@ -412,25 +384,47 @@ class Apply_Controller extends Usermeta_Controller
 
 	}
 
-	public function show_main($app)
-	{
+	public function show_main($app){
 
 		if($app == null){
-			$query = $this->Crud->get_all('application' ,
-				['user_id'=>$this->ion_auth->user()->row()->id ,'filled'=>1,'deleted'=>0 ,'manualy'=>0 ],"add_date",'desc');
+			/*	$query = $this->Crud->get_all('application' ,
+			['user_id'=>$this->user->id ,'filled'=>1,'deleted'=>0 ,'manualy'=>0 ],"add_date",'desc');
 
 
-			if($query && array_key_exists(0,$query) )
+			if($query && array_key_exists(0,$query) ){
 			$app = $query[0];
+			}
+			else{*/
+			$app  = (array)$this->user;
+			/*	}*/
 		}
+		
 
+		
+		// civility
+		$civility = isset($app) && $app['civility'] ? $app['civility'] : NULL ;
+		$this->data['control']["civility_l"] = form_label(lang("user_civility"));
+		$this->data['control']['civility'] =
+		form_dropdown('civility', ['mr'=>lang('_mr'),'mrs'=>lang('_mrs')],$civility,['class'=>'form-control']);
 
+	
+		foreach(['first_name','last_name'] as $value){
+			//setup profile if dont have post 
+			
+			$activity = ($app)?$app[$value] : $this->form_validation->set_value($value);
+
+			$this->data['control'][$value] = form_input(
+				$this->inputarray->getArray($value,
+					$value == 'email' ? 'email' : 'text',
+					lang($value),$activity,true));
+		}
+		
+		///
 
 		$countries = $this->Crud->get_all('country_translate',
 			['code'=>$this->session->userdata('lang')],'name','asc');
 		$options   = [];
-		foreach($countries as $coutry)
-		{
+		foreach($countries as $coutry){
 			$options[$coutry['country_id']] = $coutry['name'];
 		}
 		$selected = isset($app['country_id'])? $app['country_id']:NULL;;
@@ -440,10 +434,9 @@ class Apply_Controller extends Usermeta_Controller
 				'class'=>'form-control selectpicker',
 				'data-live-search'=>"true"]);
 
-
+		
 		// address
-		foreach(['city','zip','address','phone','phone_2'] as $value)
-		{
+		foreach(['city','zip','address','phone','phone_2'] as $value){
 			$activity = ($app)?$app[$value] : $this->form_validation->set_value($value);
 			//$this->data['control']["{$value}_l"] = form_label(lang($value));
 
@@ -451,12 +444,16 @@ class Apply_Controller extends Usermeta_Controller
 			$this->data['control'][$value] = form_input(
 				$this->inputarray->getArray($value,'text',lang($value),$activity,$required));
 		}
-
+		
+		
+		$this->data['control']['change_account'] =
+		$this->load->view('front_asl/change_account',null,true);
+		
+		
 		$this->load->view('front/apply/part/form',$this->data);
 	}
 
-	public function show_mainlang($app)
-	{
+	public function show_mainlang($app){
 		$options = [];
 		foreach($this->Crud->get_all("language_level",null,'id','asc') as $value){
 			$options[$value['id']] = $value['level'];
@@ -471,8 +468,9 @@ class Apply_Controller extends Usermeta_Controller
 
 	}
 
-	public function show_foreign_lanuage($app_id,$row)
-	{
+	public function show_foreign_lanuage($app_id,$row){
+		
+	
 		if($row == null){
 			$query = $this->Crud->get_all('application' ,
 				['user_id'=>$this->ion_auth->user()->row()->id ,'filled'=>1,'deleted'=>0 ,'manualy'=>0 ],"add_date",'desc');
@@ -517,13 +515,12 @@ class Apply_Controller extends Usermeta_Controller
 			$options[$value['id']] = $value['level'];
 		}
 		$app = $this->Crud->get_row(['application_id'=>$app_id],'application_english_frechn_level');
-		if ($app == null && isset($row) && array_key_exists(0,$row))
-		{
+		if($app == null && isset($row) && array_key_exists(0,$row)){
 			
-				$app = $this->Crud->get_row(['application_id'=>$row[0]['application_id']],'application_english_frechn_level');
+			$app = $this->Crud->get_row(['application_id'=>$row[0]['application_id']],'application_english_frechn_level');
 		}
 		foreach(['english_level','french_level'] as $column){
-			$this->data['control'][$column] = form_dropdown($column, $options,($app) ? $app[$column]: NULL,['class'=>'form-control']);
+			$this->data['control'][$column] = form_dropdown($column, $options,($app) ? $app[$column]: 1,['class'=>'form-control']);
 		}
 
 
@@ -538,8 +535,7 @@ class Apply_Controller extends Usermeta_Controller
 
 		$query = $this->Crud->get_all('language_list',null,'language','asc','language');
 		$langs = array_map(
-			function ($a)
-			{
+			function ($a){
 				return $a['language'];
 			}, $query);
 
@@ -550,11 +546,9 @@ class Apply_Controller extends Usermeta_Controller
 
 	// * index methods
 
-	protected function other_index($offer_id,$map)
-	{
+	protected function other_index($offer_id,$map){
 		$offer = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 
@@ -564,7 +558,7 @@ class Apply_Controller extends Usermeta_Controller
 
 
 		//$this->form_validation->set_rules('aviability', lang('aviability'), 'trim | required | max_length[20]');
-		$this->form_validation->set_rules('salary', lang('salary'), 'trim|numeric|required');
+		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
 
 
 		$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
@@ -583,20 +577,19 @@ class Apply_Controller extends Usermeta_Controller
 				$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
 
 			}
-			else
-			{
+			else{
 
 				$_POST['application_id'] = $app['id'];
 				$this->Crud->add($_POST,$this->get_table_name($this->step));
 			}
+			
+		
 			redirect($map);
 
 		}
-		else
-		{
+		else{
 
 			$message = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-
 			$this->session->set_flashdata('message',$message);
 
 		}
@@ -609,15 +602,13 @@ class Apply_Controller extends Usermeta_Controller
 		$this->show_footer();
 	}
 
-	protected function education_index($offer_id = NULL ,$map )
-	{
+	protected function education_index($offer_id = NULL ,$map ){
 
 
 
 		$offer_row = $this->errors($offer_id);
 		$offer     = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 		$app = $this->application_id($offer_id);
@@ -631,28 +622,23 @@ class Apply_Controller extends Usermeta_Controller
 		$app = $this->application_id($offer_id);
 
 
-		if($this->form_validation->run() === TRUE)
-		{
+		if($this->form_validation->run() === TRUE){
 
-			if($this->input->post('education_level_id') != '1')
-			{
+			if($this->input->post('education_level_id') != '1'){
 				//$this->form_validation->set_rules('university', lang('university'), 'trim | required | max_length[255]');
 				$this->form_validation->set_rules('studies', lang('studies'), 'trim|required|max_length[255]');
 
-				if($this->form_validation->run() === TRUE)
-				{
+				if($this->form_validation->run() === TRUE){
 					$can_update = TRUE;
 				}
 			}
-			else
-			{
+			else{
 				$can_update = TRUE;
 			}
 		}
 
 
-		if($can_update)
-		{
+		if($can_update){
 			$_POST['application_id'] = $app['id'];
 			$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
 			if($row){
@@ -665,8 +651,7 @@ class Apply_Controller extends Usermeta_Controller
 
 			redirect($map);
 		}
-		else
-		{
+		else{
 			$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
@@ -681,35 +666,29 @@ class Apply_Controller extends Usermeta_Controller
 		$this->show_footer();
 	}
 
-	protected function main_index($offer_id,$map)
-	{
+	protected function main_index($offer_id,$map){
 
+
+	   
+	
 		$offer_row = $this->errors($offer_id);
-		if(!$offer_row)
-		{
+		if(!$offer_row){
 			return ;
 		}
-		// 1 check if ok ?
+		
 
 		if(isset($_GET['fill_form'])){
 			$this->session->set_flashdata('message',lang('fill_form'));
 		}
 		// chek if profile not filed
-
-		$cand = $this->Crud->get_row(['user_id'=>$this->user_id],'candidates');
-		foreach(['civility','first_name','last_name','birthday'] as $value)
-		{
-			if( empty($cand[$value]) )
-			{
-				redirect(base_url().'user/profile?q=fill_form&url_back='.$this->get_page($offer_id,'main'));
-			}
-		}
-
+		$this->redirect_if_account_not_filled($this->get_page($offer_id,'main'));
+	
+		
 
 
 		$this->form_validation->set_rules('address', lang('address'), 'trim|required|max_length[255]');
 		$this->form_validation->set_rules('phone', lang('phone'), 'trim|required|max_length[20]');		
-	//	$this->form_validation->set_rules('phone', lang('phone'), 'trim|required|numeric|max_length[20]');
+		//	$this->form_validation->set_rules('phone', lang('phone'), 'trim|required|numeric|max_length[20]');
 		$this->form_validation->set_rules('phone_2', lang('phone'), 'trim|max_length[20]');
 		$this->form_validation->set_rules('zip', lang('zip'), 'trim|required|max_length[10]');
 		$this->form_validation->set_rules('country_id', lang('country_id'), 'trim|required|numeric');
@@ -720,14 +699,20 @@ class Apply_Controller extends Usermeta_Controller
 
 		// check form validation
 		if(isset($_POST['zip']) && $this->form_validation->run() === true){
-
+			
+			
+			if(isset($_POST['change_acc'])){
+				unset($_POST['change_acc']);	
+				$this->update_user_account($_POST);
+			}
+			
+			
 			if(!$app){
 				$_POST['user_id'] = $this->user_id;
 				$_POST['offer_id'] = $offer_id;
 				$app = $this->Crud->add($_POST,$this->get_table_name($this->step));
 			}
-			else
-			{
+			else{
 				// update
 				$_POST['user_id'] = $this->user_id;
 				$_POST['offer_id'] = $offer_id;
@@ -744,8 +729,7 @@ class Apply_Controller extends Usermeta_Controller
 			redirect($map);
 
 		}
-		else
-		{
+		else{
 			$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
@@ -757,18 +741,17 @@ class Apply_Controller extends Usermeta_Controller
 		$this->show_header([$offer_row['title'],$offer_row['title'],$offer_row['title']]);
 		$this->open_form($offer_id,$offer_row,$app);
 
+
 		$this->show_main($app);
 		$this->load->view('front/apply/close');
 		$this->show_footer();
 	}
 
 
-	protected function main_aviability($offer_id,$map)
-	{
+	protected function main_aviability($offer_id,$map){
 
 		$offer = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 
@@ -798,8 +781,7 @@ class Apply_Controller extends Usermeta_Controller
 				$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
 
 			}
-			else
-			{
+			else{
 
 				$_POST['application_id'] = $app['id'];
 				$this->Crud->add($_POST,$this->get_table_name($this->step));
@@ -807,8 +789,7 @@ class Apply_Controller extends Usermeta_Controller
 			redirect($map);
 
 		}
-		else
-		{
+		else{
 
 			$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
@@ -826,12 +807,10 @@ class Apply_Controller extends Usermeta_Controller
 		$this->show_footer();
 	}
 
-	protected function mainlang_index($offer_id )
-	{
+	protected function mainlang_index($offer_id ){
 
 		$offer = $this->errors($offer_id);
-		if(!$offer)
-		{
+		if(!$offer){
 			return ;
 		}
 
@@ -860,8 +839,7 @@ class Apply_Controller extends Usermeta_Controller
 				$this->Crud->update(['application_id'=>$app['id']],$_POST,$this->get_table_name($this->step));
 
 			}
-			else
-			{
+			else{
 
 				$_POST['application_id'] = $app['id'];
 				$this->Crud->add($_POST,$this->get_table_name($this->step));
@@ -869,8 +847,7 @@ class Apply_Controller extends Usermeta_Controller
 			$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
 
 		}
-		else
-		{
+		else{
 
 			$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
@@ -890,8 +867,7 @@ class Apply_Controller extends Usermeta_Controller
 
 	}
 
-	public function foreign_index($offer_id ,$map )
-	{
+	public function foreign_index($offer_id ,$map ){
 
 
 
@@ -901,8 +877,7 @@ class Apply_Controller extends Usermeta_Controller
 		}
 
 		$app = $this->application_id($offer_id);
-		if(!$app)
-		{
+		if(!$app){
 			redirect($this->get_page($offer_id,'main').FILL_FORM);
 		}
 		$this->form_validation->set_rules('english_level', lang('language'), 'trim|required|max_length[255]');
@@ -910,45 +885,21 @@ class Apply_Controller extends Usermeta_Controller
 
 
 		if(isset($_POST['english_level'])  ){
-
-			$main_row = $this->Crud->get_row(['application_id'=>$app['id']],'application_english_frechn_level');
-
-			// we have app lets continute
-			if($main_row){
-				$new = [
-					'french_level'=> $_POST['french_level'] ,
-					'english_level'=> $_POST['english_level'],
-					'application_id'=>$app['id']
-				];
-				//$application_id,$before,$new,$select_id,$select_value,$table,$scip = NULL
-				$this->savehistory($app['id'],$main_row,$new,'application_id',$main_row['application_id'],
-					'application_english_frechn_level',['application_id']);
-
-				$this->Crud->update_or_insert($new, 'application_english_frechn_level');
-
-			}
-			else
-			{
-
-				$this->Crud->add(
-					[
-						'french_level'=> $_POST['french_level'],
-						'english_level'=> $_POST['english_level'],
-						'application_id'=>$app['id']
-					],'application_english_frechn_level');
-			}
-			$row          = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
+			$this->Crud->update_or_insert([
+					'application_id'=>(int)$app['id'],
+					'english_level'=>$_POST['english_level'],			
+					'french_level'=>$_POST['french_level']],'application_english_frechn_level');
+					
 			$can_redirect = TRUE;
 		}
-		// end oiof shit :)
+		
 
-		$row = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
 
-		if( isset($_POST['language']) && $this->form_validation->run() === TRUE)
-		{
+		$row = $this->Crud->get_all('application_languages_level',['application_id'=>$app['id']]);
+
+		if( isset($_POST['language']) && $this->form_validation->run() === TRUE){
 			
-			if($row)
-			{
+			if($row){
 
 				$langs = [];
 				for($i = 0 ; $i < count($_POST['language']) ; $i++){
@@ -959,29 +910,25 @@ class Apply_Controller extends Usermeta_Controller
 					];
 					array_push($langs,$lang);
 				}
-				foreach($row as $value)
-				{
-					if(!in_array($value,$langs))
-					{
+				foreach($row as $value){
+					if(!in_array($value,$langs)){
 
 						// oe ? we find you bich
 						$this->savehistory($app['id'],$value,[],'application_id',
-							$app['id'],$this->get_table_name($this->step),['application_id']);
-						$this->Crud->delete($value,$this->get_table_name($this->step));
+							$app['id'],'application_languages_level',['application_id']);
+						$this->Crud->delete($value,'application_languages_level');
 					}
 				}
 
-				foreach($langs as $new_value)
-				{
+				foreach($langs as $new_value){
 					if(!empty($new_value['language'])){
-						$this->Crud->update_or_insert($new_value,$this->get_table_name($this->step));
+						$this->Crud->update_or_insert($new_value,'application_languages_level');
 					}
 
 
 				}
 			}
-			else
-			{
+			else{
 				$langs = [];
 				for($i = 0 ; $i < count($_POST['language']) ; $i++){
 					if(!empty($_POST['language'][$i])){
@@ -995,18 +942,20 @@ class Apply_Controller extends Usermeta_Controller
 
 				}
 
-				$this->Crud->add_many($langs,$this->get_table_name($this->step));
+				$this->Crud->add_many($langs,'application_languages_level');
 			}
-			$row  = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
+			$row  = $this->Crud->get_all('application_languages_level',['application_id'=>$app['id']]);
 
-			$can_redirect = TRUE;
+			
 		}
 
-		if($can_redirect)
-		{
+
+		
+	
+		if($can_redirect){
 			redirect($map);
 		}
-		echo $can_redirect;
+
 		
 
 		$this->show_header([$offer['title'],$offer['title'],$offer['title']]);
@@ -1016,12 +965,11 @@ class Apply_Controller extends Usermeta_Controller
 		$this->load->view('front/apply/js/calendar_js');
 		$this->show_footer();
 	}
-
+	
 
 
 	// end index
-	public function errors($offer_id)
-	{
+	public function errors($offer_id){
 		if(!$offer_id | $offer_id < 1)
 		$this->_errors[] = anchor(base_url(),'not_valid_id');
 
@@ -1041,28 +989,64 @@ class Apply_Controller extends Usermeta_Controller
 		return $offer_row;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	* 
+	* @param array $post
+	* 
+	* @return true|false
+	*/
+	public function update_user_account($post){
+		
+		return $this->Crud->update(['id'=>$this->user->id],$post,'users');
+	}
+	
+	/**
+	* 
+	* @param string $url
+	* 
+	* @return
+	*/
+	public function redirect_if_account_not_filled($url){
+		foreach(['civility','first_name','last_name','birthday','country_id'] as $value){
+			if( empty($this->user->{$value}) ){
+				$paqes = $this->get_pagination(NULL);
+				redirect(base_url().'user/profile?q=fill_form&url_back='.base_url().$url);
+			}
+		}
+		return true;
+	}
+	
 	/**
 	* 
 	* @param string $email
 	* 
 	* @return true|false
 	*/
-	protected function application_done_email($email = null ){
-		$candidate = $this->Crud->get_row(['user_id'=>$this->user_id],'candidates');
+	protected function application_done_email($applicaiton_id){
+		
+		$app = $this->Crud->get_row(['id'=>$applicaiton_id],'application');
+		
 		$email = $this->ion_auth->user()->row()->email;
 		$query = $this->Crud->get_row([
-		'template_id'=>1,'lang'=>$this->getCurrentLang('lang')		],'email_template_translate');
+				'template_id'=>1,'lang'=>$this->getCurrentLang('lang')		],'email_template_translate');
 		
 		
 		
 		$text =  $query['text'];
-		$text = str_replace('#NOM',$candidate['first_name'],$text);
-		$text = str_replace('#PRENOM',$candidate['last_name'],$text);
+		$text = str_replace('#NOM',$app['first_name'],$text);
+		$text = str_replace('#PRENOM',$app['last_name'],$text);
 		
 		
 		$this->load->library('email',[
-		  'protocol'=>$this->email_settings['transport']
-		]);
+				'protocol'=>$this->email_settings['transport']
+			]);
 
 		$this->email->from($this->email_settings['email'],$this->email_settings['sender']);
 		$this->load->library("json_model");
@@ -1072,12 +1056,10 @@ class Apply_Controller extends Usermeta_Controller
 		$this->email->subject($query['subject']);
 		$this->email->message($text);
 		$this->email->to($email);
-		if(!$this->email->send())
-		{
+		if(!$this->email->send()){
 			return false;
 		}
-		else
-		{
+		else{
 			return true;
 		}
 		

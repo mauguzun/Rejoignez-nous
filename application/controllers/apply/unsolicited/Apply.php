@@ -78,7 +78,7 @@ class Apply extends Apply_Un_Controller{
 			}
 
 			$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-			$this->application_done_email();
+			$this->application_done_email($app['id']);
 			redirect($this->get_page('main'));
 
 

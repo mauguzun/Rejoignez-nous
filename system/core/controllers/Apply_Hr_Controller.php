@@ -40,15 +40,10 @@ class Apply_Hr_Controller extends Apply_Controller
 	public function get_page($offer_id,$page)
 	{
 		$pages = $this->pages;
-		
-/*		var_dump($pages);
-		var_dump($offer_id);
-		var_dump($page);
-		*/
-		
+
 		foreach($pages as $key=>&$value){
 			if($page == $value)
-			return  base_url().Apply_Hr_Controller::$map.'/'.$value.'/index/'.$offer_id;
+			return  Apply_Hr_Controller::$map.'/'.$value.'/index/'.$offer_id;
 		}
 		return NULL;
 
@@ -59,8 +54,8 @@ class Apply_Hr_Controller extends Apply_Controller
 		$tables = [
 			'main'=>'application',
 			'education'=>'last_level_education',
-			'mainlang'=>'application_languages_level',
-			'foreignlang'=>'application_languages_level',
+			'mainlang'=>'application_english_frechn_level',
+			'foreignlang'=>'application_english_frechn_level',
 			'expirience'=>'application_hr_expirience',
 			'aviability'=>'applicaiton_misc',
 			'other'=>'applicaiton_misc',

@@ -24,15 +24,21 @@ class Apply extends Apply_Pnc_Controller{
 		$tables = $this->get_table_name();
 
 		foreach($tables as $key=>$value){
-			if($value == 'application_files' | $value == 'application' | $value == 'application_languages_level' ){
+			if($value == 'application_files' | $value == 'application' /*| $value == 'application_languages_level' */){
 				unset($tables[$key]);
 			}
 		}
 	
-		
+	
+
 		
 		foreach($tables as $tab=>$table){
+			
+			
 			if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
+				
+				
+				
 				$url = $this->get_page($offer_id,$tab);
 				if($url){
 					redirect($url.FILL_FORM);
@@ -48,6 +54,8 @@ class Apply extends Apply_Pnc_Controller{
 				
 			}
 		}
+		
+		
 		
 		if($myStep != null){
 			foreach(['covver_letter'] as $type){
@@ -85,22 +93,10 @@ class Apply extends Apply_Pnc_Controller{
 		}
 		
 		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		$this->application_done_email();
+		$this->application_done_email($app['id']);
 		redirect($this->get_page($offer_id,'main'));
 
-		/*	if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){
-		$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
 		
-		}else{
-		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
-		
-		}
-		
-		$this->show_header();
-		$this->load->view('front/parts/messages',['messages'=>$this->_errors]);
-		$this->show_footer();
-		*/
 	}
 
 

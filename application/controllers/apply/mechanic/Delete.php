@@ -21,7 +21,14 @@ class Delete extends Apply_Mechanic_Controller
 		$app = $this->application_id($offer_id);
 
 
-		$this->Crud->update(['id'=>$app['id']],['deleted'=>1],'application');
+		$this->Crud->delete(['id'=>$app['id']],'application');
+		foreach($this->get_table_name() as $key=>$table){
+			if($table != 'application'){
+				$this->Crud->delete(['application_id'=>$app['id']],$table);
+			}
+		
+		}
+		
 		$this->_errors[] = anchor(base_url().'user/offers/',lang('deleted'));
 
 

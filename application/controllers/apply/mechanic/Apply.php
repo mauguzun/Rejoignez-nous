@@ -87,21 +87,9 @@ if($myStep != null){
 
 
 		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		$this->application_done_email();
+		$this->application_done_email($app['id']);
 		redirect($this->get_page($offer_id,'main'));
-		/*
-		if( $this->Crud->get_row(['id'=>$app['id'],'filled'=>1],'application')){
-		$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
-
-		}else{
-		$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
-		$this->_errors[] = anchor(base_url().'user/offers/',lang('you_are_applied'));
-
-		}
-
-		$this->show_header();
-		$this->load->view('front/parts/messages',['messages'=>$this->_errors]);
-		$this->show_footer();*/
+		
 
 	}
 

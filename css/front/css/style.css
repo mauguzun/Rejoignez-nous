@@ -1,7 +1,4 @@
 
-/**/
-
-
 .uploader
 {
 	width: 100%;
@@ -79,7 +76,7 @@
 }
 
 
-#loglist,#filelist
+#loglist,.filelist
 {
 	list-style: none  !important;
 	text-align: center;
@@ -104,11 +101,11 @@ i[data-circle]
 	cursor: pointer;
 }
 
-#filelist
+.filelist
 {
 	padding: 15px;
 }
-#filelist div
+.filelist div
 {
 	width: 100px;
 	display: inline-block;
@@ -116,13 +113,13 @@ i[data-circle]
 
 
 }
-#filelist div img
+.filelist div img
 {
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
 }
-#filelist div i
+.filelist div i
 {
 	cursor: pointer;
 	padding-left: 5px;
@@ -130,11 +127,11 @@ i[data-circle]
 
 
 
-#filelist
+.filelist
 {
 	padding: 15px;
 }
-#filelist div
+.filelist div
 {
 	width: 100px;
 	display: inline-block;
@@ -142,13 +139,13 @@ i[data-circle]
 
 
 }
-#filelist div img
+.filelist div img
 {
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
 }
-#filelist div i
+.filelist div i
 {
 	cursor: pointer;
 	padding-left: 5px;

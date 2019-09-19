@@ -58,7 +58,10 @@ if ( ! function_exists('img_div_new')) {
         return  "<div data-img-url='".$file."' class='edit'>".
         '<div class="title">'.$name.'</div>'.
         "<img src='".$img."' />".
-        "<a href='#'  id='".$file_id."' class='trash'><i  class='fas fa-trash'></i></a>
+        "<a href='#'  id='".$file_id."' class='trash'><i 
+         class='fas fa-trash'
+         
+         ></i></a>
         <a download  href='".base_url().'user/getfile?url='.$file."'><i  class='fas fa-download'></i></a></div>";
 
     }

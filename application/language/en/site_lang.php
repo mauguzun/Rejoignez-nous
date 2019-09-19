@@ -269,3 +269,8 @@ $lang['click here to login'] = 'click here to login ';
 $lang["Password don't match"] = "Password don't match";
 $lang['Password match'] = 'Password matches ';
 
+$lang['update_my_main_acc'] = 'update_my_main_acc';
+$lang['yes_toogle'] = [
+0=>'No',
+1=>'Yes'
+];

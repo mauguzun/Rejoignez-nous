@@ -22,7 +22,7 @@ class Printmanualoffer extends Shared_Controller
 		$query = $this->Crud->get_joins(
 			$this->table,
 			[
-				"candidates"=>"$this->table.user_id = candidates.user_id",
+				"users"=>"$this->table.user_id = users.id",
 
 				"applicaiton_misc"=>"$this->table.id = applicaiton_misc.application_id",
 				'countries'=>"$this->table.country_id = countries.id",
@@ -42,7 +42,7 @@ class Printmanualoffer extends Shared_Controller
 			last_level_education.*,
 			application_english_frechn_level.*,
 			hr_offer_education_level.level as education_level,
-			application_languages_level.* ,candidates.*",
+			application_languages_level.* ,users.handicaped",
 			NULL,
 			null,
 			["{$this->table}.id" => $app_id]);
