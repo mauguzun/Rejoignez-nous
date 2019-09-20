@@ -12,7 +12,7 @@ class Main extends Apply_Un_Controller{
 		parent::__construct();
 	}
 
-	public function index(){
+	public function index($id = null){
 
 		// 1 check if ok ?
 
@@ -37,7 +37,15 @@ class Main extends Apply_Un_Controller{
 		$this->form_validation->set_rules('last_name', lang('last_name'), 'trim|required');
 
 		$app = $this->get_application();
+		// todo check if edit ?
 		
+		//find all application 
+		
+		$app = null;
+		if ($id &&  $app = $this->Crud->get_row(['id'=>$id],'application')){
+			
+		}
+	
 
 		// check form validation
 		if(isset($_POST['first_name']) && $this->form_validation->run() === true){
@@ -49,12 +57,13 @@ class Main extends Apply_Un_Controller{
 			}
 			
 			
-			
+			// id not exist we create applicaiton
 			if(!$app){
 				$_POST['user_id'] = $this->user_id;
 				$_POST['unsolicated'] = 1;
 				$app = $this->Crud->add($_POST,$this->get_table_name($this->step));
 			}
+			// we do update 
 			else{
 				// update
 				$_POST['user_id'] = $this->user_id;
@@ -72,8 +81,7 @@ class Main extends Apply_Un_Controller{
 			}
 
 			$app = $this->get_application();
-			
-				
+	
 				
 			redirect($this->apply.'/'.$app['id']);
 					

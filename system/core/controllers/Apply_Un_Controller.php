@@ -35,9 +35,6 @@ class Apply_Un_Controller extends Apply_Controller
 		$list_to_uplaod = $this->uploadlist->get_unsolocated();
 		$pages          = array_merge($pages,$list_to_uplaod);
 
-
-
-
 		return $this->make_form_link($pages,$offer_id,Apply_Un_Controller::$map);
 	}
 
