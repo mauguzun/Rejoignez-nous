@@ -13,16 +13,13 @@ class Apply extends Apply_Un_Controller{
 
 	}
 
-	public function index($offer_id,$myStep = null){
+	public function index($app_id,$myStep = null){
 		{
 
-			$app = $this->get_application();
+			$app = $this->get_application($app_id);
 			if(!$app){
-				redirect($this->get_page($offer_id,'main').FILL_FORM);
+				redirect(base_url().'apply/unsolicited/main/'.FILL_FORM);
 			}
-
-
-
 
 
 
@@ -34,7 +31,7 @@ class Apply extends Apply_Un_Controller{
 
 			foreach($tables as $tab=>$table){
 				if(!$this->Crud->get_row(['application_id'=>$app['id']],$table)){
-					$url = $this->get_page($tab);
+					$url = $this->get_page($tab,$app_id);
 					if($url){
 						redirect($url.FILL_FORM);
 					}
@@ -52,7 +49,7 @@ class Apply extends Apply_Un_Controller{
 
 
 						$url =
-						 base_url().Apply_Un_Controller::$map.'/'.$type.'/index/'. $offer_id;
+						 base_url().Apply_Un_Controller::$map.'/'.$type.'/index/'. $app['id'];
 						
 					
 					
@@ -69,7 +66,7 @@ class Apply extends Apply_Un_Controller{
 
 
 
-					$url = $this->get_page($type);
+					$url = $this->get_page($type,$app_id);
 					if($url){
 						redirect($url.FILL_FORM);
 					}
@@ -79,7 +76,7 @@ class Apply extends Apply_Un_Controller{
 
 			$this->Crud->update(['id'=>$app['id']],['filled'=>1],'application');
 			$this->application_done_email($app['id']);
-			redirect($this->get_page('main'));
+			redirect($this->get_page('main',$app_id));
 
 
 		}

@@ -4,25 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Expirience extends Apply_Un_Controller
-{
+class Expirience extends Apply_Un_Controller{
 
 	protected $step = 'expirience';
 
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct('user/offers');
 
 	}
 
-	public function index( )
-	{
+	public function index($id = null){
 
 
-		$app = $this->get_application();
+
+		$app = $this->get_application($id);
 		if(!$app)
-		redirect($this->get_page('main').FILL_FORM);
+		redirect(base_url().'apply/unsolicited/main/'.FILL_FORM);
 
 		$this->form_validation->set_rules('area[]', lang('area'), 'trim|required|max_length[200]');
 
@@ -48,10 +46,8 @@ class Expirience extends Apply_Un_Controller
 					];
 					array_push($langs,$lang);
 				}
-				foreach($row as $value)
-				{
-					if(!in_array($value,$langs))
-					{
+				foreach($row as $value){
+					if(!in_array($value,$langs)){
 
 						// oe ? we find you bich
 						$this->savehistory($app['id'],$value,[],'application_id',$app['id'],$this->get_table_name($this->step),NULL);
@@ -59,18 +55,15 @@ class Expirience extends Apply_Un_Controller
 					}
 				}
 
-				foreach($langs as $new_value)
-				{
+				foreach($langs as $new_value){
 					$this->Crud->update_or_insert($new_value,$this->get_table_name($this->step));
 				}
 
 			}
-			else
-			{
+			else{
 
 				$langs = [];
-				for($i = 0 ; $i < count($_POST['area']) ; $i++)
-				{
+				for($i = 0 ; $i < count($_POST['area']) ; $i++){
 					$langs[] = [
 						'area' => $_POST['area'][$i],
 						'duration' => $_POST['duration'][$i],
@@ -81,13 +74,10 @@ class Expirience extends Apply_Un_Controller
 
 				$this->Crud->add_many($langs,$this->get_table_name($this->step));
 			}
-			redirect($this->apply.'/'.$app['id']);
-			$row = $this->Crud->get_all($this->get_table_name($this->step),['application_id'=>$app['id']]);
-
-
+			redirect($this->apply);
+			
 		}
-		else
-		{
+		else{
 
 			$message = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
@@ -99,14 +89,13 @@ class Expirience extends Apply_Un_Controller
 		}
 
 		$this->show_header([lang('unsolicited_application_applys'),lang('unsolicited_application_applys'),lang('unsolicited_application_applys')]);
-		$this->open_form();
+		$this->open_form($app);
 		$this->show($row);
 		$this->load->view('front/apply/close');
 		$this->show_footer();
 	}
 
-	protected function show($row)
-	{
+	protected function show($row){
 
 
 		$this->data['control']['area[]'] = form_input(
@@ -117,21 +106,18 @@ class Expirience extends Apply_Un_Controller
 		foreach(
 			[
 				'expirience_duration'=>'duration',
-				'expirience_managerial'=>'managerial'] as $key=> $column)
-		{
+				'expirience_managerial'=>'managerial'] as $key=> $column){
 
 			$arr = [];
 			$arr['class'] = 'form-control' ;
-			if($column == 'managerial')
-			{
+			if($column == 'managerial'){
 				$arr['data-toggle'] = 'tooltip' ;
 				$arr['data-original-title'] = lang('managerial_tooltip');
 			}
 
 
 
-			foreach($this->Crud->get_all($key,null,'id','asc') as $value)
-			{
+			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
 				$options[$value['id']] = $value[$column];
 			}
 			$select[$column] = $options;
@@ -141,15 +127,13 @@ class Expirience extends Apply_Un_Controller
 
 
 
-		if($row)
-		{
+		if($row){
 			$arr = [];
 			$arr['class'] = 'form-control' ;
 			$arr['data-toggle'] = 'tooltip' ;
 			$arr['data-original-title'] = lang('managerial_tooltip');
 			$this->data['data'] = [];
-			foreach($row as $value)
-			{
+			foreach($row as $value){
 				$line = [];
 				$line['area[]'] = form_input(
 					$this->inputarray->getArray('area[]','text',lang("area"),$value['area'],TRUE));

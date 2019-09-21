@@ -20,7 +20,7 @@ class Printme extends Apply_Un_Controller
 	public function index($app_id=NULL)
 	{
 
-		$app = $this->Crud->get_row(['id'=>$app_id],'application');
+		$app = $this->Crud->get_row(['id'=>$app_id,'filled'=>1,'unsolicated'=>1],'application');
 		$this->load->language('admin');
 
 		

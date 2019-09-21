@@ -6,13 +6,12 @@
 
 
 	<div class="col-md-6">
+		<? if($app): ?>
 		<center> <a class="btn btn-outline-danger" onclick="return confirm('Are you sure?');" href="<?= $delete ?>" role="button">
 				<i class="far fa-trash-alt"></i> Delete	</a></center>
-				
-		
+		<? endif; ?>
 	</div>
-
-
+ 
 	<div class="col-md-6">
 		<div class="form-group">
 

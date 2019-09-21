@@ -16,13 +16,13 @@ class Mainlang extends Apply_Un_Controller
 
 	}
 
-	public function index( )
+public function index($id = null){
 	{
 
 
-		$app = $this->get_application();
+			$app = $this->get_application($id);
 			if(!$app)
-		redirect($this->get_page('main').FILL_FORM);
+			redirect(base_url().'apply/unsolicited/main/'.FILL_FORM);
 
 
 		$this->form_validation->set_rules('english_level', lang('english_level'), 'trim|max_length[2]');
@@ -70,7 +70,7 @@ class Mainlang extends Apply_Un_Controller
 		}
 		
 		$this->show_header([lang('unsolicited_application_applys'),lang('unsolicited_application_applys'),lang('unsolicited_application_applys')]);
-		$this->open_form();
+		$this->open_form($app);
 
 		$this->show_mainlang($row);
 		$this->load->view('front/apply/close');

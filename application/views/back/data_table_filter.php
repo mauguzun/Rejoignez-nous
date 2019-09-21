@@ -101,6 +101,7 @@
 		let offer =     $("#offer").val() ;
 		window.history.replaceState(null,null,  `?mode=${mode}&status=${status}&offer=${offer}`);
 
+		if (typeof x !== 'undefined') 
 		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  ).load();
 	}
 	$("#offer").change(function()

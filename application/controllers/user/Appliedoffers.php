@@ -34,7 +34,7 @@ class Appliedoffers extends User_Controller{
 			],
 
 
-			"$this->_table.*,   offers.pub_date as date ,offers.id as id ,$this->_table.user_id as uid ,
+			"$this->_table.*, $this->_table.id as aid  ,offers.pub_date as date ,offers.id as id ,$this->_table.user_id as uid ,
 			offers.title as title,
 			offers_location.location as location ,
 			application_contract.type as contract,
@@ -69,7 +69,7 @@ class Appliedoffers extends User_Controller{
 
 			}
 			else{
-				$value['title'] = anchor("apply/unsolicited/main",lang('unsolicited_application_applys'));
+				$value['title'] = anchor("apply/unsolicited/main/index/".$value['aid'],lang('unsolicited_application_applys'));
 				$value['contract'] = $all_contract[$value['app_un_contract_type']];	
 				$value['activity'] = $value['app_un_contract_activities'];
 			}

@@ -1,7 +1,6 @@
 <?
 
-class Apply_Un_Controller extends Apply_Controller
-{
+class Apply_Un_Controller extends Apply_Controller{
 
 	static public $map = "apply/unsolicited";
 	protected $apply  ;
@@ -17,43 +16,37 @@ class Apply_Un_Controller extends Apply_Controller
 		'expirience',
 		'other',
 	];
-	public function __construct($page = NULL,$meta = NULL )
-	{
+	public function __construct($page = NULL,$meta = NULL ){
 
 		parent::__construct();
-		$this->apply = base_url().'apply/unsolicited/apply/index/';
-		$this->delete = base_url().'apply/unsolicited/delete/index/';
-		$this->printme = base_url().'apply/unsolicited/printme/index/';
 		$this->load->library("Uploadlist");
 	}
+	
 
-	public function get_pagination($offer_id=NULL)
-	{
+	public function get_pagination($app_id){
 
 		$pages          = $this->pages;
 
 		$list_to_uplaod = $this->uploadlist->get_unsolocated();
 		$pages          = array_merge($pages,$list_to_uplaod);
 
-		return $this->make_form_link($pages,$offer_id,Apply_Un_Controller::$map);
+		return $this->make_form_link($pages,$app_id,Apply_Un_Controller::$map);
 	}
 
-	public function get_page($page)
-	{
+	public function get_page($page,$id){
+		
 		$pages          = $this->pages;
 		$list_to_uplaod = $this->uploadlist->get_unsolocated();
 		$pages          = array_merge($pages,$list_to_uplaod);
-		foreach($pages as $key=>&$value)
-		{
+		foreach($pages as $key=>&$value){
 			if($page == $value)
-			return Apply_Un_Controller::$map.'/'.$value.'/index/';
+			return Apply_Un_Controller::$map.'/'.$value.'/index/'.$id;
 		}
 		return NULL;
 
 	}
 
-	protected function get_table_name($step = NULL)
-	{
+	protected function get_table_name($step = NULL){
 		$tables      = [
 			'main'=>'application',
 			'position'=>'application_un',
@@ -71,8 +64,7 @@ class Apply_Un_Controller extends Apply_Controller
 	
 
 		$tables_plus = [];
-		foreach($this->uploadlist->get_pnt() as $value)
-		{
+		foreach($this->uploadlist->get_pnt() as $value){
 			$tables_plus[$value] = 'application_files';
 		}
 		$tables = array_merge($tables,$tables_plus);
@@ -82,20 +74,33 @@ class Apply_Un_Controller extends Apply_Controller
 		else
 		return $tables;
 	}
+
+	protected function  set_print_link($id){
+		 
+		$this->apply = base_url().'apply/unsolicited/apply/index/'.$id;
+		$this->delete = base_url().'apply/unsolicited/delete/index/'.$id;
+		$this->printme = base_url().'apply/unsolicited/printme/index/'.$id;
+	}
 	
-	protected function get_application()
-	{
-		$app = $this->Crud->get_row(['user_id'=>$this->user_id,'unsolicated'=>1 ,'deleted'=>0],'application');
+	/**
+	* 
+	* @param string $id
+	* @return array| null
+	*/
+	public function get_application($id){
+		$app =   $this->Crud->get_row(['id'=>$id],'application');
+		if ($app){
+			$this->set_print_link($app['id']);
+		}
 		return $app;
 	}
-	public function open_form($id= NULL, $title = NULL )
-	{
-		$app = $this->get_application();
+	public function open_form($app, $title = NULL ){
+		
 		
 		
 
 		$this->load->view('front/apply/open',[
-				'pagination'=>$this->get_pagination(NULL),
+				'pagination'=>$this->get_pagination($app['id']),
 				'title'=>lang('unsolicited_application_applys'),
 				'step'=>$this->step,
 				'apply'=>$this->apply.'/'.$app['id'],
@@ -106,15 +111,14 @@ class Apply_Un_Controller extends Apply_Controller
 		;
 	}
 	
-	public function show_upload($offer_id = NULL,$map=NULL)
-	{
+	public function show_upload($offer_id = NULL,$map=NULL){
 		$this->load->library("Uploadconfig");
 	
 
-		$app = $this->get_application();
-		if(!$app){
-			redirect($this->get_page($offer_id,'main').FILL_FORM);
-		}
+		$app = $this->get_application($offer_id);
+		if(!$app)
+		redirect(base_url().'apply/unsolicited/main/'.FILL_FORM);
+		
 
 
 		$this->show_header([lang('unsolicited_application'),lang('unsolicited_application'),lang('unsolicited_application')]);
@@ -123,8 +127,7 @@ class Apply_Un_Controller extends Apply_Controller
 		$this->load->view('js/ajaxupload');
 		$query   = $this->Crud->get_all( 'application_files' ,['deleted'=>0, 'application_id'=>$app['id'],'type'=>$this->step]);
 		$show_me = [] ;
-		foreach($query as $value)
-		{
+		foreach($query as $value){
 
 			$show_me[$value['id']] = 
 			[
@@ -140,7 +143,7 @@ class Apply_Un_Controller extends Apply_Controller
 				'upload_url'=>base_url().'apply/ajaxupload/upload/'.$app['id'].'/'.$this->step,
 				'show_me'=>$show_me,
 				'map'=>$map,
-				'apply'=>$this->apply.'/'.$this->get_application()['id'],
+				'apply'=>$this->apply,
 			]
 		);
 		$this->load->view('front/apply/close_upload');

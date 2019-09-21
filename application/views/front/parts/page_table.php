@@ -16,7 +16,7 @@
 	<h1 class="post-title"><?= $title ?></h1><br>
 
 
-
+<?= isset($allert) ? $allert : null ;?>
 
 	<table id="example" class="table table-hover" >
 		<thead>

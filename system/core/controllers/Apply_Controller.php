@@ -47,11 +47,15 @@ class Apply_Controller extends Usermeta_Controller{
 	}
 
 	public function make_form_link($pages,$offer_id,$folder){
+		
+	
 		foreach($pages as $key=>&$value){
 
 			$class = ($value == $this->step)? 'is-active':'';
 			$value = '<span class="'.$class.'"    data-toggle="tooltip" title="'.lang($value).'"   ><a href="'.base_url().$folder.'/'.$value.'/index/'.$offer_id.'">&nbsp;</a></span>';
 		}
+		
+	
 		return $pages;
 		//
 	}

@@ -16,9 +16,9 @@ class Covver_letter extends Apply_Un_Controller
 
 	}
 
-	public function index()
-	{
-		parent::show_upload();
+	public function index($id = null){
+
+		parent::show_upload($id);
 	}
 
 

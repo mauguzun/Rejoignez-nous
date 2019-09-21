@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Delete extends Apply_Hr_Controller{
+class Delete extends Apply_Un_Controller{
 
 	protected $step = 'delete';
 
@@ -13,19 +13,22 @@ class Delete extends Apply_Hr_Controller{
 
 	}
 
-	public function index($offer_id = NULL){
+	public function index($id = NULL){
 
-		if($offer_id){
-			$this->Crud->update(['id'=>$offer_id],['deleted'=>1],'application');
-			$this->_errors[] = anchor(base_url().'user/offers/',lang('deleted'));
-
-			
-		}
+		$app = $this->application_id($id);
 		
+	
 
 
+		$this->Crud->delete(['id'=>$id],'application');
+		foreach($this->get_table_name() as $key=>$table){
+			if($table != 'application'){
+				$this->Crud->delete(['application_id'=>$id],$table);
+			}
+		
+		}
 
-		redirect(base_url().'apply/unsolicited/main');
+		redirect(base_url().'apply/unsolicited/begin');
 	}
 
 

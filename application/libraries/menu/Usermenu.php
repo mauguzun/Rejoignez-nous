@@ -33,7 +33,7 @@ class Usermenu{
 		$menu = [
 			'offers'=>'offer_list',
 			'#contact'=>'contact',
-			'apply/unsolicited/main' => 'unsolicited_application_applys',
+			'apply/unsolicited/begin' => 'unsolicited_application_applys',
 			'policy' => 'our_recruitment_policy' ];
 	        
 		if($logedIn){

@@ -86,13 +86,16 @@
     	
 			let print  = [];
 			$('input[type="checkbox"]:checked').each(function(){
-					print.push({
-						email:$(this).attr('data-email-id'),
-						user:$(this).attr('data-person')
-					});
+					if ($(this).attr('data-person')){
+						print.push({
+								email:$(this).attr('data-email-id'),
+								user:$(this).attr('data-person')
+							});
+					}
+					
 				})
 			if (print.length > 0 ){
-            	for(let i = 0 ; print[i] ; i++){
+				for(let i = 0 ; print[i] ; i++){
 					sendEmail(print[i].email ,print[i].user)
 				}
 				 
