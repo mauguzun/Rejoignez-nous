@@ -8,6 +8,9 @@
 	<title>
 		<?= isset($meta['title'])? $meta['title'] : '-' ?>
 	</title>
+	
+		<link href="<?= base_url()?>/css/front/css/style.css" rel="stylesheet" type="text/css">
+
 	<meta name="description"  content="<?= isset($meta['description'])? $meta['description'] : "-"?>">   
 	<meta name="keywords"  content="<?= isset($meta['keywords'])? $meta['keywords'] : "-"?>" >
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -18,8 +21,7 @@
 
 	<!-- Global stylesheets -->
 		<link href="<?= base_url()?>static/update/css/admin-style.css" rel="stylesheet" type="text/css">
-		<link href="<?= base_url()?>/css/front/css/style.css" rel="stylesheet" type="text/css">
-
+	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="<?= base_url()?>css/back/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">

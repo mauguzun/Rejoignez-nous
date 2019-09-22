@@ -460,7 +460,7 @@ class Applications extends Shared_Controller{
 	
 		$data['data'] = [];
 		
-		$row      = [];
+		$row  = [];
 
 
 		$educaton = $table_row['education_level'] > 0 ?

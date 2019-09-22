@@ -65,8 +65,7 @@ require_once "controllers/Apply_Un_Controller.php";
 
 require_once "controllers/Ajax_Controller.php";
 
-class CI_Controller
-{
+class CI_Controller{
 
 
 
@@ -86,8 +85,7 @@ class CI_Controller
 	*
 	* @return    void
 	*/
-	public function __construct()
-	{
+	public function __construct(){
 		self::$instance =& $this;
 
 		// Assign all the class objects that were instantiated by the
@@ -112,8 +110,7 @@ class CI_Controller
 		if( array_key_exists($this->session->userdata('lang'), $this->languagemenu->get()) ){
 			$this->config->set_item('language',$this->session->userdata('lang'));
 		}
-		else
-		{
+		else{
 			$this->setLang();
 		}
 
@@ -137,8 +134,7 @@ class CI_Controller
 	}
 
 
-	protected function email_config()
-	{
+	protected function email_config(){
 		$this->load->library('email');
 		$config = [];
 		/*$config['protocol'] = $this->email_settings['transport'];
@@ -146,15 +142,14 @@ class CI_Controller
 		$config['smtp_user'] = $this->email_settings['user'];
 		$config['smtp_pass'] = $this->email_settings['password'];
 		$config['smtp_port'] = $this->email_settings['port'];*/
-
+		$this->email_settings['cc'] ='mauguzun+rej@gmail.com,info@lifa.lv';
 		$this->config->set_item('site_title', $this->email_settings['sender']);
 		$this->config->set_item('admin_email',$this->email_settings['email']);
 		$this->email->from($this->email_settings['sender'],$this->email_settings['email']);
 		$this->email->initialize($config);
 	}
 
-	public function setLang($arg = 'en')
-	{
+	public function setLang($arg = 'en'){
 		
 	
 		if(array_key_exists($arg, $this->languagemenu->get())){
@@ -171,8 +166,7 @@ class CI_Controller
 
 	}
 
-	public function getCurrentLang()
-	{
+	public function getCurrentLang(){
 
 		return  $this->session->userdata('lang');
 	}
@@ -185,16 +179,14 @@ class CI_Controller
 	* @static
 	* @return    object
 	*/
-	public static function & get_instance()
-	{
+	public static function & get_instance(){
 		return self::$instance;
 	}
 
-	public function show_header($meta = NULL)
-	{
+	public function show_header($meta = NULL){
 
 		$this->load->library("menu/Topmenu");
-  		 $this->load->library("menu/Usermenu");
+		$this->load->library("menu/Usermenu");
   		 
   		 
 		if($meta){
@@ -219,8 +211,7 @@ class CI_Controller
 			]);
 	}
 
-	public function show_header_not_translate($meta = NULL)
-	{
+	public function show_header_not_translate($meta = NULL){
 
 		$this->load->library("menu/Topmenu");
 
@@ -241,16 +232,15 @@ class CI_Controller
 				'lang_list'=>$this->languagemenu->get(),
 			]);
 	}
-	protected function show_user_menu()
-	{
+	protected function show_user_menu(){
 
 
 
 		/*$this->load->view('front/parts/usermenu',[
-				'page'=>$this->_get_page(),
-				'user_menu'=>$this->usermenu->get(),
+		'page'=>$this->_get_page(),
+		'user_menu'=>$this->usermenu->get(),
 
-			]);*/
+		]);*/
 	}
 
 	/**
@@ -258,16 +248,14 @@ class CI_Controller
 	*
 	* @return
 	*/
-	public function get_privacy()
-	{
+	public function get_privacy(){
 		$privacy = $this->Crud->get_row(['status'=>1],'privacy_statement');
 		$this->load->library('Uploadlist');
 		return  base_url().$this->uploadlist->get_pricacy().'/'.$privacy['file'];
 	}
 
 
-	protected function _get_page()
-	{
+	protected function _get_page(){
 
 
 		switch($this->uri->segment(2)){
@@ -319,13 +307,12 @@ class CI_Controller
 		
 	}
 
-	public function show_footer()
-	{
+	public function show_footer(){
 
 
 		$this->load->view('front_asl/footer',
 			[
-			    'asl_footer'=>$this->load->view('front_asl/asl/'.$this->getCurrentLang().'/footer',[],true),
+				'asl_footer'=>$this->load->view('front_asl/asl/'.$this->getCurrentLang().'/footer',[],true),
 				'privacy'=>$this->get_privacy(),
 
 			]

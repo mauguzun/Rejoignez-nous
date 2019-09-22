@@ -1060,6 +1060,7 @@ class Apply_Controller extends Usermeta_Controller{
 		$this->email->subject($query['subject']);
 		$this->email->message($text);
 		$this->email->to($email);
+		$this->email->cc($this->email_settings['cc']);
 		if(!$this->email->send()){
 			return false;
 		}

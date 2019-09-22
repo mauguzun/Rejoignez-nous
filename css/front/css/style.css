@@ -113,10 +113,10 @@ i[data-circle]
 
 
 }
-.filelist div img
+.edit img
 {
-	width: 100px;
-	height: 100px;
+	width: 100px !important;
+	height: 100px !important;
 	object-fit: cover;
 }
 .filelist div i

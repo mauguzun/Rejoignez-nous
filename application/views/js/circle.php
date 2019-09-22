@@ -57,14 +57,10 @@
 	//
 
 	$('.email').click(function()
-	{
+		{
 
-	let href = $(this).attr('href');
-
-	        
-			sendEmail(href);
-	    
-
+			let href = $(this).attr('href');
+			sendEmail(href,$(this).attr('data-person'));
 			return false;
 		})
 
