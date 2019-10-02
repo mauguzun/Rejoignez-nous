@@ -2,11 +2,6 @@
 <project name="C:\OSPanel\domains\localhost\reg\ASL_TRANS.clpprj">
 	<settings>
 		<PM_URL><![CDATA[C:/open/OSPanel/domains/localhost/prismic/]]></PM_URL><PM_HOME_URL><![CDATA[C:/open/OSPanel/domains/localhost/prismic/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\views\front\parts\NewFile.php;C:\open\OSPanel\domains\localhost\asldomain\application\controllers\NewFile.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\offer_list.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\parts\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\apply\hr\Profile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\user\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\libraries\Profile.php;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\Admin.php;C:\server\OSPanel\domains\localhost\asldomain\static\update\css\NewFile.css;"/><added value=""/><lastopfiles>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Covver_letter.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Expirience.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Un_Controller.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Cv.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Apply.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -239,6 +234,8 @@
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
 	</todoblock>
+	<dbgurls>
+	</dbgurls>
 	<filescache>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1557729316"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1557729316"/>
@@ -1018,7 +1015,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Pnc_Controller.php" crc="1568827760"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Mechanic_Controller.php" crc="1568888308"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Hr_Controller.php" crc="1568888269"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Controller.php" crc="1568968971"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Controller.php" crc="1569164496"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Ajax_Controller.php" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Admin_Controller.php" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\compat\standard.php" crc="1557729244"/>
@@ -1039,7 +1036,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\index.html" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Hooks.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Exceptions.php" crc="1557729242"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\Controller.php" crc="1557729242"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\Controller.php" crc="1569164460"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Config.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Common.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\CodeIgniter.php" crc="1557729242"/>
@@ -1125,7 +1122,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.bg.min.js" crc="1557729234"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.az.min.js" crc="1557729234"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.ar.min.js" crc="1557729234"/>
-		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css" crc="1568818742"/>
+		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css" crc="1569164233"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\variables\variables-custom.less" crc="1557729232"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\variables\variables-core.less" crc="1557729232"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\mixins\nav-vertical-align.less" crc="1557729232"/>
@@ -3204,7 +3201,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\data_edit_ajax.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\data-modal.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\clipboard.php" crc="1557729070"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\circle.php" crc="1568194555"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\circle.php" crc="1569163359"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\autocomplete.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\ajaxupload.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\ajaxtoogle.php" crc="1557729070"/>
@@ -3234,7 +3231,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\user\footer_form.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\usermenu.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\table.php" crc="1557729068"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\page_table.php" crc="1557729068"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\page_table.php" crc="1569073836"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\one_form.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\messages.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\head.php" crc="1557729068"/>
@@ -3244,6 +3241,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\parts\add.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\js\site.js" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\unsolicited\position.php" crc="1557729068"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\unsolicited\begin.php" crc="1569073841"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnt\successive_employer.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnt\qualification.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnt\practice.php" crc="1557729068"/>
@@ -3254,14 +3252,14 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\language.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\form.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\foreign_lang.php" crc="1568384967"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\ajaxuploader.php" crc="1568818726"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\ajaxuploader.php" crc="1569164108"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\js\calendar_js.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\hr\expirience.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\printer_manualy.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\printer.php" crc="1557729066"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\open.php" crc="1568299954"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\close_upload.php" crc="1557729066"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\close.php" crc="1557729066"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\close.php" crc="1569072526"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\upload_letter.php" crc="1557729066"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\under.php" crc="1557729066"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\success.php" crc="1557729066"/>
@@ -3315,7 +3313,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\show.php" crc="1557729064"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\manualay_create_application.php" crc="1568216783"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\jquery.php" crc="1557729064"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\header.php" crc="1568899762"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\header.php" crc="1569164191"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\footer.php" crc="1568214562"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\datatable.php" crc="1568207215"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\add_with_upload.php" crc="1557729064"/>
@@ -3325,8 +3323,8 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\under.php" crc="1557729064"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\printer.php" crc="1557729064"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\index.php" crc="1557729064"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\data_table_filter.php" crc="1568202410"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\application.php" crc="1568209903"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\data_table_filter.php" crc="1569080580"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\application.php" crc="1569080242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\email\new_password.tpl.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\email\forgot_password.tpl.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\email\activate.tpl.php" crc="1557729062"/>
@@ -3350,7 +3348,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\models\Appresp.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\migrations\001_install_ion_auth.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\logs\index.html" crc="1557729062"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Usermenu.php" crc="1568116729"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Usermenu.php" crc="1569071596"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Topmenu.php" crc="1557729060"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Profiletabmenu.php" crc="1557729060"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Languagemenu.php" crc="1557729060"/>
@@ -3609,11 +3607,11 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Folderoffer.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Colors.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Bcrypt.php" crc="1557729038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php" crc="1568719568"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php" crc="1569073887"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\ion_auth_lang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\auth_lang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\admin_lang.php" crc="1568207276"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php" crc="1568883996"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php" crc="1569073861"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\ion_auth_lang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\index.html" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\auth_lang.php" crc="1568290098"/>
@@ -3622,7 +3620,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\hooks\index.html" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\lang_helper.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\index.html" crc="1557729038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\date_helper.php" crc="1568818111"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\date_helper.php" crc="1569164229"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\core\index.html" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Zipapp.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Resetpassword.php" crc="1557729038"/>
@@ -3635,14 +3633,14 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Aviability.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Apply_un.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Apply.php" crc="1557729036"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Appliedoffers.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Appliedoffers.php" crc="1569079719"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Address.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Viewuser.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Viewoffers.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\User.php" crc="1568200901"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Slideshow.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Sitemap.php" crc="1557729036"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Sendemail.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Sendemail.php" crc="1569081030"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Resetpassword.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Privacystatement.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Printofferuser.php" crc="1557729036"/>
@@ -3655,7 +3653,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php" crc="1568225654"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Edituser.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applicationsinresponse.php" crc="1568208620"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php" crc="1568900128"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php" crc="1569163423"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Apphistory.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Ajax.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php" crc="1568214601"/>
@@ -3671,7 +3669,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Main.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Email.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Ajax.php" crc="1557729034"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php" crc="1569009752"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php" crc="1569073066"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Position.php" crc="1569009732"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Other.php" crc="1569010718"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Mainlang.php" crc="1569009958"/>
@@ -3679,10 +3677,10 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Foreignlang.php" crc="1569010985"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Expirience.php" crc="1569010904"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Education.php" crc="1569010955"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Delete.php" crc="1569007673"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Delete.php" crc="1569071931"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Cv.php" crc="1569012004"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Covver_letter.php" crc="1569011668"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Begin.php" crc="1568962235"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Begin.php" crc="1569074069"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Apply.php" crc="1569012051"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Vaccine_against_yellow_fever.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Total_flight_hours.php" crc="1557729034"/>
@@ -3806,7 +3804,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\index.html" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\.htaccess" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\index.php" crc="1557729026"/>
-		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1568907625"/>
+		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1569164822"/>
 		<file name="C:\OSPanel\domains\localhost\reg\.htaccess" crc="1568112589"/>
 	</filescache>
 </project>

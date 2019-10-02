@@ -71,7 +71,7 @@ if ( ! function_exists('img_div_new')) {
 if ( ! function_exists('file_cover')) {
     function file_cover()
     {
-        return 'https://www.shareicon.net/data/128x128/2015/08/03/79466_file_512x512.png';
+        return base_url().'static/icon/file.png';
     }
 }
 
