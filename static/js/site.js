@@ -20,4 +20,14 @@ $('a[href$="#help"] , a[href$="#contact"]').click(function(e)
 $('[data-toggle="tooltip"]').tooltip()
 
 
+$('.mnu-bt-mobile').click(function(){
+	
+		if ($('#mob_menu').css('display') == 'block'){
+			$('#mob_menu').removeAttr('style')
+		}else{
+			$('#mob_menu').attr('style','display:block')
+		}
+	
+	})
+
 

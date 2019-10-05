@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"/>
 	<script>
 		var base = "<?= base_url() ?>";
+		
+		
 	</script>
 </head>
 <body >

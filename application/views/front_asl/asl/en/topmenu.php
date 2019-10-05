@@ -1,5 +1,5 @@
 <nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="menu-menu-principal-en-container"><ul id="menu-menu-principal-en" class="nav-menu-eap"><li id="menu-item-4411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4411 has-submnu"><a href="https://www.aslairlines.fr/en/scheduled-flights/">Scheduled Flights</a>
+				<div id="mob_menu" class="menu-menu-principal-en-container"><ul id="menu-menu-principal-en" class="nav-menu-eap"><li id="menu-item-4411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4411 has-submnu"><a href="https://www.aslairlines.fr/en/scheduled-flights/">Scheduled Flights</a>
 <ul class="sub-menu">
 	<li id="menu-item-11236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11236"><a href="https://www.aslairlines.fr/en/scheduled-flights/">Destinations</a></li>
 	<li id="menu-item-11288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11288 has-submnu"><a href="https://www.aslairlines.fr/en/scheduled-flights/partnerships/">Partnerships</a>

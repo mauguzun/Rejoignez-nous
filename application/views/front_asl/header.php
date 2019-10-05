@@ -166,36 +166,8 @@
 		
 		<div id="bandeau-header">
 
-			<!-- Code for Action: Hamburg Airport - ASL - Universal Pixel -->
-			<!-- Begin Rocket Fuel Conversion Action Tracking Code Version 9 -->
-			<script type="text/javascript">
-				(function() {
-						var w = window, d = document;
-						var s = d.createElement('script');
-						s.setAttribute('async', 'true');
-						s.setAttribute('type', 'text/javascript');
-						s.setAttribute('src', '//c1.rfihub.net/js/tc.min.js');
-						var f = d.getElementsByTagName('script')[0];
-						f.parentNode.insertBefore(s, f);
-						if (typeof w['_rfi'] !== 'function') {
-							w['_rfi']=function() {
-								w['_rfi'].commands = w['_rfi'].commands || [];
-								w['_rfi'].commands.push(arguments);
-							};
-						}
-						_rfi('setArgs', 'ver', '9');
-						_rfi('setArgs', 'rb', '26193');
-						_rfi('setArgs', 'ca', '20736927');
-						_rfi('setArgs', '_o', '26193');
-						_rfi('setArgs', '_t', '20736927');
-						_rfi('track');
-					})();
-			</script>
-			<noscript>
-				<iframe src='//20736927p.rfihub.com/ca.html?rb=26193&ca=20736927&_o=26193&_t=20736927&ra=YOUR_CUSTOM_CACHE_BUSTER' style='display:none;padding:0;margin:0' width='0' height='0'>
-				</iframe>
-			</noscript>
-			<!-- End Rocket Fuel Conversion Action Tracking Code Version 9 -->
+			
+			
 				
 			<div class="bloc-outils">
 				<ul id="menu-top-menu-en" class="menu"><li id="menu-item-9009" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9009"><a href="https://fo-emea.ttinteractive.com/Zenith/FrontOffice/Europeairpost/en-GB/WebCheckin?mode=iframe">Check-in</a></li>

@@ -1,5 +1,5 @@
 <nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="menu-menu-principal-container"><ul id="menu-menu-principal" class="nav-menu-eap"><li id="menu-item-4410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4410 has-submnu"><a href="https://www.aslairlines.fr/vols-reguliers/">Vols réguliers</a>
+				<div d="mob_menu"  class="menu-menu-principal-container"><ul id="menu-menu-principal" class="nav-menu-eap"><li id="menu-item-4410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4410 has-submnu"><a href="https://www.aslairlines.fr/vols-reguliers/">Vols réguliers</a>
 <ul class="sub-menu">
 	<li id="menu-item-11233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11233"><a href="https://www.aslairlines.fr/vols-reguliers/">Destinations</a></li>
 	<li id="menu-item-11286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11286 has-submnu"><a href="https://www.aslairlines.fr/vols-reguliers/partenariats/">Partenariats</a>
