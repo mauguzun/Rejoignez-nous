@@ -895,69 +895,27 @@ class Apply_Controller extends Usermeta_Controller{
 					'french_level'=>$_POST['french_level']],'application_english_frechn_level');
 					
 			$can_redirect = TRUE;
-		}
 		
-
-
+		
+			$this->Crud->delete(['application_id'=>(int)$app['id']],'application_languages_level');
+			for($i = 0 ; $i < count($_POST['language']) ; $i++){
+				
+				
+				if(!empty($_POST['language'][$i])){
+					$lang = ['language' => $_POST['language'][$i],'level_id' => $_POST['level_id'][$i],'application_id'=> $app['id']];		
+					$this->Crud->update_or_insert($lang,'application_languages_level');		
+				}
+			
+			}
+		
+		}
+	
 		$row = $this->Crud->get_all('application_languages_level',['application_id'=>$app['id']]);
 
-		if( isset($_POST['language']) && $this->form_validation->run() === TRUE){
-			
-			if($row){
-
-				$langs = [];
-				for($i = 0 ; $i < count($_POST['language']) ; $i++){
-					$lang = [
-						'language' => $_POST['language'][$i],
-						'level_id' => $_POST['level_id'][$i],
-						'application_id'=> $app['id'],
-					];
-					array_push($langs,$lang);
-				}
-				foreach($row as $value){
-					if(!in_array($value,$langs)){
-
-						// oe ? we find you bich
-						$this->savehistory($app['id'],$value,[],'application_id',
-							$app['id'],'application_languages_level',['application_id']);
-						$this->Crud->delete($value,'application_languages_level');
-					}
-				}
-
-				foreach($langs as $new_value){
-					if(!empty($new_value['language'])){
-						$this->Crud->update_or_insert($new_value,'application_languages_level');
-					}
-
-
-				}
-			}
-			else{
-				$langs = [];
-				for($i = 0 ; $i < count($_POST['language']) ; $i++){
-					if(!empty($_POST['language'][$i])){
-						$langs[] = [
-							'language' => $_POST['language'][$i],
-							'level_id' => $_POST['level_id'][$i],
-							'application_id'=> $app['id']
-						];
-					}
-
-
-				}
-
-				$this->Crud->add_many($langs,'application_languages_level');
-			}
-			$row  = $this->Crud->get_all('application_languages_level',['application_id'=>$app['id']]);
-
-			
-		}
-
-
-		
+	
 	
 		if($can_redirect){
-			redirect($map);
+		//	redirect($map);
 		}
 
 		
