@@ -28,11 +28,11 @@ class Appresp extends CI_Model{
 			`application_contract`.`type` as `contract_title`,
 			
 			COUNT(DISTINCT application.user_id) AS total_application,
-			COUNT(DISTINCT not_consulted.user_id) AS not_consulted,
-			COUNT(DISTINCT successful_applications.user_id) AS successful_applications,
-			COUNT(DISTINCT unsuccessful_applications.user_id) AS unsuccessful_applications,
-			COUNT(DISTINCT undecided_applications.user_id) AS undecided_applications,
-			COUNT(DISTINCT interesting_for_another_position.user_id) AS interesting_for_another_position,
+			COUNT(DISTINCT not_consulted.id) AS not_consulted,
+			COUNT(DISTINCT successful_applications.id) AS successful_applications,
+			COUNT(DISTINCT unsuccessful_applications.id) AS unsuccessful_applications,
+			COUNT(DISTINCT undecided_applications.id) AS undecided_applications,
+			COUNT(DISTINCT interesting_for_another_position.id) AS interesting_for_another_position,
 			GROUP_CONCAT(DISTINCT functions.function ) as functions ,
 			GROUP_CONCAT(DISTINCT activities.activity ) as activities 
 		
@@ -48,19 +48,19 @@ class Appresp extends CI_Model{
 			LEFT JOIN `offers_category` ON `offers`.`category` = `offers_category`.`id`
 			LEFT JOIN `application` ON `offers`.`id` = `application`.`offer_id`
 			LEFT JOIN `application_status` ON `application`.`application_statuts` = `application_status`.`id`
-			LEFT JOIN `candidates` ON `application`.`user_id` = `candidates`.`user_id`
-			LEFT JOIN `candidates` AS `total` ON `application`.`user_id` = `total`.`user_id`
+			LEFT JOIN `users` ON `application`.`user_id` = `users`.`id`
+			LEFT JOIN `users` AS `total` ON `application`.`user_id` = `total`.`id`
 			LEFT JOIN `application_contract`  ON `offers`.`type` = `application_contract`.`id`
 
-			LEFT JOIN `candidates` AS `not_consulted` ON `application`.`user_id` = `not_consulted`.`user_id`
+			LEFT JOIN `users` AS `not_consulted` ON `application`.`user_id` = `not_consulted`.`id`
 			AND application.application_statuts = 2
-			LEFT JOIN `candidates` AS `successful_applications` ON `application`.`user_id` = `successful_applications`.`user_id`
+			LEFT JOIN `users` AS `successful_applications` ON `application`.`user_id` = `successful_applications`.`id`
 			AND application.application_statuts = 3
-			LEFT JOIN `candidates` AS `unsuccessful_applications` ON `application`.`user_id` = `unsuccessful_applications`.`user_id`
+			LEFT JOIN `users` AS `unsuccessful_applications` ON `application`.`user_id` = `unsuccessful_applications`.`id`
 			AND application.application_statuts = 4
-			LEFT JOIN `candidates` AS `undecided_applications` ON `application`.`user_id` = `undecided_applications`.`user_id`
+			LEFT JOIN `users` AS `undecided_applications` ON `application`.`user_id` = `undecided_applications`.`id`
 			AND application.application_statuts = 5
-			LEFT JOIN `candidates` AS `interesting_for_another_position` ON `application`.`user_id` = `interesting_for_another_position`.`user_id`
+			LEFT JOIN `users` AS `interesting_for_another_position` ON `application`.`user_id` = `interesting_for_another_position`.`id`
 			AND application.application_statuts = 6
 
 
