@@ -4,6 +4,8 @@
 		<PM_URL><![CDATA[C:/open/OSPanel/domains/localhost/prismic/]]></PM_URL><PM_HOME_URL><![CDATA[C:/open/OSPanel/domains/localhost/prismic/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\views\apply_final;C:\OSPanel\domains\localhost\reg\application\views\apply_final\NewFile.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\main.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\pnc.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php;C:\OSPanel\domains\localhost\reg\application\views\front\parts\NewFile.php;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;C:\open\OSPanel\domains\localhost\asldomain\application\controllers\NewFile.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\offer_list.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\parts\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\apply\hr\Profile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\user\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\libraries\Profile.php;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\Admin.php;C:\server\OSPanel\domains\localhost\asldomain\static\update\css\NewFile.css;"/><added value=""/><lastopfiles>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Foreignlang.php"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Controller.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\front_asl\asl\en\topmenu.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -238,10 +240,203 @@
 			<todo name="todo These number should be random based on birth year" pos="11;297"/>
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\Auth.php">
+			<todo name="todo go to login page :)" pos="4;410"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\Offer.php">
+			<todo name="todo is active" pos="3;22"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\User.php">
+			<todo name="todo if user super Admin" pos="13;177"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Activity.php">
+			<todo name="todo if user super Admin" pos="4;167"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Functions.php">
+			<todo name="todo if user super Admin" pos="4;157"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\News.php">
+			<todo name="todo if user super Admin" pos="4;124"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Sitemap.php">
+			<todo name="todo if user super Admin" pos="13;173"/>
+		</todofile>
+		<todofile name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Appliedoffers.php">
+			<todo name="todo is active" pos="3;18"/>
+		</todofile>
 	</todoblock>
 	<dbgurls>
 	</dbgurls>
 	<filescache>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\views\apply_final\pnc\vue.php" crc="1570211457"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\views\apply_final\pnc\pnc.php" crc="1570210305"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\views\apply_final\parts\main.php" crc="1570210149"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\views\apply_final\parts\header.php" crc="1570212790"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\views\apply_final\NewFile.php" crc="1570085249"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\core\index.html" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Zipapp.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Resetpassword.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Profile.php" crc="1568812053"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Offers.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Offer.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Getfile.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Foreignlang.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Download.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Aviability.php" crc="1557729038"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Apply_un.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Apply.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Appliedoffers.php" crc="1569079719"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\user\Address.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Viewuser.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Viewoffers.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\User.php" crc="1568200901"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Slideshow.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Sitemap.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Sendemail.php" crc="1569081030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Resetpassword.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Privacystatement.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Printofferuser.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Printmanualoffer.php" crc="1568900460"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Online.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Offer.php" crc="1568213304"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\News.php" crc="1568207544"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\History.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Hiringpolicy.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Functions.php" crc="1568225654"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Edituser.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Applicationsinresponse.php" crc="1568208620"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Applications.php" crc="1569163423"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Apphistory.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Ajax.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\shared\Activity.php" crc="1568214601"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\help\Folder.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\help\Clear.php" crc="1568113565"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\debug_faker\User.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\debug_faker\UnApp.php" crc="1557729036"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\User.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Settings_keywords.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Settings_help.php" crc="1568214806"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Settings_generic.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Settings_email.php" crc="1568214688"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Main.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Email.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\back\Ajax.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Printme.php" crc="1569073066"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Position.php" crc="1569009732"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Other.php" crc="1569010718"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Mainlang.php" crc="1569009958"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Main.php" crc="1568966719"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Foreignlang.php" crc="1569010985"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Expirience.php" crc="1569010904"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Education.php" crc="1569010955"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Delete.php" crc="1569071931"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Cv.php" crc="1569012004"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Covver_letter.php" crc="1569011668"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Begin.php" crc="1569074069"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\unsolicited\Apply.php" crc="1569012051"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Vaccine_against_yellow_fever.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Total_flight_hours.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Successive_employer.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Qualification_type.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Printme.php" crc="1568886523"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Practice.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Photo_in_feet.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Medical_aptitudes.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Mainlang.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Main.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Licenses.php" crc="1557729034"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Id_photo.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Foreignlang.php" crc="1568889204"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Fcl.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Expirience.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Experience_in_instructor.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Eu.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Education.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Delete.php" crc="1568881257"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Cv.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Covver_letter.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Complementary_informations.php" crc="1568885702"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Certificate_of_flang.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Carnet_of_flight.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Aviability.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Attestation_of_medical_fitness.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Attestation_of_irme.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Attestation.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnt\Apply.php" crc="1568886308"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Vaccine_against_yellow_fever.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Printme.php" crc="1568882163"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Photo_in_feet.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Passport.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Other.php" crc="1568306314"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Medical_aptitudes.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Medical_aptitude.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Mainlang.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Main.php" crc="1568812957"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Id_photo.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Foreignlang.php" crc="1557729032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Eu.php" crc="1568301295"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Education.php" crc="1568822069"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Delete.php" crc="1568821849"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Cv.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Covver_letter.php" crc="1568305851"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Cfs.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Certificate_of_flang.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Aviability.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Apply.php" crc="1568888236"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\pnc\Aeronautical_experience.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php" crc="1570212069"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Printme.php" crc="1568884005"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Other.php" crc="1568306820"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Medical_aptitudes.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Mainlang.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Main.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Foreignlang.php" crc="1568890318"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Education.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Delete.php" crc="1568881229"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Cv.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Covver_letter.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Complementary_documents.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Aviability.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Apply.php" crc="1568816860"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Aeronautical_experience.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Aeronautical_english_level.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\mechanic\Aeronautical_baccalaureate.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Profile.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Printme.php" crc="1568888415"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Other.php" crc="1568819261"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Mainlang.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Main.php" crc="1557729030"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Foreignlang.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Expirience.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Education.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Delete.php" crc="1568881243"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Cv.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Covver_letter.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Aviability.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\hr\Apply.php" crc="1568887628"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\apply\Ajaxupload.php" crc="1568302894"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\access\Pnt_Pnc_Hr_Admin.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\access\Pnt_Hr_Admin.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\access\Pnc_Hr_Admin.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\access\Hr_Admin.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\access\All_Admins.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Welcome.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Test.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Sitemap.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Set.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Policy.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Offers.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Offer.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Not.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\News.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\index.html" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Helpajax.php" crc="1568712581"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Getfile.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Fake.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Download.php" crc="1557729026"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Data.php" crc="1557729026"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Auth.php" crc="1568290474"/>
+		<file name="C:\OSPanel\domains\localhost\reg\vue\controllers\Admin.php" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1557729316"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1557729316"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\CompanyTest.php" crc="1557729316"/>
@@ -1127,7 +1322,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.bg.min.js" crc="1557729234"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.az.min.js" crc="1557729234"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.ar.min.js" crc="1557729234"/>
-		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css" crc="1569164233"/>
+		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css" crc="1570429156"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\variables\variables-custom.less" crc="1557729232"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\variables\variables-core.less" crc="1557729232"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\mixins\nav-vertical-align.less" crc="1557729232"/>
@@ -3809,7 +4004,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\index.html" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\.htaccess" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\index.php" crc="1557729026"/>
-		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1569164822"/>
+		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1570261336"/>
 		<file name="C:\OSPanel\domains\localhost\reg\.htaccess" crc="1568112589"/>
 	</filescache>
 </project>
