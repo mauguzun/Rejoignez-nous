@@ -302,6 +302,15 @@ if( null ==! $this->session->flashdata('message')) :?>
 		color: red !important;;
 		padding-right: 5px !important;;
 	}
+	
+	.tooltip-inner {
+		overflow-x: auto;
+		
+		/* If max-width does not work, try using width instead */
+		/*width: 350px !important;*/
+		word-break: break-word;
+	}
+	
 
 </style>
 <script>

@@ -17,6 +17,7 @@ class Applications extends Shared_Controller{
 	private $_lang_level;
 	private $_education_level;
 	private $_statuses;
+	private $_functions;
 
 
 	public function __construct(){
@@ -43,6 +44,9 @@ class Applications extends Shared_Controller{
 		foreach($this->Crud->get_all('application_status') as $value){
 			$this->_statuses[$value['id']] = $value['status'];
 		}
+		foreach($this->Crud->get_all('functions') as $value){
+			$this->_functions[$value['id']] = $value['function'];
+		}
 
 	}
 
@@ -58,12 +62,13 @@ class Applications extends Shared_Controller{
 				'url'=>$this->_redirect.'/ajax',
 				'statuses'=>$this->Crud->get_all('application_status'),
 				'category_id'=>$this->get_group_category(),
+				'functions'=>$this->Crud->get_all('functions',null)
 			]);
 						
 		$this->load->view('back/parts/datatable',[
 				'headers'=>[
 					'create_offer_pub_date', 
-					'index_fname_th','index_lname_th','function',
+					'index_fname_th','index_lname_th','title','function',
 					
 					/*		'#',*/
 					'<input  type="checkbox" id="main" />',
@@ -427,7 +432,7 @@ class Applications extends Shared_Controller{
 			GROUP_CONCAT(DISTINCT activities.activity ) as activities,
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
-			GROUP_CONCAT(DISTINCT functions.function ) as functions,		
+			GROUP_CONCAT(DISTINCT functions.function  SEPARATOR '<br>' ) as functions,		
 			GROUP_CONCAT(DISTINCT CONCAT(application_files.type,'/',application_files.file)   ) as files,		
 			
 			last_level_education.university as university,
@@ -519,7 +524,24 @@ class Applications extends Shared_Controller{
 		}else if($table_row['unsolicated'] == 1){
 			$managerial = $this->_have($table_row['hr_managerial']);
 		}
-
+		
+		//function_by_admin
+		
+		/// 
+		
+		$funct =  $table_row['functions']; 
+		if( $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions)){
+			$funct = 
+			'<a data-toggle="tooltip" data-placement="left" title="<b>'.
+			lang('initially applied for the position of ').'</b><br>'.
+			$table_row['functions']
+			 
+			.'"  ><i class="fas fa-exclamation-triangle"></i> '.
+			$this->_functions[$table_row['function_by_admin']]." </a>"
+			
+			;
+		}
+		
 		array_push(
 			$row,
 
@@ -528,6 +550,7 @@ class Applications extends Shared_Controller{
 			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['last_name']) ,
 			
 			$title/*. $table_row['functions']*/ ,
+			$funct,
 			
 			/*$table_row['aid'],*/
 			'<input class="table-checkbox" 
@@ -636,6 +659,7 @@ class Applications extends Shared_Controller{
 		echo json_encode(['error'=>'You dont have acces']);
 
 	}
+
 	
 	private function _show_lang_in_table_column($table_row){
 		
@@ -654,7 +678,12 @@ class Applications extends Shared_Controller{
 	}
 	public function ajaxstatus($application_id,$status_id){
 		if($this->get_user_edit()){
-			if( $this->Crud->update(['id'=>$application_id],['application_statuts'=>$status_id],$this->_table)){
+			
+			$array['application_statuts']=$status_id;
+			if($status_id != '6'){
+				$array['function_by_admin'] = NULL;
+			}
+			if( $this->Crud->update(['id'=>$application_id],$array,$this->_table)){
 				// back this shit ?
 				$statuses = [];
 				foreach($this->Crud->get_all('application_status') as $value){
@@ -713,6 +742,10 @@ class Applications extends Shared_Controller{
 					case 7:
 					$allowed['application.manualy'] = 1;
 					break;
+					case 11:
+					$allowed['application.manualy'] =0;
+					$allowed['application.unsolicated'] =0;
+					break;
 					case 5:
 					$allowed['application.unsolicated'] = 1;
 					break;
@@ -759,6 +792,10 @@ class Applications extends Shared_Controller{
 		//var_dump($allowed);
 
 		return $allowed;
+	}
+	
+	public function function_list($id){
+		
 	}
 
 

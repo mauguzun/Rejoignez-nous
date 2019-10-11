@@ -15,12 +15,14 @@
 							<option value=""></option>
 
 							<option value="0"><?= lang('all applications recived')?></option>
+							<option value="11"><?= lang('applications_in_responce')?></option>
 							<option value="5"><?= lang('unsolicited_application_applys')?></option>
 							<option value="7"><?= lang('manualay_applications')?></option>
-							<option value="4"><?= lang('Mecanicien')?></option>
+							<!--	<option value="4"><?= lang('Mecanicien')?></option>
 							<option value="3"><?= lang('PNT')?></option>
 							<option value="2"><?= lang('PNC')?></option>
-							<option value="1"><?= lang('HR')?></option>
+							<option value="1"><?= lang('HR')?></option>-->
+							
 						</select>
 					</td>
 
@@ -54,6 +56,17 @@
 					</td>
 
 
+					<td>
+						<select id="function" class="form-control change">
+							<option value=""></option>
+		
+
+							<?
+							foreach($functions as $value):?>
+							<option value="<?= $value['id']?>"><?= $value['function']?></option>
+							<? endforeach;?>
+						</select>
+					</td>
 
 
 					<td>
@@ -86,29 +99,25 @@
 
 	
 
-	$('.change').change(function()
-		{
-			request();
-		})
-
-
-
+	
 
 	function request()
 	{
 		let mode = $("#mode").val()
 		let status = $("#status").val();
 		let offer =     $("#offer").val() ;
-		window.history.replaceState(null,null,  `?mode=${mode}&status=${status}&offer=${offer}`);
+		let func =     $("#function").val() ;
+	
+		
+		window.history.replaceState(null,null,  `?mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
 
 		if (typeof x !== 'undefined') 
-		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  ).load();
+		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status   ).load();
 	}
-	$("#offer").change(function()
+	$("#offer,#function,.change").change(function()
 		{
 			request();
 		});
-
 
 	$('#offer').typeahead(
 		{
@@ -149,15 +158,15 @@
 	let searchParams = new URLSearchParams(window.location.search);
 	
 	
-			if(searchParams.has('mode') | searchParams.has('status')){
+	if(searchParams.has('mode') | searchParams.has('status')){
 				  
 		
 		
 		
-				$("#mode").val(searchParams.get('mode'))
-				$("#status").val(searchParams.get('status'));
-				request();
-			}
+		$("#mode").val(searchParams.get('mode'))
+		$("#status").val(searchParams.get('status'));
+		request();
+	}
 		
 	
 </script>

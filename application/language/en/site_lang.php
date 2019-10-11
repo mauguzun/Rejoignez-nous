@@ -269,6 +269,7 @@ $lang['click here to login'] = 'click here to login ';
 $lang["Password don't match"] = "Password don't match";
 $lang['Password match'] = 'Password matches ';
 $lang['begin_new_application'] = 'begin_new_application';
+$lang['initially applied for the position of'] = 'initially applied for the position of';
 
 $lang['update_my_main_acc'] = 'update_my_main_acc';
 $lang['yes_toogle'] = [

@@ -23,17 +23,28 @@
 				foreach($statuses as $key=>$value) :?>
 
 				<li> <a 
+				
 				 data-link="<?= $id ?>"
+				 data-id="<?= $key ?>"
+				 data-application-id="<?= $application_id ?>"
+
 				 data-status='true'
 				 href="<?= base_url().'shared/applications/ajaxstatus/'.$application_id.'/'.$key?>"> 
-				 <?= $value?></a></li>
+						<?= $value?></a></li>
 
 
 
 				<? endforeach ;?>
 			</ul>
 		</div>
+		
+		<div data-function="<?= $id ?>" class="pls_hide" style="display: none">
+			<label>Re-asing function</label>
+			<div data-function-list="<?= $id ?>">
+				
+			</div>
+		</div>
 	</div>
 
-
+	
 </span>

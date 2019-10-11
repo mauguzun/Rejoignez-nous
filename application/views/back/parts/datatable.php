@@ -177,7 +177,8 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 	function setAllExtra()
 	{
-
+		
+		
 
 		$('*[data-form-url]').click(function()
 			{
@@ -335,10 +336,11 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 		} );
 		
-	$('#mode').change(function(){
+	   $('#mode').change(function(){
 			$('#overlay').slideDown();
 		})
 
+	
 	
 
 		
