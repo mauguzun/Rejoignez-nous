@@ -19,6 +19,7 @@ class Applications extends Shared_Controller{
 	private $_statuses;
 	private $_functions;
 
+	private $_function_filter_id = NULL;
 
 	public function __construct(){
 		parent::__construct($this->_allowed);
@@ -60,15 +61,15 @@ class Applications extends Shared_Controller{
 		
 		$this->load->view('back/data_table_filter',[
 				'url'=>$this->_redirect.'/ajax',
-				'statuses'=>$this->Crud->get_all('application_status'),
+				'statuses'=>$this->_statuses,
 				'category_id'=>$this->get_group_category(),
-				'functions'=>$this->Crud->get_all('functions',null)
+				'functions'=>$this->_functions
 			]);
 						
 		$this->load->view('back/parts/datatable',[
 				'headers'=>[
 					'create_offer_pub_date', 
-					'index_fname_th','index_lname_th','title','function',
+					'index_fname_th','index_lname_th','function',
 					
 					/*		'#',*/
 					'<input  type="checkbox" id="main" />',
@@ -433,6 +434,7 @@ class Applications extends Shared_Controller{
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
 			GROUP_CONCAT(DISTINCT functions.function  SEPARATOR '<br>' ) as functions,		
+			GROUP_CONCAT(DISTINCT functions.id  ) as functions_id,		
 			GROUP_CONCAT(DISTINCT CONCAT(application_files.type,'/',application_files.file)   ) as files,		
 			
 			last_level_education.university as university,
@@ -452,7 +454,11 @@ class Applications extends Shared_Controller{
 
 		$data['data'] = [];
 		foreach($query as $table_row){
-			array_push($data['data'],$this->_row($table_row));
+			$rest = $this->_row($table_row);
+			if($rest){
+				array_push($data['data'],$rest);
+
+			}
 		}
 		/*var_dump($data['data']);
 		die();*/
@@ -464,9 +470,22 @@ class Applications extends Shared_Controller{
 		
 	
 		$data['data'] = [];
-		
 		$row  = [];
+		
+		///
+		if($this->_function_filter_id ){
+			
+			if( $table_row['unsolicated'] == 1  | $table_row['manualy'] == 1){
+				return null;
+			}
+			
+			$array = explode(',',$table_row['functions_id']);
+			if(!in_array($this->_function_filter_id,$array)){
+				return null;
+			}
+		}
 
+		//
 
 		$educaton = $table_row['education_level'] > 0 ?
 		$this->_education_level[$table_row['education_level']] : NULL;
@@ -483,7 +502,7 @@ class Applications extends Shared_Controller{
 			$funciton          = $un['function'];	*/
 				
 			$title          = $un['function'];
-			 
+			$table_row['functions']= $un['function'];
 			$email          = base_url().Shared_Controller::$map.'/sendemail/unsolicated/'.$table_row['aid'];;
 		}
 		else  
@@ -537,9 +556,7 @@ class Applications extends Shared_Controller{
 			$table_row['functions']
 			 
 			.'"  ><i class="fas fa-exclamation-triangle"></i> '.
-			$this->_functions[$table_row['function_by_admin']]." </a>"
-			
-			;
+			$this->_functions[$table_row['function_by_admin']]." </a>";
 		}
 		
 		array_push(
@@ -549,7 +566,7 @@ class Applications extends Shared_Controller{
 			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['first_name']) ,
 			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['last_name']) ,
 			
-			$title/*. $table_row['functions']*/ ,
+			/*$title/*. $table_row['functions']*/ 
 			$funct,
 			
 			/*$table_row['aid'],*/
@@ -726,6 +743,11 @@ class Applications extends Shared_Controller{
 		$allowed['application.deleted'] = 0;
 		$allowed['filled'] = 1;
 		if(isset($_GET)){
+			
+			// new
+			if(isset($_GET['function'])){
+				$this->_function_filter_id = $_GET['function'];
+			}
 
 			if(isset($_GET['offer']) && !empty($_GET['offer']) && $_GET['offer'] != '0'){
 

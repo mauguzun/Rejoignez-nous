@@ -49,8 +49,8 @@
 							<option value="0"><?= lang('all applications recived')?></option>
 
 							<?
-							foreach($statuses as $value):?>
-							<option value="<?= $value['id']?>"><?= $value['status']?></option>
+							foreach($statuses as $key=>$value):?>
+							<option value="<?= $key?>"><?= $value?></option>
 							<? endforeach;?>
 						</select>
 					</td>
@@ -62,8 +62,8 @@
 		
 
 							<?
-							foreach($functions as $value):?>
-							<option value="<?= $value['id']?>"><?= $value['function']?></option>
+							foreach($functions as $id=>$value):?>
+							<option value="<?= $id?>"><?= $value?></option>
 							<? endforeach;?>
 						</select>
 					</td>
@@ -112,7 +112,7 @@
 		window.history.replaceState(null,null,  `?mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
 
 		if (typeof x !== 'undefined') 
-		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status   ).load();
+		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  + '&function='+func ).load();
 	}
 	$("#offer,#function,.change").change(function()
 		{
@@ -159,12 +159,10 @@
 	
 	
 	if(searchParams.has('mode') | searchParams.has('status')){
-				  
-		
-		
-		
+
 		$("#mode").val(searchParams.get('mode'))
-		$("#status").val(searchParams.get('status'));
+		$("#status").val(searchParams.get('status'));	
+			$("#function").val(searchParams.get('function'));
 		request();
 	}
 		
