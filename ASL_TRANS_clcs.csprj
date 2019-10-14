@@ -108,6 +108,10 @@
 </treenode>
 <treenode node="controllers/Ajax_Controller.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f14;65;45;65;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
 </treenode>
+<treenode node="controllers/apply/Base_Apply_Controller.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f14;68;57;68;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
+</treenode>
+<treenode node="controllers/apply/Pnc_Controller.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f14;69;50;69;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
+</treenode>
 <treenode node="controllers/Apply_Controller.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f14;58;46;58;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
 </treenode>
 <treenode node="controllers/Apply_Hr_Controller.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f14;59;49;59;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
@@ -2088,28 +2092,28 @@
 <treenode node="slash_item;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Config.php;f8;214;2;226;;;;vpos;;v;;astring;;r&#10;Definition&#10;    slash_item($item)&#10;&#10;Description&#10;     Fetch a config file item with slash appended (if not empty)&#10;&#10;Parameters:&#10;    string $item - Config item name&#10;&#10;Return:&#10;   |null The configuration item or NULL if the item doesn&apos;t exist;;d1,215;;b1,0;;m0;;estring $item;;p">
 </treenode>
 </treenode>
-<treenode node="CI_Controller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f0;67;1;321;;;;vpos;;v;;a;;r&#10;Definition&#10;    class CI_Controller&#10;&#10;Description&#10;     Application Controller Class;;d20,51;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;87;2;133;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct()&#10;&#10;Description&#10;     Class constructor;;d1,71;;b1,0;;m0;;e">
+<treenode node="CI_Controller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f0;70;1;324;;;;vpos;;v;;a;;r;;d19,70;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;90;2;136;;;;vpos;;v;;avoid;;r&#10;Definition&#10;    __construct()&#10;&#10;Description&#10;     Class constructor;;d30,90;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_get_page;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f11;257;2;307;;;;vpos;;v;;a;;r;;d31,257;;b2,0;;m0;;e">
+<treenode node="_get_page;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f11;260;2;310;;;;vpos;;v;;a;;r;;d31,260;;b2,0;;m0;;e">
 </treenode>
-<treenode node="email_config;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f11;136;2;149;;;;vpos;;v;;a;;r;;d34,136;;b2,0;;m0;;e">
+<treenode node="email_config;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f11;139;2;152;;;;vpos;;v;;a;;r;;d34,139;;b2,0;;m0;;e">
 </treenode>
-<treenode node="get_instance;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f15;181;2;183;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    &amp;get_instance()&#10;&#10;Description&#10;     Get the CI singleton;;d1,198;;b1,5;;m0;;e">
+<treenode node="get_instance;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f15;184;2;186;;;;vpos;;v;;aobject;;r&#10;Definition&#10;    &amp; get_instance()&#10;&#10;Description&#10;     Get the CI singleton;;d40,184;;b1,5;;m0;;e">
 </treenode>
-<treenode node="get_privacy;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;250;2;254;;;;vpos;;v;;a;;r&#10;Definition&#10;    get_privacy()&#10;&#10;Description&#10;     privacy statement;;d30,250;;b1,0;;m0;;e">
+<treenode node="get_privacy;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;253;2;257;;;;vpos;;v;;a;;r&#10;Definition&#10;    get_privacy()&#10;&#10;Description&#10;     privacy statement;;d30,253;;b1,0;;m0;;e">
 </treenode>
-<treenode node="getCurrentLang;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;168;2;171;;;;vpos;;v;;a;;r;;d33,136;;b1,0;;m0;;e">
+<treenode node="getCurrentLang;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;171;2;174;;;;vpos;;v;;a;;r;;d33,171;;b1,0;;m0;;e">
 </treenode>
-<treenode node="setLang;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;151;2;166;;;;vpos;;v;;a;;r;;d37,122;;b1,0;;m0;;earg;;p">
+<treenode node="setLang;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;154;2;169;;;;vpos;;v;;a;;r;;d37,154;;b1,0;;m0;;earg;;p">
 </treenode>
-<treenode node="show_footer;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;309;2;320;;;;vpos;;v;;a;;r;;d30,309;;b1,0;;m0;;e">
+<treenode node="show_footer;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;312;2;323;;;;vpos;;v;;a;;r;;d30,312;;b1,0;;m0;;e">
 </treenode>
-<treenode node="show_header;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;185;2;211;;;;vpos;;v;;a;;r;;d42,185;;b1,0;;m0;;emeta;;p">
+<treenode node="show_header;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;188;2;214;;;;vpos;;v;;a;;r;;d42,188;;b1,0;;m0;;emeta;;p">
 </treenode>
-<treenode node="show_header_not_translate;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;213;2;233;;;;vpos;;v;;a;;r;;d56,213;;b1,0;;m0;;emeta;;p">
+<treenode node="show_header_not_translate;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f8;216;2;236;;;;vpos;;v;;a;;r;;d56,216;;b1,0;;m0;;emeta;;p">
 </treenode>
-<treenode node="show_user_menu;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f11;234;2;243;;;;vpos;;v;;a;;r;;d36,234;;b2,0;;m0;;e">
+<treenode node="show_user_menu;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\Controller.php;f11;237;2;246;;;;vpos;;v;;a;;r;;d36,237;;b2,0;;m0;;e">
 </treenode>
 </treenode>
 <treenode node="CI_DB_Cache;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\database\DB_cache.php;f0;46;1;220;;;;vpos;;v;;a;;r&#10;Definition&#10;    class CI_DB_Cache&#10;&#10;Description&#10;     Database Cache Class;;d18,46;;b0,0;;m0;;e">
@@ -9626,14 +9630,14 @@
 <treenode node="render;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\dompdf\dompdf\src\PhpEvaluator.php;f11;58;5;61;;;;vpos;;v;;a;;r&#10;Definition&#10;    render(Frame $frame)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    Frame $frame;;d4,59;;b1,0;;m0;;eFrame $frame;;p">
 </treenode>
 </treenode>
-<treenode node="Pnc;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\pnc.php;f0;6;1;43;;C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php;f0;6;1;45;;;;vpos;;v;;aPnc_Conntroller;;c;;r&#10;Definition&#10;    class Pnc extends  Pnc_Conntroller&#10;&#10;Description&#10;     user/apply/Hr/Main;;d34,6;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\pnc.php;f8;10;2;13;;C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php;f8;10;2;14;;;;vpos;;v;;a;;r;;d30,10;;b1,0;;m0;;e">
+<treenode node="Pnc;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\pnc.php;f0;6;1;43;;C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php;f0;6;1;45;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php;f0;6;1;45;;;;vpos;;v;;aPnc_Conntroller;;c;;r&#10;Definition&#10;    class Pnc extends  Pnc_Conntroller&#10;&#10;Description&#10;     user/apply/Hr/Main;;d34,6;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\pnc.php;f8;10;2;13;;C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php;f8;10;2;14;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php;f8;10;2;14;;;;vpos;;v;;a;;r;;d30,10;;b1,0;;m0;;e">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\pnc.php;f8;15;2;38;;C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php;f8;16;2;41;;;;vpos;;v;;a;;r;;d41,16;;b1,0;;m0;;eoffer_id;;p">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\pnc.php;f8;15;2;38;;C:\OSPanel\domains\localhost\reg\vue\controllers\apply\new\Pnc.php;f8;16;2;41;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php;f8;16;2;41;;;;vpos;;v;;a;;r;;d41,16;;b1,0;;m0;;eoffer_id;;p">
 </treenode>
 </treenode>
-<treenode node="Pnc_Conntroller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\NewFile.php;f0;2;1;16;;;;vpos;;v;;aBase_Apply_Controller;;c;;r;;d0,3;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\NewFile.php;f8;7;2;12;;;;vpos;;v;;a;;r;;d1,8;;b1,0;;m0;;epage;;pmeta;;p">
+<treenode node="Pnc_Conntroller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\NewFile.php;f0;2;1;16;;;;vpos;;v;;aBase_Apply_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\NewFile.php;f8;7;2;12;;;;vpos;;v;;a;;r;;d1,10;;b1,0;;m0;;epage;;pmeta;;p">
 </treenode>
 </treenode>
 <treenode node="Pnc_Hr_Admin;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\access\Pnc_Hr_Admin.php;f0;4;1;14;;C:\OSPanel\domains\localhost\reg\vue\controllers\access\Pnc_Hr_Admin.php;f0;4;1;14;;;;vpos;;v;;aAjax_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">

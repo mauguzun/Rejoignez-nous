@@ -65,6 +65,9 @@ require_once "controllers/Apply_Un_Controller.php";
 
 require_once "controllers/Ajax_Controller.php";
 
+// new 
+require_once "controllers/apply/Base_Apply_Controller.php";
+require_once "controllers/apply/Pnc_Controller.php";
 class CI_Controller{
 
 
