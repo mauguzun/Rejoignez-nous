@@ -23,14 +23,16 @@ class Getfile extends Usermeta_Controller
 			$ext = pathinfo($img);
 			
 			
+			
+			
+			
 			if ($this->ion_auth->in_group(8))
 			{
-				$row = $this->Crud->get_row(['user_id'=>$this->ion_auth->user()->row()->id,'file'=>$ext['basename']],$this->_table);
-		
+				$row = $this->Crud->get_row(['user_id'=>$this->ion_auth->user()->row()->id,'id'=>$_GET['url']],$this->_table);
 			}
 			else
 			{
-				$row = $this->Crud->get_row(['file'=>$ext['basename']],$this->_table);
+				$row = $this->Crud->get_row(['id'=>$_GET['url']],$this->_table);
 			}
 			
 		
@@ -43,10 +45,12 @@ class Getfile extends Usermeta_Controller
 			}
 			else
 			{
+				
 				show_404();
 			}
 
 		}
+		
 		show_404();
 	}
 

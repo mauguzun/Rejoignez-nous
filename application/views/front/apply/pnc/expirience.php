@@ -60,6 +60,8 @@
 
 			let names = ['duration[]','company[]'];
 			let value = $(this).val().trim().toLowerCase();
+			
+			alert(value);
 			if(value == 'aucune')
 			{
 

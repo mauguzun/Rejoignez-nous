@@ -24,35 +24,17 @@
 
 <!---->
 	
-<?
-if(isset($_GET['q'])):?>
-<div class="alert alert-danger" role="alert">
+
+<div v-if="!filled" class="alert alert-danger" role="alert">
 	<i class="fas fa-info-circle">
 	</i>
 	<?= lang('some_important_infomation')?>
 
 </div>
-<? endif;?>
 
 
-<?
-if(isset($message)) :?>
-<div class="alert alert-danger" role="alert">
-	<i class="fas fa-info-circle">
-	</i>
-	<?php echo $message;?>
-</div>
-<?
-else :?>
 
-
-<? endif ; ?>
-
-
-<?
-if(isset($app) && $app && $app['filled'] == 1 ) :?>
-
-<div class="alert alert-success"  >
+<div v-if="filled" class="alert alert-success"  >
 	<i class="fas fa-info-circle">
 	</i> <?= lang('you_are_applied')?>
 </div>
@@ -60,17 +42,12 @@ if(isset($app) && $app && $app['filled'] == 1 ) :?>
 
 
 
-<?
-else :?>
-
-
+<!--
 <div class="alert alert-primary"  style="background-color:#fef2cd" >
-	<i class="fas fa-info-circle">
-	</i> <?= lang('press_save_to_progres')?>
-</div>
+<i class="fas fa-info-circle">
+</i> <?= lang('press_save_to_progres')?>
+</div>-->
 
-
-<? endif ; ?>
 
 
 
@@ -89,13 +66,26 @@ else :?>
 
 
 <!---->
-<div class="print_block">
-	<button type="button" class="print_disabled"><i class="fa fa-print">
-		</i> <?= lang('print')?></button></div>	
+<div class="print_block" >
+	<a type="button"
+	v-if="filled"
+	 href="<?= base_url()."/apply/new/pnc/printer/".$offer['id'] ?>"
+	 target="_blank"
+	 class="btn btn-info"><i class="fa fa-print">
+		</i> <?= lang('print')?></a>
+		
+	<a type="button"
+	
+	 href="<?= base_url()."/apply/new/pnc/delete/".$offer['id'] ?>"
+
+	 onclick="return confirm('Are you sure?');"
+	 class="btn btn-danger"><i class="far fa-trash-alt">
+		</i> <?= lang('delete')?></a>
+</div>	
 
 
-<div ref="loader">
-	asd
+<div class="app-loader" v-show="loader === true" >
+	<? $this->load->view('apply_final/parts/loader.php')?>
 </div>
 
 	
