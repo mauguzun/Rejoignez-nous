@@ -549,7 +549,7 @@ class Applications extends Shared_Controller{
 		/// 
 		
 		$funct =  $table_row['functions']; 
-		if( $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions)){
+		if( isset($table_row['function_by_admin']) && $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions)){
 			$funct = 
 			'<a data-toggle="tooltip" data-placement="left" title="<b>'.
 			lang('initially applied for the position of ').'</b><br>'.
@@ -819,6 +819,4 @@ class Applications extends Shared_Controller{
 	public function function_list($id){
 		
 	}
-
-
 }

@@ -9694,8 +9694,10 @@
 <treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php;f8;16;2;69;;;;vpos;;v;;a;;r;;d41,16;;b1,0;;m0;;eoffer_id;;p">
 </treenode>
 </treenode>
-<treenode node="Pnc_Conntroller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f0;4;1;263;;;;vpos;;v;;aBase_Apply_Controller;;c;;r;;d51,4;;b0,0;;m0;;e">
+<treenode node="Pnc_Conntroller;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f0;4;1;377;;;;vpos;;v;;aBase_Apply_Controller;;c;;r;;d51,4;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f8;31;2;35;;;;vpos;;v;;a;;r;;d56,31;;b1,0;;m0;;epage;;pmeta;;p">
+</treenode>
+<treenode node="_have;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f9;366;2;376;;;;vpos;;v;;a;;r;;d29,366;;b3,0;;m0;;earg;;p">
 </treenode>
 <treenode node="aur_expirience;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f8;185;2;212;;;;vpos;;v;;a;;r;;d33,185;;b1,0;;m0;;e">
 </treenode>
@@ -9708,6 +9710,10 @@
 <treenode node="get_other;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f11;214;2;227;;;;vpos;;v;;a;;r;;d31,214;;b2,0;;m0;;e">
 </treenode>
 <treenode node="other;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f8;229;2;260;;;;vpos;;v;;a;;r;;d24,229;;b1,0;;m0;;e">
+</treenode>
+<treenode node="printer;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f8;262;2;364;;;;vpos;;v;;a;;r;;d33,262;;b1,0;;m0;;eapp_id;;p">
+<treenode node="application/libraries/dompdf/vendor/autoload.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f16;351;64;351;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
+</treenode>
 </treenode>
 <treenode node="set_statuses;PHP:Function Name;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;f11;38;2;97;;;;vpos;;v;;a;;r;;d41,38;;b2,0;;m0;;eapp_id;;p">
 </treenode>
@@ -9790,14 +9796,16 @@
 <treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Printmanualoffer.php;f11;16;5;71;;;;vpos;;v;;a;;r;;d4,17;;b1,0;;m0;;eapp_id;;p">
 </treenode>
 </treenode>
-<treenode node="Printme;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f0;6;1;148;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f0;6;1;162;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f0;6;1;134;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f0;6;1;154;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f0;6;1;133;;;;vpos;;v;;aApply_Un_Controller;;c;;r&#10;Definition&#10;    class Printme extends Apply_Un_Controller&#10;&#10;Description&#10;     user/apply/Hr/Main;;d0,7;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f8;12;2;17;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f8;12;2;16;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f8;11;2;14;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f8;12;2;16;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f8;12;2;16;;;;vpos;;v;;a;;r;;d1,13;;b1,0;;m0;;e">
+<treenode node="Printme;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f0;6;1;148;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f0;6;1;162;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f0;6;1;154;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f0;6;1;133;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f0;6;1;134;;;;vpos;;v;;aApply_Pnc_Controller;;c;;r&#10;Definition&#10;    class Printme extends Apply_Pnc_Controller&#10;&#10;Description&#10;     user/apply/Hr/Main;;d42,6;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f8;12;2;17;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f8;12;2;16;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f8;12;2;16;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f8;12;2;16;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f8;11;2;14;;;;vpos;;v;;a;;r;;d30,11;;b1,0;;m0;;e">
 </treenode>
 <treenode node="_get_mex_expr;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f9;138;2;152;;;;vpos;;v;;a;;r;;d1,139;;b3,0;;m0;;eapplication_id;;pmanagerial;;p">
 </treenode>
-<treenode node="_have;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f9;136;2;144;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f9;147;2;158;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f9;120;2;130;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f9;123;2;136;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f9;121;2;129;;;;vpos;;v;;a;;r;;d1,137;;b3,0;;m0;;earg;;p">
+<treenode node="_have;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f9;136;2;144;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f9;147;2;158;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f9;123;2;136;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f9;121;2;129;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f9;120;2;130;;;;vpos;;v;;a;;r;;d29,120;;b3,0;;m0;;earg;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f8;19;2;134;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f8;18;2;145;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f8;16;2;118;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f8;18;2;121;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f8;18;2;119;;;;vpos;;v;;a;;r;;d1,20;;b1,0;;m0;;eapp_id;;p">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Printme.php;f8;19;2;134;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php;f8;18;2;145;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php;f8;18;2;121;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Printme.php;f8;18;2;119;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f8;16;2;118;;;;vpos;;v;;a;;r;;d48,16;;b1,0;;m0;;eoffer_id;;papp_id;;p">
+<treenode node="application/libraries/dompdf/vendor/autoload.php;PHP:PHP Include;C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Printme.php;f16;105;64;105;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e">
+</treenode>
 </treenode>
 </treenode>
 <treenode node="Printofferuser;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Printofferuser.php;f0;4;1;159;;;;vpos;;v;;aShared_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
