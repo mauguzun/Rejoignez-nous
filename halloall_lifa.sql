@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : regosp
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100318
- Source Host           : 173.237.185.51:3306
+ Source Server Version : 100313
+ Source Host           : localhost:3306
  Source Schema         : halloall_lifa
 
  Target Server Type    : MySQL
- Target Server Version : 100318
+ Target Server Version : 100313
  File Encoding         : 65001
 
- Date: 09/10/2019 17:39:36
+ Date: 21/10/2019 13:40:00
 */
 
 SET NAMES utf8mb4;
@@ -60,6 +60,7 @@ INSERT INTO `aeronautical_english_level` VALUES (1568226275, 1);
 INSERT INTO `aeronautical_english_level` VALUES (1568226327, 1);
 INSERT INTO `aeronautical_english_level` VALUES (1568226343, 1);
 INSERT INTO `aeronautical_english_level` VALUES (1568226344, 6);
+INSERT INTO `aeronautical_english_level` VALUES (1570632627, 1);
 
 -- ----------------------------
 -- Table structure for aeronautical_experience
@@ -72,7 +73,7 @@ CREATE TABLE `aeronautical_experience`  (
   `company` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 151 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of aeronautical_experience
@@ -103,7 +104,8 @@ INSERT INTO `aeronautical_experience` VALUES (1568226291, '1234', NULL, NULL, 28
 INSERT INTO `aeronautical_experience` VALUES (1568226298, '123', NULL, NULL, 29);
 INSERT INTO `aeronautical_experience` VALUES (1568226339, 'omp', NULL, NULL, 32);
 INSERT INTO `aeronautical_experience` VALUES (1569164603, '123', NULL, NULL, 33);
-INSERT INTO `aeronautical_experience` VALUES (1569164619, 'Autre', NULL, NULL, 34);
+INSERT INTO `aeronautical_experience` VALUES (1570632645, 'Aucune', 'qwer', 'qwer', 149);
+INSERT INTO `aeronautical_experience` VALUES (1570632645, 'Instructeur PNC', NULL, NULL, 150);
 
 -- ----------------------------
 -- Table structure for aeronautical_experience_list
@@ -228,8 +230,11 @@ INSERT INTO `applicaiton_misc` VALUES (1568900142, 0, '2019-09-20', '77777777777
 INSERT INTO `applicaiton_misc` VALUES (1568900146, 0, '2019-09-21', '88888888888888888888', NULL);
 INSERT INTO `applicaiton_misc` VALUES (1568900150, 0, '2019-09-21', '1234', NULL);
 INSERT INTO `applicaiton_misc` VALUES (1569164601, 1, '2019-09-22', '1234567890101112124', NULL);
-INSERT INTO `applicaiton_misc` VALUES (1569164619, 0, NULL, NULL, NULL);
 INSERT INTO `applicaiton_misc` VALUES (1569164620, 1, '2019-10-05', '123', NULL);
+INSERT INTO `applicaiton_misc` VALUES (1569164622, 0, '2019-10-12', '123', NULL);
+INSERT INTO `applicaiton_misc` VALUES (1570632626, 0, '2019-10-09', '1233', NULL);
+INSERT INTO `applicaiton_misc` VALUES (1570632627, 0, '2019-10-12', '1234', NULL);
+INSERT INTO `applicaiton_misc` VALUES (1570632645, 0, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for applicaiton_opinion
@@ -278,16 +283,20 @@ CREATE TABLE `application`  (
   `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `civility` enum('mr','mrs') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `function_by_admin` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1569164623 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1570632646 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application
 -- ----------------------------
-INSERT INTO `application` VALUES (1569164619, 77, 223, 0, '2019-10-05 10:26:30', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr');
-INSERT INTO `application` VALUES (1569164620, 77, NULL, 0, '2019-10-05 10:09:37', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr');
-INSERT INTO `application` VALUES (1569164621, 77, NULL, 0, '2019-10-05 10:10:19', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr');
-INSERT INTO `application` VALUES (1569164622, 77, NULL, 0, '2019-10-08 12:15:37', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr');
+INSERT INTO `application` VALUES (1569164620, 77, NULL, 0, '2019-10-11 22:14:49', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 1, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL);
+INSERT INTO `application` VALUES (1569164621, 77, NULL, 0, '2019-10-11 21:42:00', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', 32);
+INSERT INTO `application` VALUES (1569164622, 77, NULL, 0, '2019-10-12 22:01:53', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 1, 1, 1, 1, 1, 1, 3, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL);
+INSERT INTO `application` VALUES (1570632625, NULL, 118, 0, '2019-10-21 13:38:20', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, 1, 1, 1, 6, 1, 1, 'Assistant(e) des Ressources Humaines', 'viktorija', 'domrovska', NULL, 22);
+INSERT INTO `application` VALUES (1570632626, 77, 190, 0, '2019-10-11 22:16:45', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL);
+INSERT INTO `application` VALUES (1570632627, 77, 195, 0, '2019-10-12 19:49:28', 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '', 1, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL);
+INSERT INTO `application` VALUES (1570632645, 77, 223, 0, '2019-10-20 12:13:07', 'Rigas iela', 'lv0182', 'rasdf', 121, '123123123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for application_call_list
@@ -322,7 +331,7 @@ CREATE TABLE `application_cfs`  (
 -- Records of application_cfs
 -- ----------------------------
 INSERT INTO `application_cfs` VALUES (1569164603, '2019-09-05', '23');
-INSERT INTO `application_cfs` VALUES (1569164619, '2019-10-20', 'qewe');
+INSERT INTO `application_cfs` VALUES (1570632645, '2019-10-26', 'qwerqewr');
 
 -- ----------------------------
 -- Table structure for application_contract
@@ -357,7 +366,7 @@ CREATE TABLE `application_empoy_center`  (
 -- Records of application_empoy_center
 -- ----------------------------
 INSERT INTO `application_empoy_center` VALUES (1568226339, 0);
-INSERT INTO `application_empoy_center` VALUES (1569164619, 0);
+INSERT INTO `application_empoy_center` VALUES (1570632645, 1);
 
 -- ----------------------------
 -- Table structure for application_english_frechn_level
@@ -373,7 +382,6 @@ CREATE TABLE `application_english_frechn_level`  (
 -- ----------------------------
 -- Records of application_english_frechn_level
 -- ----------------------------
-INSERT INTO `application_english_frechn_level` VALUES (2, 6, 6);
 INSERT INTO `application_english_frechn_level` VALUES (1568226323, 1, 1);
 INSERT INTO `application_english_frechn_level` VALUES (1568226330, 5, 3);
 INSERT INTO `application_english_frechn_level` VALUES (1568226336, 6, 6);
@@ -389,9 +397,12 @@ INSERT INTO `application_english_frechn_level` VALUES (1568900146, 5, 5);
 INSERT INTO `application_english_frechn_level` VALUES (1568900150, 4, 5);
 INSERT INTO `application_english_frechn_level` VALUES (1569164601, 3, 5);
 INSERT INTO `application_english_frechn_level` VALUES (1569164603, 3, 5);
-INSERT INTO `application_english_frechn_level` VALUES (1569164619, 1, 1);
 INSERT INTO `application_english_frechn_level` VALUES (1569164620, 1, 1);
 INSERT INTO `application_english_frechn_level` VALUES (1569164621, 1, 1);
+INSERT INTO `application_english_frechn_level` VALUES (1569164622, 1, 1);
+INSERT INTO `application_english_frechn_level` VALUES (1570632626, 4, 1);
+INSERT INTO `application_english_frechn_level` VALUES (1570632627, 1, 1);
+INSERT INTO `application_english_frechn_level` VALUES (1570632645, 5, 3);
 
 -- ----------------------------
 -- Table structure for application_eu_area
@@ -407,10 +418,11 @@ CREATE TABLE `application_eu_area`  (
 -- ----------------------------
 -- Records of application_eu_area
 -- ----------------------------
+INSERT INTO `application_eu_area` VALUES (0, 1, 1);
 INSERT INTO `application_eu_area` VALUES (1568226339, 1, 0);
 INSERT INTO `application_eu_area` VALUES (1568226341, 1, 0);
 INSERT INTO `application_eu_area` VALUES (1569164603, 1, 1);
-INSERT INTO `application_eu_area` VALUES (1569164619, 1, 0);
+INSERT INTO `application_eu_area` VALUES (1570632645, 1, 0);
 
 -- ----------------------------
 -- Table structure for application_fcl
@@ -442,7 +454,7 @@ CREATE TABLE `application_files`  (
   `deleted` tinyint(1) NULL DEFAULT 0,
   `timestamp` timestamp(0) NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 705 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 976 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application_files
@@ -518,12 +530,32 @@ INSERT INTO `application_files` VALUES (695, 1569164602, 77, 'EGL_SAB_DEN_2019-0
 INSERT INTO `application_files` VALUES (696, 1569164602, 77, '4l-2.bmp', 'covver_letter', 0, '2019-10-02 10:05:19');
 INSERT INTO `application_files` VALUES (697, 1569164602, 77, 'EGL_SAB_DEN_2019-05-131.pdf', 'covver_letter', 0, '2019-10-02 10:05:22');
 INSERT INTO `application_files` VALUES (698, 1569164620, 77, 'IMG_20190930_154113.jpg', 'cv', 0, '2019-10-05 10:09:06');
-INSERT INTO `application_files` VALUES (699, 1569164619, 77, 'IMG_20190930_155624.jpg', 'cv', 0, '2019-10-05 10:22:57');
-INSERT INTO `application_files` VALUES (700, 1569164619, 77, '56673b6fa24c344bbdffa87ece575518.jpg', 'medical_aptitude', 0, '2019-10-05 10:23:11');
-INSERT INTO `application_files` VALUES (701, 1569164619, 77, '56673b6fa24c344bbdffa87ece575518.jpg', 'photo_in_feet', 0, '2019-10-05 10:23:17');
-INSERT INTO `application_files` VALUES (702, 1569164619, 77, '56673b6fa24c344bbdffa87ece575518.jpg', 'passport', 0, '2019-10-05 10:23:25');
-INSERT INTO `application_files` VALUES (703, 1569164619, 77, '56673b6fa24c344bbdffa87ece575518.jpg', 'vaccine_against_yellow_fever', 0, '2019-10-05 10:23:31');
-INSERT INTO `application_files` VALUES (704, 1569164619, 77, '56673b6fa24c344bbdffa87ece575518.jpg', 'id_photo', 0, '2019-10-05 10:23:41');
+INSERT INTO `application_files` VALUES (705, 1570632625, 39, 'IMG_20190926_085926.jpg', 'cv', 0, '2019-10-09 17:50:50');
+INSERT INTO `application_files` VALUES (706, 1570632625, 39, 'IMG_20190926_085741.jpg', 'covver_letter', 0, '2019-10-09 17:51:06');
+INSERT INTO `application_files` VALUES (707, 1570632626, 77, 'IMG_20190925_163318.jpg', 'cv', 0, '2019-10-09 18:22:07');
+INSERT INTO `application_files` VALUES (708, 1570632627, 77, '4l-2.bmp', 'cv', 0, '2019-10-12 19:49:17');
+INSERT INTO `application_files` VALUES (709, 1570632627, 77, '4l.bmp', 'complementary_documents', 0, '2019-10-12 19:49:23');
+INSERT INTO `application_files` VALUES (710, 1569164622, 77, 'IMG_20190925_1633181.jpg', 'cv', 0, '2019-10-12 21:58:38');
+INSERT INTO `application_files` VALUES (715, 0, 77, '4l.bmp', 'covver_letter', 0, '2019-10-17 22:52:42');
+INSERT INTO `application_files` VALUES (716, 0, 77, '4l1.bmp', 'covver_letter', 0, '2019-10-17 22:53:15');
+INSERT INTO `application_files` VALUES (717, 0, 77, '4l-1.bmp', 'covver_letter', 0, '2019-10-17 22:53:36');
+INSERT INTO `application_files` VALUES (928, 0, 77, '4l-110.bmp', 'cv', 0, '2019-10-20 01:36:13');
+INSERT INTO `application_files` VALUES (929, 0, 77, '4l-11.bmp', 'certificate_of_flang', 0, '2019-10-20 01:36:24');
+INSERT INTO `application_files` VALUES (930, 0, 77, '4l-23.bmp', 'medical_aptitude', 0, '2019-10-20 01:37:43');
+INSERT INTO `application_files` VALUES (931, 0, 77, '4l-12.bmp', 'certificate_of_flang', 0, '2019-10-20 01:37:58');
+INSERT INTO `application_files` VALUES (940, 0, 77, '4l-125.bmp', 'covver_letter', 0, '2019-10-20 01:43:14');
+INSERT INTO `application_files` VALUES (948, 0, 77, '4l-17.bmp', 'photo_in_feet', 0, '2019-10-20 01:47:10');
+INSERT INTO `application_files` VALUES (964, 1570632645, 77, '4l-2.bmp', 'certificate_of_flang', 0, '2019-10-20 12:12:02');
+INSERT INTO `application_files` VALUES (965, 1570632645, 77, '4l-13.bmp', 'medical_aptitude', 0, '2019-10-20 12:12:07');
+INSERT INTO `application_files` VALUES (966, 1570632645, 77, '4l-22.bmp', 'photo_in_feet', 0, '2019-10-20 12:12:19');
+INSERT INTO `application_files` VALUES (967, 1570632645, 77, '4l1.bmp', 'passport', 0, '2019-10-20 12:12:26');
+INSERT INTO `application_files` VALUES (968, 1570632645, 77, '4l.bmp', 'vaccine_against_yellow_fever', 0, '2019-10-20 12:12:35');
+INSERT INTO `application_files` VALUES (969, 1570632645, 77, '4l-13.bmp', 'vaccine_against_yellow_fever', 0, '2019-10-20 12:12:36');
+INSERT INTO `application_files` VALUES (970, 1570632645, 77, '4l-25.bmp', 'vaccine_against_yellow_fever', 0, '2019-10-20 12:12:37');
+INSERT INTO `application_files` VALUES (971, 1570632645, 77, '1.jpg', 'id_photo', 0, '2019-10-20 12:12:47');
+INSERT INTO `application_files` VALUES (972, 1570632645, 77, '4l.bmp', 'id_photo', 0, '2019-10-20 12:12:52');
+INSERT INTO `application_files` VALUES (974, 1570632645, 77, '4l-22.bmp', 'id_photo', 0, '2019-10-20 12:12:54');
+INSERT INTO `application_files` VALUES (975, 1570632645, 77, 'EGL_SAB_DEN_2019-05-13.pdf', 'id_photo', 0, '2019-10-20 12:12:55');
 
 -- ----------------------------
 -- Table structure for application_history
@@ -541,7 +573,7 @@ CREATE TABLE `application_history`  (
   `action` smallint(1) NULL DEFAULT 1,
   `row` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 784 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 789 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application_history
@@ -805,17 +837,11 @@ INSERT INTO `application_history` VALUES (769, '2019-10-05 10:09:26', 1569164620
 INSERT INTO `application_history` VALUES (770, '2019-10-05 10:09:26', 1569164620, 'application_languages_level', 'application_id', '1569164620', 'level_id', '1', 0, '1570259366584');
 INSERT INTO `application_history` VALUES (771, '2019-10-05 10:09:36', 1569164620, 'application_languages_level', 'application_id', '1569164620', 'language', '', 0, '1570259376951');
 INSERT INTO `application_history` VALUES (772, '2019-10-05 10:09:36', 1569164620, 'application_languages_level', 'application_id', '1569164620', 'level_id', '1', 0, '1570259376951');
-INSERT INTO `application_history` VALUES (773, '2019-10-05 10:10:49', 1569164619, 'application', 'id', '1569164619', 'unsolicated_function', NULL, 0, '1570259449166');
-INSERT INTO `application_history` VALUES (774, '2019-10-05 10:10:49', 1569164619, 'application', 'id', '1569164619', 'civility', NULL, 1, '1570259449166');
-INSERT INTO `application_history` VALUES (775, '2019-10-05 10:17:16', 1569164619, 'application', 'id', '1569164619', 'unsolicated_function', NULL, 0, '1570259836494');
-INSERT INTO `application_history` VALUES (776, '2019-10-05 10:22:49', 1569164619, 'applicaiton_misc', 'application_id', '1569164619', 'car', NULL, 1, '1570260169857');
-INSERT INTO `application_history` VALUES (777, '2019-10-05 10:22:49', 1569164619, 'applicaiton_misc', 'application_id', '1569164619', 'aviability', '2020-01-05', 0, '1570260169857');
-INSERT INTO `application_history` VALUES (778, '2019-10-05 10:22:49', 1569164619, 'applicaiton_misc', 'application_id', '1569164619', 'salary', NULL, 0, '1570260169857');
-INSERT INTO `application_history` VALUES (779, '2019-10-05 10:22:49', 1569164619, 'applicaiton_misc', 'application_id', '1569164619', 'medical_restriction', NULL, 0, '1570260169857');
-INSERT INTO `application_history` VALUES (780, '2019-10-05 10:24:40', 1569164619, 'application_english_frechn_level', 'application_id', '1569164619', 'language', 'italiano', 0, '1570260280410');
-INSERT INTO `application_history` VALUES (781, '2019-10-05 10:24:40', 1569164619, 'application_english_frechn_level', 'application_id', '1569164619', 'level_id', '1', 0, '1570260280410');
-INSERT INTO `application_history` VALUES (782, '2019-10-05 10:26:30', 1569164619, 'application_languages_level', 'application_id', '1569164619', 'language', 'italiano', 0, '1570260390508');
-INSERT INTO `application_history` VALUES (783, '2019-10-05 10:26:30', 1569164619, 'application_languages_level', 'application_id', '1569164619', 'level_id', '1', 0, '1570260390508');
+INSERT INTO `application_history` VALUES (784, '2019-10-09 18:22:02', 1570632626, 'applicaiton_misc', 'application_id', '1570632626', 'car', NULL, 1, '1570634522544');
+INSERT INTO `application_history` VALUES (785, '2019-10-09 18:22:02', 1570632626, 'applicaiton_misc', 'application_id', '1570632626', 'salary', NULL, 1, '1570634522544');
+INSERT INTO `application_history` VALUES (786, '2019-10-12 19:49:10', 1570632627, 'applicaiton_misc', 'application_id', '1570632627', 'car', NULL, 1, '1570898950860');
+INSERT INTO `application_history` VALUES (787, '2019-10-12 19:49:10', 1570632627, 'applicaiton_misc', 'application_id', '1570632627', 'salary', NULL, 1, '1570898950860');
+INSERT INTO `application_history` VALUES (788, '2019-10-12 21:58:19', 1569164622, 'application_un', 'application_id', '1569164622', 'function', '1569164622 function', 1, '1570906699366');
 
 -- ----------------------------
 -- Table structure for application_hr_expirience
@@ -839,6 +865,8 @@ INSERT INTO `application_hr_expirience` VALUES (1568900146, 'opop', 1, 1);
 INSERT INTO `application_hr_expirience` VALUES (1568900150, '123', 1, 1);
 INSERT INTO `application_hr_expirience` VALUES (1569164601, 'po', 3, 4);
 INSERT INTO `application_hr_expirience` VALUES (1569164620, '12', 1, 1);
+INSERT INTO `application_hr_expirience` VALUES (1569164622, '123', 1, 1);
+INSERT INTO `application_hr_expirience` VALUES (1570632626, '123', 1, 1);
 
 -- ----------------------------
 -- Table structure for application_languages_level
@@ -858,12 +886,18 @@ INSERT INTO `application_languages_level` VALUES (1568226342, '', 1);
 INSERT INTO `application_languages_level` VALUES (1568900142, '', 1);
 INSERT INTO `application_languages_level` VALUES (1568900150, '', 1);
 INSERT INTO `application_languages_level` VALUES (1569164621, '', 1);
+INSERT INTO `application_languages_level` VALUES (1569164622, '', 1);
 INSERT INTO `application_languages_level` VALUES (1568900146, 'asdf', 1);
+INSERT INTO `application_languages_level` VALUES (1570632626, 'español', 1);
 INSERT INTO `application_languages_level` VALUES (1569164620, 'italiano', 1);
 INSERT INTO `application_languages_level` VALUES (1568226339, 'Latviešu valoda', 1);
 INSERT INTO `application_languages_level` VALUES (1568226341, 'Latviešu valoda', 1);
+INSERT INTO `application_languages_level` VALUES (1570632639, 'Latviešu valoda', 1);
+INSERT INTO `application_languages_level` VALUES (1570632642, 'Latviešu valoda', 1);
+INSERT INTO `application_languages_level` VALUES (1570632645, 'Latviešu valoda', 1);
+INSERT INTO `application_languages_level` VALUES (1569164619, 'omg', 4);
 INSERT INTO `application_languages_level` VALUES (1569164601, 'русский язык	', 4);
-INSERT INTO `application_languages_level` VALUES (1569164603, 'русский язык', 4);
+INSERT INTO `application_languages_level` VALUES (1570632642, 'Latviešu valoda', 5);
 
 -- ----------------------------
 -- Table structure for application_licenses
@@ -917,7 +951,7 @@ INSERT INTO `application_medical_aptitude` VALUES (1568226290, '2019-09-18');
 INSERT INTO `application_medical_aptitude` VALUES (1568226291, '2019-09-19');
 INSERT INTO `application_medical_aptitude` VALUES (1568226339, '2019-09-20');
 INSERT INTO `application_medical_aptitude` VALUES (1568226341, '2019-09-26');
-INSERT INTO `application_medical_aptitude` VALUES (1569164619, '2019-09-22');
+INSERT INTO `application_medical_aptitude` VALUES (1570632645, '2019-08-15');
 
 -- ----------------------------
 -- Table structure for application_pnt_completary
@@ -1102,35 +1136,9 @@ CREATE TABLE `application_un`  (
 -- ----------------------------
 -- Records of application_un
 -- ----------------------------
-INSERT INTO `application_un` VALUES (1533055703, 2, 'test fonction');
-INSERT INTO `application_un` VALUES (1543492584, 1, 'Ingénieur');
-INSERT INTO `application_un` VALUES (1543492587, 1, 'Chef d\'escale');
-INSERT INTO `application_un` VALUES (1543492590, 2, 'Testeur de site');
-INSERT INTO `application_un` VALUES (1555493901, 1, '123');
-INSERT INTO `application_un` VALUES (1557234989, 2, 'Ingénieur');
-INSERT INTO `application_un` VALUES (1563541443, 3, 'Directeur');
-INSERT INTO `application_un` VALUES (1568226251, 1, 'Chargé(e) de communication');
-INSERT INTO `application_un` VALUES (1568226267, 1, 'Administration des ventes');
-INSERT INTO `application_un` VALUES (1568226268, 1, 'sasdf');
-INSERT INTO `application_un` VALUES (1568226270, 1, '12');
-INSERT INTO `application_un` VALUES (1568226271, 1, '123');
-INSERT INTO `application_un` VALUES (1568226273, 4, 'Régulation des vols');
-INSERT INTO `application_un` VALUES (1568226274, 4, 'Attaché(e) commercial(e)');
-INSERT INTO `application_un` VALUES (1568226276, 1, '123');
-INSERT INTO `application_un` VALUES (1568226280, 1, '123');
-INSERT INTO `application_un` VALUES (1568226288, 1, '1');
-INSERT INTO `application_un` VALUES (1568226289, 1, '123');
-INSERT INTO `application_un` VALUES (1568226301, 1, '123');
-INSERT INTO `application_un` VALUES (1568226323, 1, 'Attaché(e) commercial(e)');
-INSERT INTO `application_un` VALUES (1568226342, 1, '23');
-INSERT INTO `application_un` VALUES (1568900142, 1, 'sa');
-INSERT INTO `application_un` VALUES (1568900146, 1, '1234');
-INSERT INTO `application_un` VALUES (1568900148, 1, 'w2ww');
-INSERT INTO `application_un` VALUES (1568900150, 1, '123');
-INSERT INTO `application_un` VALUES (1569164601, 1, 'Assistant(e) piste');
 INSERT INTO `application_un` VALUES (1569164620, 4, 'Assistant(e)');
 INSERT INTO `application_un` VALUES (1569164621, 1, 'Programmes');
-INSERT INTO `application_un` VALUES (1569164622, 1, 'o,g');
+INSERT INTO `application_un` VALUES (1569164622, 1, '1569164622 function');
 
 -- ----------------------------
 -- Table structure for application_un_activity
@@ -11371,9 +11379,16 @@ INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568900146);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1568900150);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1569164601);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1569164603);
-INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1569164619);
+INSERT INTO `last_level_education` VALUES ('123', 'www', 2, 1569164619);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1569164620);
 INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1569164621);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1569164622);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1570632626);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1570632634);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1570632635);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1570632639);
+INSERT INTO `last_level_education` VALUES ('fdsf', 'dfsdf', 7, 1570632642);
+INSERT INTO `last_level_education` VALUES ('', NULL, 1, 1570632645);
 
 -- ----------------------------
 -- Table structure for login_attempts
@@ -11385,7 +11400,7 @@ CREATE TABLE `login_attempts`  (
   `login` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `time` int(11) UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for mechanic_baccalaureate
@@ -11408,6 +11423,7 @@ CREATE TABLE `mechanic_baccalaureate`  (
 INSERT INTO `mechanic_baccalaureate` VALUES ('123', 1, 1, 1568226264, 1, 1, 0);
 INSERT INTO `mechanic_baccalaureate` VALUES ('123', 1, 0, 1568226275, 1, 1, 1);
 INSERT INTO `mechanic_baccalaureate` VALUES ('qwer', 1, 1, 1568226344, 1, 1, 1);
+INSERT INTO `mechanic_baccalaureate` VALUES ('y', 1, 0, 1570632627, 1, 1, 1);
 
 -- ----------------------------
 -- Table structure for mechanic_offer_aeronautical_experience
@@ -11427,6 +11443,7 @@ CREATE TABLE `mechanic_offer_aeronautical_experience`  (
 -- ----------------------------
 INSERT INTO `mechanic_offer_aeronautical_experience` VALUES (1568226264, 5, 4, 1, 3);
 INSERT INTO `mechanic_offer_aeronautical_experience` VALUES (1568226344, 4, 4, 1, 4);
+INSERT INTO `mechanic_offer_aeronautical_experience` VALUES (1570632627, 4, 1, 1, 4);
 
 -- ----------------------------
 -- Table structure for mechanic_offer_managerial
@@ -11776,7 +11793,7 @@ CREATE TABLE `users`  (
   `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `phone_2` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 87 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 88 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
@@ -11784,7 +11801,7 @@ CREATE TABLE `users`  (
 INSERT INTO `users` VALUES (17, '127.0.0.1', 'mauguzun+pntmanager@gmail.com', '$2y$08$NxC2rJedP46m6JCIlkBGMeyXcjnLtWVBGfoHJxx7S9B3GKIYHpIGm', NULL, 'mauguzun+pntmanager@gmail.com', '7d2a4b3a974f873edd66f0822b362eabd4d19da6', NULL, NULL, '.k19ss593nOTv2.NLmYrt.', 1527590457, 1533054436, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (18, '127.0.0.1', 'mauguzun+pncmanager@gmail.com', '$2y$08$WCQ4kIpIgRAJD7VRY70t7.wYIGo5zqj9c4.8jdccq2MfGfArfRdKu', NULL, 'mauguzun+pncmanager@gmail.com', '5b3b2cd56c20305079b415017b1f839d6d7b1956', NULL, NULL, 'V2YEH11Y4ew5otH.E703fu', 1527590509, 1531319960, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (20, '127.0.0.1', 'mauguzun+hrmanager@gmail.com', '$2y$08$tb3y.XM/V3w5cr9w9GFEZORf4Zj1FL8r1Us1z.3fv00EVneWExQrm', NULL, 'mauguzun+hrmanager@gmail.com', 'd6f70f9d4b62b7cbe83c86d9dbec4a830b0db842', NULL, NULL, 'VgFpO/EKjf1NXztA9U7SYu', 1527621789, 1555416358, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `users` VALUES (39, '', NULL, '$2y$08$xQETcv.TuhWXxS24ICipFu8dqY7/V2Zv8qVJUbhHwo8UF8ZKbbIaO', NULL, 'mauguzun+admin@gmail.com', NULL, '27vU6oKaO1r5Fyh.7dZYOu89c98477bc34b23092', 1568288314, 'mFuSHxF.MGq0RrPMKCgCxO', 0, 1570532859, 1, 'mr', '2019-04-24', 'Admin', 'Account', 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES (39, '', NULL, '$2y$08$xQETcv.TuhWXxS24ICipFu8dqY7/V2Zv8qVJUbhHwo8UF8ZKbbIaO', NULL, 'mauguzun+admin@gmail.com', NULL, '27vU6oKaO1r5Fyh.7dZYOu89c98477bc34b23092', 1568288314, 'stndIv9MPuN3J4V/ADTQE.', 0, 1571654262, 1, 'mr', '2019-04-24', 'Admin', 'Account', 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (48, '127.0.0.1', 'mauguzun+hrview@gmail.com', '$2y$08$VNFbsmmFDqjZchbzh0TAG.OaN82XH0uG71N1s9B6V13FycOFAiD6m', NULL, 'mauguzun+hrview@gmail.com', '6f0277797a083afec5c4ce384a750ed482842da0', NULL, NULL, 'hhQ7N2DBL.dAUH0oFfH2te', 1528796859, 1532335630, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (49, '127.0.0.1', 'mauguzun+pncview@gmail.com', '$2y$08$TUvPV0Qyk/WvA72k6EhIaOmuF/JsKSuX2R0XkjTup5PJWi76wx8iW', NULL, 'mauguzun+pncview@gmail.com', '5a128ce4eb6db30d76222c43929beebf534933b9', NULL, NULL, 'UabnD/S4rWbaXnvTUYuoVO', 1528800427, 1531307690, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (50, '127.0.0.1', 'mauguzun+pntview@gmail.com', '$2y$08$ttuYsXIJHV8A5/YAYGELx.kjiB1I/BlaWva./PXFEU7br1Jls2aRG', NULL, 'mauguzun+pntview@gmail.com', 'c66d612db08e4810ead2aba2be0016d9bc797571', NULL, NULL, 'tKj97tIZj94N0XJLzXthLO', 1528800450, 1531316992, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -11801,7 +11818,7 @@ INSERT INTO `users` VALUES (71, '46.18.128.203', 'svaira@aslairlines.com', '$2y$
 INSERT INTO `users` VALUES (72, '46.18.128.203', 'mtobie@aslairlines.com', '$2y$08$4rWkUIzLttk8hor8kBIbReDnX9NuaR7lZLzNDm3hf4W3jLh7w0XUG', NULL, 'mtobie@aslairlines.com', NULL, NULL, NULL, 'wvzsFEwuoNF1UIkJ8DEhP.', 1560245418, 1566391597, 1, 'mrs', '2019-06-14', 'Morgane', 'Tobie', 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (73, '46.18.128.203', 'asaulnier@aslairlines.com', '$2y$08$ftvPrhRKbp0zYCE/f4pA.ulFQXfODKUkuHVBwk7MShoc1iYavGrCO', NULL, 'asaulnier@aslairlines.com', '59dd5033be3ab938c4d872f572523acf2038eaa7', NULL, NULL, NULL, 1563357821, NULL, 1, NULL, NULL, 'Alexandra', 'SAULNIER', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (74, '46.18.128.203', 'dbukva@aslairlines.com', '$2y$08$ZbPNkrPPGVQk66niR2V9JevgWqWJSLupJI4TYpdVheNYLSsrtx9ZO', NULL, 'dbukva@aslairlines.com', '1d3df71231efc0d8a05f20b09caa0325bc4d2ef6', NULL, NULL, 'jiyJBc4WYSaYIigxdPZ9E.', 1563357882, 1563368650, 1, NULL, NULL, 'Delphine', 'BUKVA', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `users` VALUES (77, '127.0.0.1', 'mauguzun+cand@gmail.com', '$2y$08$yOKOx1kb/00S6VBkToy4i.KuVmfi8xWa1Q5EoLVfHt3cgiZLlN9m2', NULL, 'mauguzun+cand@gmail.com', NULL, NULL, NULL, 'aJyNS1yHMKwe16IZJIbWbu', 1534516868, 1570551320, 1, 'mr', '2010-03-04', 'denis 2', 'de', 0, NULL, 0, 'Rigas iela', 'lv0182', 'Riga', 121, '123123123', '');
+INSERT INTO `users` VALUES (77, '127.0.0.1', 'mauguzun+cand@gmail.com', '$2y$08$yOKOx1kb/00S6VBkToy4i.KuVmfi8xWa1Q5EoLVfHt3cgiZLlN9m2', NULL, 'mauguzun+cand@gmail.com', NULL, NULL, NULL, '.7KGUaEvKrv6hNOmJ0vBUO', 1534516868, 1571652888, 1, 'mr', '2010-03-04', 'denis 2', 'de', 0, NULL, 0, 'Rigas iela', 'lv0182', 'rasdf', 121, '123123123', '');
 INSERT INTO `users` VALUES (80, '127.0.0.1', 'maugun+admin@gmail.com', '$2y$08$aYRBnPY7EnFbG1fHeI73L.jW/3baG88QZX.MQI9QJGPvNoEoI9xnu', NULL, 'maugun+admin@gmail.com', 'a567d09f8a3ce4f8eb701ef645f7301ef6bddd99', NULL, NULL, NULL, 1568290155, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (81, '127.0.0.1', 'mauguzun@gmail.com', '$2y$08$8j2RRzgurJPBqitejA0hx.e/R/VZ.V8oF6EHbeBHGSw5nblAYP3hi', NULL, 'mauguzun@gmail.com', 'dae07301e636bc7906d83390c0a6d695fb29930a', NULL, NULL, NULL, 1568290252, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (82, '127.0.0.1', 'maugun+sometest@gmail.com', '$2y$08$1Vlko86A7U7Bk7hbpnl48.3x8hBVp3xSfTodvoqj8WPjGJfdJ1Ig.', NULL, 'maugun+sometest@gmail.com', 'cd3438078b5641dcd93212e13ca0426dd5dc7f46', NULL, NULL, NULL, 1568290405, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -11809,6 +11826,7 @@ INSERT INTO `users` VALUES (83, '', NULL, '', NULL, '', NULL, NULL, NULL, NULL, 
 INSERT INTO `users` VALUES (84, '', NULL, '', NULL, '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'denis', 'denis', NULL, '123', 39, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (85, '', NULL, '', NULL, '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Denis Test', 'Test Denis', NULL, 'thsi is test', 39, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (86, '', NULL, '', NULL, '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'ManualyName', 'ManualLastname', NULL, 'denis', 39, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` VALUES (87, '', NULL, '', NULL, '', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'viktorija', 'domrovska', NULL, 'omg', 39, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for users_english_frechn_level
