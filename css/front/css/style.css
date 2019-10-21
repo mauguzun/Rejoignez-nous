@@ -74,7 +74,11 @@
 	cursor: pointer;
 }
 
-er;
+.tooltip {
+	
+	position: fixed !important;
+	z-index: 99999 !important;
+	
 }
 .edit{
 	padding: 15px;

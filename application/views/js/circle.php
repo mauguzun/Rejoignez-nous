@@ -1,6 +1,7 @@
 <script>
 
-	$('[data-toggle="tooltip"]').tooltip({ html:true ,boundary: 'window', delay: {  "hide": 2000 }} )
+	$('[data-toggle="tooltip"]').tooltip({ html:true , appendToBody: true ,boundary: 'window', 
+	delay: {  "hide": 4000 }} )
 
 	$('*[data-circle]').click(function()
 		{
