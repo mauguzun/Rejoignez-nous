@@ -300,14 +300,15 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->form_validation->set_rules('first_name', lang('first_name'), 'trim|required|max_length[255]');
 		$this->form_validation->set_rules('last_name', lang('last_name'), 'trim|required|max_length[255]');
 
-		
+		unset($_POST['application_id']);	
 		
 		// check form validation
 		if(isset($_POST) &&  $this->form_validation->run() === true){
 			
 			
 			if(isset($_POST['change_acc'])){
-				unset($_POST['change_acc']);	
+				unset($_POST['change_acc']);				
+				
 				$this->json['message'] = "<p>". lang('user_account_updated')."</p>";
 				$this->update_user_account($_POST);
 			}
@@ -526,13 +527,188 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			}
 		
 		}
-		
+	
 		$this->_errors[] = anchor(base_url().'user/offers/',lang('deleted'));
 		redirect(base_url().'apply/new/'.$this->type.'/index/'.$offer_id);
 	}
 	
 	
 	
+	
+	
+	protected function get_other(){
+		
+	$misc =null;
+		if($this->app){
+			$misc = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
+		}
+		return $this->load->view('apply_final/parts/other',[
+
+				'misc'=>$misc,
+				'url'=>base_url().'apply/new/'.$this->type.'/other/'],true);
+	}
+	/**
+	* 
+	* @return
+	*/
+	public function other(){
+		
+		
+		$this->app_by_id($_POST['application_id']);
+		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
+		
+		if( $this->app &&   $this->form_validation->run() === true ){
+			
+			$this->Crud->update_or_insert($_POST,'applicaiton_misc');
+			$this->json['result'] = true;
+			$this->json['message']= lang('saved');
+		}
+		else{
+
+			$this->json['message'] =(validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+			$this->session->set_flashdata('message',$message);
+
+		}
+		$this->json['application_id'] = $_POST['application_id'];
+		$this->show_json();
+	
+	}
+	
+	protected function get_experience(){
+		
+		$select = [];
+		foreach(['expirience_duration'=>'duration','expirience_managerial'=>'managerial'] as $key=> $column){
+			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
+				$options[$value['id']] = $value[$column];
+			}
+			$select[$column] = $options;
+		}
+		
+		$exp =  $this->app ? 
+		$this->Crud->get_all('application_hr_expirience',['application_id'=>$this->app['id']]): null;
+		
+		
+		if (count($exp)==0){
+			$exp = [0];
+		}
+		
+	
+		return $this->load->view('apply_final/parts/expirience',[
+				'url'=>base_url().'apply/new/'.$this->type.'/expirience/',
+				'selects'=>$select,
+				'exp'=>$exp,
+				
+			],true);
+	}
+	
+	
+	
+	public function expirience(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+		
+		$this->form_validation->set_rules('area[]', lang('area'), 'trim|required|max_length[200]');
+		if(  isset($_POST['area']) && $this->form_validation->run() === true ){
+
+			// 1 delete ? yea please 
+			    
+
+			$this->Crud->delete(['application_id'=>$this->app['id']],'application_hr_expirience');
+			for($i = 0 ; $i < count($_POST['area']) ; $i++){
+				$row = [
+					'area' => $_POST['area'][$i],
+					'duration' => $_POST['duration'][$i],
+					'managerial' => $_POST['managerial'][$i],
+					'application_id'=> $this->app['id'],
+				];
+				$this->Crud->update_or_insert($row,'application_hr_expirience');
+			}
+			
+
+			$this->json['result'] = true;
+			$this->json['message'] = lang('saved');
+		}
+		else{
+		
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+
+		}
+		$this->json['application_id'] = $this->app['id'];
+		$this->show_json();
+	}
+	
+	protected function get_education(){
+		
+		$education = null;
+		if($this->app){
+			$education = $this->Crud->get_row(['application_id'=>$this->app['id']],
+				'last_level_education');
+		
+			
+		}
+
+		return $this->load->view('apply_final/parts/education',[
+				'url'=>base_url().'apply/new/'.$this->type.'/education/',
+				'education_level'=>$this->educations(),
+				
+				'education'=>$education],true);
+	}
+	
+	
+	public function education(){
+		
+		
+		
+		$this->form_validation->set_rules('education_level_id', lang('education'), 'trim|required|numeric');
+		$app = $this->app_by_id($_POST['application_id']);
+
+
+		if($this->form_validation->run() === TRUE){
+
+			if($this->input->post('education_level_id') != '1'){
+				//$this->form_validation->set_rules('university', lang('university'), 'trim | required | max_length[255]');
+				$this->form_validation->set_rules('studies', lang('studies'), 'trim|required|max_length[255]');
+
+				if($this->form_validation->run() === TRUE){
+					$can_update = TRUE;
+				}
+			}
+			else{
+				$can_update = TRUE;
+			}
+		}
+
+
+		if($can_update){
+			
+			$this->Crud->update_or_insert($_POST,'last_level_education');
+
+
+			$this->json['message'] = lang('saved');
+			$this->json['result'] = true;
+		}
+		else{
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+		}
+
+		$this->json['application_id'] = $_POST['application_id'];
+		$this->show_json();
+	}
+	
+	/**
+	* 
+	* @param strinh $application_id
+	* @return
+	*/
+	protected function set_statuses($application_id){}
+	/**
+	* @return array
+	*/
 	protected function _allTables(){
 		return[
 			'aeronautical_english_level',
@@ -565,14 +741,4 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			
 		];
 	}
-	
-	
-	/**
-	* 
-	* @param strinh $application_id
-	* 
-	* @return
-	*/
-	protected function set_statuses($application_id){}
-	
 }

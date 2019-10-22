@@ -8,19 +8,15 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 		
 		<div class="row row_mb">
 			<div class="col-md-6">
-				<div class="input_label"><?= lang('employ_center')?></div>
+				<div class="input_label"><?= lang('salary')?></div>
 			
-				<?= 	
-				form_dropdown('employ_center', [0=>lang('no'),1=>lang('yes')],
-					$employ_center != null ? $employ_center['employ_center'] : null ,
-					['class'=>'form-control selectpicker']);
-				?>
+				<input value="<?= $misc['salary']? $misc['salary'] : null ;?>" name="salary" class="form-control" required />
 			</div>
 			<div class="col-md-6">
 				<div class="input_label"><?= lang('car')?></div>
 				<?= 	
 				form_dropdown('car', [0=>lang('not_have_car'),1=>lang('have_car')],
-					$car != null ? $car['car'] : null ,
+					$misc['car'] != null ? $misc['car'] : null ,
 					['class'=>'form-control selectpicker']);
 				?>
 			</div>

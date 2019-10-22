@@ -74,12 +74,7 @@
 	cursor: pointer;
 }
 
-.tooltip {
-	
-	position: fixed !important;
-	z-index: 99999 !important;
-	
-}
+
 .edit{
 	padding: 15px;
 /*	margin:15px;

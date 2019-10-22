@@ -179,3 +179,10 @@ i[data-circle]
 #example_info{
 	padding:15px;
 }
+
+.tooltip {
+	
+	position: fixed !important;
+	z-index: 99999 !important;
+	
+}

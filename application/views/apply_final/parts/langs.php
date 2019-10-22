@@ -47,7 +47,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 		<span ref="<?='lang'.$k?>" >
 			<div class="row row_mb"   >
 				<div class="col-md-6">
-					<input list="lang-list" value="<?= $row['language']?>" name="language[]" class="form-control"  required="true" >
+					<input list="langs" value="<?= $row['language']?>" name="language[]" class="form-control"  required="true" >
 				</div>
 				<div class="col-md-5">
 					
@@ -100,7 +100,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 		</div>
 	</div>
 	
-	<datalist id="lang_list">
+	<datalist id="langs">
 		<? foreach($language_list as $lang):?>
 		<option value="<?= $lang ?>"><?= $lang ?></option>
 		<? endforeach;?>
