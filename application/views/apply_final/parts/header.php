@@ -70,7 +70,7 @@
 	v-if="filled"
 	 href="<?= base_url()."/apply/new/".$offer_type."/printer/".$offer['id'] ?>"
 	 target="_blank"
-	 class="btn btn-info"><i class="fa fa-print">
+	 class="my btn btn-info"><i class="fa fa-print">
 		</i> <?= lang('print')?></a>
 		
 	<a type="button"
@@ -78,7 +78,7 @@
 	 href="<?= base_url()."/apply/new/".$offer_type."/delete/".$offer['id'] ?>"
 
 	 onclick="return confirm('Are you sure?');"
-	 class="btn btn-danger"><i class="far fa-trash-alt">
+	 class="my btn btn-danger"><i class="far fa-trash-alt">
 		</i> <?= lang('delete')?></a>
 </div>	
 

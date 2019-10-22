@@ -2,7 +2,7 @@
 
 
 
-class Hr_Conntroller extends Base_Apply_Controller{
+class Hr_Controller extends Base_Apply_Controller{
 	
 	protected $type = 'hr';
 	
@@ -93,41 +93,44 @@ class Hr_Conntroller extends Base_Apply_Controller{
 	
 
 	
-	public function printer($app_id){
+	public function printer($offer_id){
 
 		
-		$this->app($app_id);
+	
+		
+		$this->app($offer_id);
 
 		if(!$this->app | $this->app['filled'] == 0 )
 		redirect(base_url());
+		
 
 		$query = $this->Crud->get_joins(
 			'application',
 			[
 				"users"=>"users.id = application.user_id",
+				
 
 				"applicaiton_misc"=>"application.id = applicaiton_misc.application_id",
 				'countries'=>"application.country_id = countries.id",
 				'application_languages_level'=>"application.id = application_languages_level.application_id",
 				'last_level_education'=>"application.id = last_level_education.application_id",
 				'hr_offer_education_level'=>"last_level_education.education_level_id = hr_offer_education_level.id",
+				'application_hr_expirience'=>"application.id = application_hr_expirience.application_id",
 				'application_english_frechn_level'=>"application.id = application_english_frechn_level.application_id",
-				'application_eu_area'=>"application.id = application_eu_area.application_id",
-				'application_medical_aptitude'=>"application.id = application_medical_aptitude.application_id"
+
 			],
 			"application.user_id as uid ,
 			application.* ,
 			applicaiton_misc.*,
-			application.id as aid,
-			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
-
+			users.email as email,
 			countries.name as country,
+			application.id as aid,
+						users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+
 			last_level_education.*,
-			application_medical_aptitude.date as medical_date,
-			application_eu_area.*,
 			application_english_frechn_level.*,
 			hr_offer_education_level.level as education_level,
-			application_languages_level.*",
+			application_languages_level.* ",
 			NULL,
 			null,
 			["application.id" => $this->app['id']]);
@@ -142,14 +145,6 @@ class Hr_Conntroller extends Base_Apply_Controller{
 		$lang_level = $this->Crud->get_array('id','level','language_level');
 		$query['english_level'] = $lang_level[$query['english_level']];
 		$query['french_level'] = $lang_level[$query['french_level']];
-
-
-
-		$query['eu_nationality'] = $this->_have($query['eu_nationality']);
-		$query['can_work_eu'] = $this->_have($query['can_work_eu']);
-
-
-
 
 
 
@@ -171,41 +166,40 @@ class Hr_Conntroller extends Base_Apply_Controller{
 
 
 
-		$pnc_query = $this->Crud->get_all('aeronautical_experience',["application_id"=>$this->app['id']] );
-		$query['pnc_exp'] = $pnc_query;
+		$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
+			[
+				'expirience_duration' => "application_hr_expirience.duration  = expirience_duration.id",
+				'expirience_managerial' => 'application_hr_expirience.managerial = expirience_managerial.id'
+			],'*',['application_hr_expirience.area'=>'ASC'],NULL,
+			["application_hr_expirience.application_id"=>$this->app['id']]
+		);
 
-		$query['application_cfs'] = $this->Crud->get_row(['application_id'=>$this->app['id']],'application_cfs');
-		$emp = $this->Crud->get_row(['application_id'=>$this->app['id']],'application_empoy_center');
+		$query['hr_expirience'] = $hr_expirience;
+		
+	
+		if($query)
+		{
+			//$this->load->view('front / apply / printer',['query'=>$query]);
+			require_once("application/libraries/dompdf/vendor/autoload.php");
 
-		$query['employ_center'] = $this->_have($emp['employ_center']);
+			$dompdf = new  Dompdf\Dompdf();
+			$dompdf->loadHtml($this->load->view('front/apply/printer',['query'=>$query],TRUE));
 
-
-
-		//$this->load->view('front / apply / printer',['query'=>$query]);
-		require_once("application/libraries/dompdf/vendor/autoload.php");
-
-		$dompdf = new  Dompdf\Dompdf();
-		$dompdf->loadHtml($this->load->view('front/apply/printer',['query'=>$query],TRUE));
-
-		$dompdf->setPaper('A4');
+			$dompdf->setPaper('A4');
 
 
-		$dompdf->render();
-		$dompdf->stream(url_title($query['first_name'].$query['last_name']), array("Attachment"=> false));
+			$dompdf->render();
+			$dompdf->stream(url_title($query['first_name'].$query['last_name']), array("Attachment"=> false));
 
-		exit(0);
+			exit(0);
 
-	}
-
-	private function _have($arg){
-
-		$have = lang('yes_toogle');
-
-		if(strpos($arg, ',')){
-			$arr = explode(',',$arg);
-			return max($arr) > 0  ? $have[1] : $have[0];
+		}else{
+			show_404();
 		}
-		return $arg > 0  ? $have[1] : $have[0];
+
+	
 
 	}
+
+	
 }

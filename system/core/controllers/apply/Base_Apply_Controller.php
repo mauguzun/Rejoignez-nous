@@ -741,4 +741,16 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			
 		];
 	}
+	
+	protected function _have($arg){
+
+		$have = lang('yes_toogle');
+
+		if(strpos($arg, ',')){
+			$arr = explode(',',$arg);
+			return max($arr) > 0  ? $have[1] : $have[0];
+		}
+		return $arg > 0  ? $have[1] : $have[0];
+
+	}
 }

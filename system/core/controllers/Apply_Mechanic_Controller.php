@@ -10,7 +10,7 @@ class Apply_Mechanic_Controller extends Apply_Controller
 
 	protected 	$pages = [
 		'main',
-/*		'education',*/
+
 		'aeronautical_baccalaureate',
 		'foreignlang',
 		'aeronautical_experience',

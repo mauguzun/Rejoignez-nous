@@ -2,30 +2,30 @@
 
 
 
-class Pnc_Conntroller extends Base_Apply_Controller{
+class Mechanic_Controller extends Base_Apply_Controller{
 	
-	protected $type = 'pnc';
+	protected $type = 'mechanic';
 	
 	protected $statuses = [];
 	
 	protected $uploaders  = 
 	[   
-		'covver_letter','cv',
-		'certificate_of_flang','medical_aptitude','photo_in_feet',
-		'passport',	
-		'vaccine_against_yellow_fever',
-		'id_photo'];
+		'covver_letter','cv','complementary_documents'];
 		
 	protected $step_table = [
 		    
+		
+		
 		'main'=>'application',
-		'eu'=>'application_eu_area',
-		'education'=>'last_level_education',
+		'aeronautical_baccalaureate'=>'mechanic_baccalaureate',
+		'mainlang'=>'application_english_frechn_level',
 		'foreignlang'=>'application_english_frechn_level',
-		'aeronautical_experience'=>'aeronautical_experience',
-		'medical_aptitudes'=>'application_medical_aptitude',
+		'aeronautical_experience'=>'mechanic_offer_aeronautical_experience',		
 		'aviability'=>'applicaiton_misc',
-		'other'=>'application_empoy_center',		
+			
+			 
+		'other'=>'applicaiton_misc',
+			
 	];
 	
 
@@ -56,6 +56,8 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 				$setNotFilled = true;
 				$this->statuses[$stp] = 'notfilled';
 			}else{
+				
+				
 				$this->statuses[$stp] = 'filled';
 			}
 			
@@ -89,177 +91,186 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 				$this->application_done_email();
 			}
 		}
-		
-		
-		
-		
-	
-
 	}
 	
-	public function get_education(){
+	
+	protected function get_aeronautical_baccalaureate(){
 		
 		
-		$date = $education = null;
+		$row = NULL;
 		if($this->app){
-			$date = $this->Crud->get_row(['application_id'=>$this->app['id']],'application_cfs');
-			$education = $this->Crud->get_row(['application_id'=>$this->app['id']],'last_level_education');
-		
-			if($date){
-				$date['safety_training_certificate_date'] =  date_to_input($date['safety_training_certificate_date']);
-			}
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'mechanic_baccalaureate');
+			
 		}
-
-		return $this->load->view('apply_final/pnc/aur_education',[
-				'url'=>base_url().'apply/new/'.$this->type.'/education/',
-				'education_level'=>$this->educations(),
-				'date'=>$date,
-				'education'=>$education],true);
+		return $this->load->view('apply_final/mechanic/bach',[
+				'row'=>$row,
+				'url'=>base_url().'apply/new/'.$this->type.'/aeronautical_baccalaureate/',
+			],TRUE);
 	}
 	
-	public function education(){
+	public function aeronautical_baccalaureate(){
 		
-		$this->form_validation->set_rules('education_level_id', lang('education'), 'trim|required|numeric');
-		$this->form_validation->set_rules('safety_training_certificate_organization', lang('safety_training_certificate_organization'), 'trim|required');	
-		$this->form_validation->set_rules('safety_training_certificate_date', lang('safety_training_certificate_date'), 'trim|required');
-		
-		
-		$app = $this->app_by_id($_POST['application_id']);
+		$this->app_by_id($_POST['application_id']);
+		$this->form_validation->set_rules('school', lang('school'), 'trim|required|max_length[250]');
 
-		$can_update = FALSE;
-		if($this->form_validation->run() === TRUE){
 
-			if($this->input->post('education_level_id') != '1'){
-				$this->form_validation->set_rules('studies', lang('studies'), 'trim|required|max_length[255]');
+		$this->json['result'] = true;
+		if($this->form_validation->run() === TRUE ){
 
-				if($this->form_validation->run() === TRUE){
-					$can_update = TRUE;
+			
+			$required = [
+				'complementary_mention_b1'=>'complementary_mention_b2',
+				'licenses_b1'=>'licenses_b2'
+			];
+
+			foreach($required as $key=>$value){
+				if($_POST[$key] == 0 & $_POST[$value] == 0 ){
+					$this->json['message'] = 
+					lang('required_one_of_them'). ' : '.lang($key).' or '.lang($value);
+					$this->json['result'] = false;
 				}
 			}
-			else{
-				$can_update = TRUE;
+			if($this->json['result'] && $_POST['aeronautical_baccalaureate'] == 0 ){
+				$this->json['message'] =lang('aeronautical_baccalaureate');
+				$this->json['result'] = false;
 			}
-		}
-
-
-		if($can_update){
-
-			$sfc = [
-				'safety_training_certificate_date'=> date_to_db($_POST['safety_training_certificate_date']) ,
-				'safety_training_certificate_organization'=> $_POST['safety_training_certificate_organization'] ,
-				'application_id' =>$_POST['application_id']];
-
-			unset($_POST['safety_training_certificate_date']);
-			unset($_POST['safety_training_certificate_organization']);
-
-
+			if(	$this->json['result']){
 			
-			$this->Crud->update_or_insert($_POST,'last_level_education');
-			$this->Crud->update_or_insert($sfc,'application_cfs');
-			$this->json['result'] = TRUE;
-			$this->json['message'] = lang('saved');
-		}
-		else{
+				$this->Crud->update_or_insert($_POST,'mechanic_baccalaureate');
+				$this->json['message'] =lang('saved');
+			}
+		}else{
 			$this->json['message'] = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
+			$this->json['result'] = FALSE;
 		}
-		$this->json['app_id']= $_POST['application_id'];
+		$this->json['application_id'] = $_POST['application_id'];
 		$this->show_json();
-		
-		
-	}
-	
-	protected function  get_aur_expirience(){
-		
-		
-		$exp =  $this->app ?  $this->Crud->get_all('aeronautical_experience',['application_id'=>$this->app['id']]): null;
-		
-		return $this->load->view('apply_final/pnc/aur_expirience',[
-				'url'=>base_url().'apply/new/'.$this->type.'/aur_expirience/',
-				'exp'=>$exp,
-				'functions'=>$this->Crud->get_all('aeronautical_experience_list',NULL,'function_name','asc')
 
-			],true);
 	}
 	
-	public function aur_expirience(){
+	protected function get_experience(){
 		
-		$this->form_validation->set_rules('function[]', lang('function'), 'trim|required|max_length[2500]');
+		
+		$selects = [];
+		
+		$options = [];
+		foreach($this->Crud->get_all("mechanic_offer_managerial",null,'id','asc') as $value){
+			$options[$value['id']] = $value['duration'];
+		}
+		$selects['mechanic_offer_managerial'] = $options;
+		
+		$options = [];
+		foreach($this->Crud->get_all("expirience_managerial",null,'id','asc') as $value){
+			$options[$value['id']] = $value['managerial'];
+		}
+		$selects['expirience_managerial'] = $options;
+	
+	
+		$row = $this->app? $this->Crud->get_row(['application_id'=>$this->app['id']],'mechanic_offer_aeronautical_experience'):null;
+
+	
+		return $this->load->view('apply_final/mechanic/expirience',[
+				'url'=>base_url().'apply/new/'.$this->type.'/expirience/',
+				'row'=>$row,
+				'selects'=>$selects],true);
+	}
+	
+	
+	public function lang(){
+		
+		$this->form_validation->set_rules('english_level', lang('language'), 'trim|required|max_length[255]');
+		
+		
 		$this->app_by_id($_POST['application_id']);
 
+		if(isset($_POST['english_level'])  ){
+			$this->Crud->update_or_insert([
+					'application_id'=>$this->app['id'],
+					'english_level'=>$_POST['english_level'],			
+					'french_level'=>$_POST['french_level']],'application_english_frechn_level');
+					
+			$this->json['result'] = TRUE;
+			$this->Crud->delete(['application_id'=>$this->app['id']],'application_languages_level');
+			
+			
+			$this->Crud->update_or_insert([
+					'application_id'=>$this->app['id'],
+					'lang_level'=>$_POST['lang_level']],'aeronautical_english_level');
 		
-		if($this->form_validation->run() === TRUE ){
-			$this->Crud->delete(['application_id'=>$this->app['id']],'aeronautical_experience');
-			for($i = 0 ; $i < count($_POST['function']) ; $i++){
-				$row = [
-					'application_id'=> $this->app['id'],
-					'function' => $_POST['function'][$i],
-					'duration' => strtolower($_POST['function'][$i]) != 'aucune' ? NULL : $_POST['duration'][$i],
-					'company'=> strtolower($_POST['function'][$i]) != 'aucune' ? NULL : $_POST['company'][$i],
-				];
-				$this->Crud->add($row,'aeronautical_experience');
+			if(isset($_POST['language'])){
+				for($i = 0 ; $i < count($_POST['language']) ; $i++){
+					
+					$lang = ['language' => $_POST['language'][$i],'level_id' => $_POST['level_id'][$i],'application_id'=> $this->app['id']];		
+					$this->Crud->update_or_insert($lang,'application_languages_level');		
+				}
 			}
-			$this->json['result'] = true;
 			$this->json['message'] = lang('saved');
+			
+		}else{
+			$this->json['result'] = FALSE;
 		}
-		else{
-			$this->json['message'] = (validation_errors() ? validation_errors() :
-				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-		}
+		
 		$this->json['app_id']= $_POST['application_id'];
 		$this->show_json();
 		
 	}
-     
-	protected function get_other(){
-		    
-		$employ = $car= null;
+	/**
+	* 
+	* 
+	* @return view
+	*/
+	protected function get_lang(){
+		
+		
+		$levels = $extra =$aero_lang =  null;
 		if($this->app){
-			$employ =$this->Crud->get_row(['application_id'=>$this->app['id']],	'application_empoy_center');
-			$car = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
+			
+			$extra = $this->Crud->get_all('application_languages_level',['application_id'=>$this->app['id']]);
+			$levels =  $this->Crud->get_row(['application_id'=>$this->app['id']],'application_english_frechn_level');
+			$aero_lang =  $this->Crud->get_row(['application_id'=>$this->app['id']],'aeronautical_english_level');
+	
+			
 		}
-		return $this->load->view('apply_final/pnc/other',[
-				'employ_center'=>$employ,
-				'car'=>$car,
-				'url'=>base_url().'apply/new/'.$this->type.'/other/',
-
+		
+		return $this->load->view('apply_final/mechanic/langs',[
+				'url'=> base_url().'apply/new/'.$this->type.'/lang/',
+				'lang_level'=>$this->lang_level(),
+				'aero_lang'=>$aero_lang,
+				'levels'=>$levels,
+				'extra'=>$extra,
+				'language_list'=>$this->language_list()
+		
 			],true);
 	}
 	
-	public function other(){
-		    
-		$this->form_validation->set_rules('employ_center', lang('employ_center'), 'trim');
-		$app = $this->app_by_id($_POST['application_id']);
-		
-		
-		if($this->form_validation->run() === TRUE ){
-			
-		
-			$employ = [
-				'application_id' => $this->app['id'],
-				'employ_center'=>$_POST['employ_center']];
-			$this->Crud->update_or_insert($employ,'application_empoy_center');
-				
-			$car = [
-				'application_id' => $this->app['id'],
-				'car'=>$_POST['car']];
 	
-			
-			$this->Crud->update_or_insert($car,'applicaiton_misc');
-			
-			$this->json['result'] = true;
-			$this->json['message'] = lang('saved');
-		}
-		else{
+	
+	public function expirience(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+		$this->form_validation->set_rules('b737_ng', lang('b737_ng'), 'trim|required|max_length[250]');
+		if($this->form_validation->run() === TRUE ){
+
+			if($_POST['part_66_license'] == 0 ){
+				$this->json['message']= lang('part_66_license');
+			}else{
+				$this->Crud->update_or_insert($_POST,'mechanic_offer_aeronautical_experience');
+				$this->json['result']= true;
+				$this->json['message']= lang('saved');
+			}
+		}else{
 			$this->json['message'] = (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-		}
 
-		$this->json['app_id']= $_POST['application_id'];
+			$this->json['result'] = FALSE;
+		}
+		$this->json['application_id'] = $this->app['id'];
 		$this->show_json();
 	}
-
+	
 	public function printer($app_id){
 
 		

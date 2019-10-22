@@ -79,7 +79,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href=""<?= base_url()?>/back">
+		<a class="navbar-brand" href="<?= base_url()?>">
 			<img src="<?= base_url()?>css/back/assets/images/logo.svg" alt="">
 		</a>
 

@@ -74,7 +74,6 @@
 	cursor: pointer;
 }
 
-
 .edit{
 	padding: 15px;
 /*	margin:15px;
@@ -177,4 +176,106 @@ i[data-circle]
 	#sidebar-left .eap-sidenav {
 		display: block !important;
 	}
+}
+
+
+
+.illarion {
+	position: relative;
+	border: none !important;
+	padding: 0px;
+	vertical-align: middle;
+}
+
+.illarion>.fas {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25px;
+}
+
+.disabled {
+	background-color: white !important;
+}
+
+.notfilled {
+	background-color: #ED747C!important;
+	
+}
+.filled {
+	color:white !important;
+}
+
+.filled {
+	background-color: #1EC857 !important;
+	color:white !important;
+	border: none;
+}
+
+.filled>.mb-0>.btn-link {
+	font-weight: bold;
+	color: white !important;
+}
+
+.notfilled>.mb-0>.btn-link {
+	font-weight: bold;
+	color: white !important;
+}
+
+a .btn-danger {
+	color: #fff;
+	background-color: #ED747C!important;
+	border: none !important;
+	outline: none !important;
+	margin-bottom: 10px !important;
+}
+
+.trash>.fa-trash {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+a>.fa-download {
+	margin-top: 10px;
+	float: right;
+	font-size: 18px;
+}
+
+.tooltip.left .tooltip-arrow {
+	top: 22px !important;
+}
+.tooltip.left {
+	top: 0 !important;
+	left: 72px !important;
+	display: block;
+	position: absolute !important;
+}
+
+.tooltip_illarion {
+	position: relative !important;
+}
+
+.card-header {
+    background-color: !important;
+}
+.card-header>.mb-0>.btn-link {
+	font-weight: bold;
+	
+}
+
+.my.btn-info, .my.btn-danger{
+   color: #fff;
+   border: none !important;
+   outline: none !important;
+   margin-bottom: 10px !important;
+   background-image: none;
+   border-radius: .25rem;
+}
+.my.btn-info{
+   background: #3487DB!important;
+}
+.my.btn-danger{
+   background: #ED747C!important;
 }

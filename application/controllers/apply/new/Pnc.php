@@ -37,7 +37,7 @@ class Pnc extends  Pnc_Conntroller{
 		'offer_type'=>$this->type
 		
 		],true);
-		$this->load->view('apply_final/pnc/pnc',
+		$this->load->view('apply_final/pnc/index',
 			[
 				'header'=>$header,
 				'main'=>$this->get_main(),

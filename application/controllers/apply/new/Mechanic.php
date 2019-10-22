@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * user/apply/Hr/Main
 */
-class Hr extends  Hr_Controller{
+class Mechanic extends  Mechanic_Controller{
 
 	
 
@@ -34,18 +34,23 @@ class Hr extends  Hr_Controller{
 
 		$header = $this->load->view('apply_final/parts/header',['offer'=>$offer,
 		'offer_type'=>$this->type],true);
-		$this->load->view('apply_final/hr/index',
+		$this->load->view('apply_final/mechanic/index',
 			[
 				'header'=>$header,
 				'main'=>$this->get_main(),
 				
-				'education'=>$this->get_education(),
+				'aeronautical_baccalaureate'=>$this->get_aeronautical_baccalaureate(),
+
+		
+		
 				'foreignlang'=>$this->get_lang(),
-				'experience'=>$this->get_experience(),
+				'aeronautical_experience'=>$this->get_experience(),
+
 				'aviability'=>$this->get_aviability(),
 				'other'=>$this->get_other(),
 				'covver_letter'=>$this->get_uploader('covver_letter'),			
 				'cv'=>$this->get_uploader('cv'),
+				'complementary_documents'=>$this->get_uploader('complementary_documents'),
 				
 				
 			]);
@@ -54,7 +59,7 @@ class Hr extends  Hr_Controller{
 		
 		
 		
-		$this->load->view('apply_final/hr/vue',[
+		$this->load->view('apply_final/mechanic/vue',[
 			'applicaiton_id'=>$this->app ? $this->app['id'] :  null,
 			'uploaders'=>$this->uploaders,
 			'status'=>json_encode($this->statuses),

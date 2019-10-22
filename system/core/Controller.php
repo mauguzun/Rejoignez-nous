@@ -69,6 +69,7 @@ require_once "controllers/Ajax_Controller.php";
 require_once "controllers/apply/Base_Apply_Controller.php";
 require_once "controllers/apply/Pnc_Controller.php";
 require_once "controllers/apply/Hr_Controller.php";
+require_once "controllers/apply/Mechanic_Controller.php";
 
 
 class CI_Controller{

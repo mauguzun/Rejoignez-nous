@@ -33,12 +33,8 @@
 				files:{
 					covver_letter:[],
 					cv:[],
-					certificate_of_flang:[],
-					medical_aptitude:[],
-					photo_in_feet:[],
-					passport:[],
-					vaccine_against_yellow_fever:[],
-					id_photo:[],
+					complementary_documents:[],
+					
 				},
 				uploaders:[],
 				statuses: JSON.parse('<?= $status ?>'),
@@ -133,7 +129,7 @@
 					if (this.application_id){
 						this.active = div;
 					}else{
-						alert("please fill main section,.thank you")
+						alert("<?= lang('please_save_main') ?>")
 					}
 				
 				},
@@ -268,14 +264,14 @@
 
 				// only for pnc
 			
-				if (this.$refs.education_level_id.id)
-				{
-					this.models.education_level_id = this.$refs.education_level_id.id
-				}
-				if(this.$refs.aviability.id)
-				{
-					this.models.aviability = this.$refs.aviability.id
-				}
+				// if (this.$refs.education_level_id.id)
+				// {
+				// 	this.models.education_level_id = this.$refs.education_level_id.id
+				// // }
+				// if(this.$refs.aviability.id)
+				// {
+				// 	this.models.aviability = this.$refs.aviability.id
+				// }
  
 			
 

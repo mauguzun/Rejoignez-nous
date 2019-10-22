@@ -289,16 +289,4 @@ svg rect {
 	padding-top:20%;
 }
 
-.illarion{
-	border: 1px solid red !important;
-	vertical-align: middle;;
-}
-.disabled{
-	background-color: white !important;
-}
-.notfilled{
-	background-color: red !important;
-}
-.filled{
-	background-color: green !important;
-}
+
