@@ -17,17 +17,34 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'main',
+				active:'successive_employer',
 
 				loader:true,
 
+				
+				preinit_succes:[],
 
+				total_flight_hours:[],
+				successive_employer:[],
+
+				
+				experience_in_instructor:[],
+				expirience:[],
 				langRows :[],
-				expRows:[],
+				pracitRows:[],
+				qualityRows:[],
+				expRows:[{id:1,flag:false}],
 
 				models:{ 
 					education_level_id:null,
 					aviability:null,
+					
+					cpl:false,
+					atpl:false,
+					irme:false,
+					mcc:false,
+					theoretical_atpl:false,
+					lic_error:false,
 				},
 				
 				files:{
@@ -45,12 +62,53 @@
 				
 			},
 			methods: {
+				
+				
+				save(){
+
+
+
+					this.models.lic_error  = null;
+
+					if(this.models.cpl == true && this.models.irme == false && this.models.atpl == false){
+						if (this.models.mcc  == false && this.models.theoretical_atpl  == false) {
+							this.models.lic_error = '<?= lang("You must have obtained the theoretical ATPL and / or the MCC in order to practice the profession to which you are applying")?>'
+							return false;
+						}
+                   
+					} 
+					else if (this.models.irme == true && this.models.cpl == false && this.models.atpl == false){
+						this.models.lic_error = '<?= lang("You must have obtained the IRME to be able to practice the profession to which you are applying")?>'
+             
+						return false;
+					}
+					else if (this.models.irme == false && this.models.cpl == false && this.models.atpl == true){
+						this.models.lic_error = '<?= lang("You must have obtained CPL or ATPL to be able to practice the profession to which you are applying")?>'
+						return false;
+					}
+					else if (this.models.irme == false && this.models.cpl == false && this.models.atpl == false){
+						this.models.lic_error = '<?= lang("You must select one of option")?>'
+						return false;
+					}	
+
+					return true;
+				},
+				
 				send(submitEvent){
+					
+				
+					let data  = submitEvent.target
+					let action  = data.action;
+					let id = data.id;
+
+					if (id === 'licence'){
+						if (this.save() === false){
+							return false;
+						}
+					}
 					this.loader = true;
 					this.setDefault();
 
-					let data  = submitEvent.target
-					let action  = data.action;
            
 					this.postData = $(data).serialize() ;
 
@@ -85,7 +143,7 @@
 					this.loader = false;
 				},
 
-				
+
 
 				setDefault(){
 					this.message = null;
@@ -121,9 +179,19 @@
 						array = this.langRows;
 						break;
 
+						case 'practic':
+						array  = this.pracitRows;
+						break;
+						case 'quality':
+						array  = this.qualityRows;
+						break;
+
 						case 'exp':
 						array = this.expRows;
 						break;
+
+						default :
+						array = this[arg]
 					}
 					return array;
 				},
@@ -138,7 +206,10 @@
 				
 				},
 				addRow(arg){
+					
+					
 					this._getArray(arg).push({id: new Date()/1000,flag : false});
+				
 				},
 				removeRow(row,arg){
 					let array  = this._getArray(arg);	
@@ -154,11 +225,11 @@
 					}
 					
 				},
-				removeTemplate(rowRef){	
-								
+				removeTemplate(rowRef){				
 					this.$refs[rowRef].remove()
 				},
 				setupCalendar(){
+					
 					$('*[data-calendar]').datepicker({
 							todayBtn: "linked",
 							clearBtn: true,
@@ -188,10 +259,14 @@
 				updateStatuses(){
 					this.message = null;
 					this.loader=true;
-					$.getJSON('<?= base_url()?>/apply/new/mechanic/json_statuses/'+ this.application_id )
+					$.getJSON('<?= base_url()?>/apply/new/pnc/json_statuses/'+ this.application_id )
 					.then(e=>{
+
+
 							this.statuses = e.statuses;
 							this.filled = e.filled;
+
+						
 							this.loader=false;
 						})
 				},
@@ -199,9 +274,11 @@
 
 				setupUploader(divId){
 					/////////////////////////
-	
+				
+						
 					const up = this.$refs[divId];
 					const files = this.files[divId];
+
 					const that = this;
 
 					
@@ -219,7 +296,7 @@
 							{
 			
 								$(up).find('#error').html();
-							//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
+								//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
 							},
 							onUploadProgress: function(id, percent)
 							{
@@ -267,16 +344,16 @@
 
 
 				// only for pnc
-			
+				/*
 				if (this.$refs.education_level_id.id)
 				{
-					this.models.education_level_id = this.$refs.education_level_id.id
+				this.models.education_level_id = this.$refs.education_level_id.id
 				}
 				if(this.$refs.aviability.id)
 				{
-					this.models.aviability = this.$refs.aviability.id
+				this.models.aviability = this.$refs.aviability.id
 				}
- 
+				*/
 			
 
 				<? foreach ($uploaders as $up):?>
@@ -296,11 +373,15 @@
 				
 				
 				
+		
+				console.log(this.preinit_succes)
+
 				this.setupCalendar();
 				// this.setAllUploader();
 				this.loader= false;
 				
-				
+
+			
 			},
 
 				

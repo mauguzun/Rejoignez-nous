@@ -48,8 +48,8 @@
 }
 .edit{
 	padding: 15px;
-/*	margin:15px;
-*/}
+	/*	margin:15px;
+	*/}
 .edit .title{
 	height: 20px !important;
 	font-size: 11px;
@@ -76,8 +76,8 @@
 
 .edit{
 	padding: 15px;
-/*	margin:15px;
-*/}
+	/*	margin:15px;
+	*/}
 .edit .title{
 	height: 20px !important;
 	font-size: 11px;
@@ -205,12 +205,12 @@ i[data-circle]
 	
 }
 .filled {
-	color:white !important;
+	color: white !important;
 }
 
 .filled {
 	background-color: #1EC857 !important;
-	color:white !important;
+	color: white !important;
 	border: none;
 }
 
@@ -258,7 +258,7 @@ a>.fa-download {
 }
 
 .card-header {
-    background-color: !important;
+	background-color: !important;
 }
 .card-header>.mb-0>.btn-link {
 	font-weight: bold;
@@ -266,16 +266,22 @@ a>.fa-download {
 }
 
 .my.btn-info, .my.btn-danger{
-   color: #fff;
-   border: none !important;
-   outline: none !important;
-   margin-bottom: 10px !important;
-   background-image: none;
-   border-radius: .25rem;
+	color: #fff;
+	border: none !important;
+	outline: none !important;
+	margin-bottom: 10px !important;
+	background-image: none;
+	border-radius: .25rem;
 }
 .my.btn-info{
-   background: #3487DB!important;
+	background: #3487DB!important;
 }
 .my.btn-danger{
-   background: #ED747C!important;
+	background: #ED747C!important;
+}
+
+.input_label{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden
 }

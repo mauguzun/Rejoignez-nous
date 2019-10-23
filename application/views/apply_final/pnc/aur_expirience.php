@@ -84,7 +84,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<? endif?>
 				
 				
-			<div >
+			<div class="illarion">
 				<i @click="removeTemplate('<?= 'exp'.$row['id'] ?>')" class="fas fa-minus-square"></i>
 			</div>
 	

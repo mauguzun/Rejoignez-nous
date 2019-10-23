@@ -133,7 +133,7 @@
 					if (this.application_id){
 						this.active = div;
 					}else{
-						alert("please fill main section,.thank you")
+						alert("<?= lang('please_save_main') ?>")
 					}
 				
 				},

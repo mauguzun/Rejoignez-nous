@@ -194,7 +194,12 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			],true
 		);
 	}
-	
+	/**
+	* 
+	* @param bool did show output  $show
+	* 
+	* @return bool | null 
+	*/
 	
 	public function lang(){
 		
@@ -227,7 +232,9 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		}
 		
 		$this->json['app_id']= $_POST['application_id'];
+		
 		$this->show_json();
+		
 		
 	}
 	/**
@@ -538,7 +545,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	
 	protected function get_other(){
 		
-	$misc =null;
+		$misc =null;
 		if($this->app){
 			$misc = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
 		}
@@ -588,7 +595,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->Crud->get_all('application_hr_expirience',['application_id'=>$this->app['id']]): null;
 		
 		
-		if (count($exp)==0){
+		if(count($exp)==0){
 			$exp = [0];
 		}
 		

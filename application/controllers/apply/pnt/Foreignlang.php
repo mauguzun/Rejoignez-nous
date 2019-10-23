@@ -68,6 +68,8 @@ class Foreignlang extends Apply_Pnt_Controller{
 
 		if( isset($_POST['language']) && $this->form_validation->run() === TRUE){
 			
+			
+			
 			if($row){
 
 				$langs = [];

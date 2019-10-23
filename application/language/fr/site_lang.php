@@ -272,11 +272,11 @@ $lang['Please follow'] = 'Please follow the following steps to create your accou
 $lang['click here to login'] = 'click here to login ';
 $lang["Password don't match"] = "Password don't match";
 $lang['Password match'] = 'Password match ';
-$lang['update_my_main_acc'] = 'update_my_main_acc';
 $lang['begin_new_application'] = 'begin_new_application';
 $lang['initially applied for the position of'] = 'initially applied for the position of';
 
 $lang['update_my_main_acc'] = 'update_my_main_acc';
+$lang['please_save_main'] = 'please_save_main';
 $lang['yes_toogle'] = [
 0=>'No',
 1=>'Yes'

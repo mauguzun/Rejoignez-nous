@@ -272,6 +272,7 @@ $lang['begin_new_application'] = 'begin_new_application';
 $lang['initially applied for the position of'] = 'initially applied for the position of';
 
 $lang['update_my_main_acc'] = 'update_my_main_acc';
+$lang['please_save_main'] = 'please_save_main';
 $lang['yes_toogle'] = [
 0=>'No',
 1=>'Yes'

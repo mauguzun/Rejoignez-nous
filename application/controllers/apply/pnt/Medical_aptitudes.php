@@ -48,6 +48,8 @@ class Medical_aptitudes extends Apply_Pnt_Controller
         }
        
 		
+		
+		
 		$row = $this->Crud->get_row(['application_id'=>$app['id']],$this->get_table_name($this->step));
 		$this->show_header([$offer_row['title'],$offer_row['title'],$offer_row['title']]);
 		$this->open_form($offer_id,$offer_row);

@@ -42,7 +42,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name]); ?>
 			<div class="col-md-6">
 				<div class="input_label"><?= lang('managerial_duties')?></div>
 				<? $sel = isset($row['managerial_duties']) ? $row['managerial_duties'] : null ?>
-				<?= 			form_dropdown($name, 
+				<?= 			form_dropdown('managerial_duties', 
 					$selects['expirience_managerial'],$sel,['class'=>'form-control']);
 				?>
 			</div>
