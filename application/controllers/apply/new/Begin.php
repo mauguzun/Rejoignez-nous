@@ -1,10 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
-* user/apply/Hr/Main
-*/
-class Begin extends Apply_Un_Controller{
+class Begin extends User_Controller{
 
 	protected $step = 'delete';
 
@@ -15,6 +12,7 @@ class Begin extends Apply_Un_Controller{
 
 	public function index(){
 
+
 		
 		$query = $this->Crud->get_all('application',
 			['user_id'=>$this->user_id,'unsolicated'=>1,'filled'=>0]);
@@ -22,19 +20,17 @@ class Begin extends Apply_Un_Controller{
 		
 		foreach($query as &$value){
 			$value['first_name'] = anchor(
-				base_url().'apply/unsolicited/main/index/'.$value['id'],
+				base_url().'apply/new/unsolicated/index/'.$value['id'],
 				$value['first_name']
 			);
 		}
 		
 
 		if($query){
-			$this->show_header([lang('unsolicited_application_applys'),lang('unsolicited_application_applys'),lang('unsolicited_application_applys')]);
-							
 				
 
 			$table = $this->load->view('front/parts/page_table',[
-					'allert'=>$this->load->view('front/apply/unsolicited/begin',null,true),
+					'allert'=>$this->load->view('apply_final/unsolicated/begin',null,true),
 					'headers'=>['add_date','first_name'],
 					/*				'headers'=>['add_date','title','location','contract','activity'],
 					*/		
@@ -43,8 +39,7 @@ class Begin extends Apply_Un_Controller{
 			
 			$this->show_footer();
 		}else{
-			
-		 	redirect(base_url().'apply/unsolicited/main');
+			redirect(base_url().'apply/new/unsolicated/index/');
 		}
 		
 	}

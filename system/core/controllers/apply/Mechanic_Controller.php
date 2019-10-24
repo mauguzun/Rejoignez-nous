@@ -267,9 +267,9 @@ class Mechanic_Controller extends Base_Apply_Controller{
 		$this->show_json();
 	}
 	
-	public function printer($offer_id){
+	public function printer($app_id){
 
-		$this->app($offer_id);
+		$this->app_by_id($app_id);
 		if(!$this->app | $this->app['filled'] == 0 )
 		redirect(base_url());
 		

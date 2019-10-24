@@ -250,6 +250,9 @@
 				},
 
 				setAllUploader(){
+					
+					this.$refs.delButton.href+="/"+this.application_id;
+					this.$refs.printButton.href+="/"+this.application_id;
 					for (let index in this.uploaders) {
 						this.setupUploader(this.uploaders[index])
 					}

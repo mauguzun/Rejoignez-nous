@@ -23,7 +23,7 @@
 
 
 				langRows :[],
-				expRows:[{id:1,flag:false}],
+				expRows:[],
 
 				models:{ 
 					education_level_id:null,
@@ -81,6 +81,7 @@
 					}else{
 						this.error = true;
 					}
+					this.filled = result.filled
 					this.message = result.message;
 					this.loader = false;
 				},
@@ -154,7 +155,8 @@
 					}
 					
 				},
-				removeTemplate(rowRef){				
+				removeTemplate(rowRef){	
+								
 					this.$refs[rowRef].remove()
 				},
 				setupCalendar(){
@@ -187,26 +189,21 @@
 				updateStatuses(){
 					this.message = null;
 					this.loader=true;
-					$.getJSON('<?= base_url()?>/apply/new/pnc/json_statuses/'+ this.application_id )
+					$.getJSON('<?= base_url()?>/apply/new/unsolicated/json_statuses/'+ this.application_id )
 					.then(e=>{
-
-
 							this.statuses = e.statuses;
 							this.filled = e.filled;
-
-						
 							this.loader=false;
 						})
 				},
 
 
 				setupUploader(divId){
-					/////////////////////////
+					
+
 				
-						
 					const up = this.$refs[divId];
 					const files = this.files[divId];
-
 					const that = this;
 
 					
@@ -224,7 +221,7 @@
 							{
 			
 								$(up).find('#error').html();
-								//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
+							//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
 							},
 							onUploadProgress: function(id, percent)
 							{
@@ -259,11 +256,13 @@
 				},
 
 				setAllUploader(){
+
+					this.$refs.delButton.href+="/"+this.application_id;
+					this.$refs.printButton.href+="/"+this.application_id;
 					for (let index in this.uploaders) {
 						this.setupUploader(this.uploaders[index])
 					}
-					this.$refs.delButton.href+="/"+this.application_id;
-					this.$refs.printButton.href+="/"+this.application_id;
+
 				
 				}
 
@@ -278,10 +277,10 @@
 				{
 					this.models.education_level_id = this.$refs.education_level_id.id
 				}
-				if(this.$refs.aviability.id)
-				{
-					this.models.aviability = this.$refs.aviability.id
-				}
+				// if(this.$refs.aviability.id)
+				// {
+				// 	this.models.aviability = this.$refs.aviability.id
+				// }
  
 			
 

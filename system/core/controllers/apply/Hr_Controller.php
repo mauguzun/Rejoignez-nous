@@ -95,14 +95,16 @@ class Hr_Controller extends Base_Apply_Controller{
 	
 
 	
-	public function printer($offer_id){
+	public function printer($app_id){
 
 		
 	
 		
-		$this->app($offer_id);
+		$this->app_by_id($app_id);
+		
+		
 
-		if(!$this->app | $this->app['filled'] == 0 )
+		if(!$this->app | $this->app['filled'] == '0' )
 		redirect(base_url());
 		
 

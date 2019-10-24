@@ -70,7 +70,7 @@ class Appliedoffers extends User_Controller{
 
 			}
 			else{
-				$value['title'] = anchor("apply/unsolicited/main/index/".$value['aid'],lang('unsolicited_application_applys'));
+				$value['title'] = anchor("apply/new/unsolicated/index/".$value['aid'],lang('unsolicited_application_applys'));
 				$value['contract'] = $all_contract[$value['app_un_contract_type']];	
 				$value['activity'] = $value['app_un_contract_activities'];
 			}

@@ -8,11 +8,12 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 
 		<div class="row row_mb">
 			<div class="col-md-12">
-				<div class="input_label"><?= lang('education_level_id')?></div>
+				<div class="input_label"><span>*</span><?= lang('education_level_id')?></div>
 				<select name="education_level_id"
 							 class="form-control selectpicker"
 							 v-model="models.education_level_id"
 							 ref="education_level_id"
+							 required="true"
 							 id="<?= $education?  $education['education_level_id'] : null ?>"
 							 data-live-search="true">
 					<? foreach($education_level as $id=>$text):?>

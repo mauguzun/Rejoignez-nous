@@ -472,6 +472,9 @@ class Applications extends Shared_Controller{
 		$data['data'] = [];
 		$row  = [];
 		
+		
+		
+		
 		///
 		if($this->_function_filter_id ){
 			
@@ -489,11 +492,12 @@ class Applications extends Shared_Controller{
 
 		$educaton = $table_row['education_level'] > 0 ?
 		$this->_education_level[$table_row['education_level']] : NULL;
-		$title = $table_row['unsolicated'] == 1 ? lang('unsolicited_application_applys') : $table_row['title'];
+		$title = $table_row['unsolicated'] == 1 ?
+		 lang('unsolicited_application_applys') : $table_row['title'];
 
 
 		if($table_row['unsolicated'] == 1){
-			$print          = base_url().'apply/unsolicited/printme/index/'.$table_row['aid'];
+			$print          = base_url().'apply/new/unsolicated/printer/'.$table_row['aid'];
 			$lang_level_row = $lang_level_row = $this->_show_lang_in_table_column($table_row);
 				
 			$un = $this->Crud->get_row(['application_id'=>$table_row['aid']],'application_un');
@@ -519,7 +523,7 @@ class Applications extends Shared_Controller{
 				
 			$lang_level_row = $this->_show_lang_in_table_column($table_row);
 				
-			$print          = base_url().'/apply/'.$this->folderoffer->get_map($table_row['category']).'/printme/index/2/'.$table_row['aid'];
+			$print          = base_url().'/apply/new/'.$this->folderoffer->get_map($table_row['category']).'/printer/'.$table_row['aid'];
 			$email          = base_url().Shared_Controller::$map.'/sendemail/'.$this->folderoffer->get_map($table_row['category']).'/'.$table_row['aid'];
 			$title          = anchor($this->_redirect.'?offer='.$title,  $title ,['target'=>'_blank'] );
 			$funciton          =  anchor(

@@ -38,7 +38,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->session->set_flashdata('message',lang('fill_form'));
 		}	*/	
 		$this->educations();
-		
+		$this->load->language('admin');
 	}
 
 	public function get_main(){
@@ -373,13 +373,14 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	
 	//
 	public function app($offer_id){
+		
 		$this->app = $this->Crud->get_row(
-			['offer_id'=>$offer_id,'user_id'=>$this->user->id],'application');
+			['offer_id'=>$offer_id/*,'user_id'=>$this->user->id*/],'application');
 	}
 	
 	protected function app_by_id($id){
 		$this->app = $this->Crud->get_row(
-			['id'=>$id,'user_id'=>$this->user->id],'application');
+			['id'=>$id,/*'user_id'=>$this->user->id*/],'application');
 	}
 
 	protected function redirect_if_account_not_filled(){

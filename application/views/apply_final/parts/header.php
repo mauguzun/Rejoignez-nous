@@ -49,6 +49,8 @@
 </div>-->
 
 
+{{application_id}}
+	
 
 
 <div v-if="message != null"  
@@ -67,15 +69,18 @@
 <!---->
 <div class="print_block" >
 	<a type="button"
-	v-if="filled"
-	 href="<?= base_url()."/apply/new/".$offer_type."/printer/".$offer['id'] ?>"
+	v-show="filled"
+	ref="printButton"
+	 href="<?= base_url()."/apply/new/".$offer_type."/printer/" ?>"
 	 target="_blank"
+	  
 	 class="my btn btn-info"><i class="fa fa-print">
 		</i> <?= lang('print')?></a>
 		
 	<a type="button"
 	
-	 href="<?= base_url()."/apply/new/".$offer_type."/delete/".$offer['id'] ?>"
+	 ref="delButton"
+	 href="<?= base_url()."/apply/new/".$offer_type."/delete/" ?>"
 
 	 onclick="return confirm('Are you sure?');"
 	 class="my btn btn-danger"><i class="far fa-trash-alt">
@@ -87,4 +92,3 @@
 	<? $this->load->view('apply_final/parts/loader.php')?>
 </div>
 
-	
