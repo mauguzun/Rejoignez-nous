@@ -17,12 +17,9 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'successive_employer',
+				active:'main',
 
 				loader:true,
-
-				
-				preinit_succes:[],
 
 				total_flight_hours:[],
 				successive_employer:[],
@@ -48,14 +45,16 @@
 				},
 				
 				files:{
-					covver_letter:[],
+				
 					cv:[],
+					covver_letter:[],
 					certificate_of_flang:[],
-					medical_aptitude:[],
-					photo_in_feet:[],
-					passport:[],
-					vaccine_against_yellow_fever:[],
+					attestation:[],
+					attestation_of_medical_fitness:[],
+					carnet_of_flight:[],
+					attestation_of_irme:[],
 					id_photo:[],
+	
 				},
 				uploaders:[],
 				statuses: JSON.parse('<?= $status ?>'),
@@ -63,7 +62,25 @@
 			},
 			methods: {
 				
+				more(event){
+					let data  = event.target
+					let value  = data.value;
+					let id = data.id;
+
+
 				
+					if (value.trim () == 0 ){
+						$('[data-id="'+id+'"] *').removeAttr('required')
+				
+						$('[data-id="'+id+'"]').fadeOut()
+				}else{
+				
+					$('[data-id="'+id+'"]').fadeIn()
+					$('[data-id="'+id+'"] *').attr('required','require')
+				
+				}
+					
+				},
 				save(){
 
 
@@ -97,15 +114,17 @@
 				send(submitEvent){
 					
 				
+				
 					let data  = submitEvent.target
 					let action  = data.action;
 					let id = data.id;
-
+				
 					if (id === 'licence'){
 						if (this.save() === false){
 							return false;
 						}
 					}
+				
 					this.loader = true;
 					this.setDefault();
 
@@ -256,10 +275,12 @@
 		
 				},
 
+				
+
 				updateStatuses(){
 					this.message = null;
 					this.loader=true;
-					$.getJSON('<?= base_url()?>/apply/new/pnc/json_statuses/'+ this.application_id )
+					$.getJSON('<?= base_url()?>/apply/new/pnt/json_statuses/'+ this.application_id )
 					.then(e=>{
 
 
@@ -273,8 +294,6 @@
 
 
 				setupUploader(divId){
-					/////////////////////////
-				
 						
 					const up = this.$refs[divId];
 					const files = this.files[divId];
@@ -348,12 +367,12 @@
 				if (this.$refs.education_level_id.id)
 				{
 				this.models.education_level_id = this.$refs.education_level_id.id
-				}
+				}	*/
 				if(this.$refs.aviability.id)
 				{
 				this.models.aviability = this.$refs.aviability.id
 				}
-				*/
+			
 			
 
 				<? foreach ($uploaders as $up):?>
@@ -370,16 +389,7 @@
 				<? if (isset($filled) && $filled == '1') :?>
 				this.filled = true;
 				<? endif;?>
-				
-				
-				
-		
-				console.log(this.preinit_succes)
-
-				this.setupCalendar();
-				// this.setAllUploader();
 				this.loader= false;
-				
 
 			
 			},

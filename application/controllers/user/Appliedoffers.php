@@ -65,7 +65,8 @@ class Appliedoffers extends User_Controller{
 			
 			$value['add_date'] = time_stamp_to_date($value['add_date']);
 			if($value['unsolicated'] == 0){
-				$value['title'] = anchor(base_url().'/apply/'.$this->folderoffer->get_map($value['category']).'/main/index/'.$value['id'],$value['title']);
+				$value['title'] =
+				 anchor(base_url().'/apply/new/'.$this->folderoffer->get_map($value['category']).'/index/'.$value['id'],$value['title']);
 
 			}
 			else{
@@ -75,6 +76,7 @@ class Appliedoffers extends User_Controller{
 			}
 
 		}
+		
 		
 	
 

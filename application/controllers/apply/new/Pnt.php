@@ -51,7 +51,7 @@ class Pnt extends  Pnt_Controller{
 			'expirience'=>$this->get_exp('expirience'),
 			'experience_in_instructor'=>$this->get_experience_in_instructor(),
 			'successive_employer'=>$this->get_successive_employer(),
-			'complementary_informations'=>$this->get_main()];
+			'complementary_informations'=>$this->get_complementary_informations()];
 			
 	
 		foreach($this->uploaders as $row){

@@ -1,33 +1,33 @@
-
 <? 
 $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]);
 $ref = $name ;
 ?> 
 
 
-
 	
-<form method="post" action="<?= $url ?>" v-on:submit.prevent="send">
+<form method="post" action="<?= $url ?>"  v-on:submit.prevent="send">
+
+
 	<div class="card-body">
 		
-	
+		
+		<? foreach($data  as $key=>$oneRow) :?>
 		
 		
-		<? foreach($data as $key=> $onedata):?>
-	
-		<div class="row row_mb " ref="<?=$ref.$key?>" >
-		  
+		<div class="row row_mb" 
+		ref="<?=$ref.$key?>" >
+		
 			<div class="col-md-3">
 				<div class="input_label">
-					<?= lang('function')?>
+					<span>*</span><?= lang('function')?>
 				</div>
 				<input
 				type="text" 
 				name="function[]" 
-				readonly="readonly"
-				value="<?= isset($onedata['function[]']) ?$onedata['function[]'] : null ?>"
+				value="<?= isset($oneRow['function[]'])  ? $oneRow['function[]'] : null ?>"
 				class="form-control" 
-				required="required">
+				required="required" 
+				/>
 			</div>
 			
 			<div class="col-md-3">
@@ -36,34 +36,30 @@ $ref = $name ;
 				</div>
 				<input
 				type="text" 
-				
-				readonly="readonly"
+				@keyUp="more"
 				name="employer[]" 
-				value="<?= isset($onedata['employer[]']) ?$onedata['employer[]'] : null ?>"
+				value="<?= isset($oneRow['employer[]'])  ? $oneRow['employer[]'] : null ?>"
 				class="form-control" 
-				required="required" >
+				id="<?='key'.$key?>"
+				>
 			</div>
-
-			<? foreach(['start[]','end[]'] as $row ):?>
-			<div  class="col-md-2">
-				<div class="input_label">
+			
+			<?foreach(['start[]','end[]'] as $row) :?>
+			<div class="col-md-2">
+				<div class="input_label">	<span>*</span>
 					<?= lang(str_replace('[]','',$row))?>
 				</div>
-				<input
-				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
-				required=""
-				name="<?=$row?>" 
-				placeholder="<?= lang(str_replace('[]','',$row))?>"    
-				data-calendar="true"
-				
-				class="form-control"/>
+				<input 
+				value="<?= isset($oneRow[$row])  ? $oneRow[$row] : null ?>"
+				required="required" 
+				name="<?=$row ?>"
+				@mouseover="setupCalendar()"
+				placeholder="<?= lang(str_replace('[]','',$row))?>" 
+				data-calendar="true" class="form-control">
+							 	
+			</div> 		
+			<? endforeach ;?>
 			
-			</div>
-			<? endforeach; ?>
-			
-			
-			
-				
 			<div class="col-md-1 illarion">
 				<? if($key == 0 ):?>
 				<i  @click="addRow('<?= $ref ?>')" class="fas fa-plus-square"></i>
@@ -73,65 +69,158 @@ $ref = $name ;
 
 			</div>
 		</div>
-			
-		
-		<? if(!empty($onedata['email[]'])) :?>
-			
-		<div class="row row_mb " >
-				 
-			<!---->
-			<? foreach(['name[]','email[]','phone[]','phone_2[]','city[]','zip[]','address[]'] as $name):?>
+
+		<div class="row row_mb"
+		data-id="<?='key'.$key?>"
+		<?= empty($oneRow['employer[]']) ? 'style="display:none" ' : null ?>
+		  >
+			<? foreach(['name[]','email[]','phone[]','phone_2[]' ,'address[]','zip[]','city[]'] as $input):?> 
 			<div class="col-md-6">
-				<div class="input_label"><span>*</span>
-				    
-					<?= lang(str_replace('[]','',$name))?>
-					
-				</div>
-				<input 
-				type="<?= $name == "email[]" ? 'email': 'text'?>"
-				
-				name="<?= $name ?>" 
-				value="<?= isset($onedata[$name]) ?$onedata[$name] : null ?>" 
-				class="form-control"
-				<?= $name != "phone_2[]" ? 'required="required"': null ?>
-				/>
-				
+				<div class="input_label">
+					<span>*</span>
+					<?= lang(str_replace('[]','',$input))?>
+				</div> 
+				<input type="text" 
+				name="<?=$input?>"
+				value="<?= isset($oneRow[$input])  ? $oneRow[$input] : null ?>"
+				class="form-control">
 			</div>
-			<? endforeach ?>
-			
+			<? endforeach ;?>
+		  
+		   
 			<div class="col-md-6">
-				<div class="input_label"><span>*</span>
-					<?= lang('country')?>			
-				</div>
+				<div class="input_label">
+					<span>*</span>
+					<?= lang('country')?>
+				</div> 
+				<?= 
 				
-				<?= form_dropdown('country_id[]', 
-					$countries,$onedata['country_id[]'],['class'=>'form-control']);
-				?>
-				
+				form_dropdown('country_id[]',$countries ,
+					isset($oneRow['country_id[]'])  ? $oneRow['country_id[]'] : null,['class'=>'form-control']) ?>
 			</div>
+			
 			
 			<div class="col-md-12">
 				<div class="input_label"><span>*</span>
-					<?= lang('why_left')?>			
-				</div>
-				
-				<textarea name="why_left[]"  required="required" class="form-control"><?= isset($onedata['why_left[]']) ?$onedata['why_left[]'] : null ?></textarea>
-				
-			</div>
-			<!---->
-		
-		</div>
-		<!---->
-		<? endif;?>
+					<?= lang('why_left')?>		
+				</div> 
+				<textarea name="why_left[]" 
+				class="form-control"><?= $oneRow['why_left[]']?></textarea>
 			
-	
-		<? endforeach ?>
+			</div>
+		  
+				
 
+
+		</div>
+		<? endforeach ;?>
+		
+		
+		<!---->
+		
+		<template class="row row_mb" v-for="(n)  in <?= $ref ?>"  >
+			
+
+			<div class="row row_mb" 
+		     >
+		
+				<div class="col-md-3">
+					<div class="input_label">
+						<span>*</span><?= lang('function')?>
+					</div>
+					<input
+					type="text" 
+					name="function[]" 
+					class="form-control" 
+					required="required" 
+					/>
+				</div>
+			
+				<div class="col-md-3">
+					<div class="input_label">
+						<?= lang('employer')?>
+					</div>
+					<input
+					type="text" 
+					name="employer[]" 
+					class="form-control" 
+					v-model="n.flag"
+					>
+				</div>
+			
+				<?foreach(['start[]','end[]'] as $row) :?>
+				<div class="col-md-2">
+					<div class="input_label">	<span>*</span>
+						<?= lang(str_replace('[]','',$row))?>
+					</div>
+					<input 
+					required="required" 
+					@mouseover="setupCalendar()"
+					placeholder="<?= lang(str_replace('[]','',$row))?>" 
+					data-calendar="true" class="form-control">
+							 	
+				</div> 		
+				<? endforeach ;?>
+			
+				<div class="col-md-1 illarion">
+					<i @click="removeRow(n,'<?= $ref ?>')"  class="fas fa-minus-square"></i>
+
+				</div>
 	
+			</div>
+
+			<div class="row row_mb" v-if="n.flag" >
+				<? foreach(['name[]','email[]','phone[]','phone_2[]' ,'address[]','zip[]','city[]'] as $input):?> 
+				<div class="col-md-6">
+					<div class="input_label">
+						<span>*</span>
+						<?= lang(str_replace('[]','',$input))?>
+					</div> 
+					<input type="text" 
+					name="<?=$input?>"
+
+					class="form-control">
+				</div>
+				<? endforeach ;?>
+		  
+		   
+				<div class="col-md-6">
+					<div class="input_label">
+						<span>*</span>
+						<?= lang('country')?>
+					</div> 
+					<?= 
+				
+					form_dropdown('country_id[]',$countries ,null ,['class'=>'form-control']) ?>
+				</div>
+			
+			
+				<div class="col-md-12">
+					<div class="input_label"><span>*</span>
+						<?= lang('why_left')?>		
+					</div> 
+					<textarea name="why_left[]" 
+				class="form-control"></textarea>
+			
+				</div>
+		  
+				
+
+
+			</div>
+			
+		</template>
+		
+		
+		<!---->
+		
 
 		<div class="row_mb buttons_bar">
 			<button type="submit"   class="btn bg-blue_min" id=""><?= lang('save')?></button>
 		</div>
+	</div>
+			
+	
 	</div>
 	
 	

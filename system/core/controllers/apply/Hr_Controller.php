@@ -50,6 +50,8 @@ class Hr_Controller extends Base_Apply_Controller{
 				$this->statuses[$stp] = 'filled';
 				continue;
 			}
+			
+			
 			if(!$this->Crud->get_row(['application_id'=>$this->app['id']],$table)){
 				$setNotFilled = true;
 				$this->statuses[$stp] = 'notfilled';

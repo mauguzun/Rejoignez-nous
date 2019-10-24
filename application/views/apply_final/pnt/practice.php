@@ -2,7 +2,6 @@
 $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?> 
 
 
-
 	
 <form method="post" action="<?= $url ?>" v-on:submit.prevent="send">
 	<div class="card-body">
@@ -24,6 +23,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
 				data-calendar="true" 
 				required=""
+				@mouseover="setupCalendar()"
 				name="<?=$row?>"     
 				type="text"  
 				class="form-control"/>

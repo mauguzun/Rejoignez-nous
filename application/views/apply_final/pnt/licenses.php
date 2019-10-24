@@ -36,7 +36,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				<?= lang('start')?>
 			</div>
 			<input data-calendar="true" 
-			
+			@mousedown="setupCalendar()"
 			value="<?= isset($query["{$index}_start"]) ? $query["{$index}_start"] : ""  ?>"  
 			:required="models['<?=$index?>']"  name="<?= $index?>_start"     type="text"  class="form-control"/>
 			<div class="input_label">

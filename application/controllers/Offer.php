@@ -56,7 +56,7 @@ class Offer extends CI_Controller
 			$this->load->view('front_asl/offer',[
 					'query'=>$offer,
 					'loggined'=>$this->ion_auth->logged_in(),
-					'url'=>base_url().'/apply/'.$this->folderoffer->get_map($offer['category']).'/main/index/'.$offer['id']
+					'url'=>base_url().'/apply/new/'.$this->folderoffer->get_map($offer['category']).'/index/'.$offer['id']
 				]);
 			$this->show_footer();
 		}

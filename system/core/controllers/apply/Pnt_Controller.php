@@ -8,6 +8,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 	
 	protected $uploaders  = 
 	[
+		'cv' ,'covver_letter',
 		'certificate_of_flang',
 		'attestation',
 		'attestation_of_medical_fitness',
@@ -219,19 +220,25 @@ class Pnt_Controller extends Base_Apply_Controller{
 		if($this->app){
 			$rows = $this->Crud->get_all('application_pnt_practice',
 				['application_id'=>$this->app['id']]);
-			$lines = [];
-			foreach($rows as $value){	$lines = [];
-				$line = [];
-				$line['school_name[]'] = $value['school_name'];
-				$line['qualification_obtained[]'] =$value['qualification_obtained'];
-				$line['start[]'] = date_to_input($value['start']);
-				$line['end[]'] = date_to_input($value['end']);
+				
+			if($rows){
+				$lines = [];
+				foreach($rows as $value){	$lines = [];
+					$line = [];
+					$line['school_name[]'] = $value['school_name'];
+					$line['qualification_obtained[]'] =$value['qualification_obtained'];
+					$line['start[]'] = date_to_input($value['start']);
+					$line['end[]'] = date_to_input($value['end']);
 				
 
-				array_push($lines,$line);
+					array_push($lines,$line);
 
+				}
 			}
+		
+			
 		}
+		
 		
 		return	$this->load->view('apply_final/pnt/practice',[
 				'url'=> base_url().'apply/new/'.$this->type.'/practice/',
@@ -512,11 +519,9 @@ class Pnt_Controller extends Base_Apply_Controller{
 		
 	protected function get_successive_employer(){
 		$name= 'successive_employer';
-		$lines = [0];
-		
+		$lines = [0];	
 		if($this->app){
-			
-			
+						
 			$table = $this->step_table[$name];
 			$row = $this->Crud->get_all($table,['application_id'=>$this->app['id']]);
 			if($row){
@@ -535,22 +540,12 @@ class Pnt_Controller extends Base_Apply_Controller{
 					$line['address[]'] =  $value['address'];
 					$line['zip[]'] =  $value['zip'];
 					$line['city[]'] =  $value['city'];
-
 					$line['country_id[]']  = 	 $value['country_id'];
-
 					array_push($lines,$line);
-
 				}
-			
 			}
 		}
-		
-		/*echo "<pre>";
-		var_dump($lines);
-		die();
-		*/
-		
-	
+
 		return $this->load->view('apply_final/pnt/successive_employer',[
 				'countries'=>$this->countries(),
 				'name'=>$name,'url'=> base_url().'apply/new/'.$this->type.'/'.$name,
@@ -566,21 +561,34 @@ class Pnt_Controller extends Base_Apply_Controller{
 		
 
 		$name = $this->step_table['successive_employer'];
-		$this->form_validation->set_rules('aircaft_type[]', lang('aircaft_type'), 'trim|required|max_length[250]');
+		$this->form_validation->set_rules('start[]', lang('school'), 'trim|required|max_length[250]');
+
 
 		if($this->form_validation->run() === TRUE ){		
 			$this->Crud->delete(['application_id'=>$this->app['id']],$name);
-			for($i = 0 ; $i < count($_POST['aircaft_type']) ; $i++){
-				$lang = [
+			
+			
+			for($i = 0 ; $i < count($_POST['start']) ; $i++){
+				$new_value = [
 					'application_id'=> $this->app['id'],
-					'aircaft_type' => $_POST['aircaft_type'][$i],
-					'company' => $_POST['company'][$i],
-					'approval_number' => $_POST['approval_number'][$i],
-					'date_of_issue' => date_to_db($_POST['date_of_issue'][$i]),
-					'validity_date' => date_to_db($_POST['validity_date'][$i]),
-				];
-				$this->Crud->update_or_insert($lang,$name);	
-			}		
+					'start' => date_to_db($_POST['start'][$i]),
+					'end' => date_to_db($_POST['end'][$i]),
+					'employer' => isset($_POST['employer'][$i])? $_POST['employer'][$i] : NULL ,
+					'function' => isset($_POST['function'][$i])? $_POST['function'][$i] : NULL ,
+					'name' => isset($_POST['name'][$i])? $_POST['name'][$i] : NULL ,
+					'address' => isset($_POST['address'][$i])? $_POST['address'][$i] : NULL ,
+					'zip' => isset($_POST['zip'][$i])? $_POST['zip'][$i] : NULL ,
+					'city' => isset($_POST['city'][$i])? $_POST['city'][$i] : NULL ,
+					'country_id' => isset($_POST['country_id'][$i])? $_POST['country_id'][$i] : NULL ,
+					'phone' =>isset($_POST['phone'][$i])? $_POST['phone'][$i] : NULL ,
+					'phone_2' => isset($_POST['phone_2'][$i])? $_POST['phone_2'][$i] : NULL ,
+					'email' => isset($_POST['email'][$i])? $_POST['email'][$i] : NULL ,
+					'why_left' => isset($_POST['why_left'][$i])? $_POST['why_left'][$i] : NULL ];
+				$this->Crud->update_or_insert($new_value,$name);
+
+			}
+			
+				
 			$this->json['message'] = lang('saved');
 			$this->json['result']= true;
 		}else{
@@ -592,4 +600,224 @@ class Pnt_Controller extends Base_Apply_Controller{
 		$this->show_json();
 	}
 	
+	protected function get_complementary_informations(){
+		
+		
+		$name = 'complementary_informations';
+	
+		
+		$month     = new DateTime('now');
+		$month->add(new DateInterval('P1M'));
+		$month     = $month->format('d/m/Y');
+
+		$month_two = new DateTime('now');
+		$month_two->add(new DateInterval('P2M'));
+		$month_two = $month_two->format('d/m/Y');
+		
+		$month_tree = new DateTime('now');
+		$month_tree->add(new DateInterval('P3M'));
+		$month_tree = $month_tree->format('d/m/Y');
+
+		////  append current date )
+		$list      = [
+			date('d/m/Y') => lang('Immédiate'),
+			$month=>lang('Préavis 1 mois'),
+			$month_two => lang('Préavis 2mois'),			
+			$month_tree => lang('Préavis 3mois'),
+			0=>lang('calendar'),
+		];
+		$date      = date("d/m/Y") ;
+		
+		
+		$date =$row =  $completary = null;
+		if($this->app){
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],
+				'applicaiton_misc');
+				
+			
+			if($row && $row['aviability']){
+				$date=  date_to_input($row['aviability']);
+				$list = [$date=>$date] + $list;
+			}			
+			$completary = $this->Crud->get_row(['application_id'=>$this->app['id']],$this->step_table[$name]);
+		}
+
+		
+		
+		
+	
+		return $this->load->view('apply_final/pnt/'.$name,[
+				'list'=>$list,
+				'id'=>$date,
+				'misc'=>$row,
+				'name'=>$name,
+				'completary'=>$completary,
+				'url'=> base_url().'apply/new/'.$this->type.'/'.$name,
+			],true); 
+	}
+	
+	public function complementary_informations(){
+		
+		
+		
+	
+		$this->app_by_id($_POST['application_id']);
+		if(!$this->app){
+			die('');
+		}
+		if(!isset($_POST['aviability'])  |   empty($_POST['aviability'])){
+			$_POST['aviability'] = $_POST['fake_aviability'];	
+		}
+
+		$name = $this->step_table['complementary_informations'];
+		$this->form_validation->set_rules('motivation_asl', lang('motivation_asl'), 'trim|required|max_length[2500]');
+
+		if($this->form_validation->run() === TRUE ){		
+			
+			$incedent_array = ['motivation_asl' => $_POST['motivation_asl'],
+				'involved_in_incidents' => $_POST['involved_in_incidents'],
+				'application_id' => $this->app['id']];
+
+			$this->Crud->update_or_insert($incedent_array,$name);			
+			$misc_array =['application_id' => $this->app['id'],'car'=>$_POST['car'],
+				'aviability'=>date_to_db($_POST['aviability']),];
+			$this->Crud->update_or_insert($misc_array,'applicaiton_misc');
+			
+			
+			$this->json['message'] = lang('saved');
+			$this->json['result']= true;
+		}else{
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+		}
+
+		$this->json['application_id'] = $_POST['application_id'];
+		$this->show_json();
+	}
+	public function printer($app_id){
+
+		
+		$this->app($app_id);
+
+		if(!$this->app | $this->app['filled'] == 0 )
+		redirect(base_url());
+
+			$query = $this->Crud->get_joins(
+			'application',
+			[
+				"users"=>"users.id = application.user_id",
+			
+				"applicaiton_misc"=>"application.id = applicaiton_misc.application_id",
+				'countries'=>"application.country_id = countries.id",
+				'application_languages_level'=>"application.id = application_languages_level.application_id",
+				'last_level_education'=>"application.id = last_level_education.application_id",
+				'hr_offer_education_level'=>"last_level_education.education_level_id = hr_offer_education_level.id",
+				'application_english_frechn_level'=>"application.id = application_english_frechn_level.application_id",
+				'application_eu_area'=>"application.id = application_eu_area.application_id",
+				'application_medical_aptitude'=>"application.id = application_medical_aptitude.application_id"
+			],
+			"application.user_id as uid ,
+			application.* ,
+			application.id as aid,
+			applicaiton_misc.*,
+						users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+
+			countries.name as country,
+			last_level_education.*,
+			application_medical_aptitude.date as medical_date,
+			application_eu_area.*,
+			application_english_frechn_level.*,
+			hr_offer_education_level.level as education_level,
+			application_languages_level.* ",
+			NULL,
+			null,
+			["application.id" => $this->app['id']]);
+
+
+
+		$query      = $query[0];
+
+		//$query['date'] = time_stamp_to_date($query['date']);
+
+
+		$lang_level = $this->Crud->get_array('id','level','language_level');
+		$query['english_level'] = $lang_level[$query['english_level']];
+		$query['french_level'] = $lang_level[$query['french_level']];
+
+		
+		
+		$query['eu_nationality'] = $this->_have($query['eu_nationality']);
+		$query['can_work_eu'] = $this->_have($query['can_work_eu']);
+
+
+
+
+
+
+		$more_lang = $this->Crud->get_joins('application_languages_level',
+			['language_level' => "application_languages_level.level_id  = language_level.id" ],
+			'*',['application_languages_level.language'=>'ASC'],NULL,
+			["application_languages_level.application_id"=>$this->app['id']]
+		);
+		$query['more_lang'] = [];
+		foreach($more_lang as $row)
+		{
+			$query['more_lang'][$row['language']] = $row['level'];
+		}
+
+
+
+		$query['handicaped'] = $this->_have($query['handicaped']);
+
+
+		
+
+
+		$pnc_query = $this->Crud->get_all('application_pnt_flight_expirience',["application_id"=>$this->app['id']] );
+		$query['pnt_exp'] = $pnc_query;
+		
+		// pnt exp
+		
+		$pnc_query = $this->Crud->get_all('application_pnt_flight_expirience_instructor',["application_id"=>$this->app['id']] );
+		$query['pnt_exp_inst'] = $pnc_query;
+		
+		$pnc_query = $this->Crud->get_all('application_pnt_practice',["application_id"=>$this->app['id']] );
+		$query['pnt_practice'] = $pnc_query;
+		
+		
+		$pnc_query = $this->Crud->get_all('application_pnt_qualification',["application_id"=>$this->app['id']] );
+		$query['pnt_qualification'] = $pnc_query;
+		
+		
+		$pnc_query = $this->Crud->get_all('application_pnt_total_flight_hours',["application_id"=>$this->app['id']] );
+		$query['pnt_total_flight_hours'] = $pnc_query;
+		
+		$pnc_query = $this->Crud->get_row(["application_id"=>$this->app['id']],'application_fcl' );
+		$query['application_fcl'] = $this->_have($pnc_query['fcl']);
+		
+		$pnc_query = $this->Crud->get_row(["application_id"=>$this->app['id']],'application_pnt_completary' );
+		$query['pnt_completary'] = $pnc_query;
+		
+		
+		$pnc_query  = $this->Crud->get_all('application_pnt_successive_employers',["application_id"=>$this->app['id']]);
+		$query['pnt_s'] = $pnc_query;
+		
+		
+		//$this->load->view('front/apply/printer',['query'=>$query]);
+		
+		
+		require_once("application/libraries/dompdf/vendor/autoload.php");
+
+		$dompdf = new  Dompdf\Dompdf();
+		$dompdf->loadHtml($this->load->view('front/apply/printer',['query'=>$query],TRUE));
+
+		$dompdf->setPaper('A4');
+
+		
+		$dompdf->render();
+		$dompdf->stream(url_title($query['first_name'].$query['last_name']), array("Attachment"=> false));
+
+		exit(0);
+
+	}
 }

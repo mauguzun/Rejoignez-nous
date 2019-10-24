@@ -672,7 +672,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->form_validation->set_rules('education_level_id', lang('education'), 'trim|required|numeric');
 		$app = $this->app_by_id($_POST['application_id']);
 
-
+		$can_update = false;
 		if($this->form_validation->run() === TRUE){
 
 			if($this->input->post('education_level_id') != '1'){

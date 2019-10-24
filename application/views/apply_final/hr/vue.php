@@ -81,6 +81,7 @@
 					}else{
 						this.error = true;
 					}
+					this.filled = result.filled
 					this.message = result.message;
 					this.loader = false;
 				},
@@ -188,7 +189,7 @@
 				updateStatuses(){
 					this.message = null;
 					this.loader=true;
-					$.getJSON('<?= base_url()?>/apply/new/mechanic/json_statuses/'+ this.application_id )
+					$.getJSON('<?= base_url()?>/apply/new/hr/json_statuses/'+ this.application_id )
 					.then(e=>{
 							this.statuses = e.statuses;
 							this.filled = e.filled;
