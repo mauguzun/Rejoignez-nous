@@ -493,11 +493,26 @@ class Applications extends Shared_Controller{
 		$educaton = $table_row['education_level'] > 0 ?
 		$this->_education_level[$table_row['education_level']] : NULL;
 		$title = $table_row['unsolicated'] == 1 ?
-		 lang('unsolicited_application_applys') : $table_row['title'];
+		lang('unsolicited_application_applys') : $table_row['title'];
 
 
 		if($table_row['unsolicated'] == 1){
-			$print          = base_url().'apply/new/unsolicated/printer/'.$table_row['aid'];
+
+			
+			$print   = base_url().'apply/new/unsolicated/printer/'.$table_row['aid'];
+			
+			switch($table_row['unsolicated_type']){
+				case '2':
+				$print   = base_url().'apply/new/uns_pnt/printer/'.$table_row['aid'];
+				break;
+					
+				case '3':
+				$print   = base_url().'apply/new/uns_pnc/printer/'.$table_row['aid'];
+				break;
+			
+			}
+			
+
 			$lang_level_row = $lang_level_row = $this->_show_lang_in_table_column($table_row);
 				
 			$un = $this->Crud->get_row(['application_id'=>$table_row['aid']],'application_un');

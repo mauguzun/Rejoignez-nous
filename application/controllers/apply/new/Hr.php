@@ -19,9 +19,8 @@ class Hr extends  Hr_Controller{
 		
 		$offer = null;
 		if(!$offer_id | !$offer = $this->offer($offer_id) ){
-			die('make redirect');
+			redirect(base_url());
 		}
-		
 		
 		
 		
@@ -33,7 +32,7 @@ class Hr extends  Hr_Controller{
 		  
 
 		$header = $this->load->view('apply_final/parts/header',['offer'=>$offer,
-		'offer_type'=>$this->type],true);
+				'offer_type'=>$this->type],true);
 		$this->load->view('apply_final/hr/index',
 			[
 				'header'=>$header,
@@ -55,12 +54,12 @@ class Hr extends  Hr_Controller{
 		
 		
 		$this->load->view('apply_final/hr/vue',[
-			'applicaiton_id'=>$this->app ? $this->app['id'] :  null,
-			'uploaders'=>$this->uploaders,
-			'status'=>json_encode($this->statuses),
-			'filled'=> $this->app['filled'] ,
+				'applicaiton_id'=>$this->app ? $this->app['id'] :  null,
+				'uploaders'=>$this->uploaders,
+				'status'=>json_encode($this->statuses),
+				'filled'=> $this->app['filled'] ,
 			
-		]);
+			]);
 		$this->show_footer();
 	}
 	

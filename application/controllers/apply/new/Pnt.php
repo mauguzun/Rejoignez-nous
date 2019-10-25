@@ -17,7 +17,7 @@ class Pnt extends  Pnt_Controller{
 		
 		$offer = null;
 		if(!$offer_id | !$offer = $this->offer($offer_id) ){
-			die('make redirect');
+			redirect(base_url());
 		}
 		
 		

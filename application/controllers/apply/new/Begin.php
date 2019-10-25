@@ -19,10 +19,27 @@ class Begin extends User_Controller{
 		
 		
 		foreach($query as &$value){
-			$value['first_name'] = anchor(
-				base_url().'apply/new/unsolicated/index/'.$value['id'],
-				$value['first_name']
-			);
+			
+			switch($value['unsolicated_type']){
+				case '2':
+				$value['first_name'] = anchor("apply/new/uns_pnt/index/".$value['id'],
+					$value['first_name']);
+				break;
+					
+				case '3':
+				$value['first_name'] = anchor("apply/new/uns_pnc/index/".$value['id'],
+					$value['first_name']);
+				break;
+					
+				default:
+				$value['first_name'] = 
+				anchor("apply/new/unsolicated/index/".$value['id'],$value['first_name']);
+					
+				
+			}
+				
+				
+		
 		}
 		
 
@@ -39,7 +56,7 @@ class Begin extends User_Controller{
 			
 			$this->show_footer();
 		}else{
-			redirect(base_url().'apply/new/unsolicated/index/');
+			redirect(base_url().'apply/new/unsolicated/start/'); 
 		}
 		
 	}

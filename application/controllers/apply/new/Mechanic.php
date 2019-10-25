@@ -18,8 +18,8 @@ class Mechanic extends  Mechanic_Controller{
 		
 		
 		$offer = null;
-		if(!$offer_id | !$offer = $this->offer($offer_id) ){
-			die('make redirect');
+			if(!$offer_id | !$offer = $this->offer($offer_id) ){
+			redirect(base_url());
 		}
 		
 		

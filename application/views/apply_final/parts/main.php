@@ -12,11 +12,11 @@
 				<div class="row row_mb">
 					<div class="col-md-4">
 						<div class="input_label"><span>*</span><?= lang('user_civility')?> </div>
-						<select data-name="civility" class="form-control selectpicker" data-live-search="true">
+						<select name="civility" data-name="civility" class="form-control selectpicker" data-live-search="true">
 							<?foreach($civility  as $key=>$value):?>
 							<option <?= $app['civility'] == $key ? 'selected' : null ?>  value="<?= $key?>"><?= $value?></option>
 							<?endforeach ;?>
-						</select>
+						</select>  
 					</div>
 					<div class="col-md-4">
 						<div class="input_label"><span>*</span><?= lang('first_name')?></div>

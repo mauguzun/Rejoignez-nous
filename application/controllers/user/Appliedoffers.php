@@ -39,6 +39,7 @@ class Appliedoffers extends User_Controller{
 			offers_location.location as location ,
 			application_contract.type as contract,
 			application_un.contract_id as app_un_contract_type,
+			application_un.function as app_un_function,
 			offers.category  as category,
 			GROUP_CONCAT(DISTINCT activities.activity ) as activity,
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as app_un_contract_activities,
@@ -66,13 +67,36 @@ class Appliedoffers extends User_Controller{
 			$value['add_date'] = time_stamp_to_date($value['add_date']);
 			if($value['unsolicated'] == 0){
 				$value['title'] =
-				 anchor(base_url().'/apply/new/'.$this->folderoffer->get_map($value['category']).'/index/'.$value['id'],$value['title']);
+				anchor(base_url().'/apply/new/'.$this->folderoffer->get_map($value['category']).'/index/'.$value['id'],$value['title']);
 
 			}
 			else{
-				$value['title'] = anchor("apply/new/unsolicated/index/".$value['aid'],lang('unsolicited_application_applys'));
-				$value['contract'] = $all_contract[$value['app_un_contract_type']];	
-				$value['activity'] = $value['app_un_contract_activities'];
+				
+				
+				
+				switch($value['unsolicated_type']){
+					case '2':
+					$value['title'] = anchor("apply/new/uns_pnt/index/".$value['aid'],
+						lang('unsolicited_application_applys'));
+					break;
+					
+					case '3':
+					$value['title'] = anchor("apply/new/uns_pnc/index/".$value['aid'],
+						lang('unsolicited_application_applys'));
+					break;
+					
+					default:
+					$value['title'] = anchor("apply/new/unsolicated/index/".$value['aid'],$value['app_un_function']);
+					
+					if (array_key_exists($value['app_un_contract_type'],$all_contract))
+					$value['contract'] = $all_contract[$value['app_un_contract_type']];	
+					
+					$value['activity'] = $value['app_un_contract_activities'];
+				}
+			
+				
+				
+			
 			}
 
 		}

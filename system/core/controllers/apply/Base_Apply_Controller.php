@@ -43,7 +43,15 @@ class Base_Apply_Controller extends Usermeta_Controller{
 
 	public function get_main(){
 
-		$app  = (array)$this->user;
+
+		$app   = null ;
+		if(!$this->app){
+			$app = (array)$this->user;
+		}else{
+			$app = $this->app;
+		}
+		
+		
 		return $this->load->view('apply_final/parts/main',[
 				'app'=>$app,
 				'url'=> base_url().'apply/new/'.$this->type.'/main/'.$this->offer['id'],
@@ -522,7 +530,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	
 	public function delete($offer_id){
 		
-		$this->app($offer_id);
+		$this->app_by_id($offer_id);
 
 		$this->Crud->delete(['id'=>$this->app['id']],'application');
 		$files  =  $this->Crud->get_all('application_files',['application_id'=>$this->app['id']]);
@@ -537,7 +545,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		}
 	
 		$this->_errors[] = anchor(base_url().'user/offers/',lang('deleted'));
-		redirect(base_url().'apply/new/'.$this->type.'/index/'.$offer_id);
+		redirect(base_url().'apply/new/'.$this->type.'/index/');
 	}
 	
 	

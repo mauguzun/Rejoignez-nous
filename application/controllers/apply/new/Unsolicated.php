@@ -62,7 +62,7 @@ class Unsolicated extends  Unsolicated_Controller{
 				'applicaiton_id'=>$this->app ? $this->app['id'] :  null,
 				'uploaders'=>$this->uploaders,
 				'status'=>json_encode($this->statuses),
-				'filled'=> $this->app['filled'] ,
+				'filled'=>  $this->app['filled'] ,
 				'type'=>$this->type,
 			]);
 		$this->show_footer();
@@ -70,7 +70,14 @@ class Unsolicated extends  Unsolicated_Controller{
 	
 	
 	
-	
+	public function start(){
+		
+		$this->show_header([lang('unsolicited_application_applys'),lang('unsolicited_application_applys'),lang('unsolicited_application_applys')]);
+
+
+		$this->load->view('apply_final/unsolicated/question');
+		$this->show_footer();
+	}
 
 }
 

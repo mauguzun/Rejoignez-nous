@@ -8,7 +8,9 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 		
 		<div class="row row_mb">
 			<div class="col-md-6">
-				<div class="input_label"><?= lang('salary')?></div>
+				<div class="input_label">
+				<span>*</span>
+				<?= lang('salary')?></div>
 			
 				<input value="<?= $misc['salary']? $misc['salary'] : null ;?>" name="salary" class="form-control" required />
 			</div>

@@ -1,0 +1,295 @@
+.uploader
+{
+	width: 100%;
+	color: #92AAB0;
+	text-align: center;
+	vertical-align: middle;
+	padding: 30px 0px;
+	margin-bottom: 10px;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.uploader div.or
+{
+	font-size: 50%;
+	font-weight: bold;
+	color: #C0C0C0;
+	padding: 10px;
+}
+
+.uploader div.browser label
+{
+	background-color: #f0f0f0;
+	padding: 5px 15px;
+	color: #676;
+	padding: 6px 0px;
+	font-size: 40%;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 2px;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: 300px;
+	margin: 20px auto 0px auto;
+
+	box-shadow: 3px 3px 3px #f0f0f0;
+}
+
+.uploader div.browser span
+{
+	cursor: pointer;
+}
+.edit{
+	padding: 15px;
+	/*	margin:15px;
+	*/}
+.edit .title{
+	height: 20px !important;
+	font-size: 11px;
+	text-align: center;;
+	overflow: hidden;;
+	
+}
+
+.uploader div.browser input
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border: solid transparent;
+	border-width: 0 0 100px 200px;
+	opacity: .0;
+	filter: alpha(opacity= 0);
+	-o-transform: translate(250px,-50px) scale(1);
+	-moz-transform: translate(-300px,0) scale(4);
+	direction: ltr;
+	cursor: pointer;
+}
+
+.edit{
+	padding: 15px;
+	/*	margin:15px;
+	*/}
+.edit .title{
+	height: 20px !important;
+	font-size: 11px;
+	text-align: center;;
+	overflow: hidden;;
+	
+}
+
+.uploader div.browser input
+{
+	
+	opacity: .0;
+	filter: alpha(opacity= 0);
+	-o-transform: translate(250px,-50px) scale(1);
+	-moz-transform: translate(-300px,0) scale(4);
+	direction: ltr;
+	cursor: pointer;
+}
+
+
+#loglist,.filelist
+{
+	list-style: none  !important;
+	text-align: center;
+}
+#loglist progress
+{
+	display: block;
+	width: 90%;
+	margin-left: 5%;
+	color: white;
+	height: 10px;
+}
+#error
+{
+	color: red;
+	height: 50px;
+	text-align: center;;
+}
+
+i[data-circle]
+{
+	cursor: pointer;
+}
+
+.filelist
+{
+	padding: 15px;
+}
+.filelist div
+{
+	width: 100px;
+	display: inline-block;
+	height: 100px;
+
+
+}
+.edit img
+{
+	width: 100px !important;
+	height: 100px !important;
+	object-fit: cover;
+}
+.filelist div i
+{
+	cursor: pointer;
+	padding-left: 5px;
+}
+
+
+
+.filelist
+{
+	padding: 15px;
+}
+.filelist div
+{
+	width: 100px;
+	display: inline-block;
+	height: 100px;
+
+
+}
+.filelist div img
+{
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+.filelist div i
+{
+	cursor: pointer;
+	padding-left: 5px;
+}
+@media screen and (max-width: 1023px){
+	#sidebar-left .eap-sidenav {
+		display: block !important;
+	}
+}
+
+
+
+.illarion {
+	position: relative;
+	border: none !important;
+	padding: 0px;
+	vertical-align: middle;
+}
+
+.illarion>.fas {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25px;
+}
+
+.disabled {
+	background-color: white !important;
+}
+
+.notfilled {
+	background-color: #ED747C!important;
+	
+}
+.filled {
+	color: white !important;
+}
+
+.filled {
+	background-color: #1EC857 !important;
+	color: white !important;
+	border: none;
+}
+
+.filled>.mb-0>.btn-link {
+	font-weight: bold;
+	color: white !important;
+}
+
+.notfilled>.mb-0>.btn-link {
+	font-weight: bold;
+	color: white !important;
+}
+
+a .btn-danger {
+	color: #fff;
+	background-color: #ED747C!important;
+	border: none !important;
+	outline: none !important;
+	margin-bottom: 10px !important;
+}
+
+.trash>.fa-trash {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+a>.fa-download {
+	margin-top: 10px;
+	float: right;
+	font-size: 18px;
+}
+
+.tooltip.left .tooltip-arrow {
+	top: 22px !important;
+}
+.tooltip.left {
+	top: 0 !important;
+	left: 72px !important;
+	display: block;
+	position: absolute !important;
+}
+
+.tooltip_illarion {
+	position: relative !important;
+}
+
+.card-header {
+	background-color: !important;
+}
+.card-header>.mb-0>.btn-link {
+	font-weight: bold;
+	
+}
+
+.my.btn-info, .my.btn-danger{
+	color: #fff;
+	border: none !important;
+	outline: none !important;
+	margin-bottom: 10px !important;
+	background-image: none;
+	border-radius: .25rem;
+}
+.my.btn-info{
+	background: #3487DB!important;
+}
+.my.btn-danger{
+	background: #ED747C!important;
+}
+
+.input_label{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+	margin-top: 5px;
+	
+}
+.input_label span{
+	font-weight: bold;
+	color: red;
+	padding-right: 5px;
+}

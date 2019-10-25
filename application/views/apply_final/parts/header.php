@@ -61,7 +61,7 @@
 		<br>
 		<span v-html="message"></span>
 
-		<br>
+		<br><br>
 
 	</div>
 </div>
