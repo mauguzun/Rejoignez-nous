@@ -45,6 +45,19 @@
 				
 			},
 			methods: {
+				
+				makeTooltip(){
+					
+					let title = document.querySelectorAll('.input_label');
+					title.forEach(function(element) {
+							element.setAttribute('title',element.innerHTML);
+							element.setAttribute('data-toggle','tooltip');
+							element.setAttribute('data-toggle','tooltip');
+							
+						});
+					$('.input_label').tooltip({html:true})
+				},
+				
 				send(submitEvent){
 					this.loader = true;
 					this.setDefault();
@@ -220,7 +233,7 @@
 							{
 			
 								$(up).find('#error').html();
-							//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
+								//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
 							},
 							onUploadProgress: function(id, percent)
 							{
@@ -302,7 +315,7 @@
 				this.setupCalendar();
 				// this.setAllUploader();
 				this.loader= false;
-				
+				this.makeTooltip();	
 				
 			},
 

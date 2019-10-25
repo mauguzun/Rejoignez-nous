@@ -17,11 +17,11 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'professional',
+				active:'main',
 
 				loader:true,
 
-
+				application_unsolicated_formattion:[],
 				langRows :[],
 				expRows:[],			
 				professional:[],
@@ -105,7 +105,17 @@
 					}
 				
 				},
-
+				makeTooltip(){
+					
+					let title = document.querySelectorAll('.input_label');
+					title.forEach(function(element) {
+							element.setAttribute('title',element.innerHTML);
+							element.setAttribute('data-toggle','tooltip');
+							element.setAttribute('data-toggle','tooltip');
+							
+						});
+					$('.input_label').tooltip({html:true})
+				},
 				showExtra(){
 					alert(this.models.education_level_id)
 				
@@ -139,6 +149,7 @@
 				},
 				addRow(arg){
 					this._getArray(arg).push({id: new Date()/1000,flag : false});
+					this.makeTooltip();
 				},
 				removeRow(row,arg){
 					let array  = this._getArray(arg);	
@@ -272,10 +283,10 @@
 
 				// only for pnc
 			
-				if (this.$refs.education_level_id.id)
+				/*	if (this.$refs.education_level_id.id)
 				{
-					this.models.education_level_id = this.$refs.education_level_id.id
-				}
+				this.models.education_level_id = this.$refs.education_level_id.id
+				}*/
 				if(this.$refs.aviability.id)
 				{
 					this.models.aviability = this.$refs.aviability.id
@@ -304,11 +315,9 @@
 				// this.setAllUploader();
 				this.loader= false;
 				
-				
+				this.makeTooltip();
 			},
 
-				
-			
 		});
 
 

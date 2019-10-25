@@ -15,7 +15,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name]); ?>
 			<? foreach(['b737_classic','b737_ng'] as $name):?>
 		
 			<div class="col-md-6">
-				<div class="input_label"><?= lang($name)?></div>
+				<div title="<?= lang($name)?>" class="input_label"><?= lang($name)?></div>
 				
 				<? $sel = isset($row[$name]) ? $row[$name] : null ?>
 				<?= 			form_dropdown($name, 

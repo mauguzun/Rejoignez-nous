@@ -742,9 +742,9 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			'application_pnt_total_flight_hours',
 			'application_un',
 			'application_un_activity',		
-			'application_unsolicated_proffesional'		
+			'application_unsolicated_proffesional'		,
 											
-	
+			'application_unsolicated_formattion'
 			
 			
 		];

@@ -61,7 +61,19 @@
 				
 			},
 			methods: {
-				
+				makeTooltip(){
+					
+					let title = document.querySelectorAll('.input_label');
+					title.forEach(function(element) {
+							element.setAttribute('title',element.innerHTML);
+							element.setAttribute('data-toggle','tooltip');
+							element.setAttribute('data-toggle','tooltip');
+							
+						});
+					$('.input_label').tooltip({html:true})
+					
+					
+				},
 				more(event){
 					let data  = event.target
 					let value  = data.value;
@@ -225,10 +237,8 @@
 				
 				},
 				addRow(arg){
-					
-					
 					this._getArray(arg).push({id: new Date()/1000,flag : false});
-				
+					this.makeTooltip();
 				},
 				removeRow(row,arg){
 					let array  = this._getArray(arg);	
@@ -392,7 +402,7 @@
 				<? endif;?>
 				this.loader= false;
 
-			
+		this.makeTooltip();	
 			},
 
 				

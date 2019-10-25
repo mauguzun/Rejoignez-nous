@@ -10,7 +10,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<? foreach(['aeronautical_baccalaureate','complementary_mention_b1','complementary_mention_b2'] as $name):?>
 		
 			<div class="col-md-4">
-				<div class="input_label"><?= lang($name)?></div>
+				<div title="<?= lang($name)?>" class="input_label"><?= lang($name)?></div>
 				
 				<? $sel = isset($row[$name]) ? $row[$name] : null ?>
 				<?= 			form_dropdown($name, 
@@ -36,7 +36,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				<? foreach(['licenses_b1','licenses_b2'] as $name):?>
 		
 			<div class="col-md-4">
-				<div class="input_label"><?= lang($name)?></div>
+				<div title="<?= lang($name)?>" class="input_label"><?= lang($name)?></div>
 				
 				<? $sel = isset($row[$name]) ? $row[$name] : null ?>
 				<?= 			form_dropdown($name, 

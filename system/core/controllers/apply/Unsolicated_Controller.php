@@ -16,8 +16,9 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		    
 		'main'=>'application',
 		'position'=>'application_un',
-		'education'=>'last_level_education',
-		'foreignlang'=>'application_english_frechn_level',
+		/*'education'=>'last_level_education',*/
+		'foreignlang'=>'application_english_frechn_level',	
+		'application_unsolicated_formattion'=>'application_unsolicated_formattion',
 		'other'=>'applicaiton_misc',
 		'professional'=>'application_unsolicated_proffesional'
 	
@@ -434,7 +435,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		$data = [0];
 		if($this->app){
 			$misc = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
-			if ($misc){
+			if($misc){
 				$data = $misc;
 			}
 		}
@@ -460,9 +461,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		
 		$this->app_by_id($_POST['application_id']);
 		
-		
-	
-		
+
 		$this->form_validation->set_rules('company[]', lang('company'), 'trim|required|max_length[200]');
 		$this->form_validation->set_rules('industry[]', lang('industry'), 'trim|required|max_length[200]');
 		
@@ -484,6 +483,61 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 					'application_id'=> $this->app['id'],
 				];
 				$this->Crud->update_or_insert($row,'application_unsolicated_proffesional');
+			}
+			
+
+			$this->json['result'] = true;
+			$this->json['message'] = lang('saved');
+		}
+		else{
+		
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+
+		}
+		$this->json['application_id'] = $this->app['id'];
+		$this->show_json();
+	}
+	
+	protected function get_application_unsolicated_formattion(){
+		
+		$data = [0];
+		if($this->app){
+			$misc = $this->Crud->get_all('application_unsolicated_formattion',['application_id'=>$this->app['id']]);
+			if($misc){
+				$data = $misc;
+			}
+		}
+		return $this->load->view('apply_final/unsolicated/application_unsolicated_formattion',[
+				
+				'data'=>$data,
+				'url'=>base_url().'apply/new/'.$this->type.'/application_unsolicated_formattion/'],true);	
+	}
+	
+	public function application_unsolicated_formattion(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+
+		$this->form_validation->set_rules('school_type[]', lang('school_type'), 'trim|required|max_length[200]');
+
+		
+		if(  $this->form_validation->run() === true ){
+   
+
+			$this->Crud->delete(['application_id'=>$this->app['id']],'application_unsolicated_formattion');
+			for($i = 0 ; $i < count($_POST['school_type']) ; $i++){
+				$row = [
+					'school_type' => $_POST['school_type'][$i],
+					'school_name' => $_POST['school_name'][$i],
+					'qualification' => $_POST['qualification'][$i],
+					'location' => $_POST['location'][$i],
+					'start' => date_to_db($_POST['start'][$i]),	
+					'end'=>empty($_POST['end']) ?  NULL : date_to_db($_POST['end'][$i]),
+					'application_id'=> $this->app['id'],
+				];
+				$this->Crud->update_or_insert($row,'application_unsolicated_formattion');
 			}
 			
 

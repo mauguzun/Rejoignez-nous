@@ -41,7 +41,7 @@ class Unsolicated extends  Unsolicated_Controller{
 			'main'=>$this->get_main(),
 			'position'=>$this->get_position(),
 			'professional'=>$this->get_professional(),
-			'education'=>$this->get_education(),
+			'application_unsolicated_formattion'=>$this->get_application_unsolicated_formattion(),
 			'foreignlang'=>$this->get_lang(),
 
 			'other'=>$this->get_other()
