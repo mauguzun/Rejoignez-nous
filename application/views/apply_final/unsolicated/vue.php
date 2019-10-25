@@ -111,7 +111,6 @@
 					title.forEach(function(element) {
 							element.setAttribute('title',element.innerHTML);
 							element.setAttribute('data-toggle','tooltip');
-							element.setAttribute('data-toggle','tooltip');
 							
 						});
 					$('.input_label').tooltip({html:true})

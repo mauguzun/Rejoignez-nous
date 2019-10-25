@@ -126,6 +126,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 				$this->app_by_id($newAppId);
 			}
 			else{
+				unset($_POST['application_id']);
 				$this->Crud->update(['id'=>$this->app['id']],$_POST,'application');
 				$this->json['application_id'] = $this->app['id'];
 			}
@@ -372,17 +373,18 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		foreach($more_lang as $row){
 			$query['more_lang'][$row['language']] = $row['level'];
 		}
-
+	
 
 
 
 		$query['handicaped'] = $this->_have($query['handicaped']);
 
 
+		/*echo  "<pre>";
+		var_dump($query);
+		die();*/
 
-
-
-		$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
+	/*	$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
 			[
 				'expirience_duration' => "application_hr_expirience.duration  = expirience_duration.id",
 				'expirience_managerial' => 'application_hr_expirience.managerial = expirience_managerial.id'
@@ -390,7 +392,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		);
 
 		$query['hr_expirience'] = $hr_expirience;
-
+*/
 
 		$function = $this->Crud->get_joins(
 			'application_un',
@@ -410,8 +412,40 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 
 		$query['function'] = $function[0];
 		
+		$managerial = [];
+		foreach(['expirience_managerial'=>'managerial'] as $key=> $column){
+			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
+				$managerial[$value['id']] = $value[$column];
+			}
+			
+		}
+		;
 
+		$query['proff'] = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
+		$query['application_unsolicated_formattion'] = $this->Crud->get_all('application_unsolicated_formattion',['application_id'=>$this->app['id']]);
+		
+		
+		$yes = lang('yes_toogle');
+		foreach($query['proff'] as &$value){
+			unset($value['application_id']);
+			$value['country_id'] = $this->countries()[$value['country_id']];
+			$value['managerial'] = $managerial[$value['managerial']];
+			$value['current'] = $this->_have($value['current']);
+			$value['start'] = date_to_input($value['start']);
+			$value['end'] =  $value['end'] != '0000-00-00' ? date_to_input($value['end']) : null;
+		}
+		
+		foreach($query['application_unsolicated_formattion'] as &$value){
+			unset($value['application_id']);
 
+			$value['start'] = date_to_input($value['start']);
+			$value['end'] =  $value['end'] != '0000-00-00' ? date_to_input($value['end']) : null;
+		}
+		
+		
+		
+		/*$this->load->view('front/apply/printer',['query'=>$query]);
+		return;*/
 
 		//$this->load->view('front/apply/printer',['query'=>$query]);
 		require_once("application/libraries/dompdf/vendor/autoload.php");

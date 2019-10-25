@@ -38,6 +38,7 @@
 				'education_level'=>'education_level',
 
 			],
+			
 			/*'_languages'=>[
 			'french_level'=>'french_level',
 			'english_level'=>'english_level',
@@ -83,7 +84,7 @@
 							<?
 							foreach($data as $key=>$arr): ?>
 							<?
-							if(   $key == 'education') :?>
+							if(   $key == 'education'  ):?>
 							<tr>
 								<td colspan="2" class="">
 
@@ -93,6 +94,12 @@
 								</td>
 							</tr>
 							<? endif ;?>
+							
+							<? if($key == 'education' &&!isset($query['education'])) 
+							continue;
+							
+							?>
+							
 							<tr>
 								<td colspan="2" class="head">
 
@@ -104,11 +111,13 @@
 
 								</td>
 							</tr>
+							
 							<?
 							foreach($arr as $lang=>$value):?>
 							<tr>
 								<td>
 									<strong>
+								
 										<?= lang($lang)?>
 									</strong>
 								</td>
@@ -922,7 +931,7 @@
 							<td><strong><?= lang('type')?></strong></td>
 							<td><?= $query['function']['type']?></td>
 						</tr><tr>
-						   <? if (! empty($query['function']['activities']) ):?>
+							<? if(! empty($query['function']['activities']) ):?>
 							<td><strong><?= lang('activity')?></strong></td>
 							<td><?= $query['function']['activities']?></td>
 							
@@ -937,6 +946,78 @@
 
 			</div>
 			<? endif; ?>
+			
+			
+			<?
+			if( isset($query['proff'])) :?>
+
+			<div class="table-responsive">
+				<table class="table table-condensed">
+
+					<tbody>
+						<tr>
+							<td colspan="2" class="text-center head" >
+								<strong>
+									<?= lang('professional') ?>
+								</strong>
+							</td>
+						</tr>	
+						<? foreach($query['proff'] as $oneRow):?>
+						
+						<? foreach($oneRow as $k=>$v):?>
+						<tr>	
+							<td>
+								<?= lang($k)?>
+							</td>
+							<td>
+								<?= $v?>
+							</td>
+						</tr>	
+						
+						<? endforeach;?>
+						<? endforeach ;?>
+	
+					</tbody>
+				</table>
+			</div>
+			<!--pnt application_cfs-->
+			<? endif ;?>
+			
+			<?
+			if( isset($query['application_unsolicated_formattion'])) :?>
+
+			<div class="table-responsive">
+				<table class="table table-condensed">
+
+					<tbody>
+						<tr>
+							<td colspan="2" class="text-center head" >
+								<strong>
+									<?= lang('application_unsolicated_formattion') ?>
+								</strong>
+							</td>
+						</tr>	
+						<? foreach($query['application_unsolicated_formattion'] as $oneRow):?>
+						
+						<? foreach($oneRow as $k=>$v):?>
+						<tr>	
+							<td>
+								<?= lang($k)?>
+							</td>
+							<td>
+								<?= $v?>
+							</td>
+						</tr>	
+						
+						<? endforeach;?>
+						<? endforeach ;?>
+	
+					</tbody>
+				</table>
+			</div>
+			<!--pnt application_cfs-->
+			<? endif ;?>
+
 
 			<div class="table-responsive">
 				<table class="table table-condensed">
