@@ -1,6 +1,7 @@
 <?php
 if( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+$lang['professional'] = 'Professional background';
 
 $lang['register_page_link'] = 'J\'accepte la déclaration de confidentialité';
 $lang['our_offers'] = 'Nos offres';

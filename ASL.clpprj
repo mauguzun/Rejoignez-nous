@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\reg\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\licenses.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\successive_employer.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\exp.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsolicated.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -29,8 +31,14 @@
 			<error val="1;46;29;46;2502;1;"/>
 			<error val="1;145;19;145;2502;1;"/>
 		</errfile>
+		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\position.php">
+			<error val="41;5;70;5;2002;1;"/>
+		</errfile>
+		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\other.php">
+			<error val="40;5;68;5;2002;1;"/>
+		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\successive_employer.php">
-			<error val="53;7;80;7;2002;1;"/>
+			<error val="40;7;68;7;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\qualification_type.php">
 			<error val="53;65;66;65;2002;1;"/>
@@ -38,11 +46,10 @@
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\practice.php">
 			<error val="52;63;65;63;2002;1;"/>
-			<error val="40;6;67;6;2002;1;"/>
+			<error val="40;5;67;5;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\licenses.php">
 			<error val="0;21;41;21;2002;1;"/>
-			<error val="0;40;36;40;2002;1;"/>
 			<error val="0;48;36;48;2002;1;"/>
 			<error val="0;73;38;73;2002;1;"/>
 			<error val="53;6;80;6;2002;1;"/>
@@ -58,6 +65,10 @@
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\exp.php">
 			<error val="52;88;65;88;2002;1;"/>
 			<error val="40;9;67;9;2002;1;"/>
+		</errfile>
+		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php">
+			<error val="0;46;42;46;2002;1;"/>
+			<error val="40;6;67;6;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\other.php">
 			<error val="40;5;68;5;2002;1;"/>
@@ -89,7 +100,7 @@
 			<error val="40;7;68;7;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php">
-			<error val="0;55;69;55;2002;1;"/>
+			<error val="0;57;69;57;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\expirience.php">
 			<error val="49;50;62;50;2002;1;"/>
@@ -1082,18 +1093,19 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB_cache.php" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB.php" crc="1557729244"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnt_Controller.php" crc="1571911095"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1571751152"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php" crc="1571814820"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Hr_Controller.php" crc="1571751379"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1571826981"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php" crc="1571945705"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnt_Controller.php" crc="1571944581"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1571944536"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php" crc="1571944662"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Hr_Controller.php" crc="1571944698"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1571942507"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Usermeta_Controller.php" crc="1568711621"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\User_Controller.php" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Shared_Controller.php" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Un_Controller.php" crc="1569011775"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Pnt_Controller.php" crc="1568888337"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Pnc_Controller.php" crc="1568827760"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Mechanic_Controller.php" crc="1571752222"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Mechanic_Controller.php" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Hr_Controller.php" crc="1568888269"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Apply_Controller.php" crc="1570631176"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Ajax_Controller.php" crc="1557729244"/>
@@ -1116,14 +1128,14 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\index.html" crc="1557729244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Hooks.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Exceptions.php" crc="1557729242"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\Controller.php" crc="1571822944"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\Controller.php" crc="1571927461"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Config.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Common.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\CodeIgniter.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\Benchmark.php" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\index.html" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\.htaccess" crc="1557729242"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css" crc="1571756925"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\slick.css" crc="1557729242"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\my_custom_css.css" crc="1568212900"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\home-v2.css" crc="1557729242"/>
@@ -1136,68 +1148,68 @@
 		<file name="C:\OSPanel\domains\localhost\reg\static\js\update.js" crc="1568286807"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\js\site.js" crc="1570258905"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\js\notify.js" crc="1568207039"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\js\ajaxupload.js" crc="1571340745"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jvector\gdp-data.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.repeater\repeater-init.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.repeater\dff.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\renderer\canvas.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\jquery.plugin.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\easypiechart.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\angular.directive.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\jquery.easypiechart.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\easypiechart.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\easypiechart.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\angular.easypiechart.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\angular.easypiechart.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\easy-pie-chart.init.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\easy-pie-chart.init-old.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\idle\session-timeout-idle-init.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\idle\jquery.idletimer.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\idle\jquery.idletimeout.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\session-timeout-init.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\jquery.sessionTimeout.min.simple.modal.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\jquery.sessionTimeout.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-datatables-editable\jquery.dataTables.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-datatables-editable\datatables.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-datatables-editable\dataTables.bootstrap.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jqbootstrapvalidation\validation.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\horizontal-timeline\js\horizontal-timeline.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\horizontal-timeline\css\horizontal-timeline.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\formatter\jquery.formatter.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\formatter\jquery.formatter.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\date-paginator\date-paginator-custom.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\date-paginator\bootstrap-datepaginator.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\date-paginator\bootstrap-datepaginator.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\js\dataTables.select.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\js\dataTables.select.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.semanticui.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.semanticui.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.jqueryui.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.jqueryui.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.foundation.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.foundation.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.dataTables.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.dataTables.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap4.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap4.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\js\dataTables.scroller.min.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\js\dataTables.scroller.js" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.semanticui.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.semanticui.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.jqueryui.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.jqueryui.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.foundation.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.foundation.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.dataTables.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.dataTables.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.bootstrap4.min.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.bootstrap4.css" crc="1533796032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.bootstrap.min.css" crc="1533796032"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\js\ajaxupload.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jvector\jquery-jvectormap-2.0.2.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jvector\gdp-data.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.repeater\repeater-init.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.repeater\dff.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\renderer\canvas.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\jquery.plugin.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\easypiechart.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\src\angular.directive.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\jquery.easypiechart.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\easypiechart.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\easypiechart.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\angular.easypiechart.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\dist\angular.easypiechart.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\easy-pie-chart.init.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery.easy-pie-chart\easy-pie-chart.init-old.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\idle\session-timeout-idle-init.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\idle\jquery.idletimer.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\idle\jquery.idletimeout.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\session-timeout-init.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\jquery.sessionTimeout.min.simple.modal.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-sessiontimeout\jquery.sessionTimeout.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-datatables-editable\jquery.dataTables.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-datatables-editable\datatables.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jquery-datatables-editable\dataTables.bootstrap.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\jqbootstrapvalidation\validation.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\horizontal-timeline\js\horizontal-timeline.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\horizontal-timeline\css\horizontal-timeline.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\formatter\jquery.formatter.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\formatter\jquery.formatter.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\date-paginator\date-paginator-custom.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\date-paginator\bootstrap-datepaginator.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\date-paginator\bootstrap-datepaginator.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\js\dataTables.select.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\js\dataTables.select.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.semanticui.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.semanticui.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.jqueryui.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.jqueryui.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.foundation.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.foundation.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.dataTables.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.dataTables.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap4.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap4.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Select-1.2.5\css\select.bootstrap.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\js\dataTables.scroller.min.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\js\dataTables.scroller.js" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.semanticui.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.semanticui.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.jqueryui.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.jqueryui.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.foundation.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.foundation.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.dataTables.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.dataTables.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.bootstrap4.min.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.bootstrap4.css" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\icon\Downloads\Materialart v1.0 - Powerful Material Admin Template\materialarthtml-10\assets\extra-libs\DataTables_old1\Scroller-1.4.4\css\scroller.bootstrap.min.css" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.zh-TW.min.js" crc="1557729238"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.zh-CN.min.js" crc="1557729238"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.vi.min.js" crc="1557729238"/>
@@ -1264,7 +1276,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.bg.min.js" crc="1557729234"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.az.min.js" crc="1557729234"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\locales\bootstrap-datepicker.ar.min.js" crc="1557729234"/>
-		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css" crc="1571852970"/>
+		<file name="C:\OSPanel\domains\localhost\reg\css\front\css\style.css" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\variables\variables-custom.less" crc="1557729232"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\variables\variables-core.less" crc="1557729232"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\less\core\mixins\nav-vertical-align.less" crc="1557729232"/>
@@ -3328,7 +3340,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\css\colors.css" crc="1557729072"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\css\bootstrap.min.css" crc="1557729072"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\css\bootstrap.css" crc="1557729072"/>
-		<file name="C:\OSPanel\domains\localhost\reg\css\back\my.css" crc="1571681722"/>
+		<file name="C:\OSPanel\domains\localhost\reg\css\back\my.css" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\ajax-bootstrap-select.min.js" crc="1557729072"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\print.css" crc="1557729072"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\welcome\welcome.php" crc="1557729072"/>
@@ -3343,7 +3355,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\data_edit_ajax.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\data-modal.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\clipboard.php" crc="1557729070"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\circle.php" crc="1571673131"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\circle.php" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\autocomplete.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\ajaxupload.php" crc="1557729070"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\js\ajaxtoogle.php" crc="1557729070"/>
@@ -3390,7 +3402,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnt\license_view.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnt\flight_hour.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnt\experience_in_instructor.php" crc="1557729068"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnc\expirience.php" crc="1571162152"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\pnc\expirience.php" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\language.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\form.php" crc="1557729068"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\apply\part\foreign_lang.php" crc="1568384967"/>
@@ -3455,7 +3467,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\show.php" crc="1557729064"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\manualay_create_application.php" crc="1568216783"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\jquery.php" crc="1557729064"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\header.php" crc="1571764650"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\header.php" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\footer.php" crc="1570821244"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\datatable.php" crc="1570730537"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\back\parts\add_with_upload.php" crc="1557729064"/>
@@ -3480,40 +3492,45 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\create_user.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\create_group.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\change_password.php" crc="1557729062"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\vue.php" crc="1571910339"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\successive_employer.php" crc="1571910817"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\qualification_type.php" crc="1571845779"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\practice.php" crc="1571842652"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\licenses.php" crc="1571838457"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\langs.php" crc="1571829001"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\index.php" crc="1571825565"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\experience_in_instructor.php" crc="1571856885"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\exp.php" crc="1571866793"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php" crc="1571911196"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php" crc="1571825804"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\other.php" crc="1571738831"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\index.php" crc="1571425527"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_expirience.php" crc="1571853741"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_education.php" crc="1571520454"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\upload.php" crc="1571417028"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\other.php" crc="1571740093"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\medical.php" crc="1571517705"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\main.php" crc="1571501394"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\loader.php" crc="1571478244"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\langs.php" crc="1571745855"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php" crc="1571758243"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\expirience.php" crc="1571745038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\eu.php" crc="1571502043"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\education.php" crc="1571731494"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\card_header.php" crc="1571424645"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\aviability.php" crc="1571520468"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\vue.php" crc="1571825791"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\langs.php" crc="1571770257"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\index.php" crc="1571765345"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\expirience.php" crc="1571815076"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\bach.php" crc="1571768243"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\hr\vue.php" crc="1571825814"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\hr\index.php" crc="1571731123"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\vue.php" crc="1571944923"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\position.php" crc="1571932798"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\other.php" crc="1571933929"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\index.php" crc="1571927397"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\begin.php" crc="1571939184"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\vue.php" crc="1571944440"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\successive_employer.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\qualification_type.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\practice.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\licenses.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\langs.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\index.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\experience_in_instructor.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\exp.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php" crc="1571944418"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\other.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\index.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_expirience.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_education.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\upload.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\other.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\medical.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\main.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\loader.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\langs.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php" crc="1571944947"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\expirience.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\eu.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\education.php" crc="1571939867"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\card_header.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\aviability.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\vue.php" crc="1571944402"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\langs.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\index.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\expirience.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\mechanic\bach.php" crc="1571920623"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\hr\vue.php" crc="1571944363"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\hr\index.php" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\drop_calendar.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\datalist.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\bot.php" crc="1557729062"/>
@@ -3524,7 +3541,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\models\Appresp.php" crc="1570631192"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\migrations\001_install_ion_auth.php" crc="1557729062"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\logs\index.html" crc="1557729062"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Usermenu.php" crc="1569071596"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Usermenu.php" crc="1571937689"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Topmenu.php" crc="1557729060"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Profiletabmenu.php" crc="1557729060"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\menu\Languagemenu.php" crc="1557729060"/>
@@ -3783,11 +3800,11 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Folderoffer.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Colors.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Bcrypt.php" crc="1557729038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php" crc="1571825873"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php" crc="1571920623"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\ion_auth_lang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\auth_lang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\admin_lang.php" crc="1568207276"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php" crc="1571825859"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\ion_auth_lang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\index.html" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\auth_lang.php" crc="1568290098"/>
@@ -3796,20 +3813,20 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\hooks\index.html" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\lang_helper.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\index.html" crc="1557729038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\date_helper.php" crc="1571411607"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\date_helper.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\core\index.html" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Zipapp.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Resetpassword.php" crc="1557729038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Profile.php" crc="1568812053"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Profile.php" crc="1571941128"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Offers.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php" crc="1557729038"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Getfile.php" crc="1571402333"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Getfile.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Foreignlang.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Download.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Aviability.php" crc="1557729038"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Apply_un.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Apply.php" crc="1557729036"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Appliedoffers.php" crc="1569079719"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Appliedoffers.php" crc="1571941275"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Address.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Viewuser.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Viewoffers.php" crc="1557729036"/>
@@ -3829,14 +3846,12 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Functions.php" crc="1568225654"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Edituser.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applicationsinresponse.php" crc="1568208620"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php" crc="1571651107"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Applications.php" crc="1571944724"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Apphistory.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Ajax.php" crc="1570810008"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\shared\Activity.php" crc="1568214601"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\help\Folder.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\help\Clear.php" crc="1568113565"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\debug_faker\User.php" crc="1557729036"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\debug_faker\UnApp.php" crc="1557729036"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\User.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_keywords.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Settings_help.php" crc="1568214806"/>
@@ -3856,7 +3871,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Delete.php" crc="1569071931"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Cv.php" crc="1569012004"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Covver_letter.php" crc="1569011668"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Begin.php" crc="1569074069"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Begin.php" crc="1571937531"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\unsolicited\Apply.php" crc="1569012051"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Vaccine_against_yellow_fever.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Total_flight_hours.php" crc="1557729034"/>
@@ -3865,12 +3880,12 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Printme.php" crc="1568886523"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Practice.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Photo_in_feet.php" crc="1557729034"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Medical_aptitudes.php" crc="1571824078"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Medical_aptitudes.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Mainlang.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Main.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Licenses.php" crc="1557729034"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Id_photo.php" crc="1557729032"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Foreignlang.php" crc="1571828910"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Foreignlang.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Fcl.php" crc="1557729032"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Expirience.php" crc="1557729032"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnt\Experience_in_instructor.php" crc="1557729032"/>
@@ -3908,10 +3923,12 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Aviability.php" crc="1557729030"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Apply.php" crc="1568888236"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\pnc\Aeronautical_experience.php" crc="1557729030"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnt.php" crc="1571906433"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php" crc="1571751663"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Mechanic.php" crc="1571753373"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Hr.php" crc="1571751632"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsolicated.php" crc="1571932657"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnt.php" crc="1571920622"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php" crc="1571920622"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Mechanic.php" crc="1571920622"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Hr.php" crc="1571920622"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Begin.php" crc="1571939136"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Printme.php" crc="1568884005"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Other.php" crc="1568306820"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\mechanic\Medical_aptitudes.php" crc="1557729030"/>
@@ -3941,7 +3958,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Covver_letter.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Aviability.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\hr\Apply.php" crc="1568887628"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\Ajaxupload.php" crc="1571411215"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\Ajaxupload.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\access\Pnt_Pnc_Hr_Admin.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\access\Pnt_Hr_Admin.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\access\Pnc_Hr_Admin.php" crc="1557729028"/>
@@ -3953,7 +3970,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Set.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Policy.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Offers.php" crc="1557729028"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php" crc="1557729028"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Offer.php" crc="1571920622"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Not.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\News.php" crc="1557729028"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\index.html" crc="1557729028"/>
@@ -3984,7 +4001,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\index.html" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\.htaccess" crc="1557729026"/>
 		<file name="C:\OSPanel\domains\localhost\reg\index.php" crc="1557729026"/>
-		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1571654417"/>
+		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1571921086"/>
 		<file name="C:\OSPanel\domains\localhost\reg\.htaccess" crc="1568112589"/>
 	</filescache>
 </project>

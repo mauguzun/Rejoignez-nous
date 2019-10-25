@@ -40,9 +40,10 @@ class Unsolicated extends  Unsolicated_Controller{
 			'header'=>$header,
 			'main'=>$this->get_main(),
 			'position'=>$this->get_position(),
+			'professional'=>$this->get_professional(),
 			'education'=>$this->get_education(),
 			'foreignlang'=>$this->get_lang(),
-			'expirience'=>$this->get_experience(),		
+
 			'other'=>$this->get_other()
 		];
 				

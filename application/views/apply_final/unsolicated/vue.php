@@ -5,7 +5,7 @@
 
 <script src="<?= base_url()?>/static/js/ajaxupload.js"></script>
 
-
+<script src="https://unpkg.com/v-tooltip"></script>
 <script>
 	let page =  new Vue({
 			el: "#content",
@@ -17,13 +17,14 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'main',
+				active:'professional',
 
 				loader:true,
 
 
 				langRows :[],
-				expRows:[],
+				expRows:[],			
+				professional:[],
 
 				models:{ 
 					education_level_id:null,
@@ -33,12 +34,7 @@
 				files:{
 					covver_letter:[],
 					cv:[],
-					certificate_of_flang:[],
-					medical_aptitude:[],
-					photo_in_feet:[],
-					passport:[],
-					vaccine_against_yellow_fever:[],
-					id_photo:[],
+				
 				},
 				uploaders:[],
 				statuses: JSON.parse('<?= $status ?>'),
@@ -125,6 +121,9 @@
 						case 'exp':
 						array = this.expRows;
 						break;
+						
+						default :
+						array = this[arg]
 					}
 					return array;
 				},
@@ -221,7 +220,7 @@
 							{
 			
 								$(up).find('#error').html();
-							//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
+								//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
 							},
 							onUploadProgress: function(id, percent)
 							{
@@ -277,10 +276,10 @@
 				{
 					this.models.education_level_id = this.$refs.education_level_id.id
 				}
-				// if(this.$refs.aviability.id)
-				// {
-				// 	this.models.aviability = this.$refs.aviability.id
-				// }
+				if(this.$refs.aviability.id)
+				{
+					this.models.aviability = this.$refs.aviability.id
+				}
  
 			
 

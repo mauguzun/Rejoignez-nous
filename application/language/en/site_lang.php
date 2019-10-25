@@ -230,6 +230,7 @@ $lang['application'] = 'Application';
 $lang['applied_offers'] = 'Offers I have applied for';
 $lang['location'] = 'Location';
 $lang['date'] = 'Date';
+
 $lang['in_law'] = ' In accordance with the law "Informatique et Liberte" of January 6, 1978, you have a right to access, modify, rectify and delete date concerning you.';
 $lang['uploaded_successed'] = 'Uploaded';
 $lang['upload_files'] = 'Uplaod files';
@@ -268,11 +269,14 @@ $lang['Please follow'] = 'Please follow the following steps to create your accou
 $lang['click here to login'] = 'click here to login ';
 $lang["Password don't match"] = "Password don't match";
 $lang['Password match'] = 'Password matches ';
+$lang['professional'] = 'Professional background';
 $lang['begin_new_application'] = 'begin_new_application';
 $lang['initially applied for the position of'] = 'initially applied for the position of';
-
+$lang['position_held'] = 'Position held';
 $lang['update_my_main_acc'] = 'update_my_main_acc';
 $lang['please_save_main'] = 'please_save_main';
+$lang['current'] = 'Current';
+$lang['role'] = 'Your main role';
 $lang['yes_toogle'] = [
 0=>'No',
 1=>'Yes'

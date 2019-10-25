@@ -18,9 +18,8 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		'position'=>'application_un',
 		'education'=>'last_level_education',
 		'foreignlang'=>'application_english_frechn_level',
-		'expirience'=>'application_hr_expirience',		
 		'other'=>'applicaiton_misc',
-
+		'professional'=>'application_unsolicated_proffesional'
 	
 	];
 	
@@ -113,7 +112,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 				$this->update_user_account($_POST);
 			}
 			
-			if (isset($_POST['application_id'])){
+			if(isset($_POST['application_id'])){
 				$this->app_by_id($_POST['application_id']);
 			}
 		
@@ -146,16 +145,91 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		$this->show_json();
 	}
 	
+	public function other(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+		
+		if(!isset($_POST['aviability'])  |   empty($_POST['aviability'])){
+			$_POST['aviability'] = $_POST['fake_aviability'];	
+		}
+		
+		
+		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
+		$this->form_validation->set_rules('aviability', lang('aviability'), 'trim|required|max_length[20]');		
+
+		if( $this->app &&   $this->form_validation->run() === true ){
+			
+			
+			unset($_POST['fake_aviability']);
+			
+			$_POST['aviability'] = date_to_db($_POST['aviability']);
+			$this->Crud->update_or_insert($_POST,'applicaiton_misc');
+			
+			
+			
+			$this->json['result'] = true;
+			$this->json['message']= lang('saved');
+			
+			
+		}
+		else{
+
+			$this->json['message'] =(validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+			$this->session->set_flashdata('message',$message);
+
+		}
+		
+		$this->json['app_id']= $_POST['application_id'];
+		$this->show_json();		
 	
+	}
 	
 	protected function get_other(){
 		
+		
+		$month     = new DateTime('now');
+		$month->add(new DateInterval('P1M'));
+		$month     = $month->format('d/m/Y');
+
+		$month_two = new DateTime('now');
+		$month_two->add(new DateInterval('P2M'));
+		$month_two = $month_two->format('d/m/Y');
+		
+		$month_tree = new DateTime('now');
+		$month_tree->add(new DateInterval('P3M'));
+		$month_tree = $month_tree->format('d/m/Y');
+
+		////  append current date )
+		$list      = [
+			date('d/m/Y') => lang('Immédiate'),
+			$month=>lang('Préavis 1 mois'),
+			$month_two => lang('Préavis 2mois'),			
+			$month_tree => lang('Préavis 3mois'),
+			0=>lang('calendar'),
+		];
+		$date      = date("d/m/Y") ;
+		
+		
+		$date = null;
+		if($this->app){
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],
+				'applicaiton_misc');
+				
+			
+			if($row && $row['aviability']){
+				$date=  date_to_input($row['aviability']);
+				$list = [$date=>$date] + $list;
+			}			
+		}
+
 		$misc =null;
 		if($this->app){
 			$misc = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
 		}
-		return $this->load->view('apply_final/parts/other',[
-
+		return $this->load->view('apply_final/unsolicated/other',[
+				'list'=>$list,
+				'id'=>$date,
 				'misc'=>$misc,
 				'url'=>base_url().'apply/new/'.$this->type.'/other/'],true);
 	}
@@ -233,8 +307,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 	}
 	
 	
-	public function printer($app_id=NULL)
-	{
+	public function printer($app_id=NULL){
 
 		
 		
@@ -295,8 +368,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 			["application_languages_level.application_id"=>$this->app['id']]
 		);
 		$query['more_lang'] = [];
-		foreach($more_lang as $row)
-		{
+		foreach($more_lang as $row){
 			$query['more_lang'][$row['language']] = $row['level'];
 		}
 
@@ -356,4 +428,76 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 
 	}
 	
+	
+	protected function get_professional(){
+		
+		$data = [0];
+		if($this->app){
+			$misc = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
+			if ($misc){
+				$data = $misc;
+			}
+		}
+		
+		$managerial = [];
+		foreach(['expirience_managerial'=>'managerial'] as $key=> $column){
+			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
+				$managerial[$value['id']] = $value[$column];
+			}
+			
+		}
+		
+		return $this->load->view('apply_final/unsolicated/professional',[
+				'countries'=>$this->countries(),
+				'managerial'=>$managerial,
+				'data'=>$data,
+				'url'=>base_url().'apply/new/'.$this->type.'/professional/'],true);
+				
+				
+	}
+	
+	public function professional(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+		
+	
+		
+		$this->form_validation->set_rules('company[]', lang('company'), 'trim|required|max_length[200]');
+		$this->form_validation->set_rules('industry[]', lang('industry'), 'trim|required|max_length[200]');
+		
+		if(  $this->form_validation->run() === true ){
+   
+
+			$this->Crud->delete(['application_id'=>$this->app['id']],'application_unsolicated_proffesional');
+			for($i = 0 ; $i < count($_POST['company']) ; $i++){
+				$row = [
+					'company' => $_POST['company'][$i],
+					'industry' => $_POST['industry'][$i],
+					'role' => $_POST['role'][$i],
+					'position_held' => $_POST['position_held'][$i],
+					'country_id' => $_POST['country_id'][$i],
+					'current' => isset($_POST['current']) && $_POST['current'] == '1' ? 1: NULL,			
+					'managerial' => $_POST['managerial'][$i],
+					'start' => date_to_db($_POST['start'][$i]),	
+					'end'=>empty($_POST['end']) ?  NULL : date_to_db($_POST['end'][$i]),
+					'application_id'=> $this->app['id'],
+				];
+				$this->Crud->update_or_insert($row,'application_unsolicated_proffesional');
+			}
+			
+
+			$this->json['result'] = true;
+			$this->json['message'] = lang('saved');
+		}
+		else{
+		
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+
+		}
+		$this->json['application_id'] = $this->app['id'];
+		$this->show_json();
+	}
 }
