@@ -278,6 +278,20 @@ $lang['initially applied for the position of'] = 'initially applied for the posi
 
 $lang['update_my_main_acc'] = 'update_my_main_acc';
 $lang['please_save_main'] = 'please_save_main';
+
+$lang['qualification'] = 'Qualification';
+$lang['please_save_main'] = 'please_save_main';
+$lang['current'] = 'Current';
+$lang['role'] = 'Your main role';
+$lang['Would you like to apply for a position as a Commercial Flight Attendant or Technical Flight Attendant
+'] = 'Would you like to apply for a position as a Commercial Flight Attendant or Technical Flight Attendant
+';
+$lang['Technical Flight Attendanto'] = 'Technical Flight Attendanto';
+$lang['Commercial Flight Attendant'] = 'Commercial Flight Attendant';
+
+
+
+
 $lang['yes_toogle'] = [
 0=>'No',
 1=>'Yes'
