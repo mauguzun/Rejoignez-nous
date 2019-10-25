@@ -107,13 +107,7 @@
 				},
 				makeTooltip(){
 					
-					let title = document.querySelectorAll('.input_label');
-					title.forEach(function(element) {
-							element.setAttribute('title',element.innerHTML);
-							element.setAttribute('data-toggle','tooltip');
-							
-						});
-					$('.input_label').tooltip({html:true})
+					setupTool()
 				},
 				showExtra(){
 					alert(this.models.education_level_id)

@@ -63,13 +63,16 @@ $ref = $name ;
 
 			<? foreach(['start','end'] as $row ):?>
 			<div  class="col-md-4">
-				<div class="input_label">
+				<div
+				
+				
+				 class="input_label">
 				
 					<? if($row == 'start') :?>
 				
 					<span>*</span>
 					<? endif ?>
-					<?= lang(str_replace('[]','',$row))?>
+					<?= lang($row)?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) && $onedata[$row] != '0000-00-00' ? date_to_input($onedata[$row]) : null ?>"
