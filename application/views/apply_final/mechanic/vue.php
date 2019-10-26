@@ -82,6 +82,7 @@
 					}else{
 						this.error = true;
 					}
+					this.filled = result.filled
 					this.message = result.message;
 					this.loader = false;
 				},
@@ -192,6 +193,8 @@
 					this.loader=true;
 					$.getJSON('<?= base_url()?>/apply/new/mechanic/json_statuses/'+ this.application_id )
 					.then(e=>{
+						
+						
 							this.statuses = e.statuses;
 							this.filled = e.filled;
 							this.loader=false;
@@ -277,10 +280,10 @@
 				// {
 				// 	this.models.education_level_id = this.$refs.education_level_id.id
 				// // }
-				// if(this.$refs.aviability.id)
-				// {
-				// 	this.models.aviability = this.$refs.aviability.id
-				// }
+				 if(this.$refs.aviability.id)
+				 {
+				 	this.models.aviability = this.$refs.aviability.id
+				 }
  
 			
 

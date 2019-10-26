@@ -12,6 +12,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				<div class="input_label"><span>*</span>
 					<?= lang('aviability')?></div>
 				<select 
+				required=""
 				 ref="aviability"
 				 id="<?= $id ?>"
 				 class="form-control" v-model="models.aviability" name="fake_aviability">

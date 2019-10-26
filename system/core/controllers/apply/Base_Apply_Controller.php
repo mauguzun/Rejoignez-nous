@@ -5,7 +5,6 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	protected $user ;
 	protected $table = 'application';
 	
-	
 	protected $offer = null;
 	protected $type = 'hr';
 	
@@ -75,7 +74,16 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			unset($_POST['fake_aviability']);
 			
 			$_POST['aviability'] = date_to_db($_POST['aviability']);
-			$this->Crud->update_or_insert($_POST,'applicaiton_misc');
+			
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
+			if($row){
+				$row['aviability'] = $_POST['aviability'];
+				$this->Crud->update_or_insert($row,'applicaiton_misc');
+			}else{
+				$this->Crud->update_or_insert($_POST,'applicaiton_misc');
+			}
+
+		
 			$this->json['result'] = true;
 			$this->json['message'] = lang('saved');
 
@@ -84,7 +92,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			$this->json['message']= (validation_errors() ? validation_errors() :
 				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 		}	
-		$this->json['app_id']= $_POST['application_id'];
+		$this->json['application_id']= $_POST['application_id'];
 		$this->show_json();		
 	}
 	
@@ -184,7 +192,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		}else{
 			$this->json['message'] = (validation_errors() ? validation_errors() :($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 		}
-		$this->json['app_id']= $_POST['application_id'];
+		$this->json['application_id']= $_POST['application_id'];
 		$this->show_json();
 	}
 
@@ -239,7 +247,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			$this->json['result'] = FALSE;
 		}
 		
-		$this->json['app_id']= $_POST['application_id'];
+		$this->json['application_id']= $_POST['application_id'];
 		
 		$this->show_json();
 		
@@ -295,7 +303,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		}
 		
 		$this->app_by_id($_POST['application_id']);
-		$this->json['app_id']= $_POST['application_id'];
+		$this->json['application_id']= $_POST['application_id'];
 		$this->show_json();
 	}
 	
@@ -363,7 +371,10 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		if($this->app){
 			$this->set_statuses($this->app['id']);
 			$this->json['statuses'] = $this->statuses;
+			
+			$this->app_by_id($this->app['id']);  
 			$this->json['filled'] = $this->app['filled'] == 1 ? true:false;
+			
 		}
 		
 		// 1, make steps
@@ -528,8 +539,11 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	
 	
 	
-	public function delete($offer_id){
+	public function delete($offer_id=NULL){
 		
+		if(!$offer_id){
+			die();
+		}
 		$this->app_by_id($offer_id);
 
 		$this->Crud->delete(['id'=>$this->app['id']],'application');
@@ -574,6 +588,12 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
 		
 		if( $this->app &&   $this->form_validation->run() === true ){
+			
+			
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
+			if($row){
+				$_POST['aviability'] = $row['aviability'];
+			}
 			
 			$this->Crud->update_or_insert($_POST,'applicaiton_misc');
 			$this->json['result'] = true;
@@ -716,12 +736,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->show_json();
 	}
 	
-	/**
-	* 
-	* @param strinh $application_id
-	* @return
-	*/
-	protected function set_statuses($application_id){}
+	
 	/**
 	* @return array
 	*/
@@ -769,4 +784,84 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		return $arg > 0  ? $have[1] : $have[0];
 
 	}
+	
+	
+
+	protected function set_statuses($app_id){
+	 	
+
+		$setNotFilled = false;
+		
+		foreach($this->step_table as $stp=>$table){
+			
+			// let do if app 
+			if($stp == 'main'){
+				$this->statuses[$stp] = 'filled';
+				continue;
+			}
+			
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],$table);
+			
+			$this->statuses[$stp] =  'notfilled';
+			if($stp == 'aviability'){
+				
+				if($row && !empty($row['aviability'])){
+					$this->statuses[$stp]  = 'filled';
+				}else{
+					$setNotFilled = true;
+					
+				}
+				
+			}else if($stp == 'other'){
+
+				if($row && !empty($row['salary'])){
+
+					$this->statuses[$stp]  = 'filled';
+				}else{
+					$setNotFilled = true;
+
+				}	
+			}else if(!$row){
+				$setNotFilled = true;
+
+			}else{				
+				$this->statuses[$stp] = 'filled';
+			}
+			
+		} 
+		
+
+		
+		foreach($this->uploaders as $type){
+			
+			if(count($this->Crud->get_all('application_files',
+						['application_id'=>$this->app['id'] ,'type'=>$type])) == 0){
+				$this->statuses[$type] = 'notfilled';
+				if($type != 'covver_letter'){
+					$setNotFilled = true;
+				}
+			}else{
+				$this->statuses[$type] = 'filled';
+			}
+			
+		}
+		
+
+		
+		if($setNotFilled){
+			$this->Crud->update(['id'=>$app_id],['filled'=>0],'application');
+			$this->app_by_id($app_id);
+		}
+		else{
+			$this->app_by_id($app_id);
+			if($this->app['filled'] == 0 ){
+				// only one time !!! 
+				$this->Crud->update(['id'=>$this->app['id']],['filled'=>1],'application');
+				$this->application_done_email();
+			}
+		}
+	}
+
+	
+	
 }

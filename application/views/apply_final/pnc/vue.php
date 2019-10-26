@@ -87,6 +87,7 @@
 					}else{
 						this.error = true;
 					}
+					this.filled = result.filled
 					this.message = result.message;
 					this.loader = false;
 				},

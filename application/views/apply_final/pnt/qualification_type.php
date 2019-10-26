@@ -20,7 +20,7 @@ $ref = 'quality';
 		    
 			<div class="col-md-2">
 				<div class="input_label">
-					<?= lang('aircaft_type')?>
+				<span>*</span>		<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
@@ -33,7 +33,7 @@ $ref = 'quality';
 			<? foreach(['last_online_check[]','last_simulator_control[]','last_flight[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
@@ -67,7 +67,7 @@ $ref = 'quality';
 			
 			<div class="col-md-2">
 				<div class="input_label">
-					<?= lang('aircaft_type')?>
+				<span>*</span>		<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
@@ -80,7 +80,7 @@ $ref = 'quality';
 			<? foreach(['last_online_check[]','last_simulator_control[]','last_flight[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 

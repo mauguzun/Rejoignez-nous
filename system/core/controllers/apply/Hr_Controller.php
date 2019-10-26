@@ -6,7 +6,7 @@ class Hr_Controller extends Base_Apply_Controller{
 	
 	protected $type = 'hr';
 	
-	protected $statuses = [];
+
 	
 	protected $uploaders  = 
 	[   
@@ -28,72 +28,10 @@ class Hr_Controller extends Base_Apply_Controller{
 	
 
 	public function __construct($page = NULL,$meta = NULL ){
-
-		parent::__construct();
-		
+		parent::__construct();		
 	}
 	
 	
-	protected function set_statuses($app_id){
-	 	
-	 	 
-		// omg we dont have main row in applicaiton ? pls return 
-	
-		// check if we already filler?
-		
-		$setNotFilled = false;
-		
-		foreach($this->step_table as $stp=>$table){
-			
-			// let do if app 
-			if($stp == 'main'){
-				$this->statuses[$stp] = 'filled';
-				continue;
-			}
-			
-			
-			if(!$this->Crud->get_row(['application_id'=>$this->app['id']],$table)){
-				$setNotFilled = true;
-				$this->statuses[$stp] = 'notfilled';
-			}else{
-				
-				
-				$this->statuses[$stp] = 'filled';
-			}
-			
-		}
-		
-		foreach($this->uploaders as $type){
-			
-			if(count($this->Crud->get_all('application_files',
-						['application_id'=>$this->app['id'] ,'type'=>$type])) == 0){
-				$this->statuses[$type] = 'notfilled';
-				if($type != 'covver_letter'){
-					$setNotFilled = true;
-				}
-			}else{
-				$this->statuses[$type] = 'filled';
-			}
-			
-		}
-		
-	
-		
-		if($setNotFilled){
-			$this->Crud->update(['id'=>$app_id],['filled'=>0],'application');
-			$this->app_by_id($app_id);
-		}
-		else{
-			$this->app_by_id($app_id);
-			if($this->app['filled'] == 0 ){
-				// only one time !!! 
-				$this->Crud->update(['id'=>$this->app['id']],['filled'=>1],'application');
-				$this->application_done_email();
-			}
-		}
-	}
-	
-
 	
 	public function printer($app_id){
 
@@ -129,7 +67,7 @@ class Hr_Controller extends Base_Apply_Controller{
 			users.email as email,
 			countries.name as country,
 			application.id as aid,
-						users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
 
 			last_level_education.*,
 			application_english_frechn_level.*,
@@ -181,8 +119,7 @@ class Hr_Controller extends Base_Apply_Controller{
 		$query['hr_expirience'] = $hr_expirience;
 		
 	
-		if($query)
-		{
+		if($query){
 			//$this->load->view('front / apply / printer',['query'=>$query]);
 			require_once("application/libraries/dompdf/vendor/autoload.php");
 

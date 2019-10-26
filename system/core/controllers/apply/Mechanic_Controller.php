@@ -13,9 +13,7 @@ class Mechanic_Controller extends Base_Apply_Controller{
 		'covver_letter','cv','complementary_documents'];
 		
 	protected $step_table = [
-		    
-		
-		
+
 		'main'=>'application',
 		'aeronautical_baccalaureate'=>'mechanic_baccalaureate',
 		'mainlang'=>'application_english_frechn_level',
@@ -34,61 +32,7 @@ class Mechanic_Controller extends Base_Apply_Controller{
 	}
 	
 	
-	protected function set_statuses($app_id){
-	 	
-	 	 
-		
-		
-		$setNotFilled = false;
-		
-		foreach($this->step_table as $stp=>$table){
-			
-			// let do if app 
-			if($stp == 'main'){
-				$this->statuses[$stp] = 'filled';
-				continue;
-			}
-			if(!$this->Crud->get_row(['application_id'=>$this->app['id']],$table)){
-				$setNotFilled = true;
-				$this->statuses[$stp] = 'notfilled';
-			}else{
-				
-				
-				$this->statuses[$stp] = 'filled';
-			}
-			
-		}
-		
-		foreach($this->uploaders as $type){
-			
-			if(count($this->Crud->get_all('application_files',
-						['application_id'=>$this->app['id'] ,'type'=>$type])) == 0){
-				$this->statuses[$type] = 'notfilled';
-				if($type != 'covver_letter'){
-					$setNotFilled = true;
-				}
-			}else{
-				$this->statuses[$type] = 'filled';
-			}
-			
-		}
-		
-	
-		
-		if($setNotFilled){
-			$this->Crud->update(['id'=>$app_id],['filled'=>0],'application');
-			$this->app_by_id($app_id);
-		}
-		else{
-			$this->app_by_id($app_id);
-			if($this->app['filled'] == 0 ){
-				// only one time !!! 
-				$this->Crud->update(['id'=>$this->app['id']],['filled'=>1],'application');
-				$this->application_done_email();
-			}
-		}
-	}
-	
+
 	
 	protected function get_aeronautical_baccalaureate(){
 		

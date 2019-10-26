@@ -17,7 +17,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<? foreach(['start[]','end[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+				<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
@@ -35,7 +35,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<? foreach(['school_name[]','qualification_obtained[]'] as $row ):?>
 			<div  class="col-md-2">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+						<span>*</span><?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
@@ -66,7 +66,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<? foreach(['start[]','end[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				@mouseover="setupCalendar()"
@@ -83,7 +83,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<? foreach(['school_name[]','qualification_obtained[]'] as $row ):?>
 			<div  class="col-md-2">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				required=""

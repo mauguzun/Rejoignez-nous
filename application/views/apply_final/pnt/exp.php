@@ -19,7 +19,7 @@ $ref = $name ;
 		    
 			<div class="col-md-6">
 				<div class="input_label">
-					<?= lang('aircaft_type')?>
+					<span>*</span>	<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
@@ -31,7 +31,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-					<?= lang('company')?>
+						<span>*</span><?= lang('company')?>
 				</div>
 				<input
 				type="text" 
@@ -44,7 +44,7 @@ $ref = $name ;
 			<? foreach(['total_hours[]','opl_hours[]','cdb_hours[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
@@ -61,7 +61,7 @@ $ref = $name ;
 			
 			<div class="col-md-2">
 				<div class="input_label">
-					<?= lang('last_flight')?>
+					<span>*</span>	<?= lang('last_flight')?>
 				</div>
 				<input
 				type="text" 
@@ -90,7 +90,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-					<?= lang('aircaft_type')?>
+					<span>*</span>	<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
@@ -101,7 +101,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-					<?= lang('company')?>
+					<span>*</span>	<?= lang('company')?>
 				</div>
 				<input
 				type="text" 
@@ -113,7 +113,7 @@ $ref = $name ;
 			<? foreach(['total_hours[]','opl_hours[]','cdb_hours[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<?= lang(str_replace('[]','',$row))?>
+					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				required=""
@@ -129,7 +129,7 @@ $ref = $name ;
 			
 			<div class="col-md-2">
 				<div class="input_label">
-					<?= lang('last_flight')?>
+						<span>*</span><?= lang('last_flight')?>
 				</div>
 				<input
 				type="text" 

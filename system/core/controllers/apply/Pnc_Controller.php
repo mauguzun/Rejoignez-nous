@@ -37,12 +37,7 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 	
 	
 	protected function set_statuses($app_id){
-	 	
-	 	 
-		// omg we dont have main row in applicaiton ? pls return 
-	
-		// check if we already filler?
-		
+
 		$setNotFilled = false;
 		
 		foreach($this->step_table as $stp=>$table){
@@ -245,7 +240,10 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 				'application_id' => $this->app['id'],
 				'car'=>$_POST['car']];
 	
-			
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
+			if($row){
+				$car['aviability'] = $row['aviability'];
+			}
 			$this->Crud->update_or_insert($car,'applicaiton_misc');
 			
 			$this->json['result'] = true;
