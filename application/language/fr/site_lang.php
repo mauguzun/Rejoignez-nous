@@ -265,20 +265,18 @@ $lang['Invalid Password'] = 'Invalid Password';
 $lang['Password accepted'] = 'Password accepted';
 $lang['Please use'] = 'Please use the form below to login. If you do not have an account yet, please';
 $lang['click here to create one'] = 'click here to create one';
-
 $lang['Please follow'] = 'Please follow the following steps to create your account.Already have an account? Please ';
 $lang['click here to login'] = 'click here to login ';
-
-$lang['Please follow'] = 'Please follow the following steps to create your account.Already have an account? Please ';
-$lang['click here to login'] = 'click here to login ';
+$lang['application_unsolicated_formattion'] = 'Formattion';
+$lang['school_type'] = 'School type';
+$lang['school_name'] = 'School title';
 $lang["Password don't match"] = "Password don't match";
-$lang['Password match'] = 'Password match ';
+$lang['Password match'] = 'Password matches ';
+$lang['professional'] = 'Professional background';
 $lang['begin_new_application'] = 'begin_new_application';
 $lang['initially applied for the position of'] = 'initially applied for the position of';
-
+$lang['position_held'] = 'Position held';
 $lang['update_my_main_acc'] = 'update_my_main_acc';
-$lang['please_save_main'] = 'please_save_main';
-
 $lang['qualification'] = 'Qualification';
 $lang['please_save_main'] = 'please_save_main';
 $lang['current'] = 'Current';
@@ -288,8 +286,6 @@ $lang['Would you like to apply for a position as a Commercial Flight Attendant o
 ';
 $lang['Technical Flight Attendanto'] = 'Technical Flight Attendanto';
 $lang['Commercial Flight Attendant'] = 'Commercial Flight Attendant';
-
-
 
 
 $lang['yes_toogle'] = [

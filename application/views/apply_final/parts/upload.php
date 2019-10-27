@@ -24,8 +24,9 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 
 
 
-			<div class="alert alert-light browser " role="alert">
-				<button type="button" class="btn btn-warning btn-block "><?= lang('Click to open the file Browser') ?></button>
+			<div   class="alert alert-light browser"  role="alert">
+				<button type="button"
+				 class="btn btn-warning btn-block illarionStyle"><?= lang('Click to open the file Browser') ?></button>
 				<input type="file" name="<?= $name ?>"
 				multiple="multiple" title='Click to add Files'>
 

@@ -249,7 +249,7 @@
 					
 								if(result.error !== undefined)
 								{
-									$(up).find('#error').append(result.error)
+									$(up).find('#error').html(result.error)
 								}
 								else
 								{

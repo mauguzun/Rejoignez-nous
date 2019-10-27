@@ -197,7 +197,7 @@ i[data-circle]
 }
 
 .disabled {
-	background-color: white !important;
+	background-color: #ECECEC !important;
 }
 
 .notfilled {
@@ -226,7 +226,7 @@ i[data-circle]
 
 a .btn-danger {
 	color: #fff;
-	background-color: #ED747C!important;
+	background-color: #82817c!important;
 	border: none !important;
 	outline: none !important;
 	margin-bottom: 10px !important;
@@ -293,3 +293,10 @@ a>.fa-download {
 	color: red;
 	padding-right: 5px;
 }
+.illarionStyle{
+	color: white !important;
+	background-color: #004b93 !important;
+	
+}
+
+disabled>.mb-0>.btn-link {color: #88888A !important;text-decoration: none;}

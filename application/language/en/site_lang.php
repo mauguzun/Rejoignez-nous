@@ -264,7 +264,6 @@ $lang['Invalid Password'] = 'Invalid Password';
 $lang['Password accepted'] = 'Password accepted';
 $lang['Please use'] = 'Please use the form below to login. If you do not have an account yet, please';
 $lang['click here to create one'] = 'click here to create one';
-
 $lang['Please follow'] = 'Please follow the following steps to create your account.Already have an account? Please ';
 $lang['click here to login'] = 'click here to login ';
 $lang['application_unsolicated_formattion'] = 'Formattion';

@@ -240,10 +240,12 @@
 								let result = JSON.parse(data);
 							
 								$(up).find('#loglist').html()
-					
+							
 								if(result.error !== undefined)
 								{
-									$(up).find('#error').append(result.error)
+									
+										
+									$(up).find('#error').html(result.error)
 								}
 								else
 								{
@@ -253,7 +255,7 @@
 							},
 							onUploadError: function(id, message)
 							{
-								console.log(message);
+								
 								alert('Error trying to upload #' + id + ': ' + message);
 							}
 						});
