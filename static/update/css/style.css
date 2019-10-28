@@ -162,7 +162,8 @@ i[data-circle]
 
 }
 .filelist div img
-{
+{ 
+margin: 0 3px 3px 3px;
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
