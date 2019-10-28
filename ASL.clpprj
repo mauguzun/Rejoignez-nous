@@ -20,7 +20,6 @@
 			<error val="1;9;29;9;2502;1;"/>
 			<error val="1;141;19;141;2502;1;"/>
 			<error val="1;167;19;167;2502;1;"/>
-			<error val="0;301;25;301;2501;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\my_custom_css.css">
 			<error val="1;98;39;98;2502;1;"/>
@@ -297,29 +296,29 @@
 			<todo name="TODO Third parameter was string type $description; this following code is to maintain backward comp" pos="3;2229"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\core\Loader.php">
-			<todo name="todo	Figure out a way to move this to the constructor" pos="5;148"/>
+			<todo name="todo Figure out a way to move this to the constructor" pos="5;148"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\core\Output.php">
-			<todo name="todo	We need to figure out how to permit headers to be cached." pos="5;209"/>
+			<todo name="todo We need to figure out how to permit headers to be cached." pos="5;209"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\database\DB_forge.php">
-			<todo name="todo	Remove deprecated $_after option in 3.1+" pos="5;555"/>
+			<todo name="todo Remove deprecated $_after option in 3.1+" pos="5;555"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\database\DB_query_builder.php">
 			<todo name="@todo error" pos="4;2075"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\database\drivers\sqlite3\sqlite3_driver.php">
-			<todo name="todo	Implement use of SQLite3::querySingle(), if needed" pos="5;120"/>
+			<todo name="todo Implement use of SQLite3::querySingle(), if needed" pos="5;120"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\database\drivers\sqlite3\sqlite3_forge.php">
-			<todo name="todo	implement drop_column(), modify_column()" pos="5;135"/>
+			<todo name="todo implement drop_column(), modify_column()" pos="5;135"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\helpers\string_helper.php">
 			<todo name="todo: remove in 3.1+" pos="19;202"/>
 			<todo name="todo: remove in 3.1+" pos="20;205"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\helpers\url_helper.php">
-			<todo name="todo	Remove old 'dash' and 'underscore' usage in 3.1+." pos="5;472"/>
+			<todo name="todo Remove old 'dash' and 'underscore' usage in 3.1+." pos="5;472"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\reg\system\libraries\Xmlrpc.php">
 			<todo name="@todo - this needs to be made more general purpose" pos="6;1572"/>
@@ -1152,7 +1151,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\index.html" crc="1557725642"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\.htaccess" crc="1557725642"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css" crc="1572183376"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\style.css" crc="1572184958"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\style.css" crc="1572245115"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\slick.css" crc="1557725642"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\my_custom_css.css" crc="1572183420"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\home-v2.css" crc="1557725642"/>
