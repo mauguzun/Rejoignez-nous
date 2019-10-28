@@ -201,7 +201,7 @@ i[data-circle]
 }
 
 .notfilled {
-	background-color: #ED747C!important;
+	background-color: #82817!important;
 	
 }
 .filled {
@@ -299,4 +299,4 @@ a>.fa-download {
 	
 }
 
-disabled>.mb-0>.btn-link {color: #88888A !important;text-decoration: none;}
+.disabled>.mb-0>.btn-link {color: #88888A !important;text-decoration: none;}
