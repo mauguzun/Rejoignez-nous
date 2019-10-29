@@ -694,13 +694,13 @@ class Pnt_Controller extends Base_Apply_Controller{
 		$this->json['application_id'] = $_POST['application_id'];
 		$this->show_json();
 	}
-	public function printer($app_id){
+	public function printer($app_id=NULL){
 
 		
-		$this->app_by_id($app_id);
-
-		if(!$this->app | $this->app['filled'] == 0 )
-		redirect(base_url());
+		
+		if($this->allow_print($app_id) == false){
+			die();
+		}
 
 			$query = $this->Crud->get_joins(
 			'application',

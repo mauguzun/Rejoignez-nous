@@ -315,12 +315,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 
 		
 		
-		iF(!$app_id){
-			die();}
-			
-		$this->app_by_id($app_id);
-		
-		if(!$this->app | $this->app['filled'] == 0){
+		if($this->allow_print($app_id) == false){
 			die();
 		}
 		

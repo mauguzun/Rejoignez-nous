@@ -211,11 +211,13 @@ class Mechanic_Controller extends Base_Apply_Controller{
 		$this->show_json();
 	}
 	
-	public function printer($app_id){
+	public function printer($app_id=NULL){
 
-		$this->app_by_id($app_id);
-		if(!$this->app | $this->app['filled'] == 0 )
-		redirect(base_url());
+		
+		
+		if($this->allow_print($app_id) == false){
+			die();
+		}
 		
 
 		$query = $this->Crud->get_joins(
@@ -311,7 +313,7 @@ class Mechanic_Controller extends Base_Apply_Controller{
 			$mec_expirience['b737_ng'] = $mechanic_period[$mec_expirience['b737_ng']];
 			$mec_expirience['part_66_license'] = $this->_have($mec_expirience['part_66_license']) ;
 			
-			if ($mec_expirience['managerial_duties']){
+			if($mec_expirience['managerial_duties']){
 				$mec_expirience['managerial_duties'] = $managerial[$mec_expirience['managerial_duties']] ;
 
 			}else{

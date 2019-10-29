@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\reg\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\controllers\Test.php;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsurl.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
+		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\style.css"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -19,7 +20,7 @@
 			<error val="1;11;26;11;2502;1;"/>
 			<error val="1;9;29;9;2502;1;"/>
 			<error val="1;141;19;141;2502;1;"/>
-			<error val="1;167;19;167;2502;1;"/>
+			<error val="1;168;19;168;2502;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\my_custom_css.css">
 			<error val="1;98;39;98;2502;1;"/>
@@ -337,6 +338,8 @@
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
 	</todoblock>
+	<dbgurls>
+	</dbgurls>
 	<filescache>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1557725716"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1557725716"/>
@@ -1151,7 +1154,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\index.html" crc="1557725642"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\.htaccess" crc="1557725642"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css" crc="1572183376"/>
-		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\style.css" crc="1572245115"/>
+		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\style.css" crc="1572253563"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\slick.css" crc="1557725642"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\my_custom_css.css" crc="1572183420"/>
 		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\home-v2.css" crc="1557725642"/>

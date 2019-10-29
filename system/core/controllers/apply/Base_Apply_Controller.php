@@ -861,7 +861,31 @@ class Base_Apply_Controller extends Usermeta_Controller{
 			}
 		}
 	}
-
 	
+	/**
+	* 
+	* @param string $app_id
+	* 
+	* @return true|false
+	*/
+	public function allow_print($app_id = null){
+		
+		iF(!$app_id){
+			return false;}
+			
+		$this->app_by_id($app_id);
+		
+		if($this->app['user_id'] !=   $this->ion_auth->user()->row()->id
+			&& $this->ion_auth->get_users_groups()->row()->id == 8){
+			  
+			return false;
+		}
+		
+		if(!$this->app | $this->app['filled'] == 0){
+			return FALSE;
+		}
+		return true;
+		
+	}
 	
 }
