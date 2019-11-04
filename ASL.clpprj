@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\reg\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\controllers\Test.php;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsurl.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
-		<file name="C:\OSPanel\domains\localhost\reg\static\update\css\style.css"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -338,8 +337,6 @@
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
 	</todoblock>
-	<dbgurls>
-	</dbgurls>
 	<filescache>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1557725716"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1557725716"/>
@@ -1111,12 +1108,12 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB_cache.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB.php" crc="1557725644"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php" crc="1572000678"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnt_Controller.php" crc="1571940981"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1572111511"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php" crc="1572110571"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Hr_Controller.php" crc="1572108615"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1572111213"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php" crc="1572348245"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnt_Controller.php" crc="1572348258"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1572348272"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php" crc="1572348247"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Hr_Controller.php" crc="1572348287"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1572348227"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Usermeta_Controller.php" crc="1568708021"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\User_Controller.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Shared_Controller.php" crc="1557725644"/>
@@ -4002,7 +3999,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Helpajax.php" crc="1568708981"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Getfile.php" crc="1557725428"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Download.php" crc="1557725426"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Data.php" crc="1572183327"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Data.php" crc="1572349021"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Auth.php" crc="1568286874"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Admin.php" crc="1557725426"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\config\user_agents.php" crc="1557725426"/>

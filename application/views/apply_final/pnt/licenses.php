@@ -19,7 +19,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				<input 
 				
 				<? if(isset($query[$index.'_start'])) :?>
-					:run="models['<?=$index?>'] = true "
+				:run="models['<?=$index?>'] = true "
 				<? endif;?>
 				
 				
@@ -47,47 +47,50 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 
 			
 			:required="models['<?=$index?>']"  name="<?= $index?>_end"    type="text"  class="form-control"/>
-		</div>
-
-
-		<?
 		
-		if($index == 'cpl') :?>
-		<div style="margin-top: 20px ;margin-bottom:20px;">
-
-			<strong>
-				<?= lang('mcc_theoretical_atpl_subheader')?>
-			</strong>
-			<br />
-			<br /><br />
+		
 			<?
 		
-		
-			foreach(['mcc','theoretical_atpl'] as $ad):?>
-		
-			<label class="extra_label" for="<?= $ad?>">
-				<input
-				ref="<?=$ad?>"
-				
-				
-				<? if(isset($query[$ad])) :?>
-					:run="models['<?=$ad?>'] = true "
-				<? endif;?>
-				value="1"
-				v-model="models['<?=$ad?>']"
-				name="<?= $ad ?>" 
-				type="checkbox"
-				/>	
-				<?= lang($ad) ?>
-			</label><br />
-		
-		
-		
-			<? endforeach; ?>
-		</div>
-		
-		<? endif ;?>
+			if($index == 'cpl') :?>
+			<div style="margin-top: 20px ;margin-bottom:20px;">
 
+				<strong>
+					<?= lang('mcc_theoretical_atpl_subheader')?>
+				</strong>
+				<br />
+				<br /><br />
+				<?
+		
+		
+				foreach(['mcc','theoretical_atpl'] as $ad):?>
+		
+				<label class="extra_label" for="<?= $ad?>">
+					<input
+					ref="<?=$ad?>"
+				
+				
+					<? if(isset($query[$ad])) :?>
+					:run="models['<?=$ad?>'] = true "
+					<? endif;?>
+					value="1"
+					v-model="models['<?=$ad?>']"
+					name="<?= $ad ?>" 
+					type="checkbox"
+					/>	
+					<?= lang($ad) ?>
+				</label><br />
+		
+		
+		
+				<? endforeach; ?>
+			</div>
+		
+			<? endif ;?>
+
+		</div>
+
+
+		
 		<? endforeach ?>
 
 		

@@ -43,7 +43,7 @@
 					</div>
 				
 					<div class="col-md-4">
-						<div class="input_label"><span>*</span><?= lang('zip')?></div>
+						<div class="input_label"><span>*</span><?= lang('postal')?></div>
 						<input type="text" value="<?= $app['zip']?>"  name="zip" class="form-control">
 					</div>
 				</div>

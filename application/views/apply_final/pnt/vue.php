@@ -17,7 +17,7 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'main',
+				active:'licenses',
 
 				loader:true,
 
