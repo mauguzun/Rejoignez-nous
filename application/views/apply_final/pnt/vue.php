@@ -17,7 +17,7 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'licenses',
+				active:'eu',
 
 				loader:true,
 
@@ -42,6 +42,7 @@
 					mcc:false,
 					theoretical_atpl:false,
 					lic_error:false,
+					eu:'1',
 				},
 				
 				files:{
@@ -91,14 +92,8 @@
 			
 				save(){
 
-
-
 					this.models.lic_error  = null;
-					console.log(this.models.cpl + 'cpl')
-					console.log(this.models.atpl + 'atpl')
-					console.log(this.models.irme + 'irme')		
-					console.log(this.models.mcc + 'mcc')
-					console.log(this.models.theoretical_atpl  + 'theoretical_atpl ')
+	
 					
 					if(this.models.cpl == true && this.models.irme == false && this.models.atpl == false){
 						if (this.models.mcc  == false && this.models.theoretical_atpl  == false) {
@@ -368,7 +363,8 @@
 
 					this.$refs.delButton.href+="/"+this.application_id;
 					this.$refs.printButton.href+="/"+this.application_id;
-				}
+				},
+				
 
 			},
 			
@@ -378,6 +374,12 @@
 				for(i = 0;x[i] ;i++){
 					this.models[x[i].name]=true;
 				}
+				
+				if(this.$refs.eu)
+				{
+					this.models.eu = this.$refs.eu.id
+				}
+				
 				// only for pnc
 				/*
 				if (this.$refs.education_level_id.id)

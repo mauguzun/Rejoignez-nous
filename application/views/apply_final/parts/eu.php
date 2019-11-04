@@ -7,12 +7,19 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name]); ?>
 <form method="post" action="<?= $url ?>"  v-on:submit.prevent="send">
 	<div class="card-body">
 		<div class="row row_mb">
-			<div class="col-md-6">
+			<div class="col-md-6" >
 				<div class="input_label"><span>*</span><?= lang('eu_nationality')?></div>
 
-				<?=  form_dropdown('eu_nationality', [0=>lang('no'),1=>lang('yes')],$eu_nationality,['class'=>'form-control selectpicker']); ?>
+				<?=  form_dropdown('eu_nationality',
+					[0=>lang('no'),1=>lang('yes')],
+					$eu_nationality,[
+						'class'=>'form-control selectpicker',		
+						'v-model'=>'models.eu',
+						'id'=>$eu_nationality,
+						'ref'=>'eu'
+					]); ?>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6" v-show="models.eu == '0'">
 				<div class="input_label"><span>*</span><?= lang('can_work_eu')?></div>
 				<?=  form_dropdown('can_work_eu', [0=>lang('no'),1=>lang('yes')],$can_work_eu,['class'=>'form-control selectpicker']); ?>
 

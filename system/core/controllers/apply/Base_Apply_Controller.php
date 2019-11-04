@@ -154,8 +154,8 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		
 		return $this->load->view('apply_final/parts/eu',[
 				'url'=> base_url().'apply/new/'.$this->type.'/eu/',
-				'eu_nationality'=>$eu ? $eu['eu_nationality'] : 0 ,
-				'can_work_eu'=>$eu ? $eu['can_work_eu'] : 0 ,
+				'eu_nationality'=>$eu ? $eu['eu_nationality'] : 1 ,
+				'can_work_eu'=>$eu ? $eu['can_work_eu'] : 1 ,
 		
 			],true);
 	}

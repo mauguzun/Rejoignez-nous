@@ -28,6 +28,7 @@
 				models:{ 
 					education_level_id:null,
 					aviability:null,
+					eu:'1',
 				},
 				
 				files:{
@@ -290,7 +291,10 @@
 				{
 					this.models.aviability = this.$refs.aviability.id
 				}
- 
+				if(this.$refs.eu)
+				{
+					this.models.eu = this.$refs.eu.id
+				}
 			
 
 				<? foreach ($uploaders as $up):?>
