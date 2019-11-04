@@ -19,11 +19,11 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				<input 
 				
 				<? if(isset($query[$index.'_start'])) :?>
-				:run="models['<?=$index?>'] = true "
+				data-checked
 				<? endif;?>
-				
-				
+				class="licenses"
 				v-model="models['<?=$index?>']" name="<?= $index ?>" type="checkbox"/>
+				
 				<?= lang($index).' ' .lang('section')  ?>
 			</label>
 				

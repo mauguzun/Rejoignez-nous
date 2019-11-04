@@ -86,12 +86,20 @@
 					}
 					
 				},
+				
+			
+			
 				save(){
 
 
 
 					this.models.lic_error  = null;
-
+					console.log(this.models.cpl + 'cpl')
+					console.log(this.models.atpl + 'atpl')
+					console.log(this.models.irme + 'irme')		
+					console.log(this.models.mcc + 'mcc')
+					console.log(this.models.theoretical_atpl  + 'theoretical_atpl ')
+					
 					if(this.models.cpl == true && this.models.irme == false && this.models.atpl == false){
 						if (this.models.mcc  == false && this.models.theoretical_atpl  == false) {
 							this.models.lic_error = '<?= lang("You must have obtained the theoretical ATPL and / or the MCC in order to practice the profession to which you are applying")?>'
@@ -99,12 +107,12 @@
 						}
                    
 					} 
-					else if (this.models.irme == true && this.models.cpl == false && this.models.atpl == false){
+					else if (this.models.atpl  == true && this.models.cpl == false && this.models.atpl == false){
 						this.models.lic_error = '<?= lang("You must have obtained the IRME to be able to practice the profession to which you are applying")?>'
              
 						return false;
 					}
-					else if (this.models.irme == false && this.models.cpl == false && this.models.atpl == true){
+					else if (this.models.irme == true && this.models.cpl == false && this.models.atpl == false){
 						this.models.lic_error = '<?= lang("You must have obtained CPL or ATPL to be able to practice the profession to which you are applying")?>'
 						return false;
 					}
@@ -366,7 +374,10 @@
 			
 			mounted(){
 
-
+				let x = document.querySelectorAll('[data-checked]');
+				for(i = 0;x[i] ;i++){
+					this.models[x[i].name]=true;
+				}
 				// only for pnc
 				/*
 				if (this.$refs.education_level_id.id)
@@ -396,7 +407,7 @@
 				<? endif;?>
 				this.loader= false;
 
-		this.makeTooltip();	
+				this.makeTooltip();	
 			},
 
 				
