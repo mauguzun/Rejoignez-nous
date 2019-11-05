@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\reg\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\controllers\Test.php;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsurl.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\complementary_informations.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\aviability.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnt.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Hr.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -48,7 +39,8 @@
 			<error val="8;1;21;1;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\professional.php">
-			<error val="52;133;65;133;2002;1;"/>
+			<error val="52;141;65;141;2002;1;"/>
+			<error val="0;191;22;191;2002;1;"/>
 			<error val="40;10;67;10;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\position.php">
@@ -90,6 +82,10 @@
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php">
 			<error val="0;46;42;46;2002;1;"/>
 			<error val="40;6;67;6;2002;1;"/>
+		</errfile>
+		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\complementary_informations.php">
+			<error val="0;53;42;53;2002;1;"/>
+			<error val="40;5;68;5;2002;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_expirience.php">
 			<error val="48;8;61;8;2002;1;"/>
@@ -1114,9 +1110,9 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB_driver.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB_cache.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB.php" crc="1557725644"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php" crc="1572348245"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php" crc="1572944286"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnt_Controller.php" crc="1572890711"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1572894407"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1572947872"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php" crc="1572348247"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Hr_Controller.php" crc="1572348287"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1572878787"/>
@@ -3515,16 +3511,16 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\create_user.php" crc="1557725462"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\create_group.php" crc="1557725462"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\auth\change_password.php" crc="1557725462"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\vue.php" crc="1572021784"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\vue.php" crc="1572944592"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\question.php" crc="1572007753"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\professional.php" crc="1572017938"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\professional.php" crc="1572944080"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\position.php" crc="1571929198"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\other.php" crc="1572010177"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\index.php" crc="1571923797"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\begin.php" crc="1572004832"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\application_unsolicated_formattion.php" crc="1571994424"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt\vue.php" crc="1571990982"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\vue.php" crc="1572890745"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt\vue.php" crc="1572956011"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\vue.php" crc="1572956075"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\successive_employer.php" crc="1572890450"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\qualification_type.php" crc="1572889377"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\practice.php" crc="1572111846"/>
@@ -3534,10 +3530,10 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\experience_in_instructor.php" crc="1572889510"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\exp.php" crc="1572889798"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php" crc="1572890620"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php" crc="1572893737"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php" crc="1572956652"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\index.php" crc="1572893002"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\complementary_informations.php" crc="1572893856"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_expirience.php" crc="1571917023"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_expirience.php" crc="1572954317"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\aur_education.php" crc="1571917023"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\upload.php" crc="1572184533"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\other.php" crc="1571989553"/>
@@ -3816,7 +3812,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\composer\autoload_classmap.php" crc="1557725440"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\dompdf\vendor\autoload.php" crc="1557725440"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Uploadslideshow.php" crc="1557725440"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Uploadlist.php" crc="1568310431"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Uploadlist.php" crc="1572957102"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Uploadconfig.php" crc="1568299405"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Profile.php" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Json_model.php" crc="1557725438"/>
@@ -3888,8 +3884,8 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Email.php" crc="1557725434"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Ajax.php" crc="1557725434"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsolicated.php" crc="1572004936"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php" crc="1572001264"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php" crc="1572004072"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php" crc="1572954574"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php" crc="1572956625"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnt.php" crc="1572011044"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php" crc="1572894001"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Mechanic.php" crc="1572011065"/>

@@ -539,7 +539,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 					$line['why_left[]'] =  $value['why_left'];
 					$line['phone_2[]'] =  $value['phone_2'];
 					$line['address[]'] =  $value['address'];
-					$line['zip[]'] =  $value['zip'];
+					$line['postal[]'] =  $value['postal'];
 					$line['city[]'] =  $value['city'];
 					$line['country_id[]']  = 	 $value['country_id'];
 					array_push($lines,$line);
@@ -578,7 +578,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 					'function' => isset($_POST['function'][$i])? $_POST['function'][$i] : NULL ,
 					'name' => isset($_POST['name'][$i])? $_POST['name'][$i] : NULL ,
 					'address' => isset($_POST['address'][$i])? $_POST['address'][$i] : NULL ,
-					'zip' => isset($_POST['zip'][$i])? $_POST['zip'][$i] : NULL ,
+					'postal' => isset($_POST['postal'][$i])? $_POST['postal'][$i] : NULL ,
 					'city' => isset($_POST['city'][$i])? $_POST['city'][$i] : NULL ,
 					'country_id' => isset($_POST['country_id'][$i])? $_POST['country_id'][$i] : NULL ,
 					'phone' =>isset($_POST['phone'][$i])? $_POST['phone'][$i] : NULL ,

@@ -77,7 +77,7 @@ $ref = $name ;
 				<input
 				value="<?= isset($onedata[$row]) && $onedata[$row] != '0000-00-00' ? date_to_input($onedata[$row]) : null ?>"
 				
-				required=""
+			
 				
 				<? if($row == 'end') :?>
 				ref="<?= 'key_'.$key ?>"
@@ -90,7 +90,7 @@ $ref = $name ;
 				data-calendar="true"
 				@mouseover="setupCalendar()"
 				<?= isset($onedata['current']) && $row == 'end' && 
-				$onedata['current'] == 1 ? 'readonly' : null ?>
+				$onedata['current'] == 1 ? 'style="visibility:hidden"' : '	required' ?>
 				class="form-control"/>
 				<? if($row == 'end') :?>
 				

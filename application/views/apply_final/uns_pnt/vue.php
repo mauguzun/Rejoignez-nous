@@ -397,7 +397,17 @@
 					}
 				}
 				
+				,involved(event){
+					if(event.target.value === '1'){
+						this.$refs.involved.removeAttribute('hidden');
+						this.$refs.involved.setAttribute('required');
+					}else{
 
+						this.$refs.involved.value=""
+						this.$refs.involved.setAttribute('hidden','hidden');
+						this.$refs.involved.removeAttribute('required');
+					}
+				}
 			},
 			
 			mounted(){

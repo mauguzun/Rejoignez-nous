@@ -71,12 +71,13 @@ $ref = $name ;
 
 		<div class="row row_mb"
 		data-id="<?='key'.$key?>"
-		<?= empty($oneRow['employer[]']) ? 'style="display:none" ' : null ?>
+		<?= empty($oneRow['employer[]']) ? 'style="display:none" ' : null ;
+			$not_required = ['address[]','postal[]','city[]','phone_2[]']?>
 		  >
-			<? foreach(['name[]','email[]','phone[]','phone_2[]' ,'address[]','zip[]','city[]'] as $input):?> 
+			<? foreach(['name[]','email[]','phone[]','phone_2[]' ,'address[]','postal[]','city[]'] as $input):?> 
 			<div class="col-md-6">
 				<div class="input_label">
-					<? if ($input != 'phone_2[]'):?>
+					<? if (!in_array($input,$not_required)):?>
 					<span>*</span>
 					<? endif ;?>
 					<?= lang(str_replace('[]','',$input))?>
@@ -85,7 +86,7 @@ $ref = $name ;
 				name="<?=$input?>"
 				value="<?= isset($oneRow[$input])  ? $oneRow[$input] : null ?>"
 				class="form-control"
-				<? if ($input == 'phone_2[]'):?>
+				<? if (in_array($input,$not_required)):?>
 				data-not="remove"
 				<? endif ;?>
 				>

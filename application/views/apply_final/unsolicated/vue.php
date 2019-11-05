@@ -17,7 +17,7 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'main',
+				active:'professional',
 
 				loader:true,
 
@@ -44,10 +44,13 @@
 				
 				current(event){
 					if(event.target.checked === true){
-						this.$refs[event.target.id].setAttribute("readonly",'readonly')
+						this.$refs[event.target.id].setAttribute("style",'visibility:hidden')						
+						this.$refs[event.target.id].removeAttribute('required')						
 					}else{
-						this.$refs[event.target.id].removeAttribute("readonly")
-					}
+						this.$refs[event.target.id].removeAttribute("style")						
+						this.$refs[event.target.id].setAttribute("required",'required')					
+
+					}  
 					
 				},
 				
@@ -172,8 +175,10 @@
 								
 					this.$refs[rowRef].remove()
 				},
-				setupCalendar(){
-					$('*[data-calendar]:not([readonly])').datepicker({
+				setupCalendar(event){
+					
+					
+					$('*[data-calendar]').datepicker({
 							todayBtn: "linked",
 							clearBtn: true,
 							daysOfWeekHighlighted: [6,0],

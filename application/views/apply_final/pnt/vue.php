@@ -43,6 +43,7 @@
 					theoretical_atpl:false,
 					lic_error:false,
 					eu:'1',
+					involved:'0'
 				},
 				
 				files:{
@@ -103,7 +104,7 @@
 						}
                    
 					} 
-					else if (this.models.atpl  == true && this.models.cpl == false && this.models.atpl == false){
+					else if (this.models.atpl  == true && this.models.cpl == false && this.models.irme == false){
 						this.models.lic_error = '<?= lang("You must have obtained the IRME to be able to practice the profession to which you are applying")?>'
              
 						return false;
@@ -391,7 +392,17 @@
 					}
 				}
 				
+				,involved(event){
+					if(event.target.value === '1'){
+						this.$refs.involved.removeAttribute('hidden');
+						this.$refs.involved.setAttribute('required');
+					}else{
 
+						this.$refs.involved.value=""
+						this.$refs.involved.setAttribute('hidden','hidden');
+						this.$refs.involved.removeAttribute('required');
+					}
+				}
 			},
 			
 			mounted(){
@@ -405,6 +416,7 @@
 				{
 					this.models.eu = this.$refs.eu.id
 				}
+				
 				
 				// only for pnc
 				/*
