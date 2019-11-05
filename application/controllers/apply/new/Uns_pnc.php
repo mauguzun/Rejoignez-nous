@@ -24,42 +24,36 @@ class Uns_pnc extends  Pnc_Conntroller{
 		$this->show_header([lang('unsolicited_application_applys'),lang('unsolicited_application_applys'),lang('unsolicited_application_applys')]);
 		
 		
-			
-		$this->files();
+			$this->files();
 		$this->set_statuses($this->app['id']);
 		
-		$offer = null ;
+
 		$header = $this->load->view('apply_final/parts/header',[
-				'offer'=>$offer,
+				'offer'=>null,
 				'offer_type'=>$this->type
 		
 			],true);
-
+		
+			
+		$all = [
+			'header'=>$header,
+			'main'=>$this->get_main(),
+			'eu'=>$this->get_eu(),
+			'education'=>$this->get_education(),
+			'foreignlang'=>$this->get_lang(),
+			'aeronautical_experience'=>$this->get_aur_expirience(),
+			'medical_aptitudes'=>$this->get_medical(),
+			'complementary_informations'=>$this->get_complementary_informations()] ;
+				
+	
+		foreach($this->uploaders as $row){
+			$all[$row]=$this->get_uploader($row);
+		}
 		
 		$this->load->view('apply_final/pnc/index',
 			[
-				'header'=>$header,
-				'main'=>$this->get_main(),
-				'eu'=>$this->get_eu(),
-				'education'=>$this->get_education(),
-				'foreignlang'=>$this->get_lang(),
-				'aeronautical_experience'=>$this->get_aur_expirience(),
-				'medical_aptitudes'=>$this->get_medical(),
-				'aviability'=>$this->get_aviability(),
-				'other'=>$this->get_other(),
-				'covver_letter'=>$this->get_uploader('covver_letter'),			
-				'cv'=>$this->get_uploader('cv'),
-				'certificate_of_flang'=>$this->get_uploader('certificate_of_flang'),
-				'medical_aptitude'=>$this->get_uploader('medical_aptitude'),	
-				'photo_in_feet'=>$this->get_uploader('photo_in_feet'),
-				'passport'=>$this->get_uploader('passport'),	
-				'vaccine_against_yellow_fever'=>$this->get_uploader('vaccine_against_yellow_fever'),
-				'id_photo'=>$this->get_uploader('id_photo'),
-				
+				'views'=>$all
 			]);
-			
-		
-		
 		
 		
 		$this->load->view('apply_final/pnc/vue',[

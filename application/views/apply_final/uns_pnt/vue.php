@@ -42,6 +42,7 @@
 					mcc:false,
 					theoretical_atpl:false,
 					lic_error:false,
+					eu:'1',
 				},
 				
 				files:{
@@ -63,14 +64,7 @@
 			methods: {
 				makeTooltip(){
 					
-					let title = document.querySelectorAll('.input_label');
-					title.forEach(function(element) {
-							element.setAttribute('title',element.innerHTML);
-							element.setAttribute('data-toggle','tooltip');
-							element.setAttribute('data-toggle','tooltip');
-							
-						});
-					$('.input_label').tooltip({html:true})
+					setupTool();
 					
 					
 				},
@@ -78,7 +72,6 @@
 					let data  = event.target
 					let value  = data.value;
 					let id = data.id;
-
 
 				
 					if (value.trim () == 0 ){
@@ -89,16 +82,19 @@
 				
 						$('[data-id="'+id+'"]').fadeIn()
 						$('[data-id="'+id+'"] *').attr('required','require')
+						$('[data-not]').removeAttr('required')
 				
 					}
 					
 				},
+				
+			
+			
 				save(){
 
-
-
 					this.models.lic_error  = null;
-
+	
+					
 					if(this.models.cpl == true && this.models.irme == false && this.models.atpl == false){
 						if (this.models.mcc  == false && this.models.theoretical_atpl  == false) {
 							this.models.lic_error = '<?= lang("You must have obtained the theoretical ATPL and / or the MCC in order to practice the profession to which you are applying")?>'
@@ -106,12 +102,12 @@
 						}
                    
 					} 
-					else if (this.models.irme == true && this.models.cpl == false && this.models.atpl == false){
+					else if (this.models.atpl  == true && this.models.cpl == false && this.models.atpl == false){
 						this.models.lic_error = '<?= lang("You must have obtained the IRME to be able to practice the profession to which you are applying")?>'
              
 						return false;
 					}
-					else if (this.models.irme == false && this.models.cpl == false && this.models.atpl == true){
+					else if (this.models.irme == true && this.models.cpl == false && this.models.atpl == false){
 						this.models.lic_error = '<?= lang("You must have obtained CPL or ATPL to be able to practice the profession to which you are applying")?>'
 						return false;
 					}
@@ -170,6 +166,7 @@
 					}else{
 						this.error = true;
 					}
+					this.filled = result.filled
 					this.message = result.message;
 					this.loader = false;
 				},
@@ -228,7 +225,8 @@
 				},
 
 
-				open(div){
+				open(div)
+				{
 					if (this.application_id){
 						this.active = div;
 					}else{
@@ -342,7 +340,7 @@
 					
 								if(result.error !== undefined)
 								{
-									$(up).find('#error').append(result.error)
+									$(up).find('#error').html(result.error)
 								}
 								else
 								{
@@ -366,13 +364,54 @@
 
 					this.$refs.delButton.href+="/"+this.application_id;
 					this.$refs.printButton.href+="/"+this.application_id;
+				},
+				
+				autre(event){
+					
+					
+					if (event.target.value.trim().toLowerCase() == 'autre'){
+						
+						
+						//  remove name !!!
+						const name = event.target.name;
+						event.target.removeAttribute('name');
+						// set name to input
+						const input = document.createElement("input");
+						input.type = "text";		
+						input.setAttribute('required',true) 	
+						input.setAttribute('placeholder','<?= lang("pls_specify")?>') 
+						input.name = name
+						input.className = "form-control special"; 
+						event.target.parentNode.append(input)
+					}else{
+						
+						let input = event.target.parentNode.querySelector(".special")
+						if(input){
+							const name = input.name;
+							event.target.name = name;
+							console.log(input)
+							$(input).remove()
+						}
+					
+						
+					}
 				}
+				
 
 			},
 			
 			mounted(){
 
-
+				let x = document.querySelectorAll('[data-checked]');
+				for(i = 0;x[i] ;i++){
+					this.models[x[i].name]=true;
+				}
+				
+				if(this.$refs.eu)
+				{
+					this.models.eu = this.$refs.eu.id
+				}
+				
 				// only for pnc
 				/*
 				if (this.$refs.education_level_id.id)
@@ -402,7 +441,7 @@
 				<? endif;?>
 				this.loader= false;
 
-		this.makeTooltip();	
+				this.makeTooltip();	
 			},
 
 				

@@ -67,22 +67,24 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			
 			
 			
-			<article  ref="<?= 'exp_'.$key ?>"  <?= $row['company'] ? '':'hidden'?>>
-				<div class="col-md-2">
-					<div class="input_label"><span>*</span><?= lang('duration')?></div>
-					<input name="duration[]"    
-					value="<?= $row['duration']?>" type="text" class="form-control">
-				</div>
+			<div class="col-md-4" ref="<?= 'exp_'.$key ?>"  <?= $row['company'] ? '':'hidden'?>>
+				
+				<div class="row row_mb">
+					<div class="col-md-6">
+						<div class="input_label"><span>*</span><?= lang('duration')?></div>
+						<input name="duration[]"    
+						value="<?= $row['duration']?>" type="text" class="form-control">
+					</div>
 		
-				<div class="col-md-2">
-					<div class="input_label"><span>*</span><?= lang('company')?></div>
-					<input name="company[]"  
-					value="<?= $row['company']?>" 
-					type="text" class="form-control">
+					<div class="col-md-6">
+						<div class="input_label"><span>*</span><?= lang('company')?></div>
+						<input name="company[]"  
+						value="<?= $row['company']?>" 
+						type="text" class="form-control">
+					</div>
+			
 				</div>
-			
-			
-			</article>	
+			</div>	
 				
 				
 			<? if($key == 0 ):?>

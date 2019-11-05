@@ -382,11 +382,12 @@
 						event.target.parentNode.append(input)
 					}else{
 						let input = event.target.parentNode.querySelector(".special")
-						const name = input.name;
-						event.target.name = name;
-						console.log(input)
-						$(input).remove()
-						
+						if(input){
+							const name = input.name;
+							event.target.name = name;
+							console.log(input)
+							$(input).remove()
+						}
 					}
 				}
 				

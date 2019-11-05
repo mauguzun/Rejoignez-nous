@@ -23,6 +23,7 @@ class Uploadlist
 	        'medical_aptitude',
 	        'photo_in_feet',
 	        'passport',
+	        'certificate_of_registration_at_the_employment_center',
 	        'vaccine_against_yellow_fever',
 	        'id_photo'
         ];
