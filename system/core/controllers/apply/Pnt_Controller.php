@@ -8,9 +8,10 @@ class Pnt_Controller extends Base_Apply_Controller{
 	
 	protected $uploaders  = 
 	[
-		'cv' ,'covver_letter',
+		'cv' ,
+		/*'covver_letter',
 		'certificate_of_flang',
-		'attestation',
+		'attestation',*/
 		'attestation_of_medical_fitness',
 		'carnet_of_flight',
 		'attestation_of_irme',

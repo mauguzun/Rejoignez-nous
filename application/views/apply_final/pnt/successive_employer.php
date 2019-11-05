@@ -4,7 +4,6 @@ $ref = $name ;
 ?> 
 
 
-	
 <form method="post" action="<?= $url ?>"  v-on:submit.prevent="send">
 
 
@@ -77,13 +76,19 @@ $ref = $name ;
 			<? foreach(['name[]','email[]','phone[]','phone_2[]' ,'address[]','zip[]','city[]'] as $input):?> 
 			<div class="col-md-6">
 				<div class="input_label">
+					<? if ($input != 'phone_2[]'):?>
 					<span>*</span>
+					<? endif ;?>
 					<?= lang(str_replace('[]','',$input))?>
 				</div> 
 				<input type="text" 
 				name="<?=$input?>"
 				value="<?= isset($oneRow[$input])  ? $oneRow[$input] : null ?>"
-				class="form-control">
+				class="form-control"
+				<? if ($input == 'phone_2[]'):?>
+				data-not="remove"
+				<? endif ;?>
+				>
 			</div>
 			<? endforeach ;?>
 		  

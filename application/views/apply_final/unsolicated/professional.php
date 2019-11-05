@@ -15,7 +15,7 @@ $ref = $name ;
 		
 	
 		<? foreach($data as $key=> $onedata):?>
-	
+
 		<div class="row row_mb" ref="<?=$ref.$key?>" >
 		    
 			<? foreach(['company'] as $row ) :?>
@@ -76,15 +76,21 @@ $ref = $name ;
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) && $onedata[$row] != '0000-00-00' ? date_to_input($onedata[$row]) : null ?>"
-				<? if($row == 'start') :?>
+				
 				required=""
+				
+				<? if($row == 'end') :?>
+				ref="<?= 'key_'.$key ?>"
+			
 				<? endif ?>
+				
 				
 				name="<?=$row?>[]" 
 				placeholder="<?= lang(str_replace('[]','',$row))?>"    
 				data-calendar="true"
 				@mouseover="setupCalendar()"
-				
+				<?= isset($onedata['current']) && $row == 'end' && 
+				$onedata['current'] == 1 ? 'readonly' : null ?>
 				class="form-control"/>
 				<? if($row == 'end') :?>
 				
@@ -92,6 +98,8 @@ $ref = $name ;
 					<?= lang('current') ?>
 					<input type="checkbox" 
 					value="1"
+					id="<?= 'key_'.$key ?>"
+					@click="current"
 					<?= isset($onedata['current']) && 
 					$onedata['current'] == 1 ? 'checked' : null ?>
 					name="current[]" />
@@ -179,7 +187,10 @@ $ref = $name ;
 				<input
 				<? if($row == 'start[]') :?>
 				required=""
-				<? endif ?>			
+				<? endif ?>	
+				<? if($row == 'end[]') :?>
+				:readonly="n.flag"
+				<? endif ?>		
 				name="<?=$row?>" 
 				placeholder="<?= lang(str_replace('[]','',$row))?>"    
 				data-calendar="true"
@@ -190,7 +201,7 @@ $ref = $name ;
 				
 				<label class="current_label_down" >
 					<?= lang('current') ?>
-					<input type="checkbox" name="current[]" />
+					<input type="checkbox" name="current[]" v-model="n.flag" />
 				
 				</label>
 					

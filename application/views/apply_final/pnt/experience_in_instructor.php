@@ -24,6 +24,7 @@ $ref = $name ;
 				<input
 				type="text" 
 				name="aircaft_type[]" 
+				@change="autre"
 				value="<?= isset($onedata['aircaft_type[]']) ?$onedata['aircaft_type[]'] : null ?>"
 				class="form-control" 
 				required="required" list="aircraft_type">
@@ -94,6 +95,7 @@ $ref = $name ;
 				</div>
 				<input
 				type="text" 
+				@change="autre"
 				name="aircaft_type[]" 
 				class="form-control" 
 				required="required" list="aircraft_type">

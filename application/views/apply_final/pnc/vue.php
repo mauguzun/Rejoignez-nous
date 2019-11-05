@@ -17,22 +17,23 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'main',
+				active:'aeronautical_experience',
 
 				loader:true,
 
 
 				langRows :[],
-				expRows:[{id:1,flag:false}],
+				expRows:[],
 
 				models:{ 
 					education_level_id:null,
 					aviability:null,
 					eu:'1',
+					
 				},
 				
 				files:{
-					covver_letter:[],
+					certificate_of_registration_at_the_employment_center:[],
 					cv:[],
 					certificate_of_flang:[],
 					medical_aptitude:[],
@@ -46,8 +47,12 @@
 				
 			},
 			methods: {
+				
+				
+				
+				
+				
 				makeTooltip(){
-					
 					setupTool();
 				},
 				
@@ -155,7 +160,7 @@
 				},
 				// only pnc
 				aurExp(row){
-					if (event.target.value.trim().toLowerCase() === 'aucune' ){
+					if (event.target.value.trim().toLowerCase() !== 'aucune' ){
 						
 						row.flag = true;
 					}else{
@@ -163,6 +168,21 @@
 					}
 					
 				},
+				
+				extraEx(event){
+					
+					const id = event.target.id;
+					
+					if (event.target.value.trim().toLowerCase() !== 'aucune' ){
+						this.$refs[id].removeAttribute('hidden')
+						event.target.parentNode.className ="col-md-7"
+					  
+					}else{
+						this.$refs[id].setAttribute('hidden','hidden')
+							event.target.parentNode.className ="col-md-11"
+					}
+				},
+				
 				removeTemplate(rowRef){				
 					this.$refs[rowRef].remove()
 				},

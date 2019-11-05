@@ -285,6 +285,7 @@ $lang['Would you like to apply for a position as a Commercial Flight Attendant o
 ';
 $lang['Technical Flight Attendanto'] = 'Technical Flight Attendanto';
 $lang['Commercial Flight Attendant'] = 'Commercial Flight Attendant';
+$lang['certificate_of_registration_at_the_employment_center'] = 'CERTIFICATE OF REGISTRATION AT THE EMPLOYMENT CENTER';
 
 
 $lang['yes_toogle'] = [

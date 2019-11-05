@@ -59,9 +59,10 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			<div class="col-md-12" >
 			
 				<div class="input_label">
+					<span>*</span>
 					<? if($name=='motivation_asl'):?>
 				
-					<span>*</span>	<?= lang($name)?>
+					<?= lang($name)?>
 					<? else:?>
 					<?= lang('Involved in incidents')?>
 					<? endif; ?>
@@ -72,7 +73,8 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				<textarea name="<?= $name?>"
 				 class="form-control" type="textarea"
 			 id="motivation_asl" 
-			<?= $name == 'motivation_asl' ? ' required="required"' : null ?> ><?= isset($completary[$name]) ? $completary[$name] : null ?></textarea>
+			 required
+			><?= isset($completary[$name]) ? $completary[$name] : null ?></textarea>
 			</div>
 		</div>
 		<? endforeach ;?>

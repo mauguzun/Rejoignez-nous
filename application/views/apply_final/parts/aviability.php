@@ -28,7 +28,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 
 			<div class="col-md-12">
 						
-				<div class="input_label">
+				
 					<input 
 					 
 					:required="models.aviability === '0'"
@@ -36,7 +36,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 					/>
 					 
 					 
-				</div>
+				
 			</div>
 		</div>
 	

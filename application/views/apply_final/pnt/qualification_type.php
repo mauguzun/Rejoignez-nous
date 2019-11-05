@@ -20,13 +20,14 @@ $ref = 'quality';
 		    
 			<div class="col-md-2">
 				<div class="input_label">
-				<span>*</span>		<?= lang('aircaft_type')?>
+					<span>*</span>		<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
 				name="aircaft_type[]" 
 				value="<?= isset($onedata['aircaft_type[]']) ?$onedata['aircaft_type[]'] : null ?>"
 				class="form-control" 
+				@change="autre"
 				required="required" list="aircraft_type">
 			</div>
 
@@ -67,12 +68,12 @@ $ref = 'quality';
 			
 			<div class="col-md-2">
 				<div class="input_label">
-				<span>*</span>		<?= lang('aircaft_type')?>
+					<span>*</span>		<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
 				name="aircaft_type[]" 
-
+				@change="autre"
 				class="form-control" 
 				required="required" list="aircraft_type">
 			</div>
@@ -95,8 +96,7 @@ $ref = 'quality';
 			<? endforeach; ?>
 				
 			<div class="col-md-1 illarion">
-				<i @click="removeRow(n,'<?= $ref ?>')"  class="fas fa-minus-square"></i>
-
+				<i @change="removeRow(n,'<?= $ref ?>')"  class="fas fa-minus-square"></i>
 			</div>
 	
 		</div>

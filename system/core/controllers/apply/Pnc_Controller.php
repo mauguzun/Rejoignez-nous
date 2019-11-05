@@ -10,9 +10,12 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 	
 	protected $uploaders  = 
 	[   
-		'covver_letter','cv',
-		'certificate_of_flang','medical_aptitude','photo_in_feet',
+		/*'covver_letter',*/
+		'cv',
+		/*'certificate_of_flang',*/
+		'medical_aptitude','photo_in_feet',
 		'passport',	
+		'certificate_of_registration_at_the_employment_center',
 		'vaccine_against_yellow_fever',
 		'id_photo'];
 		
@@ -24,8 +27,7 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 		'foreignlang'=>'application_english_frechn_level',
 		'aeronautical_experience'=>'aeronautical_experience',
 		'medical_aptitudes'=>'application_medical_aptitude',
-		'aviability'=>'applicaiton_misc',
-		'other'=>'application_empoy_center',		
+		'complementary_informations'=>'application_empoy_center',		
 	];
 	
 
@@ -168,7 +170,11 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 	protected function  get_aur_expirience(){
 		
 		
-		$exp =  $this->app ?  $this->Crud->get_all('aeronautical_experience',['application_id'=>$this->app['id']]): null;
+		$exp =  $this->app ? 
+		 $this->Crud->get_all('aeronautical_experience',['application_id'=>$this->app['id']]): [];
+		
+		
+		$exp = count($exp) ==  0 ?  [0]:$exp;
 		
 		return $this->load->view('apply_final/pnc/aur_expirience',[
 				'url'=>base_url().'apply/new/'.$this->type.'/aur_expirience/',
@@ -190,8 +196,8 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 				$row = [
 					'application_id'=> $this->app['id'],
 					'function' => $_POST['function'][$i],
-					'duration' => strtolower($_POST['function'][$i]) != 'aucune' ? NULL : $_POST['duration'][$i],
-					'company'=> strtolower($_POST['function'][$i]) != 'aucune' ? NULL : $_POST['company'][$i],
+					'duration' => strtolower($_POST['function'][$i]) == 'aucune' ? NULL : $_POST['duration'][$i],
+					'company'=> strtolower($_POST['function'][$i]) == 'aucune' ? NULL : $_POST['company'][$i],
 				];
 				$this->Crud->add($row,'aeronautical_experience');
 			}
@@ -207,29 +213,88 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 		
 	}
      
-	protected function get_other(){
+	protected function get_complementary_informations(){
 		    
 		$employ = $car= null;
 		if($this->app){
 			$employ =$this->Crud->get_row(['application_id'=>$this->app['id']],	'application_empoy_center');
 			$car = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
 		}
-		return $this->load->view('apply_final/pnc/other',[
+		///
+		
+		$month     = new DateTime('now');
+		$month->add(new DateInterval('P1M'));
+		$month     = $month->format('d/m/Y');
+
+		$month_two = new DateTime('now');
+		$month_two->add(new DateInterval('P2M'));
+		$month_two = $month_two->format('d/m/Y');
+		
+		$month_tree = new DateTime('now');
+		$month_tree->add(new DateInterval('P3M'));
+		$month_tree = $month_tree->format('d/m/Y');
+
+		////  append current date )
+		$list      = [
+			date('d/m/Y') => lang('Immédiate'),
+			$month=>lang('Préavis 1 mois'),
+			$month_two => lang('Préavis 2mois'),			
+			$month_tree => lang('Préavis 3mois'),
+			0=>lang('calendar'),
+		];
+		$date      = date("d/m/Y") ;
+		
+		
+		$date = null;
+		if($this->app){
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],
+				'applicaiton_misc');
+				
+			
+			if($row && $row['aviability']){
+				$date=  date_to_input($row['aviability']);
+				$list = [$date=>$date] + $list;
+			}			
+		}
+
+		
+		
+		///
+		return $this->load->view('apply_final/pnc/complementary_informations',[
+				'list'=>$list,
+				'id'=>$date,
 				'employ_center'=>$employ,
 				'car'=>$car,
-				'url'=>base_url().'apply/new/'.$this->type.'/other/',
+				'url'=>base_url().'apply/new/'.$this->type.'/complementary_informations/',
 
 			],true);
 	}
 	
-	public function other(){
+	public function complementary_informations(){
 		    
 		$this->form_validation->set_rules('employ_center', lang('employ_center'), 'trim');
+		
+		
+		
+		///
+			
 		$app = $this->app_by_id($_POST['application_id']);
 		
 		
+		
+		
+		
 		if($this->form_validation->run() === TRUE ){
+			///////////
 			
+			if(!isset($_POST['aviability'])  |   empty($_POST['aviability'])){
+				$_POST['aviability'] = $_POST['fake_aviability'];	
+			}
+	
+			$_POST['aviability'] = date_to_db($_POST['aviability']);
+			
+			
+		
 		
 			$employ = [
 				'application_id' => $this->app['id'],
@@ -238,12 +303,10 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 				
 			$car = [
 				'application_id' => $this->app['id'],
+				'aviability'=>$_POST['aviability'],
 				'car'=>$_POST['car']];
 	
-			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
-			if($row){
-				$car['aviability'] = $row['aviability'];
-			}
+			
 			$this->Crud->update_or_insert($car,'applicaiton_misc');
 			
 			$this->json['result'] = true;

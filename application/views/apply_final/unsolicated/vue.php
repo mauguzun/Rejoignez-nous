@@ -41,6 +41,16 @@
 				
 			},
 			methods: {
+				
+				current(event){
+					if(event.target.checked === true){
+						this.$refs[event.target.id].setAttribute("readonly",'readonly')
+					}else{
+						this.$refs[event.target.id].removeAttribute("readonly")
+					}
+					
+				},
+				
 				send(submitEvent){
 					this.loader = true;
 					this.setDefault();
@@ -163,7 +173,7 @@
 					this.$refs[rowRef].remove()
 				},
 				setupCalendar(){
-					$('*[data-calendar]').datepicker({
+					$('*[data-calendar]:not([readonly])').datepicker({
 							todayBtn: "linked",
 							clearBtn: true,
 							daysOfWeekHighlighted: [6,0],

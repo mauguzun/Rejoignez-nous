@@ -381,15 +381,15 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		var_dump($query);
 		die();*/
 
-	/*	$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
-			[
-				'expirience_duration' => "application_hr_expirience.duration  = expirience_duration.id",
-				'expirience_managerial' => 'application_hr_expirience.managerial = expirience_managerial.id'
-			],'*',['application_hr_expirience.area'=>'ASC'],NULL,["application_hr_expirience.application_id"=>$this->app['id']]
+		/*	$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
+		[
+		'expirience_duration' => "application_hr_expirience.duration  = expirience_duration.id",
+		'expirience_managerial' => 'application_hr_expirience.managerial = expirience_managerial.id'
+		],'*',['application_hr_expirience.area'=>'ASC'],NULL,["application_hr_expirience.application_id"=>$this->app['id']]
 		);
 
 		$query['hr_expirience'] = $hr_expirience;
-*/
+		*/
 
 		$function = $this->Crud->get_joins(
 			'application_un',
@@ -496,6 +496,8 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		$this->form_validation->set_rules('company[]', lang('company'), 'trim|required|max_length[200]');
 		$this->form_validation->set_rules('industry[]', lang('industry'), 'trim|required|max_length[200]');
 		
+		
+		
 		if(  $this->form_validation->run() === true ){
    
 
@@ -507,10 +509,10 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 					'role' => $_POST['role'][$i],
 					'position_held' => $_POST['position_held'][$i],
 					'country_id' => $_POST['country_id'][$i],
-					'current' => isset($_POST['current']) && $_POST['current'] == '1' ? 1: NULL,			
+					'current' => isset($_POST['current'][$i]) && $_POST['current'][$i] == '1' ? 1: NULL,			
 					'managerial' => $_POST['managerial'][$i],
 					'start' => date_to_db($_POST['start'][$i]),	
-					'end'=>empty($_POST['end']) ?  NULL : date_to_db($_POST['end'][$i]),
+					'end'=> isset($_POST['current'][$i]) && $_POST['current'][$i] == '1'  ? '':   date_to_db($_POST['end'][$i]),
 					'application_id'=> $this->app['id'],
 				];
 				$this->Crud->update_or_insert($row,'application_unsolicated_proffesional');

@@ -17,7 +17,7 @@
 				error : true,
 				message:null,
 				// active:'show',
-				active:'eu',
+				active:'main',
 
 				loader:true,
 
@@ -83,6 +83,7 @@
 				
 						$('[data-id="'+id+'"]').fadeIn()
 						$('[data-id="'+id+'"] *').attr('required','require')
+						$('[data-not]').removeAttr('required')
 				
 					}
 					
@@ -364,6 +365,30 @@
 					this.$refs.delButton.href+="/"+this.application_id;
 					this.$refs.printButton.href+="/"+this.application_id;
 				},
+				
+				autre(event){
+					if (event.target.value.trim().toLowerCase() == 'autre'){
+						
+						//  remove name !!!
+						const name = event.target.name;
+						event.target.removeAttribute('name');
+						// set name to input
+						const input = document.createElement("input");
+						input.type = "text";		
+						input.setAttribute('required',true) 	
+						input.setAttribute('placeholder','<?= lang("pls_specify")?>') 
+						input.name = name
+						input.className = "form-control special"; 
+						event.target.parentNode.append(input)
+					}else{
+						let input = event.target.parentNode.querySelector(".special")
+						const name = input.name;
+						event.target.name = name;
+						console.log(input)
+						$(input).remove()
+						
+					}
+				}
 				
 
 			},

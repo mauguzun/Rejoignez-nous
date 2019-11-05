@@ -31,6 +31,8 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			</template>
 		
 	
+	
+			
 			<div v-if="n.id === 1" class="col-md-1 illarion">
 		
 				<i @click="addRow('exp')" class="fas fa-plus-square"></i>
@@ -45,49 +47,56 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				
 		</div>
 		
-
 	
 	
 		<? if(isset($exp) && $exp):?>
 		<!-- -->
 		
-		<? foreach($exp as $row):?>
+		<? foreach($exp as $key=>$row):?>
 		<div class="row row_mb"  ref="<?= 'exp'.$row['id'] ?>" >
 		
 		
 			<div class=" <?= $row['company'] ? 'col-md-7' : 'col-md-11' ?> "   >
 				<div class="input_label"><span>*</span><?= lang('function')?></div>
-				<input  name="function[]"   readonly 
+				<input  name="function[]"    
 				value="<?= $row['function']?>"  
+				@change="extraEx"
+				id="<?= 'exp_'.$key ?>"
 				list="function" type="text" class="form-control">
 			</div>
 			
 			
-			<? if($row['company']):?>
-	
-			<div class="col-md-2">
-				<div class="input_label"><span>*</span><?= lang('duration')?></div>
-				<input name="duration[]" readonly   
-				value="<?= $row['duration']?>" type="text" class="form-control">
-			</div>
-		
-			<div class="col-md-2">
-				<div class="input_label"><span>*</span><?= lang('company')?></div>
-				<input name="company[]" readonly 
-				value="<?= $row['company']?>" 
-				type="text" class="form-control">
-			</div>
 			
-			<? else : ?>
-			<input name="duration[]" type="hidden" class="form-control">
-			<input name="company[]" type="hidden" class="form-control">
-			<? endif?>
+			<article  ref="<?= 'exp_'.$key ?>"  <?= $row['company'] ? '':'hidden'?>>
+				<div class="col-md-2">
+					<div class="input_label"><span>*</span><?= lang('duration')?></div>
+					<input name="duration[]"    
+					value="<?= $row['duration']?>" type="text" class="form-control">
+				</div>
+		
+				<div class="col-md-2">
+					<div class="input_label"><span>*</span><?= lang('company')?></div>
+					<input name="company[]"  
+					value="<?= $row['company']?>" 
+					type="text" class="form-control">
+				</div>
+			
+			
+			</article>	
 				
+				
+			<? if($key == 0 ):?>
+			
+			<div class="col-md-1 illarion">
+		
+				<i @click="addRow('exp')" class="fas fa-plus-square"></i>
+			</div>
+			<? else :?>
 				
 			<div class="illarion">
 				<i @click="removeTemplate('<?= 'exp'.$row['id'] ?>')" class="fas fa-minus-square"></i>
 			</div>
-	
+			<? endif; ?>
 		</div>
 		
 		
