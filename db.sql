@@ -11,7 +11,7 @@
  Target Server Version : 100313
  File Encoding         : 65001
 
- Date: 06/11/2019 16:30:10
+ Date: 06/11/2019 18:24:52
 */
 
 SET NAMES utf8mb4;
@@ -210,7 +210,7 @@ CREATE TABLE `application`  (
   `function_by_admin` int(11) NULL DEFAULT NULL,
   `unsolicated_type` smallint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1570632759 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1570632760 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of application
@@ -218,10 +218,11 @@ CREATE TABLE `application`  (
 INSERT INTO `application` VALUES (1570632735, 77, 190, 0, '2019-10-27 15:54:44', 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, NULL);
 INSERT INTO `application` VALUES (1570632737, 56, NULL, 0, '2019-11-05 14:22:29', '1212', '12122', 'Riga', 231, '123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'viktorija', 'domrovska', 'mr', NULL, 1);
 INSERT INTO `application` VALUES (1570632739, 77, 195, 0, '2019-11-04 20:31:17', 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, NULL);
-INSERT INTO `application` VALUES (1570632750, 77, NULL, 0, '2019-11-05 21:44:36', 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, 3);
+INSERT INTO `application` VALUES (1570632750, 77, NULL, 0, '2019-11-06 18:22:26', 'Rigas ieladasd', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, 3);
 INSERT INTO `application` VALUES (1570632755, 77, 196, 0, '2019-11-06 15:21:14', 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, NULL);
 INSERT INTO `application` VALUES (1570632756, 77, 223, 0, '2019-11-06 15:40:07', 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 0, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, NULL);
 INSERT INTO `application` VALUES (1570632757, 77, NULL, 0, '2019-11-06 15:46:00', 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, 2);
+INSERT INTO `application` VALUES (1570632759, 77, NULL, 0, '2019-11-06 18:24:26', 'Rigas ieladasd', 'lv0182', 'rasdfa', 121, '123123123', '', 0, 1, 1, 1, 1, 1, 2, 1, 0, NULL, 'denis 2', 'de', 'mr', NULL, 3);
 
 -- ----------------------------
 -- Table structure for application_call_list
@@ -11938,7 +11939,7 @@ INSERT INTO `users` VALUES (71, '46.18.128.203', 'svaira@aslairlines.com', '$2y$
 INSERT INTO `users` VALUES (72, '46.18.128.203', 'mtobie@aslairlines.com', '$2y$08$4rWkUIzLttk8hor8kBIbReDnX9NuaR7lZLzNDm3hf4W3jLh7w0XUG', NULL, 'mtobie@aslairlines.com', NULL, NULL, NULL, 'wvzsFEwuoNF1UIkJ8DEhP.', 1560245418, 1566391597, 1, 'mrs', '2019-06-14', 'Morgane', 'Tobie', 0, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (73, '46.18.128.203', 'asaulnier@aslairlines.com', '$2y$08$ftvPrhRKbp0zYCE/f4pA.ulFQXfODKUkuHVBwk7MShoc1iYavGrCO', NULL, 'asaulnier@aslairlines.com', '59dd5033be3ab938c4d872f572523acf2038eaa7', NULL, NULL, NULL, 1563357821, NULL, 1, NULL, NULL, 'Alexandra', 'SAULNIER', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (74, '46.18.128.203', 'dbukva@aslairlines.com', '$2y$08$ZbPNkrPPGVQk66niR2V9JevgWqWJSLupJI4TYpdVheNYLSsrtx9ZO', NULL, 'dbukva@aslairlines.com', '1d3df71231efc0d8a05f20b09caa0325bc4d2ef6', NULL, NULL, 'jiyJBc4WYSaYIigxdPZ9E.', 1563357882, 1563368650, 1, NULL, NULL, 'Delphine', 'BUKVA', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `users` VALUES (77, '127.0.0.1', 'mauguzun+cand@gmail.com', '$2y$08$7lLfdAfXqLeawIGQLDZywO0cfCihOkK2XqWmLwdW4uZIjluw0DOge', NULL, 'mauguzun+cand@gmail.com', NULL, NULL, NULL, 'QxpEjHNBXk4stpG9QYLYW.', 1534516868, 1573045134, 1, 'mr', '2010-03-04', 'denis 2', 'de', 0, NULL, 0, 'Rigas iela', 'lv0182', 'rasdfa', 121, '123123123', '');
+INSERT INTO `users` VALUES (77, '127.0.0.1', 'mauguzun+cand@gmail.com', '$2y$08$7lLfdAfXqLeawIGQLDZywO0cfCihOkK2XqWmLwdW4uZIjluw0DOge', NULL, 'mauguzun+cand@gmail.com', NULL, NULL, NULL, 'QxpEjHNBXk4stpG9QYLYW.', 1534516868, 1573045134, 1, 'mr', '2010-03-04', 'denis 2', 'de', 0, NULL, 0, 'Rigas ieladasd', 'lv0182', 'rasdfa', 121, '123123123', '');
 INSERT INTO `users` VALUES (80, '127.0.0.1', 'maugun+admin@gmail.com', '$2y$08$aYRBnPY7EnFbG1fHeI73L.jW/3baG88QZX.MQI9QJGPvNoEoI9xnu', NULL, 'maugun+admin@gmail.com', 'a567d09f8a3ce4f8eb701ef645f7301ef6bddd99', NULL, NULL, NULL, 1568290155, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (81, '127.0.0.1', 'mauguzun@gmail.com', '$2y$08$8j2RRzgurJPBqitejA0hx.e/R/VZ.V8oF6EHbeBHGSw5nblAYP3hi', NULL, 'mauguzun@gmail.com', 'dae07301e636bc7906d83390c0a6d695fb29930a', NULL, NULL, NULL, 1568290252, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `users` VALUES (82, '127.0.0.1', 'maugun+sometest@gmail.com', '$2y$08$1Vlko86A7U7Bk7hbpnl48.3x8hBVp3xSfTodvoqj8WPjGJfdJ1Ig.', NULL, 'maugun+sometest@gmail.com', 'cd3438078b5641dcd93212e13ca0426dd5dc7f46', NULL, NULL, NULL, 1568290405, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);

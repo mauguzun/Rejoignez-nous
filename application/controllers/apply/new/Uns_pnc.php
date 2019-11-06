@@ -93,11 +93,16 @@ class Uns_pnc extends  Pnc_Conntroller{
 				unset($_POST['change_acc']);				
 				
 				$this->json['message'] = "<p>". lang('user_account_updated')."</p>";
-				$this->update_user_account($_POST);
+				$userData = $_POST;
+				unset($userData['application_id']);
+				unset($userData['unsolicated_type']);
+				unset($userData['unsolicated']);
+				$this->update_user_account($userData);
 			}
 			
 			if(isset($_POST['application_id'])){
 				$this->app_by_id($_POST['application_id']);
+				
 			}
 		
 			

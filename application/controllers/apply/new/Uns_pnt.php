@@ -93,13 +93,17 @@ class Uns_pnt extends  Pnt_Controller{
 		// check form validation
 		if(isset($_POST) &&  $this->form_validation->run() === true){
 			
-			
 			if(isset($_POST['change_acc'])){
 				unset($_POST['change_acc']);				
 				
 				$this->json['message'] = "<p>". lang('user_account_updated')."</p>";
-				$this->update_user_account($_POST);
+				$userData = $_POST;
+				unset($userData['application_id']);
+				unset($userData['unsolicated_type']);
+				unset($userData['unsolicated']);
+				$this->update_user_account($userData);
 			}
+			
 			
 			if(isset($_POST['application_id'])){
 				$this->app_by_id($_POST['application_id']);
