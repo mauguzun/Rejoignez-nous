@@ -24,6 +24,7 @@ class Uploadlist
 	        'photo_in_feet',
 	        'passport',
 	        'certificate_of_registration_at_the_employment_center',
+	        'certificate_cfs_or_cca',
 	        'vaccine_against_yellow_fever',
 	        'id_photo'
         ];

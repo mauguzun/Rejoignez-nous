@@ -63,7 +63,7 @@ class Uns_pnt extends  Pnt_Controller{
 		
 		
 		
-		$this->load->view('apply_final/'.$this->type.'/vue',[
+		$this->load->view('apply_final/pnt/vue',[
 				'applicaiton_id'=>$this->app ? $this->app['id'] :  null,
 				'uploaders'=>$this->uploaders,
 				'status'=>json_encode($this->statuses),

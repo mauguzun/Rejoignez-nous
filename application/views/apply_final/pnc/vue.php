@@ -35,6 +35,7 @@
 				files:{
 					certificate_of_registration_at_the_employment_center:[],
 					cv:[],
+					certificate_cfs_or_cca:[],
 					certificate_of_flang:[],
 					medical_aptitude:[],
 					photo_in_feet:[],

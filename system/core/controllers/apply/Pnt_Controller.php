@@ -703,7 +703,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 			die();
 		}
 
-			$query = $this->Crud->get_joins(
+		$query = $this->Crud->get_joins(
 			'application',
 			[
 				"users"=>"users.id = application.user_id",
@@ -721,7 +721,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 			application.* ,
 			application.id as aid,
 			applicaiton_misc.*,
-						users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
+			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
 
 			countries.name as country,
 			last_level_education.*,
@@ -761,8 +761,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 			["application_languages_level.application_id"=>$this->app['id']]
 		);
 		$query['more_lang'] = [];
-		foreach($more_lang as $row)
-		{
+		foreach($more_lang as $row){
 			$query['more_lang'][$row['language']] = $row['level'];
 		}
 
@@ -821,4 +820,42 @@ class Pnt_Controller extends Base_Apply_Controller{
 		exit(0);
 
 	}
+	
+	protected function get_medical(){
+		
+	
+		$row = 	$this->app ?  $this->Crud->get_row(
+			['application_id'=>$this->app['id']],'application_medical_aptitude') : null;
+
+
+
+		$medical= $row['date'] ?  date_to_input($row['date']) : null;
+		$medical_restriction = $row['medical_restriction'] ? $row['medical_restriction'] : '' ;
+
+		return $this->load->view('apply_final/parts/medical',[
+				'url'=> base_url().'apply/new/'.$this->type.'/medical/',
+				'medical_restriction'=>$medical_restriction,
+				'medical' =>$medical
+			],true);
+	}
+	
+	public function medical(){
+		$this->form_validation->set_rules('date', lang('end_date_last_medical_visit'), 'trim|required|max_length[12]');
+		
+		$this->app_by_id($_POST['application_id']);
+		
+		if($this->form_validation->run() === TRUE){
+
+			$_POST['date'] = date_to_db($_POST['date']);
+			$this->Crud->update_or_insert($_POST,'application_medical_aptitude');
+			$this->json['result'] = true;
+			$this->json['message'] = lang('saved');
+			
+		}else{
+			$this->json['message'] = (validation_errors() ? validation_errors() :($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+		}
+		$this->json['application_id']= $_POST['application_id'];
+		$this->show_json();
+	}
+
 }

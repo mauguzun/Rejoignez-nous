@@ -13,7 +13,7 @@ class Pnc_Conntroller extends Base_Apply_Controller{
 		/*'covver_letter',*/
 		'cv',
 		/*'certificate_of_flang',*/
-		'medical_aptitude','photo_in_feet',
+		'certificate_cfs_or_cca','photo_in_feet',
 		'passport',	
 		'certificate_of_registration_at_the_employment_center',
 		'vaccine_against_yellow_fever',
