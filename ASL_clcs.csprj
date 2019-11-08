@@ -5867,7 +5867,7 @@
 </treenode>
 </treenode>
 <treenode node="Crud;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f0;4;1;329;;;;vpos;;v;;aCI_Model;;c;;r;;d0,5;;b0,0;;m0;;e">
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;48;5;52;;;;vpos;;v;;aint;;r&#10;Definition&#10;    add( $value, $table)&#10;&#10;Description&#10;     insert new row ,pass array&#10;&#10;Parameters:&#10;    array $value&#10;    string $table&#10;&#10;Return:&#10;   insert id ;s;;d4,49;;b0,0;;m0;;earray $value;;pstring $table;;p">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;48;5;52;;;;vpos;;v;;a;;r;;d1,30;;b0,0;;m0;;eparam;;ptable;;p">
 </treenode>
 <treenode node="add_many;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;60;5;67;;;;vpos;;v;;a;;r&#10;Definition&#10;    add_many($value , $table)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    multiarra $value&#10;    string $table;;d4,61;;b0,0;;m0;;emultiarra $value;;pstring $table;;p">
 </treenode>
@@ -5875,7 +5875,7 @@
 </treenode>
 <treenode node="delete;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;158;5;162;;;;vpos;;v;;a;;r&#10;Definition&#10;    delete( $where,  $table)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    array $where&#10;    string $table;;d4,159;;b0,0;;m0;;earray $where;;pstring $table;;p">
 </treenode>
-<treenode node="get_all;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;9;5;25;;;;vpos;;v;;a;;r;;d4,10;;b0,0;;m0;;etable;;pwhere;;porder;;porder_value;;pselect;;plimit;;pstart;;p">
+<treenode node="get_all;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;9;5;25;;;;vpos;;v;;a;;r;;d1,36;;b0,0;;m0;;etable;;p">
 </treenode>
 <treenode node="get_array;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;142;5;149;;;;vpos;;v;;aarray;;r&#10;Definition&#10;    get_array( $id,$column,$table)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    string $id&#10;    string $column&#10;    string $table;;d4,143;;b0,0;;m0;;estring $id;;pstring $column;;pstring $table;;p">
 </treenode>
@@ -5887,11 +5887,11 @@
 </treenode>
 <treenode node="get_like;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;194;5;205;;;;vpos;;v;;a;;r&#10;Definition&#10;    get_like( $like, $table ,$where = NULL )&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    array $like - ,&apos;column,value&apos;&#10;    string $table;;d4,195;;b0,0;;m0;;elike;;ptable;;pwhere;;p">
 </treenode>
-<treenode node="get_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;33;5;39;;;;vpos;;v;;a;;r&#10;Definition&#10;    get_row($where,$table)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    array $where&#10;    string $table;;d4,34;;b0,0;;m0;;earray $where;;pstring $table;;p">
+<treenode node="get_row;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;33;5;39;;;;vpos;;v;;a;;r;;d1,90;;b0,0;;m0;;ewhere;;ptable;;p">
 </treenode>
 <treenode node="get_where_in;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;82;5;102;;;;vpos;;v;;aarray;;r&#10;Definition&#10;    get_where_in($where_column ,$where_in_array,$table ,$where = NULL ,$order = NULL ,$select = NUll ,$limit = NULL ,$start = NULL )&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    string $where_column&#10;    array $where_in_array&#10;    string $table&#10;    array $where&#10;    array $order&#10;    string $select&#10;    int $limit&#10;    int $start;;d4,83;;b0,0;;m0;;estring $where_column;;parray $where_in_array;;pstring $table;;parray $where;;parray $order;;pstring $select;;pint $limit;;pint $start;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;113;5;119;;;;vpos;;v;;a;;r&#10;Definition&#10;    update( $where = NULL , $data, $table)&#10;&#10;Description&#10;      update row in db&#10;&#10;Parameters:&#10;    array $where&#10;    array $data&#10;    string $table;;d4,114;;b0,0;;m0;;earray $where;;parray $data;;pstring $table;;p">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;113;5;119;;;;vpos;;v;;a;;r;;d1,84;;b0,0;;m0;;eparam;;pvalue;;pdata;;ptable;;p">
 </treenode>
 <treenode node="update_or_insert;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\models\Crud.php;f4;127;5;131;;;;vpos;;v;;a;;r&#10;Definition&#10;    update_or_insert($data,$table)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    array $data&#10;    string $table;;d4,128;;b0,0;;m0;;earray $data;;pstring $table;;p">
 </treenode>
@@ -11178,20 +11178,20 @@
 <treenode node="__get;PHP:Function Name;C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\src\Faker\UniqueGenerator.php;f11;29;5;32;;;;vpos;;v;;amixed;;r&#10;Definition&#10;    __get($attribute)&#10;&#10;Description&#10;     Catch and proxy all generator calls but return only unique values&#10;&#10;Parameters:&#10;    string $attribute;;d4,30;;b1,0;;m0;;estring $attribute;;p">
 </treenode>
 </treenode>
-<treenode node="Uns_pnc;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php;f0;6;1;134;;;;vpos;;v;;aPnc_Conntroller;;c;;r&#10;Definition&#10;    class Uns_pnc extends  Pnc_Conntroller&#10;&#10;Description&#10;     user/apply/Hr/Main;;d38,6;;b0,0;;m0;;e">
+<treenode node="Uns_pnc;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php;f0;6;1;139;;;;vpos;;v;;aPnc_Conntroller;;c;;r&#10;Definition&#10;    class Uns_pnc extends  Pnc_Conntroller&#10;&#10;Description&#10;     user/apply/Hr/Main;;d38,6;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php;f8;10;2;14;;;;vpos;;v;;a;;r;;d30,10;;b1,0;;m0;;e">
 </treenode>
 <treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php;f8;15;2;66;;;;vpos;;v;;a;;r;;d39,15;;b1,0;;m0;;eapp_id;;p">
 </treenode>
-<treenode node="main;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php;f12;71;2;130;;;;vpos;;v;;a;;r;;d41,71;;b1,0;;m0;;eoffer_id;;p">
+<treenode node="main;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php;f12;71;2;135;;;;vpos;;v;;a;;r;;d41,71;;b1,0;;m0;;eoffer_id;;p">
 </treenode>
 </treenode>
-<treenode node="Uns_pnt;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f0;4;1;139;;;;vpos;;v;;aPnt_Controller;;c;;r;;d37,4;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\NewFile.php;f8;8;2;12;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f8;8;2;12;;;;vpos;;v;;a;;r;;d30,8;;b1,0;;m0;;e">
+<treenode node="Uns_pnt;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f0;4;1;143;;;;vpos;;v;;aPnt_Controller;;c;;r;;d37,4;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f8;8;2;12;;;;vpos;;v;;a;;r;;d30,8;;b1,0;;m0;;e">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\NewFile.php;f8;14;2;73;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f8;14;2;73;;;;vpos;;v;;a;;r;;d39,14;;b1,0;;m0;;eapp_id;;p">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f8;14;2;73;;;;vpos;;v;;a;;r;;d39,14;;b1,0;;m0;;eapp_id;;p">
 </treenode>
-<treenode node="main;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\NewFile.php;f8;76;2;135;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f8;76;2;135;;;;vpos;;v;;a;;r;;d37,76;;b1,0;;m0;;eoffer_id;;p">
+<treenode node="main;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php;f8;76;2;139;;;;vpos;;v;;a;;r;;d37,76;;b1,0;;m0;;eoffer_id;;p">
 </treenode>
 </treenode>
 <treenode node="Unsolicated;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Usolicated.php;f0;4;1;74;;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsolicated.php;f0;4;1;81;;;;vpos;;v;;aUnsolicated_Controller;;c;;r;;d49,4;;b0,0;;m0;;e">
@@ -11438,10 +11438,10 @@
 <treenode node="unsolicated;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\shared\Viewuser.php;f8;446;2;543;;;;vpos;;v;;a;;r;;d1,447;;b1,0;;m0;;eapplication_id;;p">
 </treenode>
 </treenode>
-<treenode node="Welcome;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\Welcome.php;f0;3;1;53;;;;vpos;;v;;aCI_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\Welcome.php;f8;6;2;12;;;;vpos;;v;;a;;r;;d1,7;;b1,0;;m0;;e">
+<treenode node="Welcome;PHP:Class Name;C:\OSPanel\domains\localhost\reg\application\controllers\Welcome.php;f0;3;1;53;;;;vpos;;v;;aCI_Controller;;c;;r;;d35,2;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\Welcome.php;f8;6;2;12;;;;vpos;;v;;a;;r;;d30,5;;b1,0;;m0;;e">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\Welcome.php;f8;14;2;49;;;;vpos;;v;;a;;r;;d1,15;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\reg\application\controllers\Welcome.php;f8;14;2;49;;;;vpos;;v;;a;;r;;d32,9;;b1,0;;m0;;eid;;p">
 </treenode>
 </treenode>
 <treenode node="XML_RPC_Client;PHP:Class Name;C:\OSPanel\domains\localhost\reg\system\libraries\Xmlrpc.php;f0;563;1;775;;;;vpos;;v;;aCI_Xmlrpc;;c;;r&#10;Definition&#10;    class XML_RPC_Client extends CI_Xmlrpc&#10;&#10;Description&#10;     XML-RPC Client class;;d0,564;;b0,0;;m0;;e">

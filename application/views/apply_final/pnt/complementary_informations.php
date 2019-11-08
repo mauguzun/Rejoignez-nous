@@ -98,8 +98,8 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				 ref="involved" name="<?= $name?>"
 				 class="form-control" type="textarea"
 				 placeholder="<?= lang('pls_specify')?>"
-			 id="motivation_asl" 
-			 required
+			 
+			 
 			><?= isset($completary[$name]) ? $completary[$name] : null ?></textarea>
 	
 			</div>

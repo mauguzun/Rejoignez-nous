@@ -343,6 +343,8 @@
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
 	</todoblock>
+	<dbgurls>
+	</dbgurls>
 	<filescache>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1557725716"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1557725716"/>
@@ -3843,7 +3845,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\core\index.html" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Zipapp.php" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Resetpassword.php" crc="1557725438"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Profile.php" crc="1571937528"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Profile.php" crc="1573056822"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Offers.php" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Offer.php" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\user\Getfile.php" crc="1571917022"/>
@@ -3887,8 +3889,8 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Email.php" crc="1557725434"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\back\Ajax.php" crc="1557725434"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsolicated.php" crc="1572004936"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php" crc="1573048077"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php" crc="1572956625"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php" crc="1573057399"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php" crc="1573057334"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnt.php" crc="1572011044"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php" crc="1572894001"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Mechanic.php" crc="1572011065"/>
@@ -3936,6 +3938,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\.htaccess" crc="1557725426"/>
 		<file name="C:\OSPanel\domains\localhost\reg\index.php" crc="1557725426"/>
 		<file name="C:\OSPanel\domains\localhost\reg\halloall_lifa.sql" crc="1572011754"/>
+		<file name="C:\OSPanel\domains\localhost\reg\db.sql" crc="1573057552"/>
 		<file name="C:\OSPanel\domains\localhost\reg\.htaccess" crc="1568108989"/>
 	</filescache>
 </project>
