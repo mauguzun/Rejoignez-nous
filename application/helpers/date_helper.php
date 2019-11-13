@@ -18,7 +18,10 @@ if( ! function_exists('date_to_db')){
 
 if( ! function_exists('date_to_input')){
 	function date_to_input($date){
-
+		
+		if ($date == '0000-00-00'){
+			return NULL;
+		}
 		try{
 			$date = trim($date);
 			@$value= date_format(date_create_from_format('Y-m-d', $date), 'd/m/Y');

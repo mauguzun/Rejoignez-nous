@@ -222,27 +222,19 @@ class Applications extends Shared_Controller{
 			}
 			else{
 
-				// create user
-				$user = $this->Crud->add([
-						'comment'=>$_POST['comment'],
-						'admin_id'=>$this->ion_auth->user()->row()->id,
-						'first_name'=>$_POST['first_name'],
-						'last_name'=>$_POST['last_name'],
-					],'users'
-				);
-
+				
 
 				// appedn to ffer
 				$this->Crud->add(
 					[
 						'manualy'=>1,
 						'filled'=>1,
-						'id'=>$_POST['id'],
-						'user_id'=>$user['id'],
+
 						'offer_id'=>$_POST['offer_id'],
 						'unsolicated_function'=>$_POST['unsolicated_function'],
 						'first_name'=>$_POST['first_name'],
 						'last_name'=>$_POST['last_name'],
+						'comment'=>$_POST['comment'],
 						/*'opinion_folder '=>$_POST['opinion_folder'],
 						'opinion_interview '=>$_POST['opinion_interview'],
 						'opinion_test '=>$_POST['opinion_test'],
@@ -542,7 +534,8 @@ class Applications extends Shared_Controller{
 			$email          = base_url().Shared_Controller::$map.'/sendemail/'.$this->folderoffer->get_map($table_row['category']).'/'.$table_row['aid'];
 			$title          = anchor($this->_redirect.'?offer='.$title,  $title ,['target'=>'_blank'] );
 			$funciton          =  anchor(
-				$this->_redirect.'?offer='.$table_row['title'],  $table_row['functions'] ,['target'=>'_blank'] );
+				$this->_redirect.'?offer='.$table_row['title'],  $table_row['functions'] ,
+				['target'=>'_blank'] );
 			
 				
 		}
@@ -582,8 +575,8 @@ class Applications extends Shared_Controller{
 			$row,
 
 			$table_row['add_date'],
-			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['first_name']) ,
-			anchor(base_url().Shared_Controller::$map.'/viewuser/index/'.$table_row['aid'],$table_row['last_name']) ,
+			anchor($print,$table_row['first_name'],['target'=>'_blank']) ,
+			anchor($print,$table_row['last_name'],['target'=>'_blank']) ,
 			
 			/*$title/*. $table_row['functions']*/ 
 			$funct,
@@ -835,7 +828,7 @@ class Applications extends Shared_Controller{
 		return $allowed;
 	}
 	
-	public function function_list($id){
+	public function print_app($id){
 		
 	}
 }

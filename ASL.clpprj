@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\reg\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\controllers\Test.php;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsurl.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\medical.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt;C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt\vue.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -343,8 +345,6 @@
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
 	</todoblock>
-	<dbgurls>
-	</dbgurls>
 	<filescache>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1557725716"/>
 		<file name="C:\OSPanel\domains\localhost\reg\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1557725716"/>
@@ -1118,10 +1118,10 @@
 		<file name="C:\OSPanel\domains\localhost\reg\system\database\DB.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Unsolicated_Controller.php" crc="1572944286"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnt_Controller.php" crc="1573049731"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1573047083"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php" crc="1573586446"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Mechanic_Controller.php" crc="1572348247"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Hr_Controller.php" crc="1572348287"/>
-		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1572878787"/>
+		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php" crc="1573576619"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Usermeta_Controller.php" crc="1568708021"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\User_Controller.php" crc="1557725644"/>
 		<file name="C:\OSPanel\domains\localhost\reg\system\core\controllers\Shared_Controller.php" crc="1557725644"/>
@@ -3366,7 +3366,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\assets\css\bootstrap.css" crc="1557725472"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\my.css" crc="1571917023"/>
 		<file name="C:\OSPanel\domains\localhost\reg\css\back\ajax-bootstrap-select.min.js" crc="1557725472"/>
-		<file name="C:\OSPanel\domains\localhost\reg\css\print.css" crc="1557725472"/>
+		<file name="C:\OSPanel\domains\localhost\reg\css\print.css" crc="1573573701"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\welcome\welcome.php" crc="1557725472"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\welcome\header.php" crc="1568205872"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\welcome\footer.php" crc="1568111443"/>
@@ -3525,6 +3525,9 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\index.php" crc="1571923797"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\begin.php" crc="1572004832"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\unsolicated\application_unsolicated_formattion.php" crc="1571994424"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\printer\keyvalue.php" crc="1573573764"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\printer\header.php" crc="1573572377"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\printer\footer.php" crc="1573572245"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\vue.php" crc="1572983058"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\successive_employer.php" crc="1572979441"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\qualification_type.php" crc="1572889377"/>
@@ -3534,7 +3537,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\index.php" crc="1571917023"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\experience_in_instructor.php" crc="1572889510"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\exp.php" crc="1572889798"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php" crc="1573050167"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\complementary_informations.php" crc="1573219994"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php" crc="1573047864"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\index.php" crc="1572893002"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\complementary_informations.php" crc="1572893856"/>
@@ -3892,7 +3895,7 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnt.php" crc="1573057399"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Uns_pnc.php" crc="1573057334"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnt.php" crc="1572011044"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php" crc="1572894001"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Pnc.php" crc="1573564733"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Mechanic.php" crc="1572011065"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Hr.php" crc="1572011078"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Begin.php" crc="1572004808"/>

@@ -311,154 +311,7 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 	}
 	
 	
-	public function printer($app_id=NULL){
-
-		
-		
-		if($this->allow_print($app_id) == false){
-			die();
-		}
-		
-		
-		$this->load->language('admin');
-
-
-		$query = $this->Crud->get_joins(
-			'application',
-			[
-				"users"=>"users.id = application.user_id",
-				"applicaiton_misc"=>"application.id = applicaiton_misc.application_id",
-				'countries'=>"application.country_id = countries.id",
-				'application_languages_level'=>"application.id = application_languages_level.application_id",
-				'last_level_education'=>"application.id = last_level_education.application_id",
-				'hr_offer_education_level'=>"last_level_education.education_level_id = hr_offer_education_level.id",
-				'application_hr_expirience'=>"application.id = application_hr_expirience.application_id",
-				'application_english_frechn_level'=>"application.id = application_english_frechn_level.application_id",
-
-			],
-			"application.user_id as uid ,
-			application.* ,
-			applicaiton_misc.*,
-			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
-			countries.name as country,
-			application.id as aid,
-			last_level_education.*,
-			application_english_frechn_level.*,
-			hr_offer_education_level.level as education_level,
-			application_languages_level.* ",
-			NULL,
-			null,
-			["application.id" => $this->app['id']]);
-
-
-
-		$query      = $query[0];
-
-
-		$lang_level = $this->Crud->get_array('id','level','language_level');
-		
-		$query['english_level'] = $lang_level[$query['english_level']];
-		$query['french_level'] = $lang_level[$query['french_level']];
-
-
-		$more_lang = $this->Crud->get_joins('application_languages_level',
-			['language_level' => "application_languages_level.level_id  = language_level.id" ],
-			'*',['application_languages_level.language'=>'ASC'],NULL,
-			["application_languages_level.application_id"=>$this->app['id']]
-		);
-		$query['more_lang'] = [];
-		foreach($more_lang as $row){
-			$query['more_lang'][$row['language']] = $row['level'];
-		}
 	
-
-
-
-		$query['handicaped'] = $this->_have($query['handicaped']);
-
-
-		/*echo  "<pre>";
-		var_dump($query);
-		die();*/
-
-		/*	$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
-		[
-		'expirience_duration' => "application_hr_expirience.duration  = expirience_duration.id",
-		'expirience_managerial' => 'application_hr_expirience.managerial = expirience_managerial.id'
-		],'*',['application_hr_expirience.area'=>'ASC'],NULL,["application_hr_expirience.application_id"=>$this->app['id']]
-		);
-
-		$query['hr_expirience'] = $hr_expirience;
-		*/
-
-		$function = $this->Crud->get_joins(
-			'application_un',
-			[
-				"application_contract"=>'application_un.contract_id =application_contract.id',
-				"application_un_activity"=>'application_un.application_id =application_un_activity.application_id'
-
-			],
-			'application_un.*,application_contract.type as type ,
-			GROUP_CONCAT(DISTINCT application_un_activity.activity  ) as activities,
-
-			',
-
-			NULL,NULL,["application_un.application_id"=>$this->app['id']]
-
-		);
-
-		$query['function'] = $function[0];
-		
-		$managerial = [];
-		foreach(['expirience_managerial'=>'managerial'] as $key=> $column){
-			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
-				$managerial[$value['id']] = $value[$column];
-			}
-			
-		}
-		;
-
-		$query['proff'] = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
-		$query['application_unsolicated_formattion'] = $this->Crud->get_all('application_unsolicated_formattion',['application_id'=>$this->app['id']]);
-		
-		
-		$yes = lang('yes_toogle');
-		foreach($query['proff'] as &$value){
-			unset($value['application_id']);
-			$value['country_id'] = $this->countries()[$value['country_id']];
-			$value['managerial'] = $managerial[$value['managerial']];
-			$value['current'] = $this->_have($value['current']);
-			$value['start'] = date_to_input($value['start']);
-			$value['end'] =  $value['end'] != '0000-00-00' ? date_to_input($value['end']) : null;
-		}
-		
-		foreach($query['application_unsolicated_formattion'] as &$value){
-			unset($value['application_id']);
-
-			$value['start'] = date_to_input($value['start']);
-			$value['end'] =  $value['end'] != '0000-00-00' ? date_to_input($value['end']) : null;
-		}
-		
-		
-		
-		/*$this->load->view('front/apply/printer',['query'=>$query]);
-		return;*/
-
-		//$this->load->view('front/apply/printer',['query'=>$query]);
-		require_once("application/libraries/dompdf/vendor/autoload.php");
-
-		$dompdf = new  Dompdf\Dompdf();
-		$dompdf->loadHtml($this->load->view('front/apply/printer',['query'=>$query],TRUE));
-
-		$dompdf->setPaper('A4');
-
-
-		$dompdf->render();
-		$dompdf->stream(url_title($query['first_name'].$query['last_name']), array("Attachment"=> false));
-
-		exit(0);
-
-	}
 	
 	
 	protected function get_professional(){
@@ -586,5 +439,97 @@ class Unsolicated_Controller extends Base_Apply_Controller{
 		}
 		$this->json['application_id'] = $this->app['id'];
 		$this->show_json();
+	}
+	
+	public function printer($app_id=NULL){
+
+		
+		
+		if($this->allow_print($app_id) == false){
+			die();
+		}
+		require_once("application/libraries/dompdf/vendor/autoload.php");
+
+		$dompdf = new  Dompdf\Dompdf();
+		$dompdf->loadHtml($this->get_print_data());
+
+		$dompdf->setPaper('A4','landscape');
+
+
+		$dompdf->render();
+		$dompdf->stream(
+			url_title($this->app['first_name'].$this->app['last_name']), array("Attachment"=> false));
+
+		exit(0);
+	}
+	
+	protected function get_print_data(){
+
+
+		$html = '';
+		$html .= $this->load->view('apply_final/printer/header',['query'=>$this->app],true);
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('profile'),
+				'query'=>$this->get_print_main_data()
+			],true);
+		
+		//position
+		$data =  $this->Crud->get_row(['application_id'=>$this->app['id']],'application_un');$contract = $this->Crud->get_row(['id'=>$data['contract_id']],'application_contract');
+		$query = ['create_application_contract'=>$contract['type'],'function'=>$data['function']];
+		
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('position'),'query'=>$query],true);	
+			
+		// prof
+	
+		$misc = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
+		$managerial = $this->Crud->get_array('id','managerial','expirience_managerial');
+		foreach($misc as &$value){
+			unset($value['application_id']);		
+			$value['country_id'] = $this->countries()[$value['country_id']]; 			
+			$value['start'] = date_to_input($value['start']);		
+			$value['end'] = date_to_input($value['end']);				
+			$value['current'] = $this->_have($value['current']);	
+			$value['managerial'] = $managerial[$value['managerial']]; 
+		}
+		$html .= $this->load->view('apply_final/printer/manycolumns',[
+				'title'=>lang('professional'),
+				'query'=>$misc
+			],true);
+		
+		
+		//formation
+		$misc = $this->Crud->get_all('application_unsolicated_formattion',['application_id'=>$this->app['id']]);
+		foreach($misc as &$value){
+			unset($value['application_id']);		
+			$value['start'] = date_to_input($value['start']);		
+			$value['end'] = date_to_input($value['end']);				
+
+		}
+		
+		$html .= $this->load->view('apply_final/printer/table',[
+				'title'=>lang('application_unsolicated_formattion'),
+				'query'=>$misc],true);
+			
+		
+		//lang
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('lanuage'),
+				'query'=>$this->get_print_lang()],true);	
+	
+		
+				
+		// Miscellaneou
+		$misc = $this->get_print_misc();
+		unset($misc['medical_restriction']);
+		unset($misc['employ_center']);
+		
+		
+		$html .= $this->load->view('apply_final/printer/keyvalue',['title'=>lang('complementary_informations'),
+				'query'=>$misc],true);
+		$html .=  $this->load->view('apply_final/printer/footer',['query'=>$this->app],true);
+
+		return  $html;
+													  	
 	}
 }

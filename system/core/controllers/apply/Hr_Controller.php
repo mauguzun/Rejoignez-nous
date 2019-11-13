@@ -32,110 +32,86 @@ class Hr_Controller extends Base_Apply_Controller{
 	}
 	
 	
-	
 	public function printer($app_id=NULL){
-
+		
 		
 		
 		if($this->allow_print($app_id) == false){
 			die();
 		}
 		
-
-		$query = $this->Crud->get_joins(
-			'application',
-			[
-				"users"=>"users.id = application.user_id",
-				
-
-				"applicaiton_misc"=>"application.id = applicaiton_misc.application_id",
-				'countries'=>"application.country_id = countries.id",
-				'application_languages_level'=>"application.id = application_languages_level.application_id",
-				'last_level_education'=>"application.id = last_level_education.application_id",
-				'hr_offer_education_level'=>"last_level_education.education_level_id = hr_offer_education_level.id",
-				'application_hr_expirience'=>"application.id = application_hr_expirience.application_id",
-				'application_english_frechn_level'=>"application.id = application_english_frechn_level.application_id",
-
-			],
-			"application.user_id as uid ,
-			application.* ,
-			applicaiton_misc.*,
-			users.email as email,
-			countries.name as country,
-			application.id as aid,
-			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
-
-			last_level_education.*,
-			application_english_frechn_level.*,
-			hr_offer_education_level.level as education_level,
-			application_languages_level.* ",
-			NULL,
-			null,
-			["application.id" => $this->app['id']]);
-
-
-
-		$query      = $query[0];
-
-		//$query['date'] = time_stamp_to_date($query['date']);
-
-
-		$lang_level = $this->Crud->get_array('id','level','language_level');
-		$query['english_level'] = $lang_level[$query['english_level']];
-		$query['french_level'] = $lang_level[$query['french_level']];
-
-
-
-		$more_lang = $this->Crud->get_joins('application_languages_level',
-			['language_level' => "application_languages_level.level_id  = language_level.id" ],
-			'*',['application_languages_level.language'=>'ASC'],NULL,
-			["application_languages_level.application_id"=>$this->app['id']]
-		);
-		$query['more_lang'] = [];
-		foreach($more_lang as $row){
-			$query['more_lang'][$row['language']] = $row['level'];
-		}
-
-
-
-		$query['handicaped'] = $this->_have($query['handicaped']);
-
-
-
-
-
-		$hr_expirience = $this->Crud->get_joins('application_hr_expirience',
-			[
-				'expirience_duration' => "application_hr_expirience.duration  = expirience_duration.id",
-				'expirience_managerial' => 'application_hr_expirience.managerial = expirience_managerial.id'
-			],'*',['application_hr_expirience.area'=>'ASC'],NULL,
-			["application_hr_expirience.application_id"=>$this->app['id']]
-		);
-
-		$query['hr_expirience'] = $hr_expirience;
 		
+		require_once("application/libraries/dompdf/vendor/autoload.php");
+
+		$dompdf = new  Dompdf\Dompdf();
+		$dompdf->loadHtml($this->get_print_data());
+
+		$dompdf->setPaper('A4','landscape');
+
+
+		$dompdf->render();
+		$dompdf->stream(
+			url_title($this->app['first_name'].$this->app['last_name']), array("Attachment"=> false));
+
+		exit(0);
 	
-		if($query){
-			//$this->load->view('front / apply / printer',['query'=>$query]);
-			require_once("application/libraries/dompdf/vendor/autoload.php");
+		
+	}
+	
+	
+	public function get_print_data($app_id=NULL){
 
-			$dompdf = new  Dompdf\Dompdf();
-			$dompdf->loadHtml($this->load->view('front/apply/printer',['query'=>$query],TRUE));
-
-			$dompdf->setPaper('A4');
-
-
-			$dompdf->render();
-			$dompdf->stream(url_title($query['first_name'].$query['last_name']), array("Attachment"=> false));
-
-			exit(0);
-
-		}else{
-			show_404();
+		$html = '';
+		$html .= $this->load->view('apply_final/printer/header',['query'=>$this->app],true);
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('profile'),
+				'query'=>$this->get_print_main_data()
+			],true);
+			
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('education'),
+				'query'=>$this->get_print_last_level_education()
+			],true);	
+			
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('language'),
+				'query'=>$this->get_print_lang()
+			],true);
+			
+		// exp
+		$query = $this->Crud->get_all(
+			'application_hr_expirience',
+			['application_id'=>$this->app['id']],null,null,'area,duration,managerial');
+		
+		$select = [];
+		foreach(['expirience_duration'=>'duration','expirience_managerial'=>'managerial'] as $key=> $column){
+			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
+				$options[$value['id']] = $value[$column];
+			}
+			$select[$column] = $options;
 		}
+		
+		foreach($query as  &$value){
+			$value['managerial'] = $select['managerial'][$value['managerial'] ];
+			$value['duration'] = $select['duration'][$value['duration'] ];;
+		}
+		
+		
+		
+		$html .= $this->load->view('apply_final/printer/table',['title'=>lang('experience'),
+				'query'=>$query],true);
+				
+		// Miscellaneou
+		$misc = $this->get_print_misc();
+		unset($misc['medical_restriction']);
+		unset($misc['employ_center']);
+		
+		
+		$html .= $this->load->view('apply_final/printer/keyvalue',['title'=>lang('complementary_informations'),
+				'query'=>$misc],true);
+		$html .=  $this->load->view('apply_final/printer/footer',['query'=>$this->app],true);
 
-	
-
+		return $html;
 	}
 
 	

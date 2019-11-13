@@ -23,8 +23,7 @@ class Pnc extends  Pnc_Conntroller{
 		}
 		
 		
-		
-		
+	
 		$this->show_header([$offer['title'],$offer['title'],$offer['title']]);
 		
 		$this->app($offer_id);

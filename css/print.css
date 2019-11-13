@@ -1,78 +1,81 @@
 /* CSS Snippet For Responsive Table - Stylized */
 
-			/* Basic */
+/* Basic */
 
-			*
-			{
-				box-sizing: border-box;
-				font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-				font-size: 11px;
-			}
-			.page_break
-			{
-				/*	page-break-before: always;*/
-			}
-			table
-			{
-				border-spacing: 0px;
-				border-collapse: collapse;
-				width: 100%;
-				max-width: 100%;
-				margin-bottom: 5px;
-				background-color: transparent; /* Change the background-color of table here */
-				text-align: left; /* Change the text-alignment of table here */
-			}
+*
+{
+	box-sizing: border-box;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 11px;
+}
+.page_break
+{
+	/*	page-break-before: always;*/
+}
+table
+{
+	border-spacing: 0px;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 5px;
+	background-color: transparent; /* Change the background-color of table here */
+	text-align: left; /* Change the text-alignment of table here */
+}
 
-			th
-			{
-				font-weight: bold;
-				padding: 10px;
-			}
+th
+{
+	font-weight: bold;
+	padding: 10px;
+}
 
-			td
-			{
-				padding: 10px;
-			}
+td
+{
+	padding: 10px;
+}
 
-			/* Stylized */
+/* Stylized */
 
-			/* Adding Striped Effect for odd rows */
+/* Adding Striped Effect for odd rows */
 
-			tr
-			{
-				background-color: transparent; /* Change the default background-color of rows here */
-			}
-
-
-			tr th
-			{
-				background-color: #dddddd; /* Change the background-color of heading here */
-			}
+tr
+{
+	background-color: transparent; /* Change the default background-color of rows here */
+}
 
 
+tr th
+{
+				
+	background: #fafafa;
+	/* Change the background-color of heading here */
+}
 
 
-			/* Removing left and right border of rows for modern UIs */
 
-			tr
-			{
-				border-top: 1px solid #cccccc;
-				border-bottom: 1px solid #cccccc;
-			}
 
-			th, td
-			{
-				border: none;
-			}
-			.head
-			{
-				background: #fafafa;
-				text-align: center;
-				padding-top: 10px;
-				padding-bottom: 10px;
+/* Removing left and right border of rows for modern UIs */
 
-			}
-			td
-			{
-				white-space: normal !important;
-			}
+tr
+{
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+th, td
+{
+	border: 1px dotted #e2e2e2;
+				
+}
+.head
+{
+				
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #dddddd;
+}
+td
+{
+	white-space: normal !important;
+}

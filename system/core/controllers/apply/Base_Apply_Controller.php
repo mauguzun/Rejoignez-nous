@@ -46,9 +46,12 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$app   = null ;
 		if(!$this->app){
 			$app = (array)$this->user;
+			
 		}else{
 			$app = $this->app;
 		}
+		
+		
 		
 		
 		return $this->load->view('apply_final/parts/main',[
@@ -393,13 +396,30 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	//
 	public function app($offer_id){
 		
-		$this->app = $this->Crud->get_row(
-			['offer_id'=>$offer_id/*,'user_id'=>$this->user->id*/],'application');
+		
+		if( $this->ion_auth->get_users_groups()->row()->id == 8){	  
+			$this->app = $this->Crud->get_row(
+				['offer_id'=>$offer_id,'user_id'=>$this->user->id],'application');
+		}
+		else{
+			$this->app = $this->Crud->get_row(
+				['offer_id'=>$offer_id],'application');
+		}
+	
+	
 	}
 	
 	protected function app_by_id($id){
-		$this->app = $this->Crud->get_row(
-			['id'=>$id,/*'user_id'=>$this->user->id*/],'application');
+			
+		if( $this->ion_auth->get_users_groups()->row()->id == 8){	  
+			$this->app = $this->Crud->get_row(
+				['id'=>$id,'user_id'=>$this->user->id],'application');
+		}
+		else{
+			$this->app = $this->Crud->get_row(
+				['id'=>$id/*,'user_id'=>$this->user->id*/],'application');
+		}
+	
 	}
 
 	protected function redirect_if_account_not_filled(){
@@ -736,7 +756,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->show_json();
 	}
 	
-	
+
 	/**
 	* @return array
 	*/
@@ -888,4 +908,79 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		
 	}
 	
+	
+	/**
+	* 
+	* 
+	* @return
+	*/
+	protected function get_print_main_data(){
+		
+		$data = [];
+		
+		$user = $this->Crud->get_row(['id'=>$this->app['user_id']],'users');
+		
+		$data['civility'] = $this->app['civility'];
+		$data['first_name'] = $this->app['first_name'];
+		$data['last_name'] = $this->app['last_name'];
+		$data['country'] = $this->countries()[$this->app['country_id']] ;
+		$data['city'] = $this->app['city'];
+		$data['postal'] = $this->app['zip'];
+		$data['address'] = $this->app['address'];
+		$data['email'] = $user['email'];				
+		$data['phone'] = $this->app['phone'];		
+		$data['phone_2'] = $this->app['phone_2'];
+		return $data;
+	}
+	
+	
+	protected function get_print_eu(){
+		$query =	
+		$this->Crud->get_row(['application_id'=>$this->app['id']],'application_eu_area');
+
+		unset($query['application_id']);
+		foreach($query as &$value){
+			$value = $this->_have($value);
+		}
+		return  $query;
+	}
+	
+	protected function get_print_last_level_education(){
+		
+		$query = $this->Crud->get_row(['application_id'=>$this->app['id']],'last_level_education');
+		unset($query['application_id']);
+		$query['education_level_id'] = $this->educations()[$query['education_level_id']];
+		return  $query;
+	}
+	
+	protected function get_print_lang(){
+		$extra = $this->Crud->get_all('application_languages_level',['application_id'=>$this->app['id']]);
+		$levels =  $this->Crud->get_row(['application_id'=>$this->app['id']],'application_english_frechn_level');
+		
+		foreach($extra as &$value){
+			$levels[$value['language']] = $this->lang_level()[$value['level_id']];
+		}
+		
+		$levels['english_level'] = $this->lang_level()[ $levels['english_level']];
+		$levels['french_level'] = $this->lang_level()[ $levels['french_level']];
+		
+
+		unset($levels['application_id']);
+		return $levels;
+	}
+	
+	protected function get_print_misc(){
+		
+		$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
+		$employ =$this->Crud->get_row(['application_id'=>$this->app['id']],	'application_empoy_center');
+
+			
+		unset($row['application_id']);
+		$row['car']= $this->_have($row['car']);		
+		$row['employ_center']= $this->_have($employ['employ_center']);		
+			
+		$row['aviability'] = date_to_input($row['aviability']);
+		
+		return  $row;
+	}
 }

@@ -211,6 +211,7 @@ class Mechanic_Controller extends Base_Apply_Controller{
 		$this->show_json();
 	}
 	
+	
 	public function printer($app_id=NULL){
 
 		
@@ -218,92 +219,76 @@ class Mechanic_Controller extends Base_Apply_Controller{
 		if($this->allow_print($app_id) == false){
 			die();
 		}
-		
-
-		$query = $this->Crud->get_joins(
-			'application',
-			[
-				"users"=>"users.id = application.user_id",		
-				"applicaiton_misc"=>"application.id = applicaiton_misc.application_id",
-				'countries'=>"application.country_id = countries.id",
-				'application_languages_level'=>"application.id = application_languages_level.application_id",
-				'last_level_education'=>"application.id = last_level_education.application_id",
-				'hr_offer_education_level'=>"last_level_education.education_level_id = hr_offer_education_level.id",
-				'application_english_frechn_level'=>"application.id = application_english_frechn_level.application_id",
-				'application_eu_area'=>"application.id = application_eu_area.application_id",
-				'application_medical_aptitude'=>"application.id = application_medical_aptitude.application_id",
-				'aeronautical_english_level'=>"application.id = aeronautical_english_level.application_id",
-				'mechanic_baccalaureate'=>"application.id = mechanic_baccalaureate.application_id"
-			],
-			"application.user_id as uid ,
-			application.* ,
-			applicaiton_misc.*,
-			mechanic_baccalaureate.*,
-			users.birthday as birthday,  users.email as email ,users.handicaped as handicaped,
-
-			application.id as aid,
-			countries.name as country,
-			aeronautical_english_level.lang_level as aeronautical_english_level,
-			last_level_education.*,
-			application_medical_aptitude.date as medical_date,
-			application_eu_area.*,
-			application_english_frechn_level.*,
-			hr_offer_education_level.level as education_level,
-			application_languages_level.* ",
-			NULL,
-			null,
-			["application.id" => $this->app['id']]);
-
-
-		$query      = $query[0];
-		$lang_level = $this->Crud->get_array('id','level','language_level');
-		$query['english_level'] = $lang_level[$query['english_level']];
-		$query['french_level'] = $lang_level[$query['french_level']];
-		$query['aeronautical_english_level'] = $lang_level[$query['aeronautical_english_level']];
-
-		
-		
-	
-		foreach(['licenses_b1','licenses_b2','complementary_mention_b1','complementary_mention_b2','aeronautical_baccalaureate'] as $value){
-			$query[$value] = $this->_have($query[$value]);
-		}
-		
-		
-
-		$more_lang = $this->Crud->get_joins('application_languages_level',
-			['language_level' => "application_languages_level.level_id  = language_level.id" ],
-			'*',['application_languages_level.language'=>'ASC'],NULL,
-			["application_languages_level.application_id"=> $this->app['id']]
-		);
-		$query['more_lang'] = [];
-		foreach($more_lang as $row){
-			$query['more_lang'][$row['language']] = $row['level'];
-		}
-
-		$query['handicaped'] = $this->_have($query['handicaped']);
-		$managerial = $this->Crud->get_array('id','managerial','expirience_managerial');
-		$query['mec_expirience'] = $this->_get_mex_expr($this->app['id'],$managerial);
-		
-		//$this->load->view('front/apply/printer',['query'=>$query]);
 		require_once("application/libraries/dompdf/vendor/autoload.php");
 
 		$dompdf = new  Dompdf\Dompdf();
-		$dompdf->loadHtml($this->load->view('front/apply/printer',['query'=>$query],TRUE));
+		$dompdf->loadHtml($this->get_print_data());
 
-		$dompdf->setPaper('A4');
+		$dompdf->setPaper('A4','landscape');
 
-		
+
 		$dompdf->render();
-		$dompdf->stream(url_title($query['first_name'].$query['last_name']), array("Attachment"=> false));
+		$dompdf->stream(
+			url_title($this->app['first_name'].$this->app['last_name']), array("Attachment"=> false));
 
 		exit(0);
+	}
+	protected function get_print_data($app_id=NULL){
+
+
+		$html = '';
+		$html .= $this->load->view('apply_final/printer/header',['query'=>$this->app],true);
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('profile'),
+				'query'=>$this->get_print_main_data()
+			],true);
+		
+		// bach
+		$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'mechanic_baccalaureate');
+		unset($row['application_id']);
+		$send = [];
+		foreach($row as $key => &$value){
+			$send [lang($key)] = $this->_have($value);
+		}
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('aeronautical_baccalaureate'),
+				'query'=>$send	],true);
+		//lang
+		$lang = $this->get_print_lang();
+		$aero_lang =  $this->Crud->get_row(['application_id'=>$this->app['id']],'aeronautical_english_level');
+		$lang[lang('aeronautical_english_level')] = $this->lang_level()[$aero_lang['lang_level']];
+		
+		
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('language'),
+				'query'=>$lang	],true);
+				
+		
+		// mec exp
+		$html .= $this->load->view('apply_final/printer/keyvalue',[
+				'title'=>lang('aeronautical_experience'),
+				'query'=>$this->_get_mex_expr()	],true);
+	
+				
+		// Miscellaneou
+		$misc = $this->get_print_misc();
+		unset($misc['medical_restriction']);
+		unset($misc['employ_center']);
+		
+		
+		$html .= $this->load->view('apply_final/printer/keyvalue',['title'=>lang('complementary_informations'),
+				'query'=>$misc],true);
+		$html .=  $this->load->view('apply_final/printer/footer',['query'=>$this->app],true);
+
+		return $html;
 
 	}
-	private function _get_mex_expr($application_id,$managerial){
+	private function _get_mex_expr(){
 		
-		
+		$managerial = $this->Crud->get_array('id','managerial','expirience_managerial');
+
 	
-		$mec_expirience = $this->Crud->get_row(['application_id'=>$application_id],'mechanic_offer_aeronautical_experience');
+		$mec_expirience = $this->Crud->get_row(['application_id'=>$this->app['id']],'mechanic_offer_aeronautical_experience');
 		
 	
 		if($mec_expirience){
@@ -321,6 +306,7 @@ class Mechanic_Controller extends Base_Apply_Controller{
 			}
 			
 		}
+		unset($mec_expirience['application_id']);
 		return $mec_expirience;
 	}
 	

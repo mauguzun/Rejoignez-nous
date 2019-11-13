@@ -161,6 +161,7 @@ $ref = $name ;
 					</div>
 					<input 
 					required="required" 
+					name="<?= $row ?>"
 					@mouseover="setupCalendar()"
 					placeholder="<?= lang(str_replace('[]','',$row))?>" 
 					data-calendar="true" class="form-control">
