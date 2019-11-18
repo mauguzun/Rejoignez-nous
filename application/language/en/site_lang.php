@@ -288,6 +288,7 @@ $lang['Commercial Flight Attendant'] = 'Commercial Flight Attendant';
 $lang['certificate_of_registration_at_the_employment_center'] = 'CERTIFICATE OF REGISTRATION AT THE EMPLOYMENT CENTER';
 $lang['certificate_cfs_or_cca'] = 'Certificate cfs or cca';
 $lang['pls_specify'] = 'pls_specify';
+$lang['involved_in_incidents'] = 'involved_in_incidents';
 
 
 $lang['yes_toogle'] = [

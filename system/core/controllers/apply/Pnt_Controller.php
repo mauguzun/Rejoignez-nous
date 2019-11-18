@@ -784,7 +784,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 		foreach($rows as &$value){	
 			$send[] = [
 				lang('aircaft_type') => $value['aircaft_type'],
-				lang('last_online_check') => $value['last_online_check'],
+				lang('last_online_check') => date_to_input($value['last_online_check']),
 				lang('last_simulator_control') => date_to_input($value['last_simulator_control']),
 				lang('last_flight') => date_to_input($value['last_flight'])];
 		}
@@ -838,7 +838,7 @@ class Pnt_Controller extends Base_Apply_Controller{
 				lang('aircaft_type') => $value['aircaft_type'],
 				lang('company') => $value['company'],
 				lang('approval_number') => $value['approval_number'],
-				lang('date_of_issue') => $value['date_of_issue'],
+				lang('date_of_issue') => date_to_input($value['date_of_issue']),
 				lang('validity_date') => date_to_input($value['validity_date']),
 				
 			];

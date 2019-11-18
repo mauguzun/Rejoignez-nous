@@ -73,7 +73,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 			
 		<div class="row row_mb" v-for="n in langRows"  :key="n.id">
 			<div class="col-md-6">
-				<input list="lang-list" name="language[]" class="form-control"  required="true" >
+				<input list="langs" name="language[]" class="form-control"  required="true" >
 			</div>
 			<div class="col-md-5">
 					

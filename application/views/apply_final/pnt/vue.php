@@ -99,22 +99,22 @@
 					
 					if(this.models.cpl == true && this.models.irme == false && this.models.atpl == false){
 						if (this.models.mcc  == false && this.models.theoretical_atpl  == false) {
-							this.models.lic_error = '<?= lang("You must have obtained the theoretical ATPL and / or the MCC in order to practice the profession to which you are applying")?>'
+							this.models.lic_error = `<?= lang("You must have obtained the theoretical ATPL and / or the MCC in order to practice the profession to which you are applying")?>`
 							return false;
 						}
                    
 					} 
 					else if (this.models.atpl  == true && this.models.cpl == false && this.models.irme == false){
-						this.models.lic_error = '<?= lang("You must have obtained the IRME to be able to practice the profession to which you are applying")?>'
+						this.models.lic_error = `<?= lang("You must have obtained the IRME to be able to practice the profession to which you are applying")?>`
              
 						return false;
 					}
 					else if (this.models.irme == true && this.models.cpl == false && this.models.atpl == false){
-						this.models.lic_error = '<?= lang("You must have obtained CPL or ATPL to be able to practice the profession to which you are applying")?>'
+						this.models.lic_error = `<?= lang("You must have obtained CPL or ATPL to be able to practice the profession to which you are applying")?>`
 						return false;
 					}
 					else if (this.models.irme == false && this.models.cpl == false && this.models.atpl == false){
-						this.models.lic_error = '<?= lang("You must select one of option")?>'
+						this.models.lic_error = `<?= lang("You must select one of option")?>`
 						return false;
 					}	
 

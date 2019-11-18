@@ -16,7 +16,7 @@
 
 							<option value="0"><?= lang('all applications recived')?></option>
 							<option value="11"><?= lang('applications_in_responce')?></option>
-							<option value="5"><?= lang('unsolicited_application_applys')?></option>
+							<option value="5"><?= lang('unsolicited_application')?></option>
 							<option value="7"><?= lang('manualay_applications')?></option>
 							<!--	<option value="4"><?= lang('Mecanicien')?></option>
 							<option value="3"><?= lang('PNT')?></option>
