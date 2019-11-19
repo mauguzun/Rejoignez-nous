@@ -15,13 +15,13 @@ class Hr_Controller extends Base_Apply_Controller{
 	protected $step_table = [
 		    
 		'main'=>'application',
-	
-		'education'=>'last_level_education',
+		'application_unsolicated_formattion'=>'application_unsolicated_formattion',
+		//		'education'=>'last_level_education',
 		'foreignlang'=>'application_english_frechn_level',
-		'expirience'=>'application_hr_expirience',
+		/*		'expirience'=>'application_hr_expirience',*/
 		'aviability'=>'applicaiton_misc',
 		'other'=>'applicaiton_misc',		
-		
+		'professional'=>'application_unsolicated_proffesional'
 
 			
 	];
@@ -43,6 +43,9 @@ class Hr_Controller extends Base_Apply_Controller{
 		
 		require_once("application/libraries/dompdf/vendor/autoload.php");
 
+
+		echo $this->get_print_data();
+		return; 
 		$dompdf = new  Dompdf\Dompdf();
 		$dompdf->loadHtml($this->get_print_data());
 
@@ -59,7 +62,7 @@ class Hr_Controller extends Base_Apply_Controller{
 	}
 	
 	
-	public function get_print_data($app_id=NULL){
+	protected function get_print_data($app_id=NULL){
 
 		$html = '';
 		$html .= $this->load->view('apply_final/printer/header',['query'=>$this->app],true);
@@ -68,39 +71,48 @@ class Hr_Controller extends Base_Apply_Controller{
 				'query'=>$this->get_print_main_data()
 			],true);
 			
+		$data =  $this->Crud->get_row(['application_id'=>$this->app['id']],'application_un');$contract = $this->Crud->get_row(['id'=>$data['contract_id']],'application_contract');
+		$query = ['create_application_contract'=>$contract['type'],'function'=>$data['function']];
+		
 		$html .= $this->load->view('apply_final/printer/keyvalue',[
-				'title'=>lang('education'),
-				'query'=>$this->get_print_last_level_education()
-			],true);	
+				'title'=>lang('position'),'query'=>$query],true);	
+	
+	
+		////
+	  
+		
+		//formation
+		$misc = $this->Crud->get_all('application_unsolicated_formattion',['application_id'=>$this->app['id']]);
+		foreach($misc as &$value){
+			unset($value['application_id']);		
+			$value['start'] = date_to_input($value['start']);		
+			$value['end'] = date_to_input($value['end']);				
+
+		}
+		
+		$html .= $this->load->view('apply_final/printer/table',[
+				'title'=>lang('application_unsolicated_formattion'),
+				'query'=>$misc],true);
 			
-		$html .= $this->load->view('apply_final/printer/keyvalue',[
-				'title'=>lang('language'),
-				'query'=>$this->get_print_lang()
+		
+		// prof
+	
+		$misc = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
+		$managerial = $this->Crud->get_array('id','managerial','expirience_managerial');
+		foreach($misc as &$value){
+			unset($value['application_id']);		
+			$value['country_id'] = $this->countries()[$value['country_id']]; 			
+			$value['start'] = date_to_input($value['start']);		
+			$value['end'] = date_to_input($value['end']);				
+			$value['current'] = $this->_have($value['current']);	
+			$value['managerial'] = $managerial[$value['managerial']]; 
+		}
+		$html .= $this->load->view('apply_final/printer/manycolumns',[
+				'title'=>lang('professional'),
+				'query'=>$misc
 			],true);
-			
-		// exp
-		$query = $this->Crud->get_all(
-			'application_hr_expirience',
-			['application_id'=>$this->app['id']],null,null,'area,duration,managerial');
-		
-		$select = [];
-		foreach(['expirience_duration'=>'duration','expirience_managerial'=>'managerial'] as $key=> $column){
-			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
-				$options[$value['id']] = $value[$column];
-			}
-			$select[$column] = $options;
-		}
-		
-		foreach($query as  &$value){
-			$value['managerial'] = $select['managerial'][$value['managerial'] ];
-			$value['duration'] = $select['duration'][$value['duration'] ];;
-		}
 		
 		
-		
-		$html .= $this->load->view('apply_final/printer/table',['title'=>lang('experience'),
-				'query'=>$query],true);
-				
 		// Miscellaneou
 		$misc = $this->get_print_misc();
 		unset($misc['medical_restriction']);

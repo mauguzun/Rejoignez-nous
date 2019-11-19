@@ -14,8 +14,7 @@ class Printmanualoffer extends Shared_Controller{
 
 	public function index($app_id){
 
-		if( $this->ion_auth->get_users_groups()->row()->id == 8){
-			  
+		if( $this->ion_auth->get_users_groups()->row()->id == 8){	  
 			return false;
 		}
 

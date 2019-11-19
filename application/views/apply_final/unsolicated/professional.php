@@ -75,7 +75,7 @@ $ref = $name ;
 					<?= lang($row)?>
 				</div>
 				<input
-				value="<?= isset($onedata[$row]) && $onedata[$row] != '0000-00-00' ? date_to_input($onedata[$row]) : null ?>"
+				value="<?= isset($onedata[$row]) ? date_to_input($onedata[$row]) : null ?>"
 				
 			
 				

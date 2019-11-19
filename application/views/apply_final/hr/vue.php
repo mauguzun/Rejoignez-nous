@@ -20,11 +20,11 @@
 				active:'main',
 
 				loader:true,
-
+				application_unsolicated_formattion:[],
 
 				langRows :[],
 				expRows:[],
-
+				professional:[],
 				models:{ 
 					education_level_id:null,
 					aviability:null,
@@ -45,7 +45,17 @@
 				
 			},
 			methods: {
-				
+				current(event){
+					if(event.target.checked === true){
+						this.$refs[event.target.id].setAttribute("style",'visibility:hidden')						
+						this.$refs[event.target.id].removeAttribute('required')						
+					}else{
+						this.$refs[event.target.id].removeAttribute("style")						
+						this.$refs[event.target.id].setAttribute("required",'required')					
+
+					}  
+					
+				},
 				makeTooltip(){
 					setupTool();
 				},
@@ -130,9 +140,13 @@
 						case 'exp':
 						array = this.expRows;
 						break;
+						
+						default :
+						array = this[arg]
 					}
 					return array;
 				},
+
 
 
 				open(div){
@@ -144,6 +158,7 @@
 				
 				},
 				addRow(arg){
+
 					this._getArray(arg).push({id: new Date()/1000,flag : false});
 					setupTool();
 				},
@@ -279,10 +294,10 @@
 
 				// only for pnc
 			
-				if (this.$refs.education_level_id.id)
+				/*	if (this.$refs.education_level_id.id)
 				{
-					this.models.education_level_id = this.$refs.education_level_id.id
-				}
+				this.models.education_level_id = this.$refs.education_level_id.id
+				}*/
 				if(this.$refs.aviability.id)
 				{
 					this.models.aviability = this.$refs.aviability.id

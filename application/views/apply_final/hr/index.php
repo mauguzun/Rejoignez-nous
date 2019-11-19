@@ -4,31 +4,19 @@
 <div id="content" role="main">
 
    
-	<?= $header?>
+	<?= $views['header']?>
 			
 
 	<div >
 		<!--main-->
-		<?= $main ?>
-		
-		 
-		<?= $education ?>
-		<!---->
-		
-		<?= $foreignlang ;?>
-		<!--aeronautical_experience -->
-		<?= $experience ?>
-	
+		<? foreach($views as $name=>$view):?>
+		<? if($name !='header'):?>
+		<?= $view ;?>
+			
+		<? endif;?>
+		<? endforeach;?>
 		
 	
-		<?= $aviability ?>
-	
-		<?= $other ?>
-		
-		
-		<?= $covver_letter ?>	
-		<?= $cv ?>
-		
 
 		
 	</div>

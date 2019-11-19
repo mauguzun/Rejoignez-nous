@@ -33,24 +33,39 @@ class Hr extends  Hr_Controller{
 
 		$header = $this->load->view('apply_final/parts/header',['offer'=>$offer,
 				'offer_type'=>$this->type],true);
-		$this->load->view('apply_final/hr/index',
-			[
-				'header'=>$header,
+				
+		
+		
+		$all = [
+			'header'=>$header,
 				'main'=>$this->get_main(),
 				
-				'education'=>$this->get_education(),
+				'application_unsolicated_formattion'=>$this->get_application_unsolicated_formattion(),
+
 				'foreignlang'=>$this->get_lang(),
-				'experience'=>$this->get_experience(),
-				'aviability'=>$this->get_aviability(),
+				'professional'=>$this->get_professional(),
+//				'experience'=>$this->get_experience(),
+	//			'aviability'=>$this->get_aviability(),
 				'other'=>$this->get_other(),
 				'covver_letter'=>$this->get_uploader('covver_letter'),			
 				'cv'=>$this->get_uploader('cv'),
 				
 				
-			]);
+		];
+				
+	
+		foreach($this->uploaders as $row){
+			$all[$row]=$this->get_uploader($row);
+		}
+		
+		
+	
+		
 			
-		
-		
+		$this->load->view('apply_final/hr/index',
+			[
+				'views'=>$all
+			]);
 		
 		
 		$this->load->view('apply_final/hr/vue',[

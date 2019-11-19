@@ -583,52 +583,49 @@ class Base_Apply_Controller extends Usermeta_Controller{
 	}
 	
 	
-	
-	
-	
-	protected function get_other(){
-		
-		$misc =null;
-		if($this->app){
-			$misc = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
-		}
-		return $this->load->view('apply_final/parts/other',[
 
-				'misc'=>$misc,
-				'url'=>base_url().'apply/new/'.$this->type.'/other/'],true);
+	
+	
+	/*	protected function get_other(){
+		
+	$misc =null;
+	if($this->app){
+	$misc = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
 	}
-	/**
-	* 
-	* @return
-	*/
+	return $this->load->view('apply_final/parts/other',[
+
+	'misc'=>$misc,
+	'url'=>base_url().'apply/new/'.$this->type.'/other/'],true);
+	}
+	
 	public function other(){
 		
 		
-		$this->app_by_id($_POST['application_id']);
-		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
+	$this->app_by_id($_POST['application_id']);
+	$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
 		
-		if( $this->app &&   $this->form_validation->run() === true ){
+	if( $this->app &&   $this->form_validation->run() === true ){
 			
 			
-			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
-			if($row){
-				$_POST['aviability'] = $row['aviability'];
-			}
-			
-			$this->Crud->update_or_insert($_POST,'applicaiton_misc');
-			$this->json['result'] = true;
-			$this->json['message']= lang('saved');
-		}
-		else{
-
-			$this->json['message'] =(validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-			$this->session->set_flashdata('message',$message);
-
-		}
-		$this->json['application_id'] = $_POST['application_id'];
-		$this->show_json();
-	
+	$row = $this->Crud->get_row(['application_id'=>$this->app['id']],'applicaiton_misc');
+	if($row){
+	$_POST['aviability'] = $row['aviability'];
 	}
+			
+	$this->Crud->update_or_insert($_POST,'applicaiton_misc');
+	$this->json['result'] = true;
+	$this->json['message']= lang('saved');
+	}
+	else{
+
+	$this->json['message'] =(validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+	$this->session->set_flashdata('message',$message);
+
+	}
+	$this->json['application_id'] = $_POST['application_id'];
+	$this->show_json();
+	
+	}*/
 	
 	protected function get_experience(){
 		
@@ -982,5 +979,282 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$row['aviability'] = date_to_input($row['aviability']);
 		
 		return  $row;
+	}
+	
+	
+	
+	public function other(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+		
+		if(!isset($_POST['aviability'])  |   empty($_POST['aviability'])){
+			$_POST['aviability'] = $_POST['fake_aviability'];	
+		}
+		
+		
+		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
+		$this->form_validation->set_rules('aviability', lang('aviability'), 'trim|required|max_length[20]');		
+
+		if( $this->app &&   $this->form_validation->run() === true ){
+			
+			
+			unset($_POST['fake_aviability']);
+			
+			$_POST['aviability'] = date_to_db($_POST['aviability']);
+			$this->Crud->update_or_insert($_POST,'applicaiton_misc');
+			
+			
+			
+			$this->json['result'] = true;
+			$this->json['message']= lang('saved');
+			
+			
+		}
+		else{
+
+			$this->json['message'] =(validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+			$this->session->set_flashdata('message',$message);
+
+		}
+		
+		$this->json['app_id']= $_POST['application_id'];
+		$this->show_json();		
+	
+	}
+	
+	protected function get_other(){
+		
+		
+		$month     = new DateTime('now');
+		$month->add(new DateInterval('P1M'));
+		$month     = $month->format('d/m/Y');
+
+		$month_two = new DateTime('now');
+		$month_two->add(new DateInterval('P2M'));
+		$month_two = $month_two->format('d/m/Y');
+		
+		$month_tree = new DateTime('now');
+		$month_tree->add(new DateInterval('P3M'));
+		$month_tree = $month_tree->format('d/m/Y');
+
+		////  append current date )
+		$list      = [
+			date('d/m/Y') => lang('Immédiate'),
+			$month=>lang('Préavis 1 mois'),
+			$month_two => lang('Préavis 2mois'),			
+			$month_tree => lang('Préavis 3mois'),
+			0=>lang('calendar'),
+		];
+		$date      = date("d/m/Y") ;
+		
+		
+		$date = null;
+		if($this->app){
+			$row = $this->Crud->get_row(['application_id'=>$this->app['id']],
+				'applicaiton_misc');
+				
+			
+			if($row && $row['aviability']){
+				$date=  date_to_input($row['aviability']);
+				$list = [$date=>$date] + $list;
+			}			
+		}
+
+		$misc =null;
+		if($this->app){
+			$misc = $this->Crud->get_row(['application_id'=>$this->app['id']],	'applicaiton_misc');
+		}
+		return $this->load->view('apply_final/unsolicated/other',[
+				'list'=>$list,
+				'id'=>$date,
+				'misc'=>$misc,
+				'url'=>base_url().'apply/new/'.$this->type.'/other/'],true);
+	}
+	
+	protected function get_application_unsolicated_formattion(){
+		
+		$data = [0];
+		if($this->app){
+			$misc = $this->Crud->get_all('application_unsolicated_formattion',['application_id'=>$this->app['id']]);
+			if($misc){
+				$data = $misc;
+			}
+		}
+		return $this->load->view('apply_final/unsolicated/application_unsolicated_formattion',[
+				
+				'data'=>$data,
+				'url'=>base_url().'apply/new/'.$this->type.'/application_unsolicated_formattion/'],true);	
+	}
+	
+	public function application_unsolicated_formattion(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+
+		$this->form_validation->set_rules('school_type[]', lang('school_type'), 'trim|required|max_length[200]');
+
+		
+		if(  $this->form_validation->run() === true ){
+   
+
+			$this->Crud->delete(['application_id'=>$this->app['id']],'application_unsolicated_formattion');
+			for($i = 0 ; $i < count($_POST['school_type']) ; $i++){
+				$row = [
+					'school_type' => $_POST['school_type'][$i],
+					'school_name' => $_POST['school_name'][$i],
+					'qualification' => $_POST['qualification'][$i],
+					'location' => $_POST['location'][$i],
+					'start' => date_to_db($_POST['start'][$i]),	
+					'end'=>empty($_POST['end']) ?  NULL : date_to_db($_POST['end'][$i]),
+					'application_id'=> $this->app['id'],
+				];
+				$this->Crud->update_or_insert($row,'application_unsolicated_formattion');
+			}
+			
+
+			$this->json['result'] = true;
+			$this->json['message'] = lang('saved');
+		}
+		else{
+		
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+
+		}
+		$this->json['application_id'] = $this->app['id'];
+		$this->show_json();
+	}
+
+
+
+	protected function get_professional(){
+		
+		$data = [0];
+		if($this->app){
+			$misc = $this->Crud->get_all('application_unsolicated_proffesional',['application_id'=>$this->app['id']]);
+			if($misc){
+				$data = $misc;
+			}
+		}
+		
+		$managerial = [];
+		foreach(['expirience_managerial'=>'managerial'] as $key=> $column){
+			foreach($this->Crud->get_all($key,null,'id','asc') as $value){
+				$managerial[$value['id']] = $value[$column];
+			}
+			
+		}
+		
+		return $this->load->view('apply_final/unsolicated/professional',[
+				'countries'=>$this->countries(),
+				'managerial'=>$managerial,
+				'data'=>$data,
+				'url'=>base_url().'apply/new/'.$this->type.'/professional/'],true);
+				
+				
+	}
+	
+	public function professional(){
+		
+		$this->app_by_id($_POST['application_id']);
+		
+
+		$this->form_validation->set_rules('company[]', lang('company'), 'trim|required|max_length[200]');
+		$this->form_validation->set_rules('industry[]', lang('industry'), 'trim|required|max_length[200]');
+		
+		
+		
+		if(  $this->form_validation->run() === true ){
+   
+
+			$this->Crud->delete(['application_id'=>$this->app['id']],'application_unsolicated_proffesional');
+			for($i = 0 ; $i < count($_POST['company']) ; $i++){
+				$row = [
+					'company' => $_POST['company'][$i],
+					'industry' => $_POST['industry'][$i],
+					'role' => $_POST['role'][$i],
+					'position_held' => $_POST['position_held'][$i],
+					'country_id' => $_POST['country_id'][$i],
+					'current' => isset($_POST['current'][$i]) && $_POST['current'][$i] == '1' ? 1: NULL,			
+					'managerial' => $_POST['managerial'][$i],
+					'start' => date_to_db($_POST['start'][$i]),	
+					'end'=> isset($_POST['current'][$i]) && $_POST['current'][$i] == '1'  ? '':   date_to_db($_POST['end'][$i]),
+					'application_id'=> $this->app['id'],
+				];
+				$this->Crud->update_or_insert($row,'application_unsolicated_proffesional');
+			}
+			
+
+			$this->json['result'] = true;
+			$this->json['message'] = lang('saved');
+		}
+		else{
+		
+			$this->json['message'] = (validation_errors() ? validation_errors() :
+				($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+
+		}
+		$this->json['application_id'] = $this->app['id'];
+		$this->show_json();
+	}
+	
+	
+	
+	
+	
+	public function send_email(){
+		
+		if (!isset($_GET)){
+			return; 
+		}
+		$this->app_by_id($_GET['app_id']);
+		$html = $this->get_print_data($_GET['app_id']);	
+
+		if($html){
+			$this->send_pdf_to_user($_GET['email'],"applicaion ". $_GET['app_id'] ,$html);
+			echo true;
+		}else{
+			show_404();
+		}
+	}
+	
+	
+	
+	private function send_pdf_to_user($to,$subject,$html){
+		$this->load->library('email',[
+				'protocol'=>$this->email_settings['transport']
+			]);
+
+
+		$this->email->from($this->email_settings['sender'],$this->email_settings['email']);
+		$this->email->to($to);
+		$this->email->subject($subject);
+		/*echo $html;*/
+
+		require_once("application/libraries/dompdf/vendor/autoload.php");
+
+		$dompdf = new  Dompdf\Dompdf();
+		$dompdf->loadHtml($html);
+		$dompdf->setPaper('A4'.'landscape');
+
+
+
+
+
+		$dompdf->render();
+		$pdf    = $dompdf->output();
+		file_put_contents('output.pdf', $pdf);
+		$this->email->attach($pdf, 'application/pdf', 'output.pdf', false);
+
+
+		$this->email->message($html);
+		/*return $this->email->send();*/
+		return $this->email->send();
+		//echo $this->email->print_debugger();
+
+		/*echo $this->email->print_debugger();*/
 	}
 }

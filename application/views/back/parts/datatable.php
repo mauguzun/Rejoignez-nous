@@ -336,7 +336,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 		} );
 		
-	   $('#mode').change(function(){
+	$('#mode').change(function(){
 			$('#overlay').slideDown();
 		})
 
@@ -356,12 +356,13 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			let request	= $.post(href, {email: email});
 			request.then(x=>
 				{
-					
-					if(x.trim() == "")
-					$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
 				
-					$('[data-email-block="'+href+'"]').addClass('in');
-					$('[data-email-loader="'+href+'"]').addClass('hidden')    
+						$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
+	
+						$('[data-email-block="'+href+'"]').addClass('in');
+						$('[data-email-loader="'+href+'"]').addClass('hidden')    
+					
+					
 				})
 		}
 
