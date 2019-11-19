@@ -26,7 +26,7 @@ class Sendemail extends Shared_Controller{
 	public function pnc($application_id){
 		redirect(base_url().'apply/new/pnc/send_email/?email='.$_POST['email'].'&app_id='.$application_id);
 	}
-	public function mechanic($appliciton_id){
+	public function mechanic($application_id){
 		redirect(base_url().'apply/new/mechanic/send_email/?email='.$_POST['email'].'&app_id='.$application_id);
 
 	}

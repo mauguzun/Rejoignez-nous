@@ -21,7 +21,7 @@
 	
 		
 	
-		<?= $aviability ?>
+<!--		<?= $aviability ?>-->
 	
 		<?= $other ?>
 		

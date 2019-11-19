@@ -19,7 +19,7 @@ class Mechanic_Controller extends Base_Apply_Controller{
 		'mainlang'=>'application_english_frechn_level',
 		'foreignlang'=>'application_english_frechn_level',
 		'aeronautical_experience'=>'mechanic_offer_aeronautical_experience',		
-		'aviability'=>'applicaiton_misc',	 
+//		'aviability'=>'applicaiton_misc',	 
 		'other'=>'applicaiton_misc',
 			
 	];
