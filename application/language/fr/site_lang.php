@@ -290,6 +290,20 @@ $lang['certificate_of_registration_at_the_employment_center'] = 'CERTIFICATE OF 
 $lang['certificate_cfs_or_cca'] = 'Certificate cfs or cca';
 $lang['pls_specify'] = 'pls_specify';
 
+$lang['cpl'] = 'cpl';
+$lang['atpl'] = 'atpl';
+$lang['pnt'] = 'pnt';
+$lang['pnc'] = 'pnc';
+
+$lang['irme'] = 'irme';
+$lang['industry'] = 'industry';
+$lang['none'] = 'none';
+$lang['irme_start'] = 'irme_start';
+$lang['irme_end'] = 'irme_end';
+$lang['involved_in_incidents'] = 'irme_end';
+$lang['diversity'] = 'diversity';
+$lang['recruiting'] = 'recruiting';
+
 
 $lang['yes_toogle'] = [
 0=>'No',

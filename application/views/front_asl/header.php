@@ -30,6 +30,9 @@
 	<link rel="stylesheet" id="controlled-admin-access-css" href="https://www.aslairlines.fr/wp-content/plugins/controlled-admin-access/public/css/controlled-admin-access-public.css?ver=1.0.0" type="text/css" media="all">
 	<link rel="stylesheet" id="wpml-legacy-dropdown-0-css" href="https://www.aslairlines.fr/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/style.css?ver=1" type="text/css" media="all">
 	<style id="wpml-legacy-dropdown-0-inline-css" type="text/css">
+		
+		
+		
 		.wpml-ls-sidebars-sidebar-1, .wpml-ls-sidebars-sidebar-1 .wpml-ls-sub-menu, .wpml-ls-sidebars-sidebar-1 a
 		{
 			border-color: #cdcdcd;

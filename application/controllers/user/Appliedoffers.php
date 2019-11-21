@@ -77,12 +77,12 @@ class Appliedoffers extends User_Controller{
 				switch($value['unsolicated_type']){
 					case '2':
 					$value['title'] = anchor("apply/new/uns_pnt/index/".$value['aid'],
-						lang('unsolicited_application_applys'));
+						lang('pnt'));
 					break;
 					
 					case '3':
 					$value['title'] = anchor("apply/new/uns_pnc/index/".$value['aid'],
-						lang('unsolicited_application_applys'));
+						lang('pnc'));
 					break;
 					
 					default:

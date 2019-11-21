@@ -8,7 +8,7 @@
 	<ul class="accord">
 		<li>
 			<input type="checkbox">
-			<i class="fas fa-search"></i>
+		
 			<h5>	<?= lang('our_recruitment_policy')?></h5>
 
 			<div class="row">

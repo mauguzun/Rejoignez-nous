@@ -993,7 +993,6 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		}
 		
 		
-		$this->form_validation->set_rules('salary', lang('salary'), 'trim|required');
 		$this->form_validation->set_rules('aviability', lang('aviability'), 'trim|required|max_length[20]');		
 
 		if( $this->app &&   $this->form_validation->run() === true ){
