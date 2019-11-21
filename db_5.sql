@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100313
+ Source Server Version : 50562
  Source Host           : localhost:3306
- Source Schema         : halloall_lifa
+ Source Schema         : db
 
  Target Server Type    : MySQL
- Target Server Version : 100313
+ Target Server Version : 50562
  File Encoding         : 65001
 
- Date: 20/11/2019 19:16:34
+ Date: 21/11/2019 11:36:04
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `activities`  (
   `activity` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `published` smallint(1) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 55 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 55 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of activities
@@ -50,7 +50,7 @@ CREATE TABLE `aeronautical_english_level`  (
   `application_id` int(11) NOT NULL,
   `lang_level` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of aeronautical_english_level
@@ -72,7 +72,7 @@ CREATE TABLE `aeronautical_experience`  (
   `company` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 192 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 192 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of aeronautical_experience
@@ -115,7 +115,7 @@ CREATE TABLE `aeronautical_experience_list`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `function_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of aeronautical_experience_list
@@ -134,7 +134,7 @@ CREATE TABLE `aircraft_type`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `aircraft` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of aircraft_type
@@ -154,7 +154,7 @@ CREATE TABLE `applicaiton_misc`  (
   `salary` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `medical_restriction` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of applicaiton_misc
@@ -173,7 +173,7 @@ CREATE TABLE `applicaiton_opinion`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `opinion` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of applicaiton_opinion
@@ -191,7 +191,7 @@ CREATE TABLE `application`  (
   `user_id` int(11) NULL DEFAULT NULL,
   `offer_id` int(11) NULL DEFAULT NULL,
   `deleted` tinyint(1) NULL DEFAULT 0,
-  `add_date` datetime(0) NULL,
+  `add_date` timestamp NULL DEFAULT NULL,
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `zip` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -216,7 +216,12 @@ CREATE TABLE `application`  (
   `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of application
+-- ----------------------------
+INSERT INTO `application` VALUES (NULL, NULL, 0, '2019-11-21 11:32:16', NULL, NULL, NULL, NULL, NULL, NULL, 123, 0, 1, 1, 1, 1, 2, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3);
 
 -- ----------------------------
 -- Table structure for application_call_list
@@ -226,7 +231,7 @@ CREATE TABLE `application_call_list`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `call` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_call_list
@@ -245,7 +250,7 @@ CREATE TABLE `application_cfs`  (
   `safety_training_certificate_date` date NULL DEFAULT NULL,
   `safety_training_certificate_organization` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_cfs
@@ -262,7 +267,7 @@ CREATE TABLE `application_contract`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_contract
@@ -281,7 +286,7 @@ CREATE TABLE `application_empoy_center`  (
   `application_id` int(11) NOT NULL,
   `employ_center` tinyint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_empoy_center
@@ -299,7 +304,7 @@ CREATE TABLE `application_english_frechn_level`  (
   `english_level` smallint(1) NULL DEFAULT NULL,
   `french_level` smallint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_english_frechn_level
@@ -320,7 +325,7 @@ CREATE TABLE `application_eu_area`  (
   `eu_nationality` smallint(1) NULL DEFAULT NULL,
   `can_work_eu` smallint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_eu_area
@@ -344,7 +349,7 @@ CREATE TABLE `application_fcl`  (
   `application_id` int(11) NOT NULL,
   `fcl` int(11) NULL DEFAULT 0,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_fcl
@@ -365,114 +370,9 @@ CREATE TABLE `application_files`  (
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `deleted` tinyint(1) NULL DEFAULT 0,
-  `timestamp` timestamp(0) NULL DEFAULT current_timestamp(),
+  `timestamp` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1186 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of application_files
--- ----------------------------
-INSERT INTO `application_files` VALUES (589, 1568226323, 77, '4l.bmp', 'cv', 0, '2019-09-19 11:22:51');
-INSERT INTO `application_files` VALUES (590, 1568226323, 77, '11.jpg', 'cv', 0, '2019-09-19 11:22:56');
-INSERT INTO `application_files` VALUES (630, 1568226339, 77, '12.jpg', 'cv', 0, '2019-09-19 13:24:15');
-INSERT INTO `application_files` VALUES (631, 1568226339, 77, '4l2.bmp', 'cv', 0, '2019-09-19 13:24:15');
-INSERT INTO `application_files` VALUES (632, 1568226339, 77, '4l-11.bmp', 'cv', 0, '2019-09-19 13:24:15');
-INSERT INTO `application_files` VALUES (633, 1568226339, 77, '4l-22.bmp', 'cv', 0, '2019-09-19 13:24:16');
-INSERT INTO `application_files` VALUES (634, 1568226339, 77, '4l1.bmp', 'medical_aptitude', 0, '2019-09-19 13:24:30');
-INSERT INTO `application_files` VALUES (635, 1568226339, 77, '11.jpg', 'photo_in_feet', 0, '2019-09-19 13:24:39');
-INSERT INTO `application_files` VALUES (636, 1568226339, 77, '4l-11.bmp', 'passport', 0, '2019-09-19 13:24:46');
-INSERT INTO `application_files` VALUES (637, 1568226339, 77, '4l-1.bmp', 'vaccine_against_yellow_fever', 0, '2019-09-19 13:24:51');
-INSERT INTO `application_files` VALUES (638, 1568226339, 77, '4l-2.bmp', 'vaccine_against_yellow_fever', 0, '2019-09-19 13:25:55');
-INSERT INTO `application_files` VALUES (639, 1568226339, 77, '4l-11.bmp', 'id_photo', 0, '2019-09-19 13:26:16');
-INSERT INTO `application_files` VALUES (640, 1568226341, 77, '13.jpg', 'cv', 0, '2019-09-19 13:36:10');
-INSERT INTO `application_files` VALUES (641, 1568226341, 77, '11.jpg', 'attestation_of_medical_fitness', 0, '2019-09-19 13:36:17');
-INSERT INTO `application_files` VALUES (642, 1568226341, 77, '4l1.bmp', 'attestation_of_medical_fitness', 0, '2019-09-19 13:36:17');
-INSERT INTO `application_files` VALUES (643, 1568226341, 77, '4l-11.bmp', 'attestation_of_medical_fitness', 0, '2019-09-19 13:36:17');
-INSERT INTO `application_files` VALUES (644, 1568226341, 77, '4l-21.bmp', 'attestation_of_medical_fitness', 0, '2019-09-19 13:36:18');
-INSERT INTO `application_files` VALUES (645, 1568226341, 77, '1.jpg', 'certificate_of_flang', 0, '2019-09-19 13:36:25');
-INSERT INTO `application_files` VALUES (646, 1568226341, 77, '4l1.bmp', 'certificate_of_flang', 0, '2019-09-19 13:36:25');
-INSERT INTO `application_files` VALUES (647, 1568226341, 77, '4l-11.bmp', 'certificate_of_flang', 0, '2019-09-19 13:36:26');
-INSERT INTO `application_files` VALUES (648, 1568226341, 77, '4l-21.bmp', 'certificate_of_flang', 0, '2019-09-19 13:36:26');
-INSERT INTO `application_files` VALUES (649, 1568226341, 77, '11.jpg', 'carnet_of_flight', 0, '2019-09-19 13:36:47');
-INSERT INTO `application_files` VALUES (650, 1568226341, 77, '4l1.bmp', 'carnet_of_flight', 0, '2019-09-19 13:36:48');
-INSERT INTO `application_files` VALUES (651, 1568226341, 77, '4l-11.bmp', 'carnet_of_flight', 0, '2019-09-19 13:36:48');
-INSERT INTO `application_files` VALUES (652, 1568226341, 77, '4l-21.bmp', 'carnet_of_flight', 0, '2019-09-19 13:36:48');
-INSERT INTO `application_files` VALUES (653, 1568226341, 77, '11.jpg', 'attestation', 0, '2019-09-19 13:36:56');
-INSERT INTO `application_files` VALUES (654, 1568226341, 77, '4l1.bmp', 'attestation', 0, '2019-09-19 13:36:56');
-INSERT INTO `application_files` VALUES (655, 1568226341, 77, '4l-11.bmp', 'attestation', 0, '2019-09-19 13:36:57');
-INSERT INTO `application_files` VALUES (656, 1568226341, 77, '4l-21.bmp', 'attestation', 0, '2019-09-19 13:36:57');
-INSERT INTO `application_files` VALUES (657, 1568226341, 77, '11.jpg', 'attestation_of_irme', 0, '2019-09-19 13:37:10');
-INSERT INTO `application_files` VALUES (658, 1568226341, 77, '4l1.bmp', 'attestation_of_irme', 0, '2019-09-19 13:37:10');
-INSERT INTO `application_files` VALUES (659, 1568226341, 77, '4l-11.bmp', 'attestation_of_irme', 0, '2019-09-19 13:37:11');
-INSERT INTO `application_files` VALUES (660, 1568226341, 77, '4l-21.bmp', 'attestation_of_irme', 0, '2019-09-19 13:37:12');
-INSERT INTO `application_files` VALUES (661, 1568226341, 77, '4l1.bmp', 'id_photo', 0, '2019-09-19 13:37:22');
-INSERT INTO `application_files` VALUES (662, 1568226342, 77, '4l-23.bmp', 'cv', 0, '2019-09-19 13:41:23');
-INSERT INTO `application_files` VALUES (663, 1568226344, 77, '4l-12.bmp', 'cv', 0, '2019-09-19 13:54:54');
-INSERT INTO `application_files` VALUES (664, 1568226344, 77, '4l-21.bmp', 'complementary_documents', 0, '2019-09-19 13:54:59');
-INSERT INTO `application_files` VALUES (665, 1568226345, 77, '4l-2.bmp', 'covver_letter', 0, '2019-09-19 14:05:57');
-INSERT INTO `application_files` VALUES (666, 1568226345, 77, '4l-24.bmp', 'cv', 0, '2019-09-19 14:06:03');
-INSERT INTO `application_files` VALUES (667, 1568898894, 39, '1200px-ASL_Airlines_France_logo_svg1.png', 'cv', 0, '2019-09-19 16:15:18');
-INSERT INTO `application_files` VALUES (668, 1568898894, 39, '4l-13.bmp', 'cv', 0, '2019-09-19 16:15:27');
-INSERT INTO `application_files` VALUES (669, 1568899771, 39, '4l-25.bmp', 'cv', 0, '2019-09-19 16:29:38');
-INSERT INTO `application_files` VALUES (670, 1568899946, 39, '4l-26.bmp', 'cv', 0, '2019-09-19 16:32:56');
-INSERT INTO `application_files` VALUES (671, 1568899946, 39, '4l.bmp', 'covver_letter', 0, '2019-09-19 16:33:01');
-INSERT INTO `application_files` VALUES (672, 1568900131, 39, '14.jpg', 'cv', 0, '2019-09-19 16:35:53');
-INSERT INTO `application_files` VALUES (673, 1568900131, 39, 'tenor.gif', 'covver_letter', 0, '2019-09-19 16:36:01');
-INSERT INTO `application_files` VALUES (674, 1568900142, 77, '365px-Trollface_svg.png', 'covver_letter', 0, '2019-09-20 23:33:26');
-INSERT INTO `application_files` VALUES (675, 1568900142, 77, '56673b6fa24c344bbdffa87ece575518.jpg', 'covver_letter', 0, '2019-09-20 23:34:04');
-INSERT INTO `application_files` VALUES (676, 1568900142, 77, 'domain.png', 'cv', 0, '2019-09-20 23:40:16');
-INSERT INTO `application_files` VALUES (677, 1568900146, 77, '8.jpg', 'cv', 0, '2019-09-21 16:33:04');
-INSERT INTO `application_files` VALUES (678, 1568900146, 77, '4l-27.bmp', 'cv', 0, '2019-09-21 16:33:09');
-INSERT INTO `application_files` VALUES (679, 1568900150, 77, '1200px-ASL_Airlines_France_logo_svg2.png', 'cv', 0, '2019-09-21 18:20:49');
-INSERT INTO `application_files` VALUES (680, 1569163666, 39, 'IMG_20190817_155039.jpg', 'cv', 0, '2019-09-22 17:48:24');
-INSERT INTO `application_files` VALUES (681, 1569163666, 39, 'IMG_20190818_102424.jpg', 'covver_letter', 0, '2019-09-22 17:48:36');
-INSERT INTO `application_files` VALUES (682, 1569163666, 39, 'IMG_20190817_124013.jpg', 'cv', 0, '2019-09-22 17:48:48');
-INSERT INTO `application_files` VALUES (683, 1569163908, 39, 'IMG_20190818_102535.jpg', 'cv', 0, '2019-09-22 17:52:01');
-INSERT INTO `application_files` VALUES (684, 1569164020, 39, 'IMG_20190818_1025351.jpg', 'cv', 0, '2019-09-22 17:53:54');
-INSERT INTO `application_files` VALUES (685, 1569164119, 39, '4l.bmp', 'cv', 0, '2019-09-22 17:55:35');
-INSERT INTO `application_files` VALUES (686, 1569164167, 39, '4l-2.bmp', 'cv', 0, '2019-09-22 17:56:11');
-INSERT INTO `application_files` VALUES (687, 1569164167, 39, '1200px-ASL_Airlines_France_logo_svg.png', 'cv', 0, '2019-09-22 17:56:36');
-INSERT INTO `application_files` VALUES (688, 1569164197, 39, '8.jpg', 'cv', 0, '2019-09-22 17:56:41');
-INSERT INTO `application_files` VALUES (689, 1569164197, 39, 'tenor.gif', 'cv', 0, '2019-09-22 17:56:44');
-INSERT INTO `application_files` VALUES (690, 1569164236, 39, '4l-1.bmp', 'covver_letter', 0, '2019-09-22 17:57:23');
-INSERT INTO `application_files` VALUES (691, 1569164600, 39, 'IMG_20190818_102610.jpg', 'cv', 0, '2019-09-22 18:03:59');
-INSERT INTO `application_files` VALUES (692, 1569164600, 39, 'IMG_20190817_124358.jpg', 'covver_letter', 0, '2019-09-22 18:04:04');
-INSERT INTO `application_files` VALUES (693, 1569164601, 77, 'IMG_20190817_155039.jpg', 'cv', 0, '2019-09-22 18:05:54');
-INSERT INTO `application_files` VALUES (694, 1569164601, 77, 'IMG_20190817_124358.jpg', 'cv', 0, '2019-09-22 18:05:58');
-INSERT INTO `application_files` VALUES (695, 1569164602, 77, 'EGL_SAB_DEN_2019-05-13.pdf', 'covver_letter', 0, '2019-10-02 09:52:55');
-INSERT INTO `application_files` VALUES (696, 1569164602, 77, '4l-2.bmp', 'covver_letter', 0, '2019-10-02 10:05:19');
-INSERT INTO `application_files` VALUES (697, 1569164602, 77, 'EGL_SAB_DEN_2019-05-131.pdf', 'covver_letter', 0, '2019-10-02 10:05:22');
-INSERT INTO `application_files` VALUES (705, 1570632625, 39, 'IMG_20190926_085926.jpg', 'cv', 0, '2019-10-09 17:50:50');
-INSERT INTO `application_files` VALUES (706, 1570632625, 39, 'IMG_20190926_085741.jpg', 'covver_letter', 0, '2019-10-09 17:51:06');
-INSERT INTO `application_files` VALUES (715, 0, 77, '4l.bmp', 'covver_letter', 0, '2019-10-17 22:52:42');
-INSERT INTO `application_files` VALUES (716, 0, 77, '4l1.bmp', 'covver_letter', 0, '2019-10-17 22:53:15');
-INSERT INTO `application_files` VALUES (717, 0, 77, '4l-1.bmp', 'covver_letter', 0, '2019-10-17 22:53:36');
-INSERT INTO `application_files` VALUES (928, 0, 77, '4l-110.bmp', 'cv', 0, '2019-10-20 01:36:13');
-INSERT INTO `application_files` VALUES (929, 0, 77, '4l-11.bmp', 'certificate_of_flang', 0, '2019-10-20 01:36:24');
-INSERT INTO `application_files` VALUES (930, 0, 77, '4l-23.bmp', 'medical_aptitude', 0, '2019-10-20 01:37:43');
-INSERT INTO `application_files` VALUES (931, 0, 77, '4l-12.bmp', 'certificate_of_flang', 0, '2019-10-20 01:37:58');
-INSERT INTO `application_files` VALUES (940, 0, 77, '4l-125.bmp', 'covver_letter', 0, '2019-10-20 01:43:14');
-INSERT INTO `application_files` VALUES (948, 0, 77, '4l-17.bmp', 'photo_in_feet', 0, '2019-10-20 01:47:10');
-INSERT INTO `application_files` VALUES (1035, 1570632687, 77, '4l-212.bmp', 'cv', 0, '2019-10-25 13:20:54');
-INSERT INTO `application_files` VALUES (1112, 1570632737, 56, 'tenor1.gif', 'cv', 0, '2019-10-29 13:18:30');
-INSERT INTO `application_files` VALUES (1147, 1570632762, 61, 'Edit_profile.pdf', 'cv', 0, '2019-11-08 08:00:18');
-INSERT INTO `application_files` VALUES (1148, 1570632762, 61, 'Edit_profile.pdf', 'certificate_cfs_or_cca', 0, '2019-11-08 08:00:22');
-INSERT INTO `application_files` VALUES (1149, 1570632762, 61, 'Edit_profile.pdf', 'photo_in_feet', 0, '2019-11-08 08:00:24');
-INSERT INTO `application_files` VALUES (1150, 1570632762, 61, 'Edit_profile.pdf', 'passport', 0, '2019-11-08 08:00:27');
-INSERT INTO `application_files` VALUES (1151, 1570632762, 61, 'Edit_profile.pdf', 'certificate_of_registration_at_the_employment_center', 0, '2019-11-08 08:00:29');
-INSERT INTO `application_files` VALUES (1152, 1570632762, 61, 'Edit_profile.pdf', 'vaccine_against_yellow_fever', 0, '2019-11-08 08:00:32');
-INSERT INTO `application_files` VALUES (1153, 1570632762, 61, 'Edit_profile.pdf', 'id_photo', 0, '2019-11-08 08:00:34');
-INSERT INTO `application_files` VALUES (1154, 1570632766, 61, 'Edit_profile1.pdf', 'cv', 0, '2019-11-08 08:16:20');
-INSERT INTO `application_files` VALUES (1155, 1570632766, 61, 'Edit_profile.pdf', 'attestation_of_medical_fitness', 0, '2019-11-08 08:16:23');
-INSERT INTO `application_files` VALUES (1156, 1570632766, 61, 'Edit_profile.pdf', 'carnet_of_flight', 0, '2019-11-08 08:16:26');
-INSERT INTO `application_files` VALUES (1157, 1570632766, 61, 'Edit_profile.pdf', 'attestation_of_irme', 0, '2019-11-08 08:16:29');
-INSERT INTO `application_files` VALUES (1158, 1570632766, 61, 'Edit_profile1.pdf', 'id_photo', 0, '2019-11-08 08:16:32');
-INSERT INTO `application_files` VALUES (1176, 1573658515, 39, 'IMG_20191111_150402.jpg', 'cv', 0, '2019-11-13 17:22:16');
-INSERT INTO `application_files` VALUES (1177, 1573658515, 39, 'IMG_20191111_114431.jpg', 'covver_letter', 0, '2019-11-13 17:22:22');
-INSERT INTO `application_files` VALUES (1178, 1573659102, 39, 'IMG_20191111_113434.jpg', 'cv', 0, '2019-11-13 17:32:12');
-INSERT INTO `application_files` VALUES (1179, 1573659102, 39, 'IMG_20191110_131455.jpg', 'covver_letter', 0, '2019-11-13 17:32:22');
-INSERT INTO `application_files` VALUES (1180, 1573659102, 39, 'IMG_20191110_132338.jpg', 'covver_letter', 0, '2019-11-13 17:32:22');
-INSERT INTO `application_files` VALUES (1181, 1573659102, 39, 'IMG_20191110_132519.jpg', 'covver_letter', 0, '2019-11-13 17:32:22');
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for application_history
@@ -480,7 +380,7 @@ INSERT INTO `application_files` VALUES (1181, 1573659102, 39, 'IMG_20191110_1325
 DROP TABLE IF EXISTS `application_history`;
 CREATE TABLE `application_history`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` timestamp(0) NULL ,
+  `date` timestamp NULL DEFAULT NULL,
   `application_id` int(11) NOT NULL,
   `table` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `select_id` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -490,7 +390,7 @@ CREATE TABLE `application_history`  (
   `action` smallint(1) NULL DEFAULT 1,
   `row` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for application_hr_expirience
@@ -502,7 +402,7 @@ CREATE TABLE `application_hr_expirience`  (
   `duration` int(11) NOT NULL,
   `managerial` int(255) NOT NULL,
   PRIMARY KEY (`application_id`, `area`, `duration`, `managerial`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_hr_expirience
@@ -523,7 +423,7 @@ CREATE TABLE `application_languages_level`  (
   `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `level_id` int(11) NOT NULL,
   PRIMARY KEY (`level_id`, `language`, `application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_languages_level
@@ -577,7 +477,7 @@ CREATE TABLE `application_licenses`  (
   `irme_start` date NULL DEFAULT NULL,
   `irme_end` date NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_licenses
@@ -598,7 +498,7 @@ CREATE TABLE `application_medical_aptitude`  (
   `date` date NULL DEFAULT NULL,
   `medical_restriction` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_medical_aptitude
@@ -635,7 +535,7 @@ CREATE TABLE `application_pnt_completary`  (
   `motivation_asl` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `involved_in_incidents` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_completary
@@ -659,7 +559,7 @@ CREATE TABLE `application_pnt_flight_expirience`  (
   `last_flight` date NOT NULL,
   `company` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_flight_expirience
@@ -682,7 +582,7 @@ CREATE TABLE `application_pnt_flight_expirience_instructor`  (
   `validity_date` date NOT NULL,
   `company` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_flight_expirience_instructor
@@ -704,7 +604,7 @@ CREATE TABLE `application_pnt_practice`  (
   `school_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `qualification_obtained` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_practice
@@ -726,7 +626,7 @@ CREATE TABLE `application_pnt_qualification`  (
   `last_simulator_control` date NULL DEFAULT NULL,
   `last_flight` date NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_qualification
@@ -755,7 +655,7 @@ CREATE TABLE `application_pnt_successive_employers`  (
   `why_left` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `application_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_successive_employers
@@ -780,7 +680,7 @@ CREATE TABLE `application_pnt_total_flight_hours`  (
   `last_flight` date NOT NULL,
   `company` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_pnt_total_flight_hours
@@ -797,7 +697,7 @@ CREATE TABLE `application_status`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_status
@@ -817,7 +717,7 @@ CREATE TABLE `application_un`  (
   `contract_id` int(11) NULL DEFAULT NULL,
   `function` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_un
@@ -835,7 +735,7 @@ CREATE TABLE `application_un_activity`  (
   `activity` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_un_activity
@@ -857,7 +757,7 @@ CREATE TABLE `application_unsolicated_formattion`  (
   `end` date NOT NULL,
   `location` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`application_id`, `start`, `end`, `school_name`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of application_unsolicated_formattion
@@ -882,7 +782,7 @@ CREATE TABLE `application_unsolicated_proffesional`  (
   `managerial` int(11) NOT NULL,
   `role` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`application_id`, `start`, `end`, `country_id`, `managerial`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for candidates
@@ -898,7 +798,7 @@ CREATE TABLE `candidates`  (
   `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `admin_id` int(11) NULL DEFAULT 0,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of candidates
@@ -1189,7 +1089,7 @@ CREATE TABLE `country_translate`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `country_id`(`country_id`) USING BTREE,
   INDEX `code`(`code`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11065 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11065 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of country_translate
@@ -10681,7 +10581,7 @@ CREATE TABLE `email_template`  (
   `fr` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `en` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of email_template
@@ -10699,7 +10599,7 @@ CREATE TABLE `email_template_translate`  (
   `text` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `template_id` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of email_template_translate
@@ -10716,7 +10616,7 @@ CREATE TABLE `emails`  (
   `subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of emails
@@ -10732,7 +10632,7 @@ CREATE TABLE `expirience_duration`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `duration` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of expirience_duration
@@ -10751,7 +10651,7 @@ CREATE TABLE `expirience_managerial`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `managerial` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of expirience_managerial
@@ -10770,7 +10670,7 @@ CREATE TABLE `function_activity`  (
   `function_id` int(11) NOT NULL,
   `activity_id` int(11) NOT NULL,
   PRIMARY KEY (`function_id`, `activity_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of function_activity
@@ -10836,7 +10736,7 @@ CREATE TABLE `functions`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `function` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 70 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 70 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of functions
@@ -10900,7 +10800,7 @@ CREATE TABLE `groups`  (
   `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `description` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of groups
@@ -10930,7 +10830,7 @@ CREATE TABLE `hiring_policy`  (
   `id` int(1) NOT NULL,
   `general_picture` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of hiring_policy
@@ -10945,7 +10845,7 @@ CREATE TABLE `hr_offer_education_level`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `level` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of hr_offer_education_level
@@ -10967,7 +10867,7 @@ CREATE TABLE `language_level`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `level` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of language_level
@@ -10987,7 +10887,7 @@ CREATE TABLE `language_list`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 145 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 145 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of language_list
@@ -11147,7 +11047,7 @@ CREATE TABLE `last_level_education`  (
   `education_level_id` int(11) NULL DEFAULT NULL,
   `application_id` int(11) NOT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of last_level_education
@@ -11300,7 +11200,7 @@ CREATE TABLE `login_attempts`  (
   `login` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `time` int(11) UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 117 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 117 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for mechanic_baccalaureate
@@ -11315,7 +11215,7 @@ CREATE TABLE `mechanic_baccalaureate`  (
   `complementary_mention_b1` smallint(1) NULL DEFAULT NULL,
   `complementary_mention_b2` smallint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of mechanic_baccalaureate
@@ -11342,7 +11242,7 @@ CREATE TABLE `mechanic_offer_aeronautical_experience`  (
   `part_66_license` smallint(1) NULL DEFAULT NULL,
   `managerial_duties` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`application_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of mechanic_offer_aeronautical_experience
@@ -11365,7 +11265,7 @@ CREATE TABLE `mechanic_offer_managerial`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `duration` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of mechanic_offer_managerial
@@ -11387,9 +11287,9 @@ CREATE TABLE `news`  (
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `news` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  `date` timestamp(0) NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
+  `date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of news
@@ -11415,7 +11315,7 @@ CREATE TABLE `offers`  (
   `pub_date` date NULL DEFAULT NULL,
   `admin_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 225 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 225 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of offers
@@ -11516,7 +11416,7 @@ CREATE TABLE `offers_activities`  (
   `offer_id` int(11) NOT NULL,
   `activiti_id` int(11) NOT NULL,
   PRIMARY KEY (`offer_id`, `activiti_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of offers_activities
@@ -11617,7 +11517,7 @@ CREATE TABLE `offers_category`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of offers_category
@@ -11635,7 +11535,7 @@ CREATE TABLE `offers_location`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `location` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of offers_location
@@ -11654,7 +11554,7 @@ CREATE TABLE `privacy_statement`  (
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `status` tinyint(1) NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of privacy_statement
@@ -11671,7 +11571,7 @@ CREATE TABLE `slideshow`  (
   `status` smallint(1) NULL DEFAULT NULL,
   `order` int(11) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for users
@@ -11705,7 +11605,7 @@ CREATE TABLE `users`  (
   `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `phone_2` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 89 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 89 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of users
@@ -11750,7 +11650,7 @@ CREATE TABLE `users_english_frechn_level`  (
   `french_level_id` int(5) NULL DEFAULT NULL,
   `english_level_id` int(5) NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for users_groups
@@ -11766,7 +11666,7 @@ CREATE TABLE `users_groups`  (
   INDEX `fk_users_groups_groups1_idx`(`group_id`) USING BTREE,
   CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of users_groups
@@ -11795,5 +11695,31 @@ INSERT INTO `users_groups` VALUES (85, 77, 8);
 INSERT INTO `users_groups` VALUES (82, 80, 8);
 INSERT INTO `users_groups` VALUES (83, 81, 8);
 INSERT INTO `users_groups` VALUES (84, 82, 8);
+
+-- ----------------------------
+-- Triggers structure for table application
+-- ----------------------------
+DROP TRIGGER IF EXISTS `application_BI`;
+delimiter ;;
+CREATE TRIGGER `application_BI` BEFORE INSERT ON `application` FOR EACH ROW BEGIN
+    IF (NEW.add_date IS NULL) THEN 
+        SET NEW.add_date = now();
+    END IF;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table application_files
+-- ----------------------------
+DROP TRIGGER IF EXISTS `application_FI`;
+delimiter ;;
+CREATE TRIGGER `application_FI` BEFORE INSERT ON `application_files` FOR EACH ROW BEGIN
+    IF (NEW.timestamp IS NULL) THEN 
+        SET NEW.timestamp = now();
+    END IF;
+END
+;;
+delimiter ;
 
 SET FOREIGN_KEY_CHECKS = 1;
