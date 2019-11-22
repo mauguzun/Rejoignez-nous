@@ -300,9 +300,11 @@ $lang['industry'] = 'industry';
 $lang['none'] = 'none';
 $lang['irme_start'] = 'irme_start';
 $lang['irme_end'] = 'irme_end';
-$lang['involved_in_incidents'] = 'irme_end';
+$lang['involved_in_incidents'] = 'Involved in incidents';
 $lang['diversity'] = 'diversity';
 $lang['recruiting'] = 'recruiting';
+$lang['integration'] = 'integration';
+$lang['course'] = 'course';
 
 
 $lang['yes_toogle'] = [
