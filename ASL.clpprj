@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\reg\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\controllers\Test.php;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsurl.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\medical.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt;C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt\vue.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
-		<file name="C:\OSPanel\domains\localhost\reg\application\controllers\Policy.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\views\front\hiring_policy.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\reg\static\update\css\update.css">
@@ -3830,15 +3826,15 @@
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Folderoffer.php" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Colors.php" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\libraries\Bcrypt.php" crc="1557725438"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php" crc="1574419422"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\ion_auth_lang.php" crc="1557725438"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\auth_lang.php" crc="1557725438"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\admin_lang.php" crc="1568203676"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php" crc="1574419397"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\ion_auth_lang.php" crc="1557725438"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\index.html" crc="1557725438"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\auth_lang.php" crc="1568286498"/>
-		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\admin_lang.php" crc="1568203664"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\site_lang.php" crc="1574414660"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\ion_auth_lang.php" crc="1574410756"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\auth_lang.php" crc="1574410756"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\fr\admin_lang.php" crc="1574412154"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\site_lang.php" crc="1574416542"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\ion_auth_lang.php" crc="1574410754"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\index.html" crc="1574410754"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\auth_lang.php" crc="1574410754"/>
+		<file name="C:\OSPanel\domains\localhost\reg\application\language\en\admin_lang.php" crc="1574414900"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\language\index.html" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\hooks\index.html" crc="1557725438"/>
 		<file name="C:\OSPanel\domains\localhost\reg\application\helpers\lang_helper.php" crc="1557725438"/>

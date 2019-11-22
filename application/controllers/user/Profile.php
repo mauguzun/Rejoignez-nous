@@ -178,12 +178,12 @@ class Profile extends Usermeta_Controller{
 			$activity = ($app)?$app[$value] : $this->form_validation->set_value($value);
 			//$this->data['control']["{$value}_l"] = form_label(lang($value));
 			
-			$place = $value == 'zip' ? 'postal' : 'zip';
+			$place = $value == 'zip' ? 'postal' : $value;
 
 
 			$required = ($value == 'phone_2' )?FALSE:TRUE;
 			$this->data['control'][$value] = form_input(
-				$this->inputarray->getArray($value,'text',$place,$activity,$required));
+				$this->inputarray->getArray($value,'text',lang($place),$activity,$required));
 		}
 
 		//*/
