@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2.0, initial-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-
+<link rel='shortcut icon' href='https://www.aslairlines.fr/wp-content/themes/eap/favicon.ico'/>
 	<title><?= $meta['title'] ?></title>
 
 	<!--[if lt IE 9]>
