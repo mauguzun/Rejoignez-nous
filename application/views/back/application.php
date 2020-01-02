@@ -20,6 +20,13 @@
 			<i class="fa fa-envelope">
 			</i>
 		</button>
+		
+		<button  data-toggle="tooltip" 
+		data-placement="top" title="<?= lang('delete') ?>"
+		 class="btn btn-primary square" id="delete">
+			<i class="fa fa-trash">
+			</i>
+		</button>
 
 
 
@@ -35,7 +42,29 @@
 
 
 
-
+	$("#delete").click(function(){
+		
+		
+			if( $('input[type="checkbox"]:checked').length == 0 ){
+				alert( "<?= lang('pls_select_some_row') ?>");
+				return;
+			}
+			if (confirm('<?= lang("are_you_sure")?>')){
+				$('input[type="checkbox"]:checked').each(function(index, element){
+					
+						$.getJSON(  '<?= base_url()?>shared/ajax/delete_app_by_id/' + $(this).attr('id')).then(()=>{
+								if (index === ($('input[type="checkbox"]:checked').length - 1)) {
+									x.ajax.reload();
+								}
+							})
+					})
+				x	
+			}
+		  
+		
+   		
+		})
+	
 
 	$('#download').click(function(){
 			let print = [];
@@ -80,6 +109,7 @@
 			$(".table-checkbox").prop('checked', $(this).prop('checked'));
    		
 		})
+		
 	
 	
 	$('#email').click(function(){

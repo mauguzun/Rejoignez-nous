@@ -135,7 +135,17 @@ class Ajax extends Shared_Controller{
 		echo json_encode(['error'=>TRUE]);	
 	}
 
-   
+   /**
+   * 
+   * 
+   * @param string  $id
+   * 
+   * @return
+   */
+   public function delete_app_by_id($id){
+   	   $this->Crud->update(['id'=>$id],['deleted'=>1],'application');
+   	   echo json_encode(['error'=>TRUE]);	
+   }
 
 
 }
