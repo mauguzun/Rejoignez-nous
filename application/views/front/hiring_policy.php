@@ -59,25 +59,25 @@
 			<input type="checkbox" checked>
 			<i></i>
 			<h5><?= lang('integration')?></h5>
-			<p>	<?= strip_tags($query['integration']) ?></p>
+			<div>	<?= ($query['integration']) ?></div>
 		</li>
 		<li>
 			<input type="checkbox" checked>
 			<i></i>
 			<h5><?= lang('course')?></h5>
-			<p>	<?= strip_tags($query['course']) ?></p>
+			<div>	<?= ($query['course']) ?></div>
 		</li>
 		<li>
 			<input type="checkbox" checked>
 			<i></i>
 			<h5><?= lang('diversity')?></h5>
-			<p>	<?= strip_tags($query['diversity']) ?></p>
+			<div>	<?= ($query['diversity']) ?></div>
 		</li>
 		<li>
 			<input type="checkbox" checked>
 			<i></i>
 			<h5><?= lang('recruiting')?></h5>
-			<p>	<?= strip_tags($query['recruiting']) ?></p>
+			<div>	<?= ($query['recruiting']) ?></div>
 		</li>
 	</ul>
 

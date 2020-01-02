@@ -128,12 +128,12 @@
 				$('textarea').summernote(
 					{
 						height: 450,
-						onpaste:function(){
-							alert(112)
-						}
+						
 					}
 
-				);
+				).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
+				
+
 
 				let initCalendar = function()
 				{
@@ -167,10 +167,10 @@
 
 
 				
-					for(let i in callFunctions)
-					{
-						callFunctions[i]();
-					}
+				for(let i in callFunctions)
+				{
+					callFunctions[i]();
+				}
 				
 
 				/*try{
@@ -190,15 +190,14 @@
 	}
 	else
 	{
-		$('textarea').summernote(
-			{
-				height: 450,
-					onpaste:function(){
-							alert(112)
-						}
+			$('textarea').summernote(
+					{
+						height: 450,
+						
+					}
 
-			}
-		);
+				).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
+				
 	}
 
 

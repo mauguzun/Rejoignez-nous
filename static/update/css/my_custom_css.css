@@ -4,22 +4,22 @@
 	color: white !important;
 	background-image: none !important;
 }
-
+​
 button:hover{
 	background-color: #00266C!important;
 	border-color: #00266C!important;
 	color: white!important;
 	background-image: none !important;
 }
-
+​
 .custom_footer-wrap{
 	background-color: #004b93;
 	color: #fff;
 	margin-top: 20px;
 	width: 100%;
 }
-
-
+​
+​
 .custom_footer-wrap .col-three > div {
 	float: left;
 }
@@ -35,7 +35,7 @@ button:hover{
 	text-align: center;
 	width: 50%;
 }
-
+​
 body.home .custom_footer-wrap .col-three .col-left {
 	width: 30%;
 	display: block;
@@ -46,7 +46,7 @@ body.home .custom_footer-wrap .col-three .col-center {
 body.home .custom_footer-wrap .col-three .col-right {
 	width: 30%;
 }
-
+​
 .custom_footer-wrap h3 {
 	text-transform: uppercase;
 	color: #fff;
@@ -54,14 +54,14 @@ body.home .custom_footer-wrap .col-three .col-right {
 	margin-bottom: 10px;
 	font-weight: 300;
 }
-
+​
 .custom_footer-wrap .links-social {}
 .custom_footer-wrap .links-social li,
 .custom_footer-wrap .links-social li a {
 	width: 46px;
 	height: 46px;
 }
-
+​
 .custom_footer-wrap .links-social li {
 	display: inline-block;
 	-webkit-border-radius: 100%;
@@ -73,7 +73,7 @@ body.home .custom_footer-wrap .col-three .col-right {
 }
 .custom_footer-wrap .links-social li:hover { 
 	background-color: #004b93; }
-
+​
 .custom_footer-wrap .links-social li a {
 	background-image: url('../img/sprite_social.png');
 	background-repeat: no-repeat;
@@ -81,7 +81,7 @@ body.home .custom_footer-wrap .col-three .col-right {
 	overflow: hidden;
 	display: block;
 }
-
+​
 .custom_offer_bg{
 	background-color: #F8F8F8;
 	line-height: 1.4em;
@@ -134,12 +134,12 @@ a {
 	border-radius: 0.25rem;
 	color: #6c757d;
 }
-
-
-
-
-
-p {
+​
+​
+​
+​
+​
+.accord > li > div {
 	color: rgba(48, 69, 92, 0.8);
 	line-height: 26px;
 	letter-spacing: 1px;
@@ -151,7 +151,7 @@ p {
 	margin-top: 14px;
 /*	z-index: 2;*/
 }
-
+​
 .accord {
 	list-style: none;
 	perspective: 900;
@@ -205,7 +205,7 @@ p {
 	z-index: 1;
 	opacity: 0;
 }
-.accord li input[type=checkbox]:checked ~ p {
+.accord li input[type=checkbox]:checked ~ div {
 	margin-top: 0;
 	max-height: 0;
 	opacity: 0;
@@ -217,9 +217,9 @@ p {
 .accord li input[type=checkbox]:checked ~ i:after {
 	transform: translate(-2px, 0) rotate(-45deg);
 }
-
-
-
+​
+​
+​
 @keyframes flipdown {
 	0% {
 		opacity: 0;
@@ -243,4 +243,7 @@ p {
 		transform: rotateX(0deg);
 	}
 }
+​
+
+
 

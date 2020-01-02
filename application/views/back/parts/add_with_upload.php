@@ -100,10 +100,16 @@ if (isset($required)) :?>
     /*
     var required = <?php echo json_encode($required); ?>;
     console.log(required)*/;
-    $('textarea').summernote(	{
-				height: 450
-		 
-			});
+  	$('textarea').summernote(
+					{
+						height: 450,
+						
+					}
+
+				).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
+				
+				
+	
     $('form').submit(function(){
             var required = <?php echo json_encode($required); ?>;
             console.log(required);

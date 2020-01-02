@@ -18,6 +18,7 @@
 	<script>
 		
 		var callFunctions = [];
+		var style = "font-family: 'Verdana';font-size:11px;color:#000;line-height: 1px;";
 	</script>
 
 	<!-- Global stylesheets -->
@@ -71,6 +72,14 @@
 		@font-face {
 			font-family: "Calibri";
 			src: url("Calibri.ttf") format("truetype")
+		}
+		.def{
+			font-family: 'Verdana';
+			font-size:11px;
+			color:#000;
+			line-height: 1px;
+			
+		
 		}
 	</style>
 </head>
