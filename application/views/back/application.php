@@ -52,13 +52,16 @@
 			if (confirm('<?= lang("are_you_sure")?>')){
 				$('input[type="checkbox"]:checked').each(function(index, element){
 					
+					if( $(this).attr('id') !== 'main'){
 						$.getJSON(  '<?= base_url()?>shared/ajax/delete_app_by_id/' + $(this).attr('id')).then(()=>{
 								if (index === ($('input[type="checkbox"]:checked').length - 1)) {
 									x.ajax.reload();
 								}
 							})
+					}
+						
 					})
-				x	
+					
 			}
 		  
 		
