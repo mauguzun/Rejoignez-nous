@@ -9,7 +9,7 @@
 		<li>
 			<input type="checkbox">
 		
-			<h5>	<?= lang('our_recruitment_policy')?></h5>
+<!--			<h5>	<?= lang('our_recruitment_policy')?></h5>-->
 
 			<div class="row">
 

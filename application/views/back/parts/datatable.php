@@ -130,7 +130,7 @@ $order_by = ( isset($order_by) && $order_by > 0) ? $order_by : 0 ;
 $order = ( isset($order)) ? $order : 'desc' ;
 
 ?>
-
+<script src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js"></script>
 <script src="<?= base_url().'static/js/notify.js'?> "></script>
 <script>
 
@@ -324,6 +324,9 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			"scrollX": true,
 			processing: true,
 			select: true,
+			fixedColumns:   {
+				leftColumns: 4
+			},
 			//displayStart : 10,
 			language:
 			{
@@ -357,10 +360,10 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			request.then(x=>
 				{
 				
-						$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
+					$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
 	
-						$('[data-email-block="'+href+'"]').addClass('in');
-						$('[data-email-loader="'+href+'"]').addClass('hidden')    
+					$('[data-email-block="'+href+'"]').addClass('in');
+					$('[data-email-loader="'+href+'"]').addClass('hidden')    
 					
 					
 				})
