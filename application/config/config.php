@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 /*$config['base_url'] = 'http://asl.nl.eu.org/';
 */
-$config['base_url'] = 'http://localhost/reg/';
+$config['base_url'] = 'http://localhost/Rejoignez-nous/';
 /*$config['base_url'] = 'https://careers.aslairlines.com/';
 */
 /*
