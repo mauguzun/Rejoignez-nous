@@ -35,30 +35,7 @@ class User_Controller extends CI_Controller
 
 	
 		parent::show_header($meta);
-       /* $this->load->library("menu/Topmenu");
-        $this->load->library("menu/Usermenu");
-
-        if ($meta) {
-            $meta['title'] = lang($meta[0]);
-            $meta['description'] = isset($meta[1])?  lang($meta[1]) :  lang($meta[0]);
-            $meta['keywords'] = isset($meta[2]) ?  lang($meta[2]) :  lang($meta[0]);
-        }
-
-
-
-        $this->load->view("front_asl/header",[
-                'top_menu'=>$this->topmenu->get($this->ion_auth->logged_in()),
-                'charset'=>!$this->main_settings? 'utf-8':$this->main_settings['charset'],
-                'meta'=>!$meta ? $this->meta :  $meta,
-                'user'=>$this->ion_auth->user()->row(),
-				'current_lang'=>$this->getCurrentLang(),
-				'page'=>$this->_get_page(),
-				'usermenu'=>$this->usermenu->get($this->ion_auth->user()->row()),
-				'logo'=>  base_url().$this->uploadlist->site_img().'/'.$this->meta['logo'],
-                'lang_list'=>$this->languagemenu->get(),
-            ]);
-
-	;*/
+       
 
 
 

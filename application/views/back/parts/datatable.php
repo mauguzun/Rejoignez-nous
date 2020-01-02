@@ -315,6 +315,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			"order": [[ <?= $order_by ?>, '<?= $order ?>' ]],
 			"drawCallback": function( settings )
 			{
+				
 				<?= $js ?>
 			},
 			

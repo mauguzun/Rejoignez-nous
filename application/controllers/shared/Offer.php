@@ -213,8 +213,8 @@ class Offer extends Shared_Controller{
 			$this->Crud->delete(['offer_id'=>$id],'offers_activities');
 			$this->Crud->delete(['offer_id'=>$id],'application');
 			$this->Crud->delete(['offer_id'=>$id],'application');
-			$this->Crud->delete(['id'=>$user_id],'activities');
-			$this->Crud->delete(['activity_id'=>$user_id],'function_activity');
+			$this->Crud->delete(['id'=>$this->user_id],'activities');
+			$this->Crud->delete(['activity_id'=>$this->user_id],'function_activity');
 		}
 		redirect($this->_redirect);
 	}

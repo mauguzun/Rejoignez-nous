@@ -5,9 +5,7 @@ class Shared_Controller extends CI_Controller
 
 
     static public $map = 'shared';
-
-
-
+   public $user_id;
 
 
     public function __construct($allowed_group)
@@ -24,7 +22,9 @@ class Shared_Controller extends CI_Controller
         $this->load->language(['admin','site','ion_auth']);
         $this->load->library('menu/Backmenu');
        
-      
+       $this->user_id = (string)$this->ion_auth->user()->row()->id;
+
+
 
 
     }

@@ -267,6 +267,14 @@ class CI_Controller{
 	protected function _get_page(){
 
 
+		switch($this->uri->segment(3)){
+
+			case "unsolicated":
+			case "uns_pnc":
+			case "uns_pnt":
+			case "begin":
+			return "apply/new/begin";
+		}
 		switch($this->uri->segment(2)){
 
 			case "profile":
@@ -281,8 +289,7 @@ class CI_Controller{
 			case "appliedoffers":
 			return "user/appliedoffers";
 
-			case "unsolicited":
-			return "apply/unsolicited/main";
+	
 
 			case "resetpassword":
 			return "user/resetpassword";
@@ -290,15 +297,7 @@ class CI_Controller{
 		switch($this->uri->segment(1)){
 
 
-
-
-
-			//case "apply":
-			//return "user/appliedoffers";
-			
-			
 			case "policy":
-	
 			return "policy";
 			
 			case "offers":

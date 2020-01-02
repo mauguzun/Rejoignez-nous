@@ -222,7 +222,6 @@
 			
 			foreach($usermenu as $key=>$value) :?>
 
-
 			<li id="menu-item-5751"
 				class="menu-item
 				menu-item-type-post_type
@@ -239,23 +238,17 @@
 					<ul class="sub-menu">
 	
 						<? foreach($value as $k=>$v):?>
-						<li id="menu-item-5737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5737"><a href="<?= base_url().$k?>"><?= lang($v)  ?></a></li>
+						<li id="menu-item-5737" 
+						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5737">
+						<a href="<?= base_url().$k?>"><?= lang($v)  ?></a>
+						</li>
 						<? endforeach ;?>
 					</ul>
 					<? endif;?>
 				</a></li>
 			<? endforeach ; ?>
 
-			<!--		<li id="menu-item-5752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5752"><a href="https://www.aslairlines.fr/en/about-us/our-quality-of-service/">Speculative application</a></li>
-			<li id="menu-item-5753" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5753"><a href="https://www.aslairlines.fr/en/about-us/our-certifications/">Equal Opportunity</a></li>
-			<li id="menu-item-5754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5754"><a href="https://www.aslairlines.fr/en/about-us/key-facts/">Meet our staff</a></li>
-			<li id="menu-item-5755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5755 current-menu-item current_page_item"><a href="https://www.aslairlines.fr/en/about-us/innovation/">Login</a>
-			<ul class="sub-menu">
-			<li id="menu-item-5737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5737"><a href="https://www.aslairlines.fr/en/cargo-flights/scheduled-cargo-flights/cargo-network/">Edit profile</a></li>
-			<li id="menu-item-5737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5737"><a href="https://www.aslairlines.fr/en/cargo-flights/scheduled-cargo-flights/cargo-network/">Offers I have applied for</a></li>
-			<li id="menu-item-5737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5737"><a href="https://www.aslairlines.fr/en/cargo-flights/scheduled-cargo-flights/cargo-network/">Reset your password</a></li>
-			</ul>
-			</li>-->
+
 		</ul>
 
 
