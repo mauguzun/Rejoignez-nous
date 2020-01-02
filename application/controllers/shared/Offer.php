@@ -234,7 +234,7 @@ class Offer extends Shared_Controller{
 		$this->data['cancel'] = $this->_redirect;
 
 
-		$this->form_validation->set_rules('title', lang('title'), 'trim|required|max_length[45]');
+		$this->form_validation->set_rules('title', lang('title'), 'trim|required|max_length[250]');
 		$this->form_validation->set_rules('type', lang('type'), 'trim|required|numeric');
 		$this->form_validation->set_rules('period', lang('create_offer_period'), 'trim|max_length[250]');
 		$this->form_validation->set_rules('start_date', lang('start_date'), 'trim|required|max_length[250]');

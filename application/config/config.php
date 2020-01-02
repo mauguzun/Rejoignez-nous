@@ -39,7 +39,6 @@ $config['base_url'] = 'http://localhost/Rejoignez-nous/';
 |
 */
 $config['index_page'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
