@@ -141,7 +141,7 @@ class CI_Controller{
 
 		$this->load->language(['site','auth','ion_auth']);
 	}
-
+   
 
 	protected function email_config(){
 		$this->load->library('email');
