@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel='shortcut icon' href='https://www.aslairlines.fr/wp-content/themes/eap/favicon.ico'/>
+	<link rel='shortcut icon' href='https://www.aslairlines.fr/wp-content/themes/eap/favicon.ico'/>
 	<meta charset="<?= $charset ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
 		<?= isset($meta['title'])? $meta['title'] : '-' ?>
 	</title>
-	
+
 	<link href="<?= base_url()?>/css/front/css/style.css" rel="stylesheet" type="text/css">
 
-	<meta name="description"  content="<?= isset($meta['description'])? $meta['description'] : "-"?>">   
+	<meta name="description"  content="<?= isset($meta['description'])? $meta['description'] : "-"?>">
 	<meta name="keywords"  content="<?= isset($meta['keywords'])? $meta['keywords'] : "-"?>" >
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+
 	<script>
-		
+
 		var callFunctions = [];
 		var style = "font-family: 'Verdana';font-size:11px;color:#000;line-height: 1px;";
-		
-		
-		function setSumer(){
-		
-		let texts = $('textarea');
-		for(let i = 0 ; texts[i] ;i++){
-		
-		
-		let emptys  =  texts[i].innerHTML.trim() === '';
-		
-		try{
-			$(texts[i]).summernote('destroy');
 
-		}
-		catch(e){
-			
-		}
-		
-	
-		
-			if(emptys){
-				
-				$(texts[i]).summernote({height: 450}).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
-				
 
-			}else{
-				
-	$(texts[i]).summernote({height: 450})
-				
-			
+		function setSumer()
+		{
+			let options = {
+							fontSizes: ['8', '9', '10', '11', '12', '14', '18'],
+							toolbar: [
+								// [groupName, [list of button]]
+								['style', ['bold', 'italic', 'underline']],
+								['fontname'],
+								['fontsize', ['fontsize']],
+								['color', ['color']],
+
+								['para', ['ul', 'ol', 'paragraph']],
+								['height', ['height']],
+
+								['codeview'],
+								['undo'],
+								['redo'],
+
+
+								['table', ['table']],
+								['insert', ['link', 'picture', 'video']],
+
+							],height: 450};
+
+			let texts = $('textarea');
+			for(let i = 0 ; texts[i] ;i++)
+			{
+
+
+				let emptys  =  texts[i].innerHTML.trim() === '';
+
+				try{$(texts[i]).summernote('destroy')}
+				catch(e){}
+
+
+
+				if(emptys){
+					$(texts[i]).summernote(options).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
+				}else{
+					$(texts[i]).summernote(options)
+				}
+
 			}
-			
 		}
-	}
 	</script>
 
 	<!-- Global stylesheets -->
 	<link href="<?= base_url()?>static/update/css/admin-style.css" rel="stylesheet" type="text/css">
-	
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="<?= base_url()?>css/back/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
@@ -103,21 +116,23 @@
 	<!-- /theme JS files -->
 
 	<style>
-		@font-face {
+		@font-face
+		{
 			font-family: "Calibri";
 			src: url("Calibri.ttf") format("truetype")
 		}
-		.def{
+		.def
+		{
 			font-family: 'Verdana';
-			font-size:11px;
-			color:#000;
+			font-size: 11px;
+			color: #000;
 			line-height: 1px;
-			
-		
+
+
 		}
 	</style>
 </head>
- 
+
 <body>
 
 <!-- Main navbar -->
@@ -159,7 +174,7 @@
 					</i>
 				</a>
 			</li>
-          
+
 			<li class="dropdown language-switch">
 				<a class="dropdown-toggle" data-toggle="dropdown">
 					<img src="<?= base_url()?>css/back/assets/images/flags/<?=$current_lang ?>.png" class="position-left" alt="">
@@ -169,22 +184,23 @@
 				</a>
 
 
-              
-                
+
+
 				<ul class="dropdown-menu">
-					<? foreach($lang_list  as  $key=>$value):?>
-                   		
+					<?
+					foreach($lang_list  as  $key=>$value):?>
+
 					<li>
 						<a href="<?= parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); ?>?lang=<?= $key ?>">
 							<img src="<?= base_url()?>css/back/assets/images/flags/<?= $key ?>.png" alt=""> <?= $value ?>
 						</a>
 					</li>
-                  
-                   
+
+
 					<? endforeach ;?>
 				</ul>
-                   
-                
+
+
 			</li>
 
 
@@ -213,54 +229,74 @@
 					<!-- Main -->
 					<li class="navigation-header">
 						<div class="row">
-                           
+
 							<!--  <div class="col-md-12">
 							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search">
 							</div>-->
 						</div>
 					</li>
-                    
-                    
 
-					<?foreach( $admin_menu as $text=>$array ):?>
-					
-					<?if(count($array) == 1 ) : ?>
-					<? foreach($array as $class=>$link ):?>
-					<li  
+
+
+					<?
+					foreach( $admin_menu as $text=>$array ):?>
+
+					<?
+					if(count($array) == 1 ) : ?>
+					<?
+					foreach($array as $class=>$link ):?>
+					<li
 						 		 	 <?
 						 		 		if($link == $current){
 											echo 'class="active"';
 										}
 						 		 	 ?>
-						 		 
-						 		 ><a  href="<?= base_url().$link  ?>"><i class="<?= $class ?> menu-icon"></i>
-							<span ><?= lang($text)?></span></a></li>
-					<? endforeach ?> 
-					<? else :?>
+
+						 		 >
+						<a  href="<?= base_url().$link  ?>">
+							<i class="<?= $class ?> menu-icon">
+							</i>
+							<span >
+								<?= lang($text)?>
+							</span>
+						</a>
+					</li>
+					<? endforeach ?>
+					<?
+					else :?>
 					<li >
-						<a href="#" ><i class=" <?= key($array) ?> menu-icon"></i>
-							<span ><?= lang($text)  ?></span>
-							
+						<a href="#" >
+							<i class=" <?= key($array) ?> menu-icon">
+							</i>
+							<span >
+								<?= lang($text)  ?>
+							</span>
+
 						</a>
 						<ul>
-							<? foreach($array as $class=>$link) :?>
-							
-								  
-       									
-								
-							<? foreach($link as $urltext => $url):?>
-							<li><a href="<?= base_url().$url ?>" id="layout5">
-									<?=   lang($urltext) ?></a></li>
+							<?
+							foreach($array as $class=>$link) :?>
+
+
+
+
+							<?
+							foreach($link as $urltext => $url):?>
+							<li>
+								<a href="<?= base_url().$url ?>" id="layout5">
+									<?=   lang($urltext) ?>
+								</a>
+							</li>
 							<? endforeach ;?>
 
 							<? endforeach ;?>
 						</ul>
 					</li>
-					
+
 					<? endif;?>
-					
-                    
-                  	
+
+
+
 					<? endforeach;?>
 
 
@@ -287,11 +323,11 @@
 	<div class="page-title">
 		<h4>
 			<span class="text-semibold">
-                   
+
 			</span>Dashboard
 		</h4>
 	</div>
-        
+
 
 
 	<div class="breadcrumb-line">
@@ -305,9 +341,9 @@
 				<a href="<?= base_url().'shared/viewoffers'?>">
 					Dashboard
 				</a>
-               
+
 			</li>
-          
+
 		</ul>
 	</div>
 </div>

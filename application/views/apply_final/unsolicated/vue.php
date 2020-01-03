@@ -1,19 +1,26 @@
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
-<script src="<?=base_url() ?>/css/locales/bootstrap-datepicker.en.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js">
+</script>
+<script src="<?=base_url() ?>/css/locales/bootstrap-datepicker.en.min.js">
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css" />
 
-<script src="<?= base_url()?>/static/js/ajaxupload.js"></script>
+<script src="<?= base_url()?>/static/js/ajaxupload.js">
+</script>
 
-<script src="https://unpkg.com/v-tooltip"></script>
+<script src="https://unpkg.com/v-tooltip">
+</script>
 <script>
-	let page =  new Vue({
+	let page =  new Vue(
+		{
 			el: "#content",
-			data: {
+			data:
+			{
 				filled :false,
 				application_id:false,
 				postData:null,
-      
+
 				error : true,
 				message:null,
 				// active:'show',
@@ -23,113 +30,138 @@
 
 				application_unsolicated_formattion:[],
 				langRows :[],
-				expRows:[],			
+				expRows:[],
 				professional:[],
 
-				models:{ 
+				models:
+				{
 					education_level_id:null,
 					aviability:null,
 				},
-				
-				files:{
+
+				files:
+				{
 					covver_letter:[],
 					cv:[],
-				
+
 				},
 				uploaders:[],
 				statuses: JSON.parse('<?= $status ?>'),
-				
-			},
-			methods: {
-				
-				current(event){
-					if(event.target.checked === true){
-						this.$refs[event.target.id].setAttribute("style",'visibility:hidden')						
-						this.$refs[event.target.id].removeAttribute('required')						
-					}else{
-						this.$refs[event.target.id].removeAttribute("style")						
-						this.$refs[event.target.id].setAttribute("required",'required')					
 
-					}  
-					
+			},
+			methods:
+			{
+
+				current(event)
+				{
+					if(event.target.checked === true)
+					{
+						this.$refs[event.target.id].setAttribute("style",'visibility:hidden')
+						this.$refs[event.target.id].removeAttribute('required')
+					}else
+					{
+						this.$refs[event.target.id].removeAttribute("style")
+						this.$refs[event.target.id].setAttribute("required",'required')
+
+					}
+
 				},
-				
-				send(submitEvent){
+
+				send(submitEvent)
+				{
 					this.loader = true;
 					this.setDefault();
 
 					let data  = submitEvent.target
 					let action  = data.action;
-           
+
 					this.postData = $(data).serialize() ;
 
-					if (this.application_id){
+					if (this.application_id)
+					{
 						this.postData += "&application_id="+this.application_id
 					}
-					
+
 
 					console.log(this.postData)
-					
-          
+
+
 					$.post(action,this.postData)
 					.then(data=>{ this.update(data) })
 					.catch(e=>{alert(e) })
-          
+
 				},
-				update(data){
+				update(data)
+				{
 					let result = JSON.parse(data);
 
-					if(result.result === true){
-						
-						this.statuses = result.statuses;	
+					if(result.result === true)
+					{
+
+						this.statuses = result.statuses;
 						this.error = false;
-						if (this.application_id === false){
+						if (this.application_id === false)
+						{
 							this.application_id = result.application_id;
 							this.setAllUploader();
 						}
-					}else{
+					}else
+					{
 						this.error = true;
 					}
 					this.filled = result.filled
 					this.message = result.message;
+					setTimeout(()=>
+						{
+							this.message = null
+						},5000)
 					this.loader = false;
 				},
 
-				
 
-				setDefault(){
+
+				setDefault()
+				{
 					this.message = null;
 					this.error = true;
-          
+
 				},
 
-				showPanel(panel){
+				showPanel(panel)
+				{
 					//  alert(panel +';' + this.active + this.active == panel)
 					return this.active === panel ? 'show': null
 				},
 
-				headerClass(headerID){
-					
-					if(this.application_id === false){
+				headerClass(headerID)
+				{
+
+					if(this.application_id === false)
+					{
 						return 'disabled';
-					}else{
+					}else
+					{
 						return this.statuses[headerID];
-					
+
 					}
-				
+
 				},
-				makeTooltip(){
-					
+				makeTooltip()
+				{
+
 					setupTool()
 				},
-				showExtra(){
+				showExtra()
+				{
 					alert(this.models.education_level_id)
-				
+
 				},
 
-				_getArray(arg){
+				_getArray(arg)
+				{
 					let array = null;
-					switch(arg){
+					switch(arg)
+					{
 						case 'lang':
 						array = this.langRows;
 						break;
@@ -137,7 +169,7 @@
 						case 'exp':
 						array = this.expRows;
 						break;
-						
+
 						default :
 						array = this[arg]
 					}
@@ -145,40 +177,51 @@
 				},
 
 
-				open(div){
-					if (this.application_id){
+				open(div)
+				{
+					if (this.application_id)
+					{
 						this.active = div;
-					}else{
+					}else
+					{
 						alert("<?= lang('please_save_main') ?>")
 					}
-				
+
 				},
-				addRow(arg){
+				addRow(arg)
+				{
 					this._getArray(arg).push({id: new Date()/1000,flag : false});
 					this.makeTooltip();
 				},
-				removeRow(row,arg){
-					let array  = this._getArray(arg);	
+				removeRow(row,arg)
+				{
+					let array  = this._getArray(arg);
 					array.splice(array.indexOf(row), 1)
 				},
 				// only pnc
-				aurExp(row){
-					if (event.target.value.trim().toLowerCase() === 'aucune' ){
-						
+				aurExp(row)
+				{
+					if (event.target.value.trim().toLowerCase() === 'aucune' )
+					{
+
 						row.flag = true;
-					}else{
+					}else
+					{
 						row.flag = false;
 					}
-					
+
 				},
-				removeTemplate(rowRef){	
-								
+				removeTemplate(rowRef)
+				{
+
 					this.$refs[rowRef].remove()
 				},
-				setupCalendar(event){
-					
-					
-					$('*[data-calendar]').datepicker({
+				setupCalendar(event)
+				{
+
+
+					$('*[data-calendar]').datepicker(
+						{
 							todayBtn: "linked",
 							clearBtn: true,
 							daysOfWeekHighlighted: [6,0],
@@ -190,25 +233,31 @@
 
 				},
 
-				deleteImg(id){
+				deleteImg(id)
+				{
 					this.loader=true;
-					$.getJSON("<?= base_url()?>/apply/ajaxupload/delete_file/" + id).then(e=>{
-							if (e.done === 'done'){
+					$.getJSON("<?= base_url()?>/apply/ajaxupload/delete_file/" + id).then(e=>
+						{
+							if (e.done === 'done')
+							{
 								this.updateStatuses();
 								$('#file_'+id).remove()
-								
-							}else{
+
+							}else
+							{
 								alert(e.error)
 							}
 						})
-		
+
 				},
 
-				updateStatuses(){
+				updateStatuses()
+				{
 					this.message = null;
 					this.loader=true;
 					$.getJSON('<?= base_url()?>/apply/new/unsolicated/json_statuses/'+ this.application_id )
-					.then(e=>{
+					.then(e=>
+						{
 							this.statuses = e.statuses;
 							this.filled = e.filled;
 							this.loader=false;
@@ -216,28 +265,30 @@
 				},
 
 
-				setupUploader(divId){
-					
+				setupUploader(divId)
+				{
 
-				
+
+
 					const up = this.$refs[divId];
 					const files = this.files[divId];
 					const that = this;
 
-					
+
 					$(up).find('#drag-and-drop-zone').dmUploader
 					(
 						{
 							url:'<?= base_url()?>apply/ajaxupload/upload_vue/'+this.application_id + '/'+divId ,
 							// only debug mode
 
-							onInit(){
+							onInit()
+							{
 								$(up).find('#error').html();
 							},
-							
+
 							onNewFile: function(id,file)
 							{
-			
+
 								$(up).find('#error').html();
 								//	$(up).find('#loglist').append("<span id='"+id+"'><progress id='"+id+"_file' value='1' max='100'></progress> "+ file.name + "</span>" );
 							},
@@ -251,9 +302,9 @@
 							onUploadSuccess: function(id, data)
 							{
 								let result = JSON.parse(data);
-							
+
 								$(up).find('#loglist').html()
-					
+
 								if(result.error !== undefined)
 								{
 									$(up).find('#error').append(result.error)
@@ -273,24 +324,27 @@
 
 				},
 
-				setAllUploader(){
+				setAllUploader()
+				{
 
 					this.$refs.delButton.href+="/"+this.application_id;
 					this.$refs.printButton.href+="/"+this.application_id;
-					for (let index in this.uploaders) {
+					for (let index in this.uploaders)
+					{
 						this.setupUploader(this.uploaders[index])
 					}
 
-				
+
 				}
 
 			},
-			
-			mounted(){
+
+			mounted()
+			{
 
 
 				// only for pnc
-			
+
 				/*	if (this.$refs.education_level_id.id)
 				{
 				this.models.education_level_id = this.$refs.education_level_id.id
@@ -299,8 +353,8 @@
 				{
 					this.models.aviability = this.$refs.aviability.id
 				}
- 
-			
+
+
 
 				<? foreach ($uploaders as $up):?>
 				this.uploaders.push('<?= $up ?>')
@@ -312,17 +366,17 @@
 				<? endif;?>
 
 
-			
+
 				<? if (isset($filled) && $filled == '1') :?>
 				this.filled = true;
 				<? endif;?>
-				
-				
-				
+
+
+
 				this.setupCalendar();
 				// this.setAllUploader();
 				this.loader= false;
-				
+
 				this.makeTooltip();
 			},
 
@@ -330,6 +384,6 @@
 
 
 
-	
+
 	/////////////
 </script>

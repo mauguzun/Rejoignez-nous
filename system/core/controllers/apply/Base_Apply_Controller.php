@@ -988,12 +988,12 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		$this->app_by_id($_POST['application_id']);
 		
 		
-		if(!isset($_POST['aviability'])  |   empty($_POST['aviability'])){
+		if(!isset($_POST['aviability'])  | isset( $_POST['fake_aviability']) &&   empty($_POST['aviability'])){
 			$_POST['aviability'] = $_POST['fake_aviability'];	
 		}
 		
 		
-		$this->form_validation->set_rules('aviability', lang('aviability'), 'trim|required|max_length[20]');		
+		$this->form_validation->set_rules('aviability', lang('aviability'), 'trim|required|min_length[1]|max_length[20]');		
 
 		if( $this->app &&   $this->form_validation->run() === true ){
 			
@@ -1013,7 +1013,7 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		else{
 
 			$this->json['message'] =(validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-			$this->session->set_flashdata('message',$message);
+			$this->session->set_flashdata('message',$this->json['message'] );
 
 		}
 		

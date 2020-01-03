@@ -59,7 +59,9 @@
   style="position: fixed;z-index: 10000;width: 100%;top:0;left:0">
 	<div style="text-align: center;">
 		<br>
-		<span v-html="message"></span>
+		<span 
+		
+		v-html="message"></span>
 
 		<br><br>
 

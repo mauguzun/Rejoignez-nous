@@ -84,6 +84,10 @@
 					}
 					this.filled = result.filled
 					this.message = result.message;
+					setTimeout(()=>
+						{
+							this.message = null
+						},5000)
 					this.loader = false;
 				},
 
