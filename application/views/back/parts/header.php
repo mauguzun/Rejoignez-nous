@@ -19,6 +19,40 @@
 		
 		var callFunctions = [];
 		var style = "font-family: 'Verdana';font-size:11px;color:#000;line-height: 1px;";
+		
+		
+		function setSumer(){
+		
+		let texts = $('textarea');
+		for(let i = 0 ; texts[i] ;i++){
+		
+		
+		let emptys  =  texts[i].innerHTML.trim() === '';
+		
+		try{
+			$(texts[i]).summernote('destroy');
+
+		}
+		catch(e){
+			
+		}
+		
+	
+		
+			if(emptys){
+				
+				$(texts[i]).summernote({height: 450}).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
+				
+
+			}else{
+				
+	$(texts[i]).summernote({height: 450})
+				
+			
+			}
+			
+		}
+	}
 	</script>
 
 	<!-- Global stylesheets -->

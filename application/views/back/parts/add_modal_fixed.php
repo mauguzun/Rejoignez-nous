@@ -8,7 +8,8 @@
 
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js">
+</script>
 
 
 
@@ -125,15 +126,8 @@
 			{
 
 
-				$('textarea').summernote(
-					{
-						height: 450,
-						
-					}
 
-				).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
-				
-
+				setSumer();
 
 				let initCalendar = function()
 				{
@@ -166,12 +160,12 @@
 
 
 
-				
+
 				for(let i in callFunctions)
 				{
 					callFunctions[i]();
 				}
-				
+
 
 				/*try{
 				setupAutocomplete()
@@ -190,15 +184,11 @@
 	}
 	else
 	{
-			$('textarea').summernote(
-					{
-						height: 450,
-						
-					}
 
-				).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
-				
+
 	}
+
+
 
 
 </script>

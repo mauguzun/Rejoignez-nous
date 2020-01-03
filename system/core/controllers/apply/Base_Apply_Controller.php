@@ -526,13 +526,13 @@ class Base_Apply_Controller extends Usermeta_Controller{
 		
 		$email = $this->ion_auth->user()->row()->email;
 		$query = $this->Crud->get_row([
-				'template_id'=>1,'lang'=>$this->getCurrentLang('lang')		],'email_template_translate');
+				'template_id'=>1,'lang'=>$this->getCurrentLang('lang')],'email_template_translate');
 		
 		
 		
-		$text =  $query['text'];
-		$text = str_replace('#NOM',$this->app['first_name'],$text);
-		$text = str_replace('#PRENOM',$this->app['last_name'],$text);
+		$text =  $query['body'];
+		$text = str_replace('#first_name',$this->app['first_name'],$text);
+		$text = str_replace('#last_name',$this->app['last_name'],$text);
 		
 		
 		$this->load->library('email',[

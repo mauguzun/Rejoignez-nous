@@ -154,10 +154,12 @@ class Backmenu
 			'settings'=>['fas fa-cog'=>
 
 				['settings_email' => 'back/settings_email'],
+				['manage_email_template' => 'shared/email'],
 				['settings_generic' => 'back/settings_generic'],
 				['settings_keywords' => 'back/settings_keywords'],
 				['settings_email_help' => 'back/settings_help'],
 				['settings_email_contact' => 'back/settings_help/contact'],
+
 
 			],
 

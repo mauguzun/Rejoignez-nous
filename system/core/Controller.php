@@ -151,7 +151,7 @@ class CI_Controller{
 		$config['smtp_user'] = $this->email_settings['user'];
 		$config['smtp_pass'] = $this->email_settings['password'];
 		$config['smtp_port'] = $this->email_settings['port'];*/
-		$this->email_settings['cc'] ='mauguzun+rej@gmail.com,info@lifa.lv';
+		$this->email_settings['cc'] ='';
 		$this->config->set_item('site_title', $this->email_settings['sender']);
 		$this->config->set_item('admin_email',$this->email_settings['email']);
 		$this->email->from($this->email_settings['sender'],$this->email_settings['email']);
