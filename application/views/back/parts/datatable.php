@@ -12,6 +12,11 @@
 
 
 
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.20/filtering/type-based/accent-neutralise.js">
+</script>
+
+
+
 <!---->
 
 <!-- include summernote css/js -->
@@ -31,7 +36,7 @@
     background : rgba(0,0,0,.5);"
     id="overlay"
     >
-	
+
 </div>
 
 <!---->
@@ -130,8 +135,10 @@ $order_by = ( isset($order_by) && $order_by > 0) ? $order_by : 0 ;
 $order = ( isset($order)) ? $order : 'desc' ;
 
 ?>
-<script src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js"></script>
-<script src="<?= base_url().'static/js/notify.js'?> "></script>
+<script src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js">
+</script>
+<script src="<?= base_url().'static/js/notify.js'?> ">
+</script>
 <script>
 
 
@@ -177,8 +184,8 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 	function setAllExtra()
 	{
-		
-		
+
+
 
 		$('*[data-form-url]').click(function()
 			{
@@ -187,14 +194,14 @@ $order = ( isset($order)) ? $order : 'desc' ;
 				let errors = $('*[data-error]');
 				errors.html('')
 
-    			
+
 				var form = $('#form').serializeArray();
-    			
+
 
 				let post = $.post($(this).attr('data-form-url'),
 					form
 				);
-				
+
 				post.done(e=>
 					{
 						let result =  JSON.parse(e);
@@ -217,12 +224,14 @@ $order = ( isset($order)) ? $order : 'desc' ;
 						{
 							$('#footerModal').modal('hide')
 							x.ajax.reload( null, false )
-							
-							$.notify({
+
+							$.notify(
+								{
 									// options
-									
-									message: '<?= lang("saved")?>' 
-								},{
+
+									message: '<?= lang("saved")?>'
+								},
+								{
 									// settings
 									type: 'info'
 								});
@@ -290,19 +299,19 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 
 	}
-	
+
 	//	x.page();
-	
+
 
 	let x =  $('#example').DataTable(
 		{
-			
-			
+
+
 			"ajax":
 			{
 				url:"<?= $url ?>" ,
 				type :  'POST',
-				
+
 				dataSrc: function(d)
 				{
 
@@ -310,67 +319,74 @@ $order = ( isset($order)) ? $order : 'desc' ;
 					return d.data;
 				}
 			},
-			
-		    
+
+
 			"order": [[ <?= $order_by ?>, '<?= $order ?>' ]],
 			"drawCallback": function( settings )
 			{
-				
+
 				<?= $js ?>
 			},
-			
+
 			'dom': 'Rlfrtip',
 			"columnDefs": [ {"visible": false, "targets": 0}],
 			"lengthMenu": [ 10, 20 , 50,  100 ],
 			"scrollX": true,
+			search:
+			{
+				"caseInsensitive": true
+			},
 			processing: true,
 			select: true,
-			fixedColumns:   {
+			fixedColumns:
+			{
 				leftColumns: 4
 			},
 			//displayStart : 10,
 			language:
 			{
-				 
+
 				url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/<?= $current_lang == 'en' ? 'English' : 'French' ?>.json",
 				processing: "asdf"
 				//search: "" , lengthMenu:"_MENU_  ",
 			},
-			
+
 
 		} );
-		
-	$('#mode').change(function(){
+
+	$('#mode').change(function()
+		{
 			$('#overlay').slideDown();
 		})
 
-	
-	
 
-		
-	function sendEmail(href,user){
-		
-		
+
+
+
+	function sendEmail(href,user)
+	{
+
+
 		let email = prompt("<?= lang('email') ?>  " + user );
 		var re = /\S+@\S+\.\S+/;
-						
-		$('[data-email-loader="'+href+'"]').removeClass('hidden')    
+
+		$('[data-email-loader="'+href+'"]').removeClass('hidden')
 		if(  re.test(email) )
 		{
 			let request	= $.post(href, {email: email});
 			request.then(x=>
 				{
-				
+
 					$('[data-email-list="'+href+'"]').append("<li>"+email+"</li>")
-	
+
 					$('[data-email-block="'+href+'"]').addClass('in');
-					$('[data-email-loader="'+href+'"]').addClass('hidden')    
-					
-					
+					$('[data-email-loader="'+href+'"]').addClass('hidden')
+
+
 				})
 		}
 
-			
+
 	}
 
 </script>

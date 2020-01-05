@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\Rejoignez-nous\ASL_TRANS.clpprj">
-	<removed value=";C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Edituser.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final;C:\OSPanel\domains\localhost\reg\application\views\apply_final\NewFile.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\main.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\pnc.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php;C:\OSPanel\domains\localhost\reg\application\views\front\parts\NewFile.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;C:\open\OSPanel\domains\localhost\asldomain\application\controllers\NewFile.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\offer_list.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\parts\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\apply\hr\Profile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\user\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\libraries\Profile.php;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\Admin.php;C:\server\OSPanel\domains\localhost\asldomain\static\update\css\NewFile.css;"/><added value=""/><lastopfiles>
+	<removed value=";C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Edituser.php;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\email_template.sql;C:\OSPanel\domains\localhost\reg\application\views\apply_final;C:\OSPanel\domains\localhost\reg\application\views\apply_final\NewFile.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\main.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\pnc.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php;C:\OSPanel\domains\localhost\reg\application\views\front\parts\NewFile.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;C:\open\OSPanel\domains\localhost\asldomain\application\controllers\NewFile.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\offer_list.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\parts\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\apply\hr\Profile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\user\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\libraries\Profile.php;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\Admin.php;C:\server\OSPanel\domains\localhost\asldomain\static\update\css\NewFile.css;"/><added value=""/><lastopfiles>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applications.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\my_custom_css.css"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\footer.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\clipboard.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\access\Pnt_Pnc_Hr_Admin.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Ajax.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\my_custom_css.css">
@@ -15,6 +25,13 @@
 			<error val="2;222;19;222;2502;1;"/>
 			<error val="2;237;36;237;2502;1;"/>
 			<error val="2;349;41;349;2502;1;"/>
+		</errfile>
+		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\footer.php">
+			<error val="2;102;23;102;2502;1;"/>
+			<error val="2;103;22;103;2502;1;"/>
+			<error val="2;104;19;104;2502;1;"/>
+			<error val="2;119;36;119;2502;1;"/>
+			<error val="2;226;41;226;2502;1;"/>
 		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\apply_final\parts\header.php">
 			<error val="0;57;69;57;2002;1;"/>
@@ -991,12 +1008,12 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\apply\Pnc_Controller.php" crc="1576751905"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\apply\Mechanic_Controller.php" crc="1576751905"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\apply\Hr_Controller.php" crc="1576751905"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\apply\Base_Apply_Controller.php" crc="1578078100"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\apply\Base_Apply_Controller.php" crc="1578232056"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Usermeta_Controller.php" crc="1576751905"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\User_Controller.php" crc="1577989341"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Shared_Controller.php" crc="1577979373"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Apply_Controller.php" crc="1578074138"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php" crc="1576751905"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Apply_Controller.php" crc="1578232025"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php" crc="1578238931"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Admin_Controller.php" crc="1576751905"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\compat\standard.php" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\compat\password.php" crc="1576751904"/>
@@ -3243,11 +3260,11 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\disable_add_modal.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\data_edit_ajax.php" crc="1578067913"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\data-modal.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\clipboard.php" crc="1576751900"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\clipboard.php" crc="1578239104"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\circle.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\autocomplete.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\ajaxupload.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\ajaxtoogle.php" crc="1576751900"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\ajaxtoogle.php" crc="1578234185"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\ajax_select_url.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\ajax_select.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\js\add_without_modal.php" crc="1576751900"/>
@@ -3359,9 +3376,9 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\jquery.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\header.php" crc="1578086086"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\footer.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php" crc="1577979642"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php" crc="1578239497"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_with_upload.php" crc="1578069280"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_modal_fixed.php" crc="1578069439"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_modal_fixed.php" crc="1578234719"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\user_view_manualy.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\user_view.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\under.php" crc="1576751900"/>
@@ -3440,7 +3457,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\index.html" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Crud.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php" crc="1578071388"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php" crc="1578239939"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\logs\index.html" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\menu\Usermenu.php" crc="1577989835"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\menu\Topmenu.php" crc="1576751900"/>
@@ -3740,14 +3757,14 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Printofferuser.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Printmanualoffer.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Online.php" crc="1576751899"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php" crc="1578067714"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php" crc="1578235018"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\News.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\History.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Hiringpolicy.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Email.php" crc="1578073194"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applicationsinresponse.php" crc="1576751899"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applications.php" crc="1576751899"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applications.php" crc="1578235395"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Apphistory.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Ajax.php" crc="1577965305"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php" crc="1576751899"/>

@@ -7,6 +7,8 @@ $("*[data-clipboard]").unbind('click').click(function(){
 		$.getJSON($(this).attr('data-url')).then((result)=>{	
 			if(result.error === undefined){
 				$.getJSON("<?= base_url() ?>/shared/offer/copy_row/" + result.done).then((data)=>{
+					
+					
 					x.row.add(data[0]).draw();
 				});
 			}

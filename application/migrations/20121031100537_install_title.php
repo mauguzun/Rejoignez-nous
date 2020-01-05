@@ -22,8 +22,10 @@ class Migration_Install_title extends CI_Migration
 				]
 			]);
 
-	
-		$this->db->query('DROP TABLE IF EXISTS `emails`;');		
+
+		$this->Crud->add(['id'=>77,'name'=>'communication','description'=>'Communication'],'groups');
+
+		$this->db->query('DROP TABLE IF EXISTS `emails`;');
 		$this->db->query('DROP TABLE IF EXISTS `email_template`;');
 		$this->db->query('CREATE TABLE `email_template`  (`id` int(11) NOT NULL AUTO_INCREMENT,
 			`title` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,

@@ -94,6 +94,7 @@ class Ajax_Controller extends CI_Controller
 
 		$offers = $this->Crud->get_row(['id'=>$id],'offers');
 		unset($offers['id']);
+		$offers['status'] = 0;
 		$offers['title'] .= ' copy';
 		$new_id = $this->Crud->add($offers,'offers');
 		// lets tec :)
