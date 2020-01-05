@@ -76,7 +76,9 @@ class Applications extends Shared_Controller{
 					'create_offer_pub_date',
 					/*			'category' ,
 					'activity',*/
-					'education','languages','managment','availability','car','<i class="fas fa-wheelchair"></i>',
+					'education','languages',
+					/*'managment',*/
+					'availability','car','<i class="fas fa-wheelchair"></i>',
 					/*'history',*/
 					'call','folder','interview','test','decision','status',
 					'<i class="fas fa-exclamation-triangle"></i>',	
@@ -594,7 +596,7 @@ class Applications extends Shared_Controller{
 				
 			$table_row['university']." ".  $educaton,
 			$lang_level_row,
-			$managerial,
+			//$managerial,
 			date_to_input($table_row['aviability']),
 			$this->_have($table_row['car']) ,
 			$this->_have($table_row['handicaped']),
