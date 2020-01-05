@@ -50,13 +50,9 @@
 			for(let i = 0 ; texts[i] ;i++)
 			{
 
-
 				let emptys  =  texts[i].innerHTML.trim() === '';
-
 				try{$(texts[i]).summernote('destroy')}
 				catch(e){}
-
-
 
 				if(emptys){
 					$(texts[i]).summernote(options).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')

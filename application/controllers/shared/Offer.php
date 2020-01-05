@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // back / activity
-class Offer extends Shared_Controller{
+class Offer extends Shared_Controller
+{
 	private $data = [];
 	private $_redirect ;
 
@@ -11,7 +12,8 @@ class Offer extends Shared_Controller{
 
 	private $_allowed = [1,2,3,4,5,6,7];
 
-	public function __construct(){
+	public function __construct()
+	{
 		parent::__construct($this->_allowed);
 		$this->_redirect = base_url().Shared_Controller::$map.'/offer';
 		$this->_ajax = base_url().'access/Pnt_Pnc_Hr_Admin';
@@ -22,10 +24,11 @@ class Offer extends Shared_Controller{
 	}
 
 
-	public function index(){
-		
-		
-		
+	public function index()
+	{
+
+
+
 		$this->show_header();
 
 
@@ -54,9 +57,10 @@ class Offer extends Shared_Controller{
 
 	}
 
-	public function add($status = 1){
+	public function add($status = 1)
+	{
 
-		
+
 
 		$this->_set_form_validation($this->_redirect.'/insert');
 		$this->_set_data();
@@ -64,16 +68,18 @@ class Offer extends Shared_Controller{
 
 
 	}
-	public function insert($status = 1 ){
+	public function insert($status = 1 )
+	{
 		//check if CDI !!!
-		
+
 
 		$this->_set_form_validation($this->_redirect.'/insert');
-		
-	
+
+
 		$this->_extraCheck();
-		
-		if($this->form_validation->run() === TRUE){
+
+		if($this->form_validation->run() === TRUE)
+		{
 
 			$offer_id = $this->Crud->add([
 					'title'=>$_POST['title'],
@@ -91,10 +97,11 @@ class Offer extends Shared_Controller{
 					'admin_id'=>$this->ion_auth->user()->row()->id,
 
 				],$this->_table);
-			
-			
-			$bath = [];
-			foreach(explode(",", $_POST['offers_activities'][0]) as $activity_id){
+
+
+			$bath     = [];
+			foreach(explode(",", $_POST['offers_activities'][0]) as $activity_id)
+			{
 				array_push($bath,['activiti_id'=>$activity_id,'offer_id'=>$offer_id]);
 			}
 
@@ -111,10 +118,12 @@ class Offer extends Shared_Controller{
 
 	}
 
-	public function edit($id = NULL){
+	public function edit($id = NULL)
+	{
 
 
-		if(!$this->get_user_edit()){
+		if(!$this->get_user_edit())
+		{
 			echo "You dont have acces";
 			return;
 		}
@@ -123,7 +132,8 @@ class Offer extends Shared_Controller{
 		// $this->show_header();
 		$this->_set_form_validation($this->_redirect.'/update');
 
-		if($id && $id > 0){
+		if($id && $id > 0)
+		{
 
 			$user_id = $this->ion_auth->user()->row()->id;
 			$query   = $this->Crud->get_joins(
@@ -138,7 +148,8 @@ class Offer extends Shared_Controller{
 				'offers.*,GROUP_CONCAT(DISTINCT activities.activity ) as activities',null,null,["{$this->_table}.id"=>$id]
 			);
 
-			if($query && is_array($query)){
+			if($query && is_array($query))
+			{
 				$this->_set_data($query[0]);
 				$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
 
@@ -149,12 +160,14 @@ class Offer extends Shared_Controller{
 
 	}
 
-	public function update($status = 1){
-		
-		
+	public function update($status = 1)
+	{
+
+
 		$this->_set_form_validation($this->_redirect.'/update');
 		$this->_extraCheck();
-		if($this->form_validation->run() === TRUE){
+		if($this->form_validation->run() === TRUE)
+		{
 
 			$this->Crud->update(
 				['id'=>$_POST['id']],
@@ -184,9 +197,10 @@ class Offer extends Shared_Controller{
 			}
 			$this->Crud->delete(['offer_id'=>$_POST['id']],'offers_groups');
 			$this->Crud->add_many($bath,'offers_groups');*/
-	
+
 			$bath = [];
-			foreach(explode(",", $_POST['offers_activities'][0]) as $activity_id){
+			foreach(explode(",", $_POST['offers_activities'][0]) as $activity_id)
+			{
 				array_push($bath,['activiti_id'=>$activity_id,'offer_id'=>$_POST['id']]);
 			}
 			$this->Crud->delete(['offer_id'=>$_POST['id']],'offers_activities');
@@ -201,14 +215,17 @@ class Offer extends Shared_Controller{
 
 	}
 
-	public function trash($id = NULL){
+	public function trash($id = NULL)
+	{
 
-		if(!$this->get_user_edit()){
+		if(!$this->get_user_edit())
+		{
 			echo "You dont have acces";
 			return;
 		}
 
-		if($id && $id > 0){
+		if($id && $id > 0)
+		{
 			$this->Crud->delete(['id'=>$id],$this->_table);
 			$this->Crud->delete(['offer_id'=>$id],'offers_activities');
 			$this->Crud->delete(['offer_id'=>$id],'application');
@@ -220,7 +237,8 @@ class Offer extends Shared_Controller{
 	}
 
 
-	private function _set_form_validation($url){
+	private function _set_form_validation($url)
+	{
 		$this->data['title'] = lang('create_offer');
 
 		$this->data['url'] = $url;
@@ -251,7 +269,8 @@ class Offer extends Shared_Controller{
 
 
 
-	private function _set_data($user = NULL){
+	private function _set_data($user = NULL)
+	{
 
 
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
@@ -259,7 +278,8 @@ class Offer extends Shared_Controller{
 
 		$this->load->library("html/InputArray");
 
-		if($user){
+		if($user)
+		{
 			$this->data['control']['id'] = form_input( $this->inputarray->getArray('id','hidden',null,$user['id']),TRUE);
 		}
 
@@ -268,20 +288,36 @@ class Offer extends Shared_Controller{
 
 
 		$activity = ($user)? $user['title'] : $this->form_validation->set_value('title');
-			$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('title'));
+		$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('title'));
 		$this->data['control']['title'] =
 		form_input( $this->inputarray->getArray('title','text',lang('create_offer_title'),$activity,TRUE));
 
 
-		////   $activity = ($user)? $user['pub_date'] : $this->form_validation->set_value('pub_date');
+
+		////
+
+		$activity = $user && $user['start_date'] ?  $user['start_date'] : 'Immediate';
+		
+		$selected  = $activity == 'Immediate' ? 'Immediate' : '';
+		$this->data['control']["1"] = form_label( '<b>*</b>'.lang("create_offer_start_date"));
+		$this->data['control'][''] =
+		form_dropdown('fake_start_date', ['Immediate'=>'Immediate',''=>lang('calendar')],$selected,['class'=>'form-control']);
 
 
-		$dates = ['start_date','pub_date'];
-		foreach($dates as $oneDate){
+		
+
+		$this->data['control']['start_date'] =
+		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true]));
+		////////////////////////////////////////////////////////////
+		//$dates = ['start_date','pub_date'];
+		$dates = ['pub_date'];
+		foreach($dates as $oneDate)
+		{
 
 			$activity = ($user ) ? $user[$oneDate]  :
 			$activity = $this->form_validation->set_value($oneDate);
-			if($user ){
+			if($user )
+			{
 				if($oneDate == 'pub_date')
 				$activity = date_to_input($user[$oneDate]);
 				else
@@ -326,11 +362,13 @@ class Offer extends Shared_Controller{
 		form_dropdown('un', [0=>lang('unpublished'),1=>lang('published')],$is_active,['class'=>'form-control']);
 		*/
 
-		if(!$this->get_group_category()){
+		if(!$this->get_group_category())
+		{
 
 
 			$options = [];
-			foreach($this->Crud->get_all("offers_category",null,'id','asc') as $value){
+			foreach($this->Crud->get_all("offers_category",null,'id','asc') as $value)
+			{
 				$options[$value['id']] = $value['category'];
 			}
 			$selected = ($user) ? $user['category']: NULL;
@@ -340,29 +378,32 @@ class Offer extends Shared_Controller{
 			$this->data['control']['category'] = form_dropdown('category', $options,$selected,['class'=>'form-control']);
 
 		}
-		else{
+		else
+		{
 			$this->data['control']['category'] = form_hidden('category',$this->get_group_category());
 
 		}
 
 
 
-		foreach(['location'] as $column){
+		foreach(['location'] as $column)
+		{
 			/*$options = [];
 			foreach($this->Crud->get_all("offers_{$column}",null,'id','asc') as $value){
 			$options[$value['id']] = $value[$column];
 			}*/
-			
+
 			//	var_dump($user);
-			
-			$data  = null ;
-			if($user){
-				
+
+			$data = null ;
+			if($user)
+			{
+
 				$location = $this->Crud->get_row(['id'=>$user['location']],'offers_location');
 				$data[] = ['text'=>$location['location'],'value'=>$location['id']];
 			}
-			
-			
+
+
 			$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang("create_offer_{$column}"));
 
 			$this->data['control'][$column] = $this->load->view('js/ajax_select_url',
@@ -375,12 +416,13 @@ class Offer extends Shared_Controller{
 				],TRUE);
 
 
-			//			$this->data['control'][$column] = form_dropdown($column, $options,$selected,['class'=>'form-control']);*/
+			//			$this->data['control'][$column] = form_dropdown($column, $options,$selected,['class'=>'form - control']);*/
 
 		}
 
 		$options = [];
-		foreach($this->Crud->get_all("application_contract",null,'id','asc') as $value){
+		foreach($this->Crud->get_all("application_contract",null,'id','asc') as $value)
+		{
 			$options[$value['id']] = $value['type'];
 		}
 		$selected = ($user) ? $user["type"]: NULL;
@@ -390,13 +432,15 @@ class Offer extends Shared_Controller{
 
 
 		// Activity ///////////////////////////////////
-		
-		
+
+
 		$selected = [];
 		$data     = [];
-		if($user){
-			foreach(   $this->Crud->get_all('offers_activities',['offer_id'=>$user['id']],NULL,NULL) as $value ){
-				
+		if($user)
+		{
+			foreach(   $this->Crud->get_all('offers_activities',['offer_id'=>$user['id']],NULL,NULL) as $value )
+			{
+
 				array_push($selected,$value['activiti_id']);
 
 				$activity = $this->Crud->get_row(['id'=>$value['activiti_id']],'activities');
@@ -417,7 +461,8 @@ class Offer extends Shared_Controller{
 
 		//text areaas
 
-		foreach(['mission','profile'] as $column){
+		foreach(['mission','profile'] as $column)
+		{
 
 			$this->data['control']["{$column}_l"] = form_label('<b>*</b>'.lang("create_offer_{$column}"));
 
@@ -428,15 +473,17 @@ class Offer extends Shared_Controller{
 		}
 
 	}
-	
-	public function ajax_location(){
-	
+
+	public function ajax_location()
+	{
+
 
 		$_GET['q'] = isset($_GET['q']) ? $_GET['q'] : "";
 		header('Content-Type: application/json');
 
 		$result = [];
-		foreach($this->Crud->get_like(['location'=>$_GET['q']],'offers_location') as $value){
+		foreach($this->Crud->get_like(['location'=>$_GET['q']],'offers_location') as $value)
+		{
 
 			$result[] = ['text'=>$value['location'],'value'=>$value['id']];
 		}
@@ -444,18 +491,22 @@ class Offer extends Shared_Controller{
 		echo json_encode(array_values($result));
 	}
 
-	public function ajax(){
+	public function ajax()
+	{
 
 
 		$category = $this->get_group_category();
-		if($category == NULL){
+		if($category == NULL)
+		{
 			$allowed = NULL ;
 		}
 		else
-		if(is_array($category)){
+		if(is_array($category))
+		{
 			$allowed = "offers.category = 1 or offers.category = 4 and offers.status =1  ";
 		}
-		else{
+		else
+		{
 			$allowed = ['offers.category'=>$category];
 		}
 
@@ -484,7 +535,8 @@ class Offer extends Shared_Controller{
 		$data['data'] = [];
 
 
-		foreach($query as $table_row){
+		foreach($query as $table_row)
+		{
 
 			array_push($data['data'],$this->_row($table_row));
 		}
@@ -493,7 +545,8 @@ class Offer extends Shared_Controller{
 		echo json_encode($data);
 	}
 
-	public function copy_row($id){
+	public function copy_row($id)
+	{
 		$query = $this->Crud->get_joins(
 			$this->_table,
 			[
@@ -512,14 +565,16 @@ class Offer extends Shared_Controller{
 		$data = [];
 
 
-		foreach($query as $value){
+		foreach($query as $value)
+		{
 			array_push($data,$this->_row($value));
 		}
 		echo json_encode($data);
 
 	}
 
-	private function _row($table_row){
+	private function _row($table_row)
+	{
 		$toog = $this->toogle->init(0,'status','offers',$this->_table)->set_text(lang('pub_toogle'));
 		$row  = [];
 
@@ -548,10 +603,12 @@ class Offer extends Shared_Controller{
 		return $row;
 	}
 
-	private function _extraCheck(){
-	
+	private function _extraCheck()
+	{
 
-		if($_POST['type'] != '2'){
+
+		if($_POST['type'] != '2')
+		{
 			$this->form_validation->set_rules('period', lang('create_offer_period'),
 				'trim|required|max_length[255]');
 		}
