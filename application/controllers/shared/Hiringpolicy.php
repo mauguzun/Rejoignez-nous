@@ -10,14 +10,14 @@ class Hiringpolicy extends Shared_Controller
     private $_redirect ;
 
     private $_table = 'hiring_policy';
-    private $_allowed = [1,2];
+    private $_allowed = [1,2,77];
     private $_ajax;
 
     public function __construct()
     {
         parent::__construct($this->_allowed);
         $this->_redirect = base_url().Shared_Controller::$map.'/hiringpolicy';
-        $this->_ajax = base_url().'access/Hr_Admin';
+      	$this->_ajax = base_url().'access/Hr_Admin_Comm';
 
         $this->load->library("Uploadlist");
         $this->_config['encrypt_name'] = TRUE;

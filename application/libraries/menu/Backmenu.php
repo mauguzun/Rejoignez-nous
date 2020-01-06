@@ -14,10 +14,16 @@ class Backmenu
 			switch($key){
 
 
+			
 				case 'hiring_policy'  :
 				case 'privacystatement' :
-				case 'Fields of activity and functions':
 				case 'news':
+				if(in_array($group ,[1,2,77]))
+				$menu[$key] = $value;
+				break;
+
+				case 'Fields of activity and functions':
+
 				if(in_array($group ,[1,2]))
 				$menu[$key] = $value;
 				break;

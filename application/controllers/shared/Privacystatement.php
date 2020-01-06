@@ -10,14 +10,14 @@ class Privacystatement extends Shared_Controller
 	private $_redirect ;
 
 	private $_table = 'privacy_statement';
-	private $_allowed = [1,2];
+	private $_allowed = [1,2,77];
 	private $_ajax;
 
 	public function __construct()
 	{
 		parent::__construct($this->_allowed);
 		$this->_redirect = base_url().Shared_Controller::$map.'/privacystatement';
-		$this->_ajax = base_url().'access/Hr_Admin';
+			$this->_ajax = base_url().'access/Hr_Admin_Comm';
 
 		$this->load->library("Uploadlist");
 		//$this->_config['encrypt_name'] = TRUE;

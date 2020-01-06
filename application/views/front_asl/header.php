@@ -124,7 +124,7 @@
 	</style>
 	<style type="text/css" id="custom-background-css">
 		body.custom-background
-		{
+		{  
 			background-color: #ffffff;
 		}
 	</style>

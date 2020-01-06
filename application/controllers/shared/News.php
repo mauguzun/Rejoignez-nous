@@ -7,13 +7,13 @@ class News extends Shared_Controller{
 	private $_redirect ;
 
 	private $_table = 'news';
-	private $_allowed = [1,2];
+	private $_allowed = [1,2,77];
 	private $_ajax;
 
 	public function __construct(){
 		parent::__construct($this->_allowed);
 		$this->_redirect = base_url().Shared_Controller::$map.'/news';
-		$this->_ajax = base_url().'access/Hr_Admin';
+		$this->_ajax = base_url().'access/Hr_Admin_Comm';
 	}
 
 

@@ -589,6 +589,11 @@ $this->session->set_flashdata('message', $this->data['message']);
 			redirect(base_url().'shared/online');
 		}
 		else
+		if($this->ion_auth->in_group([77]))
+		{
+			redirect(base_url().'shared/Privacystatement');
+		}
+		else
 		if($this->ion_auth->logged_in())
 		{
 			redirect(User_Controller::$redirect);
