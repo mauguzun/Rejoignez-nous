@@ -131,8 +131,17 @@
 
 
 <?
-$order_by = ( isset($order_by) && $order_by > 0) ? $order_by : 0 ;
+$order_by = ( isset($order_by) && $order_by > 0) ? $order_by : 2 ;
 $order = ( isset($order)) ? $order : 'desc' ;
+
+
+$pageLength = isset($_GET['l'])? $_GET['l'] : 10;
+$startPage = isset($_GET['p'])? $_GET['p'] : 0;
+$startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
+
+
+
+
 
 ?>
 <script src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js">
@@ -141,7 +150,7 @@ $order = ( isset($order)) ? $order : 'desc' ;
 </script>
 <script>
 
-
+	//alert("<?= $startFrom ?>");
 
 	$('#add').click(function()
 		{
@@ -227,7 +236,6 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 							$.notify(
 								{
-									// options
 
 									message: '<?= lang("saved")?>'
 								},
@@ -291,17 +299,18 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 			});
 
-		/* $('textarea').summernote({
-		maxTextLength:2500
-		});
-		*/
-
-
-
 	}
 
 	//	x.page();
 
+
+	let page = parseFloat("<?= $startPage ?>")  ;
+	let pageLength=  parseInt("<?= $pageLength ?>");
+	let search =  "<?=  isset($_GET['s'])? $_GET['s'] : ''  ?>";
+	let orderBy = "<?=  isset($_GET['orderBy'])? $_GET['orderBy'] : '0'  ?>";
+	let orderVal= "<?=  isset($_GET['orderVal'])? $_GET['orderVal'] : 'desc'  ?>";
+	 
+	
 
 	let x =  $('#example').DataTable(
 		{
@@ -321,11 +330,23 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			},
 
 
-			"order": [[ <?= $order_by ?>, '<?= $order ?>' ]],
+			"order": [[orderBy , orderVal ]],
+
+			"pageLength": parseInt("<?= $pageLength ?>"),
+			"displayStart":parseInt("<?= $startFrom ?>"),
+
 			"drawCallback": function( settings )
 			{
 
 				<?= $js ?>
+
+				$('.paginate_button').click(function()
+					{
+						page = $(this).attr('data-dt-idx') ;
+						changeUrl();
+					})
+
+
 			},
 
 			'dom': 'Rlfrtip',
@@ -334,7 +355,9 @@ $order = ( isset($order)) ? $order : 'desc' ;
 			"scrollX": true,
 			search:
 			{
-				"caseInsensitive": true
+				"caseInsensitive": true,
+				"search":search
+
 			},
 			processing: true,
 			select: true,
@@ -354,14 +377,56 @@ $order = ( isset($order)) ? $order : 'desc' ;
 
 		} );
 
+
+
+
 	$('#mode').change(function()
 		{
 			$('#overlay').slideDown();
 		})
 
 
+	function changeUrl()
+	{
+		
+		let mode = $("#mode").val()
+		let status = $("#status").val();
+		let offer =     $("#offer").val() ;
+		let func =     $("#function").val() ;
 
 
+
+		window.history.replaceState(null,null,
+			`?p=${page}&l=${pageLength}&s=${search}&orderBy=${orderBy}&orderVal=${orderVal}&mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
+
+		//	if (typeof x !== 'undefined')
+		//x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  + '&function='+func ).load();
+	}
+	$('#example').on( 'order.dt',  function ()
+		{
+
+			let order = x.order();
+			orderBy = order[0][0];
+			orderVal  =  order[0][1];
+			changeUrl();
+			//console.log("Ordered column " + order[0][0] + ", in direction " + order[0][1]);
+		} )
+	$('#example').on( 'length.dt', function ( e, settings, len )
+		{
+			pageLength= len;
+			changeUrl();
+		});
+
+	$('#example').on('search.dt', function()
+		{
+			var value = $('.dataTables_filter input').val();
+
+			search = value;
+			changeUrl()
+
+		});
+
+	//$('#example_filter label input[type=text]').val('Default Product')
 
 	function sendEmail(href,user)
 	{

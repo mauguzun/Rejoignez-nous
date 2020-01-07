@@ -316,3 +316,4 @@ $lang['yes_toogle'] = [
 $lang['manage_email_template'] = "Edit email template";
 $lang['body'] = "Email body ";
 $lang['placeholder'] = "Email placeholder ";
+$lang['login'] = "Login";

@@ -129,7 +129,7 @@ class Backmenu
 
 			'dashboard'=>[
 				'fas fa-file-alt'=>
-				["offers_online"=>'shared/online/'],
+				["offers_online"=>'shared/online/?p=0&l=50&s=&orderBy=0&orderVal=desc'],
 
 				["Applications in response"=>'shared/Applicationsinresponse'],
 				["unsolicited_application"=>'shared/Applicationsinresponse?type=unsolicited'],
@@ -137,7 +137,7 @@ class Backmenu
 				/*["unsolicited_application"=>'shared/applications?mode=5'],
 				["Applications created manualy"=>'shared/applications?mode=7'],*/
 			],
-			'offers'=>['far fa-newspaper'=>'shared/offer'],
+			'offers'=>['far fa-newspaper'=>'shared/offer?p=0&l=50&s=&orderBy=0&orderVal=desc'],
 			"applications"=>['far fa-newspaper'=>'shared/applications?offer=notoffer'],
 			
 			/*

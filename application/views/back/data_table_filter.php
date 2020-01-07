@@ -12,17 +12,26 @@
 					if(  !$category_id ):?>
 					<td>
 						<select id="mode" class="form-control change">
-							<option value=""></option>
+							<option value="">
+							</option>
 
-							<option value="0"><?= lang('all applications recived')?></option>
-							<option value="11"><?= lang('applications_in_responce')?></option>
-							<option value="5"><?= lang('unsolicited_application')?></option>
-							<option value="7"><?= lang('manualay_applications')?></option>
+							<option value="0">
+								<?= lang('all applications recived')?>
+							</option>
+							<option value="11">
+								<?= lang('applications_in_responce')?>
+							</option>
+							<option value="5">
+								<?= lang('unsolicited_application')?>
+							</option>
+							<option value="7">
+								<?= lang('manualay_applications')?>
+							</option>
 							<!--	<option value="4"><?= lang('Mecanicien')?></option>
 							<option value="3"><?= lang('PNT')?></option>
 							<option value="2"><?= lang('PNC')?></option>
 							<option value="1"><?= lang('HR')?></option>-->
-							
+
 						</select>
 					</td>
 
@@ -32,11 +41,18 @@
 
 					<td>
 						<select id="mode" class="form-control change">
-							<option value=""></option>
+							<option value="">
+							</option>
 
-							<option value="0"><?= lang('all applications recived')?></option>
-							<option value="4"><?= lang('Mecanicien')?></option>
-							<option value="1"><?= lang('HR')?></option>
+							<option value="0">
+								<?= lang('all applications recived')?>
+							</option>
+							<option value="4">
+								<?= lang('Mecanicien')?>
+							</option>
+							<option value="1">
+								<?= lang('HR')?>
+							</option>
 						</select>
 					</td>
 
@@ -44,13 +60,18 @@
 
 					<td>
 						<select id="status" class="form-control change">
-							<option value=""></option>
+							<option value="">
+							</option>
 
-							<option value="0"><?= lang('all applications recived')?></option>
+							<option value="0">
+								<?= lang('all applications recived')?>
+							</option>
 
 							<?
 							foreach($statuses as $key=>$value):?>
-							<option value="<?= $key?>"><?= $value?></option>
+							<option value="<?= $key?>">
+								<?= $value?>
+							</option>
 							<? endforeach;?>
 						</select>
 					</td>
@@ -58,12 +79,15 @@
 
 					<td>
 						<select id="function" class="form-control change">
-							<option value=""></option>
-		
+							<option value="">
+							</option>
+
 
 							<?
 							foreach($functions as $id=>$value):?>
-							<option value="<?= $id?>"><?= $value?></option>
+							<option value="<?= $id?>">
+								<?= $value?>
+							</option>
 							<? endforeach;?>
 						</select>
 					</td>
@@ -97,9 +121,9 @@
 
 <script>
 
-	
 
-	
+
+
 
 	function request()
 	{
@@ -107,11 +131,12 @@
 		let status = $("#status").val();
 		let offer =     $("#offer").val() ;
 		let func =     $("#function").val() ;
-	
-		
-		window.history.replaceState(null,null,  `?mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
 
-		if (typeof x !== 'undefined') 
+
+		window.history.replaceState(null,null,  
+		`?mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
+
+		if (typeof x !== 'undefined')
 		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  + '&function='+func ).load();
 	}
 	$("#offer,#function,.change").change(function()
@@ -121,11 +146,6 @@
 
 	$('#offer').typeahead(
 		{
-			/*updater: function(item)
-			{
-
-
-			},*/
 
 			source: function (query, result)
 			{
@@ -152,19 +172,20 @@
 					})
 			}
 		});
-	
-	// change url 
-	
+
+	// change url
+
 	let searchParams = new URLSearchParams(window.location.search);
-	
-	
-	if(searchParams.has('mode') | searchParams.has('status')){
+
+
+	if(searchParams.has('mode') | searchParams.has('status'))
+	{
 
 		$("#mode").val(searchParams.get('mode'))
-		$("#status").val(searchParams.get('status'));	
-			$("#function").val(searchParams.get('function'));
+		$("#status").val(searchParams.get('status'));
+		$("#function").val(searchParams.get('function'));
 		request();
 	}
-		
-	
+
+
 </script>
