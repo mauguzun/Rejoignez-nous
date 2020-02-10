@@ -133,8 +133,10 @@
 
 <!-- Main navbar -->
 <div class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="<?= base_url()?>">
+
+
+ 	<div class="navbar-header"    >
+		<a class="navbar-brand"   >
 			<img src="<?= base_url()?>css/back/assets/images/logo.svg" alt="">
 		</a>
 
@@ -204,7 +206,11 @@
 	</div>
 </div>
 <!-- /main navbar -->
-
+<script>
+  $('#logo').click(()=>{
+  	alert(12)
+  })
+</script>
 
 <!-- Page container -->
 <div class="page-container">

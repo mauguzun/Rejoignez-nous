@@ -204,6 +204,8 @@
 			<todo name="todo Calculate modulo 11 of $digits" pos="11;317"/>
 		</todofile>
 	</todoblock>
+	<dbgurls>
+	</dbgurls>
 	<filescache>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\TextTest.php" crc="1576751906"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\vendor\fzaninotto\faker\test\Faker\Provider\zh_TW\PersonTest.php" crc="1576751906"/>
@@ -3802,6 +3804,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\index.html" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\.htaccess" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\index.php" crc="1576751904"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\halloall_lifa.sql" crc="1580918721"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\db_5.sql" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\db.sql" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\.htaccess" crc="1576751899"/>
