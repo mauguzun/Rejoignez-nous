@@ -165,7 +165,7 @@ class Offer extends Shared_Controller
 
 
 		$this->_set_form_validation($this->_redirect.'/update');
-		$this->_extraCheck();
+		//$this->_extraCheck();
 		if($this->form_validation->run() === TRUE)
 		{
 
@@ -607,10 +607,10 @@ class Offer extends Shared_Controller
 	{
 
 
-		if($_POST['type'] != '2')
+		/*if($_POST['type'] != '2')
 		{
 			$this->form_validation->set_rules('period', lang('create_offer_period'),
 				'trim|required|max_length[255]');
-		}
+		}*/
 	}
 }
