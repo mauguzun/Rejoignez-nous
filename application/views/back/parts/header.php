@@ -136,7 +136,7 @@
 
 
  	<div class="navbar-header"    >
-		<a class="navbar-brand"   >
+		<a class="navbar-brand" href="<?= base_url() ?>"  >
 			<img src="<?= base_url()?>css/back/assets/images/logo.svg" alt="">
 		</a>
 
@@ -156,7 +156,7 @@
 		</ul>
 	</div>
 
-	<div class="navbar-collapse collapse" id="navbar-mobile">
+	<div class="navbar-collapse collapse" id="navbar-mobile" style="z-index:-1;" >
 
 
 		<ul class="nav navbar-nav navbar-right">
