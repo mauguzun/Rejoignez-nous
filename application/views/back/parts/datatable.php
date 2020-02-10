@@ -309,8 +309,8 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 	let search =  "<?=  isset($_GET['s'])? $_GET['s'] : ''  ?>";
 	let orderBy = "<?=  isset($_GET['orderBy'])? $_GET['orderBy'] : '0'  ?>";
 	let orderVal= "<?=  isset($_GET['orderVal'])? $_GET['orderVal'] : 'desc'  ?>";
-	 
-	
+
+
 
 	let x =  $('#example').DataTable(
 		{
@@ -338,41 +338,56 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 			"drawCallback": function( settings )
 			{
 
-				<?= $js ?>
-
-				$('.paginate_button').click(function()
+				$( '*[data-trash="true"]' ).off("click").on('click', function()
 					{
-						page = $(this).attr('data-dt-idx') ;
-						changeUrl();
+
+						if(confirm('Are You Sure?'))
+						{
+							$.get($(this).attr('data-href')).then(()=>
+								{
+									location.reload()
+								})
+						}
+
 					})
+			
+			
+
+			<?= $js ?>
+
+			$('.paginate_button').click(function()
+				{
+					page = $(this).attr('data-dt-idx') ;
+					changeUrl();
+				})
 
 
-			},
+		},
 
-			'dom': 'Rlfrtip',
-			"columnDefs": [ {"visible": false, "targets": 0}],
-			"lengthMenu": [ 10, 20 , 50,  100 ],
-			"scrollX": true,
-			search:
-			{
-				"caseInsensitive": true,
-				"search":search
+		'dom': 'Rlfrtip',
+		"columnDefs": [ {"visible": false, "targets": 0}],
+		"lengthMenu": [ 10, 20 , 50,  100 ],
+		"scrollX": true,
+		search:
+		{
+			"caseInsensitive": true,
+			"search":search
 
-			},
-			processing: true,
-			select: true,
-			fixedColumns:
-			{
-				leftColumns: 4
-			},
-			//displayStart : 10,
-			language:
-			{
+		},
+		processing: true,
+		select: true,
+		fixedColumns:
+		{
+			leftColumns: 4
+		},
+		//displayStart : 10,
+		language:
+		{
 
-				url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/<?= $current_lang == 'en' ? 'English' : 'French' ?>.json",
-				processing: "asdf"
-				//search: "" , lengthMenu:"_MENU_  ",
-			},
+			url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/<?= $current_lang == 'en' ? 'English' : 'French' ?>.json",
+			processing: "asdf"
+			//search: "" , lengthMenu:"_MENU_  ",
+		},
 
 
 		} );
@@ -388,7 +403,7 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 
 	function changeUrl()
 	{
-		
+
 		let mode = $("#mode").val()
 		let status = $("#status").val();
 		let offer =     $("#offer").val() ;

@@ -25,6 +25,8 @@ class User extends Admin_Controller
         $js     = strip_tags( $this->load->view('js/data_edit_ajax',[
                     'selector'=>$this->_table,'url'=>$this->_ajax.'/toogle' ],TRUE));
 
+
+$js .= strip_tags($this->load->view('js/modal',NULL,TRUE) );
         $this->load->view('back/parts/datatable',[
                 'headers'=>['id','name_lastname','email','group','activ_btn'],
                 'title' =>lang('user_manage'),

@@ -78,7 +78,7 @@
 				<?
 				if(isset($cancel)) :?>
 
-				<a href="<?= $cancel ?>" class="btn btn-primary" >
+				<a id="cancel"  class="btn btn-primary" >
 					<b>
 						<?= lang('cancel') ?>
 					</b>
@@ -99,7 +99,10 @@
 <script>
 
 
+	$('#cancel').click(()=>{
+		location.reload();
 
+	})
 
 	if( typeof  summernote === 'undefined')
 	{

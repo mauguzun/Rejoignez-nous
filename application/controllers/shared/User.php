@@ -25,9 +25,7 @@ class User extends Shared_Controller{
 
 		$this->show_header();
 		$this->_set_form_validation();
-
 		$this->_set_data($this->Crud->get_row(['user_id'=>$this->user_id],'candidates'));
-
 		$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
 		$this->data['title'] = lang("edit_profile");
 		$this->show_footer();
@@ -36,12 +34,7 @@ class User extends Shared_Controller{
 
 	public function insert(){
 
-
-
-
 		$this->_set_form_validation($this->_redirect.'/insert/');
-
-
 
 
 		if($_POST['email'] != $this->ion_auth->user()->row()->email){
