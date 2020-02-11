@@ -1,5 +1,6 @@
-#example_paginate{
-	margin-top:20px;
+#example_paginate
+{
+	margin-top: 20px;
 }
 
 /* Important part */
@@ -12,14 +13,16 @@
 	height: 100vh;
 	overflow-y: auto;
 }
-#example a 
+#example a
 {
-/*	color: white !important;
-*/	text-decoration: underline;
-color: #444444 !important;
+	/*	color: white !important;
+	*/
+	text-decoration: underline;
+	color: #444444 !important;
 }
-.text-muted ,label ,.panel{
-  
+.text-muted ,label ,.panel
+{
+
 	color: #444444 !important;
 }
 .toogle
@@ -178,13 +181,20 @@ i[data-circle]
 {
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-#example_info{
-	padding:15px;
+#example_info
+{
+	padding: 15px;
 }
 
-.tooltip {
-	
+.tooltip
+{
+
 	position: fixed !important;
 	z-index: 99999 !important;
-	
+
+}
+
+.note-popover
+{
+	display: none !important;
 }
