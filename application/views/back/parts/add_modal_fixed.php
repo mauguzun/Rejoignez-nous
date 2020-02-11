@@ -134,10 +134,11 @@
 			
 			if($(this).val() == 'Immediate'){
 				$('#start_date').val('Immediate');
-				$('#start_date').hide();
+				$('#start_date').css('visibility', 'hidden');;
 				$('#start_date').datepicker('remove');
 			}else{
-				$('#start_date').show();
+				$('#start_date').css('visibility', 'visible');;
+				$('#start_date').val('');
 				initCalendar();
 
 			}
