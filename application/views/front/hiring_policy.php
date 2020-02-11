@@ -6,9 +6,8 @@
 
 	<br>
 	<ul class="accord">
-		<li>
-			<input type="checkbox">
-		
+		<li class="main-accord">
+			
 <!--			<h5>	<?= lang('our_recruitment_policy')?></h5>-->
 
 			<div class="row">
@@ -21,7 +20,7 @@
 							<br>
 							<br>
 							<div></div>
-						</center>
+						
 					</div>
 				</div>
 
