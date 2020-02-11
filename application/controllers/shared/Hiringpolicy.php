@@ -39,7 +39,7 @@ class Hiringpolicy extends Shared_Controller
         $row  = $this->Crud->get_row(['id'=>1],$this->_table);
        
          $this->load->view('js/ajaxupload');
-        foreach (['picture'] as $value) {
+       /* foreach (['picture'] as $value) {
             $uploader['upload_id'] = $value;
             $uploader['upload_url'] = $this->_redirect.'/upload/'.$value;
             $uploader['delete_url'] = $this->_redirect.'/delete/'.$value;
@@ -49,7 +49,7 @@ class Hiringpolicy extends Shared_Controller
             
             $this->data['control']["X.$value"] = form_label(lang($value));
             $this->data['control']["X".$value] = $this->load->view('back/parts/uploader',$uploader,TRUE);
-        }
+        }*/
         
         $this->_set_data($row);
 
@@ -57,7 +57,7 @@ class Hiringpolicy extends Shared_Controller
         // uploader
 
       
-        $this->data['required'] = [  'general_picture','pnc_picture' ,'pnt_picture','mecahic_picture'];
+        $this->data['required'] = [  'general_picture' ,'pnt_picture','mecahic_picture'];
         
       
         

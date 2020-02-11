@@ -16,7 +16,7 @@
 				<div class="col-md-4">
 					<div class="my_breadcrumb"    style="padding-bottom: 21px;  height:200px; background:url(<?=  $img.$query['general_picture']?>) ;
 					background-size: cover; background-color:#F8F8F8;">
-						<center><h5 style="font-size:16px; color:#fff;">Step 1</h5>
+
 							<br>
 							<br>
 							<br>
@@ -28,7 +28,6 @@
 				<div class="col-md-4">
 					<div class="my_breadcrumb"    style="padding-bottom: 21px;  height:200px;  background:url(<?=  $img.$query['pnt_picture']?>) ;
 					background-size: cover; background-color:#F8F8F8;">
-						<center><h5 style="font-size:16px; color:#fff;">Step 1</h5>
 							<br>
 							<br>
 							<br>
@@ -41,12 +40,11 @@
 				<div class="col-md-4">
 					<div class="my_breadcrumb"    style="padding-bottom: 21px;  height:200px;  background:url(<?=  $img.$query['mecahic_picture']?>) ;
 					background-size: cover; background-color:#F8F8F8;">
-						<center><h5 style="font-size:16px; color:#fff;">Step 1</h5>
 							<br>
 							<br>
 							<br>
 							<div></div>
-						</center>
+						
 					</div>
 				</div>
 

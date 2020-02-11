@@ -1,93 +1,90 @@
 <nav id="site-navigation" class="main-navigation" role="navigation">
-				<div id="mob_menu" class="menu-menu-principal-en-container"><ul id="menu-menu-principal-en" class="nav-menu-eap"><li id="menu-item-4411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4411 has-submnu"><a href="https://www.aslairlines.fr/en/scheduled-flights/">Scheduled Flights</a>
+				<div class="menu-menu-principal-container"><ul id="menu-menu-principal" class="nav-menu-eap"><li id="menu-item-4410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4410 has-submnu"><a href="https://www.aslairlines.fr/vols-reguliers/">Vols réguliers</a>
 <ul class="sub-menu">
-	<li id="menu-item-11236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11236"><a href="https://www.aslairlines.fr/en/scheduled-flights/">Destinations</a></li>
-	<li id="menu-item-11288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11288 has-submnu"><a href="https://www.aslairlines.fr/en/scheduled-flights/partnerships/">Partnerships</a>
+	<li id="menu-item-11233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11233"><a href="https://www.aslairlines.fr/vols-reguliers/" class="">Destinations</a></li>
+	<li id="menu-item-11392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11392"><a href="https://www.aslairlines.fr/paiement-en-3x/" class="">Paiement en 3X</a></li>
+</ul>
+</li>
+<li id="menu-item-2004" class="travelers menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2004 has-submnu"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/enregistrement-embarquement/">Infos Voyageurs</a>
+<ul class="sub-menu">
+	<li id="menu-item-422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-422 has-submnu"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/enregistrement-embarquement/" class="">Préparez votre voyage</a>
 	<ul class="sub-menu">
-		<li id="menu-item-11287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11287"><a href="https://www.aslairlines.fr/en/scheduled-flights/partnerships/aigle-azur/">Aigle Azur</a></li>
+		<li id="menu-item-881" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-881"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/enregistrement-embarquement/" class="">Enregistrement et embarquement</a></li>
+		<li id="menu-item-882" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-882"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/bagages/" class="">Bagages</a></li>
+		<li id="menu-item-883" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-883"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/liquides/" class="">Transport de liquides en cabine</a></li>
+		<li id="menu-item-884" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-884"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/enfants/" class="">Les enfants</a></li>
+		<li id="menu-item-885" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-885"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/pmr/" class="">Personnes handicapées ou à mobilité réduite</a></li>
+		<li id="menu-item-886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-886"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/femmes-enceintes/" class="">Les femmes enceintes</a></li>
+		<li id="menu-item-937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-937"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/medicaments/" class="">Transport de médicaments</a></li>
+		<li id="menu-item-938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-938"><a href="https://www.aslairlines.fr/infos-voyageurs/preparez-votre-voyage/animaux/" class="">Animaux de compagnie</a></li>
+	</ul>
+</li>
+	<li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-423 has-submnu"><a href="https://www.aslairlines.fr/infos-voyageurs/en-vol/services-a-bord/" class="">En vol</a>
+	<ul class="sub-menu">
+		<li id="menu-item-887" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-887"><a href="https://www.aslairlines.fr/infos-voyageurs/en-vol/services-a-bord/" class="">Services à bord</a></li>
+		<li id="menu-item-888" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-888"><a href="https://www.aslairlines.fr/infos-voyageurs/en-vol/regles-a-bord/" class="">Règles à bord</a></li>
+		<li id="menu-item-889" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-889"><a href="https://www.aslairlines.fr/infos-voyageurs/en-vol/pour-rester-en-forme/" class="">Conseils voyage</a></li>
+	</ul>
+</li>
+	<li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-424 has-submnu"><a href="https://www.aslairlines.fr/infos-voyageurs/apres-le-vol/reclamations/">Après le vol</a>
+	<ul class="sub-menu">
+		<li id="menu-item-890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-890"><a href="https://www.aslairlines.fr/infos-voyageurs/apres-le-vol/reclamations/">Réclamations</a></li>
+		<li id="menu-item-891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-891"><a href="https://www.aslairlines.fr/infos-voyageurs/apres-le-vol/litige-bagage/">Litiges bagages</a></li>
+		<li id="menu-item-892" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-892"><a href="https://www.aslairlines.fr/infos-voyageurs/apres-le-vol/objets-perdus/">Objets perdus</a></li>
 	</ul>
 </li>
 </ul>
 </li>
-<li id="menu-item-2013" class="travelers menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2013 has-submnu"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/check-in-and-boarding/">Travelers information</a>
+<li id="menu-item-2007" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2007 has-submnu"><a href="https://www.aslairlines.fr/vols-affretes/vols-loisirs/">Vols Affrétés</a>
 <ul class="sub-menu">
-	<li id="menu-item-1097" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1097 has-submnu"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/check-in-and-boarding/">Prepare your trip</a>
+	<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185"><a href="https://www.aslairlines.fr/vols-affretes/vols-loisirs/">Vols loisirs</a></li>
+	<li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186"><a href="https://www.aslairlines.fr/vols-affretes/vols-incentive-vip/">Vols incentive / VIP</a></li>
+	<li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="https://www.aslairlines.fr/vols-affretes/acmi/">ACMI</a></li>
+	<li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="https://www.aslairlines.fr/vols-affretes/notre-flotte-passagers/">Flotte passagers</a></li>
+	<li id="menu-item-1128" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1128"><a href="https://www.aslairlines.fr/vols-affretes/assistance-au-sol-et-maintenance-avions/">Assistance au sol et maintenance avions</a></li>
+</ul>
+</li>
+<li id="menu-item-2009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2009 has-submnu"><a href="https://www.aslairlines.fr/vols-cargo/nos-savoir-faire/">Vols Cargo</a>
+<ul class="sub-menu">
+	<li id="menu-item-192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-192"><a href="https://www.aslairlines.fr/vols-cargo/nos-savoir-faire/">Savoir-faire</a></li>
+	<li id="menu-item-2646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2646 has-submnu"><a href="https://www.aslairlines.fr/vols-cargo/vols-reguliers/reseau-cargo/">Vols cargo réguliers</a>
 	<ul class="sub-menu">
-		<li id="menu-item-987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-987"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/your-baggage/">Baggage</a></li>
-		<li id="menu-item-988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-988"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/transportation-of-liquids-in-the-cabin/">Transportation of liquids in the cabin</a></li>
-		<li id="menu-item-989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-989"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/children/">Children</a></li>
-		<li id="menu-item-990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/special-assistance/">Special assistance</a></li>
-		<li id="menu-item-991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-991"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/pregnancy/">Pregnant women</a></li>
-		<li id="menu-item-992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-992"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/bringing-medication-on-board/">Bringing medication on board</a></li>
-		<li id="menu-item-993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-993"><a href="https://www.aslairlines.fr/en/travellers-information/prepare-your-trip/pets/">Pets</a></li>
+		<li id="menu-item-877" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-877"><a href="https://www.aslairlines.fr/vols-cargo/vols-reguliers/reseau-cargo/">Réseau cargo</a></li>
 	</ul>
 </li>
-	<li id="menu-item-1098" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1098 has-submnu"><a href="https://www.aslairlines.fr/en/travellers-information/in-flight/on-board-services/">In flight</a>
-	<ul class="sub-menu">
-		<li id="menu-item-995" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-995"><a href="https://www.aslairlines.fr/en/travellers-information/in-flight/on-board-services/">On-board services</a></li>
-		<li id="menu-item-996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-996"><a href="https://www.aslairlines.fr/en/travellers-information/in-flight/in-flight-rules/">In flight rules</a></li>
-		<li id="menu-item-997" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-997"><a href="https://www.aslairlines.fr/en/travellers-information/in-flight/travel-tips/">Travel tips</a></li>
-	</ul>
-</li>
-	<li id="menu-item-1099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1099 has-submnu"><a href="https://www.aslairlines.fr/en/travellers-information/after-flight/complaints/">After the flight</a>
-	<ul class="sub-menu">
-		<li id="menu-item-999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-999"><a href="https://www.aslairlines.fr/en/travellers-information/after-flight/complaints/">Claims</a></li>
-		<li id="menu-item-1000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1000"><a href="https://www.aslairlines.fr/en/travellers-information/after-flight/baggage-claims/">Baggage claims</a></li>
-		<li id="menu-item-1001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1001"><a href="https://www.aslairlines.fr/en/travellers-information/after-flight/lost-and-found/">Lost and found</a></li>
-	</ul>
-</li>
+	<li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-194"><a href="https://www.aslairlines.fr/vols-cargo-a-la-demande/">Vols cargo à la demande</a></li>
+	<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://www.aslairlines.fr/vols-cargo/acmi/">ACMI</a></li>
+	<li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="https://www.aslairlines.fr/vols-cargo/notre-flotte-cargo/">Flotte cargo</a></li>
+	<li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="https://www.aslairlines.fr/vols-cargo/nos-uldcontainers/">ULD/Containers</a></li>
+	<li id="menu-item-1129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1129"><a href="https://www.aslairlines.fr/vols-cargo/assistance-au-sol-et-maintenance-avions/">Assistance au sol et maintenance avions</a></li>
 </ul>
 </li>
-<li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2014 has-submnu"><a href="https://www.aslairlines.fr/en/charter-flights/leisure-flights/">Charter Flights</a>
+<li id="menu-item-2011" class="about menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2011 has-submnu"><a href="https://www.aslairlines.fr/qui-sommes-nous/nos-activites/">Qui sommes-nous</a>
 <ul class="sub-menu">
-	<li id="menu-item-1003" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1003"><a href="https://www.aslairlines.fr/en/charter-flights/leisure-flights/">Leisure flights</a></li>
-	<li id="menu-item-1004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1004"><a href="https://www.aslairlines.fr/en/charter-flights/incentive-vip-flights/">Incentive / VIP flights</a></li>
-	<li id="menu-item-1005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"><a href="https://www.aslairlines.fr/en/charter-flights/acmi/">ACMI</a></li>
-	<li id="menu-item-1006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1006"><a href="https://www.aslairlines.fr/en/charter-flights/our-passenger-fleet/">Passenger fleet</a></li>
-	<li id="menu-item-1139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1139"><a href="https://www.aslairlines.fr/en/charter-flights/ground-assistance-and-aircraft-maintenance/">Assistance services and aircraft maintenance</a></li>
+	<li id="menu-item-197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-197"><a href="https://www.aslairlines.fr/qui-sommes-nous/nos-activites/">Activités</a></li>
+	<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198"><a href="https://www.aslairlines.fr/qui-sommes-nous/notre-qualite-de-service/">Qualité de service</a></li>
+	<li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200"><a href="https://www.aslairlines.fr/qui-sommes-nous/nos-certifications/">Certifications</a></li>
+	<li id="menu-item-199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199"><a href="https://www.aslairlines.fr/qui-sommes-nous/chiffres-cles/">Chiffres clés</a></li>
+	<li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="https://www.aslairlines.fr/qui-sommes-nous/innovation/">Innovation</a></li>
+	<li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="https://www.aslairlines.fr/qui-sommes-nous/developpement-durable/">Développement Durable</a></li>
+	<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="https://www.aslairlines.fr/qui-sommes-nous/notre-flotte/">Flotte</a></li>
 </ul>
 </li>
-<li id="menu-item-2015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2015 has-submnu"><a href="https://www.aslairlines.fr/en/cargo-flights/know-how/">Cargo Flights</a>
+<li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-174 has-submnu"><a href="https://careers.aslairlines.com/?lang=fr">Rejoignez-nous</a>
 <ul class="sub-menu">
-	<li id="menu-item-1008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1008"><a href="https://www.aslairlines.fr/en/cargo-flights/know-how/">Expertise</a></li>
-	<li id="menu-item-2649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2649 has-submnu"><a href="https://www.aslairlines.fr/en/cargo-flights/scheduled-cargo-flights/cargo-network/">Scheduled cargo flights</a>
-	<ul class="sub-menu">
-		<li id="menu-item-1011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1011"><a href="https://www.aslairlines.fr/en/cargo-flights/scheduled-cargo-flights/cargo-network/">Cargo network</a></li>
-	</ul>
-</li>
-	<li id="menu-item-1012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1012"><a href="https://www.aslairlines.fr/en/ad-hoc-cargo-flights/">Ad hoc cargo flights</a></li>
-	<li id="menu-item-1013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1013"><a href="https://www.aslairlines.fr/en/cargo-flights/acmi/">ACMI</a></li>
-	<li id="menu-item-1014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1014"><a href="https://www.aslairlines.fr/en/cargo-flights/our-cargo-fleet/">Cargo fleet</a></li>
-	<li id="menu-item-1015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1015"><a href="https://www.aslairlines.fr/en/cargo-flights/uldcontainers/">ULD/Containers</a></li>
-	<li id="menu-item-1141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1141"><a href="https://www.aslairlines.fr/en/cargo-flights/ground-assistance-and-aircraft-maintenance/">Assistance services and aircraft maintenance</a></li>
+	<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="https://careers.aslairlines.com/offers/?lang=fr">Offres</a></li>
+	<li id="menu-item-215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215"><a href="https://careers.aslairlines.com/apply/new/begin/?lang=fr">Candidatures spontanées</a></li>
+	<li id="menu-item-216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216"><a href="https://careers.aslairlines.com/policy/?lang=fr">Politique de recrutement</a></li>
+	<li id="menu-item-218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="https://careers.aslairlines.com/auth/login/?lang=fr">Espace candidat</a></li>
 </ul>
 </li>
-<li id="menu-item-2016" class="about menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2016 has-submnu"><a href="https://www.aslairlines.fr/en/about-us/our-activities/">About us</a>
+<li id="menu-item-722" class="press menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-722 has-submnu"><a href="https://www.aslairlines.fr/category/communiques-de-presse/">Presse</a>
 <ul class="sub-menu">
-	<li id="menu-item-1017" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1017"><a href="https://www.aslairlines.fr/en/about-us/our-activities/">Activities</a></li>
-	<li id="menu-item-1018" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018"><a href="https://www.aslairlines.fr/en/about-us/our-quality-of-service/">Quality of service</a></li>
-	<li id="menu-item-1019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1019"><a href="https://www.aslairlines.fr/en/about-us/our-certifications/">Certifications</a></li>
-	<li id="menu-item-1020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1020"><a href="https://www.aslairlines.fr/en/about-us/key-facts/">Key facts</a></li>
-	<li id="menu-item-1021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1021"><a href="https://www.aslairlines.fr/en/about-us/innovation/">Innovation</a></li>
-	<li id="menu-item-1022" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1022"><a href="https://www.aslairlines.fr/en/about-us/corporate-responsibility/">Corporate Responsibilty</a></li>
-	<li id="menu-item-1023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1023"><a href="https://www.aslairlines.fr/en/about-us/our-fleet/">Fleet</a></li>
-</ul>
-</li>
-<li id="menu-item-1032" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1032 has-submnu"><a href="https://www.aslairlines.fr/rejoignez_nous/">CAREERS</a>
-<ul class="sub-menu">
-	<li id="menu-item-1034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1034"><a href="https://www.aslairlines.fr/rejoignez_nous/actuel">Job Search &amp; Apply</a></li>
-	<li id="menu-item-1033" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1033"><a href="https://www.aslairlines.fr/rejoignez_nous/candidature-spontanee/">Speculative application</a></li>
-	<li id="menu-item-1035" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1035"><a href="https://www.aslairlines.fr/rejoignez_nous/politique/">Equal Opportunity</a></li>
-	<li id="menu-item-1036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1036"><a href="https://www.aslairlines.fr/rejoignez_nous/metiers/">Meet our staff</a></li>
-	<li id="menu-item-1037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1037"><a href="https://www.aslairlines.fr/rejoignez_nous/bienvenue">Login</a></li>
-</ul>
-</li>
-<li id="menu-item-7470" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7470 has-submnu"><a href="https://www.aslairlines.fr/en/category/press-releases/">MEDIA</a>
-<ul class="sub-menu">
-	<li id="menu-item-7471" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7471"><a href="https://www.aslairlines.fr/en/category/press-releases/">Latest news</a></li>
-	<li id="menu-item-9423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9423"><a href="https://www.aslairlines.fr/en/press/photos/">Photos</a></li>
-	<li id="menu-item-1163" class="video menu-item menu-item-type-custom menu-item-object-custom menu-item-1163"><a href="https://www.aslairlines.fr/en/video/">Video gallery</a></li>
-	<li id="menu-item-1049" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1049"><a href="https://www.aslairlines.fr/en/vue-360/">360° view</a></li>
+	<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="https://www.aslairlines.fr/category/communiques-de-presse/">Communiqués de presse</a></li>
+	<li id="menu-item-343" class="press-file menu-item menu-item-type-custom menu-item-object-custom menu-item-343"><a href="https://www.aslairlines.fr/press-file/">Dossiers de presse</a></li>
+	<li id="menu-item-9421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9421"><a href="https://www.aslairlines.fr/presse/photos/">Photos</a></li>
+	<li id="menu-item-695" class="video menu-item menu-item-type-custom menu-item-object-custom menu-item-695"><a href="https://www.aslairlines.fr/video/">Vidéos</a></li>
+	<li id="menu-item-353" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-353"><a href="https://www.aslairlines.fr/vue-360/">Vues à 360°</a></li>
 </ul>
 </li>
 </ul></div>			</nav>
