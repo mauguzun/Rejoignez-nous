@@ -134,9 +134,7 @@ $lang['Applications management'] = 'Gestion des candidatures';
 $lang['Applications in response'] = 'Candidatures en réponse à une offre';
 $lang['Unsolicated application'] = 'Candidature spontanée';
 $lang['emails'] = 'Courrier électronique';
-$lang['pnt_picture'] = 'Photo PNT';
-$lang['pnc_picture'] = 'Photo PNC';
-$lang['general_picture'] = 'Photo générale';
+
 $lang['uplad_file_hiring'] = 'Mettre en ligne la déclaration de confidentialité';
 $lang['settings'] = 'Paramètres';
 $lang['settings_email'] = 'Paramètres emails';

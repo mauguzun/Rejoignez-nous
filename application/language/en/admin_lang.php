@@ -134,9 +134,8 @@ $lang['Applications management'] = 'Applications management';
 $lang['Applications in response'] = 'Applications in response to an offer';
 $lang['Unsolicated application'] = 'Unsolicited application';
 $lang['emails'] = 'Emails';
-$lang['pnt_picture'] = 'PNT Picture';
-$lang['pnc_picture'] = 'PNC Picture';
-$lang['general_picture'] = 'General Picture';
+
+
 $lang['uplad_file_hiring'] = 'Upload hiring policy';
 $lang['settings'] = 'Settings';
 $lang['settings_email'] = 'Settings Email';
