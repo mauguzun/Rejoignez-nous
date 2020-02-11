@@ -583,7 +583,7 @@ class Offer extends Shared_Controller
 
 			(int)$table_row['id'],
 			$table_row['pub_date'],
-			$table_row['title'],
+			 substr($table_row['title'],0,50),
 			//anchor( base_url().Shared_Controller::$map." / applications?offer = ".$table_row['title'], $table_row['title']),
 			/*	$table_row['functions'],
 

@@ -76,6 +76,8 @@ class Ajax extends Shared_Controller{
 		echo $result;
 	}
 	public function function_by_admin($id,$func_id){
+		
+		//tpdp 
 		$app = $this->Crud->update(['id'=>$id],['function_by_admin'=>$func_id],'application');
 		echo json_encode(['app'=>$app]);	
 	}

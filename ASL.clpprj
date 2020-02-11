@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OSPanel\domains\localhost\Rejoignez-nous\ASL.clpprj">
 	<settings><PM_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_URL><PM_HOME_URL><![CDATA[C:/OSPanel/domains/localhost/bmr/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OSPanel\domains\localhost\reg\application\controllers\Test.php;C:\OSPanel\domains\localhost\reg\application\controllers\apply\new\Unsurl.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\NewFolder;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\get_medical.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnt\medical.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt;C:\OSPanel\domains\localhost\reg\application\views\apply_final\uns_pnt\vue.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;"/><added value=""/><lastopfiles>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applications.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\status.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Ajax.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Rule\Rule.php">
@@ -27,7 +32,7 @@
 			<todo name="todo is active" pos="3;22"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\User.php">
-			<todo name="todo if user super Admin" pos="13;177"/>
+			<todo name="todo if user super Admin" pos="13;179"/>
 		</todofile>
 		<todofile name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php">
 			<todo name="todo if user super Admin" pos="4;167"/>
@@ -3321,7 +3326,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\errors\cli\error_404.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\errors\index.html" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\zip.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\trash.php" crc="1576751900"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\trash.php" crc="1581362327"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\status.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\slideshow_order.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\buttons\print.php" crc="1576751900"/>
@@ -3341,11 +3346,11 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\show.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\manualay_create_application.php" crc="1578407071"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\jquery.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\header.php" crc="1581342198"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\header.php" crc="1581346739"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\footer.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php" crc="1578411839"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php" crc="1581362424"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_with_upload.php" crc="1578069280"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_modal_fixed.php" crc="1578234719"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_modal_fixed.php" crc="1581349803"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\user_view_manualy.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\user_view.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\under.php" crc="1576751900"/>
@@ -3716,7 +3721,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Address.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Viewuser.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Viewoffers.php" crc="1576751899"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\User.php" crc="1576751899"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\User.php" crc="1581348923"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Slideshow.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Sitemap.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Sendemail.php" crc="1576751899"/>
@@ -3733,13 +3738,13 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Email.php" crc="1578073194"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Edituser.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applicationsinresponse.php" crc="1576751899"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applications.php" crc="1578407279"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Applications.php" crc="1581412118"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Apphistory.php" crc="1576751899"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Ajax.php" crc="1577965305"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Ajax.php" crc="1581409328"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\help\Folder.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\help\Clear.php" crc="1576751899"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\User.php" crc="1576751899"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\User.php" crc="1581349335"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\Settings_keywords.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\Settings_help.php" crc="1576751899"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\Settings_generic.php" crc="1576751899"/>

@@ -463,7 +463,10 @@ class Applications extends Shared_Controller
 			],
 			"$this->_table.* ,$this->_table.id as aid,   ,application.user_id as uid ,offers.*,applicaiton_misc.*,
 			application_status.status as status,
-			GROUP_CONCAT(DISTINCT application_languages_level.language  ) as for_langs,
+			GROUP_CONCAT(DISTINCT application_languages_level.language ,'-' , application_languages_level.level_id 
+			
+			SEPARATOR ';'
+			) as for_langs,			
 			GROUP_CONCAT(DISTINCT activities.activity ) as activities,
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
@@ -482,7 +485,8 @@ class Applications extends Shared_Controller
 
 			,NULL , ["application.id"],$allowed);
 
-
+/*var_dump($query);
+		return;*/
 	
 
 		$data['data'] = [];
@@ -512,8 +516,6 @@ class Applications extends Shared_Controller
 		$row = [];
 
 
-
-
 		///
 		if($this->_function_filter_id )
 		{
@@ -524,6 +526,7 @@ class Applications extends Shared_Controller
 			}
 
 			$array = explode(',',$table_row['functions_id']);
+			
 			if(!in_array($this->_function_filter_id,$array))
 			{
 				return null;
@@ -615,9 +618,7 @@ class Applications extends Shared_Controller
 			$managerial = $this->_have($table_row['hr_managerial']);
 		}
 
-		//function_by_admin
-
-		///
+		
 
 		$funct = $table_row['functions'];
 		if( isset($table_row['function_by_admin']) && $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions))
@@ -626,6 +627,7 @@ class Applications extends Shared_Controller
 			'<a data-toggle="tooltip" data-placement="left" title="<b>'.
 			lang('initially applied for the position of ').'</b><br>'.
 			$table_row['functions']
+			
 
 			.'"  ><i class="fas fa-exclamation-triangle"></i> '.
 			$this->_functions[$table_row['function_by_admin']]." </a>";
@@ -765,7 +767,23 @@ class Applications extends Shared_Controller
 		{
 			$res .= "<b> fr </b>  : " .$this->_lang_level[ $table_row['french_level']];
 		}
-		$res .= "<br>".$table_row['for_langs'];
+		
+		// 
+		$langs = explode(";",$table_row['for_langs']);
+		if($langs){
+			
+			foreach($langs as $lang){
+				$nameValue =  explode("-",$lang);
+				if(count($nameValue) == 2){
+									$res .= "<br>".$nameValue[0] . ' : <b>' .  $this->_lang_level[$nameValue[1]].'</b>';
+				}
+		  
+
+			}
+			
+		}
+		
+		//$res .= "<br>".$table_row['for_langs'];
 
 
 		return $res;
