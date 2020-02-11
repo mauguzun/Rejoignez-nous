@@ -301,13 +301,17 @@ class Offer extends Shared_Controller
 		$selected  = $activity == 'Immediate' ? 'Immediate' : '';
 		$this->data['control']["1"] = form_label( '<b>*</b>'.lang("create_offer_start_date"));
 		$this->data['control'][''] =
-		form_dropdown('fake_start_date', ['Immediate'=>'Immediate',''=>lang('calendar')],$selected,['class'=>'form-control']);
+		form_dropdown('fake_start_date', 
+		['Immediate'=>'Immediate',''=>lang('calendar')],$selected,['class'=>'form-control']);
 
 
-		
-
+		$style = $selected   !=  'Immediate'  ? 'visibility:visible' : 'visibility:hidden';
+		if ($activity != 'Immediate'){
+			$activity = date_to_input($activity);
+		}
+ 
 		$this->data['control']['start_date'] =
-		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true,'style'=>'visibility:hidden']));
+		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true,'style'=>$style]));
 		////////////////////////////////////////////////////////////
 		//$dates = ['start_date','pub_date'];
 		$dates = ['pub_date'];
