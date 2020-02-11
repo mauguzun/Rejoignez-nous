@@ -307,7 +307,7 @@ class Offer extends Shared_Controller
 		
 
 		$this->data['control']['start_date'] =
-		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true]));
+		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true,'style'=>'display:none']));
 		////////////////////////////////////////////////////////////
 		//$dates = ['start_date','pub_date'];
 		$dates = ['pub_date'];

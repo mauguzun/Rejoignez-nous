@@ -131,10 +131,13 @@
 
 	   $('[name=fake_start_date]').change(function()
 		{
+			
 			if($(this).val() == 'Immediate'){
 				$('#start_date').val('Immediate');
+				$('#start_date').hide();
 				$('#start_date').datepicker('remove');
 			}else{
+				$('#start_date').show();
 				initCalendar();
 
 			}
