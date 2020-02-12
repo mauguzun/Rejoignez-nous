@@ -527,7 +527,7 @@ class Applications extends Shared_Controller
 
 			$array = explode(',',$table_row['functions_id']);
 			
-			if(!in_array($this->_function_filter_id,$array))
+			if(!in_array($this->_function_filter_id,$array) && $table_row['function_by_admin'] != $this->_function_filter_id   )
 			{
 				return null;
 			}
