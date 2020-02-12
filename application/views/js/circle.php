@@ -22,6 +22,7 @@
 						console.log(self.parent().parent())
 						$('[data-id="'+url+'"]').css('color',data.done )
 						self.parent().parent().attr('class','collapse out')
+						x.ajax.reload();	
 					}else
 					{
 						alert(data.error);

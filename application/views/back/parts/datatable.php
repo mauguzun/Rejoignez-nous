@@ -350,44 +350,46 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 						}
 
 					})
-			
-			
-
-			<?= $js ?>
-
-			$('.paginate_button').click(function()
-				{
-					page = $(this).attr('data-dt-idx') ;
-					changeUrl();
-				})
 
 
-		},
 
-		'dom': 'Rlfrtip',
-		"columnDefs": [ {"visible": false, "targets": 0}],
-		"lengthMenu": [ 10, 20 , 50,  100 ],
-		"scrollX": true,
-		search:
-		{
-			"caseInsensitive": true,
-			"search":search
+				<?= $js ?>
 
-		},
-		processing: true,
-		select: true,
-		fixedColumns:
-		{
-			leftColumns: 4
-		},
-		//displayStart : 10,
-		language:
-		{
+				$('.paginate_button').click(function()
+					{
+						page = $(this).attr('data-dt-idx') ;
+						changeUrl();
+					})
 
-			url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/<?= $current_lang == 'en' ? 'English' : 'French' ?>.json",
-			processing: "asdf"
-			//search: "" , lengthMenu:"_MENU_  ",
-		},
+
+			},
+
+		
+
+			'dom': 'Rlfrtip',
+			"columnDefs": [ {"visible": false, "targets": 0}],
+			"lengthMenu": [ 10, 20 , 50,  100 ],
+			"scrollX": true,
+			search:
+			{
+				"caseInsensitive": true,
+				"search":search
+
+			},
+			processing: true,
+			select: true,
+			fixedColumns:
+			{
+				leftColumns: 4
+			},
+			//displayStart : 10,
+			language:
+			{
+
+				url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/<?= $current_lang == 'en' ? 'English' : 'French' ?>.json",
+				processing: "asdf"
+				//search: "" , lengthMenu:"_MENU_  ",
+			},
 
 
 		} );
@@ -470,11 +472,5 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 	}
 
 </script>
-<style>
-	#example_wrapper
-	{
-		padding-top: 10px;
-	}
-</style>
 
 

@@ -87,13 +87,14 @@ class Applications extends Shared_Controller
 					/*'managment',*/
 					'availability','car','<i class="fas fa-wheelchair"></i>',
 					/*'history',*/
-					'call','folder','interview','test','decision','status',
+					'application_review',	'call','interview','decision','status',
 					'<i class="fas fa-exclamation-triangle"></i>',
 					'<i class="fa fa-eye" ></i>',
 					'<i class="far fa-file-archive"></i>',
 					'<i class="fa fa-print"></i>',
 					'<i class="fa fa-envelope"></i>',
-					'<i class="fa fa-edit" ></i>'
+					'<i class="fa fa-edit" ></i>',
+
 				],
 				'title' =>lang('applications'),
 				'url' => $this->_redirect.'/ajax/'.$this->_mode.'?'.$_SERVER['QUERY_STRING'] ,
@@ -160,7 +161,7 @@ class Applications extends Shared_Controller
 
 
 		$this->data['control']["asdf"] = form_label('<b>*</b>'.lang("cv"));
-		
+
 		foreach(['cv','covver_letter'] as $value)
 		{
 
@@ -463,10 +464,10 @@ class Applications extends Shared_Controller
 			],
 			"$this->_table.* ,$this->_table.id as aid,   ,application.user_id as uid ,offers.*,applicaiton_misc.*,
 			application_status.status as status,
-			GROUP_CONCAT(DISTINCT application_languages_level.language ,'-' , application_languages_level.level_id 
-			
+			GROUP_CONCAT(DISTINCT application_languages_level.language ,'-' , application_languages_level.level_id
+
 			SEPARATOR ';'
-			) as for_langs,			
+			) as for_langs,
 			GROUP_CONCAT(DISTINCT activities.activity ) as activities,
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
@@ -485,9 +486,9 @@ class Applications extends Shared_Controller
 
 			,NULL , ["application.id"],$allowed);
 
-/*var_dump($query);
+		/*var_dump($query);
 		return;*/
-	
+
 
 		$data['data'] = [];
 		foreach($query as $table_row)
@@ -500,7 +501,7 @@ class Applications extends Shared_Controller
 			}
 		}
 
-	/*echo "<pre>";
+		/*echo "<pre>";
 		var_dump($data);
 		die();*/
 
@@ -526,7 +527,7 @@ class Applications extends Shared_Controller
 			}
 
 			$array = explode(',',$table_row['functions_id']);
-			
+
 			if(!in_array($this->_function_filter_id,$array) && $table_row['function_by_admin'] != $this->_function_filter_id   )
 			{
 				return null;
@@ -618,7 +619,7 @@ class Applications extends Shared_Controller
 			$managerial = $this->_have($table_row['hr_managerial']);
 		}
 
-		
+
 
 		$funct = $table_row['functions'];
 		if( isset($table_row['function_by_admin']) && $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions))
@@ -627,7 +628,7 @@ class Applications extends Shared_Controller
 			'<a data-toggle="tooltip" data-placement="left" title="<b>'.
 			lang('initially applied for the position of ').'</b><br>'.
 			$table_row['functions']
-			
+
 
 			.'"  ><i class="fas fa-exclamation-triangle"></i> '.
 			$this->_functions[$table_row['function_by_admin']]." </a>";
@@ -637,6 +638,7 @@ class Applications extends Shared_Controller
 			$row,
 
 			$table_row['add_date'],
+
 			anchor($print,$table_row['first_name'],['target'=>'_blank']) ,
 			anchor($print,$table_row['last_name'],['target'=>'_blank']) ,
 
@@ -661,12 +663,7 @@ class Applications extends Shared_Controller
 			$this->_have($table_row['car']) ,
 			$this->_have($table_row['handicaped']),
 			/*,*/
-			$this->load->view("buttons/circle",
-				[
 
-					'color_id'=>$table_row['call_id'],
-					'url'=>$this->_redirect.'/ajaxcolor/call_id/'.$table_row['aid'],
-				],true),
 			// opinion
 			$this->load->view("buttons/circle",
 				[
@@ -674,18 +671,19 @@ class Applications extends Shared_Controller
 					'url'=>$this->_redirect.'/ajaxcolor/opinion_folder/'.$table_row['aid'],
 
 				],true),
+
+			$this->load->view("buttons/circle",
+				[
+
+					'color_id'=>$table_row['call_id'],
+					'url'=>$this->_redirect.'/ajaxcolor/call_id/'.$table_row['aid'],
+				],true),
 			$this->load->view("buttons/circle",
 				[
 					'color_id'=>$table_row['opinion_interview'],
 					'url'=>$this->_redirect.'/ajaxcolor/opinion_interview/'.$table_row['aid'],
 				],true),
-			$this->load->view("buttons/circle",
-				['color'=>$this->colors->get_color($table_row['opinion_test']),
 
-					'color_id'=>$table_row['opinion_test'],
-					'url'=>$this->_redirect.'/ajaxcolor/opinion_test/'.$table_row['aid'],
-
-				],true),
 			$this->load->view("buttons/circle",
 				[
 					'color_id'=>$table_row['opinion_decision'],
@@ -697,7 +695,8 @@ class Applications extends Shared_Controller
 			$this->load->view("buttons/status",
 				[
 
-					'title'=>$table_row['status'],
+					'title'=>$this->_status_title($this->_biger($table_row)), //$table_row['status'],
+			//		'title'=>$table_row['status'], //$table_row['status'],
 					'statuses'=>$this->_statuses,
 					'application_id'=>$table_row['aid'],
 
@@ -729,9 +728,49 @@ class Applications extends Shared_Controller
 			anchor(base_url().Shared_Controller::$map."/apphistory/".$table_row['aid'],'<i class="fas fa-edit" aria-hidden="true"></i>')
 
 
+
 		);
 
 		return $row;
+	}
+
+
+
+	private function _biger($r)
+	{
+
+		$array = [
+			$r['call_id'],$r['opinion_folder'],$r['opinion_interview'],$r['opinion_test'],$r['opinion_decision']
+		];
+		return max($array);
+	}
+
+	private function _status_title($num)
+	{
+		switch($num)
+		{
+
+			case 3:
+			//orange then “undecided”
+			return $this->_statuses[5];
+			break;
+
+			case 2:
+			//it is green then “successful”
+			return $this->_statuses[3];
+			break;
+
+			case 4:
+			//red then “unsuccessful”
+			return $this->_statuses[4];
+			break;
+
+			default:
+			return $this->_statuses[2];
+			break;
+		}
+
+
 	}
 
 	/**
@@ -744,6 +783,16 @@ class Applications extends Shared_Controller
 
 		if($this->get_user_edit())
 		{
+			
+			$row = $this->Crud->get_row(['id'=>$applicaiton_id],'application');
+			
+			
+			
+			$bigger = $this->_biger($row);
+			$this->Crud->update(['id'=>$applicaiton_id],['application_statuts'=>$bigger],'application');
+			
+			
+			
 			if( $this->Crud->update(['id'=>$applicaiton_id],[$column=>$value],$this->_table))
 			{
 				echo json_encode(['done'=>$this->colors->get_color($value)]);
@@ -767,23 +816,23 @@ class Applications extends Shared_Controller
 		{
 			$res .= "<b> fr </b>  : " .$this->_lang_level[ $table_row['french_level']];
 		}
-		
-		// 
+
+		//
 		$langs = explode(";",$table_row['for_langs']);
 		if($langs){
-			
+
 			foreach($langs as $lang){
-				$nameValue =  explode("-",$lang);
+				$nameValue = explode("-",$lang);
 				if(count($nameValue) == 2){
-									$res .= "<br>".$nameValue[0] . ' : <b>' .  $this->_lang_level[$nameValue[1]].'</b>';
+					$res .= "<br>".$nameValue[0] . ' : <b>' .  $this->_lang_level[$nameValue[1]].'</b>';
 				}
-		  
+
 
 			}
-			
+
 		}
-		
-		//$res .= "<br>".$table_row['for_langs'];
+
+		//$res .= " < br > ".$table_row['for_langs'];
 
 
 		return $res;

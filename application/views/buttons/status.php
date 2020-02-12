@@ -10,7 +10,9 @@
                  aria-controls="collapseExample"
                  class="text-muted"
                  >
-		<span  data-title="<?= $id ?>" >   <?= empty($title) ? '-' : $title?></span>
+		<span  data-title="<?= $id ?>" >
+			<?= empty($title) ? '-' : $title?>
+		</span>
 	</a>
 
 	<div class="collapse" id="<?=$id ?>" style=" position: absolute !important;
@@ -20,31 +22,39 @@
 
 			<ul>
 				<?
+
 				foreach($statuses as $key=>$value) :?>
 
-				<li> <a 
-				
+				<?
+				if($key == 6): ?>
+				<li>
+					<a
+
 				 data-link="<?= $id ?>"
 				 data-id="<?= $key ?>"
 				 data-application-id="<?= $application_id ?>"
 
 				 data-status='true'
-				 href="<?= base_url().'shared/applications/ajaxstatus/'.$application_id.'/'.$key?>"> 
-						<?= $value?></a></li>
+				 href="<?= base_url().'shared/applications/ajaxstatus/'.$application_id.'/'.$key?>">
+						<?= $value?>$keyz
+					</a>
+				</li>
 
-
+				<? endif; ?>
 
 				<? endforeach ;?>
 			</ul>
 		</div>
-		
+
 		<div data-function="<?= $id ?>" class="pls_hide" style="display: none">
-			<label>Re-asing function</label>
+			<label>
+				Re-asing function
+			</label>
 			<div data-function-list="<?= $id ?>">
-				
+
 			</div>
 		</div>
 	</div>
 
-	
+
 </span>

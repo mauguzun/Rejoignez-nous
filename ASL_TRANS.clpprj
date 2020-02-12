@@ -2,8 +2,12 @@
 <project name="C:\OSPanel\domains\localhost\Rejoignez-nous\ASL_TRANS.clpprj">
 	<removed value=";C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Edituser.php;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\email_template.sql;C:\OSPanel\domains\localhost\reg\application\views\apply_final;C:\OSPanel\domains\localhost\reg\application\views\apply_final\NewFile.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\header.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\parts\main.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\pnc.php;C:\OSPanel\domains\localhost\reg\application\views\apply_final\pnc\vue.php;C:\OSPanel\domains\localhost\reg\application\views\front\parts\NewFile.php;C:\OSPanel\domains\localhost\reg\css\front\css\NewFolder;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Base_Apply_Controller.php;C:\OSPanel\domains\localhost\reg\system\core\controllers\apply\Pnc_Controller.php;C:\open\OSPanel\domains\localhost\asldomain\application\controllers\NewFile.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\offer_list.php;C:\open\OSPanel\domains\localhost\regonize\application\views\front\parts\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\apply\hr\Profile.php;C:\open\OSPanel\domains\localhost\rej\application\controllers\user\NewFile.php;C:\open\OSPanel\domains\localhost\rej\application\libraries\Profile.php;C:\server\OSPanel\domains\localhost\asldomain\application\controllers\Admin.php;C:\server\OSPanel\domains\localhost\asldomain\static\update\css\NewFile.css;"/><added value=""/><lastopfiles>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\hiring_policy.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\my_custom_css.css"/>
 	</lastopfiles>
 	<errors version="5.11">
+		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\my_custom_css.css">
+			<error val="1;97;39;97;2502;1;"/>
+		</errfile>
 		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\css\back\my.css">
 			<error val="1;50;26;50;2502;1;"/>
 			<error val="1;48;29;48;2502;1;"/>
@@ -432,7 +436,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\update.css" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\style.css" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\slick.css" crc="1576751904"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\my_custom_css.css" crc="1578319451"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\my_custom_css.css" crc="1581509987"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\home-v2.css" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\eap.css" crc="1576751904"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\static\update\css\debug.css" crc="1576751904"/>
@@ -2725,7 +2729,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\login.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\license_view.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\index.php" crc="1576751900"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\hiring_policy.php" crc="1581498553"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\hiring_policy.php" crc="1581509915"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\helpform.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\help.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\front\application.php" crc="1576751900"/>
