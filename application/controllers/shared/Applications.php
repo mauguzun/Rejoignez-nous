@@ -36,22 +36,18 @@ class Applications extends Shared_Controller
 		$this->load->language("ion_auth");
 
 
-		foreach($this->Crud->get_all('language_level') as $value)
-		{
+		foreach($this->Crud->get_all('language_level') as $value){
 			$this->_lang_level[$value['id']] = $value['level'];
 		}
 
-		foreach($this->Crud->get_all('hr_offer_education_level') as $value)
-		{
+		foreach($this->Crud->get_all('hr_offer_education_level') as $value){
 			$this->_education_level[$value['id']] = $value['level'];
 		}
 
-		foreach($this->Crud->get_all('application_status') as $value)
-		{
+		foreach($this->Crud->get_all('application_status') as $value){
 			$this->_statuses[$value['id']] = $value['status'];
 		}
-		foreach($this->Crud->get_all('functions') as $value)
-		{
+		foreach($this->Crud->get_all('functions') as $value){
 			$this->_functions[$value['id']] = $value['function'];
 		}
 
@@ -141,8 +137,7 @@ class Applications extends Shared_Controller
 		//$this->_set_mode($mode);
 
 
-		if(!$this->ion_auth->in_group([1,2,3,4]))
-		{
+		if(!$this->ion_auth->in_group([1,2,3,4])){
 			redirect (base_url().'shared/applications');
 		}
 
@@ -162,8 +157,7 @@ class Applications extends Shared_Controller
 
 		$this->data['control']["asdf"] = form_label('<b>*</b>'.lang("cv"));
 
-		foreach(['cv','covver_letter'] as $value)
-		{
+		foreach(['cv','covver_letter'] as $value){
 
 			$this->data['control']["X{$value}"] = $this->load->view('front/apply/part/ajaxuploader',
 				[
@@ -193,8 +187,7 @@ class Applications extends Shared_Controller
 
 		$where = $this->get_filter_array();
 
-		if(is_array($where))
-		{
+		if(is_array($where)){
 			unset($where['application.deleted']);
 			unset($where['filled']);
 		}
@@ -208,8 +201,7 @@ class Applications extends Shared_Controller
 
 		$query = $this->Crud->get_like(['title'=>$_POST['q']],'offers',$where);
 		$res   = [];
-		foreach($query as $row)
-		{
+		foreach($query as $row){
 
 			$active = $row['status'] == 1 ? '✓' : '×';
 			$res[] = [
@@ -228,19 +220,16 @@ class Applications extends Shared_Controller
 
 
 
-		if(!$this->ion_auth->in_group([1,2,3,4]))
-		{
+		if(!$this->ion_auth->in_group([1,2,3,4])){
 			redirect (base_url().'shared/applications');
 		}
 
 		$this->_set_form_validation($this->_redirect.'/insert/'.$this->_mode);
 
 
-		if($this->form_validation->run() === TRUE)
-		{
+		if($this->form_validation->run() === TRUE){
 
-			if($_POST['offer_id'] == 0 )
-			{
+			if($_POST['offer_id'] == 0 ){
 				$this->data['message'] = lang("pls select offer ");
 				$this->session->set_flashdata('message', 'adas');
 				redirect($this->_redirect.'/add');
@@ -306,8 +295,7 @@ class Applications extends Shared_Controller
 
 
 		$this->load->library("html/InputArray");
-		foreach(['first_name','last_name'] as $value)
-		{
+		foreach(['first_name','last_name'] as $value){
 			$this->data['control']["{$value}_l"] = form_label('<b>*</b>'.lang($value));
 			$this->data['control'][$value] = form_input(
 				$this->inputarray->getArray($value,'text',lang($value),NULL,TRUE));
@@ -321,8 +309,7 @@ class Applications extends Shared_Controller
 			]);
 
 
-		if($user)
-		{
+		if($user){
 			$this->data['control']['id'] = form_input( $this->inputarray->getArray('id','hidden',null,$user['id'],TRUE));
 		}
 
@@ -371,8 +358,7 @@ class Applications extends Shared_Controller
 		}*/
 
 
-		foreach(['comment'] as $column)
-		{
+		foreach(['comment'] as $column){
 
 			$this->data['control']["{$column}_l"] = form_label(lang($column));
 
@@ -389,23 +375,19 @@ class Applications extends Shared_Controller
 	public function offer_titles()
 	{
 
-		if(isset($_POST))
-		{
+		if(isset($_POST)){
 
-			if($_POST)
-			{
+			if($_POST){
 				$result = [];
 				$where  = $this->get_filter_array();
 
-				if(is_array($where))
-				{
+				if(is_array($where)){
 					unset($where['deleted']);
 					unset($where['filled']);
 				}
 				else
 				{
-					if(isset($_GET['mode']) && $_GET['mode'] != 0)
-					{
+					if(isset($_GET['mode']) && $_GET['mode'] != 0){
 						$where = "offers.category = ". $_GET['mode']; ;
 					}
 					else
@@ -419,8 +401,7 @@ class Applications extends Shared_Controller
 				$query = $this->Crud->get_like(
 					['title'=>trim($_POST['query'])],'offers',$where);
 
-				foreach($query as $value)
-				{
+				foreach($query as $value){
 					array_push($result,$value['title']);
 				}
 				//$this->_result = array_map( function( $a ) { return $a[$arr['column']]; }, $query );
@@ -491,11 +472,9 @@ class Applications extends Shared_Controller
 
 
 		$data['data'] = [];
-		foreach($query as $table_row)
-		{
+		foreach($query as $table_row){
 			$rest = $this->_row($table_row);
-			if($rest)
-			{
+			if($rest){
 				array_push($data['data'],$rest);
 
 			}
@@ -518,18 +497,15 @@ class Applications extends Shared_Controller
 
 
 		///
-		if($this->_function_filter_id )
-		{
+		if($this->_function_filter_id ){
 
-			if( $table_row['unsolicated'] == 1 | $table_row['manualy'] == 1)
-			{
+			if( $table_row['unsolicated'] == 1 | $table_row['manualy'] == 1){
 				return null;
 			}
 
 			$array = explode(',',$table_row['functions_id']);
 
-			if(!in_array($this->_function_filter_id,$array) && $table_row['function_by_admin'] != $this->_function_filter_id   )
-			{
+			if(!in_array($this->_function_filter_id,$array) && $table_row['function_by_admin'] != $this->_function_filter_id   ){
 				return null;
 			}
 		}
@@ -542,14 +518,12 @@ class Applications extends Shared_Controller
 		lang('unsolicited_application_applys') : $table_row['title'];
 
 
-		if($table_row['unsolicated'] == 1)
-		{
+		if($table_row['unsolicated'] == 1){
 
 
 			$print = base_url().'apply/new/unsolicated/printer/'.$table_row['aid'];
 
-			switch($table_row['unsolicated_type'])
-			{
+			switch($table_row['unsolicated_type']){
 				case '2':
 				$print = base_url().'apply/new/uns_pnt/printer/'.$table_row['aid'];
 				break;
@@ -573,8 +547,7 @@ class Applications extends Shared_Controller
 			$email = base_url().Shared_Controller::$map.'/sendemail/unsolicated/'.$table_row['aid'];;
 		}
 		else
-		if($table_row['manualy'] == 1)
-		{
+		if($table_row['manualy'] == 1){
 			$lang_level_row = NULL;
 
 			$title    = anchor($this->_redirect.'?offer='.$title,  $title ,['target'=>'_blank'] );
@@ -600,10 +573,8 @@ class Applications extends Shared_Controller
 
 		$managerial = 'Not exist on '.$table_row['cat'];
 
-		if(isset($table_row['offer_cat']))
-		{
-			switch($table_row['offer_cat'])
-			{
+		if(isset($table_row['offer_cat'])){
+			switch($table_row['offer_cat']){
 				case "1":
 				$managerial = $this->_have($table_row['hr_managerial']);
 				break;
@@ -614,16 +585,14 @@ class Applications extends Shared_Controller
 			}
 		}
 		else
-		if($table_row['unsolicated'] == 1)
-		{
+		if($table_row['unsolicated'] == 1){
 			$managerial = $this->_have($table_row['hr_managerial']);
 		}
 
 
 
 		$funct = $table_row['functions'];
-		if( isset($table_row['function_by_admin']) && $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions))
-		{
+		if( isset($table_row['function_by_admin']) && $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions)){
 			$funct =
 			'<a data-toggle="tooltip" data-placement="left" title="<b>'.
 			lang('initially applied for the position of ').'</b><br>'.
@@ -695,8 +664,8 @@ class Applications extends Shared_Controller
 			$this->load->view("buttons/status",
 				[
 
-					'title'=>$this->_status_title($this->_biger($table_row)), //$table_row['status'],
-			//		'title'=>$table_row['status'], //$table_row['status'],
+					'title'=>$table_row['status'],
+					//		'title'=>$table_row['status'], //$table_row['status'],
 					'statuses'=>$this->_statuses,
 					'application_id'=>$table_row['aid'],
 
@@ -745,28 +714,27 @@ class Applications extends Shared_Controller
 		return max($array);
 	}
 
-	private function _status_title($num)
+	private function _status_by_color($num)
 	{
-		switch($num)
-		{
+		switch($num){
 
 			case 3:
 			//orange then “undecided”
-			return $this->_statuses[5];
+			return 5;
 			break;
 
 			case 2:
 			//it is green then “successful”
-			return $this->_statuses[3];
+			return 3;
 			break;
 
 			case 4:
 			//red then “unsuccessful”
-			return $this->_statuses[4];
+			return 4;
 			break;
 
 			default:
-			return $this->_statuses[2];
+			return 2;
 			break;
 		}
 
@@ -781,21 +749,20 @@ class Applications extends Shared_Controller
 	public function ajaxcolor($column,$applicaiton_id,$value)
 	{
 
-		if($this->get_user_edit())
-		{
-			
-			$row = $this->Crud->get_row(['id'=>$applicaiton_id],'application');
-			
-			
-			
-			$bigger = $this->_biger($row);
-			$this->Crud->update(['id'=>$applicaiton_id],['application_statuts'=>$bigger],'application');
-			
-			
-			
-			if( $this->Crud->update(['id'=>$applicaiton_id],[$column=>$value],$this->_table))
-			{
-				echo json_encode(['done'=>$this->colors->get_color($value)]);
+		if($this->get_user_edit()){
+
+
+           
+
+			if( $this->Crud->update(['id'=>$applicaiton_id],[
+						$column=>$value,
+						'application_statuts'=>$this->_status_by_color($value)
+					],$this->_table)){
+				echo json_encode([
+						'done'=>$this->colors->get_color($value),
+						'value'=>$value
+
+					]);
 				return ;
 			}
 		}
@@ -808,22 +775,23 @@ class Applications extends Shared_Controller
 	{
 
 		$res = "";
-		if(array_key_exists($table_row['english_level'],$this->_lang_level))
-		{
+		if(array_key_exists($table_row['english_level'],$this->_lang_level)){
 			$res = "<b> en </b>  : " .$this->_lang_level[ $table_row['english_level']];
 		}
-		if(array_key_exists($table_row['french_level'],$this->_lang_level))
-		{
+		if(array_key_exists($table_row['french_level'],$this->_lang_level)){
 			$res .= "<b> fr </b>  : " .$this->_lang_level[ $table_row['french_level']];
 		}
 
 		//
 		$langs = explode(";",$table_row['for_langs']);
-		if($langs){
+		if($langs)
+		{
 
-			foreach($langs as $lang){
+			foreach($langs as $lang)
+			{
 				$nameValue = explode("-",$lang);
-				if(count($nameValue) == 2){
+				if(count($nameValue) == 2)
+				{
 					$res .= "<br>".$nameValue[0] . ' : <b>' .  $this->_lang_level[$nameValue[1]].'</b>';
 				}
 
@@ -840,20 +808,16 @@ class Applications extends Shared_Controller
 	}
 	public function ajaxstatus($application_id,$status_id)
 	{
-		if($this->get_user_edit())
-		{
+		if($this->get_user_edit()){
 
 			$array['application_statuts'] = $status_id;
-			if($status_id != '6')
-			{
+			if($status_id != '6'){
 				$array['function_by_admin'] = NULL;
 			}
-			if( $this->Crud->update(['id'=>$application_id],$array,$this->_table))
-			{
+			if( $this->Crud->update(['id'=>$application_id],$array,$this->_table)){
 				// back this shit ?
 				$statuses = [];
-				foreach($this->Crud->get_all('application_status') as $value)
-				{
+				foreach($this->Crud->get_all('application_status') as $value){
 					$statuses[$value['id']] = $value['status'];
 				}
 				echo json_encode(['done'=>$statuses[$status_id]]);
@@ -868,8 +832,7 @@ class Applications extends Shared_Controller
 
 		$have = lang('yes_toogle');
 
-		if(strpos($arg, ','))
-		{
+		if(strpos($arg, ',')){
 			$arr = explode(',',$arg);
 			return max($arr) > 0  ? $have[1] : $have[0];
 		}
@@ -895,31 +858,25 @@ class Applications extends Shared_Controller
 		// any case
 		$allowed['application.deleted'] = 0;
 		$allowed['filled'] = 1;
-		if(isset($_GET))
-		{
+		if(isset($_GET)){
 
 			// new
-			if(isset($_GET['function']))
-			{
+			if(isset($_GET['function'])){
 				$this->_function_filter_id = $_GET['function'];
 			}
 
-			if(isset($_GET['offer']) && !empty($_GET['offer']) && $_GET['offer'] != '0')
-			{
+			if(isset($_GET['offer']) && !empty($_GET['offer']) && $_GET['offer'] != '0'){
 
 				$allowed['offers.title'] = urldecode($_GET['offer']);
 			}
 
-			if(isset($_GET['status']) && $_GET['status'] != 0)
-			{
+			if(isset($_GET['status']) && $_GET['status'] != 0){
 				$allowed['application.application_statuts'] = $_GET['status'];
 			}
 
-			if(isset($_GET['mode']) && $_GET['mode'] != 0 && !$this->get_group_category() )
-			{
+			if(isset($_GET['mode']) && $_GET['mode'] != 0 && !$this->get_group_category() ){
 
-				switch($_GET['mode'])
-				{
+				switch($_GET['mode']){
 					case 7:
 					$allowed['application.manualy'] = 1;
 					break;
@@ -937,11 +894,9 @@ class Applications extends Shared_Controller
 
 			}
 
-			if(is_array($this->get_group_category()))
-			{
+			if(is_array($this->get_group_category())){
 
-				if(isset($_GET['mode']) && $_GET['mode'] != 0)
-				{
+				if(isset($_GET['mode']) && $_GET['mode'] != 0){
 					$prefix = "offers.category = ". $_GET['mode']; ;
 				}
 				else
@@ -949,8 +904,7 @@ class Applications extends Shared_Controller
 					$prefix = "offers.category = 1 or offers.category = 4 ";
 				}
 
-				if(isset($_GET['status']) && $_GET['status'] != 0)
-				{
+				if(isset($_GET['status']) && $_GET['status'] != 0){
 					$status = " application.application_statuts = ".$_GET['status']." and";
 				}
 				else
@@ -959,8 +913,7 @@ class Applications extends Shared_Controller
 				}
 
 
-				if(isset($_GET['offer']) && !empty($_GET['offer']) && $_GET['offer'] != '0')
-				{
+				if(isset($_GET['offer']) && !empty($_GET['offer']) && $_GET['offer'] != '0'){
 
 					$title = "offers.title = '".urldecode($_GET['offer']) ."'  ";
 					$prefix= "";
