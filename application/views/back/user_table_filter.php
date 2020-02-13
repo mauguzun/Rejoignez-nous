@@ -18,13 +18,14 @@
 							foreach($groups as $value) :?>
 
 							<?
-							if($value['id'] <5 | $value['id'] > 7   ):?>
-							<option 
-							
-							<? if (isset($_GET['group']) && $_GET['group'] == $value['id']):?>
+							if($value['id'] < 5 | $value['id'] > 7   ):?>
+							<option
+
+							<?
+ if(isset($_GET['group']) && $_GET['group'] == $value['id']):?>
 							  selected=""
 							<? endif;?>
-							
+
 							value="<?= $value['id']?>">
 								<?= $value['description']?>
 							</option>
@@ -66,15 +67,17 @@
 
 
 
-$('#group').change(()=>{
-	
-	let mode = ($('#group').val())
-	
-	x.ajax.url( "http://localhost/Rejoignez-nous/back/user/ajax?group="+mode ).load();
-})
+	$('#group').change(()=>
+		{
+
+			let mode = ($('#group').val())
+
+			x.ajax.url( "<?= base_url() ?>/back/user/ajax?group="+mode ).load();
+
+		})
 
 
-	
+
 
 	// change url
 
