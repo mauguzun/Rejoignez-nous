@@ -64,7 +64,7 @@
 				{
 					onImageUpload: function(files, editor, welEditable)
 					{
-						
+
 						sendFile(files[0],this);
 					}
 				}
@@ -97,26 +97,39 @@
 
 			function sendFile(file, editor, welEditable)
 			{
-				
+
 				data = new FormData();
 				data.append("file", file);
 				$.ajax(
 					{
 						data: data,
 						type: "POST",
-						url: "<?= base_url()?>/shared/upload/do",
+						xhr: function()
+						{
+							var myXhr = $.ajaxSettings.xhr();
+							if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
+							return myXhr;
+						},
+						url: "<?= base_url()?>/shared/upload/doupload",
 						cache: false,
 						contentType: false,
 						processData: false,
 						success: function(url)
 						{
-							 $(editor).summernote('editor.insertImage', url);
-							
-							
+							$(editor).summernote('editor.insertImage', url);
+
+
 						}
 					});
 			}
-
+			function progressHandlingFunction(e)
+			{
+				if(e.lengthComputable)
+				{
+					console.log({value:e.loaded, max:e.total});
+					
+				}
+			}
 		}
 
 
@@ -188,7 +201,8 @@
 </head>
 
 <body>
-
+<progress>
+</progress>
 <!-- Main navbar -->
 <div class="navbar navbar-inverse">
 

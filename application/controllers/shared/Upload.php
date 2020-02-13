@@ -19,7 +19,7 @@ class Upload extends Shared_Controller{
 	}
 
 
-	public function do()
+	public function doupload()
 	{
 		if($_FILES['file']['name'])
 		{
