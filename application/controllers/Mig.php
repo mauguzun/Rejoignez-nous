@@ -24,7 +24,12 @@ class Mig extends CI_Controller
         }   
 
 	}
-
+	
+	public function show()
+	{
+		echo "<pre>";
+		var_dump($this->db->field_data('hiring_policy'));
+	}
 
 
 }
