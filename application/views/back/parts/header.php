@@ -124,15 +124,21 @@
 			}
 			function progressHandlingFunction(e)
 			{
+				$('#loader').fadeIn();
 				if(e.lengthComputable)
 				{
 					console.log({value:e.loaded, max:e.total});
-					
+					if (e.loaded == e.total)
+					{
+						$('#loader').fadeOut();
+					}
+					$('#loader').text( (100 * e.loaded /  e.total).toFixed(1)+ ' % ');
 				}
+
 			}
 		}
 
-
+ 
 	</script>
 
 	<!-- Global stylesheets -->
@@ -202,7 +208,24 @@
 
 <body>
 
-<!-- Main navbar -->
+<!-- Main navbar -->\
+<div id="loader"  style="position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    background-color: rgba(0,0,0,.8);
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding: 20%;
+    outline: 0;" >
+
+
+</div>
 <div class="navbar navbar-inverse">
 
 
@@ -315,8 +338,7 @@
 					foreach($array as $class=>$link ):?>
 					<li
 						 		 	 <?
-						 		 		if($link == $current)
-{
+						 		 		if($link == $current){
 											echo 'class="active"';
 										}
 						 		 	 ?>
