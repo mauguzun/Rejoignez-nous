@@ -201,8 +201,7 @@
 </head>
 
 <body>
-<progress>
-</progress>
+
 <!-- Main navbar -->
 <div class="navbar navbar-inverse">
 
