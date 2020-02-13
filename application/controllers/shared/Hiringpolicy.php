@@ -62,8 +62,7 @@ class Hiringpolicy extends Shared_Controller
 
 
 
-		foreach($this->data['required'] as $value)
-		{
+		foreach($this->data['required'] as $value){
 			$uploader['upload_id'] = $value;
 			$uploader['upload_url'] = $this->_redirect.'/upload/'.$value;
 			$uploader['delete_url'] = $this->_redirect.'/delete/'.$value;
@@ -97,8 +96,7 @@ class Hiringpolicy extends Shared_Controller
 	{
 
 
-		if($cv == 'picture')
-		{
+		if($cv == 'picture'){
 			$this->_config['max_width'] = 276;
 			$this->_config['max_height'] = 368;
 		}
@@ -109,8 +107,7 @@ class Hiringpolicy extends Shared_Controller
 
 
 		$this->load->library('upload',$this->_config);
-		if( ! $this->upload->do_upload('file'))
-		{
+		if( ! $this->upload->do_upload('file')){
 			$this->session->set_flashdata('message', $this->upload->display_errors());
 			echo json_encode(['error'=>$this->upload->display_errors().lang('allowed_filetype'). '  :  ' .$this->_config['allowed_types']]);
 			return ;
@@ -135,8 +132,7 @@ class Hiringpolicy extends Shared_Controller
 
 		$this->_set_form_validation($this->_redirect.'/insert/');
 
-		if($this->form_validation->run() === TRUE)
-		{
+		if($this->form_validation->run() === TRUE){
 			$this->Crud->update_or_insert($_POST,$this->_table);
 		}
 		redirect($this->_redirect);
@@ -171,8 +167,7 @@ class Hiringpolicy extends Shared_Controller
 
 
 
-		foreach(['diversity','recruiting','integration',] as $column)
-		{
+		foreach(['diversity','recruiting','integration',] as $column){
 
 			$this->data['control']["{$column}_l"] = form_label(lang("$column"));
 
@@ -185,8 +180,7 @@ class Hiringpolicy extends Shared_Controller
 		$this->data['control']['id'] = form_input(
 			$this->inputarray->getArray('id','hidden',1,1));
 
-		foreach(['general_picture','picture','pnt_picture','pnc_picture','mecahic_picture']as $column)
-		{
+		foreach(['general_picture','picture','pnt_picture','pnc_picture','mecahic_picture']as $column){
 			$selected = (isset($user[$column])) ? $user[$column]: NULL;
 			$this->data['control'][$column] = form_input(
 				$this->inputarray->getArray($column,'hidden',null,$selected,null,null));
@@ -194,6 +188,8 @@ class Hiringpolicy extends Shared_Controller
 		}
 
 	}
+
+	
 
 
 }

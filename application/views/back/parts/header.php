@@ -59,8 +59,18 @@
 					['table', ['table']],
 					['insert', ['link', 'picture', 'video']],
 
-				],height: 450
+				],height: 450,
+				callbacks:
+				{
+					onImageUpload: function(files, editor, welEditable)
+					{
+						
+						sendFile(files[0],this);
+					}
+				}
 			};
+
+
 
 			let texts = $('textarea');
 			for(let i = 0 ; texts[i] ;i++)
@@ -85,6 +95,27 @@
 
 			}
 
+			function sendFile(file, editor, welEditable)
+			{
+				
+				data = new FormData();
+				data.append("file", file);
+				$.ajax(
+					{
+						data: data,
+						type: "POST",
+						url: "<?= base_url()?>/shared/upload/do",
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(url)
+						{
+							 $(editor).summernote('editor.insertImage', url);
+							
+							
+						}
+					});
+			}
 
 		}
 
@@ -232,13 +263,7 @@
 		</ul>
 	</div>
 </div>
-<!-- /main navbar -->
-<script>
-	$('#logo').click(()=>
-		{
-			alert(12)
-		})
-</script>
+
 
 <!-- Page container -->
 <div class="page-container">
