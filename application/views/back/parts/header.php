@@ -24,7 +24,7 @@
 		function over(href)
 		{
 
-			$(document).on('click',function(e)
+			$(document).on('dblclick',function(e)
 				{
 
 					if(e.target.id != href)
