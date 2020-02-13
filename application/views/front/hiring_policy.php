@@ -85,7 +85,7 @@
 				<?= ($query['integration']) ?>
 			</div>
 		</li>
-		<li>
+		<!--<li>
 			<input type="checkbox" checked>
 			<i>
 			</i>
@@ -95,7 +95,7 @@
 			<div>
 				<?= ($query['course']) ?>
 			</div>
-		</li>
+		</li>-->
 		<li>
 			<input type="checkbox" checked>
 			<i>

@@ -21,47 +21,74 @@
 		var callFunctions = [];
 		var style = "font-family: 'Verdana';font-size:11px;color:#000;line-height: 1px;";
 
+		function over(href)
+		{
+
+			$(document).on('click',function(e)
+				{
+
+					if(e.target.id != href)
+					{
+						$('#'+ href ).collapse('hide')
+
+					}
+
+				});
+		}
 
 		function setSumer()
 		{
-			let options = {
-							fontSizes: ['8', '9', '10', '11', '12', '14', '18'],
-							toolbar: [
-								// [groupName, [list of button]]
-								['style', ['bold', 'italic', 'underline']],
-								['fontname'],
-								['fontsize', ['fontsize']],
-								['color', ['color']],
+			let options =
+			{
+				fontSizes: ['8', '9', '10', '11', '12', '14', '18'],
+				toolbar: [
+					// [groupName, [list of button]]
+					['style', ['bold', 'italic', 'underline']],
+					['fontname'],
+					['fontsize', ['fontsize']],
+					['color', ['color']],
 
-								['para', ['ul', 'ol', 'paragraph']],
-								['height', ['height']],
+					['para', ['ul', 'ol', 'paragraph']],
+					['height', ['height']],
 
-								['codeview'],
-								['undo'],
-								['redo'],
+					['codeview'],
+					['undo'],
+					['redo'],
 
 
-								['table', ['table']],
-								['insert', ['link', 'picture', 'video']],
+					['table', ['table']],
+					['insert', ['link', 'picture', 'video']],
 
-							],height: 450};
+				],height: 450
+			};
 
 			let texts = $('textarea');
 			for(let i = 0 ; texts[i] ;i++)
 			{
 
 				let emptys  =  texts[i].innerHTML.trim() === '';
-				try{$(texts[i]).summernote('destroy')}
-				catch(e){}
+				try
+				{
+					$(texts[i]).summernote('destroy')
+				}
+				catch(e)
+				{
+				}
 
-				if(emptys){
+				if(emptys)
+				{
 					$(texts[i]).summernote(options).summernote('code','<p style="'+style+'">&nbsp;&nbsp;&nbsp;&nbsp;</p>')
-				}else{
+				}else
+				{
 					$(texts[i]).summernote(options)
 				}
 
 			}
+
+
 		}
+
+
 	</script>
 
 	<!-- Global stylesheets -->
@@ -135,7 +162,7 @@
 <div class="navbar navbar-inverse">
 
 
- 	<div class="navbar-header"    >
+	<div class="navbar-header"    >
 		<a class="navbar-brand" href="<?= base_url() ?>" style="position: absolute;z-index: 999"  >
 			<img src="<?= base_url()?>css/back/assets/images/logo.svg" alt="">
 		</a>
@@ -207,9 +234,10 @@
 </div>
 <!-- /main navbar -->
 <script>
-  $('#logo').click(()=>{
-  	alert(12)
-  })
+	$('#logo').click(()=>
+		{
+			alert(12)
+		})
 </script>
 
 <!-- Page container -->
@@ -249,7 +277,8 @@
 					foreach($array as $class=>$link ):?>
 					<li
 						 		 	 <?
-						 		 		if($link == $current){
+						 		 		if($link == $current)
+{
 											echo 'class="active"';
 										}
 						 		 	 ?>

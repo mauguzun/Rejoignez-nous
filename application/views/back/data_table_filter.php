@@ -134,13 +134,14 @@
 
 
 		window.history.replaceState(null,null,  
-		`?mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
+		`?mode=${mode}&status=${status}&offer=${offer}&function=${func}&asdf`);
 
 		if (typeof x !== 'undefined')
 		x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  + '&function='+func ).load();
 	}
 	$("#offer,#function,.change").change(function()
 		{
+			
 			request();
 		});
 

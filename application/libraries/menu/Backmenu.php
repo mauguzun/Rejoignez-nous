@@ -138,7 +138,7 @@ class Backmenu
 				["Applications created manualy"=>'shared/applications?mode=7'],*/
 			],
 			'offers'=>['far fa-newspaper'=>'shared/offer?p=0&l=50&s=&orderBy=0&orderVal=desc'],
-			"applications"=>['far fa-newspaper'=>'shared/applications?offer=notoffer'],
+			"applications"=>['far fa-newspaper'=>'shared/applications?p=0&l=10&s=&orderBy=0&orderVal=desc&mode=0&status=&offer=&function='],
 			
 			/*
 			'Applications in response'=>[

@@ -361,10 +361,11 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 						changeUrl();
 					})
 
+			
 
 			},
 
-		
+
 
 			'dom': 'Rlfrtip',
 			"columnDefs": [ {"visible": false, "targets": 0}],
@@ -410,11 +411,13 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 		let status = $("#status").val();
 		let offer =     $("#offer").val() ;
 		let func =     $("#function").val() ;
+		let group =     $("#group").val() ?$("#group").val() : 0  ;
 
 
 
 		window.history.replaceState(null,null,
-			`?p=${page}&l=${pageLength}&s=${search}&orderBy=${orderBy}&orderVal=${orderVal}&mode=${mode}&status=${status}&offer=${offer}&function=${func}`);
+			`?p=${page}&l=${pageLength}&s=${search}&orderBy=${orderBy}&orderVal=${orderVal}
+			&mode=${mode}&status=${status}&offer=${offer}&function=${func}&group=${group}`);
 
 		//	if (typeof x !== 'undefined')
 		//x.ajax.url( "<?= $url ?>?mode="+mode +"&offer="+offer+"&status="+status  + '&function='+func ).load();
@@ -463,6 +466,13 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 
 					$('[data-email-block="'+href+'"]').addClass('in');
 					$('[data-email-loader="'+href+'"]').addClass('hidden')
+
+					setTimeout(()=>
+						{
+
+							$('[data-email-block="'+href+'"]').removeClass('in');
+						},3000)
+
 
 
 				})

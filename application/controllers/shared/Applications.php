@@ -89,7 +89,7 @@ class Applications extends Shared_Controller
 					'<i class="far fa-file-archive"></i>',
 					'<i class="fa fa-print"></i>',
 					'<i class="fa fa-envelope"></i>',
-					'<i class="fa fa-edit" ></i>',
+					/*'<i class="fa fa-edit" ></i>',*/
 
 				],
 				'title' =>lang('applications'),
@@ -665,7 +665,6 @@ class Applications extends Shared_Controller
 				[
 
 					'title'=>$table_row['status'],
-					//		'title'=>$table_row['status'], //$table_row['status'],
 					'statuses'=>$this->_statuses,
 					'application_id'=>$table_row['aid'],
 
@@ -694,7 +693,7 @@ class Applications extends Shared_Controller
 
 
 			//anchor($email,' < i class = "fas fa - envelope"></i > ',['class'=>'email']),
-			anchor(base_url().Shared_Controller::$map."/apphistory/".$table_row['aid'],'<i class="fas fa-edit" aria-hidden="true"></i>')
+			//anchor(base_url().Shared_Controller::$map."/apphistory/".$table_row['aid'],'<i class="fas fa-edit" aria-hidden="true"></i>')
 
 
 

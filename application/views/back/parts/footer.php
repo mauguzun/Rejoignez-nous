@@ -19,7 +19,8 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" style="color: #333330" class="close" data-dismiss="modal" aria-label="Close">
-					<i class="fa fa-times" aria-hidden="true"></i>
+					<i class="fa fa-times" aria-hidden="true">
+					</i>
 				</button>
 			</div>
 			<div class="modal-body" id="footerModalText">
@@ -37,25 +38,28 @@
 
 
 if( null ==! $this->session->flashdata('message')) :?>
-<div class="alert 
-<?= null ==! $this->session->flashdata('info')? 'alert-info'  : 'alert-danger'?>" 
+<div class="alert
+<?= null ==! $this->session->flashdata('info')? 'alert-info'  : 'alert-danger'?>"
 
  style="position: fixed;z-index: 10000;width: 100%;top:0;">
 	<a href="#"  class="close" data-dismiss="alert" aria-label="close" title="close">
-		<i class="fa fa-times" aria-hidden="true"></i>
+		<i class="fa fa-times" aria-hidden="true">
+		</i>
 	</a>
 	<div style="text-align: center;">
-		<?php 
+		<?php
 		if(!is_array($this->session->flashdata('message'))){
 			echo $this->session->flashdata('message');
-		}else{
-			$v =  $this->session->flashdata('message');
+		}
+		else
+		{
+			$v = $this->session->flashdata('message');
 			echo array_values($v)[0];
 		}
-		
+
 		?>
 	</div>
-  
+
 </div>
 <? endif ;?>
 
@@ -296,27 +300,28 @@ if( null ==! $this->session->flashdata('message')) :?>
 		z-index: 10;
 		border-top: 1px solid #D7D7D7
 	}
-	
-	label b{
+
+	label b
+	{
 		font-weight: bold !important;
 		color: red !important;;
 		padding-right: 5px !important;;
 	}
-	
-	.tooltip-inner {
+
+	.tooltip-inner
+	{
 		overflow-x: auto;
-		
+
 		/* If max-width does not work, try using width instead */
 		/*width: 350px !important;*/
 		word-break: break-word;
 	}
-	
+
 
 </style>
 <script>
-	
-	$('[data-toggle="tooltip"]').tooltip()
 
+	
 </script>
 </body>
 </html>
