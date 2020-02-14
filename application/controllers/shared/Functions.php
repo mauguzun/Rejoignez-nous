@@ -92,7 +92,7 @@ class Functions extends Shared_Controller{
 			// anyway if isset id we put other shit
 
 
-			if($function_id){
+			/*if($function_id){
 				$bath = [];
 				foreach(explode(",", $_POST['activity_id'][0]) as $activity_id){
 					array_push($bath,['activity_id'=>$activity_id,'function_id'=>$function_id]);
@@ -101,7 +101,7 @@ class Functions extends Shared_Controller{
 				$this->Crud->add_many($bath,'function_activity');
 				// redirect($this->_redirect);
 
-			}
+			}*/
 			echo json_encode(['done'=>true]);
 			return;
 		}
@@ -137,12 +137,12 @@ class Functions extends Shared_Controller{
 				$this->_table);
 
 
-			$bath = [];
+			/*$bath = [];
 			foreach(explode(",", $_POST['activity_id'][0]) as $activity_id){
 				array_push($bath,['activity_id'=>$activity_id,'function_id'=>$_POST['id']]);
 			}
 			$this->Crud->delete(['function_id'=>$_POST['id']],'function_activity');
-			$this->Crud->add_many($bath,'function_activity');
+			$this->Crud->add_many($bath,'function_activity');*/
 			echo json_encode(['done'=>true]);
 			return;
 
@@ -178,7 +178,7 @@ class Functions extends Shared_Controller{
 
 
 		$this->form_validation->set_rules('function', lang('function'), 'trim|required|max_length[200]');
-		$this->form_validation->set_rules('activity_id[]', lang('activity'), 'required');
+		//$this->form_validation->set_rules('activity_id[]', lang('activity'), 'required');
 
 	}
 
@@ -236,14 +236,14 @@ class Functions extends Shared_Controller{
 
 		/*$this->data['control']['activites_types[]'] =
 		form_multiselect('activity_id[]', $options,$selected,['class'=>'form-control']);*/
-	$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('activity'));
+	/*$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('activity'));
 		$this->data['control']['omega'] = $this->load->view('js/fastsearch',[
 				'data'=>json_encode(array_values($data)),
 				'selected'=>$selected,
 				'name'=>'activity_id[]',
 				'value'=>$selected,
 				'url'=>$this->_redirect.'/ajaxdata'
-			],true);
+			],true);*/
 
 		$this->data['control']['z'] = '<div style="margin-bottom:400px"></div>';
 	}
@@ -252,20 +252,24 @@ class Functions extends Shared_Controller{
 		$_GET['q'] = isset($_GET['q']) ? $_GET['q'] : "";
 		header('Content-Type: application/json');
 
-		$result = [];
+		/*$result = [];
 		foreach($this->Crud->get_like(['activity'=>$_GET['q']],'activities') as $value){
 
 			$result[] = ['text'=>$value['activity'],'value'=>$value['id']];
+		}*/
+		
+		$query = $this->Crud->get_joins(
+			'functions',
+			['activities'=>"functions.activity_id=activities.id",],
+			"functions.*,activities.activity as acivity" ,null,"functions.id"
+		);
+		$data = [];
+		foreach( $query as $value ){
+			$data[] = ['text'=> $value['acivity'] .' - ' .$value['function'],'value'=>$value['id']];
 		}
 
-		echo json_encode(array_values($result));
+		echo json_encode(array_values($data));
 
-		/*echo '[
-		{"text": "Afghanistan", "value": "Afghanistan"},
-		{"text": "Albania", "value": "Albania"},
-		{"text": "Algeria", "value": "Algeria"},
-		{"text": "Angola", "value": "Angola"}
-		]';*/
 	}
 
 	public function ajax($id = NULL ){
@@ -276,8 +280,7 @@ class Functions extends Shared_Controller{
 		$query = $this->Crud->get_joins(
 			$this->_table,
 			[
-				"function_activity"=>"function_activity.function_id = $this->_table.id",
-				"activities"=>"function_activity.activity_id= activities.id",
+				"activities"=>"activities.id= $this->_table.activity_id",
 
 			]  , "$this->_table.*,GROUP_CONCAT(DISTINCT activities.activity ) as activities",
 			NULL,"$this->_table.id",$allow);

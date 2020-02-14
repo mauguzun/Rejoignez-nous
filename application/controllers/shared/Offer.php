@@ -142,10 +142,11 @@ class Offer extends Shared_Controller
 					'application_contract'=>"{$this->_table}.type=application_contract.id",
 					'offers_location'=>"{$this->_table}.location=offers_location.id",
 					'offers_category'=>"{$this->_table}.category=offers_category.id",
-					'offers_activities'=>"{$this->_table}.id=offers_activities.offer_id",
-					'activities'=>"offers_activities.activiti_id=activities.id",
+					'functions'=>"functions.id={$this->_table}.function_id",
+					'activities'=>"functions.activity_id=activities.id",
 				],
-				'offers.*,GROUP_CONCAT(DISTINCT activities.activity ) as activities',null,null,["{$this->_table}.id"=>$id]
+				'offers.*,GROUP_CONCAT(DISTINCT activities.activity )
+				as activities',null,null,["{$this->_table}.id"=>$id]
 			);
 
 			if($query && is_array($query))
@@ -180,6 +181,7 @@ class Offer extends Shared_Controller
 					*/					'start_date'=>  $_POST['start_date'],
 					'pub_date'=>date_to_db($_POST['pub_date']),
 					'profile'=>$_POST['profile'],
+					'function_id'=>$_POST['function_id'],
 					'mission'=>$_POST['mission'],
 					'status'=>$status,
 					'location'=>$_POST['location'],
@@ -188,23 +190,6 @@ class Offer extends Shared_Controller
 				] ,$this->_table
 			);
 
-
-			/*	if($_POST['group_id'])
-			$bath = [];
-			foreach($_POST['group_id'] as $type_id)
-			{
-			array_push($bath,['offer_id'=>$_POST['id'],'group_id'=>$type_id]);
-			}
-			$this->Crud->delete(['offer_id'=>$_POST['id']],'offers_groups');
-			$this->Crud->add_many($bath,'offers_groups');*/
-
-			$bath = [];
-			foreach(explode(",", $_POST['offers_activities'][0]) as $activity_id)
-			{
-				array_push($bath,['activiti_id'=>$activity_id,'offer_id'=>$_POST['id']]);
-			}
-			$this->Crud->delete(['offer_id'=>$_POST['id']],'offers_activities');
-			$this->Crud->add_many($bath,'offers_activities');
 
 
 			echo json_encode(['done'=>true]);
@@ -227,11 +212,8 @@ class Offer extends Shared_Controller
 		if($id && $id > 0)
 		{
 			$this->Crud->delete(['id'=>$id],$this->_table);
-			$this->Crud->delete(['offer_id'=>$id],'offers_activities');
-			$this->Crud->delete(['offer_id'=>$id],'application');
 			$this->Crud->delete(['offer_id'=>$id],'application');
 			$this->Crud->delete(['id'=>$this->user_id],'activities');
-			$this->Crud->delete(['activity_id'=>$this->user_id],'function_activity');
 		}
 		redirect($this->_redirect);
 	}
@@ -257,13 +239,12 @@ class Offer extends Shared_Controller
 		$this->form_validation->set_rules('period', lang('create_offer_period'), 'trim|max_length[250]');
 		$this->form_validation->set_rules('start_date', lang('start_date'), 'trim|required|max_length[250]');
 		$this->form_validation->set_rules('pub_date', lang('start_date'), 'trim|required|max_length[11]');
-		/*		$this->form_validation->set_rules('date', lang('date'), 'trim|max_length[11]');
-		*/		$this->form_validation->set_rules('location', lang('location'), 'trim|required|numeric');
+		
+		$this->form_validation->set_rules('location', lang('location'), 'trim|required|numeric');
+		$this->form_validation->set_rules('function_id', lang('function'), 'trim|required|numeric');
 		$this->form_validation->set_rules('mission', lang('mission'), 'trim|required');
 		$this->form_validation->set_rules('profile', lang('profile'), 'trim|required');
-		//  $this->form_validation->set_rules('group_id[]', lang('group_id'), 'trim | required | numeric');
-		$this->form_validation->set_rules('offers_activities[]', lang('offers_activities'), 'trim|required');
-
+		
 
 	}
 
@@ -297,19 +278,19 @@ class Offer extends Shared_Controller
 		////
 
 		$activity = $user && $user['start_date'] ?  $user['start_date'] : 'Immediate';
-		
-		$selected  = $activity == 'Immediate' ? 'Immediate' : '';
+
+		$selected = $activity == 'Immediate' ? 'Immediate' : '';
 		$this->data['control']["1"] = form_label( '<b>*</b>'.lang("create_offer_start_date"));
 		$this->data['control'][''] =
-		form_dropdown('fake_start_date', 
-		['Immediate'=>'Immediate',''=>lang('calendar')],$selected,['class'=>'form-control']);
+		form_dropdown('fake_start_date',
+			['Immediate'=>'Immediate',''=>lang('calendar')],$selected,['class'=>'form-control']);
 
 
-		$style = $selected   !=  'Immediate'  ? 'visibility:visible' : 'visibility:hidden';
-		if ($activity != 'Immediate'){
+		$style = $selected != 'Immediate'  ? 'visibility:visible' : 'visibility:hidden';
+		if($activity != 'Immediate'){
 			$activity = date_to_input($activity);
 		}
- 
+
 		$this->data['control']['start_date'] =
 		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true,'style'=>$style]));
 		////////////////////////////////////////////////////////////
@@ -335,21 +316,7 @@ class Offer extends Shared_Controller
 		}
 
 
-		/* $selected = null;
-		foreach ($this->Crud->get_all('groups',null,'id','asc') as $value) {
-		$options[$value['id']] = $value['description'];
-		}
-
-		if ($user) {
-		$all_selected = $this->Crud->get_all('offers_groups',['offer_id'=>$user['id']]);
-		$selected     = array_map(
-		function($a)
-		{
-		return $a['group_id'];
-		}, $all_selected);
-		}
-		$this->data['control']['group_id[]'] =
-		form_multiselect('group_id[]', $options,$selected,['class'=>'form-control']);*/
+	
 
 
 		$this->data['control']['period_l'] = form_label(lang('period'));
@@ -362,10 +329,7 @@ class Offer extends Shared_Controller
 		// '
 		$is_active = ($user)?$user['status']:0;
 
-		/*  $this->data['control']['status'] =
-		form_dropdown('un', [0=>lang('unpublished'),1=>lang('published')],$is_active,['class'=>'form-control']);
-		*/
-
+	
 		if(!$this->get_group_category())
 		{
 
@@ -392,12 +356,6 @@ class Offer extends Shared_Controller
 
 		foreach(['location'] as $column)
 		{
-			/*$options = [];
-			foreach($this->Crud->get_all("offers_{$column}",null,'id','asc') as $value){
-			$options[$value['id']] = $value[$column];
-			}*/
-
-			//	var_dump($user);
 
 			$data = null ;
 			if($user)
@@ -420,8 +378,7 @@ class Offer extends Shared_Controller
 				],TRUE);
 
 
-			//			$this->data['control'][$column] = form_dropdown($column, $options,$selected,['class'=>'form - control']);*/
-
+			
 		}
 
 		$options = [];
@@ -435,35 +392,39 @@ class Offer extends Shared_Controller
 		$this->data['control']["type"] = form_dropdown("type", $options,$selected,['class'=>'form-control']);
 
 
-		// Activity ///////////////////////////////////
+		
 
 
-		$selected = [];
-		$data     = [];
+
+		$data = [];
 		if($user)
 		{
-			foreach(   $this->Crud->get_all('offers_activities',['offer_id'=>$user['id']],NULL,NULL) as $value )
-			{
-
-				array_push($selected,$value['activiti_id']);
-
-				$activity = $this->Crud->get_row(['id'=>$value['activiti_id']],'activities');
-				$data[] = ['text'=>$activity['activity'],'value'=>$activity['id']];
+			$query = $this->Crud->get_joins(
+				'functions',['activities'=>"functions.activity_id=activities.id",],"functions.*,activities.activity
+				 as acivity" ,null,"functions.id",['functions.id'=>$user['function_id']]);
+			
+			foreach( $query as $value ){
+				$data[] = ['text'=> $value['acivity'] .' - ' .$value['function'],'value'=>$value['id']];
 			}
 
 		}
 
-		$this->data['control']["offers_activities[]_l"] = form_label('<b>*</b>'.lang("offers_activities"));
-		$this->data['control']['offers_activities[]'] = $this->load->view('js/fastsearch',[
+
+
+
+
+
+
+
+		$this->data['control']["offers_activities[]_l"] = form_label('<b>*</b>'.lang("function"));
+		$this->data['control']['function_id'] = $this->load->view('js/ajax_select_url',[
 				'data'=>json_encode(array_values($data)),
-				'selected'=>$selected,
-				'name'=>'offers_activities[]',
+				'selected'=>isset($user) ? [$user['function_id']] : null ,
+				'name'=>'function_id',
+				'multiple'=>false,
 				'url'=>base_url().'shared/functions/ajaxdata'
 			],true);
 
-		///////////////////////////////////
-
-		//text areaas
 
 		foreach(['mission','profile'] as $column)
 		{
@@ -525,12 +486,15 @@ class Offer extends Shared_Controller
 				'application_contract'=>"{$this->_table}.type=application_contract.id",
 				'offers_location'=>"{$this->_table}.location=offers_location.id",
 				'offers_category'=>"{$this->_table}.category=offers_category.id",
-				'offers_activities'=>"{$this->_table}.id=offers_activities.offer_id",
-				'activities'=>"offers_activities.activiti_id=activities.id",
-				'function_activity'=>"activities.id=function_activity.activity_id",
-				'functions'=>"functions.id=function_activity.function_id"
+
+				'functions'=>"functions.id=$this->_table.function_id",
+				'activities'=>"functions.activity_id=activities.id",
+
 			],
-			"offers.*,GROUP_CONCAT(DISTINCT functions.function ) as functions ,GROUP_CONCAT(DISTINCT activities.activity ) as activities  ,application_contract.type as type,$this->_table.id as aid , offers_category.category  as cat",
+			"offers.*,GROUP_CONCAT(DISTINCT functions.function ) as functions ,
+			GROUP_CONCAT(DISTINCT activities.activity ) as activities  ,
+			application_contract.type as type,$this->_table.id as aid ,
+			offers_category.category  as cat",
 			NULL,"{$this->_table}.id",$allowed
 
 
@@ -557,12 +521,15 @@ class Offer extends Shared_Controller
 				'application_contract'=>"{$this->_table}.type=application_contract.id",
 				'offers_location'=>"{$this->_table}.location=offers_location.id",
 				'offers_category'=>"{$this->_table}.category=offers_category.id",
-				'offers_activities'=>"{$this->_table}.id=offers_activities.offer_id",
-				'activities'=>"offers_activities.activiti_id=activities.id",
-				'function_activity'=>"activities.id=function_activity.activity_id",
-				'functions'=>"functions.id=function_activity.function_id"
+				'functions'=>"functions.id={$this->_table}.function_id",
+				'activities'=>"functions.activity_id=activities.id",
+
 			],
-			"offers.*,GROUP_CONCAT(DISTINCT functions.function ) as functions ,GROUP_CONCAT(DISTINCT activities.activity ) as activities  ,application_contract.type as type,$this->_table.id as aid , offers_category.category  as cat",
+			"offers.*,GROUP_CONCAT(DISTINCT functions.function ) as functions ,
+			GROUP_CONCAT(DISTINCT activities.activity ) as activities  ,
+
+			application_contract.type as type,$this->_table.id as aid ,
+			offers_category.category  as cat",
 			NULL,"{$this->_table}.id",["$this->_table.id" => $id ]
 		);
 
@@ -587,7 +554,7 @@ class Offer extends Shared_Controller
 
 			(int)$table_row['id'],
 			$table_row['pub_date'],
-			 substr($table_row['title'],0,50),
+			substr($table_row['title'],0,50),
 			//anchor( base_url().Shared_Controller::$map." / applications?offer = ".$table_row['title'], $table_row['title']),
 			/*	$table_row['functions'],
 
@@ -613,8 +580,8 @@ class Offer extends Shared_Controller
 
 		/*if($_POST['type'] != '2')
 		{
-			$this->form_validation->set_rules('period', lang('create_offer_period'),
-				'trim|required|max_length[255]');
+		$this->form_validation->set_rules('period', lang('create_offer_period'),
+		'trim|required|max_length[255]');
 		}*/
 	}
 }

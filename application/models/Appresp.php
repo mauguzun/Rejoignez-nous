@@ -40,10 +40,10 @@ class Appresp extends CI_Model{
 			FROM
 			`offers`
 			
-			LEFT JOIN `offers_activities` ON `offers`.`id` = `offers_activities`.`offer_id`
-			LEFT JOIN `activities` ON `offers_activities`.`activiti_id` = `activities`.`id`
-			LEFT JOIN `function_activity` ON `function_activity`.activity_id = `activities`.`id`
-			LEFT JOIN `functions` ON `functions`.`id` = `function_activity`.`function_id`
+			
+			
+			LEFT JOIN `functions` ON `functions`.`id` = `offers`.`function_id`
+			LEFT JOIN `activities` ON `functions`.`activity_id` = `activities`.`id`
 						
 			LEFT JOIN `offers_category` ON `offers`.`category` = `offers_category`.`id`
 			LEFT JOIN `application` ON `offers`.`id` = `application`.`offer_id`
@@ -103,10 +103,9 @@ class Appresp extends CI_Model{
 
 			FROM
 			`offers`
-			LEFT JOIN `offers_activities` ON `offers`.`id` = `offers_activities`.`offer_id`
-			LEFT JOIN `activities` ON `offers_activities`.`activiti_id` = `activities`.`id`
-			LEFT JOIN `function_activity` ON `function_activity`.activity_id = `activities`.`id`
-			LEFT JOIN `functions` ON `functions`.`id` = `function_activity`.`function_id`
+	
+			LEFT JOIN `functions` ON `functions`.`id` = `offers`.`function_id`
+			LEFT JOIN `activities` ON `functions`.`activity_id` = `activities`.`id`
 			
 			LEFT JOIN `offers_category` ON `offers`.`category` = `offers_category`.`id`
 			LEFT JOIN `application` ON `offers`.`id` = `application`.`offer_id` and `application`.`manualy` = 1

@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // back / activity
-class Activity extends Shared_Controller{
+class Activity extends Shared_Controller
+{
 	private $data = [];
 	private $_redirect ;
 
@@ -10,17 +11,19 @@ class Activity extends Shared_Controller{
 	private $_allowed = [1,2];
 	private $_ajax;
 
-	public function __construct(){
+	public function __construct()
+	{
 		parent::__construct($this->_allowed);
 		$this->_redirect = base_url().Shared_Controller::$map.'/activity';
 		$this->_ajax = base_url().'access/Hr_Admin';
-       
-		    
+
+
 	}
 
 
-	public function index(){
-    	
+	public function index()
+	{
+
 		// $this->load->view('back / index');
 		$this->show_header();
 
@@ -32,7 +35,7 @@ class Activity extends Shared_Controller{
 					'selector'=>$this->_table,'url'=>$this->_ajax.'/toogle' ],TRUE));
 
 
-		
+
 		$this->load->view('back/parts/datatable',[
 				'headers'=>['id','status','activity','function','activ_btn'],
 				'title' =>lang('activity_manager'),
@@ -46,20 +49,23 @@ class Activity extends Shared_Controller{
 				'table'=>$this->_table,
 				'name'=>'activity'
 			]);
-		
+
 		$this->load->view('back/parts/footer');
 
 
 
 	}
 
-	public function add(){
+	public function add()
+	{
 		// $this->load->view('back / parts / jquery');
 		$this->_set_form_validation($this->_redirect.'/insert');
 		$this->_set_data();
 
-		if(isset($_POST['activity'])){
-			if($this->form_validation->run() === TRUE){
+		if(isset($_POST['activity']))
+		{
+			if($this->form_validation->run() === TRUE)
+			{
 
 				$activity_id = $this->Crud->add([
 						'activity'=>trim($_POST['activity']),
@@ -67,21 +73,23 @@ class Activity extends Shared_Controller{
 					],$this->_table);
 
 				// anyway if isset id we put other shit
-				if($activity_id){
+				if($activity_id)
+				{
 					$bath = [];
-					foreach($_POST['activites_types'] as $type_id){
+					foreach($_POST['activites_types'] as $type_id)
+					{
 						array_push($bath,['activity_id'=>$activity_id,'type_id'=>$type_id]);
 					}
 					$this->Crud->add_many($bath,'activites_types');
-                   
+
 				}
 				$this->session->set_flashdata('message', lang('saved'));
 				$this->session->set_flashdata('info', true);
-		    
+
 
 			}
 
-        
+
 		}
 
 		$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
@@ -89,20 +97,23 @@ class Activity extends Shared_Controller{
 	}
 
 
-	public function insert(){
+	public function insert()
+	{
 
 		$this->_set_form_validation($this->_redirect.'/insert');
 
 
-		if(isset($_POST['activity'])){
-			if($this->form_validation->run() === TRUE){
+		if(isset($_POST['activity']))
+		{
+			if($this->form_validation->run() === TRUE)
+			{
 
 				$activity_id = $this->Crud->add([
 						'activity'=>trim($_POST['activity']),
 						'published'=>$_POST['published']
 					],$this->_table);
 
-              
+
 				echo json_encode(['done'=>true]);
 				return;
 			}
@@ -112,15 +123,39 @@ class Activity extends Shared_Controller{
 	}
 
 
-	public function edit($user_id = NULL){
+	public function edit($user_id = NULL)
+	{
 
 		$this->_set_form_validation($this->_redirect.'/update');
 		$user_id = isset($_POST['id']) ? $_POST['id'] :  $user_id ;
 
-		if($user_id && $user_id > 0){
-			$user = $this->Crud->get_row(['id'=>$user_id], 'activities');
-			if($user){
-				$this->_set_data($user);
+
+
+
+
+
+
+		if($user_id && $user_id > 0)
+		{
+
+			$query = $this->Crud->get_joins(
+				$this->_table,
+				[
+					"functions"=>"$this->_table.id= functions.activity_id",
+
+				],
+				"$this->_table.*,$this->_table.id as aid ,
+				GROUP_CONCAT(DISTINCT functions.id ) as fuid  ",null,
+				"activities.id",['activities.id'=>$user_id]);
+
+			if($query[0])
+			{
+				$query = $query[0];
+				$query['fuid'] = explode(',',$query['fuid']);
+			}
+			if($query)
+			{
+				$this->_set_data($query);
 				$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
 
 			}
@@ -128,9 +163,15 @@ class Activity extends Shared_Controller{
 
 	}
 
-	public function update(){
+	public function update()
+	{
+
+
+
+
 		$this->_set_form_validation($this->_redirect.'/update');
-		if($this->form_validation->run() === TRUE){
+		if($this->form_validation->run() === TRUE)
+		{
 
 			$this->Crud->update(
 				['id'=>$_POST['id']],
@@ -138,7 +179,14 @@ class Activity extends Shared_Controller{
 				$this->_table
 			);
 
-            
+			$this->Crud->update(['activity_id'=>$_POST['id']],['activity_id'=>null],'functions');
+			foreach($_POST['activity_id'] as $id)
+			{
+
+				$this->Crud->update(['id'=>$id],['activity_id'=>$_POST['id']],'functions');
+			}
+
+
 			echo json_encode(['done'=>true]);
 			return;
 
@@ -148,8 +196,10 @@ class Activity extends Shared_Controller{
 	}
 
 
-	public function trash($user_id = NULL){
-		if($user_id && $user_id > 0){
+	public function trash($user_id = NULL)
+	{
+		if($user_id && $user_id > 0)
+		{
 			/*
 			$functions = $this->Crud->get_all('function_activity',['activity_id'=>$user_id]);
 			if($functions)
@@ -166,17 +216,18 @@ class Activity extends Shared_Controller{
 			$this->Crud->delete(['activity_id'=>$user_id],'function_activity');
 			/*}*/
 			//todo if user super Admin
-          
+
 			$this->session->set_flashdata('message', lang('deleted'));
 			$this->session->set_flashdata('info', true);
-           
+
 		}
-     
+
 		redirect($this->_redirect);
 	}
 
 
-	private function _set_form_validation($url){
+	private function _set_form_validation($url)
+	{
 		$this->data['title'] = lang('create_activity_url');
 
 		$this->data['url'] = $url;
@@ -194,13 +245,15 @@ class Activity extends Shared_Controller{
 
 
 
-	private function _set_data($user = NULL){
+	private function _set_data($user = NULL)
+	{
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
 
 		$this->load->library("html/InputArray");
 
-		if($user){
+		if($user)
+		{
 			$this->data['control']['id'] = form_input( $this->inputarray->getArray('id','hidden',null,$user['id'],TRUE));
 		}
 
@@ -222,25 +275,48 @@ class Activity extends Shared_Controller{
 		$this->data['control']['active'] =
 		form_dropdown('published', [0=>'unpublished',1=>'published'],$is_active,['class'=>'form-control']);
 
-		
+
+		// pick only functtion withiut activites
+
+		$options = [];
+		foreach(  $this->Crud->get_all('functions',[ 'activity_id'=>NULL  ]) as $row){
+			$options[$row['id']] = $row['function'];
+		}
+		if($user){
+			foreach(  $this->Crud->get_all('functions',[ 'activity_id'=>$user['id']  ]) as $row){
+				$options[$row['id']] = $row['function'];
+			}
+
+		}
+
+		$this->data['control']['function_id[]'] =
+		form_multiselect('activity_id[]', $options,$user['fuid'],['class'=>'form-control']);
+
+		/*$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('function'));
+		$this->data['control']['omega'] = $this->load->view('js/fastsearch',[
+		'data'=>json_encode(array_values($data)),
+		'selected'=>$user['fuid'],
+		'name'=>'function_id[]',
+		'value'=>$user['fuid'],
+		'url'=>$this->_redirect.'/ajaxdata'
+		],true);*/
 
 
 
 
-       
 
 	}
 
-	public function ajax(){
+	public function ajax()
+	{
 
 		$query = $this->Crud->get_joins(
 			$this->_table,
 			[
-				"function_activity"=>"function_activity.activity_id = $this->_table.id",
-				"functions"=>"function_activity.function_id= functions.id",
-        
+				"functions"=>"$this->_table.id= functions.activity_id",
+
 			],
-			"$this->_table.*,$this->_table.id as aid ,GROUP_CONCAT(DISTINCT functions.function ) as functions ",null,
+			"$this->_table.*,$this->_table.id as aid ,GROUP_CONCAT(DISTINCT functions.function SEPARATOR '<br>'  ) as functions ",null,
 			"$this->_table.id");
 
 		$data['data'] = [];
@@ -249,7 +325,8 @@ class Activity extends Shared_Controller{
 
 		$toog = $this->toogle->init(0,'published','activities',$this->_table)->set_text(lang('pub_toogle'));
 
-		foreach($query as $table_row){
+		foreach($query as $table_row)
+		{
 			$row = [];
 
 			array_push(

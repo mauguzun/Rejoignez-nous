@@ -99,11 +99,7 @@ class Ajax_Controller extends CI_Controller
 		$new_id = $this->Crud->add($offers,'offers');
 		// lets tec :)
 
-		foreach($this->Crud->get_all('offers_activities',['offer_id'=>$id]) as $value){
-			$row = $value;
-			$row['offer_id'] = $new_id;
-			$this->Crud->add($row,'offers_activities');
-		}
+		
 		if($new_id)
 		{
 			echo json_encode(['done'=>$new_id]);
