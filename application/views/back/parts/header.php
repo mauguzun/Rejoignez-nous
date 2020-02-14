@@ -208,7 +208,7 @@
 
 <body>
 
-<!-- Main navbar -->\
+<!-- Main navbar -->
 <div id="loader"  style="position: fixed;
     top: 0;
     left: 0;
