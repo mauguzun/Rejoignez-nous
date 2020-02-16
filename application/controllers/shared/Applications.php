@@ -446,18 +446,20 @@ class Applications extends Shared_Controller
 				'application_status'=>"$this->_table.application_statuts = application_status.id",
 				'application_english_frechn_level'=>"$this->_table.id = application_english_frechn_level.application_id",
 				'application_languages_level'=>"$this->_table.id = application_languages_level.application_id",
-				'offers_activities'=>"offers.id = offers_activities.offer_id",
+
 				'offers_category'=>"offers.category=offers_category.id",
-				'activities'=>"offers_activities.activiti_id = activities.id",
+
 				'last_level_education'=>"$this->_table.id = last_level_education.application_id",
 				"application_un_activity"=> "$this->_table.id =  application_un_activity.application_id",
 				'application_hr_expirience'=>"last_level_education.education_level_id = application_hr_expirience.id",
 				'application_hr_expirience'=>"$this->_table.id = application_hr_expirience.application_id",
 				'mechanic_offer_aeronautical_experience'=>"$this->_table.id = mechanic_offer_aeronautical_experience.application_id",
-				'offers_activities'=>"offers.id=offers_activities.offer_id",
-				'activities'=>"offers_activities.activiti_id=activities.id",
-				'function_activity'=>"activities.id=function_activity.activity_id",
-				'functions'=>"functions.id=function_activity.function_id",
+
+			
+				'functions'=>"functions.id=offers.function_id",
+				'activities'=>"functions.activity_id=activities.id",
+				
+				
 				'application_files'=>"$this->_table.id  =  application_files.application_id
 				and application_files.deleted  = 0
 				"
@@ -472,7 +474,6 @@ class Applications extends Shared_Controller
 			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
 			GROUP_CONCAT(DISTINCT functions.function  SEPARATOR '<br>' ) as functions,
-			GROUP_CONCAT(DISTINCT functions.id  ) as functions_id,
 			GROUP_CONCAT(DISTINCT CONCAT(application_files.type,'/',application_files.file)   ) as files,
 
 			last_level_education.university as university,
@@ -526,9 +527,10 @@ class Applications extends Shared_Controller
 				return null;
 			}
 
-			$array = explode(',',$table_row['functions_id']);
+			
 
-			if(!in_array($this->_function_filter_id,$array) && $table_row['function_by_admin'] != $this->_function_filter_id   )
+			if($table_row['function_id'] !=  $this->_function_filter_id  
+			&& $table_row['function_by_admin'] != $this->_function_filter_id   )
 			{
 				return null;
 			}
@@ -569,7 +571,8 @@ class Applications extends Shared_Controller
 			$funciton          = $un['function'];	*/
 
 			$title          = $un['function'];
-			$table_row['functions'] = $un['function'];
+//			$table_row['functions'] = $un['function'];
+			$table_row['functions'] = '';
 			$email = base_url().Shared_Controller::$map.'/sendemail/unsolicated/'.$table_row['aid'];;
 		}
 		else

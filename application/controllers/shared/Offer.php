@@ -142,8 +142,8 @@ class Offer extends Shared_Controller
 					'application_contract'=>"{$this->_table}.type=application_contract.id",
 					'offers_location'=>"{$this->_table}.location=offers_location.id",
 					'offers_category'=>"{$this->_table}.category=offers_category.id",
-					'functions'=>"functions.id={$this->_table}.function_id",
-					'activities'=>"functions.activity_id=activities.id",
+					'functions'=>"functions.id=$this->_table.function_id",
+				'activities'=>"functions.activity_id=activities.id",
 				],
 				'offers.*,GROUP_CONCAT(DISTINCT activities.activity )
 				as activities',null,null,["{$this->_table}.id"=>$id]
@@ -287,9 +287,9 @@ class Offer extends Shared_Controller
 
 
 		$style = $selected != 'Immediate'  ? 'visibility:visible' : 'visibility:hidden';
-		if($activity != 'Immediate'){
-			$activity = date_to_input($activity);
-		}
+		/*if($activity != 'Immediate'){
+			$activity = $activity;
+		}*/
 
 		$this->data['control']['start_date'] =
 		form_input( $this->inputarray->getArray('start_date','text',lang('calendar'),$activity,TRUE,['data-calendar'=>true,'style'=>$style]));

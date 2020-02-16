@@ -25,14 +25,12 @@ class Offer extends CI_Controller
 			$this->_table,
 			[
 				"offers_location"=>"{$this->_table}.location=offers_location.id",
-				'offers_activities'=>"{$this->_table}.id=offers_activities.offer_id",
+					'functions'=>"functions.id=$this->_table.function_id",
+				'activities'=>"functions.activity_id=activities.id",
 				'application_contract'=>"{$this->_table}.type=application_contract.id",
 
-				'activities'=>"offers_activities.activiti_id=activities.id",
-				'function_activity'=>"activities.id=function_activity.activity_id",
-				'functions'=>"functions.id=function_activity.function_id",
 			],
-			"offers.*, application_contract.type as contract ,offers_location.location as location ,GROUP_CONCAT(DISTINCT functions.function ) as functions ",
+			"offers.*, application_contract.type as contract ,offers_location.location  ",
 			["{$this->_table}.pub_date"=>'desc'],NULL,["{$this->_table}.id" => $id ]
 		);
   		

@@ -42,7 +42,7 @@
 		</div>
 	</div>
 </div>
-
+</div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 	let page =  new Vue({

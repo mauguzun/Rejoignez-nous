@@ -494,26 +494,26 @@
 <treenode node="start;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\phenx\php-svg-lib\src\Svg\Tag\AbstractTag.php;f14;78;5;80;;;;vpos;;v;;a;;r;;d4,79;;b2,0;;m0;;eattributes;;p">
 </treenode>
 </treenode>
-<treenode node="Activity;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f0;4;1;272;;;;vpos;;v;;aShared_Controller;;c;;r;;d40,4;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;12;2;18;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;12;2;18;;;;vpos;;v;;a;;r;;d30,12;;b1,0;;m0;;e">
+<treenode node="Activity;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f0;4;1;349;;;;vpos;;v;;aShared_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;12;2;18;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;13;2;20;;;;vpos;;v;;a;;r;;d1,14;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f9;196;2;231;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f9;196;2;231;;;;vpos;;v;;a;;r;;d41,196;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f9;196;2;231;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f9;247;2;307;;;;vpos;;v;;a;;r;;d1,248;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f9;178;2;192;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f9;178;2;192;;;;vpos;;v;;a;;r;;d44,178;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f9;178;2;192;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f9;228;2;243;;;;vpos;;v;;a;;r;;d1,229;;b3,0;;m0;;eurl;;p">
 </treenode>
-<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;55;2;88;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;55;2;88;;;;vpos;;v;;a;;r;;d22,55;;b1,0;;m0;;e">
+<treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;55;2;88;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;58;2;96;;;;vpos;;v;;a;;r;;d1,59;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;233;2;271;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;233;2;271;;;;vpos;;v;;a;;r;;d23,233;;b1,0;;m0;;e">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;233;2;271;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;309;2;348;;;;vpos;;v;;a;;r;;d1,310;;b1,0;;m0;;e">
 </treenode>
-<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;114;2;128;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;114;2;128;;;;vpos;;v;;a;;r;;d38,114;;b1,0;;m0;;euser_id;;p">
+<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;114;2;128;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;125;2;163;;;;vpos;;v;;a;;r;;d1,126;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;21;2;53;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;21;2;53;;;;vpos;;v;;a;;r;;d24,21;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;21;2;53;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;23;2;56;;;;vpos;;v;;a;;r;;d1,24;;b1,0;;m0;;e">
 </treenode>
-<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;91;2;111;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;91;2;111;;;;vpos;;v;;a;;r;;d25,91;;b1,0;;m0;;e">
+<treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;91;2;111;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;99;2;122;;;;vpos;;v;;a;;r;;d1,100;;b1,0;;m0;;e">
 </treenode>
-<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;150;2;175;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;150;2;175;;;;vpos;;v;;a;;r;;d39,150;;b1,0;;m0;;euser_id;;p">
+<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;150;2;175;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;198;2;225;;;;vpos;;v;;a;;r;;d1,199;;b1,0;;m0;;euser_id;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;130;2;147;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;130;2;147;;;;vpos;;v;;a;;r;;d25,130;;b1,0;;m0;;e">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Upload.php;f8;130;2;147;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Activity.php;f8;165;2;195;;;;vpos;;v;;a;;r;;d1,166;;b1,0;;m0;;e">
 </treenode>
 </treenode>
 <treenode node="Address;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Address.php;f0;3;1;170;;;;vpos;;v;;aUsermeta_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
@@ -578,14 +578,14 @@
 <treenode node="user_modal;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\back\Ajax.php;f8;63;2;66;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Ajax.php;f8;85;2;88;;;;vpos;;v;;a;;r;;d62,85;;b1,0;;m0;;etable;;pcolumn;;pid;;pselector;;p">
 </treenode>
 </treenode>
-<treenode node="Ajax_Controller;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f0;2;1;130;;;;vpos;;v;;aCI_Controller;;c;;r;;d0,3;;b0,0;;m0;;e">
+<treenode node="Ajax_Controller;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f0;2;1;126;;;;vpos;;v;;aCI_Controller;;c;;r;;d0,3;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f8;8;2;19;;;;vpos;;v;;a;;r;;d1,9;;b1,0;;m0;;egroup;;p">
 </treenode>
-<treenode node="copy;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f8;90;2;114;;;;vpos;;v;;a;;r;;d1,91;;b1,0;;m0;;eid;;p">
+<treenode node="copy;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f8;90;2;110;;;;vpos;;v;;a;;r;;d1,91;;b1,0;;m0;;eid;;p">
 </treenode>
 <treenode node="modal;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f8;83;2;88;;;;vpos;;v;;a;;r;;d1,84;;b1,0;;m0;;etable;;pcolumn;;pid;;pselector;;p">
 </treenode>
-<treenode node="show_modal;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f11;116;2;127;;;;vpos;;v;;a;;r;;d1,117;;b2,0;;m0;;ewhere;;ptable;;pcolumn;;p">
+<treenode node="show_modal;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f11;112;2;123;;;;vpos;;v;;a;;r;;d1,113;;b2,0;;m0;;ewhere;;ptable;;pcolumn;;p">
 </treenode>
 <treenode node="toogle;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\system\core\controllers\Ajax_Controller.php;f8;21;2;45;;;;vpos;;v;;a;;r;;d1,22;;b1,0;;m0;;e">
 </treenode>
@@ -772,14 +772,14 @@
 <treenode node="set;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Apply_un.php;f8;111;2;119;;;;vpos;;v;;a;;r;;d1,112;;b1,0;;m0;;emode;;p">
 </treenode>
 </treenode>
-<treenode node="Appresp;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f0;6;1;247;;;;vpos;;v;;aCI_Model;;c;;r&#10;Definition&#10;    class Appresp extends CI_Model&#10;&#10;Description&#10;     only used /shared/Applicationsinresponse;;d30,6;;b0,0;;m0;;e">
+<treenode node="Appresp;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f0;6;1;246;;;;vpos;;v;;aCI_Model;;c;;r&#10;Definition&#10;    class Appresp extends CI_Model&#10;&#10;Description&#10;     only used /shared/Applicationsinresponse;;d30,6;;b0,0;;m0;;e">
 <treenode node="get_applications;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f1;8;2;73;;;;vpos;;v;;a;;r;;d45,8;;b0,0;;m0;;ecategory;;p">
 </treenode>
-<treenode node="get_manualy;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f8;77;2;135;;;;vpos;;v;;a;;r;;d46,77;;b1,0;;m0;;ecategory;;p">
+<treenode node="get_manualy;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f8;77;2;134;;;;vpos;;v;;a;;r;;d46,77;;b1,0;;m0;;ecategory;;p">
 </treenode>
-<treenode node="get_unsolicited;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f8;139;2;195;;;;vpos;;v;;a;;r;;d50,139;;b1,0;;m0;;ecategory;;p">
+<treenode node="get_unsolicited;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f8;138;2;194;;;;vpos;;v;;a;;r;;d50,138;;b1,0;;m0;;ecategory;;p">
 </treenode>
-<treenode node="get_unsolicited_new;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f8;198;2;246;;;;vpos;;v;;a;;r;;d54,198;;b1,0;;m0;;ecategory;;p">
+<treenode node="get_unsolicited_new;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php;f8;197;2;245;;;;vpos;;v;;a;;r;;d54,197;;b1,0;;m0;;ecategory;;p">
 </treenode>
 </treenode>
 <treenode node="AtRuleBlockList;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\CSSList\AtRuleBlockList.php;f0;9;1;47;;;;vpos;;v;;aCSSBlockList;;cAtRule;;c;;r&#10;Definition&#10;    class AtRuleBlockList extends CSSBlockList implements AtRule&#10;&#10;Description&#10;     A BlockList constructed by an unknown @-rule. media rules are rendered into AtRuleBlockList objects.;;d61,9;;b0,0;;m0;;e">
@@ -5854,7 +5854,7 @@
 <treenode node="getIterator;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\dompdf\dompdf\src\Frame\FrameTreeList.php;f11;30;5;33;;;;vpos;;v;;aFrameTreeIterator;;r&#10;Definition&#10;    getIterator()&#10;&#10;Description&#10;     ;;d4,31;;b1,0;;m0;;e">
 </treenode>
 </treenode>
-<treenode node="Functions;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f0;4;1;309;;;;vpos;;v;;aShared_Controller;;c;;r;;d41,4;;b0,0;;m0;;e">
+<treenode node="Functions;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f0;4;1;312;;;;vpos;;v;;aShared_Controller;;c;;r;;d41,4;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;12;2;16;;;;vpos;;v;;a;;r;;d30,12;;b1,0;;m0;;e">
 </treenode>
 <treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f9;186;2;248;;;;vpos;;v;;a;;r;;d41,186;;b3,0;;m0;;euser;;p">
@@ -5863,9 +5863,9 @@
 </treenode>
 <treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;49;2;80;;;;vpos;;v;;a;;r;;d22,49;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;270;2;308;;;;vpos;;v;;a;;r;;d34,270;;b1,0;;m0;;eid;;p">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;274;2;311;;;;vpos;;v;;a;;r;;d34,274;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="ajaxdata;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;250;2;268;;;;vpos;;v;;a;;r;;d27,250;;b1,0;;m0;;e">
+<treenode node="ajaxdata;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;250;2;272;;;;vpos;;v;;a;;r;;d27,250;;b1,0;;m0;;e">
 </treenode>
 <treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Functions.php;f8;113;2;127;;;;vpos;;v;;a;;r;;d38,113;;b1,0;;m0;;euser_id;;p">
 </treenode>
@@ -6798,12 +6798,12 @@
 <treenode node="show;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Mig.php;f8;27;2;31;;;;vpos;;v;;a;;r;;d1,28;;b1,0;;m0;;e">
 </treenode>
 </treenode>
-<treenode node="Migration_Install_title;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f0;4;1;66;;;;vpos;;v;;aCI_Migration;;c;;r;;d0,5;;b0,0;;m0;;e">
+<treenode node="Migration_Install_title;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f0;4;1;71;;;;vpos;;v;;aCI_Migration;;c;;r;;d0,5;;b0,0;;m0;;e">
 <treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f8;7;2;13;;;;vpos;;v;;a;;r;;d1,8;;b1,0;;m0;;e">
 </treenode>
-<treenode node="down;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f8;61;2;65;;;;vpos;;v;;a;;r;;d1,62;;b1,0;;m0;;e">
+<treenode node="down;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f8;66;2;70;;;;vpos;;v;;a;;r;;d1,67;;b1,0;;m0;;e">
 </treenode>
-<treenode node="up;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f8;15;2;59;;;;vpos;;v;;a;;r;;d1,16;;b1,0;;m0;;e">
+<treenode node="up;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php;f8;15;2;64;;;;vpos;;v;;a;;r;;d1,16;;b1,0;;m0;;e">
 </treenode>
 </treenode>
 <treenode node="name;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\phenx\php-font-lib\src\FontLib\Table\Type\name.php;f0;18;1;192;;;;vpos;;v;;aTable;;c;;r&#10;Definition&#10;    class name extends Table&#10;&#10;Description&#10;     `name` font table.;;d25,18;;b0,0;;m0;;e">
@@ -6896,38 +6896,38 @@
 <treenode node="position;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\dompdf\dompdf\src\Positioner\NullPositioner.php;f4;23;5;26;;;;vpos;;v;;a;;r&#10;Definition&#10;    position(AbstractFrameDecorator $frame)&#10;&#10;Description&#10;     &#10;&#10;Parameters:&#10;    AbstractFrameDecorator $frame;;d4,24;;b0,0;;m0;;eAbstractFrameDecorator $frame;;p">
 </treenode>
 </treenode>
-<treenode node="Offer;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offer.php;f0;3;1;56;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f0;4;1;619;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offer.php;f0;3;1;71;;;;vpos;;v;;aUsermeta_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offer.php;f11;10;5;16;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;14;2;23;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offer.php;f8;10;2;16;;;;vpos;;v;;a;;r;;d4,11;;b1,0;;m0;;e">
+<treenode node="Offer;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offer.php;f0;3;1;56;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offer.php;f0;3;1;71;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f0;4;1;586;;;;vpos;;v;;aShared_Controller;;c;;r;;d0,5;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offer.php;f11;10;5;16;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offer.php;f8;10;2;16;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;14;2;23;;;;vpos;;v;;a;;r;;d1,15;;b1,0;;m0;;e">
 </treenode>
-<treenode node="_extraCheck;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;609;2;618;;;;vpos;;v;;a;;r;;d1,610;;b3,0;;m0;;e">
+<treenode node="_extraCheck;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;576;2;585;;;;vpos;;v;;a;;r;;d1,577;;b3,0;;m0;;e">
 </treenode>
-<treenode node="_row;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;579;2;607;;;;vpos;;v;;a;;r;;d1,580;;b3,0;;m0;;etable_row;;p">
+<treenode node="_row;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;546;2;574;;;;vpos;;v;;a;;r;;d1,547;;b3,0;;m0;;etable_row;;p">
 </treenode>
-<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;271;2;478;;;;vpos;;v;;a;;r;;d1,272;;b3,0;;m0;;euser;;p">
+<treenode node="_set_data;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;252;2;439;;;;vpos;;v;;a;;r;;d1,253;;b3,0;;m0;;euser;;p">
 </treenode>
-<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;239;2;267;;;;vpos;;v;;a;;r;;d1,240;;b3,0;;m0;;eurl;;p">
+<treenode node="_set_form_validation;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f9;221;2;248;;;;vpos;;v;;a;;r;;d1,222;;b3,0;;m0;;eurl;;p">
 </treenode>
 <treenode node="add;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;59;2;69;;;;vpos;;v;;a;;r;;d1,60;;b1,0;;m0;;estatus;;p">
 </treenode>
-<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;497;2;549;;;;vpos;;v;;a;;r;;d1,498;;b1,0;;m0;;e">
+<treenode node="ajax;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;458;2;513;;;;vpos;;v;;a;;r;;d1,459;;b1,0;;m0;;e">
 </treenode>
-<treenode node="ajax_location;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;480;2;495;;;;vpos;;v;;a;;r;;d1,481;;b1,0;;m0;;e">
+<treenode node="ajax_location;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;441;2;456;;;;vpos;;v;;a;;r;;d1,442;;b1,0;;m0;;e">
 </treenode>
-<treenode node="copy_row;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;551;2;577;;;;vpos;;v;;a;;r;;d1,552;;b1,0;;m0;;eid;;p">
+<treenode node="copy_row;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;515;2;544;;;;vpos;;v;;a;;r;;d1,516;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;120;2;160;;;;vpos;;v;;a;;r;;d1,121;;b1,0;;m0;;eid;;p">
+<treenode node="edit;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;120;2;161;;;;vpos;;v;;a;;r;;d1,121;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offer.php;f11;18;5;52;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;26;2;57;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offer.php;f8;18;2;67;;;;vpos;;v;;a;;r;;d4,19;;b1,0;;m0;;eid;;p">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offer.php;f11;18;5;52;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offer.php;f8;18;2;67;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;26;2;57;;;;vpos;;v;;a;;r;;d1,27;;b1,0;;m0;;e">
 </treenode>
 <treenode node="insert;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;70;2;118;;;;vpos;;v;;a;;r;;d1,71;;b1,0;;m0;;estatus;;p">
 </treenode>
-<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;217;2;236;;;;vpos;;v;;a;;r;;d1,218;;b1,0;;m0;;eid;;p">
+<treenode node="trash;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;202;2;218;;;;vpos;;v;;a;;r;;d1,203;;b1,0;;m0;;eid;;p">
 </treenode>
-<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;162;2;215;;;;vpos;;v;;a;;r;;d1,163;;b1,0;;m0;;estatus;;p">
+<treenode node="update;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\shared\Offer.php;f8;163;2;200;;;;vpos;;v;;a;;r;;d1,164;;b1,0;;m0;;estatus;;p">
 </treenode>
 </treenode>
-<treenode node="Offers;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offers.php;f0;3;1;36;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f0;3;1;192;;;;vpos;;v;;aUser_Controller;;c;;r;;d0,4;;b0,0;;m0;;e">
-<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offers.php;f8;10;2;15;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;11;2;15;;;;vpos;;v;;a;;r;;d1,11;;b1,0;;m0;;e">
+<treenode node="Offers;PHP:Class Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offers.php;f0;3;1;36;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f0;3;1;192;;;;vpos;;v;;aCI_Controller;;c;;r;;d34,3;;b0,0;;m0;;e">
+<treenode node="__construct;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offers.php;f8;10;2;15;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;11;2;15;;;;vpos;;v;;a;;r;;d30,11;;b1,0;;m0;;e">
 </treenode>
 <treenode node="activity;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;55;2;57;;;;vpos;;v;;a;;r;;d27,55;;b1,0;;m0;;e">
 </treenode>
@@ -6937,7 +6937,7 @@
 </treenode>
 <treenode node="category;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;52;2;54;;;;vpos;;v;;a;;r;;d27,52;;b1,0;;m0;;e">
 </treenode>
-<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offers.php;f8;17;2;32;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;17;2;43;;;;vpos;;v;;a;;r;;d1,18;;b1,0;;m0;;e">
+<treenode node="index;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Offers.php;f8;17;2;32;;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;17;2;43;;;;vpos;;v;;a;;r;;d24,17;;b1,0;;m0;;e">
 </treenode>
 <treenode node="location;PHP:Function Name;C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\Offers.php;f8;49;2;51;;;;vpos;;v;;a;;r;;d27,49;;b1,0;;m0;;e">
 </treenode>

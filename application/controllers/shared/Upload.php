@@ -31,7 +31,7 @@ class Upload extends Shared_Controller{
 				$destination = 'img/' . $filename; //change this directory
 				$location    = $_FILES["file"]["tmp_name"];
 				move_uploaded_file($location, $destination);
-				echo base_url().'img/' . $filename;//change this URL
+				echo 'img/' . $filename;//change this URL
 			}
 			else
 			{

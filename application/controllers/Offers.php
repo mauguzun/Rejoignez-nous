@@ -139,7 +139,7 @@ class Offers extends CI_Controller{
 					}
 					else
 					if($key == 'activity'){
-						$where['offers_activities.activiti_id'] = $value;
+					$where['activities.id'] = $value;
 					}else{
 						$where['offers.'.$key] = $value;
 					}
@@ -156,10 +156,12 @@ class Offers extends CI_Controller{
 			$this->_table,
 			[
 				"offers_location"=>"{$this->_table}.location=offers_location.id",
-				"offers_activities"=>"{$this->_table}.id=offers_activities.offer_id"
+					'functions'=>"functions.id=$this->_table.function_id",
+				'activities'=>"functions.activity_id=activities.id",
+				//"offers_activities"=>"{$this->_table}.id=offers_activities.offer_id"
 			],
 			"{$this->_table}.*,offers_location.location as location,
-			GROUP_CONCAT( offers_activities.activiti_id  )  as aid",
+			GROUP_CONCAT( activities.id  )  as aid",
 			["{$this->_table}.pub_date"=>'desc'],"offers.id",$where,$this->limit,$start
 		);
 
