@@ -33,23 +33,14 @@ class Hiringpolicy extends Shared_Controller
 	{
 
 		$this->show_header();
+	
 		$this->_set_form_validation($this->_redirect.'/insert/');
 
 
 		$row = $this->Crud->get_row(['id'=>1],$this->_table);
 
 		$this->load->view('js/ajaxupload');
-		/* foreach (['picture'] as $value) {
-		$uploader['upload_id'] = $value;
-		$uploader['upload_url'] = $this->_redirect.'/upload/'.$value;
-		$uploader['delete_url'] = $this->_redirect.'/delete/'.$value;
-		$uploader['input_selector'] = "#$value";
-		$uploader['default_file'] = (isset($row[$value]))?
-		base_url().$this->uploadlist->site_img().'/'.$row[$value]:NULL;
-
-		$this->data['control']["X.$value"] = form_label(lang($value));
-		$this->data['control']["X".$value] = $this->load->view('back/parts/uploader',$uploader,TRUE);
-		}*/
+		
 
 		$this->_set_data($row);
 

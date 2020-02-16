@@ -291,6 +291,11 @@ class Activity extends Shared_Controller
 
 		$this->data['control']['function_id[]'] =
 		form_multiselect('activity_id[]', $options,$user['fuid'],['class'=>'form-control']);
+		
+		if(count($options) == 0){
+			$this->data['control']['function_id[zx'] =
+		anchor(base_url().'shared/function',lang('all_function_asigned_click_here_make_new'));
+		}
 
 		/*$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('function'));
 		$this->data['control']['omega'] = $this->load->view('js/fastsearch',[
