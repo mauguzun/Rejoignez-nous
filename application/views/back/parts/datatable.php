@@ -361,7 +361,8 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 						changeUrl();
 					})
 
-			
+
+
 
 			},
 
@@ -394,7 +395,6 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 
 
 		} );
-
 
 
 

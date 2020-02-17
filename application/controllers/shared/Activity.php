@@ -179,13 +179,7 @@ class Activity extends Shared_Controller
 				$this->_table
 			);
 
-			$this->Crud->update(['activity_id'=>$_POST['id']],['activity_id'=>null],'functions');
-			foreach($_POST['activity_id'] as $id)
-			{
-
-				$this->Crud->update(['id'=>$id],['activity_id'=>$_POST['id']],'functions');
-			}
-
+			
 
 			echo json_encode(['done'=>true]);
 			return;
@@ -276,37 +270,7 @@ class Activity extends Shared_Controller
 		form_dropdown('published', [0=>'unpublished',1=>'published'],$is_active,['class'=>'form-control']);
 
 
-		// pick only functtion withiut activites
-
-		$options = [];
-		foreach(  $this->Crud->get_all('functions',[ 'activity_id'=>NULL  ]) as $row){
-			$options[$row['id']] = $row['function'];
-		}
-		if($user){
-			foreach(  $this->Crud->get_all('functions',[ 'activity_id'=>$user['id']  ]) as $row){
-				$options[$row['id']] = $row['function'];
-			}
-
-		}
-
-		$this->data['control']['function_id[]'] =
-		form_multiselect('activity_id[]', $options,$user['fuid'],['class'=>'form-control']);
 		
-		if(count($options) == 0){
-			$this->data['control']['function_id[zx'] =
-		anchor(base_url().'shared/function',lang('all_function_asigned_click_here_make_new'));
-		}
-
-		/*$this->data['control']["ads_l"] = form_label('<b>*</b>'.lang('function'));
-		$this->data['control']['omega'] = $this->load->view('js/fastsearch',[
-		'data'=>json_encode(array_values($data)),
-		'selected'=>$user['fuid'],
-		'name'=>'function_id[]',
-		'value'=>$user['fuid'],
-		'url'=>$this->_redirect.'/ajaxdata'
-		],true);*/
-
-
 
 
 

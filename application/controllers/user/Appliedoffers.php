@@ -1,21 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Appliedoffers extends User_Controller{
+class Appliedoffers extends User_Controller
+{
 
 	private $_table = 'application';
 
-	public function __construct(){
+	public function __construct()
+	{
 		parent::__construct('user/offers',['unsolicited_application'],true);
 		$this->_user_id = $this->ion_auth->user()->row()->id;
 		$this->load->library("Folderoffer");
 	}
 
-	public function index( ){
-		
+	public function index( )
+	{
+
 		$this->show_header(['unsolicited_application']);
-		
-		
+
+
 		// todo is active
 		$application = $this->Crud->get_joins(
 			$this->_table,
@@ -25,8 +28,8 @@ class Appliedoffers extends User_Controller{
 				"offers_location"=>"offers.location = offers_location.id",
 				"offers_category"=>"offers.category = offers_category.id",
 
-				'offers_activities'=>"offers.id = offers_activities.offer_id",
-				'activities'=>"offers_activities.activiti_id = activities.id",
+				'functions'=>"functions.id=offers.function_id",
+				'activities'=>"functions.activity_id=activities.id",
 				"application_un"=>"$this->_table.id = application_un.application_id",
 				"application_un_activity"=>'application_un.application_id =application_un_activity.application_id'
 
@@ -49,60 +52,66 @@ class Appliedoffers extends User_Controller{
 		);
 
 
-		
-		if(!$application){
+
+		if(!$application)
+		{
 			redirect(base_url().'user/profile');
 		}
 
 
 
-		foreach($this->Crud->get_all('application_contract') as $value){
+		foreach($this->Crud->get_all('application_contract') as $value)
+		{
 			$all_contract[$value['id']] = $value['type'];
 		}
 
-		
 
-		foreach($application as & $value){
-			
+
+		foreach($application as & $value)
+		{
+
 			$value['add_date'] = time_stamp_to_date($value['add_date']);
-			if($value['unsolicated'] == 0){
+			if($value['unsolicated'] == 0)
+			{
 				$value['title'] =
 				anchor(base_url().'/apply/new/'.$this->folderoffer->get_map($value['category']).'/index/'.$value['id'],$value['title']);
 
 			}
-			else{
-				
-				
-				
-				switch($value['unsolicated_type']){
+			else
+			{
+
+
+
+				switch($value['unsolicated_type'])
+				{
 					case '2':
 					$value['title'] = anchor("apply/new/uns_pnt/index/".$value['aid'],
 						lang('pnt'));
 					break;
-					
+
 					case '3':
 					$value['title'] = anchor("apply/new/uns_pnc/index/".$value['aid'],
 						lang('pnc'));
 					break;
-					
+
 					default:
 					$value['title'] = anchor("apply/new/unsolicated/index/".$value['aid'],$value['app_un_function']);
-					
-					if (array_key_exists($value['app_un_contract_type'],$all_contract))
-					$value['contract'] = $all_contract[$value['app_un_contract_type']];	
-					
+
+					if(array_key_exists($value['app_un_contract_type'],$all_contract))
+					$value['contract'] = $all_contract[$value['app_un_contract_type']];
+
 					$value['activity'] = $value['app_un_contract_activities'];
 				}
-			
-				
-				
-			
+
+
+
+
 			}
 
 		}
-		
-		
-	
+
+
+
 
 		$table = $this->load->view('front/parts/page_table',[
 				'headers'=>['add_date','title','location','contract','activity'],

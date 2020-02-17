@@ -318,4 +318,4 @@ $lang['body'] = "Email body ";
 $lang['placeholder'] = "Email placeholder ";
 $lang['login'] = "Login";
 $lang['application_review'] = "Application review";
-$lang['all_function_asigned_click_here_make_new'] = "all function_asigned_click_here_make_new ";
+$lang['add_activity'] = "add_activity";
