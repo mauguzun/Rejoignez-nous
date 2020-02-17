@@ -39,6 +39,14 @@
 
 </div>
 
+
+<style>
+	th{
+		min-height:50px;
+		border:1px solid white;
+	}
+</style>
+
 <!---->
 <div class="content">
 	<div class="row">
