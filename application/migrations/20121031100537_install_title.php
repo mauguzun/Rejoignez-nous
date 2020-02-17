@@ -35,7 +35,7 @@ class Migration_Install_title extends CI_Migration
 		$this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `diversity`  LONGTEXT NOT NULL ');         $this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `integration`  LONGTEXT NOT NULL ');         $this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `integration`  LONGTEXT NOT NULL ');         $this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `integration`  LONGTEXT NOT NULL ');
 		$this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `recruiting`  LONGTEXT NOT NULL ');         $this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `integration`  LONGTEXT NOT NULL ');         $this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `integration`  LONGTEXT NOT NULL ');         $this->db->query('ALTER TABLE `hiring_policy`  MODIFY COLUMN `integration`  LONGTEXT NOT NULL ');
 
-		/*$this->Crud->add(['id'=>77,'name'=>'communication','description'=>'Communication'],'groups');
+	$this->Crud->add(['id'=>77,'name'=>'communication','description'=>'Communication'],'groups');
 
 		$this->db->query('DROP TABLE IF EXISTS `emails`;');
 		$this->db->query('DROP TABLE IF EXISTS `email_template`;');
@@ -59,7 +59,7 @@ class Migration_Install_title extends CI_Migration
 
 		$this->db->query("INSERT INTO `email_template_translate` VALUES ('en', 'Subject in englsih', '<h3><b>Bonjour</b> #first_name   #last_name </h3><p>Nous vous remercions pour votre candidature que nous examinerons avec le plus grand soin. </p><p>Si celle-ci correspond à nos attentes, nous ne manquerons pas de vous contacter prochainement. </p><p><span style=\"background-color: rgb(231, 214, 222);\">Sans réponse de notre part  veuillez considérer que nous ne pouvons donner une suite favorable à votre candidature.</span></p><p><span style=\"background-color: rgb(231, 214, 222);\"> Nous nous permettrons cependant de revenir vers vous si d’autres opportunités, en adéquation avec votre profil, se présentaient.</span></p><p><span style=\"background-color: rgb(231, 214, 222);\"> Avec nos salutations distinguées,</span></p><p><b> La Direction des Ressources Humaines</b></p>', 1);");
 		$this->db->query("INSERT INTO `email_template_translate` VALUES ('fr', 'Subject France', '<h3><b>Bonjour</b> #first_name&nbsp; &nbsp;#last_name&nbsp;</h3><p>Nous vous remercions pour votre candidature que nous examinerons avec le plus grand soin. </p><p>Si celle-ci correspond à nos attentes, nous ne manquerons pas de vous contacter prochainement. </p><p><span style=\"background-color: rgb(231, 214, 222);\">Sans réponse de notre part&nbsp; veuillez considérer que nous ne pouvons donner une suite favorable à votre candidature.</span></p><p><span style=\"background-color: rgb(231, 214, 222);\"> Nous nous permettrons cependant de revenir vers vous si d’autres opportunités, en adéquation avec votre profil, se présentaient.</span></p><p><span style=\"background-color: rgb(231, 214, 222);\"> Avec nos salutations distinguées,</span></p><p><b> La Direction des Ressources Humaines</b></p>', 1);
-		");*/
+		");
 
 
 	}
