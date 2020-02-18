@@ -10,6 +10,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Crud.php"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\controllers\user\Appliedoffers.php"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php"/>
 	</lastopfiles>
 	<errors version="5.11">
 		<errfile name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\dompdf\vendor\sabberworm\php-css-parser\lib\Sabberworm\CSS\Rule\Rule.php">
@@ -2765,7 +2766,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\jquery.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\header.php" crc="1581872760"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\footer.php" crc="1581593542"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php" crc="1581955215"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\datatable.php" crc="1581959763"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_with_upload.php" crc="1581590924"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\parts\add_modal_fixed.php" crc="1581420628"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\views\back\user_view_manualy.php" crc="1576751900"/>
@@ -2847,7 +2848,7 @@
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\index.html" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Crud.php" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\models\Appresp.php" crc="1581685336"/>
-		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php" crc="1581684805"/>
+		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\migrations\20121031100537_install_title.php" crc="1581959930"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\logs\index.html" crc="1576751900"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\menu\Usermenu.php" crc="1577989835"/>
 		<file name="C:\OSPanel\domains\localhost\Rejoignez-nous\application\libraries\menu\Topmenu.php" crc="1576751900"/>

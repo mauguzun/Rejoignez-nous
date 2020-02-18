@@ -42,7 +42,7 @@
 
 <style>
 	th{
-		min-height:50px;
+		min-height:100px;
 		border:1px solid white;
 	}
 </style>

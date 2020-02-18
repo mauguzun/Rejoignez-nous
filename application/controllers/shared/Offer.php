@@ -88,6 +88,7 @@ class Offer extends Shared_Controller
 					'period'=>$_POST['period'],
 					/*					'start_date'=>  date_to_db($_POST['start_date']) ,*/
 					'start_date'=>  $_POST['start_date'] ,
+					'function_id'=>  $_POST['function_id'] ,
 					'pub_date'=> date_to_db($_POST['pub_date']),
 					'location'=>$_POST['location'],
 					/*					'date'=>date_to_db($_POST['date']),*/
@@ -99,14 +100,7 @@ class Offer extends Shared_Controller
 				],$this->_table);
 
 
-			$bath     = [];
-			foreach(explode(",", $_POST['offers_activities'][0]) as $activity_id)
-			{
-				array_push($bath,['activiti_id'=>$activity_id,'offer_id'=>$offer_id]);
-			}
-
-			$this->Crud->add_many($bath,'offers_activities');
-
+		
 
 
 			echo json_encode(['done'=>true]);
