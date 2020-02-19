@@ -125,6 +125,7 @@ class Backmenu
 				['function'=> 'shared/functions' ]
 
 			],
+			
 
 
 			'dashboard'=>[
@@ -160,6 +161,7 @@ class Backmenu
 			'settings'=>['fas fa-cog'=>
 
 				['settings_email' => 'back/settings_email'],
+				['language' => 'shared/Languages'],
 				['manage_email_template' => 'shared/email'],
 				['settings_generic' => 'back/settings_generic'],
 				['settings_keywords' => 'back/settings_keywords'],

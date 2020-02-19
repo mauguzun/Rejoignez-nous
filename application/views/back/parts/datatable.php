@@ -25,26 +25,79 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css" />
 
-<div style="position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 21324;
-    background : rgba(0,0,0,.5);"
-    id="overlay"
-    >
+<div class="overlay" id="overlay">
 
 </div>
 
 
 <style>
-	th{
-		min-height:100px;
-		border:1px solid white;
+	th
+	{
+		min-height: 100px;
+		border: 1px solid white;
 	}
+	#infivible_element
+	{
+		width: 200%;
+		height: 200px;
+		background-color: transparent;
+		position: relative;
+		padding-right: 100px;
+	}
+
+	#infivible_container
+	{
+		 height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    overflow-x: scroll;
+    z-index: 999;
+	}
+
+	#retracable
+	{
+		overflow-x: hidden !important;
+	}
+	.overlay
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 21324;
+		background: rgba(0,0,0,.7);
+	}
+	/*
+	#infivible_element
+	{
+	width: 200%;
+	height: 200px;
+	background-color: transparent;
+	position: relative;
+	padding-right: 100px;
+	z-index: -1;
+	}
+
+	#infivible_container
+	{
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	overflow-x: scroll;
+	z-index: 999;
+	}
+
+	#retracable
+	{
+	overflow-x: hidden !important;
+	}*/
 </style>
 
 <!---->
@@ -369,6 +422,25 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 						changeUrl();
 					})
 
+				if($('#infivible_container').length == 0)
+				{
+					$('.dataTables_scroll').append('<div id="infivible_container"> <div class="dataTables_scrollBody" id="infivible_element"></div></div>');
+
+
+					let scrollWidth  = $("#example").width();
+
+					scrollWidth = scrollWidth * 1.03;
+					$("#infivible_element").css("width",""+scrollWidth+"px");
+
+
+
+					$("#infivible_container").scroll(function()
+						{
+							$(".dataTables_scrollBody,.dataTables_wrapper")
+							.scrollLeft($(this).scrollLeft());
+						});
+				}
+
 
 
 
@@ -489,6 +561,18 @@ $startFrom = $startPage == 0 ?0 : ($startPage - 1) * $pageLength;
 
 	}
 
+	///////scrop
+	let scrollWidth  = $("#example").width();
+	scrollWidth = scrollWidth * 1.03;
+	$("#infivible_element").css("width",""+scrollWidth+"px");
+
+
+
+	$("#infivible_container").scroll(function()
+		{
+			$(".dataTables_scrollBody,.dataTables_wrapper")
+			.scrollLeft($(this).scrollLeft());
+		});
 </script>
 
 
