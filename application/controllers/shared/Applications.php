@@ -450,7 +450,7 @@ class Applications extends Shared_Controller
 				'offers_category'=>"offers.category=offers_category.id",
 
 				'last_level_education'=>"$this->_table.id = last_level_education.application_id",
-				"application_un_activity"=> "$this->_table.id =  application_un_activity.application_id",
+				"application_un"=> "$this->_table.id =  application_un.application_id",
 				'application_hr_expirience'=>"last_level_education.education_level_id = application_hr_expirience.id",
 				'application_hr_expirience'=>"$this->_table.id = application_hr_expirience.application_id",
 				'mechanic_offer_aeronautical_experience'=>"$this->_table.id = mechanic_offer_aeronautical_experience.application_id",
@@ -471,11 +471,10 @@ class Applications extends Shared_Controller
 			SEPARATOR ';'
 			) as for_langs,
 			GROUP_CONCAT(DISTINCT activities.activity ) as activities,
-			GROUP_CONCAT(DISTINCT application_un_activity.activity ) as un_activities,
 			GROUP_CONCAT(DISTINCT application_hr_expirience.managerial ) as hr_managerial,
 			GROUP_CONCAT(DISTINCT functions.function  SEPARATOR '<br>' ) as functions,
 			GROUP_CONCAT(DISTINCT CONCAT(application_files.type,'/',application_files.file)   ) as files,
-
+application_un.function as function ,
 			last_level_education.university as university,
 			last_level_education.education_level_id as education_level,
 			mechanic_offer_aeronautical_experience.managerial_duties as m_managerial,
@@ -486,8 +485,8 @@ class Applications extends Shared_Controller
 			application_english_frechn_level.* ,$this->_table.*,application.*"
 
 			,NULL , ["application.id"],$allowed);
-
-		/*var_dump($query);
+/*echo "<pre>";
+		var_dump($query);
 		return;*/
 
 
@@ -502,7 +501,7 @@ class Applications extends Shared_Controller
 			}
 		}
 
-		/*echo "<pre>";
+	/*	echo "<pre>";
 		var_dump($data);
 		die();*/
 
@@ -543,7 +542,12 @@ class Applications extends Shared_Controller
 		$title = $table_row['unsolicated'] == 1 ?
 		lang('unsolicited_application_applys') : $table_row['title'];
 
-
+		$funct = $table_row['function_id'];
+		
+		if ($table_row['function_id']){
+			$funct = $this->_functions[$table_row['function_id']];
+		}
+		
 		if($table_row['unsolicated'] == 1)
 		{
 
@@ -572,7 +576,7 @@ class Applications extends Shared_Controller
 
 			$title          = $un['function'];
 //			$table_row['functions'] = $un['function'];
-			$table_row['functions'] = '';
+		//	$table_row['functions'] = '';
 			$email = base_url().Shared_Controller::$map.'/sendemail/unsolicated/'.$table_row['aid'];;
 		}
 		else
@@ -581,7 +585,7 @@ class Applications extends Shared_Controller
 			$lang_level_row = NULL;
 
 			$title    = anchor($this->_redirect.'?offer='.$title,  $title ,['target'=>'_blank'] );
-			$funciton = $table_row['functions']." <br> <b>".lang('manual')."</b>";
+			$funct = $table_row['unsolicated_function'];
 			$email    = base_url().Shared_Controller::$map.'/sendemail/manualy/'.$table_row['aid'];;
 			$print    = base_url().Shared_Controller::$map.'/printmanualoffer/index/'.$table_row['aid'];
 		}
@@ -620,17 +624,19 @@ class Applications extends Shared_Controller
 		if($table_row['unsolicated'] == 1)
 		{
 			$managerial = $this->_have($table_row['hr_managerial']);
+			$funct = $table_row['function'];
+			//$funct = $table_row['function'];
 		}
+	
 
 
-
-		$funct = $table_row['functions'];
+	
 		if( isset($table_row['function_by_admin']) && $table_row['function_by_admin'] != null && array_key_exists($table_row['function_by_admin'],$this->_functions))
 		{
 			$funct =
 			'<a data-toggle="tooltip" data-placement="left" title="<b>'.
 			lang('initially applied for the position of ').'</b><br>'.
-			$table_row['functions']
+			$funct
 
 
 			.'"  ><i class="fas fa-exclamation-triangle"></i> '.

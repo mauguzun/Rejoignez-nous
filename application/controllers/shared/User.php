@@ -10,7 +10,7 @@ class User extends Shared_Controller{
 	private $_allowed = [1,2,3,4,5,6,7];
 	private $_ajax;
 
-	private $user_id;
+	public $user_id;
 
 	public function __construct(){
 		parent::__construct($this->_allowed);
@@ -28,7 +28,7 @@ class User extends Shared_Controller{
 		$this->_set_data($this->Crud->get_row(['user_id'=>$this->user_id],'candidates'));
 		$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
 		$this->data['title'] = lang("edit_profile");
-		$this->show_footer();
+		//$this->show_footer();
 
 	}
 
