@@ -163,8 +163,12 @@ a {
 	margin: 0;
 	padding-bottom: 4px;
 	padding-top: 18px;
-	border-top: 1px dotted #dce7eb;
 }
+
+.collapse_li{
+    border-top: 1px dotted #dce7eb;
+}
+
 .accord li:nth-of-type(1) {
 	animation-delay: 0.5s;
 }

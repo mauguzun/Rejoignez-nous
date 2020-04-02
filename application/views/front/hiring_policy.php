@@ -23,7 +23,7 @@
 
 	<br>
 	<ul class="accord">
-		<li class="main-accord">
+		<li class="main-accord collapse_li">
 
 			<!--			<h5>	<?= lang('our_recruitment_policy')?></h5>-->
 
@@ -74,7 +74,7 @@
 		</li>
 
 
-		<li>
+		<li class="collapse_li">
 			<input type="checkbox" checked>
 			<i>
 			</i>
@@ -96,7 +96,7 @@
 				<?= ($query['course']) ?>
 			</div>
 		</li>-->
-		<li>
+		<li class="collapse_li">
 			<input type="checkbox" checked>
 			<i>
 			</i>
@@ -107,7 +107,7 @@
 				<?= ($query['diversity']) ?>
 			</div>
 		</li>
-		<li>
+		<li class="collapse_li">
 			<input type="checkbox" checked>
 			<i>
 			</i>
