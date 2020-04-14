@@ -34,7 +34,7 @@ $files = explode (',',$files);
 	class="collapse fa-eye-dropdown" id="<?=$id ?>" style="
 	 position: absolute !important;
 
-    z-index: 20; background: #fff ; padding: 20px;
+    z-index: 1; background: #fff ; padding: 20px;
    border: 1px solid white;box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);" >
 		<div  data-url=""  class="card card-body" >
 
