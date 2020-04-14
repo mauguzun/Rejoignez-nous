@@ -139,7 +139,7 @@
 						<tr>
 							<?
 							foreach($headers as $header):?>
-							<th>
+							<th style="white-space:nowrap ;">
 								<?
 								if($header != strip_tags($header)) :?>
 								<?= $header ?>

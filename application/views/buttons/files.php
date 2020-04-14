@@ -19,7 +19,7 @@ $files = explode (',',$files);
                  onclick="over('<?= $id ?>')"
                  >
 		<span  data-title="<?= $id ?>" >
-			<i class="fa fa-eye">
+			<i class="fa fa-eye ">
 			</i>
 			<small title="count">
 				( <?= count($files) ?> )
@@ -31,7 +31,7 @@ $files = explode (',',$files);
 
 	<div 
 	
-	class="collapse" id="<?=$id ?>" style="
+	class="collapse fa-eye-dropdown" id="<?=$id ?>" style="
 	 position: absolute !important;
 
     z-index: 20; background: #fff ; padding: 20px;
@@ -71,7 +71,12 @@ $files = explode (',',$files);
 		</div>
 	</div>
 
-
+<script>
+	$(".dropright").click(function(){
+		$(".fa-eye-dropdown").css("display","none");
+		$(this).children(".fa-eye-dropdown").css("display","initial");
+	});
+</script>
 </span>
 
 
