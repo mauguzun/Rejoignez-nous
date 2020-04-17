@@ -83,7 +83,13 @@
 <script src="https://rawgit.com/dbrekalo/fastselect/master/dist/fastselect.standalone.min.js">
 
 </script>
+<script>
+$( document ).ready(function() {
+	var current_page = "<?php echo lang('Sort by type'); ?>";
 
+    $(".fstToggleBtn").text(current_page);
+});
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
 </script>
@@ -207,7 +213,6 @@
 	.fstToggleBtn:after
 	{
 		position: absolute;
-		content: "";
 		right: .71429em;
 		top: 50%;
 		margin-top: -.17857em;

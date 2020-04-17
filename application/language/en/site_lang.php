@@ -254,9 +254,14 @@ $lang['privacystatements'] = 'Privacy statement';
 $lang['subjects'] = 'Subject';
 $lang['password_change_wrong_old'] = 'Old password not valid, please try again';
 $lang['Sort by type'] = 'Sort by type';
-$lang['Sort by locaiton'] = 'Sort by locaiton';
+$lang['Sort by location'] = 'Sort by location';
 $lang['Sort by activity'] = 'Sort by activity';
 $lang['Sort by category'] = 'Sort by category';
+$lang['Choose option'] = 'Choose option';
+$lang['dashboard'] = 'Dashboard';
+$lang['site_public'] = 'Site public';
+$lang['Not consulted'] = 'Not consulted';
+$lang['Interesting for another position'] = 'Interesting for another position';
 
 $lang['Incorrect email'] = 'Incorrect email';
 $lang['Email accepted'] = 'Email accepted';

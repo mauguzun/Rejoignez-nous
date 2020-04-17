@@ -414,7 +414,7 @@
 		<h4>
 			<span class="text-semibold">
 
-			</span>Dashboard
+			</span><?= lang('dashboard') ?>
 		</h4>
 	</div>
 
@@ -424,12 +424,12 @@
 		<ul class="breadcrumb">
 			<li>
 				<a href="<?= base_url()?>">
-					Site public
+				<?= lang('site_public') ?>
 				</a>
 			</li>
 			<li class="active">
 				<a href="<?= base_url().'shared/viewoffers'?>">
-					Dashboard
+					<?= lang('dashboard') ?>
 				</a>
 
 			</li>

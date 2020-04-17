@@ -57,7 +57,7 @@ class Settings_email extends Admin_Controller{
 
 
 		$this->form_validation->set_rules('email', lang('email'), 'trim|required|valid_email');
-		$this->form_validation->set_rules('password', lang('password'), 'trim|required');
+		//$this->form_validation->set_rules('password', lang('password'), 'trim|required');
 	}
 
 
