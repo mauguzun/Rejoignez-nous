@@ -86,8 +86,12 @@
 <script>
 $( document ).ready(function() {
 	var current_page = "<?php echo lang('Sort by type'); ?>";
+	var current_page2 = "<?php echo lang('Sort by activity'); ?>";
+	var current_page3 = "<?php echo lang('Sort by location'); ?>";
 
-    $(".fstToggleBtn").text(current_page);
+    $(".fstToggleBtn:first").text(current_page);
+	$(".fstToggleBtn").eq(1).text(current_page3);
+	$(".fstToggleBtn").eq(2).text(current_page2);
 });
 </script>
 

@@ -358,7 +358,7 @@
 						<a href="#" >
 							<i class=" <?= key($array) ?> menu-icon">
 							</i>
-							<span >
+							<span style="white-space: nowrap;">
 								<?= lang($text)  ?>
 							</span>
 
