@@ -2,7 +2,7 @@
 <? $id = uniqid() ?>
 
 
-<span class="btn-group dropright">
+<span class="btn-group dropright cyrcle_drop">
 	<a           data-toggle="collapse"
                  href="#<?= $id ?>"
                  role="button"
@@ -15,7 +15,7 @@
 		</i>
 	</a>
 
-	<div class="collapse" id="<?=$id ?>"  style=" position: absolute !important;
+	<div class="collapse cyrcle_thing" id="<?=$id ?>"  style=" position: absolute !important;
   z-index: 20; background: #fff ; padding: 20px; border: 1px solid white; box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);">
 		<div  data-url="<?= $url ?>"  class="card card-body">
 
@@ -32,5 +32,10 @@
 		</div>
 	</div>
 
-
+<script>
+	$(".cyrcle_drop").click(function(){
+		$(".cyrcle_thing").css("display","none");
+		$(this).children(".cyrcle_thing").css("display","initial");
+	});
+</script>
 </span>

@@ -12,8 +12,6 @@
 					if(  !$category_id ):?>
 					<td>
 						<select id="mode" class="form-control change">
-							<option value="">
-							</option>
 
 							<option value="0">
 								<?= lang('all applications recived')?>
@@ -60,8 +58,6 @@
 
 					<td>
 						<select id="status" class="form-control change">
-							<option value="">
-							</option>
 
 							<option value="0">
 								<?= lang('all applications recived')?>
@@ -79,8 +75,6 @@
 
 					<td>
 						<select id="function" class="form-control change">
-							<option value="">
-							</option>
 
 
 							<?
@@ -120,9 +114,6 @@
 
 
 <script>
-
-
-
 
 
 	function request()

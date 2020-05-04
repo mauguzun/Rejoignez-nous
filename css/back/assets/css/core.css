@@ -41,6 +41,14 @@
 html {
   height: 100%;
 }
+.DTFC_LeftBodyLiner{
+  height: initial !important;
+  max-height: initial !important;
+  z-index: 999 !important;
+}
+.DTFC_LeftBodyWrapper{
+  height: initial !important;
+}
 body {
   position: relative;
   min-height: 100%;

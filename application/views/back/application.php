@@ -40,8 +40,6 @@
 
 <script>
 
-
-
 	$("#delete").click(function(){
 		
 		

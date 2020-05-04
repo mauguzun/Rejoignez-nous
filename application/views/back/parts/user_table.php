@@ -76,6 +76,7 @@
                                 <?
                                 foreach ($fields as $column=>$value): ?>
                                 <td>
+                                    
                                 <? if($column == 'action'):?>
                                 	
                                 	<? foreach($value as $oneaction):?>

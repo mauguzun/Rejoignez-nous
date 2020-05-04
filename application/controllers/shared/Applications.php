@@ -75,12 +75,16 @@ class Applications extends Shared_Controller
 
 		$this->load->view('back/parts/datatable',[
 				'headers'=>[
-					'create_offer_pub_date',
-					'index_fname_th','index_lname_th','function',
+					'index_fname_th','index_fname_th','index_lname_th','function',
 
 					/*		'#',*/
 					'<input  type="checkbox" id="main" />',
 					'create_offer_pub_date',
+					'Medical aptitude',
+					'FCL',
+					'Flight hours',
+					'Licences',
+					'Qualification type',
 					/*			'category' ,
 					'activity',*/
 					'education','languages',
@@ -442,6 +446,13 @@ class Applications extends Shared_Controller
 			[
 				'offers'=>"$this->_table.offer_id = offers.id",
 				'users'=>"$this->_table.user_id = users.id",
+				//
+				'application_medical_aptitude'=>"$this->_table.id = application_medical_aptitude.application_id",
+				'application_fcl'=>"$this->_table.id = application_fcl.application_id",
+				'application_pnt_total_flight_hours'=>"$this->_table.id = application_pnt_total_flight_hours.application_id",
+				'application_licenses'=>"$this->_table.id = application_licenses.application_id",
+				'application_pnt_qualification'=>"$this->_table.id = application_pnt_qualification.application_id",
+				//
 				'applicaiton_misc'=>"$this->_table.id = applicaiton_misc.application_id",
 				'application_status'=>"$this->_table.application_statuts = application_status.id",
 				'application_english_frechn_level'=>"$this->_table.id = application_english_frechn_level.application_id",
@@ -479,6 +490,11 @@ application_un.function as function ,
 			last_level_education.education_level_id as education_level,
 			mechanic_offer_aeronautical_experience.managerial_duties as m_managerial,
 			offers.category as offer_cat,
+			application_medical_aptitude.date as medical_date,
+			application_fcl.fcl as application_fcl,
+			application_pnt_total_flight_hours.total_hours as total_hours,
+			application_licenses.theoretical_atpl as theoretical_atpl,
+			application_pnt_qualification.aircaft_type  as aircaft_type,
 			offers.id as oid,offers.title as title,
 			offers_category.category  as cat,
 			users.handicaped as handicaped,
@@ -487,7 +503,7 @@ application_un.function as function ,
 			,NULL , ["application.id"],$allowed);
 /*echo "<pre>";
 		var_dump($query);
-		return;*/
+		return; */
 
 
 		$data['data'] = [];
@@ -660,6 +676,11 @@ application_un.function as function ,
 		data-email-id="'.$email.'"   type="checkbox" id="'.$table_row['aid'].'" />',
 		time_stamp_to_date($table_row['add_date']),
 
+		$table_row['medical_date'],
+		$table_row['application_fcl'],
+		$table_row['total_hours'],
+		$table_row['theoretical_atpl'],
+		$table_row['aircaft_type'],
 
 		//	$funciton,
 		/*	$table_row['cat'],
@@ -683,7 +704,6 @@ application_un.function as function ,
 
 		$this->load->view("buttons/circle",
 			[
-
 				'color_id'=>$table_row['call_id'],
 				'url'=>$this->_redirect.'/ajaxcolor/call_id/'.$table_row['aid'],
 			],true),
@@ -697,8 +717,6 @@ application_un.function as function ,
 			[
 				'color_id'=>$table_row['opinion_decision'],
 				'url'=>$this->_redirect.'/ajaxcolor/opinion_decision/'.$table_row['aid'],
-
-
 			],true),
 
 		$this->load->view("buttons/status",
@@ -759,14 +777,19 @@ application_un.function as function ,
 		switch($num)
 		{
 
+			case 1:
+			//default gray status”
+			return 1;
+			break;
+
 			case 3:
 			//orange then “undecided”
-			return 5;
+			return 3;
 			break;
 
 			case 2:
 			//it is green then “successful”
-			return 3;
+			return 2;
 			break;
 
 			case 4:
@@ -778,13 +801,10 @@ application_un.function as function ,
 			return 2;
 			break;
 		}
-
-
 	}
 
 	/**
-	*
-	ajax function , pls check if admin
+	*ajax function , pls check if admin
 	* @return
 	*/
 	public function ajaxcolor($column,$applicaiton_id,$value)
@@ -798,7 +818,8 @@ application_un.function as function ,
 
 			if( $this->Crud->update(['id'=>$applicaiton_id],[
 						$column=>$value,
-						'application_statuts'=>$this->_status_by_color($value)
+						'application_statuts'=>$this->_status_by_color($value),
+						'opinion_decision'=>$this->_status_by_color($value)
 					],$this->_table))
 			{
 				echo json_encode([

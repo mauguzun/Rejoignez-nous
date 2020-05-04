@@ -254,6 +254,11 @@
 
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown language-switch">
+				<a>
+					User Role:
+				</a>
+			</li>
+			<li class="dropdown language-switch">
 				<a href="<?= base_url().'shared/user'?>" title="edit account">
 					<i class="fas fa-user-circle">
 					</i>
