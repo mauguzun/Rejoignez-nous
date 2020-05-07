@@ -40,13 +40,19 @@ class Shared_Controller extends CI_Controller
         else
         $user_group = 1;
 
+        $query = $this->db->query("SELECT `user_id` FROM `users_groups` WHERE `group_id` = 2");
+        $notifications_query = $this->db->query("SELECT * FROM `notification` ORDER BY `datetime` DESC LIMIT 5");
+
         $this->load->view("back/parts/header",[
                 'charset'=>!$this->main_settings? 'utf-8':$this->main_settings['charset'],
 				'meta'=>!$meta ? $this->meta :  $meta,
                 'current_lang'=>$this->getCurrentLang(),
                 'admin_menu'=>$this->backmenu->get($user_group),
                 'lang_list'=>$this->languagemenu->get(),
-                'current'=> $segs[1].'/'.$segs[2]
+                'current'=> $segs[1].'/'.$segs[2],
+                'user'=>$this->ion_auth->user()->row(),
+                'user_type'=> $query,
+                'notifications_query'=>$notifications_query
             ]);
     }
     

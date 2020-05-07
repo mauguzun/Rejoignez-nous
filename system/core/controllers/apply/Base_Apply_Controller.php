@@ -609,6 +609,13 @@ class Base_Apply_Controller extends Usermeta_Controller
 	public function delete($offer_id = NULL)
 	{
 
+		$data = array( 
+			'candidate_name'=>$this->ion_auth->user()->row()->first_name,
+			'application_id'=>$offer_id,
+		);
+		$this->db->insert('notification', $data);
+
+
 		if(!$offer_id){
 			die();
 		}

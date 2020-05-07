@@ -251,12 +251,35 @@
 
 	<div class="navbar-collapse collapse" id="navbar-mobile" style="z-index:1;" >
 
-
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown language-switch">
-				<a>
-					User Role:
+				<a class="dropdown-toggle" data-toggle="dropdown">
+					<?php 
+					//echo $user->id;
+					foreach($user_type->result_array() as $row){
+						if($user->id == $row['user_id']){
+							//echo $user_type = 'You are HR';
+							$right_user = 1;
+						}else{
+						}
+					}
+					if(isset($right_user)){
+						echo "Notifications";
+					}
+					?>
 				</a>
+				<ul class="dropdown-menu">
+				<?foreach($notifications_query->result_array() as $arr):?>
+
+					<li>
+						<a>
+							Candidate <?= $arr['candidate_name'] ?> deleted his application on <?= date('F j, g:i a',strtotime($arr['datetime'])); ?>
+						</a>
+					</li>
+
+
+					<? endforeach ;?>
+				</ul>
 			</li>
 			<li class="dropdown language-switch">
 				<a href="<?= base_url().'shared/user'?>" title="edit account">

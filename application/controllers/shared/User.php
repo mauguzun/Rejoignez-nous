@@ -29,6 +29,7 @@ class User extends Shared_Controller{
 		$this->load->view(Admin_Controller::$map .'/parts/add_modal_fixed',$this->data);
 		$this->data['title'] = lang("edit_profile");
 		//$this->show_footer();
+		
 
 	}
 

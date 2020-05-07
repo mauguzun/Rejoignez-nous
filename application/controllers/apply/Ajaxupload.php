@@ -70,6 +70,7 @@ class Ajaxupload extends Apply_Controller{
 	}
 
 	public function delete($id){
+		
 		$row = $this->Crud->get_row(['id'=>$id],$this->table);
 		if($this->Crud->update(['id'=>$id],['deleted'=>1],$this->table)){
 			
@@ -82,6 +83,7 @@ class Ajaxupload extends Apply_Controller{
 		
 		else 
 		echo json_encode(['error'=> 'error_on_action']);
+	
 	}
 
 
