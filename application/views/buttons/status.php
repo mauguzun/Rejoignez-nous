@@ -8,7 +8,7 @@
                  role="button"
                  aria-expanded="false"
                  aria-controls="collapseExample"
-                 class="text-muted"
+                 class="text-muted check_status"
                  >
 		<span  data-title="<?= $id ?>" >
 			<?= empty($title) ? '-' : lang($title)?>
@@ -16,7 +16,7 @@
 	</a>
 
 	
-	<div class="collapse" id="<?=$id ?>" style=" position: absolute !important;
+	<div class="collapse show_user_status" id="<?=$id ?>" style=" position: absolute !important;
   z-index: 20; background: #fff ; padding: 20px;  border: 1px solid white;box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);" >
 		<div  data-url=""  class="card card-body" >
 
@@ -56,6 +56,17 @@
 			</div>
 		</div>
 	</div>
-
+<script>
+$(".check_status").click(function(){
+	let needed_id =  $(this).attr('href');
+	if($(""+needed_id+"").hasClass("in")){
+		console.log("have a class");
+		$(""+needed_id+"").css("display","none");
+	}else{
+		$(".show_user_status").css("display","none");
+		$(""+needed_id+"").css("display","block");
+	}
+});
+</script>
 
 </span>
