@@ -79,7 +79,6 @@
 	<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="https://www.aslairlines.fr/rejoignez_nous/actuel">Offres</a></li>
 	<li id="menu-item-215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215"><a href="https://www.aslairlines.fr/rejoignez_nous/candidature-spontanee/">Candidatures spontanées</a></li>
 	<li id="menu-item-216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216"><a href="https://www.aslairlines.fr/rejoignez_nous/politique/">Politique de recrutement</a></li>
-	<li id="menu-item-217" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-217"><a href="https://www.aslairlines.fr/rejoignez_nous/metiers/">Galerie des métiers</a></li>
 	<li id="menu-item-218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="https://www.aslairlines.fr/rejoignez_nous/bienvenue">Espace candidat</a></li>
 </ul>
 </li>

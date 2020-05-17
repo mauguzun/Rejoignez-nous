@@ -196,10 +196,6 @@
       	      		
 				</div>
 				<div class="phone-number parent_number">
-					<a href="tel:+33 825 825 849" class="row special_phone">
-						<i class="material-icons"></i>
-						<span>+33 825 825 849</span>
-					</a>
 				</div>
 			</div>
 			<a href="#" class="mnu-bt-mobile"></a>

@@ -21,6 +21,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 				value="<?= isset($data['function'])? $data['function'] : null ?>"
 				required="" class="form-control">
 			</div>
+
 		</div>
 
 		<div class="row_mb buttons_bar">
@@ -33,7 +34,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 </div>
 <datalist id="function_list">
 	<?foreach($functions as $value):?>
-	<option value="<?= $value['function']?>"><?= $value['function']?></option>
+	<option value="<?= $value['function']?>"><?= $value['function']?> | function</option>
 	<? endforeach; ?>
 </datalist>
 
