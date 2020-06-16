@@ -70,12 +70,12 @@
 	<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="https://www.aslairlines.fr/qui-sommes-nous/notre-flotte/">Flotte</a></li>
 </ul>
 </li>
-<li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-174 has-submnu"><a href="https://careers.aslairlines.com/?lang=fr">Rejoignez-nous</a>
+<li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-174 has-submnu"><a href="https://www.careers.aslairlines.com/?lang=fr">Rejoignez-nous</a>
 <ul class="sub-menu">
-	<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="https://careers.aslairlines.com/offers/?lang=fr">Offres</a></li>
-	<li id="menu-item-215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215"><a href="https://careers.aslairlines.com/apply/new/begin/?lang=fr">Candidatures spontanées</a></li>
-	<li id="menu-item-216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216"><a href="https://careers.aslairlines.com/policy/?lang=fr">Politique de recrutement</a></li>
-	<li id="menu-item-218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="https://careers.aslairlines.com/auth/login/?lang=fr">Espace candidat</a></li>
+	<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="https://www.careers.aslairlines.com/offers/?lang=fr">Offres</a></li>
+	<li id="menu-item-215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215"><a href="https://www.careers.aslairlines.com/apply/new/begin/?lang=fr">Candidatures spontanées</a></li>
+	<li id="menu-item-216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216"><a href="https://www.careers.aslairlines.com/policy/?lang=fr">Politique de recrutement</a></li>
+	<li id="menu-item-218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="https://www.careers.aslairlines.com/auth/login/?lang=fr">Espace candidat</a></li>
 </ul>
 </li>
 <li id="menu-item-722" class="press menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-722 has-submnu"><a href="https://www.aslairlines.fr/category/communiques-de-presse/">Presse</a>

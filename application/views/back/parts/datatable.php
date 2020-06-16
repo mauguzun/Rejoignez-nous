@@ -98,6 +98,14 @@
 	{
 	overflow-x: hidden !important;
 	}*/
+
+	td{
+		display: block;
+		width: 100px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
 </style>
 
 <!---->
