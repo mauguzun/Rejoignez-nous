@@ -19,12 +19,12 @@
         </h6>
         <div class="row">
             <div class="col-md-3">
-                <p class="sub-string" style="margin-top:10px;">
+                <p class="sub-string card_dates" style="margin-top:10px;">
                     <?= $value['start_date']?>
                 </p>
             </div>
             <div class="col-md-9">
-                <p class="sub-string" style="margin-top:10px;">
+                <p class="sub-string card_dates" style="margin-top:10px;">
                     <?= $value['location']?>
                 </p>
             </div>

@@ -103,27 +103,45 @@ if( ! function_exists('file_cover')){
 
 if( ! function_exists('print_offer')){
 	function print_offer($data){
+		switch ($data['type']) {
+			case 1:
+				$offer_type = "HR";
+				break;
+			case 2:
+				$offer_type = "PNC";
+				break;
+			case 3:
+				$offer_type = "PNT";
+				break;
+			case 4:
+				$offer_type = "Mecanicien";
+				break;
+		}
+
 		return ' <div style="cursor: pointer;" 
 		onclick="location.replace(\''. base_url().'offer/'.$data['id'] .'\');" class="custom_offer_bg" >
 		<h5 class="job_app_head">
 		'.$data['title'].'
 		</h5>
-		<div class="row" >
-		<div class="col-md-3">
-		<p class="sub-string" style="margin-top:10px;">
+		<div class="col-md-12" style="display: inline-flex;">
+		
+		<p class="sub-string card_dates" style="margin-top:10px;">
 		<i class="fas fa-pencil-alt">
 		</i>
-		'.$data['start_date'].'
+		'.$data['start_date'].' 
 
 		</p>
-		</div>
-		<div class="col-md-9">
-		<p class="sub-string" style="margin-top:10px;">
+		
+		
+		<p class="sub-string card_dates" style="margin-top:10px; margin-left: 30px;">
 		<i class="fas fa-search-location">
 		</i>
-		'.$data['location'].'
+		'.$data['location'].' 
 		</p>
-		</div>
+
+		<p class="offer_card_type">'.$offer_type.'</p>
+
+		<a class="offer_view_btn">View offer <img src="'. base_url().'static/update/img/Search_Icon_1.png" style="height: 26px;"></a>
 
 		</div>
 		</div>

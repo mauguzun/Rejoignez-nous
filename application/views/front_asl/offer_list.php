@@ -1,4 +1,8 @@
-  <div id="content" role="main" style="min-height: 100vh;" >
+<div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/51335600_1025530647617129_5232785357975584768_n.png');">
+	<div class="banner_title">EMPLOYMENT OPPORTUNITIES</div>
+</div> 
+ 
+ <div id="content" role="main" style="min-height: 100vh;" >
 
 	<div class="breadcrumbs eap-breadcrumbs" >
 
@@ -18,15 +22,17 @@
 		</a>
 
 	</div>
-	<h1 class="post-title">
+
+	
+	<!--<h1 class="post-title">
 		<?= lang('offer_list') ?>
-	</h1><br>
+	</h1><br>-->
 
 
 	<div class="table_breadcrumb  ">
 		
 				<div class="form-group">
-					<label for="exampleInputEmail1">
+					<label for="exampleInputEmail1" class="sort_labels">
 						<?= lang('Sort by type')?>
 					</label>
 
@@ -40,7 +46,7 @@
 				
 			
 				<div class="form-group">
-					<label for="exampleInputEmail1">
+					<label for="exampleInputEmail1" class="sort_labels">
 						<?= lang('Sort by location')?>
 					</label>
 					<input
@@ -54,7 +60,7 @@
 			
     			
 				<div class="form-group">
-					<label for="exampleInputEmail1">
+					<label for="exampleInputEmail1" class="sort_labels">
 						<?= lang('Sort by activity')?>
 					</label>
 					<input
@@ -66,6 +72,8 @@
            
 			
 	</div>
+
+	<h3 class="last_offers">Our last offers</h3>
            
           
       
@@ -167,7 +175,7 @@ $( document ).ready(function() {
 	.table_breadcrumb {
 		padding: 0.75rem 1rem;
 		margin-bottom: 1rem;
-		background-color: #e9ecef;
+		background-color: #ebebeb;
 		color: #6c757d;
 		width: 100%;
 		display: inline-block;

@@ -99,13 +99,14 @@
 	overflow-x: hidden !important;
 	}*/
 
-	td{
-		display: block;
-		width: 100px;
+	/*.odd > td:nth-child(1), .even > td:nth-child(1){
+		display: inline-block !important;
+		width: 120px;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-	}
+	}*/
+
 </style>
 
 <!---->

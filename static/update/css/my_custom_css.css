@@ -81,16 +81,102 @@ body.home .custom_footer-wrap .col-three .col-right {
 	display: block;
 }
 
+.last_offers {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.sort_labels{
+	color:#004b93;
+	font-size: 16px;
+}
+
 .custom_offer_bg{
-	background-color: #F8F8F8;
+	background-color: #ebebeb;
 	line-height: 1.4em;
 	padding: 1em 15px;
 	margin-bottom: 20px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .job_app_head{
-	margin-bottom: 15px; 
+	margin-bottom: 15px;
+	font-size: 24px;
+    color: #004b93;
+	font-weight: bolder;
+	margin-left: 24px; 
 }
+.card_dates{
+	font-size: 18px;
+}
+.offer_card_type{
+	color: #004b93;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.eap-sidenav > ul{
+	background-color: #ebebeb !important;
+}
+.eap-sidenav > ul > li {
+	border: 1px solid #aaaaaa;
+    border-bottom: none;
+}
+.eap-sidenav > ul > li.current-menu-item > a, .eap-sidenav ul > li.current-post-parent > a, .eap-sidenav ul > li.current-menu-parent > a, .menu-parent-video ul > li.video a, .menu-parent-image ul > li.image a, .menu-parent-v360 ul > li.v360 a{
+	background-color: #021f54 !important;
+	font-weight: 300 !important;
+	color: white !important;
+}
+.eap-sidenav > ul > li.current-menu-item > a:after, .eap-sidenav > ul > li.current-post-parent > a:after, .eap-sidenav > ul > li.current-menu-parent > a:after, .menu-parent-video ul > li.video a:after, .menu-parent-image ul > li.image a:after, .menu-parent-v360 ul > li.v360 a:after{
+	width: 0 !important;
+    height: 0 !important;
+    border-style: solid !important;
+    border-width: 23.5px 0 23.5px 13px !important;
+    border-color: transparent transparent transparent #021f54 !important;
+}
+#menu-qui-sommes-nous-en{
+	margin-bottom: 0px !important;
+    border-bottom: 1px solid #aaaaaa !important;
+}
+.card_dates>i{
+	font-size: 15px !important;
+}
+.offer_view_btn{
+	font-size: 20px !important;
+	color: #004b93 !important;
+	font-weight: bolder !important;
+	position: absolute;
+	right: 40px;
+    bottom: 10px;
+}
+
+.page_banner{
+    width: 100%;
+    height: 303px;
+	margin-left: 27%;
+	position: relative;
+}
+
+.breadcrumbs{
+    margin-bottom: 18px !important;
+    margin-top: 10px !important;
+}
+
+.banner_title{
+    width: 469px;
+    background-color: #021f54;
+    position: absolute;
+    right: 390px;
+    top: 125px;
+    text-align: center;
+    color: white;
+    line-height: 73px;
+    font-weight: bolder;
+    font-size: 28px;
+}
+
 a {
 	color: #007bff;
 	text-decoration: none;
