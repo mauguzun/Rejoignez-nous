@@ -132,10 +132,10 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/slick.css">
-	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/my_custom_css.css">
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/bootstrap.css">
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/home-v2.css" >
 	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/update.css" >
+	<link rel="stylesheet" href="<?= base_url()?>/static/update/css/my_custom_css.css">
 </head>
 <div class="modal fade bs-example-modal-lg" id="footerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg"   style="z-index: 999999999" role="document">

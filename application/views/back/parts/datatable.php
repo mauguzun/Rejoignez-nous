@@ -53,7 +53,7 @@
     bottom: 0px;
     left: 0px;
     overflow-x: scroll;
-    z-index: 999;
+    z-index: 1000;
 	}
 
 	#retracable

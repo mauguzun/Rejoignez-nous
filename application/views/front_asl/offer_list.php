@@ -31,6 +31,8 @@
 
 	<div class="table_breadcrumb  ">
 		
+
+	<div class="sort_block">
 				<div class="form-group">
 					<label for="exampleInputEmail1" class="sort_labels">
 						<?= lang('Sort by type')?>
@@ -45,7 +47,7 @@
 				</div>
 				
 			
-				<div class="form-group">
+				<!--<div class="form-group">
 					<label for="exampleInputEmail1" class="sort_labels">
 						<?= lang('Sort by location')?>
 					</label>
@@ -55,12 +57,12 @@
 
 					data-url="<?= base_url().'offers/location' ?>"
 					name="location" />
-				</div>
+				</div>-->
             
 			
     			
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="sort_labels">
+					<label for="exampleInputEmail1" class="sort_labels activity_label">
 						<?= lang('Sort by activity')?>
 					</label>
 					<input
@@ -69,14 +71,78 @@
 					data-url="<?= base_url().'offers/activity' ?>"
 					name="activity" />
 				</div>
-           
+</div>
+
+			<div class="form-group">
+				<button class="search_button" onclick="MyCoolFunction()"><?= lang('Search')?></button>	
+			</div>
+
+			<script>
+				$(".fstToggleBtn:nth-child(1)").addClass("CookOld");
+					function MyCoolFunction(){
+						type_parameter = $(".fstToggleBtn").first().text();
+						switch(type_parameter){
+							case "CDD":
+								type_parameter = 1;
+								break;
+							case "CDI":
+								type_parameter = 2;
+								break;
+							case "Contrat d'apprentissage":
+								type_parameter = 3;
+								break;
+							case "Contrat de professionnalisation":
+								type_parameter = 4;
+								break;
+							case "Stage":
+								type_parameter = 5;
+								break;
+						}
+						activity_parameter = $(".fstToggleBtn:eq(1)").text();
+						switch(activity_parameter){
+							case "Communication":
+								activity_parameter = 33;
+								break;
+							case "DSI":
+								activity_parameter = 34;
+								break;
+							case "Exploitation":
+								activity_parameter = 35;
+								break;
+							case "Finance":
+								activity_parameter = 36;
+								break;
+							case "Administratif":
+								activity_parameter = 37;
+								break;
+							case "Commercial":
+								activity_parameter = 38;
+								break;
+							case "Opérations aériennes":
+								activity_parameter = 39;
+								break;
+							case "Qualité":
+								activity_parameter = 40;
+								break;
+							case "Ressources humaines":
+								activity_parameter = 41;
+								break;
+							case "Technique":
+								activity_parameter = 42;
+								break;
+						}			
+						window.location.href = "http://rejoignez-nous/?activity="+activity_parameter+"&location=&type="+type_parameter+"&category=&page=0";
+					}
+			</script>
 			
 	</div>
 
 	<h3 class="last_offers">Our last offers</h3>
            
           
-      
+	  
+	
+
           
         
 
@@ -95,7 +161,7 @@
 $( document ).ready(function() {
 	var current_page = "<?php echo lang('Sort by type'); ?>";
 	var current_page2 = "<?php echo lang('Sort by activity'); ?>";
-	var current_page3 = "<?php echo lang('Sort by location'); ?>";
+	var current_page3 = "<?php echo lang('Sort by activity'); ?>";
 
     $(".fstToggleBtn:first").text(current_page);
 	$(".fstToggleBtn").eq(1).text(current_page3);
@@ -173,12 +239,13 @@ $( document ).ready(function() {
 
 <style>
 	.table_breadcrumb {
-		padding: 0.75rem 1rem;
-		margin-bottom: 1rem;
-		background-color: #ebebeb;
-		color: #6c757d;
-		width: 100%;
-		display: inline-block;
+		height: 138px;
+    	margin-bottom: 1rem;
+    	background-color: #ebebeb;
+    	color: #6c757d;
+    	width: 100%;
+    	display: inline-block;
+    	position: relative;
 	}
 	.table_breadcrumb .form-group {
 		float: left;
@@ -195,16 +262,16 @@ $( document ).ready(function() {
 	
 	.fstElement
 	{
-		display: inline-block;
-		position: relative;
-		border: 1px solid #D7D7D7;
-		box-sizing: border-box;
-		color: #232323;
-		    font-size: 1rem;
-		background-color: #fff;
-			padding: 2px;
-		margin-top: 10px;
-		width: 100% !important;
+	display: inline-block;
+    position: relative;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+    color: #232323;
+    font-size: 1rem;
+    background-color: #fff;
+    padding: 2px;
+    margin-top: 10px;
+    border-radius: 6px;
 	}
 	.fstElement>select,.fstElement>input
 	{

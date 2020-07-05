@@ -123,7 +123,7 @@ if( ! function_exists('print_offer')){
 		<h5 class="job_app_head">
 		'.$data['title'].'
 		</h5>
-		<div class="col-md-12" style="display: inline-flex;">
+		<div class="col-md-12 offer_job_card">
 		
 		<p class="sub-string card_dates" style="margin-top:10px;">
 		<i class="fas fa-pencil-alt">
@@ -141,7 +141,7 @@ if( ! function_exists('print_offer')){
 
 		<p class="offer_card_type">'.$offer_type.'</p>
 
-		<a class="offer_view_btn">View offer <img src="'. base_url().'static/update/img/Search_Icon_1.png" style="height: 26px;"></a>
+		<a class="offer_view_btn">'. lang('View offer').' <img src="'. base_url().'static/update/img/Search_Icon_1.png" style="height: 26px;"></a>
 
 		</div>
 		</div>

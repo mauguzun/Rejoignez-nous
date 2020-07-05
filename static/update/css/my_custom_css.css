@@ -87,27 +87,73 @@ body.home .custom_footer-wrap .col-three .col-right {
     font-size: 24px;
     font-weight: bold;
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.sort_block{
+    position: absolute;
+    bottom: 20px;
+    margin-left: 24px;
+}
+
+.pagination_block{
+	display: flex;
+    float: left;
+    clear: left;
+}
+
+.search_button:hover{
+	background-color: #021f54;
+	border: 0px;
+}
+
+.search_button{
+    transition: 0.3s all;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: #004b93;
+    border: 0px;
+    border-radius: 5px;
+    line-height: 28px;
+    width: 147px;
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
 }
 
 .sort_labels{
 	color:#004b93;
 	font-size: 16px;
+	margin-bottom: 0px;
 }
 
 .custom_offer_bg{
 	background-color: #ebebeb;
-	line-height: 1.4em;
-	padding: 1em 15px;
-	margin-bottom: 20px;
+    cursor: pointer;
+    height: 138px;
+    position: relative;
+	margin-bottom: 30px;
 }
 .job_app_head{
-	margin-bottom: 15px;
-	font-size: 24px;
+    margin-bottom: 15px;
+    font-size: 21px;
     color: #004b93;
-	font-weight: bolder;
-	margin-left: 24px; 
+    font-weight: bolder;
+    margin-left: 24px;
+    position: absolute;
+    top: 25px;
 }
+
+.page-item.active .page-link{
+	background-color: #004b93 !important;
+    border-color: #004b93 !important;
+}
+
+.page-link{
+	color: #004b93;
+}
+
 .card_dates{
 	font-size: 18px;
 }
@@ -144,12 +190,24 @@ body.home .custom_footer-wrap .col-three .col-right {
 	font-size: 15px !important;
 }
 .offer_view_btn{
-	font-size: 20px !important;
+	font-size: 21px !important;
 	color: #004b93 !important;
 	font-weight: bolder !important;
 	position: absolute;
 	right: 40px;
     bottom: 10px;
+}
+
+.offer_view_btn>img{
+	height: 26px;
+    margin-left: 10px;
+}
+
+.offer_job_card{
+	display: inline-flex;
+    position: absolute !important;
+    bottom: 25px;
+    left: 10px;
 }
 
 .page_banner{

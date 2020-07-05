@@ -85,7 +85,7 @@ class Offers extends CI_Controller{
 		//
 
 
-		$string = '<div class="modal-header">';
+		$string = '<div class="pagination_block">';
 
 
 		$this->load->library("pagination");
