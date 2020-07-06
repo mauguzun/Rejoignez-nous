@@ -76,6 +76,7 @@ $lang['other_options'] = 'Autres options';
 $lang['other'] = 'Mobilité et prétentions salariales';
 $lang['mission'] = 'Mission';
 $lang['apply'] = 'Postuler';
+$lang['apply_for_offer'] = 'Postulez pour cette offre';
 $lang['some_important_infomation'] = 'Veuillez remplir les champs suivants';
 $lang['some_header'] = 'Vous pourrez ensuite postuler';
 $lang['fill_all_fields_in_profile'] = 'Votre profil est incomplet';

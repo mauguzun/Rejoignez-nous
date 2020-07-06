@@ -74,6 +74,7 @@ $lang['other_options'] = 'Other options';
 $lang['other'] = 'Other';
 $lang['mission'] = 'Mission';
 $lang['apply'] = 'Apply';
+$lang['apply_for_offer'] = 'Apply for this offer';
 $lang['some_important_infomation'] = 'Please complete form listed below';
 $lang['some_header'] = 'then you can apply to offer';
 $lang['fill_all_fields_in_profile'] = 'Your profile is incomplete';

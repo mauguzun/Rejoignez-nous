@@ -61,7 +61,7 @@
             
 			
     			
-				<div class="form-group">
+				<div class="form-group" style="margin-left: 20px;">
 					<label for="exampleInputEmail1" class="sort_labels activity_label">
 						<?= lang('Sort by activity')?>
 					</label>
