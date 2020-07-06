@@ -169,8 +169,44 @@
 
 		<div class="posts_heading"><img src="<?= base_url() ?>static/update/img/Vector.svg">	You might like these posts</div> 
 
+		<div class="row" style="margin-bottom: 45px;">
+			<div class="col-md-4">
+					<div class="post_card_like"> 
+						<img src="<?= base_url() ?>static/update/img/Group33.svg" alt="" class="post_card_img">
+						Trainee cargo sales management
 
+						<a href="<?= $url?>">
+							<button type="button" class="offer_apply_btn" style="margin-top: 20px;">
+								Apply for
+							</button>
+						</a>
+					</div>	
+			</div>
+			<div class="col-md-4">
+					<div class="post_card_like"> 
+						<img src="<?= base_url() ?>static/update/img/Group33.svg" alt="" class="post_card_img">
+						Trainee cargo sales management
 
+						<a href="<?= $url?>">
+							<button type="button" class="offer_apply_btn" style="margin-top: 20px;">
+								Apply for
+							</button>
+						</a>
+					</div>	
+			</div>
+			<div class="col-md-4">
+					<div class="post_card_like"> 
+						<img src="<?= base_url() ?>static/update/img/Group33.svg" alt="" class="post_card_img">
+						Trainee cargo sales management
+
+						<a href="<?= $url?>">
+							<button type="button" class="offer_apply_btn" style="margin-top: 20px;">
+								Apply for
+							</button>
+						</a>
+					</div>	
+			</div>
+		</div>
 
 
 

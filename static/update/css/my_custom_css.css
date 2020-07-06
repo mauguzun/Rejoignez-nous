@@ -190,6 +190,30 @@ body.home .custom_footer-wrap .col-three .col-right {
 	height: 34px;
 }
 
+.post_card_like{
+	height: auto;
+	width:100%;
+	border: 1px solid #004b93;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.post_card_like{
+	padding-top: 70px;
+	position: relative;
+	text-align: center;
+	color:#021f54;
+	font-size: 20px;
+	margin-top: 25px;
+}
+
+.post_card_img{
+	position: absolute;
+	top:10px;
+	right:15px;
+	height: 35px;
+}
+
 .breadcrumbs {
     font-size: 16px !important;
 }
