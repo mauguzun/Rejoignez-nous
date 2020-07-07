@@ -371,6 +371,107 @@ body.home .custom_footer-wrap .col-three .col-right {
 	margin-bottom: 80px;
 }
 
+.job_description_banner{
+    width: 100%;
+    height: 507px;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 40px;
+    padding-top: 120px;
+}
+
+.job_description_banner_title{
+	width:100%;
+	background-color: #d6d6d6;
+	text-align: center;
+	color:#021f54;
+	font-size: 50px;
+	line-height: 100px;
+	font-weight: bold;
+}
+
+.custom_dropdown_feedback_author{
+	color: #021f54;
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+    float: right;
+}
+
+.in_brief_img{
+	height: 80px;
+	margin-bottom: 15px;
+}
+
+.in_breif_title{
+	color:#021f54;
+	font-size:30px;
+	font-style: italic;
+	margin-top:100px;
+	margin-bottom: 50px;
+}
+
+.employment_link_tab{
+    margin-top: 45px;
+    background-color: #f7f6f6;
+    padding-top: 25px;
+	border: 2px solid #021f54;
+	margin-bottom:45px;
+}
+
+.employment_body_link{
+    font-size: 23px;
+    color: black;
+    text-decoration: none!important;
+    line-height: 60px;
+}
+
+.employment_body_link_block{
+	position: relative;
+	width:100%;
+	padding-left: 50px;
+	border-bottom: 1px solid black;
+}
+
+.employment_body_link:hover{
+	color:black;
+	text-decoration: none!important;
+}
+
+.employment_body_link_block > img{
+    height: 20px;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+.employment_link_title{
+	text-transform: uppercase;
+    color: #021f54;
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.in_brief_bold{
+	color:#021f54;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.check_latest_offers{
+	color:#021f54;
+	font-size: 21px;
+	text-decoration: underline;
+}
+
+.in_brief_small{
+	color:black;
+	font-size: 22px;
+}
+
 .job_gallery_white{
 	background-color: #D6EFFB;
 	height: 229px;
