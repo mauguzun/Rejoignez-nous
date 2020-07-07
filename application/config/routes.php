@@ -63,9 +63,6 @@ $route['back/settings_help/(:any)'] = 'back/settings_help/index/$1';
 
 
 
-
-
-
 $route['user/edit_user'] = 'auth/edit_user';
 $route['user/logout'] = 'auth/logout';
 /*$route['user/apply/(:num)'] = 'user/apply/index/$1';

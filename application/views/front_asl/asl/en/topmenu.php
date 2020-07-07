@@ -72,10 +72,11 @@
 </li>
 <li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-174 has-submnu"><a href="https://www.careers.aslairlines.com/?lang=fr">Rejoignez-nous</a>
 <ul class="sub-menu">
-	<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="https://www.careers.aslairlines.com/offers/?lang=fr">Offres</a></li>
-	<li id="menu-item-215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215"><a href="https://www.careers.aslairlines.com/apply/new/begin/?lang=fr">Candidatures spontanées</a></li>
-	<li id="menu-item-216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216"><a href="https://www.careers.aslairlines.com/policy/?lang=fr">Politique de recrutement</a></li>
-	<li id="menu-item-218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="https://www.careers.aslairlines.com/auth/login/?lang=fr">Espace candidat</a></li>
+	<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="<?= base_url() ?>offers">Offres</a></li>
+	<li id="menu-item-219" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-219"><a href="<?= base_url() ?>job_gallery">Job gallery</a></li>
+	<li id="menu-item-215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215"><a href="<?= base_url() ?>apply/new/begin">Candidatures spontanées</a></li>
+	<li id="menu-item-216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-216"><a href="<?= base_url() ?>policy">Politique de recrutement</a></li>
+	<li id="menu-item-218" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218"><a href="<?= base_url() ?>auth/login">Espace candidat</a></li>
 </ul>
 </li>
 <li id="menu-item-722" class="press menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-722 has-submnu"><a href="https://www.aslairlines.fr/category/communiques-de-presse/">Presse</a>

@@ -25,6 +25,7 @@ class Policy extends  CI_Controller
 			]);
 		$this->show_footer();
         
+    
       
       
       
