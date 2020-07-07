@@ -1,4 +1,4 @@
-<div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/BusinessMen-1_1.png'); width: auto!important;">
+<div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/BusinessMen-1_1.png'); width: auto!important; height: 276px!important;">
 <div class="table_breadcrumb_offer  ">
 		
 
