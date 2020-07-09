@@ -20576,3 +20576,19 @@ label.display-block {
     padding-bottom: 10px;
   }
 }
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+	padding: 12px 20px;
+    line-height: 1.5384616;
+    border-top: 1px solid #ddd;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    max-width: 120px !important;
+}
+.table > thead > tr > th:hover, .table > tbody > tr > th:hover, .table > tfoot > tr > th:hover, .table > thead > tr > td:hover, .table > tbody > tr > td:hover, .table > tfoot > tr > td:hover{
+  overflow: visible !important;
+  z-index: 20;
+  cursor: pointer;
+  max-width: 260px !important;
+}

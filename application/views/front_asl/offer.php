@@ -86,7 +86,7 @@
 									activity_parameter = 42;
 									break;
 							}			
-							window.location.href = "http://rejoignez-nous/?activity="+activity_parameter+"&location=&type="+type_parameter+"&category=&page=0";
+							window.location.href = "http://md-victoria.ru/?activity="+activity_parameter+"&location=&type="+type_parameter+"&category=&page=0";
 						}
 				</script>
 				
