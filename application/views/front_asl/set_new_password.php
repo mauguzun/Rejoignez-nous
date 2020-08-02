@@ -3,7 +3,7 @@
 
 
 	<div class="breadcrumbs eap-breadcrumbs">
-			<a href="<?= base_url()?>" ><span><?= lang('Careers') ?></span> </a>  &gt; <span class="current-page">  <?php echo lang('reset_password_heading');?><span></span></span></div>
+			<a href="<?= base_url()?>" ><span><?= lang('Careers') ?></span> </a>  &gt; <span class="current-page" style="color: #484848 !important;">  <?php echo lang('reset_password_heading');?><span></span></span></div>
 	<h1 class="post-title"> <?php echo lang('reset_password_heading');?></h1><br>
 
 	<?
@@ -41,6 +41,4 @@
 
 
 </div><!-- #content -->
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->

@@ -107,7 +107,7 @@
 			</span>
 		</a>  &gt;
 		<a href="" >
-			<span  class="current-page">
+			<span  class="current-page" style="color: #484848 !important;">
 				<?= $query['title']?>
 			</span>
 		</a>  
@@ -289,15 +289,13 @@ $( document ).ready(function() {
 
 
 </script>
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->
 
 <style>
 	.table_breadcrumb {
 		height: 138px;
     	margin-bottom: 1rem;
-    	background-color: #ebebeb;
+		background: #F5F5F5;
     	color: #6c757d;
     	width: 100%;
     	display: inline-block;
@@ -305,8 +303,7 @@ $( document ).ready(function() {
 	}
 	.table_breadcrumb .form-group {
 		float: left;
-		width: 33%;
-		
+		margin: 0px !important;
 	}
 	@media only screen and (max-width: 600px) {
   .table_breadcrumb .form-group {
@@ -318,16 +315,17 @@ $( document ).ready(function() {
 	
 	.fstElement
 	{
-	display: inline-block;
-    position: relative;
-    border: 1px solid #D7D7D7;
-    box-sizing: border-box;
-    color: #232323;
-    font-size: 1rem;
-    background-color: #fff;
-    padding: 2px;
-    margin-top: 10px;
-    border-radius: 6px;
+		display: inline-block;
+		position: relative;
+		color: #232323;
+		font-size: 1rem;
+		background-color: #fff;
+		padding: 2px;
+		width: 300px;
+		background: #FFFFFF;
+		border: 1px solid #CFCFCF;
+		box-sizing: border-box;
+		border-radius: 8px;
 	}
 	.fstElement>select,.fstElement>input
 	{
@@ -336,14 +334,18 @@ $( document ).ready(function() {
 	}
 	.fstToggleBtn
 	{
-		    font-size: 1rem;
+		height: 100%;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 19px;
+		color: #757B84;
 		display: block;
 		position: relative;
 		box-sizing: border-box;
 		padding: 10px ;
-	
-		min-width: 14.28571em;
-		cursor: pointer
+		cursor: pointer;
 	}
 	.fstToggleBtn:after
 	{

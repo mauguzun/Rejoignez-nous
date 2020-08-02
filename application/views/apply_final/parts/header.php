@@ -11,7 +11,7 @@
 	</a>  &gt; 
 
 	<a href="#" >
-		<span class="current-page">
+		<span class="current-page" style="color: #484848 !important;">
 			<?= $offer['title']?>
 		</span>
 	</a>

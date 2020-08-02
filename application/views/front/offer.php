@@ -1,6 +1,6 @@
 <div id="content" role="main">
 
-<div class="breadcrumbs eap-breadcrumbs">	<a href="<?= base_url()?>" ><span><?= lang('Careers') ?></span> </a>  &gt; <span>Job Search & Apply</span> &gt;<span class="current-page"> Technicien(ne) avion B2<span></span></span></div>
+<div class="breadcrumbs eap-breadcrumbs">	<a href="<?= base_url()?>" ><span><?= lang('Careers') ?></span> </a>  &gt; <span>Job Search & Apply</span> &gt;<span class="current-page" style="color: #484848 !important;"> Technicien(ne) avion B2<span></span></span></div>
                             <h1 class="post-title">Technicien(ne) avion B2</h1><br>
 <h5 class="job_app_head">
             Info            
@@ -74,6 +74,4 @@ Period : No information
 
                            
         </div><!-- #content -->
-        <div id="sidebar-right">
-                    </div>
     </div><!-- #primary -->

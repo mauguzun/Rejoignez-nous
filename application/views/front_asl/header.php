@@ -177,24 +177,30 @@
 				<ul id="menu-top-menu-en" class="menu"><li id="menu-item-9009" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9009"><a href="https://fo-emea.ttinteractive.com/Zenith/FrontOffice/Europeairpost/en-GB/WebCheckin?mode=iframe">Check-in</a></li>
 					<li id="menu-item-8102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8102"><a target="_blank" href="https://emea.ttinteractive.com/Zenith/FrontOffice/europeairpost/en-GB/Home/FindBooking">My booking</a></li>
 					<li id="menu-item-8103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8103"><a href="https://www.aslairlines.fr/en/contact-2/">Contact us</a></li>
-				</ul>					    <div class="eap-lang-selector">
+				</ul>					    
+
+				<div class="eap-lang-selector">
     	      		
-					<?
-					foreach($lang_list  as  $key=>$value):?>
+										
 					
-					
-					<a class="lang-item "
-						     href="<?= parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); ?>?lang=<?= $key   ?>">
-						<img
-						src="https://www.aslairlines.fr
-						/wp-content/plugins/sitepress-mu
-						ltilingual-cms/res/flags/<?= $key ?>.png" alt="<?= $value ?>" />
-					</a>
-					<? endforeach ;?>
-					
-    	      		
-      	      		
-				</div>
+					  <a class="lang-item "
+							   href="/?lang=en">
+						  <img
+						  src="<?= base_url() ?>static/update/img/640px-Flag_of_the_United_Kingdom 1.png" alt="English" />
+					  </a>
+										  
+					  
+					  <a class="lang-item "
+							   href="/?lang=fr">
+						  <img
+						  src="<?= base_url() ?>static/update/img/france-flag-image-free-download 1.png" alt="Francais" />
+					  </a>
+										  
+						
+						  
+				  </div>
+
+
 				<div class="phone-number parent_number">
 				</div>
 			</div>
@@ -205,7 +211,10 @@
 </header>
 
 <div id="primary" class="site-content two-sidebars">
-<div id="sidebar-left">
+
+<div class="sidebar_group">
+
+<div class="sidebar-left" id="sidebar-left">
 
 
 
@@ -227,16 +236,18 @@
 			
 				page_item page-item-976 current_page_item menu-item-5755">
 				
-				
+
 				<? if(!is_array($value)) :?>
 				<a href="<?= base_url().$key?>"><?= lang($value)  ?>
 				
 					<? else: ?>
+						<div class="hr_container"><div class="custom_sidebar_hr"></div></div>
 					<ul class="sub-menu">
 	
 						<? foreach($value as $k=>$v):?>
 						<li id="menu-item-5737" 
 						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5737">
+						<img src="<?= base_url() ?>static/update/img/Vector 4.svg" alt="">
 						<a href="<?= base_url().$k?>"><?= lang($v)  ?></a>
 						</li>
 						<? endforeach ;?>
@@ -249,8 +260,17 @@
 		</ul>
 
 
-
 	</div>
+
+</div>
+
+<div class="sidebar-left email_signup">
+	<p>Get new jobs offers by email</p>
+
+	<input type="email" placeholder="My email address">
+
+	<button class="large_av_btn">Activate</button>
+</div>
 
 </div>
 

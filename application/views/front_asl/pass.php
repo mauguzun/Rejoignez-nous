@@ -12,7 +12,7 @@
             </span>&gt;
         </a>
         <a href="#" >
-            <span class="current-page">
+            <span class="current-page" style="color: #484848 !important;">
                 <?php echo lang('email_forgot_password_link') ;?>
                 <span>
                 </span>
@@ -65,6 +65,4 @@
 
 
 </div><!-- #content -->
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->

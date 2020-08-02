@@ -235,13 +235,21 @@ html[lang='de-DE'] #bandeau-header .baseline-eap{
 #bandeau-header .bloc-outils .eap-lang-selector{
     float:left;
     height:25px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 #bandeau-header .bloc-outils .eap-lang-selector a{
     display: inline-block;
     margin-top:6px;
-    margin-left:10px;
+    margin-left:15px;
 
 }
+
+#bandeau-header .bloc-outils .eap-lang-selector a > img{
+  height: 18px !important;
+}
+
 #bandeau-header .bloc-outils #lang_sel {
 	display: block;
 	float: left;

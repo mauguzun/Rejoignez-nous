@@ -1,3 +1,5 @@
+<div class="right_side_content">
+
 <div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/51335600_1025530647617129_5232785357975584768_n.png');">
 	<div class="banner_title">EMPLOYMENT OPPORTUNITIES</div>
 </div> 
@@ -11,12 +13,12 @@
 			<span>
 				<?= lang('Careers') ?>
 			</span>
-		</a>  &gt;
+		</a>  /
 
 
 
 		<a href="<?= base_url()?>">
-			<span   class="current-page">
+			<span   class="current-page" style="color: #484848 !important;">
 				<?= lang('offer_list') ?>
 			</span>
 		</a>
@@ -34,9 +36,6 @@
 
 	<div class="sort_block">
 				<div class="form-group">
-					<label for="exampleInputEmail1" class="sort_labels">
-						<?= lang('Sort by type')?>
-					</label>
 
 					<input
 					type="text"
@@ -61,10 +60,7 @@
             
 			
     			
-				<div class="form-group" style="margin-left: 20px;">
-					<label for="exampleInputEmail1" class="sort_labels activity_label">
-						<?= lang('Sort by activity')?>
-					</label>
+				<div class="form-group">
 					<input
 					type="text"
 					id="activity"
@@ -137,22 +133,28 @@
 			
 	</div>
 
-	<h3 class="last_offers">Our last offers</h3>
-           
-          
-	  
+	<div class="offers_table_titles">
+		<div class="offers_table_title" style="width: 45%;">
+			Job Title
+		</div>
+		<div class="offers_table_title" style="width: 14%;">
+			Start date
+		</div>
+		<div class="offers_table_title" style="width: 16%;">
+			Location
+		</div>
+		<div class="offers_table_title" style="width: 12%;">
+			CDI
+		</div>
+	</div>
 	
-
-          
-        
-
-
-
-	<article id="offers">
+ 	<article id="offers">
 
 		<?= $offers ; ?>
 	</article>
+
 </div><!-- #content -->
+</div>
 
 <script src="https://rawgit.com/dbrekalo/fastselect/master/dist/fastselect.standalone.min.js">
 
@@ -232,25 +234,25 @@ $( document ).ready(function() {
 
 </script>
 
-
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->
 
 <style>
 	.table_breadcrumb {
-		height: 138px;
-    	margin-bottom: 1rem;
-    	background-color: #ebebeb;
-    	color: #6c757d;
-    	width: 100%;
-    	display: inline-block;
-    	position: relative;
+		height: 101px;
+		padding-left: 15px;
+		padding-top: 28px;
+		padding-bottom: 28px;
+		padding-right: 15px;
+		margin-bottom: 1rem;
+		background: #F5F5F5;
+		color: #6c757d;
+		width: 100%;
+		display: inline-block;
+		position: relative;
 	}
 	.table_breadcrumb .form-group {
 		float: left;
-		width: 33%;
-		
+    	margin-right: 30px;
 	}
 	@media only screen and (max-width: 600px) {
   .table_breadcrumb .form-group {
@@ -262,16 +264,18 @@ $( document ).ready(function() {
 	
 	.fstElement
 	{
-	display: inline-block;
-    position: relative;
-    border: 1px solid #D7D7D7;
-    box-sizing: border-box;
-    color: #232323;
-    font-size: 1rem;
-    background-color: #fff;
-    padding: 2px;
-    margin-top: 10px;
-    border-radius: 6px;
+		display: inline-block;
+		position: relative;
+		color: #232323;
+		font-size: 1rem;
+		background-color: #fff;
+		padding: 2px;
+		width: 300px;
+		background: #FFFFFF;
+		border: 1px solid #CFCFCF;
+		box-sizing: border-box;
+		border-radius: 8px;
+		height: 45px;
 	}
 	.fstElement>select,.fstElement>input
 	{
@@ -280,14 +284,18 @@ $( document ).ready(function() {
 	}
 	.fstToggleBtn
 	{
-		    font-size: 1rem;
+		height: 100%;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 19px;
+		color: #757B84;
 		display: block;
 		position: relative;
 		box-sizing: border-box;
 		padding: 10px ;
-	
-		min-width: 14.28571em;
-		cursor: pointer
+		cursor: pointer;
 	}
 	.fstToggleBtn:after
 	{

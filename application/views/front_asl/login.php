@@ -9,7 +9,7 @@
 			</span>
 		</a>  &gt;
 		<a href="#" >
-			<span class="current-page">
+			<span class="current-page" style="color: #484848 !important;">
              
 				<?php echo lang('login_heading');?>
 
@@ -115,6 +115,4 @@
 
 
 </div><!-- #content -->
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->

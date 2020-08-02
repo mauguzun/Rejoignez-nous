@@ -7,7 +7,7 @@
 			</span>
 		</a>  &gt;
 		<a href="#" >
-			<span class="current-page">
+			<span class="current-page" style="color: #484848 !important;">
 				<?php echo lang('create_user_heading');?>
 			</span>
 		</a>
@@ -154,6 +154,4 @@
 
 
 </div><!-- #content -->
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->

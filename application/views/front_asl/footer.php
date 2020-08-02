@@ -1,12 +1,6 @@
-<div class="footer-wrap clearfix" style="height: 207px;">
+<div class="footer-wrap clearfix" style="height: 171px; position: relative;">
 	<?= $asl_footer?>
 </div>
-
-
-
-<h1>
-	<?=$this->session->flashdata('info') ?>
-</h1>
 
 <script src="<?= base_url().'static/js/site.js'?>">
 </script>

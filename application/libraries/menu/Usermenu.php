@@ -31,10 +31,11 @@ class Usermenu{
 		}*/
 		
 		$menu = [
+			'policy' => 'our_recruitment_policy',
 			'offers'=>'offer_list',
-			'#contact'=>'contact',
 			'apply/new/begin' => 'unsolicited_application_applys',
-			'policy' => 'our_recruitment_policy' ];
+			'#contact'=>'contact'
+			 ];
 	        
 		if($logedIn){
 			$menu['auth/logout' ] =   'sign_out';

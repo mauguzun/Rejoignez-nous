@@ -7,7 +7,7 @@
 		<span><?= lang('Careers')?></span>
 	</a>&gt;
 	<a href="#">
-		<span class="current-page"><?= $title ?></span>
+		<span class="current-page" style="color: #484848 !important;"><?= $title ?></span>
 	</a>
 	
 	
@@ -51,8 +51,6 @@
 	</table>
 
 </div><!-- #content -->
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->
 
 

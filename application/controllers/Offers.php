@@ -85,7 +85,7 @@ class Offers extends CI_Controller{
 		//
 
 
-		$string = '<div class="pagination_block">';
+		$string = '<div class="pagination_block" style="margin-top: 25px;">';
 
 
 		$this->load->library("pagination");

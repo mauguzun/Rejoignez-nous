@@ -15,7 +15,7 @@
 				<?= lang('Careers') ?>
 			</span>
 		</a>&gt;
-		<span class="current-page">
+		<span class="current-page" style="color: #484848 !important;">
 			<?= lang('our_recruitment_policy')?>
 			<span>
 			</span>
@@ -264,7 +264,6 @@ $(".custom_dropdown_btn").click(function(){
 	}else{
 		$(this).children(".custom_dropdown_arrow").addClass("rotate_dropdown_arrow");
 	}
-	console.log("lol");
 });
 </script>
 
@@ -273,8 +272,6 @@ $(".custom_dropdown_btn").click(function(){
 
 
 </div><!-- #content -->
-<div id="sidebar-right">
-</div>
 </div><!-- #primary -->
 
 

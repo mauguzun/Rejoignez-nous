@@ -120,28 +120,26 @@ if( ! function_exists('print_offer')){
 
 		return ' <div style="cursor: pointer;" 
 		onclick="location.replace(\''. base_url().'offer/'.$data['id'] .'\');" class="custom_offer_bg" >
-		<h5 class="job_app_head">
-		'.$data['title'].'
-		</h5>
 		<div class="col-md-12 offer_job_card">
-		
-		<p class="sub-string card_dates" style="margin-top:10px;">
-		<i class="fas fa-pencil-alt">
+		<p class="job_app_head">
+		'.$data['title'].'
+		</p>
+
+		<p class="sub-string card_dates" style="width:14%;">
 		</i>
 		'.$data['start_date'].' 
 
 		</p>
 		
 		
-		<p class="sub-string card_dates" style="margin-top:10px; margin-left: 30px;">
-		<i class="fas fa-search-location">
+		<p class="sub-string card_dates" style="width:16%;">
 		</i>
 		'.$data['location'].' 
 		</p>
 
-		<p class="offer_card_type">'.$offer_type.'</p>
+		<p class="offer_card_type" style="width:12%;">'.$offer_type.'</p>
 
-		<a class="offer_view_btn">'. lang('View offer').' <img src="'. base_url().'static/update/img/Search_Icon_1.png" style="height: 26px;"></a>
+		<a class="offer_view_btn" style="width:13%;">'. lang('View offer').' <img src="'. base_url().'static/update/img/search (2) 1.png"></a>
 
 		</div>
 		</div>
