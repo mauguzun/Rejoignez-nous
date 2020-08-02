@@ -32,7 +32,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-						<span>*</span><?= lang('company')?>
+						<?= lang('company')?>
 				</div>
 				<input
 				type="text" 
@@ -45,7 +45,7 @@ $ref = $name ;
 			<? foreach(['total_hours[]','opl_hours[]','cdb_hours[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
+						<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
@@ -102,7 +102,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-					<span>*</span>	<?= lang('company')?>
+						<?= lang('company')?>
 				</div>
 				<input
 				type="text" 
@@ -114,7 +114,7 @@ $ref = $name ;
 			<? foreach(['total_hours[]','opl_hours[]','cdb_hours[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
+						<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				required=""

@@ -58,7 +58,7 @@ $this->load->view('apply_final/parts/card_header.php',['name'=>$name ]); ?>
 		<div class="row row_mb">
 			<div class="col-md-12" >
 			
-				<div class="input_label"><span>*</span><?= lang($name)?></div>
+				<div class="input_label"><?= lang($name)?></div>
 			
 				
 				<textarea name="<?= $name?>"

@@ -16,7 +16,7 @@ $ref = $name ;
 		<div class="row row_mb" 
 		ref="<?=$ref.$key?>" >
 		
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="input_label">
 					<span>*</span><?= lang('function')?>
 				</div>
@@ -29,7 +29,7 @@ $ref = $name ;
 				/>
 			</div>
 			
-			<div class="col-md-3">
+			<!--<div class="col-md-3">
 				<div class="input_label">
 					<?= lang('employer')?>
 				</div>
@@ -41,10 +41,10 @@ $ref = $name ;
 				class="form-control" 
 				id="<?='key'.$key?>"
 				>
-			</div>
+			</div>-->
 			
 			<?foreach(['start[]','end[]'] as $row) :?>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div class="input_label">	<span>*</span>
 					<?= lang(str_replace('[]','',$row))?>
 				</div>

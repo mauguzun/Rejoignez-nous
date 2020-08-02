@@ -144,7 +144,7 @@
 					}
 					
 
-					console.log(this.postData)
+					console.log(this.postData);
 					
           
 					$.post(action,this.postData)
@@ -466,4 +466,8 @@
 
 	
 	/////////////
+	$(".bg-blue_min").click(function(){
+		$(this).closest(".collapse").removeClass("show");
+		$(this).closest(".collapse").parent(".card").next().children(".collapse").addClass("show");
+	});
 </script>

@@ -18,7 +18,7 @@ $ref = 'quality';
 	
 		<div class="row row_mb" ref="<?=$ref.$key?>" >
 		    
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div class="input_label">
 					<span>*</span>		<?= lang('aircaft_type')?>
 				</div>
@@ -31,21 +31,44 @@ $ref = 'quality';
 				required="required" list="aircraft_type">
 			</div>
 
-			<? foreach(['last_online_check[]','last_simulator_control[]','last_flight[]'] as $row ):?>
-			<div  class="col-md-3">
+			<div class="col-md-3">
 				<div class="input_label">
-					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
+							<?= lang('last_online_check')?>
 				</div>
 				<input
-				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
+				type="text" 
+				name="last_online_check[]" 
+				value="<?= isset($onedata['last_online_check[]']) ?$onedata['last_online_check[]'] : null ?>"
 				data-calendar="true" 
-				required=""
-				name="<?=$row?>"     
-				type="text"  
-				class="form-control"/>
-			
+				type="text" 
+				class="form-control">
 			</div>
-			<? endforeach; ?>
+
+			<div class="col-md-3">
+				<div class="input_label">
+				<span>*</span>		<?= lang('last_simulator_control')?>
+				</div>
+				<input
+				type="text" 
+				name="last_simulator_control" 
+				value="<?= isset($onedata['last_simulator_control']) ?$onedata['last_simulator_control'] : null ?>"
+				data-calendar="true" 
+				type="text" 
+				class="form-control">
+			</div>
+
+			<div class="col-md-2">
+				<div class="input_label">
+				<span>*</span>	<?= lang('last_flight')?>
+				</div>
+				<input
+				type="text" 
+				name="last_flight" 
+				value="<?= isset($onedata['last_flight']) ?$onedata['last_flight'] : null ?>"
+				data-calendar="true" 
+				type="text" 
+				class="form-control">
+			</div>
 			
 			
 			

@@ -42,7 +42,6 @@ class Uns_pnt extends  Pnt_Controller{
 			'foreignlang'=>$this->get_lang(),
 			'licenses'=>$this->get_license(),
 			'medical_aptitudes'=>$this->get_medical(),
-			'practice'=>$this->get_practice(),
 			'qualification_type'=>$this->get_quality(),
 			'total_flight_hours'=>$this->get_exp('total_flight_hours'),
 			'expirience'=>$this->get_exp('expirience'),

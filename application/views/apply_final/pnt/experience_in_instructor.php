@@ -19,7 +19,7 @@ $ref = $name ;
 		    
 			<div class="col-md-6">
 				<div class="input_label">
-					<span>*</span>	<?= lang('aircaft_type')?>
+						<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
@@ -32,7 +32,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-					<span>*</span>	<?= lang('company')?>
+						<?= lang('company')?>
 				</div>
 				<input
 				type="text" 
@@ -45,7 +45,7 @@ $ref = $name ;
 			<? foreach(['validity_date[]','date_of_issue[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-					<span>*</span>	<?= lang(str_replace('[]','',$row))?>
+						<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				value="<?= isset($onedata[$row]) ?$onedata[$row] : null ?>"
@@ -60,9 +60,9 @@ $ref = $name ;
 			<? endforeach; ?>
 			
 			
-			<div class="col-md-2">
+			<div class="col-md-5">
 				<div class="input_label">
-					<span>*</span>	<?= lang('approval_number')?>
+						<?= lang('approval_number')?>
 				</div>
 				<input
 				type="number" 
@@ -91,7 +91,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-				<span>*</span>		<?= lang('aircaft_type')?>
+						<?= lang('aircaft_type')?>
 				</div>
 				<input
 				type="text" 
@@ -103,7 +103,7 @@ $ref = $name ;
 			
 			<div class="col-md-6">
 				<div class="input_label">
-				<span>*</span>		<?= lang('company')?>
+						<?= lang('company')?>
 				</div>
 				<input
 				type="text" 
@@ -115,7 +115,7 @@ $ref = $name ;
 			<? foreach(['validity_date[]','date_of_issue[]'] as $row ):?>
 			<div  class="col-md-3">
 				<div class="input_label">
-				<span>*</span>		<?= lang(str_replace('[]','',$row))?>
+					<?= lang(str_replace('[]','',$row))?>
 				</div>
 				<input
 				@mouseover="setupCalendar()"
@@ -130,9 +130,9 @@ $ref = $name ;
 			<? endforeach; ?>
 			
 			
-			<div class="col-md-2">
+			<div class="col-md-6">
 				<div class="input_label">
-				<span>*</span>		<?= lang('approval_number')?>
+						<?= lang('approval_number')?>
 				</div>
 				<input
 				type="number" 
