@@ -1,4 +1,6 @@
-<div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/Frise-picto-RH---1199x276px.jpg'); width: auto!important; height: 278px;">
+<div class="right_side_content">
+
+<div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/Frise-picto-RH---1199x276px.jpg');">
 	<div class="equal_opp_title">HUMAN RESOURCES</div>
 </div>
 
@@ -82,7 +84,7 @@
         </button>
     </div>
 
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body custom_card_body">
 		  <div class="custom_dropdown_feedback">
 			  <img src="<?= base_url() ?>static/update/img/Format_Quote_Icon_2.png" alt="" class="upper_bracket">
@@ -135,7 +137,7 @@
         </button>
     </div>
 
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
 	<div class="custom_body_heading">HOW TO REACH US ?</div>
       <div class="card-body custom_card_body">
 
@@ -166,7 +168,7 @@
         </button>
     </div>
 
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
       <div class="card-body custom_card_body">
 
 		 <img src="<?= base_url() ?>static/update/img/Capture_d’écran_2020-04-17_à_15.53.41.png" alt="" class="full_column_img" style="margin-top: 35px;">
@@ -189,7 +191,7 @@
         </button>
     </div>
 
-    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+    <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
       <div class="card-body custom_card_body">
 
 	  <div class="custom_dropdown_feedback">
@@ -254,6 +256,8 @@
 	</div>
   </div>
 
+
+</div>
 
 </div>
 <script>
