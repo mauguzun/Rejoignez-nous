@@ -67,11 +67,16 @@
 					data-url="<?= base_url().'offers/activity' ?>"
 					name="activity" />
 				</div>
-</div>
 
+
+
+			</div>
+
+			
 			<div class="form-group">
 				<button class="search_button" onclick="MyCoolFunction()"><?= lang('Search')?></button>	
 			</div>
+
 
 			<script>
 				$(".fstToggleBtn:nth-child(1)").addClass("CookOld");

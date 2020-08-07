@@ -1,36 +1,32 @@
+<div class="right_side_content">
+
 <div class="page_banner" style="background-image:url('<?= base_url() ?>static/update/img/BusinessMen-1_1.png'); width: auto!important; height: 276px!important;">
-<div class="table_breadcrumb_offer  ">
+<div class="table_breadcrumb">
 		
 
-		<div class="sort_block" style="display: inline-flex!important;">
-					<div class="form-group" style="width: 300px;">
-						<label for="exampleInputEmail1" class="sort_labels">
-							<?= lang('Sort by type')?>
-						</label>
-	
+		<div class="sort_block">
+				<div class="form-group">
 						<input
 						type="text"
 						id="type"
-	
+
 						data-url="<?= base_url().'offers/type' ?>"
 						name="type" />
-					</div>		
-					
-					<div class="form-group" style="width: 300px;">
-						<label for="exampleInputEmail1" class="sort_labels activity_label">
-							<?= lang('Sort by activity')?>
-						</label>
-						<input
-						type="text"
-						id="activity"
-						data-url="<?= base_url().'offers/activity' ?>"
-						name="activity" />
-					</div>
-	</div>
+				</div>
 	
 				<div class="form-group">
-					<button class="search_button" onclick="MyCoolFunction()" style="right: 70px!important;"><?= lang('Search')?></button>	
+					<input
+					type="text"
+					id="activity"
+					data-url="<?= base_url().'offers/activity' ?>"
+					name="activity" />
 				</div>
+
+				<div class="form-group">
+					<button class="search_button" onclick="MyCoolFunction()"><?= lang('Search')?></button>	
+				</div>
+	</div>
+
 	
 				<script>
 					$(".fstToggleBtn:nth-child(1)").addClass("CookOld");
@@ -117,14 +113,16 @@
 			<?= $query['title']?> 
 	</div>
 
-	
+	<div class="container" style="padding-top: 20px; padding-left: 180px; padding-right: 180px;">
+		<div class="col-md-12">
+
 	<div class="row">
 		<div class="col-md-6 service_square_block">
-			<img src="<?= base_url() ?>static/update/img/location 1.svg" alt="" style="width:64px;">
+			<img src="<?= base_url() ?>static/update/img/location 1.svg" alt="" style="width:59px;">
 			<p class="serive_square"><?= $query['location']?></p>
 		</div>
 		<div class="col-md-6 service_square_block">
-			<img src="<?= base_url() ?>static/update/img/Group.svg" alt="" style="width:64px;">
+			<img src="<?= base_url() ?>static/update/img/Group.svg" alt="" style="width:59px;">
 			<p class="serive_square"><?=  date_to_input($query['pub_date'])?></p>
 		</div>
 	</div><br>
@@ -132,21 +130,24 @@
 	<div class="row">
 		<div class="col-md-6 service_square_block">
 				<? if($query['type'] != 2) :?>
-				<img src="<?= base_url() ?>static/update/img/time.svg" alt="" style="width:64px;">
+				<img src="<?= base_url() ?>static/update/img/time.svg" alt="" style="width:59px;">
 				<p class="serive_square"><?= $query['period'] ?></p>
 				<? endif ;?>
 		</div>
 
 		<div class="col-md-6 service_square_block">
-			<img src="<?= base_url() ?>static/update/img/Group22.svg" alt="" style="width:64px;">
+			<img src="<?= base_url() ?>static/update/img/Group22.svg" alt="" style="width:59px;">
 			<p class="serive_square"><?= $query['start_date']?></p>
 		</div>
 	</div>
+		</div>
+	</div>
+
 
 	<div class="heading_bg" style="margin-top: 75px!important;">
 		<?= lang('mission')?>
 	</div>
-	<div style="line-height: 1.3; font-size:20px; margin-top:15px;">
+	<div class="content_query_block">
 		<?= $query['mission']?>
 	</div>
 
@@ -154,64 +155,85 @@
 		<?= lang('profile')?>
 	</div>
 
-	<div style="line-height: 1.3; font-size:20px; margin-top:15px;">
+	<div class="content_query_block">
 		<?= $query['profile']?>
 	</div>
 
 
 		<a href="<?= $url?>" class="offer_apply_link">
 			<button type="button" class="offer_apply_btn">
-				<?= lang('apply_for_offer')?>
+				Apply now
 			</button>
 		</a>
 	
 		<div class="custom_hr"></div>
 
-		<div class="posts_heading"><img src="<?= base_url() ?>static/update/img/Vector.svg">	You might like these posts</div> 
+		<div class="posts_heading">You may also like</div> 
 
 		<div class="row" style="margin-bottom: 45px;">
 			<div class="col-md-4">
 					<div class="post_card_like"> 
-						<img src="<?= base_url() ?>static/update/img/Group33.svg" alt="" class="post_card_img">
-						Trainee cargo sales management
+						<div class="post_card_title">
+							Technical permanent	
+						</div>
 
-						<a href="<?= $url?>">
-							<button type="button" class="offer_apply_btn" style="margin-top: 20px;">
-								Apply for
-							</button>
-						</a>
+						<div class="row" style="margin-top: 14px;">
+							<div class="col-md-4 post_card_context">
+								12/04/2020
+							</div>
+							<div class="col-md-4 post_card_context">
+								Roisy - CDG
+							</div>
+							<div class="col-md-4">
+								<a href="<?= $url?>" class="post_card_link">View offer</a>
+							</div>
+						</div>
 					</div>	
 			</div>
 			<div class="col-md-4">
-					<div class="post_card_like"> 
-						<img src="<?= base_url() ?>static/update/img/Group33.svg" alt="" class="post_card_img">
-						Trainee cargo sales management
+			<div class="post_card_like"> 
+						<div class="post_card_title">
+							Aircraft technical(ne) B1/B2
+						</div>
 
-						<a href="<?= $url?>">
-							<button type="button" class="offer_apply_btn" style="margin-top: 20px;">
-								Apply for
-							</button>
-						</a>
-					</div>	
+						<div class="row" style="margin-top: 14px;">
+							<div class="col-md-4 post_card_context">
+								12/04/2020
+							</div>
+							<div class="col-md-4 post_card_context">
+								Roisy - CDG
+							</div>
+							<div class="col-md-4">
+								<a href="<?= $url?>" class="post_card_link">View offer</a>
+							</div>
+						</div>
+					</div>
 			</div>
 			<div class="col-md-4">
-					<div class="post_card_like"> 
-						<img src="<?= base_url() ?>static/update/img/Group33.svg" alt="" class="post_card_img">
-						Trainee cargo sales management
+			<div class="post_card_like"> 
+						<div class="post_card_title">
+							Human Resources Assistant(e)
+						</div>
 
-						<a href="<?= $url?>">
-							<button type="button" class="offer_apply_btn" style="margin-top: 20px;">
-								Apply for
-							</button>
-						</a>
-					</div>	
+						<div class="row" style="margin-top: 14px;">
+							<div class="col-md-4 post_card_context">
+								12/04/2020
+							</div>
+							<div class="col-md-4 post_card_context">
+								Roisy - CDG
+							</div>
+							<div class="col-md-4">
+								<a href="<?= $url?>" class="post_card_link">View offer</a>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 
 
 
 </div><!-- #content -->
-
+</div>
 <script src="https://rawgit.com/dbrekalo/fastselect/master/dist/fastselect.standalone.min.js">
 
 </script>
@@ -293,17 +315,25 @@ $( document ).ready(function() {
 
 <style>
 	.table_breadcrumb {
-		height: 138px;
-    	margin-bottom: 1rem;
+		height: 101px;
+		padding-left: 15px;
+		padding-top: 28px;
+		padding-bottom: 28px;
+		padding-right: 15px;
+		margin-bottom: 1rem;
 		background: #F5F5F5;
-    	color: #6c757d;
-    	width: 100%;
-    	display: inline-block;
-    	position: relative;
+		color: #6c757d;
+		width: 900px !important;
+		display: inline-block;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 	.table_breadcrumb .form-group {
 		float: left;
-		margin: 0px !important;
+    	margin-right: 30px;
 	}
 	@media only screen and (max-width: 600px) {
   .table_breadcrumb .form-group {
@@ -321,7 +351,7 @@ $( document ).ready(function() {
 		font-size: 1rem;
 		background-color: #fff;
 		padding: 2px;
-		width: 300px;
+		width: 230px !important;
 		background: #FFFFFF;
 		border: 1px solid #CFCFCF;
 		box-sizing: border-box;

@@ -1,3 +1,5 @@
+<div class="right_side_content">
+
 <div class="career_galley_banner" style="background-image: url('<?= base_url() ?>static/update/img/Frise-picto-RH---1378-x-317px.jpg');">
 <div class="equal_opp_title">JOB GALLERY</div>
 </div>
@@ -79,8 +81,5 @@
 
 </div>
 
-<script>
-    $("#sidebar-left").css("display","none");
-</script>
-
+</div>
 </div>

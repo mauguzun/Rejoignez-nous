@@ -97,7 +97,7 @@ $lang['category'] = 'Category';
 $lang['period'] = 'Period';
 $lang['start_date'] = 'Start date';
 $lang['location'] = 'Location';
-$lang['mission'] = 'Mission';
+$lang['mission'] = 'Your missions';
 $lang['group_id'] = 'Group';
 
 $lang['id'] = '#';

@@ -1,3 +1,4 @@
+<div class="right_side_content">
 <div class="job_description_banner" style="background-image: url('<?= base_url() ?>static/update/img/100310_F-GZTC_en_vol_P._Sordoillet_18.png');">
 <div class="job_description_banner_title">PILOT</div>
 </div>
@@ -60,48 +61,50 @@
     <center><a href="<?= base_url() ?>offers" class="check_latest_offers">Check our latest offers</a></center>
     <div class="custom_hr"></div>
 
+    <div class="posts_heading" style="margin-bottom:50px; margin-top:60px;">Other jobs</div> 
 
-    <div class="employment_link_tab">
-        <div class="employment_link_title">EMPLOYMENT</div>
-
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block">
-            Planning agent
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
-        </div></a>
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block">
-            Steward / Flight attendant
-
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
-        </div></a>
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block">
-        Operating officer
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
-        </div></a>
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block">
-        Commercial
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
-        </div></a>
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block">
-        Operation manager
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
-        </div></a>
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block">
-        Ground agent
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
-        </div></a>
-        <a href="<?= base_url() ?>job_description" class="employment_body_link"><div class="employment_body_link_block" style="border:0px !important;">
-        Aircraft Mechanic
-            <img src="<?= base_url() ?>static/update/img/Keyboard_Arrow_Right_Icon_1.png" alt="">   
+    <div class="row">
+    
+    <div class="col-md-3 job_gallery_white">
+    <a href="<?= base_url() ?>job_description">
+        <div class="job_gallery_inner_container">
+            <div class="job_gallery_text">PILOT</div>
+            <center><img src="<?= base_url() ?>static/update/img/pilot.png" alt="" class="job_gallery_img"></center>
         </div></a>
     </div>
-
+    
+    <div class="col-md-3 job_gallery_blue">
+    <a href="<?= base_url() ?>job_description">
+    <div class="job_gallery_inner_container">
+        <div class="job_gallery_text">FLIGHT ATTENDANT / 
+            <br>STEWARD
+        </div>
+        <center><img src="<?= base_url() ?>static/update/img/people.png" alt="" class="job_gallery_img"></center>
+    </div>
+    </a>
+    </div>
+    <div class="col-md-3 job_gallery_white">
+    <a href="<?= base_url() ?>job_description">
+    <div class="job_gallery_inner_container">
+        <div class="job_gallery_text">PLANNING OFFICER </div>
+        <center><img src="<?= base_url() ?>static/update/img/checklist.png" alt="" class="job_gallery_img"></center>
+    </div>
+    </a>
+    </div>
+    <div class="col-md-3 job_gallery_blue">
+    <a href="<?= base_url() ?>job_description">
+    <div class="job_gallery_inner_container">
+        <div class="job_gallery_text">OPERATING OFFICER</div>
+        <center><img src="<?= base_url() ?>static/update/img/engineer.png" alt="" class="job_gallery_img"></center>
+    </div>
+    </a>
+    </div>
 </div>
 
 
 </div>
+</div>
 
-<script>
-    $("#sidebar-left").css("display","none");
-</script>
+</div>
 
 </div>
